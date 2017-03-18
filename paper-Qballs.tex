@@ -1,0 +1,203 @@
+%\documentclass[10pt, twocolumn]{article}
+%\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl]{revtex4}
+\documentclass[11 pt, preprint,preprintnumbers,amsmath,amssymb, prd]{revtex4}
+
+% Preamble adapted from Surjeet Rajendran
+
+%\usepackage{psfig}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{epsfig,amsmath,graphics}
+\usepackage{epstopdf}
+\usepackage{verbatim}
+\usepackage{wasysym}
+\usepackage{feynmp-auto} % feynman diagrams
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    % linkcolor={red!80!black},
+    citecolor={green!60!black},
+    urlcolor={blue!60!black}
+}
+% \usepackage{subfig}
+
+%%%%%% Temporary packages for drafting
+\usepackage{xcolor}
+\usepackage[framemethod=TikZ]{mdframed} % use with \begin{mdframed}[style=MyFrame]
+\mdfdefinestyle{MyFrame}{%
+    linecolor=black,
+    outerlinewidth=1pt,
+    roundcorner=10pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=gray!20!white}
+\usepackage{xpatch} % necessary patch for mdframed
+\makeatletter
+\xpatchcmd{\endmdframed}
+  {\aftergroup\endmdf@trivlist\color@endgroup}
+  {\endmdf@trivlist\color@endgroup\@doendpe}
+  {}{}
+\makeatother
+%%%%%%
+
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\hc}{\text{ h.c.}}
+\newcommand{\GeV}{\text{GeV}}
+\newcommand{\rad}{\text{rad}}
+\newcommand{\angstrom}{\buildrel _{\circ} \over {\mathrm{A}}}
+\newcommand{\pslash}{p\hspace{-0.070in}/\,}
+\newcommand{\MPl}{M_{\text{Pl}}}
+\newcommand{\SNR}{\text{SNR}}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right>}}
+\newcommand{\bra}[1]{\ensuremath{\left<#1\right|}}
+\newcommand{\braket}[2]{\ensuremath{\left<#1|#2\right>}}
+
+\def\r{\right)}
+\def\l{\left(}
+
+\begin{document}
+
+%\preprint{APS/123-QED}
+
+\title{\textcolor{blue}{Detecting Q-ball dark matter with White Dwarfs}}
+
+
+% authors in alphabetical order
+
+\author{Ryan Janish}
+\affiliation{Berkeley Center for Theoretical Physics, Department of Physics,
+University of California, Berkeley, CA 94720, USA}
+
+\author{Vijay Narayan}
+\affiliation{Berkeley Center for Theoretical Physics, Department of Physics,
+University of California, Berkeley, CA 94720, USA}
+
+\author{Surjeet Rajendran}
+\affiliation{Berkeley Center for Theoretical Physics, Department of Physics,
+University of California, Berkeley, CA 94720, USA}
+
+\author{Paul Riggins}
+\affiliation{Berkeley Center for Theoretical Physics, Department of Physics,
+University of California, Berkeley, CA 94720, USA}
+
+\date{\today}
+
+\begin{abstract}
+
+\end{abstract}
+
+% % \pacs{04.80.-y, 04.80.Cc, 03.75.Dg}% PACS, the Physics and Astronomy
+%                              % Classification Scheme.
+% % \keywords{Suggested keywords}%Use showkeys class option if keyword
+%                               %display desired
+\maketitle
+\tableofcontents
+
+\section{Q-ball properties}
+In various supersymmetric extensions of the standard model (SM), non-topological solitons called Q-balls can be produced in the early universe. If these Q-balls were stable, they would comprise a component of the dark matter today. Q-balls can be classified into two groups: supersymmetric electrically charged solitons (SECS) and supersymmetric electrically neutral solitons (SENS). When a neutral baryonic Q-ball interacts with a nucleon, it absorbs its baryonic charge as a minimum-energy configuration and induces the dissociation of the nucleon into free quarks. In this process (known as the ``KKST process) $\sim \text{GeV}$ of energy is released through the emission of 2-3 pions. The KKST process provides a useful way to detect such Q-balls. The cross section for interaction is approximately the geometric cross section
+\begin{equation}
+\sigma_Q \simeq \pi R_Q^2.
+\end{equation}
+In gauge-mediated models with flat scalar potentials, the Q-ball mass and radius are given by
+\begin{equation}
+M_Q \sim m_F Q^{3/4}, \hspace{20pt} R_Q \sim m_F^{-1} Q^{1/4},
+\end{equation}
+where $m_F$ is related to the scale of supersymmetry breaking (messenger scale) and is at least of $\mathcal{O}(\text{TeV})$. The condition $M_Q/Q < m_p$ ensures that the Q-ball is stable against decay to nucleons. 
+
+Note that a sufficiently massive Q-ball will become a black hole if the Q-ball radius is less than the Schwarzschild radius $R_Q \lesssim R_s \sim G M_Q$. In the model described above, this translates into a condition on the Q-ball interaction cross section 
+\begin{equation}
+\sigma_Q \lesssim \frac{M_{pl}^2}{m_F^4}. 
+\end{equation}
+
+\section{Q-ball detection}
+Consider a dark matter Q-ball transit through a white dwarf. Localized heating of the white dwarf has the potential to ignite the star. Namely, if the Q-ball succeeded in heating a region of size $\lambda_\text{min}$ to a temperature $\sim \text{MeV}$, this would initiate runaway thermonuclear fusion and cause the white dwarf to explode in a supernovae. According to \cite{Woosley}, $\lambda_{\text{min}} \sim 10^{-5} \text{cm}$ for white dwarf densities $\sim 5 \times 10^9 \frac{\text{gm}}{\text{cm}^3}$. This is then analytically scaled in \cite{Varela} for varying densities. 
+
+We first estimate the $\sigma_Q$ necessary to deposit a total energy inside the white dwarf equivalent to heating a cylinder of radius $\lambda_{\text{min}}$ to a temperature $\sim \text{MeV}$. If the white dwarf is comprised of primarily carbon nuclei, $\mathcal{O}(10 \text{GeV})$ is released per collision. Assuming the Q-ball traverses the full length of the white dwarf with minimal change to its baryon number and mean free path $l \sim \frac{1}{n_C \sigma_Q}$, we have $10^{-4}\lambda_{\text{min}}^2 \lesssim \sigma_Q$. This is effectively the minimum $\sigma_Q$ needed to release a total amount of energy capable of triggering runaway fusion. 
+
+Of course, the energy produced from a Q-ball transit will not automatically remain confined to a localized region. Rather, the pions emitted in the KKST process will travel a distance in the stellar medium before depositing their full kinetic energy. It is therefore necessary to compute the typical pion range in the degenerate medium. We can assume that there is an equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ in each collision under the constraint of charge conservation. The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. Since energy equal to the nucleon mass ($\sim \text{GeV}$) is released in 2-3 pions, each pion travels with velocity roughly $\gamma \approx 5$. For neutral pions we find that $d_{\pi^0} \sim \mathcal{O}(10^{-5} \text{cm})$ while for charged pions, which decay via the weak interactions and have characteristically longer lifetimes, $d_{\pi^\pm} \sim \mathcal{O}(10 \text{m})$. 
+
+Q-balls (or any other dark matter trigger) will be most explosive for higher density white dwarfs. We consider densities in the upper edge of the range $\rho \sim 10^{6} - 10^{9} \frac{\text{gm}}{\text{cm}^3}$. For carbon-oxygen white dwarfs, this translates to $n_C \sim 10^{29} - 10^{32} \text{cm}^{-3}$ and $n \sim 10^{30} - 10^{33} \text{cm}^{-3}$ for number densities of carbon nuclei and electrons, respectively. \textcolor{red}{Someone check these density numbers.}
+
+First we estimate the cross section for (neutral and charged) pions colliding with carbon nuclei. This is approximately set by the hadronic length scale $\sim \text{fm}$ and is confirmed by experiments to be $\sigma \sim 100 \text{mb} $. Therefore, the mean free path for pion-nuclei interactions is estimated to be $l_{\pi c} \sim \mathcal{O}(10^{-8} - 10^{-5} \text{cm})$. 
+
+Now we calculate the charged pion range. To leading order, the stopping of charged pions in the white dwarf will be through electromagnetic scattering off the degenerate electron gas. In other words, as pertaining to energy loss, collisions with nuclei have a negligible effect compared with collisions of electrons. For particles of charge $Ze$ scattering off free electrons, this is described by the ``Bhabha" differential cross section (for a spin-0 particle)
+\begin{equation}
+\label{eq:PDG}
+\frac{d \sigma_R (E', \beta)}{dE'}= \frac{2 \pi  \alpha^2 Z^2}{m_e \beta^2} \frac{1}{E'^2} \left(1- \frac{\beta^2 E'}{E_{max}}\right),
+\end{equation}
+where we have assumed a sufficiently fast charged particle so that interactions are governed by single-electron collisions with energy transfer $E'$. This is the equation quoted in the PDG and the textbook by Rossi. For the case of $E'$ much less than $E_{max}$, this reduces to the ``Rutherford" cross section:
+\begin{equation}
+\label{eq:PDG}
+\frac{d \sigma_R (E', \beta)}{dE'}= \frac{2 \pi  \alpha^2 Z^2}{m_e \beta^2}  \frac{1}{E'^2}. 
+\end{equation}
+It is straightforward to understand the parametric dependences of this formula: there is increased likelihood to deposit energy for slowly moving particles undergoing ``soft-scatters".  
+
+It is important to understand the range of validity of this formula. According to the classical derivation of \ref{eq:PDG}, the energy transfer is given in terms of an impact parameter $b$ (distance of closest approach):
+
+\begin{equation}
+E' = \frac{2 m_e Z^2 r_e^2}{\beta^2 b^2}, \hspace{20pt} r_e = \frac{\alpha}{m_e}. 
+\end{equation}
+
+The first breakdown occurs when $E' > m_e$, or in terms of impact parameter, $b< b_{rel} = \frac{Z}{\beta} r_e$. In other words, \ref{eq:PDG} ceases to make sense when the impact parameter to deposit energy $E'$ is less than the classical electron radius. This seems reasonable. The second breakdown follows from the fact that \ref{eq:PDG} was derived neglecting the deflection of the incident particle and the motion of the electron during the collision. These conditions also amount to a lower limit of the impact parameter of order $b > Z r_e \sqrt{1-\beta^2}$. However, for our processes this constraint is less restrictive than the previous one. Another breakdown comes from quantum mechanical arguments: the uncertainty principle sets a limit to the accuracy that can be achieved in ``aiming" the pion at a target electron. According to Rossi, this translates to a bound on the impact parameter $b > b_q = \frac{1}{\beta \gamma m_e}$ or a bound on the energy transfer $E' < 2 m_e \gamma^2 \alpha^2$. 
+
+Since the pion is only emitted with $\sim \text{GeV}$ energy, it appears that $b_q > b_{rel}$. Therefore, it makes sense to set an upper limit for the possible energy transfers described by this formula $E' < 2 m_e \gamma^2 \alpha^2$. 
+
+On the other hand, $E_{max}$ denotes the maximum energy transfer possible solely due to kinematic constraints (conservation of energy and momentum), which is the case for an electron initially at rest and a ``head-on" collision (zero angle between incoming pion and outgoing electron momenta). By relativistic kinematics, $E_{max}$ is given by 
+\begin{equation}
+E_{max} = 2 m_e \frac{p^2}{m_e^2 + M^2 + 2m_e (p^2 +m^2)^{1/2}},
+\end{equation}
+where $M$ and $p$ the mass and momentum of the incident particle. For the pions in consideration we have $m_e \ll m_\pi$ and $2 \gamma m_e \ll m_\pi$. Therefore $E_{max} \approx 2 m_e \beta^2 \gamma^2$ only depends on the velocity of the incoming pion. Of course, the typical temperature of the white dwarf interior is $\sim 10^{7} \text{K} \sim \text{keV}$, so no electron is actually at rest. In fact, the fastest electrons have momentum of order the Fermi momentum $p_F \sim E_F \sim n^{1/3} \approx \text{MeV}$ (the approximation of an extreme relativistic Fermi gas is valid since $m_e \lesssim p_F$). Implicit in the derivation of \ref{eq:PDG} is the assumption of small momentum transfers and therefore a target electron at rest. Numerically, we find that $E_{max} \sim 10 \text{MeV}$ when the pion kinetic energy is $\sim 500 \text{MeV}$. 
+
+
+We now compute the rate of energy loss of the charged pion along its track:
+\begin{equation}
+\label{eq:SP}
+\frac{dE}{dx} = \int dE' \left(\frac{d \sigma_R}{dE'}\right) n(E') E'.
+\end{equation}
+Typically the number density of electrons is not a function of energy but for a degenerate electron gas, the differential cross section is suppressed by a Pauli-blocking factor of order $\mathcal{O}(E'/E_F)$. This can instead be expressed as a modified density of electrons $n(E')$ where for a given $E'$, the pion can only scatter those electrons of energy within $E'$ of the Fermi surface. Assuming a perfect Fermi gas, we define $n(E')$ as:
+\begin{equation}
+n(E') = \left\{
+        \begin{array}{ll}
+            \displaystyle \int \limits_{E_F -E'}^{E_F}dE \hspace{4pt} g(E) & \quad E' \leq E_F \\
+            n & \quad E_F \leq E'
+        \end{array}
+    \right..
+\end{equation}
+Here $g(E) = \frac{E^2}{\pi^2}$ is the density of states per unit volume for a three-dimensional relativistic free electron gas. With the correct form of the stopping power, the range of the pion is simply 
+
+\begin{equation}
+R_\pi = \int \limits_{0}^{T_\pi} dE \left(\frac{dE}{dx}\right)^{-1},
+\end{equation}
+where we have chosen to integrate over $E$, the pion kinetic energy and $T_\pi$ denotes the initial kinetic energy $\sim 500 \text{MeV}$. 
+
+The question then becomes the limits of integration for \ref{eq:SP}. 
+
+\textbf{Take 1:}
+
+My first time around, before realizing the validity constraints, I used the following sensible choice:
+\begin{equation}
+\frac{dE}{dx} = \int \limits_{0}^{Min[E_F, E_{max}]} dE' \left(\frac{d \sigma_R}{dE'}\right) n(E') E' + \int \limits_{E_F}^{Max[E_F, E_{max}]} dE' \left(\frac{d \sigma_R}{dE'}\right) n E' 
+\end{equation}
+Doing so yields ranges $R_\pi \sim 1 \times 10^{-6}  \text{cm} - 4 \times 10^{-4} \text{cm}$. This seems magical, given the trigger sizes and their scaling with density. 
+
+However, both $E_F$ and the initial value of $E_{max}$ are larger than the constraint $E' < 2 m_e \gamma^2 \alpha^2 \sim \mathcal{O}(\text{keV})$. Therefore, is this formula valid?
+
+\textbf{Take 2:}
+
+I also tried  
+
+\begin{equation}
+\frac{dE}{dx} = \int \limits_{0}^{Min[2 m_e \gamma^2 \alpha^2, E_{max}]} dE' \left(\frac{d \sigma_R}{dE'}\right) n(E') E'. 
+\end{equation}
+
+This yields $R_\pi \sim 10^{-2}  \text{cm} - 1 \text{cm}$, so considerable difference. 
+
+\end{document}
+
+
