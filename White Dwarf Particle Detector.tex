@@ -43,7 +43,11 @@
 \maketitle
 \section{Introduction}
 
-Localized heating of a white dwarf (WD) has the potential to ignite the star \cite{Woosley}. Namely, if a region of size $\lambda_T$ or greater is raised to a critical temperature $T_f$, this would initiate runaway thermonuclear fusion and cause the WD to explode in a supernovae. We consider WD densities in the range $\rho \sim 10^{6} - 10^{9} ~\frac{\text{gm}}{\text{cm}^3}$. For carbon-oxygen WD, this translates to $n \sim 10^{29} - 10^{32} ~\text{cm}^{-3}$ and $n_e \sim 10^{30} - 10^{33} ~\text{cm}^{-3}$ for number densities of nuclei and electrons, respectively. \textcolor{red}{Someone check these density numbers} Over this range of densities, the trigger size approximately varies between $\lambda_T \sim 10^{-5} ~\text{cm} -10^{-2} ~\text{cm}$ \cite{Graham:2015apa}. \textcolor{red}{Get values from SR.}
+Localized heating of a white dwarf (WD) has the potential to ignite the star \cite{Woosley}. Namely, if a region of size $\lambda_T$ or greater is raised to a critical temperature $T_f$, this would initiate runaway thermonuclear fusion and cause the WD to explode in a supernovae. We consider WD densities in the range $\rho \sim 10^{6} - 10^{9} ~\frac{\text{gm}}{\text{cm}^3}$. For carbon-oxygen WD, this translates to $n \sim 10^{29} - 10^{32} ~\text{cm}^{-3}$ and $n_e \sim 10^{30} - 10^{33} ~\text{cm}^{-3}$ for number densities of nuclei and electrons, respectively. \textcolor{red}{Someone check these density numbers} Over this range of densities, the trigger size approximately varies between $\lambda_T \sim 10^{-5} ~\text{cm} -10^{-2} ~\text{cm}$ \cite{Graham:2015apa}. \textcolor{red}{Check values with SR.}
+
+\begin{figure}
+\includegraphics[scale=.5]{triggerboom}
+\end{figure}
 
 \section{Overview}
 
@@ -76,7 +80,7 @@ Note that in deriving this explosiveness bound, we have assumed the DM transit t
 where $\tau_d$ is the characteristic time for a region of given size and temperature to diffuse $\OO(1)$ of its heat. Within the validity of the heat equation this is simply given by $\tau_d(\lambda_T, T_f) \sim \frac{\lambda_T^2}{\alpha}$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{blue}{Show condition is true for all densities.} We also assume that the time to transfer energy $\epsilon$ out to its characteristic range $R_\epsilon$ is less than the diffusion time scale $\tau_d(\lambda_T, T_f)$. 
 
 \section{Particle Detection in the WD}
-In this section, we enumerate the different ways in which standard model particles can lose energy to the WD for the purposes of determining $R_\epsilon$ for each possible channel. The interior of a (carbon-oxygen) WD is a complex environment. Famously, the star is supported against collapse by the degeneracy pressure of an electron as at a characteristic Fermi energy $E_F \sim n_e^{1/3} \sim \OO(\text{MeV})$. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ a a strongly-coupled plasma with $\frac{Z e^2}{n^{1/3} T} \gg 1$. In what follows, we calculate the WD medium sensitivity to deposited energy. For the purpose of depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). Therefore, the WD may be thought of as a new type of particle detector with electromagnetic and hadronic ``calorimeter" components.  
+In this section, we enumerate the different ways in which standard model particles can lose energy to the WD for the purposes of determining $R_\epsilon$ for each possible channel. The interior of a (carbon-oxygen) WD is a complex environment. Famously, the star is supported against collapse by the degeneracy pressure of an electron as at a characteristic Fermi energy $E_F \sim n_e^{1/3} \sim \OO(\text{MeV})$. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. In what follows, we calculate the WD medium sensitivity to deposited energy. For the purpose of depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). Therefore, the WD may be thought of as a new type of particle detector with electromagnetic and hadronic ``calorimeter" components.  
 
 \subsection{Electromagnetic Interactions}
 
@@ -114,7 +118,7 @@ However, the lattice structure of ions in the WD introduces further complication
 \begin{equation}
 E_B \sim \frac{Z^2 e^2}{n^{-1/3}}.
 \end{equation} 
-For energy transfers greater than $E_B$, any lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold may lead to appreciably small energy loss. For simplicity we set the lower bound on nuclei scattering to be $E_{\text{min}} = \text{max} \{E_B,E_{text{sc}}\}$ so that we only consider energy transfers greater than the ionic lattice binding energy. 
+For energy transfers greater than $E_B$, any lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold may lead to appreciably small energy loss. For simplicity we set the lower bound on nuclei scattering to be $E_{\text{min}} = \text{max} \{E_B,E_{\text{sc}}\}$ so that we only consider energy transfers greater than the ionic lattice binding energy. 
 
 When considering collisions with the degenerate electrons, an incident particle transferring energy $E'$ can only scatter those electrons within $E'$ of the Fermi surface. We define a modified density of electrons $n_e(E')$ as:
 \begin{equation}
@@ -148,6 +152,11 @@ In order to estimate the typical shower length, we assume a primary particle of 
 
 The products of the hadronic shower will be particles of kinetic energy $1-10 ~\text{MeV}$ which are incapable of inducing further nuclear disintegration. Charged hadrons have appreciable electromagnetic interactions with nuclei, while collisions with degenerate electrons are completely screened at these energies. The typical distance for energy transfer is computed by integrating the stopping power \eqref{eq:SP} over the relevant energy range. For instance, in a density of $n \sim 10^{32} ~\text{cm}^{-3}$ protons traverse $\approx 10^{-6} ~\text{cm}$ slowing down from 5 MeV to 1 MeV. \textcolor{blue}{The corresponding distance is significantly larger for charged pions $\sim 10^{-2} ~\text{cm}$, so let us ignore the energy dump from any light final-state hadrons.} On the other hand, electromagnetic couplings are highly suppressed for final-state neutral hadrons. Therefore, the dominant mechanism of energy loss for neutrons will be elastic scattering off nuclei \textcolor{blue}{neutron capture cross section is negligible}. Each scatter transfers a fraction $\l1-\l\frac{m}{m + M}\r^2\r \approx 0.1$ of the neutron energy to nuclei (averaging over scattering angles), where $m$ and $M$ are the masses of the neutron and nuclei, respectively.  At kinetic energies below $\sim \text{MeV}$, the typical energy transfer in an elastic collision is of order the binding energy in the Coulomb lattice $E_B$. Therefore, we do not consider the energy loss of neutrons below $\sim \text{MeV}$. We find that $\OO(10)$ elastic scatters are needed to slow neutrons from 5 MeV to 1 MeV. For a number density $n \sim 10^{32} ~\text{cm}^{-3}$ and elastic cross section $\sim ~\text{barn}$ \textcolor{blue}{set to match nuclear data for carbon nonelastic scattering}, we find that neutrons traverse a total distance (in the form of a random-walk) $\sim 10^{-8} ~\text{cm}$ during this energy deposition. 
 
+\begin{figure}
+\includegraphics[scale=.35]{hadronic}
+\end{figure}
+
+
 \section{Q balls}
 In various supersymmetric extensions of the standard model (SM), non-topological solitons called Q balls can be produced in the early universe \cite{Coleman:1985ki, Kusenko:1997si}. If these Q balls were stable, they would comprise a component of the dark matter today. Q balls can be classified into two groups: supersymmetric electrically charged solitons (SECS) and supersymmetric electrically neutral solitons (SENS). When a neutral baryonic Q ball interacts with a nucleon, it absorbs its baryonic charge as a minimum-energy configuration and induces the dissociation of the nucleon into free quarks. In this process (known as the ``KKST" process), $\sim \text{GeV}$ of energy is released through the emission of 2-3 pions \cite{Dine:2003ax}. The KKST process provides a useful way to detect such Q balls. The cross section for interaction is approximately the geometric cross section
 \begin{equation}
@@ -166,20 +175,15 @@ m_F \l\frac{\Mpl}{m_F}\r^3 \lesssim m_Q, ~~~ \l\frac{\Mpl}{m_F}\r^4 \lesssim Q.
 For Q ball masses of this order, gravitational interactions become relevant while the KKST interaction ceases to exist. 
 
 \subsection{Q ball Explosiveness}
-\textcolor{blue}{Point of this section: argue that KKST range lies within trigger size...fairly obvious}
-We assume that for each Q ball collision, there is equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ under the constraint of charge conservation. Since $\sim 10 ~\text{GeV}$ is released in $\OO(10)$ pions per nuclei dissociation, pions are emitted with velocity $\gamma \approx 5$. The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. For neutral pions $d_{\pi^0} \sim 10^{-5} ~\text{cm}$ while for charged pions, $d_{\pi^\pm} \sim 10 ~\text{m}$. Note that $d_{\pi^0}$ and $d_{\pi^\pm}$ do not depend on the ambient WD density. 
+We assume that for each Q ball collision, there is equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ under the constraint of charge conservation. In the notation of Section \textcolor{blue}{overview}, $n_{\pi} \sim \OO(10)$ pions are released with $\epsilon_{\pi} \sim \text{GeV}$. \textcolor{blue}{The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. $\gamma \approx 5$, so for neutral pions $d_{\pi^0} \sim 10^{-5} ~\text{cm}$ while for charged pions, $d_{\pi^\pm} \sim 10 ~\text{m}$.} 
 
-Numerous experiments have studied the effects of $50 - 500 ~\text{MeV}$ pions incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\sim 0.1 ~\text{barn}$ for a (neutral or charged) pion to either scatter elastically, scatter inelastically, or become absorbed with no final state pion \cite{Pionnuclear}. Of these possibilities, pion absorption is the most relevant for energy loss as this will induce a hadronic shower. During this process, $\sim$ 2-3 hadrons (i.e. protons, neutrons, alpha particles) are emitted. 
+Numerous experiments have studied the effects of $50 - 500 ~\text{MeV}$ pions incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\sim 0.1 ~\text{barn}$ for a (neutral or charged) pion to either scatter elastically, scatter inelastically, or become absorbed with no final state pion \cite{Pionnuclear}. Of these possibilities, pion absorption is the most relevant for energy loss as this will induce a hadronic shower. During this process, $\sim$ 2-3 hadrons (i.e. protons, neutrons, alpha particles) are emitted. \textcolor{blue}{Point of this paragraph: argue that KKST range lies within trigger size}
 
 Therefore, Q balls with sufficiently large cross-section $\sigma_Q \gtrsim 10^{-4} \lambda_T^2$ will result in explosions. This is plotted in Figure \textcolor{blue}{figure}. For the model described in Section \textcolor{blue}{previous section}, the Q ball cross section is related to its mass $m_Q = \sigma_Q^{3/2} m_F^4$ and $Q = \sigma_Q^2 m_F^4$. Therefore, find that 
 \begin{equation}
 m_Q \gtrsim 10^8 ~\text{g} \l\frac{m_F}{\text{TeV}}\r^4, ~~~~ Q \gtrsim 10^{38} \l\frac{m_F}{\text{TeV}}\r^4
 \end{equation}
 is capable of triggering runaway fusion in a heavy $\sim 1.25 M_{\odot}$ WD for which $\lambda_T \sim 10^5 ~\text{cm}$. 
-
-\begin{figure}
-\includegraphics[scale=.5]{triggerboom}
-\end{figure}
 
 \begin{figure}
 \includegraphics[scale=.5]{boomQball}
