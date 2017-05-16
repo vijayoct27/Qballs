@@ -85,7 +85,7 @@ We need a condition that determines if a given heating event $L$, $T$ will resul
 \label{eqn:boom}
     E \gtrsim n T_B \text{Max}\left[L, \lambda_T\right]^3    
 \end{equation}
-The \emph{fusion temperature} $T_B$ is the onset temperature of carbon-carbon fusion.  This is set by the energy required for carbon ions in the star to overcome their mutual Coulomb barriers, and is thus a constant with value $T_B \sim \MeV$.  The \emph{trigger size} $\lambda_T$ is a length scale set by the efficiency of diffusive cooling in the stellar medium, and is thus sensitive to the medium's density, which can vary considerably from star to star.  The trigger size as a function of white dwarf mass is computed in~\cite{Graham:2015apa} and reproduced in figure~\ref{fig:triggerboom}.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$. The physics of condition~\ref{eqn:boom} and the scales $T_B$ and $\lambda_T$ are reviewed in more detail in appendix~\ref{app:boomphysics}. 
+The \emph{fusion temperature} $T_B$ is the onset temperature of carbon-carbon fusion.  This is set by the energy required for carbon ions in the star to overcome their mutual Coulomb barriers, and is thus a constant with value $T_B \sim \MeV$.  The \emph{trigger size} $\lambda_T$ is a length scale set by the efficiency of diffusive cooling in the stellar medium, and is thus sensitive to the medium's density, which can vary considerably from star to star.  The trigger size as a function of white dwarf mass is computed in~\cite{Graham:2015apa} and reproduced in figure~\ref{fig:triggersize}.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$. The physics of condition~\ref{eqn:boom} and the scales $T_B$ and $\lambda_T$ are reviewed in more detail in appendix~\ref{app:boomphysics}. 
 
 The moral of condition~\ref{eqn:boom} is that to destroy a white dwarf one needs to deposit both enough energy and enough energy density.  There is an absolute minimum explosion energy:
 \[
@@ -96,7 +96,7 @@ The moral of condition~\ref{eqn:boom} is that to destroy a white dwarf one needs
 \begin{figure}
 \includegraphics[scale=.45]{triggerboom.pdf}
 \caption{Trigger sizes for carbon-oxygen white dwarfs, calculated in~\cite{Graham:2015apa}.}
-\label{fig:triggerboom}
+\label{fig:triggersize}
 \end{figure}
 
 \subsection{Localize Heating via Dark Matter Interactions}
@@ -296,24 +296,29 @@ The existence of heavy white dwarfs can rule out Q ball DM. Considering a $1.25 
 \section{Runaway Fusion and Diffusive Cooling: $T_B$ and $\lambda_T$}
 \label{app:boomphysics}
 
-Runaway fusion is characterized by the following situation: a region of the star is hot enough to undergo fusion, which releases additional energy that heats the neighboring regions until they can support fusion as well. In this manner the fusing region grows to encompass the star.  Now, this process can be stopped - the fusion region is also cooling by a variety of mechanisms, and if any of these processes drain energy from the region faster than it is liberated by fusion, it will quench the nascent fusion chain-reaction. 
+\textcolor{blue}{Not really sure how necessary this section is...the discussion of immediate vs eventual fusion is important, but the rest could perhaps be replaced by a citation to Surjeet's paper. This does address however most of the questions people ask me about WD or fusion when I explain this project to them.}
 
-A local deposition of energy can destroy a white dwarf by initiating a runaway fusion chain reaction.  To do this, the energy deposition must heat a region of linear size $L$ inside the star to a temperature $T$ such that $L$ is larger than the \emph{trigger size} $\lambda_T$ and $T$ is larger than the \emph{fusion temperature} $T_F$. The fusion temperature is set by the energy required for two ions to overcome their mutual Coulomb barrier, so it is common to all stars of the same composition.  For a carbon-oxygen white dwarf, $T_F \sim \MeV$~\cite{Graham:2015apa}.  The trigger size is determined by the efficiency of cooling in the star.  The rate at which the heated region $L$ cools will scale as $L^2$, whereas the energy liberated by fusion within $L$ scales as $L^3$.  The equality of these two rates defines the critical length scale $\lambda_T$, below which fusion is quenched.  The trigger size therefore depends on the thermal conductivity of the stellar gas and will be sensitive to its number density, varying from star to star.  The trigger size as a function of white dwarf mass is computed in~\cite{Graham:2015apa} and reproduced in figure~\ref{fig:triggerboom}.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$.
+Runaway fusion is characterized by the following situation. A region of the star is hot enough to undergo fusion.  Each fusion reaction releases additional energy that heats the neighboring regions until they can support fusion as well. In this manner the fusing volume increases until enough energy has been released to destroy the star.  Now, this process can be stopped - the fusion region is also cooling by a variety of mechanisms, and if any of these processes drain energy from the region faster than it is liberated by fusion, it will quench the nascent fusion chain-reaction.  Thus the conditions necessary to initiate runaway fusion are: the temperature is elevated to above some onset temperature and the energy released by fusion dominates any cooling processes. 
 
-The two conditions above determine if a region of size $L$ and temperate $T$ \emph{immediately} initiate runaway fusion.  But what we are truly concerned with is whether a given energy deposit \emph{eventually} initiates runaway fusion.  This is an important distinction only if the initial deposit has $T > T_F$ but $L<\lambda_T$.  Then, the initial thermal evolution will be dominated by diffusive cooling and the temperature will diffuse outward, becoming a heated region of larger $L$ and smaller $T$.  Eventually, the temperature profile will diffuse out to a length scale $\lambda_T$, at which point runaway fusion begins if the now cooler temperature is still above $T_F$.  The condition for eventually ignition after heating a region of size $L$ to temperature $T$ is thus:
-\begin{align*}
-    T &> 
-    \begin{cases}
-    T_F &\text{if}\; L > \lambda_T \\
-    T_F \left( \frac{\lambda_T}{L} \right)^3 &\text{if}\; L < \lambda_T
-    \end{cases} \\
-    \Rightarrow T &> T_F \text{Max}\left[1, \frac{\lambda_T}{L}\right]^3
-\end{align*}
-It will be more useful in what follows to phrase this explosion condition in terms of the total energy deposited $E$ instead of the resulting temperature, which differs by a factor of the total number of particles in the heated region, $\sim nL^3$ for a stellar number density $n$:
+In the white dwarf, the dominate cooling process is the thermal diffusion of degenerate electrons and photons.  The two species dominate the cooling for different stellar densities, which is the origin of the kink in figure~\ref{fig:triggersize}~\cite{Graham:2015apa}.  For a heated region of size $L$, this cooling rate scales as $L^2$ whereas the energy liberated by fusion within $L$ scales as $L^3$.  Thus there is a critical length scale below which diffusive cooling dominates the thermal evolution of a temperature peak, and above which the liberated fusion energy dominates.  This critical scale is the trigger size $\lambda_T$.  We thus have that a region with temperature greater than the onset temperature $T_B$ and size greater than $\lambda_T$ will launch a runaway fusion chain-reaction. 
+
+It is worth noting that in the white dwarf the cooling mechanisms available to the stellar medium are fewer than in a non-degenerate star.  The white dwarf must rely on diffusion, where a non-degenerate system can cool by thermal expansion as well. This is the dominate cooling mechanism in a main-sequence star and it provides a stabilizing opposition to fusion.  The dark matter interactions described in this work would result only in a temporary puffing of a main-sequence star.  It is the lack of thermal expansion, due to the fact that the pressure of the white dwarf's degenerate gas is insensitive to temperature, which allows runaway fusion to occur.
+\textcolor{blue}{I'm not entirely sure how this really works....should figure that out, even if it is not worth elaborating on further here}
+
+The two conditions above determine if a region $L$, $T$ \emph{immediately} initiates runaway fusion.  But what we are concerned with in this work is whether a given energy deposit \emph{eventually} initiates runaway fusion.  If $T < T_B$, then fusion will never occur. But, if $T >> T_B$ with $L < \lambda_T$, then while the thermal evolution is initially dominated by diffusive cooling it is possible that it evolves into a temperature profile with $L > \lambda_T$ while still having $T > T_B$. At that point, runaway fusion will begin.  Since diffusion dominates while $L<\lambda_T$, the thermal evolution will to lowest order be given by the dilution of the fixed total energy of the initial region over the final volume.  The temperature of the peak when it has diffused out to a size $\lambda_T$ is thus:
 \[
-    E \gtrsim n T_F \text{Max}\left[L, \lambda_T\right]^3
+    T_{\text{after diffusion}} \sim T \l \frac{L}{\lambda_T} \r^3  
 \]
-
+For this to be above the fusion onset temperature, we have the condition on the initial temperate and size:
+\[
+    T \gtrsim T_B \l \frac{\lambda_T}{L} \r^3
+\]
+which applies specifically to the case $L < \lambda_T$. Thus to eventually initiate fusion from a region smaller than the trigger size, one needs to begin with a temperature parametrically larger than $T_B$.  Combining this with the fusion condition for $L>\lambda_T$, we have the full condition to eventually ignite runaway fusion:
+\[
+    T \gtrsim T_F \text{Max}\left[1, \frac{\lambda_T}{L}\right]^3
+\]
+ This is just condition~\ref{eqn:boom}, after replacing the peak temperature $T$ for the total initial energy.
+ 
 \section{Detail Study of Heating Lengths}
 \label{app:heatinglengthfull}
 
