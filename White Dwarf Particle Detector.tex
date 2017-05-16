@@ -1,6 +1,6 @@
 %\documentclass[10pt, twocolumn]{article}
-\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl]{revtex4}
-%\documentclass[11 pt, preprint,preprintnumbers,amsmath,amssymb, prd]{revtex4}
+% \documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl]{revtex4}
+\documentclass[11 pt,preprint,preprintnumbers,amsmath,amssymb, prd]{revtex4}
 
 % Preamble adapted from Surjeet Rajendran
 
@@ -22,6 +22,7 @@
     citecolor={green!60!black},
     urlcolor={blue!60!black}
 }
+\usepackage{appendix}
 
 \newcommand{\OO}{\mathcal{O}}
 \newcommand{\LL}{\mathcal{L}}
@@ -31,6 +32,7 @@
 \newcommand{\MeV}{\text{MeV}}
 \newcommand{\keV}{\text{keV}}
 \newcommand{\rad}{\text{rad}}
+\newcommand{\cm}{\text{cm}}
 \newcommand{\angstrom}{\buildrel _{\circ} \over {\mathrm{A}}}
 \newcommand{\pslash}{p\hspace{-0.070in}/\,}
 \newcommand{\Mpl}{M_{\text{pl}}}
@@ -40,9 +42,13 @@
 %Large Parentheses
 \def\r{\right)}
 \def\l{\left(}
+
 \begin{document}
-\title{White Dwarves as Dark Matter Detectors}
+
+\title{White Dwarfs as Dark Matter Detectors}
 \maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
 {\color{blue} [sketch of intro text]
@@ -60,19 +66,38 @@ Conventional paper outline.
 
 [end sketch]}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Overview}
+
+White dwarfs and stuff...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Explosion Conditions}
+
+\subsection{Explosivity of Localized Heating}
+
+An energy deposition event in the white dwarf can be roughly characterized by two numbers: a heating length $L$ and temperature $T$.  In any such event the energy deposit will eventually take the form of a local peak in the star's temperature profile.  We take $T$ to be the characteristic temperature of this peak and $L$ its characteristic length scale.  This peak will evolve through various processes, and we take the above quantities to describe the peak as it initially appears.  
+
+For a specific deposition mechanism, $L$ is determined by the efficiency with which that mechanism couples to the stellar medium.  For example, if one was able to elastic scatter energy into a number of neighboring ions, those ions would thermalize over their collisional time scale to give an $L$ of order the ion mean free path.  This is the minimal $L$ that one could achieve.  In the other extreme, one might imagine a process that produced a large number of electrons with energy just above the Fermi energy.  These electrons have Pauli-suppressed interactions with the medium and will travel a long distance before their energy is scattered and thermalized, resulting in a large $L$ - possibly of order the stellar radius.  We will generally be concerned with inelastic processes like this, where a DM interaction heats the star via production of a larger number of high-energy SM secondaries.  In these processes, typical $L$ will range from $10^{-7} \cm$ to $0.1 \cm$.
+
+We need a condition that determines if a given heating event $L$, $T$ will result in the destruction of the star as a supernova.  It will be more useful to phase this in terms of the excess energy $E$ within the temperature peak instead of the temperature itself.  These are related by the number of particles within the peak's volume: $E \sim n T L^3$, where $n$ is the number density of the stellar medium.  The explosion condition is then:
+\begin{equation}
+\label{eqn:boom}
+    E \gtrsim n T_B \text{Max}\left[L, \lambda_T\right]^3    
+\end{equation}
+where $\lambda_T$ and $T_B$ are two characteristic scales.  The \emph{fusion temperature} $T_B$ is the onset temperature of carbon-carbon fusion.  This is set by the energy required for carbon ions in the star to overcome their mutual Coulomb barriers, and is thus a constant with value $\sim \MeV$.  The \emph{trigger size} $\lambda_T$ is a length scale set by the efficiency of diffusive cooling in the stellar medium, and is thus sensitive to the medium's density, which can vary considerable from star to star.  The trigger size as a function of white dwarf mass is computed in~\cite{Graham:2015apa} and reproduced in figure~\ref{fig:triggerboom}.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$. The physics of condition~\ref{eqn:boom} and the scales $T_B$ and $\lambda_T$ are reviewed in more detail in appendix~\ref{appendix:boomphysics}. 
+
+The moral of condition~\ref{eqn:boom} is that to destroy a white dwarf one needs to deposit both enough energy and enough energy density.  There is an absolute minimum explosion energy:
+\[
+    E_{\text{min}} \sim n T_B \lambda_T \sim 10^{\text{something}} - 10^{14} \GeV
+\]
+(the range here is due to the range in white dwarf densities).  Yet this energy is sufficient only if it thermalizes below the trigger size.  If your energy is deposited on a length scale larger than $\lambda_T$, the explosion energy required is parametrically larger. As we are concerned with processes that have a fixed deliverable energy (the energy of the incoming DM), the most explosive processes will be those that result in the most localized heating.
+
 \begin{figure}
 \includegraphics[scale=.45]{triggerboom.pdf}
 \caption{Trigger sizes for carbon-oxygen white dwarfs, calculated in~\cite{Graham:2015apa}.}
 \label{fig:triggerboom}
 \end{figure}
-
-\section{Overview}
-
-\subsection{Igniting a White Dwarf}
-
-A local deposition of energy can destroy a white dwarf by initiating a runaway fusion chain reaction.  To do this, the energy deposition must heat a region of linear size $L$ inside the star to a temperature $T$ such that $L$ is larger than the \emph{trigger size} $\lambda_T$ and $T$ is larger than the \emph{fusion temperature} $T_F$. The fusion temperature is set by the energy required for two ions to overcome their mutual Coulomb barrier, so it is common to all stars of the same composition.  For a carbon-oxygen white dwarf, $T_F \sim \MeV$~\cite{Graham:2015apa}.  The trigger size is determined by speed of cooling in the star: if the heated region is smaller than $\lambda_T$, it will cool by thermal diffusion and the fusion reaction will be quenched.  The trigger size therefore depends on the number density of the stellar gas and will vary from star to star.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$, shown in figure~\ref{fig:triggerboom}~\cite{Graham:2015apa}.  \textcolor{blue}{Check these numbers}
-
-It will be more useful to phrase this explosion condition in terms of the total energy deposited instead of the resulting temperature. 
 
 \subsection{Parameterizing Dark Matter Interactions}
 
@@ -112,6 +137,7 @@ Note that in deriving this explosiveness bound, we have assumed the DM transit t
 \end{equation}
 where $\tau_d$ is the characteristic time for a region of given size and temperature to diffuse $\OO(1)$ of its heat. An estimate from the heat equation gives $\tau_d(\lambda_T, T_f) \sim \frac{\lambda_T^2}{\alpha}$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{blue}{Show condition is true for all densities.} We also assume that the time to transfer energy $\epsilon$ out to its characteristic range $R_\epsilon$ is less than the diffusion time scale $\tau_d(\lambda_T, T_f)$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 <<<<<<< Updated upstream
 \section{Particle ``Detection'' in the WD}
 In this section, we enumerate the different ways in which standard model particles can lose energy to the WD. (Unless otherwise noted, we will assume a carbon-oxygen white dwarf.) The interior of a WD is a complex environment. Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy $E_F \sim n_e^{1/3} \sim \OO(\text{MeV})$ \textcolor{red}{at all densities?}. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. In what follows, we calculate the WD medium sensitivity to deposited energy and the deposit ranges $R_\epsilon$ for the different possible DM interactions. For the purpose of depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components.
@@ -204,6 +230,7 @@ The end products of a hadronic shower will generally be hadrons of kinetic energ
 \includegraphics[scale=.35]{hadronic.pdf}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Q balls}
 In various supersymmetric extensions of the standard model (SM), non-topological solitons called Q balls can be produced in the early universe \cite{Coleman:1985ki, Kusenko:1997si}. If these Q balls were stable, they would comprise a component of the dark matter today. Q balls can be classified into two groups: supersymmetric electrically charged solitons (SECS) and supersymmetric electrically neutral solitons (SENS). When a neutral baryonic Q ball interacts with a nucleon, it absorbs its baryonic charge as a minimum-energy configuration and induces the dissociation of the nucleon into free quarks. In this process (known as the ``KKST" process), $\sim \text{GeV}$ of energy is released through the emission of 2-3 pions \cite{Dine:2003ax}. The KKST process provides a useful way to detect such Q balls. The cross section for interaction is approximately the geometric cross section
 \begin{equation}
@@ -247,7 +274,33 @@ where $v \sim 10^{-3}$ is the virial velocity of DM and $\rho_{\text{DM}}$ is th
 
 The existence of heavy white dwarfs can rule out Q ball DM. Considering a $1.25 M_{\odot}$ WD in the local dark matter halo $\rho_{\text{DM}} \sim 0.3 ~\text{GeV}/\text{cm}^3$, we find that a Q ball of mass $m_Q \lesssim 10^{20} ~\text{g}$ will transit with a rate $\Gamma_Q \gtrsim \text{Gyr}^{-1}$. If we instead consider (recently discovered) heavy white dwarfs in the galactic center $\rho_{\text{DM}} \sim 10^3 ~\text{GeV}/\text{cm}^3$, Q balls of mass $m_Q \lesssim 10^{24} ~\text{g}$ will transit within a Gyr.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+
+\section{Runaway Fusion and Diffusive Cooling: $T_B$ and $\lambda_T$}
+\label{appendix:boomphysics}
+
+Runaway fusion is characterized by the following situation: a region of the star is hot enough to undergo fusion, which releases additional energy that heats the neighboring regions until they can support fusion as well. In this manner the fusing region grows to encompass the star.  Now, this process can be stopped - the fusion region is also cooling by a variety of mechanisms, and if any of these processes drain energy from the region faster than it is liberated by fusion, it will quench the nascent fusion chain-reaction. 
+
+A local deposition of energy can destroy a white dwarf by initiating a runaway fusion chain reaction.  To do this, the energy deposition must heat a region of linear size $L$ inside the star to a temperature $T$ such that $L$ is larger than the \emph{trigger size} $\lambda_T$ and $T$ is larger than the \emph{fusion temperature} $T_F$. The fusion temperature is set by the energy required for two ions to overcome their mutual Coulomb barrier, so it is common to all stars of the same composition.  For a carbon-oxygen white dwarf, $T_F \sim \MeV$~\cite{Graham:2015apa}.  The trigger size is determined by the efficiency of cooling in the star.  The rate at which the heated region $L$ cools will scale as $L^2$, whereas the energy liberated by fusion within $L$ scales as $L^3$.  The equality of these two rates defines the critical length scale $\lambda_T$, below which fusion is quenched.  The trigger size therefore depends on the thermal conductivity of the stellar gas and will be sensitive to its number density, varying from star to star.  The trigger size as a function of white dwarf mass is computed in~\cite{Graham:2015apa} and reproduced in figure~\ref{fig:triggerboom}.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$.
+
+The two conditions above determine if a region of size $L$ and temperate $T$ \emph{immediately} initiate runaway fusion.  But what we are truly concerned with is whether a given energy deposit \emph{eventually} initiates runaway fusion.  This is an important distinction only if the initial deposit has $T > T_F$ but $L<\lambda_T$.  Then, the initial thermal evolution will be dominated by diffusive cooling and the temperature will diffuse outward, becoming a heated region of larger $L$ and smaller $T$.  Eventually, the temperature profile will diffuse out to a length scale $\lambda_T$, at which point runaway fusion begins if the now cooler temperature is still above $T_F$.  The condition for eventually ignition after heating a region of size $L$ to temperature $T$ is thus:
+\begin{align*}
+    T &> 
+    \begin{cases}
+    T_F &\text{if}\; L > \lambda_T \\
+    T_F \left( \frac{\lambda_T}{L} \right)^3 &\text{if}\; L < \lambda_T
+    \end{cases} \\
+    \Rightarrow T &> T_F \text{Max}\left[1, \frac{\lambda_T}{L}\right]^3
+\end{align*}
+It will be more useful in what follows to phrase this explosion condition in terms of the total energy deposited $E$ instead of the resulting temperature, which differs by a factor of the total number of particles in the heated region, $\sim nL^3$ for a stellar number density $n$:
+\[
+    E \gtrsim n T_F \text{Max}\left[L, \lambda_T\right]^3
+\]
+
+\end{appendices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliography{Qballs}
-\end{document}
 
 \end{document}
