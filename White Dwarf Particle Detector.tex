@@ -78,14 +78,14 @@ White dwarfs and stuff...
 
 An energy deposition event in the white dwarf can be roughly characterized by two numbers: a heating length $L$ and temperature $T$.  In any such event the energy deposit will eventually take the form of a local peak in the star's temperature profile.  We take $T$ to be the characteristic temperature of this peak and $L$ its characteristic length scale.  This peak will evolve through various processes, and we take the above quantities to describe the peak as it initially appears.  
 
-For a specific deposition mechanism, $L$ is determined by the efficiency with which that mechanism couples to the stellar medium.  For example, if one was able to elastic scatter energy into a number of neighboring ions, those ions would thermalize over their collisional time scale to give an $L$ of order the ion mean free path.  This is the minimal $L$ that one could achieve.  In the other extreme, one might imagine a process that produced a large number of electrons with energy just above the Fermi energy.  These electrons have Pauli-suppressed interactions with the medium and will travel a long distance before their energy is scattered and thermalized, resulting in a large $L$ - possibly of order the stellar radius.  We will generally be concerned with inelastic processes like this, where a DM interaction heats the star via production of a larger number of high-energy SM secondaries.  In these processes, typical $L$ will range from $10^{-7} \cm$ to $0.1 \cm$.
+For a specific deposition mechanism, $L$ is determined by the efficiency with which that mechanism couples to the stellar medium.  For example, if one was able to elastic scatter kinetic energy direction into a number of neighboring ions, those ions would thermalize over their collisional time scale to give an $L$ of order the ion mean free path.  This is the minimal $L$ that one could achieve.  In the other extreme, one might imagine a process that produces a large number of electrons with energy just above the Fermi energy.  These electrons have Pauli-suppressed interactions with the medium and will travel a long distance before their energy is scattered and thermalized, resulting in a large $L$ - possibly of order the stellar radius.  We are concerned here with similar, but much more efficient, inelastic processes wherein a DM interaction heats the star via production of a large number of high-energy standard model particles.  Understanding the heating lengths of these processes is critical to assessing their explosive potential - these are presented in section~\ref{sec:heatinglengthsummary} and computed in detail in appendix~\ref{app:heatinglengthfull}.  In our processes, typical $L$ will range from $10^{-7} \cm$ to $0.1 \cm$.
 
 We need a condition that determines if a given heating event $L$, $T$ will result in the destruction of the star as a supernova.  It will be more useful to phase this in terms of the excess energy $E$ within the temperature peak instead of the temperature itself.  These are related by the number of particles within the peak's volume: $E \sim n T L^3$, where $n$ is the number density of the stellar medium.  The explosion condition is then:
 \begin{equation}
 \label{eqn:boom}
     E \gtrsim n T_B \text{Max}\left[L, \lambda_T\right]^3    
 \end{equation}
-where $\lambda_T$ and $T_B$ are two characteristic scales.  The \emph{fusion temperature} $T_B$ is the onset temperature of carbon-carbon fusion.  This is set by the energy required for carbon ions in the star to overcome their mutual Coulomb barriers, and is thus a constant with value $\sim \MeV$.  The \emph{trigger size} $\lambda_T$ is a length scale set by the efficiency of diffusive cooling in the stellar medium, and is thus sensitive to the medium's density, which can vary considerable from star to star.  The trigger size as a function of white dwarf mass is computed in~\cite{Graham:2015apa} and reproduced in figure~\ref{fig:triggerboom}.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$. The physics of condition~\ref{eqn:boom} and the scales $T_B$ and $\lambda_T$ are reviewed in more detail in appendix~\ref{appendix:boomphysics}. 
+where $\lambda_T$ and $T_B$ are two characteristic scales.  The \emph{fusion temperature} $T_B$ is the onset temperature of carbon-carbon fusion.  This is set by the energy required for carbon ions in the star to overcome their mutual Coulomb barriers, and is thus a constant with value $\sim \MeV$.  The \emph{trigger size} $\lambda_T$ is a length scale set by the efficiency of diffusive cooling in the stellar medium, and is thus sensitive to the medium's density, which can vary considerable from star to star.  The trigger size as a function of white dwarf mass is computed in~\cite{Graham:2015apa} and reproduced in figure~\ref{fig:triggerboom}.  For white dwarf masses of $0.4 M_{\odot}$ to $1.4 M_{\odot}$, the trigger sizes range roughly from $10^{-5} ~\text{cm}$ to $0.1 ~\text{cm}$. The physics of condition~\ref{eqn:boom} and the scales $T_B$ and $\lambda_T$ are reviewed in more detail in appendix~\ref{app:boomphysics}. 
 
 The moral of condition~\ref{eqn:boom} is that to destroy a white dwarf one needs to deposit both enough energy and enough energy density.  There is an absolute minimum explosion energy:
 \[
@@ -150,7 +150,9 @@ where $\tau_d$ is the characteristic time for a region of given size and tempera
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Deposition Lengths}
+\section{Heating Lengths}
+\label{sec:heatinglengthsummary}
+
 <<<<<<< Updated upstream
 In this section, we enumerate the different ways in which standard model particles can lose energy to the WD. (Unless otherwise noted, we will assume a carbon-oxygen white dwarf.) The interior of a WD is a complex environment. Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy $E_F \sim n_e^{1/3} \sim \OO(\text{MeV})$ \textcolor{red}{at all densities?}. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. In what follows, we calculate the WD medium sensitivity to deposited energy and the deposit ranges $R_\epsilon$ for the different possible DM interactions. For the purpose of depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components.
 =======
@@ -292,7 +294,7 @@ The existence of heavy white dwarfs can rule out Q ball DM. Considering a $1.25 
 \begin{appendices}
 
 \section{Runaway Fusion and Diffusive Cooling: $T_B$ and $\lambda_T$}
-\label{appendix:boomphysics}
+\label{app:boomphysics}
 
 Runaway fusion is characterized by the following situation: a region of the star is hot enough to undergo fusion, which releases additional energy that heats the neighboring regions until they can support fusion as well. In this manner the fusing region grows to encompass the star.  Now, this process can be stopped - the fusion region is also cooling by a variety of mechanisms, and if any of these processes drain energy from the region faster than it is liberated by fusion, it will quench the nascent fusion chain-reaction. 
 
@@ -312,7 +314,8 @@ It will be more useful in what follows to phrase this explosion condition in ter
     E \gtrsim n T_F \text{Max}\left[L, \lambda_T\right]^3
 \]
 
-\section{Detail Study of Deposition Lengths}
+\section{Detail Study of Heating Lengths}
+\label{app:heatinglengthfull}
 
 \end{appendices}
 
