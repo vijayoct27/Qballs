@@ -118,36 +118,33 @@ where $\lambda_T$ varies over a range of WD densities as shown in Figure \ref{fi
 \end{figure}
 
 \section{Dark Matter Explosiveness}
-In this section, we parameterize the explosive power of a generic (ultra-heavy) DM interaction in the WD which releases $n_i$ SM particles of species $i$ each with kinetic energy $\epsilon$.
-
+In this section, we parameterize the explosive power of a generic (ultra-heavy) DM interaction in the WD which releases $n_i$ SM particles of species $i$ each with kinetic energy $\epsilon$. 
 \subsection{DM Transit}
-
-Consider a DM transit through the WD, interacting with stellar constituents in a general manner as shown in Figure \ref{fig:feynmandiag}. The cross section for this interaction is denoted as $\sigma_{i,\epsilon}$. Of course, this released energy must be transferred to the stellar medium in order for the WD to be heated. For a given particle type, each value of $\epsilon$ is characterized by a distance $R_\epsilon$ from the point of release over which it is deposited. In particular, we define $R_\epsilon$ as the distance over which a particle $i$ and any secondaries transfer $\OO(1)$ of the initial energy $\epsilon$ to electrons or ions in the WD. This ``deposition length" will ultimately be related to the heating length $R_\epsilon \sim L$ in a straightforward manner. 
-
+Consider a DM transit through the WD, interacting with stellar constituents in a general manner as shown in Figure \ref{fig:feynmandiag}. The cross section for this interaction is denoted as $\sigma_{i,\epsilon}$. 
 \begin{figure}
 \label{fig:feynmandiag}
 \includegraphics[scale=.05]{feynmandiag}
 \caption{General interaction between ultra-heavy DM and WD constituents, producing $n_i$ additional particles of species $i$.}
-\end{figure}
-
-Setting the total energy released during a transit of length $\text{min}\{\lambda_T, L\}$ to be greater than that required to explode the star \eqref{eqn:boom},
+\end{figure} 
+Setting the total energy released during a transit of length $\text{min}\{\lambda_T, L\}$ to be greater than the explosive energy \eqref{eqn:boom}, we find a lower bound on the interaction cross section sufficient to trigger runaway fusion:
 \begin{equation}
-\label{eq:explosion}
+\label{eq:transitexplosion}
 n_i \sigma_{\epsilon,i} \gtrsim \left\{
         \begin{array}{ll}
             \displaystyle \lambda_T^2 \l \frac{T_B}{\epsilon} \r & \quad L < \lambda_T \\
-             \lambda_T^2 \l \frac{R_\epsilon}{\lambda_T}\r^2 \l \frac{T_B}{\epsilon} \r & \quad L > \lambda_T
+             \lambda_T^2 \l \frac{L}{\lambda_T}\r^2 \l \frac{T_B}{\epsilon} \r & \quad L > \lambda_T
         \end{array}
     \right..
 \end{equation}
-This is in effect a lower bound on the interaction cross section sufficient to trigger runaway fusion. Note that in deriving \eqref{eq:explosion}, we have assumed the DM transit time is less than the corresponding diffusion time. After a time $\Delta t$ the DM has traversed $v_{\text{esc}} \Delta t$, where the velocity is set by the escape velocity of a WD. Therefore, this amounts to the following condition:
+
+Note that in deriving \eqref{eq:transitexplosion}, we have assumed the DM transit time is less than the corresponding diffusion time. After a time $\Delta t$ the DM has traversed $v_{\text{esc}} \Delta t$, where the velocity is set by the escape velocity of a WD. Therefore, this amounts to the following condition:
 \begin{equation}
 \begin{array}{ll}
              \tau_d(\lambda_T, T_B) \gtrsim \frac{\lambda_T}{v_{\text{esc}}}, & \quad \quad L < \lambda_T \\ \\
-            \tau_d(R_\epsilon, T_B)  \gtrsim \frac{R_\epsilon}{v_{\text{esc}}},  & \quad \quad L > \lambda_T
+            \tau_d(L, T_B)  \gtrsim \frac{L}{v_{\text{esc}}},  & \quad \quad L > \lambda_T
         \end{array}
 \end{equation}
-where $\tau_d$ is the characteristic time for a region of given size and temperature to diffuse $\OO(1)$ of its heat. An estimate from the heat equation gives $\tau_d(\lambda_T, T_B) \sim \frac{\lambda_T^2}{\alpha}$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{blue}{Show condition is true for all densities.} We also assume that the time to transfer energy $\epsilon$ out to its characteristic range $R_\epsilon$ is less than the diffusion time scale $\tau_d(\lambda_T, T_B)$.
+where $\tau_d$ is the characteristic time for a region of given size and temperature to diffuse $\OO(1)$ of its heat. An estimate from the heat equation gives $\tau_d(\lambda_T, T_B) \sim \frac{\lambda_T^2}{\alpha}$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{blue}{Show condition is true for all densities.} We also assume that the time to transfer energy $\epsilon$ out to the characteristic temperature profile scale $L$ is less than the diffusion time scale $\tau_d(\lambda_T, T_B)$.
 
 In addition, we have assumed that a DM with this interaction makes it through the crust of the WD. Such a condition amounts to setting 
 \begin{equation}
@@ -158,14 +155,22 @@ Imposing \eqref{eq:explosion} in the case of $L < \lambda_T$, we find a model-in
 \label{eq:transitmass}
 m_{\text{DM}} \gtrsim  T_B \lambda_T^2 \l \frac{n_{\text{crust}} R_{\text{crust}}}{v_{\text{esc}}^2} \r \sim 10^{27} - 10^{34} ~\GeV. 
 \end{equation}
-\textcolor{blue}{1 km crust and same number density as the interior}. If \eqref{eq:transitmass} is violated, than the DM interaction is neither not sufficiently strong to ignite the WD or it is too strong that it has no chance to transit the interior as it gets stopped in the crust. 
+\textcolor{blue}{1 km crust and same number density as the interior}. If \eqref{eq:transitmass} is violated, than the DM interaction is either not strong enough to ignite the WD or it is too strong that it has no chance to transit the interior as it gets stopped in the crust. 
+
+The transit rate for an ultra-heavy DM state through a WD is given by
+\begin{equation}
+\Gamma_\text{DM} = n_Q \sigma_g v \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \pi R_{s}^2 \l\frac{v_\text{esc}^2}{v}\r,
+\end{equation}
+where $v \sim 10^{-3}$ is the virial velocity of DM and $\rho_{\text{DM}}$ is the energy density of DM in the region of interest. $\sigma_g$ denotes the capture cross section including the gravitational Sommerfeld enhancement. Considering a $1.25 M_{\odot}$ WD in the local dark matter halo $\rho_{\text{DM}} \sim 0.3 ~\text{GeV}/\text{cm}^3$, we find that a Q-ball of mass $m_Q \lesssim 10^{20} ~\text{g}$ will transit with a rate $\Gamma_Q \gtrsim \text{Gyr}^{-1}$. If we instead consider (recently discovered) heavy white dwarfs in the galactic center $\rho_{\text{DM}} \sim 10^3 ~\text{GeV}/\text{cm}^3$, Q-balls of mass $m_Q \lesssim 10^{24} ~\text{g}$ will transit within a Gyr. 
 
 \subsection{DM-DM Collisions}
 
 \section{Determination of Heating Length}
 \label{sec:heatinglengthsummary}
+In the DM interactions under consideration, the released energy must be transferred to the stellar medium in order for the WD to be heated. For a given particle type, each value of $\epsilon$ is characterized by a distance $R_{i, \epsilon}$ from the point of release over which it is deposited. In particular, we define $R_{i, \epsilon}$ as the distance over which a particle $i$ and any secondaries transfer $\OO(1)$ of the initial energy $\epsilon$ to electrons or ions in the WD. This deposition length will ultimately be related to the heating length in a straightforward manner. In this section we describe the dominant mechanism of energy loss for various SM particles in a WD, distinguishing between light charged particles, heavy charged particles, photons, and neutral hadrons. We then compute $R_\epsilon$ for different SM particle species, focusing 
+(unless otherwise noted, we will assume a carbon-oxygen WD). 
 
-In this section, we enumerate the different ways in which standard model particles can lose energy to the WD (unless otherwise noted, we will assume a carbon-oxygen WD.) The interior of a WD is a complex environment. Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy $E_F \sim n_e^{1/3} \sim \OO(\text{MeV})$ \textcolor{red}{at all densities?}. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. In what follows, we calculate the WD medium sensitivity to deposited energy and the deposit ranges $R_\epsilon$ for the different possible DM interactions. For the purpose of depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components.
+The interior of a WD is a complex environment. Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy $E_F \sim n_e^{1/3} \sim \OO(\text{MeV})$ \textcolor{red}{at all densities?}. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. In what follows, we calculate the WD medium sensitivity to deposited energy and the deposit ranges $R_\epsilon$ for the different possible DM interactions. For the purpose of depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components.
 
 \subsection{Electromagnetic Interactions}
 
@@ -251,7 +256,7 @@ The end products of a hadronic shower will generally be hadrons of kinetic energ
 \includegraphics[scale=.35]{hadronic.pdf}
 \end{figure}
 
-\section{Example: Q-ball Dark Matter}
+\section{Q-balls}
 In various supersymmetric extensions of the standard model (SM), non-topological solitons called Q-balls can be produced in the early universe \cite{Coleman:1985ki, Kusenko:1997si}. If these Q-balls were stable, they would comprise a component of the dark matter today. Q-balls can be classified into two groups: supersymmetric electrically charged solitons (SECS) and supersymmetric electrically neutral solitons (SENS). When a neutral baryonic Q-ball interacts with a nucleon, it absorbs its baryonic charge as a minimum-energy configuration and induces the dissociation of the nucleon into free quarks. In this process (known as the ``KKST" process), $\sim \text{GeV}$ of energy is released through the emission of 2-3 pions \cite{Dine:2003ax}. The KKST process provides a useful way to detect such Q-balls. The cross section for interaction is approximately the geometric cross section
 \begin{equation}
 \sigma_Q \simeq \pi R_Q^2.
@@ -268,7 +273,7 @@ m_F \l\frac{\Mpl}{m_F}\r^3 \lesssim m_Q, ~~~ \l\frac{\Mpl}{m_F}\r^4 \lesssim Q.
 \end{equation}
 For Q-ball masses of this order, gravitational interactions become relevant while the KKST interaction ceases to exist.
 
-\subsection{Q-ball Explosiveness}
+\subsection{Q-ball Constraints}
 We assume that for each Q-ball collision, there is equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ under the constraint of charge conservation. In the notation of Section \textcolor{blue}{overview}, $n_{\pi} \sim \OO(10)$ pions are released with $\epsilon_{\pi} \sim \text{GeV}$. \textcolor{blue}{The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. $\gamma \approx 5$, so for neutral pions $d_{\pi^0} \sim 10^{-5} ~\text{cm}$ while for charged pions, $d_{\pi^\pm} \sim 10 ~\text{m}$.}
 
 Numerous experiments have studied the effects of $50 - 500 ~\text{MeV}$ pions incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\sim 0.1 ~\text{barn}$ for a (neutral or charged) pion to either scatter elastically, scatter inelastically, or become absorbed with no final state pion \cite{Pionnuclear}. Of these possibilities, pion absorption is the most relevant for energy loss as this will induce a hadronic shower. During this process, $\sim$ 2-3 hadrons (i.e. protons, neutrons, alpha particles) are emitted. \textcolor{blue}{Point of this paragraph: argue that KKST range lies within trigger size}
@@ -282,17 +287,6 @@ is capable of triggering runaway fusion in a heavy $\sim 1.25 M_{\odot}$ WD for 
 \begin{figure}
 \includegraphics[scale=.45]{boomQball.pdf}
 \end{figure}
-
-
-\subsection{Q-ball Constraints}
-The transit rate for an ultra-heavy DM state through a WD is given by
-\begin{equation}
-\Gamma_\text{DM} = n_Q \sigma_g v \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \pi R_{s}^2 \l\frac{v_\text{esc}^2}{v}\r,
-\end{equation}
-where $v \sim 10^{-3}$ is the virial velocity of DM and $\rho_{\text{DM}}$ is the energy density of DM in the region of interest. $\sigma_g$ denotes the capture cross section including the gravitational Sommerfeld enhancement.
-
-
-The existence of heavy white dwarfs can rule out Q-ball DM. Considering a $1.25 M_{\odot}$ WD in the local dark matter halo $\rho_{\text{DM}} \sim 0.3 ~\text{GeV}/\text{cm}^3$, we find that a Q-ball of mass $m_Q \lesssim 10^{20} ~\text{g}$ will transit with a rate $\Gamma_Q \gtrsim \text{Gyr}^{-1}$. If we instead consider (recently discovered) heavy white dwarfs in the galactic center $\rho_{\text{DM}} \sim 10^3 ~\text{GeV}/\text{cm}^3$, Q-balls of mass $m_Q \lesssim 10^{24} ~\text{g}$ will transit within a Gyr.
 
 \section{Discussion}
 
