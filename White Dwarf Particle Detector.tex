@@ -165,87 +165,17 @@ where $v \sim 10^{-3}$ is the virial velocity of DM and $\rho_{\text{DM}}$ is th
 
 \section{White Dwarf - Particle Detector}
 \label{sec:heatinglengthsummary}
-In the DM interactions under consideration, the released energy must be transferred to the stellar medium in order for the WD to be heated. For a given particle type, each value of $\epsilon$ is characterized by a distance $R_{i, \epsilon}$ from the point of release over which it is deposited. In particular, we define $R_{i, \epsilon}$ as the distance over which a particle $i$ and any secondaries transfer $\OO(1)$ of the initial energy $\epsilon$ to electrons or ions in the WD. In this section we describe the dominant mechanism of energy loss for various SM particles in a WD. We then use this to compute the deposition length $R_{i, \epsilon}$, which can be related to the heating length in a straightforward manner. For the purpose of depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components. 
-
-\subsection{Electromagnetic Calorimeter}
+In the DM interactions under consideration, the released energy must be transferred to the stellar medium in order for the WD to be heated. In particular, we define $R_{i, \epsilon}$ as the distance over which a particle species $i$ and any secondaries transfer $\OO(1)$ of the initial energy $\epsilon$ to electrons or ions in the WD. In this section we describe the dominant mechanism of energy loss for various SM particles in a WD and compute the deposition length $R_{i, \epsilon}$ in each case . For a given process, $R_{i, \epsilon}$ will be directly related to the heating length $L$ in a straightforward manner. As we are primarily concerned with depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components. 
 
 The interior of a WD is a complex environment (unless otherwise noted, we will assume a carbon-oxygen WD). Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy $E_F \sim n_e^{1/3}$, where $n_e$ is the number density of electrons. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. 
 
-For charged particles, Coulomb scattering is a useful mechanism for energy transfer. Generically, an incident (spin-0) particle of mass $m_i$, charge $e$, and velocity $\beta$ scattering off a target $M_t$ of charge $Ze$ is described by the ``Rutherford" differential cross section \textcolor{blue}{Originally derived by Bhabha?}
-\begin{equation}
-\label{eq:rutherford}
-\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M_t \beta^2} \frac{1}{E'^2} \l1- \frac{\beta^2 E'}{E_{\text{kin}}}\r,
- \end{equation}
-where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}. $E_{\text{kin}}$ denotes the maximum energy transfer possible satisfying kinematic constraints \textcolor{blue}{target at rest and zero relative angle between incoming incident and outgoing target momenta}:
-\begin{equation}
-E_{\text{kin}} = \frac{2 M_t \beta^2 \gamma^2}{1+ 2\gamma(M_t/m_i) +(M_t/m_i)^2},
-\end{equation}
-where $\gamma = (1-\beta)^{-1/2}$.
+\subsection{Hadronic Calorimeter}
 
-For sufficiently heavy incident particles, the differential cross section depends only on the velocity of the incident particle. Note that higher-spin particles receive additional corrections to the cross section, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that soft scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
+For sufficiently energetic particles greater than the nuclear binding energy $E_{nuc} \sim \OO(10 ~\text{MeV})$, nuclear interactions typically result in an $\OO(1)$ number of energetic secondary hadrons (protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. In addition, the nucleus will generally be left in an excited state and relax through the emission of low-energy $\OO(10 ~\text{MeV})$ nucleons (``nuclear evaporation") and photons \cite{Rossi}. The cross section for any such process is approximately set by the nuclear length scale $\sim \text{fm}$. A hadronic shower is a result of all such reactions caused by primary and secondary particles.
 
-To understand the effect of degeneracy, we first consider the energy loss from scattering a high-energy charged particles off non-degenerate targets in the WD, for instance, the carbon nuclei. In this case, the stopping power due to collisions with a number density $n$ is given by:
-\begin{align}
-\label{eq:SP}
-\frac{dE}{dx} & = - \int dE' \left(\frac{d \sigma}{dE'}\right) n E' \\
-& \sim -\frac{2 \pi n Z^2 \alpha^2}{M_t \beta^2} \log{\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}.
-\end{align}
-This integration must be performed over all $E'$ within the regime of validity for \eqref{eq:rutherford}, fixing the lower and upper bounds of the ``Coulomb Logarithm". Quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target. In terms of impact parameter $b$ for the collision, this translates to a bound $b \gtrsim (\text{min}\{{m_i, M_t}\} \beta \gamma)^{-1}$ corresponding to the larger de Broglie wavelength. In terms of energy transfer, this becomes
-\begin{equation}
-E' \lesssim E_q = \frac{2 ~\text{min}\{{m_i, M_t}\}^2 Z^2 \alpha^2 \gamma^2}{M_t}.
-\end{equation}
-In addition, the expression for the differential cross section \eqref{eq:rutherford} no longer holds when $E'$ becomes larger than the mass of the target \cite{Rossi}. For our calculations, we take the maximum energy that an incident particle is able to transfer to be
-\begin{equation}
-E_{\text{max}} = \text{min}\{E_q, E_{\text{kin}}, M_t\}.
-\end{equation}
-On the other hand, the maximum impact parameter is determined by charge screening. In a WD, this is simply the screening due to a degenerate electron gas \textcolor{blue}{similar to a solid} and is given by the Thomas-Fermi length \cite{Teukolsky}
-\begin{equation}
-l_{\text{sc}} = \l\frac{6 \pi Z e^2 n_e}{E_F}\r^{-1/2}\sim \frac{1}{m_e}.
-\end{equation}
-\textcolor{blue}{This is the equivalent of the Debye screening length for a degenerate gas at Fermi energy $E_F$}. This corresponds to a lower bound
-\begin{equation}
-E_{\text{sc}} = \frac{2 m_e^2 Z^2 \alpha^2}{M_t \beta^2}.
-\end{equation}
-Note that when the incident particle reaches velocity $\beta \gamma \approx \frac{m_e}{\text{min}\{m_i, M_t\}}$, the minimum possible energy transfer due to Thomas-Fermi screening will in fact exceed the maximum. At this point, the form of equation \eqref{eq:SP} becomes modified to avoid unphysical non-negative values of $dE/dx$ and there is negligible stopping power due to collisions. However, the lattice structure of ions in the WD introduces further complications \cite{Teukolsky}. The typical lattice binding energy between ions is given by the electric potential
-\begin{equation}
-E_B \sim \frac{Z^2 e^2}{n^{-1/3}}.
-\end{equation}
-For energy transfers greater than $E_B$, any lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold may lead to suppressed energy loss due to collective effects. For simplicity we set the lower bound on nuclei scattering (not applicable for electron targets) to be
-\begin{equation}
-E_{\text{min}} = \text{max} \{E_B,E_{\text{sc}}\}
-\end{equation}
-so that we only account for energy transfers greater than the ionic lattice binding energy.
+To estimate the typical shower length, we assume a primary particle of energy $\epsilon$ interacting with nuclei to produce $N$ secondary particles each of energy $\epsilon/N$ (we ignore the effects of the evaporative stage in each reaction as this will only introduce minor corrections at sufficiently large $\epsilon$). The shower will end once final-state particles reach a critical energy $E_c$ at which point other processes dominate the energy loss. Although charged particles 
 
-When considering collisions with the degenerate electrons, an incident particle transferring energy $E'$ can only scatter those electrons within $E'$ of the Fermi surface. We define a modified density of electrons $n_e(E')$ as:
-\begin{equation}
-n_e(E') = \left\{
-        \begin{array}{ll}
-            \displaystyle \int \limits_{E_F -E'}^{E_F}dE ~g(E) & \quad E' \leq E_F \\
-            n_e & \quad E_F \leq E'
-        \end{array}
-    \right.,
-\end{equation}
-where $g(E)$ is the density of states per unit volume for a three-dimensional free electron gas. This can also be expressed as a suppression of the differential cross section of order $\mathcal{O}(E'/E_F)$ whenever energy less than $E_F$ is transferred. Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact subdominant to the contributions from rare hard-scatters. The stopping power is also highly sensitive to $E_{\text{max}}$ and $E_{\text{min}}$, governed by a power-law dependence rather than the logarithmic sensitivity in the case of a non-degenerate target.
-
-We have calculated the stopping power of high-energy particles solely due to Coulomb collisions, differentiating between nuclei and degenerate electron targets. This is shown in Figure \textcolor{blue}{Figure} for an electron density $n_e \sim 10^{33} ~\text{cm}^{-3}$. It is found that for heavy incident particles, the stopping power is dominated by collisions with nuclei at low-energies although it is dominated by collisions with degenerate electrons at high-energies. In addition, scattering off degenerate electrons becomes completely screened at a comparatively higher energies.
-
-\begin{figure}
-\includegraphics[scale=.4]{electronenergyloss}
-\end{figure}
-
-\begin{figure}
-\includegraphics[scale=.4]{muonenergyloss}
-\end{figure}
-
-\begin{figure}
-\includegraphics[scale=.4]{protonenergyloss}
-\end{figure}
-
-\subsection{Strong Interactions}
-
-Strong interactions are a significant channel for energy transfer in the WD. For sufficiently energetic particles greater than the nuclear binding energy $E_{nuc} \sim \OO(10 ~\text{MeV})$, nuclear interactions (absorption) result in an $\OO(1)$ number of energetic secondary hadrons (protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. In addition, the nucleus will generally be left in an excited state and relax through the emission of low-energy $\OO(10 ~\text{MeV})$ nucleons (``nuclear evaporation") and photons \cite{Rossi}. The cross section for any such process is approximately set by the nuclear length scale $\sim \text{fm}$. A hadronic shower is a result of all such reactions caused by primary and secondary particles.
-
-To estimate the typical shower length, we assume a primary particle of energy $\epsilon$ interacting with nuclei to produce $N$ secondary particles each of energy $\epsilon/N$. The shower will end once final-state particles reach energies of order $E_{nuc}$. We ignore the effects of the evaporative stage in each reaction as this will only introduce minor corrections at sufficiently large $\epsilon$. We find a hadronic shower length $L = l_\text{nuc} \l \frac{\log{(\epsilon/E_{nuc})}}{\log{N}}\r$, where $l_\text{nuc}$ is the mean free path for nuclear collisions. For a number density $n \sim 10^{32} ~\text{cm}^{-3}$ and hadronic cross section $\sim 0.1 ~\text{barn}$ \textcolor{blue}{match nuclear data for carbon nonelastic scattering} this results in a shower length $L \approx 10  ~l_\text{nuc} \approx 10^{-6} ~\text{cm}$. Note that this only has a mild, logarithmic sensitivity to the initial energy $\epsilon \gg ~\text{10 ~\text{MeV}}$ and number of secondaries $N \sim \OO(1)$.
+We find a hadronic shower length $L = l_\text{nuc} \l \frac{\log{(\epsilon/E_{nuc})}}{\log{N}}\r$, where $l_\text{nuc}$ is the mean free path for nuclear collisions. For a number density $n \sim 10^{32} ~\text{cm}^{-3}$ and hadronic cross section $\sim 0.1 ~\text{barn}$ \textcolor{blue}{match nuclear data for carbon nonelastic scattering} this results in a shower length $L \approx 10  ~l_\text{nuc} \approx 10^{-6} ~\text{cm}$. Note that this only has a mild, logarithmic sensitivity to the initial energy $\epsilon \gg ~\text{10 ~\text{MeV}}$ and number of secondaries $N \sim \OO(1)$.
 
 The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$ which are incapable of inducing further nuclear disintegration. Charged hadrons have appreciable electromagnetic interactions with nuclei, while collisions with degenerate electrons are completely screened at these energies. Integrating \eqref{eq:SP}, we find that in a density of $n \sim 10^{32} ~\text{cm}^{-3}$ protons traverse $\approx 10^{-6} ~\text{cm}$ slowing down from 5 MeV to 1 MeV. \textcolor{blue}{The corresponding distance is significantly larger for charged pions $\sim 10^{-2} ~\text{cm}$} On the other hand, electromagnetic couplings are highly suppressed for final-state neutral hadrons. The dominant source of energy loss for neutrons in this range is elastic scattering off nuclei \textcolor{blue}{neutron capture cross section in C+O is negligible}. Each scatter transfers a fraction $\l1-\l\frac{m}{m + M}\r^2\r \approx 0.1$ of the neutron energy to nuclei (averaging over scattering angles), where $m$ and $M$ are the masses of the neutron and nuclei, respectively.  At kinetic energies below $\sim \text{MeV}$, the typical energy transfer in an elastic collision is of order the binding energy in the Coulomb lattice $E_B$. We find that $\OO(10)$ elastic scatters are needed to slow neutrons from 5 MeV to 1 MeV. For a number density $n \sim 10^{32} ~\text{cm}^{-3}$ and elastic cross section $\sim ~\text{barn}$ \textcolor{blue}{set to match nuclear data for carbon nonelastic scattering}, we find that neutrons traverse a total distance (in the form of a random-walk) $\sim 10^{-8} ~\text{cm}$ during this energy deposition.
 
@@ -291,6 +221,67 @@ is capable of triggering runaway fusion in a heavy $\sim 1.25 M_{\odot}$ WD for 
 
 \section{Detail Study of Heating Lengths}
 \label{app:heatinglengthfull}
+
+\subsubsection{Coulomb Collisions}
+Generically, an incident (spin-0) particle of mass $m_i$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $m_t$, charge $Ze$ is described by the differential cross section
+\begin{equation}
+\label{eq:rutherford}
+\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{m_t \beta^2} \frac{1}{E'^2} \l1- \frac{\beta^2 E'}{E_{\text{kin}}}\r,
+ \end{equation}
+where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}. $E_{\text{kin}}$ denotes the maximum energy transfer possible satisfying kinematic constraints:
+\begin{equation}
+E_{\text{kin}} = \frac{2 m_t \beta^2 \gamma^2}{1+ 2\gamma(m_t/m_i) +(m_t/m_i)^2},
+\end{equation}
+where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor.
+
+For sufficiently heavy incident particles, the differential cross section depends only on the velocity of the incident particle. Note that higher-spin particles receive additional corrections to the cross section, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that soft scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
+
+We first consider the energy loss from scattering high-energy charged particles off non-degenerate targets. In this case, the stopping power due to collisions with a number density $n$ is given by:
+\begin{align}
+\label{eq:SP}
+\frac{dE}{dx} & = - \int dE' \left(\frac{d \sigma}{dE'}\right) n E' \\
+& \sim -\frac{n Z^2 \alpha^2}{m_t \beta^2} \log{\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}.
+\end{align}
+\eqref{eq:SP} must be integrated over all $E'$ within the regime of validity for \eqref{eq:rutherford}, thereby fixing the lower and upper bounds of the Coulomb logarithm. Quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target. In terms of the collisional impact parameter $b$, this results in a bound $b > \frac{1}{\text{min}\{{m_i, m_t}\} \beta \gamma}$ and in terms of energy transfer, this translates to the condition
+\begin{equation}
+E' < E_q \sim \frac{Z^2 \alpha^2 \gamma^2 ~\text{min}\{{m_i, m_t}\}^2}{m_t}.
+\end{equation}
+In addition, the expression for the differential cross section \eqref{eq:rutherford} no longer holds when $E'$ becomes larger than the mass of the target \cite{Rossi}. For our calculations, we take the maximum energy that an incident particle is able to transfer to be
+\begin{equation}
+E_{\text{max}} = \text{min}\{E_q, E_{\text{kin}}, m_t\}.
+\end{equation}
+On the other hand, the maximum impact parameter is set by Thomas-Fermi screening due to the degenerate electron gas:
+\begin{equation}
+\lambda_{\text{TF}} \sim \l \frac{Z e^2 n_e}{E_F}\r^{-1/2},
+\end{equation}
+This corresponds to a lower bound
+\begin{equation}
+E_{\text{sc}} \sim \frac{m_e^2 Z^2 \alpha^2}{m_t \beta^2}.
+\end{equation}
+However, the lattice structure of ions in the WD introduces further complications \cite{Teukolsky}. The typical Coulomb lattice binding energy between ions of number density $n$ is given by the electric potential
+\begin{equation}
+E_B \sim \frac{Z^2 e^2}{n^{-1/3}}.
+\end{equation}
+For energy transfers greater than $E_B$, any lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold may lead to suppressed energy loss due to collective effects. For simplicity we set the lower bound on nuclei scattering (not applicable for electron targets) to be
+\begin{equation}
+E_{\text{min}} = \text{max} \{E_B,E_{\text{sc}}\}
+\end{equation}
+so that we only account for energy transfers greater than the ionic lattice binding energy.
+
+Now we consider collisions with degenerate electrons. An incident particle transferring energy $E'$ can only scatter those electrons within $E'$ of the Fermi surface. We define a modified density of electrons $n_e(E')$ as:
+\begin{equation}
+n_e(E') = \left\{
+        \begin{array}{ll}
+            \displaystyle \int \limits_{E_F -E'}^{E_F}dE ~g(E) & \quad E' \leq E_F \\
+            n_e & \quad E_F \leq E'
+        \end{array}
+    \right.,
+\end{equation}
+where $g(E)$ is the density of states per unit volume for a three-dimensional free electron gas. The effect of degeneracy can also be cast as a suppression of the differential cross section of order $\mathcal{O}(E'/E_F)$ whenever energy less than $E_F$ is transferred. Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact \emph{subdominant} to the contributions from rare hard-scatters. The stopping power is also sensitive to the integration bounds $E_{\text{max}}$ and $E_{\text{min}}$ as a power-law dependence unlike the logarithmic sensitivity \eqref{eq:SP} in the case of a non-degenerate target. 
+
+\subsection{Radiative Effects}
+
+
 
 \section{Acknowledgements}
 We are grateful to S. Rajendran for suggestions and collaboration during the early stages of this work, as well as his ``benign negligence". We would also like to thank D. Grabowska, K. Harigaya, R. McGehee, and J. Wurtele for stimulating discussions.
