@@ -81,35 +81,29 @@ Concrete examples of DM candidates with interactions of this type include baryon
 
 \textcolor{blue}{Other ignition sources exist (i.e., detector backgrounds). How does this limit our constraints? Discuss the specific tests we apply (WD lifetime, SN rate) to derive our constraints.} \textcolor{red}{Possible long term addition: improve constraints by using non-type IA sn rate instead of total rate. Should talk with SN people first.}
 
+We begin in Section \ref{sec:review} by reviewing the explosion mechanism in a WD. In Section \ref{sec:DMexplode}, we parametrize the properties of DM necessary to trigger explosions through non-gravitational interactions in the case of a DM transit or collision in the star. The precise explosive power will be determined by a heating length, which is computed in \ref{sec:heatinglength} for different possible interactions. Following this general discussion, we apply the WD detector to constrain Q-balls in Section \ref{sec:Qballs} amd conclude in Section \ref{sec:discussion}. 
 
-\textcolor{blue}{Add the traditional table-of-contents paragraph}
+\section{White Dwarf Runaway Fusion}
+\label{sec:review}
+In a WD, the \emph{fusion temperature} $T_f$ is a constant set by the energy required for ions to overcome their mutual Coulomb barriers $T_f \sim \MeV$. WD cooling is set by the thermal diffusivity of photons and degenerate electrons. The two species dominate the cooling at different stellar densities, as determined precisely in \cite{Woosley}. Note that for a heated region of size $R$, this cooling rate scales as $R^{-2}$ while the fusion rate scales as $R^{-3}$. Thus there is a critical \emph{trigger size} $\lambda_T$ below which diffusive cooling dominates the thermal evolution of a temperature peak, and above which the liberated fusion energy dominates \cite{Woosley}. Therefore, a region with temperature greater than $T_f$ and size greater than $\lambda_T$ in a given WD will launch a runaway fusion chain-reaction and result in a type Ia supernova. The numerical value of $\lambda_T$ is highly sensitive to the WD density and has been analytically scaled for varying WD masses in \cite{Graham:2015apa}. As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $0.7 - 1.4 ~M_{\odot}$ which correspond to a number density of nuclei $n \sim 10^{29} - 10^{32} ~\cm^{-3}$. Over this range, the trigger size is approximately $\lambda_T \sim 10^{-5} - 10^{-2} ~\text{cm}$.  
 
-\section{Review: White Dwarf Runaway Fusion}
-In a WD, the \emph{fusion temperature} $T_B$ is a constant set by the energy required for ions to overcome their mutual Coulomb barriers $T_B \sim \MeV$. WD cooling is set by the thermal diffusivity of photons and degenerate electrons. The two species dominate the cooling at different stellar densities, as determined precisely in \cite{Woosley}. Note that for a heated region of size $R$, this cooling rate scales as $R^{-2}$ while the fusion rate scales as $R^{-3}$. Thus there is a critical \emph{trigger size} $\lambda_T$ below which diffusive cooling dominates the thermal evolution of a temperature peak, and above which the liberated fusion energy dominates \cite{Woosley}. Therefore, a region with temperature greater than $T_B$ and size greater than $\lambda_T$ in a given WD will launch a runaway fusion chain-reaction and result in a type Ia supernova. The numerical value of $\lambda_T$ is highly sensitive to the WD density and has been analytically scaled for varying WD masses in \cite{Graham:2015apa}. These results are reproduced in Figure~\ref{fig:triggersize}. As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $0.7 - 1.4 ~M_{\odot}$ which correspond to a number density of nuclei $n \sim 10^{29} - 10^{32} ~\cm^{-3}$. Over this range, the trigger size is approximately $\lambda_T \sim 10^{-5} - 10^{-2} ~\text{cm}$.  
-
-A general energy deposition event in the WD can be roughly characterized by two parameters: a temperature $T$ and heating length $L$. This energy deposit will eventually take the form of a local peak in the WD temperature profile. We define $T$ to be the characteristic temperature and $L$ the characteristic length scale of this local peak as it initially appears. $L$ is determined by the efficiency with which a given energy deposition mechanism interacts with the stellar medium. To demonstrate the significance of $L$, suppose that kinetic energy were transferred directly to neighboring ions via short-range elastic scatters. These ions would thermalize over their collisional time scale resulting in a heating length $L$ of order the ion mean free path. In fact, this is the minimal $L$ possible for any process which couples to WD constituents (ions or electrons). In the other extreme, suppose that a process produces a large number of electrons with energy just above the Fermi energy.  These electrons have Pauli-suppressed interactions with the medium and will travel a long distance before their energy is scattered and thermalized, resulting in a large $L$ - possibly of order the stellar radius. 
+A general energy deposition event in the WD can be roughly characterized by two parameters: a temperature $T$ and heating length $L$. This energy deposit will eventually take the form of a local peak in the WD temperature profile. We define $T$ to be the characteristic temperature and $L$ the characteristic length scale of this local peak as it initially appears. $L$ is determined by the efficiency with which a given energy deposition mechanism interacts with the stellar medium. To demonstrate the significance of $L$, suppose that kinetic energy were transferred directly to neighboring ions via short-range elastic scatters. These ions would thermalize over their collisional time scale resulting in a heating length $L$ of order the ion mean free path. In the other extreme, suppose that a process produces a large number of electrons with energy just above the Fermi energy.  These electrons have Pauli-suppressed interactions with the medium and will travel a long distance before their energy is scattered and thermalized, resulting in a large $L$ - possibly of order the stellar radius. 
 
 We find that a heating event will destroy a given WD as long as the energy density \emph{and} energy deposited are sufficiently large:
 \begin{equation}
 \label{eqn:runaway}
-T \gtrsim T_B, ~~~~ L \gtrsim \lambda_T.
+T \gtrsim T_f, ~~~~ L \gtrsim \lambda_T.
 \end{equation}
-Note that this condition determines if a region of size $L$ and temperature $T$ \emph{immediately} initiates runaway fusion.  Instead, it is more useful to determine whether a given energy deposit will \emph{eventually} initiate runaway fusion. In particular, a heating event that results in $T \gg T_B$ and $L  < \lambda_T$ is perhaps initially dominated by diffusive cooling but can potentially evolve into an ``explosive" temperature profile capable of igniting the star. When diffusion dominates, the thermal evolution will approximately be given by the dilution of the fixed total energy of the initial region over the final volume. Taking this into account, we can express the explosion condition \eqref{eqn:runaway} in terms of an excess energy within the temperature peak (rather than the temperature itself):
+Note that this condition determines if a region of size $L$ and temperature $T$ \emph{immediately} initiates runaway fusion.  Instead, it is more useful to determine whether a given energy deposit will \emph{eventually} initiate runaway fusion. In particular, a heating event that results in $T \gg T_f$ and $L  < \lambda_T$ is perhaps initially dominated by diffusive cooling but can potentially evolve into an ``explosive" temperature profile capable of igniting the star. When diffusion dominates, the thermal evolution will approximately be given by the dilution of the fixed total energy of the initial region over the final volume. Taking this into account, we can express the explosion condition \eqref{eqn:runaway} in terms of an excess energy within the temperature peak (rather than the temperature itself):
 \begin{equation}
 \label{eqn:boom}
-E \gtrsim n T_B \text{max}\{L, \lambda_T\}^3.
+E \gtrsim n T_f \text{max}\{L, \lambda_T\}^3.
 \end{equation}
 In fact, there is an absolute minimum explosion energy given by
 \begin{equation}
-E_{\text{boom}} \sim n T_B \lambda_T^3 \sim 10^{14} - 10^{22} ~\GeV,
+E_{\text{boom}} \sim n T_f \lambda_T^3 \sim 10^{14} - 10^{22} ~\GeV,
 \end{equation}
-where $\lambda_T$ varies over a range of WD densities as shown in Figure \ref{fig:triggersize}. $E_{\text{boom}}$ is plotted for different WD densities in Figure \ref{fig:Eboom}. However, this energy is sufficient only if it thermalizes within the trigger size.  If an energy is deposited on a length scale larger than $\lambda_T$, the explosion energy required is given by \eqref{eqn:boom} and may be parametrically larger. Since we are concerned with processes that have a fixed deliverable energy (the energy of the incoming DM), the most explosive processes will be those that result in the most localized heating. As a result, understanding the heating length $L$ for various processes is critical to assessing their explosive potential. This is done in Section~\ref{sec:heatinglengthsummary}.
-\begin{figure}
-\includegraphics[scale=.45]{triggerboom.pdf}
-\caption{Approximate trigger sizes for carbon-oxygen white dwarfs, based on numerical results in \cite{Woosley} and analytically scaled in \cite{Graham:2015apa}.
-\textcolor{blue}{extend to 0.4 solar mass}}
-\label{fig:triggersize}
-\end{figure}
+where $\lambda_T$ varies over a range of WD densities. This is plotted in Figure \ref{fig:Eboom}. However, this energy is sufficient only if it thermalizes within the trigger size.  If an energy is deposited on a length scale larger than $\lambda_T$, the explosion energy required is given by \eqref{eqn:boom} and may be parametrically larger. Since we are concerned with processes that have a fixed deliverable energy (the energy of the incoming DM), the most explosive processes will be those that result in the most localized heating. As a result, understanding the heating length $L$ for various processes is critical to assessing their explosive potential. This is done in Section~\ref{sec:heatinglength}.
 
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
@@ -118,6 +112,7 @@ where $\lambda_T$ varies over a range of WD densities as shown in Figure \ref{fi
 \end{figure}
 
 \section{Dark Matter Explosiveness}
+\label{sec:DMexplode}
 In this section, we parameterize the explosive power of a generic (ultra-heavy) DM interaction in the WD which releases $n_i$ SM particles of species $i$ each with kinetic energy $\epsilon$. 
 \subsection{DM Transit}
 Consider a DM transit through the WD, interacting with stellar constituents in a general manner as shown in Figure \ref{fig:feynmandiag}. The cross section for this interaction is denoted as $\sigma_{i,\epsilon}$. 
@@ -131,8 +126,8 @@ Setting the total energy released during a transit of length $\text{max}\{\lambd
 \label{eq:transitexplosion}
 n_i \sigma_{\epsilon,i} \gtrsim \left\{
         \begin{array}{ll}
-            \displaystyle \lambda_T^2 \l \frac{T_B}{\epsilon} \r & \quad L < \lambda_T \\
-             \lambda_T^2 \l \frac{L}{\lambda_T}\r^2 \l \frac{T_B}{\epsilon} \r & \quad L > \lambda_T
+            \displaystyle \lambda_T^2 \l \frac{T_f}{\epsilon} \r & \quad L < \lambda_T \\
+             \lambda_T^2 \l \frac{L}{\lambda_T}\r^2 \l \frac{T_f}{\epsilon} \r & \quad L > \lambda_T
         \end{array}
     \right..
 \end{equation}
@@ -141,7 +136,7 @@ Note that in deriving \eqref{eq:transitexplosion}, we require that the DM transi
 \begin{equation}
 \tau_d \gtrsim \frac{\text{max}\{\lambda_T, L\}}{v_\text{esc}},
 \end{equation}
-where $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lambda_T, L\}$ and temperature $T_B$ to diffuse $\OO(1)$ of its heat, and $v_\text{esc}$ is the DM transit velocity (set by the escape velocity of the WD). An estimate from the heat equation yields $\tau_d \sim \frac{\lambda_T^2}{\alpha}$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{red}{Show condition is true for all densities.} Similarly, we also require that the time to transfer energy $\epsilon$ out to the initial temperature profile of length $L$ is less than the diffusion time scale $\tau_d$. Both of these conditions are necessary to ensure that energy depositions from individual collisions add coherently into a temperature profile during the full transit length. While a heating event can still be explosive if either of these conditions are violated, the formalism of \eqref{eq:transitexplosion} no longer holds in this case. 
+where $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lambda_T, L\}$ and temperature $T_f$ to diffuse $\OO(1)$ of its heat, and $v_\text{esc}$ is the DM transit velocity (set by the escape velocity of the WD). An estimate from the heat equation yields $\tau_d \sim \frac{\lambda_T^2}{\alpha}$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{red}{Show condition is true for all densities.} Similarly, we also require that the time to transfer energy $\epsilon$ out to the initial temperature profile of length $L$ is less than the diffusion time scale $\tau_d$. Both of these conditions are necessary to ensure that energy depositions from individual collisions add coherently into a temperature profile during the full transit length. While a heating event can still be explosive if either of these conditions are violated, the formalism of \eqref{eq:transitexplosion} no longer holds in this case. 
 
 In addition, we require that a DM with this interaction makes it through the crust of the WD of size of density $n_{\text{c}}$ and size $R_{\text{c}}$:
 \begin{equation}
@@ -150,7 +145,7 @@ n_i \sigma_{\epsilon,i} \lesssim \l \frac{m_{\text{DM}} v_{\text{esc}}^2}{n_{\te
 Imposing \eqref{eq:transitexplosion}, we find lower bound on $m_{\text{DM}}$ such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
 \begin{equation}
 \label{eq:transitmass}
-m_{\text{DM}} \gtrsim  T_B ~\text{max}\{\lambda_T, L\}^2 \l \frac{n_{\text{c}} R_{\text{c}}}{v_{\text{esc}}^2} \r
+m_{\text{DM}} \gtrsim  T_f ~\text{max}\{\lambda_T, L\}^2 \l \frac{n_{\text{c}} R_{\text{c}}}{v_{\text{esc}}^2} \r
 \end{equation}
 If \eqref{eq:transitmass} is violated, than the DM interaction is either not strong enough to ignite the WD or it is too strong that it has no chance to transit the interior as it gets stopped in the crust. In the case of $\lambda_T > L$, this translates to a model-independent lower-bound on the DM mass $\sim 10^{27} - 10^{34} ~\GeV$. \textcolor{blue}{used 1 km crust and same number density as interior}. 
 
@@ -163,66 +158,64 @@ where $v \sim 10^{-3}$ is the virial velocity of DM and $\rho_{\text{DM}}$ is th
 
 \subsection{DM-DM Collisions}
 
-\section{White Dwarf - Particle Detector}
-\label{sec:heatinglengthsummary}
-In the DM interactions under consideration, the released energy must be transferred to the stellar medium in order for the WD to be heated. In particular, we define $R_{i, \epsilon}$ as the distance over which a particle species $i$ and any secondaries transfer $\OO(1)$ of the initial energy $\epsilon$ to electrons or ions in the WD. In this section we describe the dominant mechanism of energy loss for various SM particles in a WD and compute the deposition length $R_{i, \epsilon}$ in each case . For a given process, $R_{i, \epsilon}$ will be directly related to the heating length $L$ in a straightforward manner. As we are primarily concerned with depositing sufficient energy to trigger supernovae, we focus on high-energy particles $\epsilon \gg \text{MeV}$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components. 
+\section{Heating Length}
+\label{sec:heatinglength}
+For the DM interactions under consideration, the released energy must be efficiently transferred to the WD in order to trigger runaway fusion. We define $R_{i, \epsilon}$ as the distance over which a particle species $i$ and any secondaries transfer $\OO(1)$ of the initial energy $\epsilon$ to stellar constituents. In this section, we summarize the available modes of energy loss for different SM particles in a WD and compute the deposition length $R_{i, \epsilon}$ in each case. Detailed calculations of the various interactions are presented in Section \ref{sec:appendix}. For a given process, $R_{i, \epsilon}$ will be directly related to the heating length $L$ in a straightforward manner. As we are primarily concerned with depositing sufficient energy to ignite supernovae, we focus on high-energy particles $\epsilon \gg T_f$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components. 
 
-The interior of a WD is a complex environment (unless otherwise noted, we will assume a carbon-oxygen WD). Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy $E_F \sim n_e^{1/3}$, where $n_e$ is the number density of electrons. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. 
+\subsection{Electrons and Photons}
 
-\subsection{Hadronic Calorimeter}
+\subsection{Heavy Charged Particles}
 
-For sufficiently energetic particles greater than the nuclear binding energy $E_{nuc} \sim \OO(10 ~\text{MeV})$, nuclear interactions typically result in an $\OO(1)$ number of energetic secondary hadrons (protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. In addition, the nucleus will generally be left in an excited state and relax through the emission of low-energy $\OO(10 ~\text{MeV})$ nucleons (``nuclear evaporation") and photons \cite{Rossi}. The cross section for any such process is approximately set by the nuclear length scale $\sim \text{fm}$. A hadronic shower is a result of all such reactions caused by primary and secondary particles.
-
-To estimate the typical shower length, we assume a primary particle of energy $\epsilon$ interacting with nuclei to produce $N$ secondary particles each of energy $\epsilon/N$ (we ignore the effects of the evaporative stage in each reaction as this will only introduce minor corrections at sufficiently large $\epsilon$). The shower will end once final-state particles reach a critical energy $E_c$ at which point other processes dominate the energy loss. Although charged particles 
-
-We find a hadronic shower length $L = l_\text{nuc} \l \frac{\log{(\epsilon/E_{nuc})}}{\log{N}}\r$, where $l_\text{nuc}$ is the mean free path for nuclear collisions. For a number density $n \sim 10^{32} ~\text{cm}^{-3}$ and hadronic cross section $\sim 0.1 ~\text{barn}$ \textcolor{blue}{match nuclear data for carbon nonelastic scattering} this results in a shower length $L \approx 10  ~l_\text{nuc} \approx 10^{-6} ~\text{cm}$. Note that this only has a mild, logarithmic sensitivity to the initial energy $\epsilon \gg ~\text{10 ~\text{MeV}}$ and number of secondaries $N \sim \OO(1)$.
-
-The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$ which are incapable of inducing further nuclear disintegration. Charged hadrons have appreciable electromagnetic interactions with nuclei, while collisions with degenerate electrons are completely screened at these energies. Integrating \eqref{eq:SP}, we find that in a density of $n \sim 10^{32} ~\text{cm}^{-3}$ protons traverse $\approx 10^{-6} ~\text{cm}$ slowing down from 5 MeV to 1 MeV. \textcolor{blue}{The corresponding distance is significantly larger for charged pions $\sim 10^{-2} ~\text{cm}$} On the other hand, electromagnetic couplings are highly suppressed for final-state neutral hadrons. The dominant source of energy loss for neutrons in this range is elastic scattering off nuclei \textcolor{blue}{neutron capture cross section in C+O is negligible}. Each scatter transfers a fraction $\l1-\l\frac{m}{m + M}\r^2\r \approx 0.1$ of the neutron energy to nuclei (averaging over scattering angles), where $m$ and $M$ are the masses of the neutron and nuclei, respectively.  At kinetic energies below $\sim \text{MeV}$, the typical energy transfer in an elastic collision is of order the binding energy in the Coulomb lattice $E_B$. We find that $\OO(10)$ elastic scatters are needed to slow neutrons from 5 MeV to 1 MeV. For a number density $n \sim 10^{32} ~\text{cm}^{-3}$ and elastic cross section $\sim ~\text{barn}$ \textcolor{blue}{set to match nuclear data for carbon nonelastic scattering}, we find that neutrons traverse a total distance (in the form of a random-walk) $\sim 10^{-8} ~\text{cm}$ during this energy deposition.
+\subsection{Hadrons}
 
 \begin{figure}
 \includegraphics[scale=.35]{hadronic.pdf}
 \end{figure}
 
 \section{Q-balls}
-In various supersymmetric extensions of the standard model (SM), non-topological solitons called Q-balls can be produced in the early universe \cite{Coleman:1985ki, Kusenko:1997si}. If these Q-balls were stable, they would comprise a component of the dark matter today. Q-balls can be classified into two groups: supersymmetric electrically charged solitons (SECS) and supersymmetric electrically neutral solitons (SENS). When a neutral baryonic Q-ball interacts with a nucleon, it absorbs its baryonic charge as a minimum-energy configuration and induces the dissociation of the nucleon into free quarks. In this process (known as the ``KKST" process), $\sim \text{GeV}$ of energy is released through the emission of 2-3 pions \cite{Dine:2003ax}. The KKST process provides a useful way to detect such Q-balls. The cross section for interaction is approximately the geometric cross section
+\label{sec:Qballs}
+In various supersymmetric extensions of the standard model (SM), non-topological solitons called Q-balls can be produced in the early universe \cite{Coleman:1985ki, Kusenko:1997si}. If these Q-balls were stable, they would comprise a component of the dark matter today. When an (electrically neutral) baryonic Q-ball interacts with a nucleon, it absorbs its baryonic charge as a minimum-energy configuration and induces the dissociation of the nucleon into free quarks. During this process, $\sim \text{GeV}$ of energy is released through the emission of 2-3 pions \cite{Dine:2003ax}. The cross section for this interaction is approximately geometric:
 \begin{equation}
 \sigma_Q \simeq \pi R_Q^2.
 \end{equation}
 In gauge-mediated models with flat scalar potentials, the Q-ball mass and radius are given by
 \begin{equation}
+\label{eq:Qballprop}
 M_Q \sim m_F Q^{3/4}, ~~~ R_Q \sim m_F^{-1} Q^{1/4},
 \end{equation}
-where $m_F$ is related to the scale of supersymmetry breaking (messenger scale). The condition $M_Q/Q < m_p$ ensures that the Q-ball is stable against decay to nucleons \cite{Dine:2003ax}.
-
-Note that a sufficiently massive Q-ball will become a black hole if the Q-ball radius is less than the Schwarzschild radius $R_Q \lesssim R_s \sim G M_Q$. In the model described above, this translates into the condition
+where $m_F$ is related to the scale of supersymmetry breaking (messenger scale). The condition $M_Q/Q < m_p$ ensures that the Q-ball is stable against decay to nucleons \cite{Dine:2003ax}. Note that a sufficiently massive Q-ball will become a black hole if the Q-ball radius is less than the Schwarzschild radius $R_Q \lesssim R_s \sim G M_Q$. In the model described above, this translates into a condition
 \begin{equation}
 m_F \l\frac{\Mpl}{m_F}\r^3 \lesssim m_Q, ~~~ \l\frac{\Mpl}{m_F}\r^4 \lesssim Q.
 \end{equation}
-For Q-ball masses of this order, gravitational interactions become relevant while the KKST interaction ceases to exist.
+For Q-ball masses of this order, gravitational interactions become relevant. 
 
-\subsection{Q-ball Constraints}
-We assume that for each Q-ball collision, there is equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ under the constraint of charge conservation. In the notation of Section \textcolor{blue}{overview}, $n_{\pi} \sim \OO(10)$ pions are released with $\epsilon_{\pi} \sim \text{GeV}$. \textcolor{blue}{The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. $\gamma \approx 5$, so for neutral pions $d_{\pi^0} \sim 10^{-5} ~\text{cm}$ while for charged pions, $d_{\pi^\pm} \sim 10 ~\text{m}$.}
+We assume that for each Q-ball collision, there is equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ under the constraint of charge conservation. In the notation of Section \ref{sec:DMexplode}, this results in $n_{\pi} \sim 10$ pions released with $\epsilon \sim 500 ~\text{MeV}$. The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. For neutral pions $d_{\pi^0} \sim 10^{-5} ~\text{cm}$ while for charged pions, $d_{\pi^\pm} \sim 10 ~\text{m}$. Numerous experiments have studied the effects of $50 - 500 ~\text{MeV}$ pions incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\OO (100 ~\text{mb})$ for a (neutral or charged) pion to either scatter elastically, scatter inelastically, or become absorbed with no final state pion \cite{Pionnuclear}. Of these possibilities, pion absorption is the most relevant for energy loss as this will induce a hadronic shower.
 
-Numerous experiments have studied the effects of $50 - 500 ~\text{MeV}$ pions incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\sim 0.1 ~\text{barn}$ for a (neutral or charged) pion to either scatter elastically, scatter inelastically, or become absorbed with no final state pion \cite{Pionnuclear}. Of these possibilities, pion absorption is the most relevant for energy loss as this will induce a hadronic shower. During this process, $\sim$ 2-3 hadrons (i.e. protons, neutrons, alpha particles) are emitted. \textcolor{blue}{Point of this paragraph: argue that KKST range lies within trigger size}
-
-Therefore, Q-balls with sufficiently large cross section $\sigma_Q \gtrsim 10^{-4} \lambda_T^2$ will result in explosions. This is plotted in Figure \textcolor{blue}{Figure}. For the model described in Section \textcolor{blue}{previous Section}, the Q-ball cross section is related to its mass $m_Q = \sigma_Q^{3/2} m_F^4$ and $Q = \sigma_Q^2 m_F^4$. Therefore, find that
+Q-balls that transit a WD with sufficiently large cross section as given by \eqref{eq:transitexplosion} will ignite the star. Following the results of Section \ref{sec:particledetection}, we find that the relevant heating length $L$ of the Q-ball interaction is simply. The resulting explosive power for Q-balls is plotted in Figure \ref{fig:boomQball}. If the Q-ball cross section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that
 \begin{equation}
 m_Q \gtrsim 10^8 ~\text{g} \l\frac{m_F}{\text{TeV}}\r^4, ~~~~ Q \gtrsim 10^{38} \l\frac{m_F}{\text{TeV}}\r^4
 \end{equation}
-is capable of triggering runaway fusion in a heavy $\sim 1.25 M_{\odot}$ WD for which $\lambda_T \sim 10^5 ~\text{cm}$.
+is capable of triggering runaway fusion in a heavy $\sim 1.25 M_{\odot}$ WD. 
 
 \begin{figure}
+\label{fig:boomQball}
 \includegraphics[scale=.45]{boomQball.pdf}
 \end{figure}
 
+\textcolor{blue}{Need to implement SN rate and transit rate here...} \textcolor{blue}{Triangle Plot of Q-ball constraints vs. terrestrial}. 
+
 \section{Discussion}
+\label{sec:discussion}
 
-\appendix
+\begin{appendices}
 
-\section{Detail Study of Heating Lengths}
-\label{app:heatinglengthfull}
+\section{Particle Interactions in a White Dwarf}
+\label{sec:appendix}
 
-\subsubsection{Coulomb Collisions}
+The interior of a WD is a complex environment (unless otherwise noted, we will assume a carbon-oxygen WD). Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy $E_F \sim n_e^{1/3}$, where $n_e$ is the number density of electrons. In addition, the nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma $\frac{Z e^2}{n^{1/3} T} \gg 1$. Here we provide a detailed analysis of the possible electromagnetic and strong interactions in a WD. 
+
+\subsection*{Coulomb Collisions}
+
 Generically, an incident (spin-0) particle of mass $m_i$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $m_t$, charge $Ze$ is described by the differential cross section
 \begin{equation}
 \label{eq:rutherford}
@@ -279,11 +272,35 @@ n_e(E') = \left\{
 \end{equation}
 where $g(E)$ is the density of states per unit volume for a three-dimensional free electron gas. The effect of degeneracy can also be cast as a suppression of the differential cross section of order $\mathcal{O}(E'/E_F)$ whenever energy less than $E_F$ is transferred. Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact \emph{subdominant} to the contributions from rare hard-scatters. The stopping power is also sensitive to the integration bounds $E_{\text{max}}$ and $E_{\text{min}}$ as a power-law dependence unlike the logarithmic sensitivity \eqref{eq:SP} in the case of a non-degenerate target. 
 
-\subsection{Radiative Effects}
+\subsection*{Bremsstrahlung and Pair Production}
 
+\subsection*{Nuclear Interactions} 
 
+For a particle $i$ of incident energy greater than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$, nuclear interactions typically result in an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. In addition, the nucleus will generally be left in an excited state and relax through the emission of low-energy $\OO(10 ~\text{MeV})$ nucleons (``nuclear evaporation") and photons \cite{Rossi}. The cross section for any such process is approximately set by the nuclear length scale $\sim \text{fm}$. A hadronic shower is a result of all such reactions caused by primary and secondary particles.
 
-\section{Acknowledgements}
+To estimate the typical shower length $X_{\text{had}}$, we assume a model in which a primary particle of energy $\epsilon$ interacting with nuclei to produces $N$ secondary particles each of energy $\epsilon/N$ (we ignore the effects of the evaporative stage in each reaction as this will only introduce minor corrections at sufficiently large $\epsilon$). The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either set by the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. According to this model, we find a hadronic shower length 
+\begin{equation}
+X_{\text{had}} = l_i + l_\text{had} \l \frac{\log{(\epsilon/E_c)}}{\log{N}}\r,
+\end{equation}
+where $l_i$ is the nuclear mean free path for incident particle $i$. Note that the shower length has a mild, logarithmic sensitivity to the initial energy $\epsilon \gg ~\text{10 ~\text{MeV}}$ and number of secondaries and is therefore primarily set by the nuclear mean free paths. In the case of an incident hadron (proton, neutron, pion), the hadronic shower length is approximately set by a single length scale $X_{\text{had}} \approx 10 ~l_\text{had}$. 
+
+There is considerable uncertainty in the determination of nuclear mean free paths for high-energy particles. In fact, the cross sections under considerations generally rise with increasing energy, although this precise relation is beyond the scope of this work. Instead, we will approximate the relevant nuclear cross sections to be constant. As a conservative estimate, we take the nonelastic cross sections for hadrons and photons interacting with nuclei to be 
+\begin{equation}
+\sigma_{had-A} \sim 100 ~\text{mb}, ~~~\sigma_{\gamma-A} \sim 10 ~\text{mb}.
+\end{equation}
+
+Charged leptons can also lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. In this case, it is more appropriate to describe the interaction as a radiative stopping power. This has been computed in \cite{Gerhardt:2010bj} in terms of the photonuclear mean free path:
+\begin{equation}
+\l \frac{dE}{dx}\r_{e-A} \sim E \l \frac{\alpha}{l_\gamma}\r
+\end{equation}
+
+Charged hadrons have appreciable electromagnetic interactions with nuclei, while collisions with degenerate electrons are completely screened at these energies. On the other hand, electromagnetic couplings are highly suppressed for final-state neutral hadrons. The dominant source of energy loss for neutrons in this range is elastic scattering off nuclei 
+
+The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$ which are incapable of inducing further nuclear disintegration. Charged hadrons have appreciable electromagnetic interactions with nuclei, while collisions with degenerate electrons are completely screened at these energies. Integrating \eqref{eq:SP}, we find that in a density of $n \sim 10^{32} ~\text{cm}^{-3}$ protons traverse $\approx 10^{-6} ~\text{cm}$ slowing down from 5 MeV to 1 MeV. \textcolor{blue}{The corresponding distance is significantly larger for charged pions $\sim 10^{-2} ~\text{cm}$} On the other hand, electromagnetic couplings are highly suppressed for final-state neutral hadrons. The dominant source of energy loss for neutrons in this range is elastic scattering off nuclei \textcolor{blue}{neutron capture cross section in C+O is negligible}. Each scatter transfers a fraction $\l1-\l\frac{m}{m + M}\r^2\r \approx 0.1$ of the neutron energy to nuclei (averaging over scattering angles), where $m$ and $M$ are the masses of the neutron and nuclei, respectively.  At kinetic energies below $\sim \text{MeV}$, the typical energy transfer in an elastic collision is of order the binding energy in the Coulomb lattice $E_B$. We find that $\OO(10)$ elastic scatters are needed to ``moderate" neutrons from 5 MeV to 1 MeV in the WD. This final-step will necessarily take the form of a random-walk.
+
+\end{appendices}
+
+\section*{Acknowledgements}
 We are grateful to S. Rajendran for suggestions and collaboration during the early stages of this work, as well as his ``benign negligence". We would also like to thank D. Grabowska, K. Harigaya, R. McGehee, and J. Wurtele for stimulating discussions.
 
 \bibliography{Qballs}
