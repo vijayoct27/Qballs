@@ -162,11 +162,13 @@ where $v \sim 10^{-3}$ is the virial velocity of DM and $\rho_{\text{DM}}$ is th
 \label{sec:heatinglength}
 For the DM interactions under consideration, the released energy must be efficiently transferred to the WD in order to trigger runaway fusion. We define $R_{i, \epsilon}$ as the distance over which a particle species $i$ and any secondaries transfer $\OO(1)$ of the initial energy $\epsilon$ to stellar constituents. In this section, we summarize the available modes of energy loss for different SM particles in a WD and compute the deposition length $R_{i, \epsilon}$ in each case. Detailed calculations of the various interactions are presented in Section \ref{sec:appendix}. For a given process, $R_{i, \epsilon}$ will be directly related to the heating length $L$ in a straightforward manner. As we are primarily concerned with depositing sufficient energy to ignite supernovae, we focus on high-energy particles $\epsilon \gg T_f$ which interact via the strong and electromagnetic forces (i.e. electrons, muons, photons, pions, and neutral hadrons). In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components. 
 
+\subsection{Hadrons}
+
+The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$ which are incapable of inducing further nuclear disintegration.
+
 \subsection{Electrons and Photons}
 
 \subsection{Heavy Charged Particles}
-
-\subsection{Hadrons}
 
 \begin{figure}
 \includegraphics[scale=.35]{hadronic.pdf}
@@ -287,11 +289,11 @@ High-energy photons can efficiently deposit their energy to electrons in the WD 
 {k^{\prime }={\frac {k}{1+{\frac {k}{m_{\text{e}}c^{2}}}(1-\cos \theta )}}},
 \end{equation}
 where $k$ and $\theta$ denote the energy and angle of deflection for the incident photon, respectively. Clearly when $\theta \to 0$, none of the initial energy is transferred. However, for generic scattering angles and sufficiently energetic photons $k \gg m_e$, the energy transfer due to a single Compton interaction is typically $\OO(1)$ of the initial energy. 
-The Klein-Nishina cross section (integrated over all scattering angles) evaluated in the electron rest-frame is given by
+The Klein-Nishina cross section integrated over all scattering angles is given by
 \begin{equation}
 \sigma_C \approx \frac{\pi \alpha^2}{2 m_e k} \left \{1+\log{\l\frac{4 k^2}{m_e^2} \r}\right \}, ~~~ k \gg m_e,
 \end{equation}
-Since the electrons in a WD are sufficiently relativistic, the Thomson scattering limit is never applicable. In addition, we ignore the effects of degeneracy when the incident photon transfers is highly energetic such that scatter is sufficient to knock electrons out of the Fermi sea. 
+evaluated in the rest frame of the target electron. Since the electrons in a WD are sufficiently relativistic, the Thomson scattering limit is never applicable. In addition, we ignore the effects of degeneracy when the incident photon transfers is highly energetic such that scatter is sufficient to knock electrons out of the Fermi sea. 
 
 
 \subsection*{Bremsstrahlung and Pair Production}
@@ -302,16 +304,15 @@ Nuclear interactions can be either elastic or nonelastic. A single, head-on elas
 \begin{equation}
 \zeta \equiv \frac{E_f}{E_0} = \l \frac{M}{m+M} \r^2, ~~~ m<M. 
 \end{equation} 
-where $E_0$ and $E_f$ denote the initial and final energy of the incident particle, averaged over all scattering angles. For instance, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision. This makes the WD a decent ``moderator". 
+where $E_0$ and $E_f$ denote the initial and final energy of the incident particle, averaged over all scattering angles. For instance, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision. 
 
 The cross section for elastic scatters has considerable dependence on the hadron species. For neutrons and protons, the nuclear elastic cross section is of order $\sigma_\text{el} \sim 100 ~\text{mb}$ for energies greater than $\text{MeV}$. However at lower energies, the elastic cross section effectively vanishes for protons but rises to $\OO(\text{b})$ for neutrons. This can be understood physically as charged hadrons may only elastically scatter off nuclei if the incident energy is sufficient to overcome the mutual Coulomb barrier. Note that the neutron capture cross section in carbon and oxygen is negligible compared to the elastic cross section. The stopping power due to elastic collisions is given by 
 \begin{equation}
 \l\frac{dE}{dx}\r_\text{el} \sim E  (1-\zeta) ~n \sigma_\text{el}
 \end{equation}
-in the form of a random-walk. However, since the ions in a WD form a Coulomb lattice with binding energy \eqref{eq:lattice}, elastic collisions cannot transfer energy less than $\sim E_B$. Due to the ionic lattice, nucleons of incident energy less than $\sim \text{MeV}$ are unable to deposit energy via nuclear elastic scatters. This is especially important when considering incident neutrons, which have suppressed electromagnetic interactions. Since the inelastic cross section, which results in excited nuclear states, effectively vanishes below an MeV, neutrons cannot be moderated to sub-MeV energies. \textcolor{red}{very bold statement - double check.}
+in the form of a random-walk. However, since the ions in a WD form a Coulomb lattice with binding energy \eqref{eq:lattice}, elastic collisions cannot transfer energy less than $\sim E_B$. Due to the ionic lattice, nucleons of incident energy less than $\sim \text{MeV}$ are unable to deposit energy via nuclear elastic scatters. This is especially important when considering incident neutrons, which have suppressed electromagnetic interactions and for which the inelastic cross section effectively vanishes below an MeV. Therefore, the WD is an extremely poor moderator of neutrons at sub-MeV energies. \textcolor{red}{very bold statement - double check.}
 
-
-Now we consider nuclear nonelastic collisions, which are only relevant for sufficiently energetic incident particles. For a particle $i$ of incident energy greater than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$, these typically result in an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. In addition, the nucleus will generally be left in an excited state and relax through the emission of low-energy $\OO(10 ~\text{MeV})$ nucleons (``nuclear evaporation") and photons \cite{Rossi}. The cross section for any such process is approximately set by the nuclear length scale $\sim \text{fm}$. A hadronic shower is a result of all such reactions caused by primary and secondary particles.
+Next we consider nonelastic collisions, which are relevant for sufficiently energetic incident particles. A particle $i$ of incident energy greater than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$ can interact to produce an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. In addition, the remnant nucleus will generally be left in an excited state and relax through the emission of low-energy $\OO(10 ~\text{MeV})$ nucleons (``nuclear evaporation") and photons \cite{Rossi}. A hadronic shower is a result of all such reactions caused by primary and secondary particles.
 
 To estimate the typical shower length $X_{\text{had}}$, we assume a model in which a primary particle of energy $\epsilon$ interacting with nuclei to produces $N$ secondary particles each of energy $\epsilon/N$ (we ignore the effects of the evaporative stage in each reaction as this will only introduce minor corrections at sufficiently large $\epsilon$). The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either set by the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. According to this model, we find a hadronic shower length 
 \begin{equation}
@@ -328,11 +329,8 @@ Charged leptons can also lose energy via electronuclear interactions in which an
 \begin{equation}
 \l \frac{dE}{dx}\r_{e-A} \sim E \l \frac{\alpha}{l_\gamma}\r
 \end{equation}
-
-The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$ which are incapable of inducing further nuclear disintegration. Charged hadrons have appreciable electromagnetic interactions with nuclei, while collisions with degenerate electrons are completely screened at these energies. We find that $\OO(10)$ elastic scatters are needed to ``moderate" neutrons from 5 MeV to 1 MeV in the WD. This final-step will necessarily take the form of a random-walk. Charged hadrons have appreciable electromagnetic interactions with nuclei, while collisions with degenerate electrons are completely screened at these energies. On the other hand, electromagnetic couplings are highly suppressed for final-state neutral hadrons. The dominant source of energy loss for neutrons in this range is elastic scattering off nuclei 
-
-
 \end{appendices}
+
 
 \section*{Acknowledgements}
 We are grateful to S. Rajendran for suggestions and collaboration during the early stages of this work, as well as his ``benign negligence". We would also like to thank D. Grabowska, K. Harigaya, R. McGehee, and J. Wurtele for stimulating discussions.
