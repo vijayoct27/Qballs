@@ -85,7 +85,7 @@ We begin in Section \ref{sec:review} by reviewing the explosion mechanism in a W
 
 \section{White Dwarf Runaway Fusion}
 \label{sec:review}
-In a WD, the \emph{fusion temperature} $T_f$ is a constant set by the energy required for ions to overcome their mutual Coulomb barriers $T_f \sim \MeV$. WD cooling is set by the thermal diffusivity of photons and degenerate electrons. The two species dominate the cooling at different stellar densities, as determined precisely in \cite{Woosley}. Note that for a heated region of size $R$, this cooling rate scales as $R^{-2}$ while the fusion rate scales as $R^{-3}$. Thus there is a critical \emph{trigger size} $\lambda_T$ below which diffusive cooling dominates the thermal evolution of a temperature peak, and above which the liberated fusion energy dominates \cite{Woosley}. Therefore, a region with temperature greater than $T_f$ and size greater than $\lambda_T$ in a given WD will launch a runaway fusion chain-reaction and result in a type Ia supernova. The numerical value of $\lambda_T$ is highly sensitive to the WD density and has been analytically scaled for varying WD masses in \cite{Graham:2015apa}. As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $0.7 - 1.4 ~M_{\odot}$ which correspond to a number density of nuclei $n \sim 10^{29} - 10^{32} ~\cm^{-3}$. Over this range, the trigger size is approximately $\lambda_T \sim 10^{-5} - 10^{-2} ~\text{cm}$.  
+In a WD, the \emph{fusion temperature} $T_f$ is a constant set by the energy required for ions to overcome their mutual Coulomb barriers $T_f \sim \MeV$. WD cooling is set by the thermal diffusivity of photons and degenerate electrons. The two species dominate the cooling at different stellar densities, as determined precisely in \cite{Woosley}. Note that for a heated region of size $R$, this cooling rate scales as $R^{-2}$ while the fusion rate scales as $R^{-3}$. Thus there is a critical \emph{trigger size} $\lambda_T$ below which diffusive cooling dominates the thermal evolution of a temperature peak, and above which the liberated fusion energy dominates \cite{Woosley}. Therefore, a region with temperature greater than $T_f$ and size greater than $\lambda_T$ in a given WD will launch a runaway fusion chain-reaction and result in a type Ia supernova. The numerical value of $\lambda_T$ is highly sensitive to the WD density and has been analytically scaled for varying WD masses in \cite{Graham:2015apa}. As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $0.7 - 1.4 ~M_{\odot}$ which correspond to a number density of nuclei $n_i \sim 10^{29} - 10^{32} ~\cm^{-3}$. Over this range, the trigger size is approximately $\lambda_T \sim 10^{-5} - 10^{-2} ~\text{cm}$.  
 
 A general energy deposition event in the WD can be roughly characterized by two parameters: a temperature $T$ and heating length $L$. This energy deposit will eventually take the form of a local peak in the WD temperature profile. We define $T$ to be the characteristic temperature and $L$ the characteristic length scale of this local peak as it initially appears. $L$ is determined by the efficiency with which a given energy deposition mechanism interacts with the stellar medium. To demonstrate the significance of $L$, suppose that kinetic energy were transferred directly to neighboring ions via short-range elastic scatters. These ions would thermalize over their collisional time scale resulting in a heating length $L$ of order the ion mean free path. In the other extreme, suppose that a process produces a large number of electrons with energy just above the Fermi energy.  These electrons have Pauli-suppressed interactions with the medium and will travel a long distance before their energy is scattered and thermalized, resulting in a large $L$ - possibly of order the stellar radius. 
 
@@ -97,11 +97,11 @@ T \gtrsim T_f, ~~~~ L \gtrsim \lambda_T.
 Note that this condition determines if a region of size $L$ and temperature $T$ \emph{immediately} initiates runaway fusion.  Instead, it is more useful to determine whether a given energy deposit will \emph{eventually} initiate runaway fusion. In particular, a heating event that results in $T \gg T_f$ and $L  < \lambda_T$ is perhaps initially dominated by diffusive cooling but can potentially evolve into an ``explosive" temperature profile capable of igniting the star. When diffusion dominates, the thermal evolution will approximately be given by the dilution of the fixed total energy of the initial region over the final volume. Taking this into account, we can express the explosion condition \eqref{eqn:runaway} in terms of an excess energy within the temperature peak (rather than the temperature itself):
 \begin{equation}
 \label{eqn:boom}
-E \gtrsim n T_f \text{max}\{L, \lambda_T\}^3.
+E \gtrsim n_i T_f \text{max}\{L, \lambda_T\}^3.
 \end{equation}
 In fact, there is an absolute minimum explosion energy given by
 \begin{equation}
-E_{\text{boom}} \sim n T_f \lambda_T^3 \sim 10^{14} - 10^{21} ~\GeV,
+E_{\text{boom}} \sim n_i T_f \lambda_T^3 \sim 10^{14} - 10^{21} ~\GeV,
 \end{equation}
 where the trigger size $\lambda_T$ varies over a range of WD densities. This is plotted in Figure \ref{fig:Eboom}. However, this energy is sufficient only if it thermalizes within the trigger size.  If an energy is deposited on a length scale larger than $\lambda_T$, the explosion energy required is given by \eqref{eqn:boom} and may be parametrically larger. Since we are concerned with processes that have a fixed deliverable energy (the energy of the incoming DM), the most explosive processes will be those that result in the most localized heating. As a result, understanding the heating length $L$ for various processes is critical to assessing their explosive potential. This is done in Section~\ref{sec:heatinglength}.
 
@@ -113,7 +113,7 @@ where the trigger size $\lambda_T$ varies over a range of WD densities. This is 
 
 \section{Dark Matter Explosiveness}
 \label{sec:DMexplode}
-In this section, we parameterize the explosive power of a generic (ultra-heavy) DM interaction in the WD which releases $n_i$ SM particles of species $i$ each with kinetic energy $\epsilon$. 
+In this section, we parameterize the explosive power of a generic (ultra-heavy) DM interaction in the WD which releases $N_i$ SM particles of species $i$ each with kinetic energy $\epsilon$. 
 \subsection{DM Transit}
 Consider a DM transit through the WD, interacting with stellar constituents in a general manner as shown in Figure \ref{fig:feynmandiag}. The cross section for this interaction is denoted as $\sigma_{i,\epsilon}$. 
 \begin{figure}
@@ -124,7 +124,7 @@ Consider a DM transit through the WD, interacting with stellar constituents in a
 Setting the total energy released during a transit of length $\text{max}\{\lambda_T, L\}$ to be greater than the explosive energy \eqref{eqn:boom}, we find a lower bound on the interaction cross section sufficient to trigger runaway fusion:
 \begin{equation}
 \label{eq:transitexplosion}
-n_i \sigma_{\epsilon,i} \gtrsim \left\{
+N_i \sigma_{\epsilon,i} \gtrsim \left\{
         \begin{array}{ll}
             \displaystyle \lambda_T^2 \l \frac{T_f}{\epsilon} \r & \quad L < \lambda_T \\
              \lambda_T^2 \l \frac{L}{\lambda_T}\r^2 \l \frac{T_f}{\epsilon} \r & \quad L > \lambda_T
@@ -140,7 +140,7 @@ where $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lam
 
 In addition, we require that a DM with this interaction makes it through the crust of the WD of size of density $n_{\text{c}}$ and size $R_{\text{c}}$:
 \begin{equation}
-n_i \sigma_{\epsilon,i} \lesssim \l \frac{m_{\text{DM}} v_{\text{esc}}^2}{n_{\text{c}} R_{\text{c}}} \r \frac{1}{\epsilon}.
+N_i \sigma_{\epsilon,i} \lesssim \l \frac{m_{\text{DM}} v_{\text{esc}}^2}{n_{\text{c}} R_{\text{c}}} \r \frac{1}{\epsilon}.
 \end{equation}
 Imposing \eqref{eq:transitexplosion}, we find lower bound on $m_{\text{DM}}$ such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
 \begin{equation}
@@ -189,7 +189,7 @@ m_F \l\frac{\Mpl}{m_F}\r^3 \lesssim m_Q, ~~~ \l\frac{\Mpl}{m_F}\r^4 \lesssim Q.
 \end{equation}
 For Q-ball masses of this order, gravitational interactions become relevant. 
 
-We assume that for each Q-ball collision, there is equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ under the constraint of charge conservation. In the notation of Section \ref{sec:DMexplode}, this results in $n_{\pi} \sim 10$ pions released with $\epsilon \sim 500 ~\text{MeV}$. The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. For neutral pions $d_{\pi^0} \sim 10^{-5} ~\text{cm}$ while for charged pions, $d_{\pi^\pm} \sim 10 ~\text{m}$. Numerous experiments have studied the effects of $50 - 500 ~\text{MeV}$ pions incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\OO (100 ~\text{mb})$ for a (neutral or charged) pion to either scatter elastically, scatter inelastically, or become absorbed with no final state pion \cite{Pionnuclear}. Of these possibilities, pion absorption is the most relevant for energy loss as this will induce a hadronic shower.
+We assume that for each Q-ball collision, there is equal probability to produce $\pi^0, \pi^+$ and $\pi^-$ under the constraint of charge conservation. In the notation of Section \ref{sec:DMexplode}, this results in $N_{\pi} \sim 10$ pions released with $\epsilon \sim 500 ~\text{MeV}$. The mean distance travelled by a relativistic particle before decaying is $d = \gamma v \tau$. For neutral pions $d_{\pi^0} \sim 10^{-5} ~\text{cm}$ while for charged pions, $d_{\pi^\pm} \sim 10 ~\text{m}$. Numerous experiments have studied the effects of $50 - 500 ~\text{MeV}$ pions incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\OO (100 ~\text{mb})$ for a (neutral or charged) pion to either scatter elastically, scatter inelastically, or become absorbed with no final state pion \cite{Pionnuclear}. Of these possibilities, pion absorption is the most relevant for energy loss as this will induce a hadronic shower.
 
 Q-balls that transit a WD with sufficiently large cross section as given by \eqref{eq:transitexplosion} will ignite the star. Following the results of Section \ref{sec:heatinglength}, we find that the relevant heating length $L$ of the Q-ball interaction is simply. The resulting explosive power for Q-balls is plotted in Figure \ref{fig:boomQball}. If the Q-ball cross section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that
 \begin{equation}
@@ -216,48 +216,46 @@ The interior of a WD is a complex environment (unless otherwise noted, we will a
 \begin{equation}
 E_F = (3 \pi^2 n_e)^{1/3} \sim 0.1 - 1 ~\text{MeV}
 \end{equation}
-where $n_e$ is the number density of electrons. The nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma with plasma parameter
+where $n_e$ is the number density of electrons. The nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma with coupling parameter
 \begin{equation}
-\Gamma = \frac{Z e^2}{n^{1/3} T} \gg 1,
+\Gamma \sim \frac{Z^2 \alpha}{n_i^{-1/3} T} \gg 1,
 \end{equation}
-where $n$ is the number density of nuclei. Here we provide a detailed analysis of the possible electromagnetic and strong interactions in a WD. 
+where $n_i$ is the number density of nuclei. Here we provide a detailed analysis of the possible electromagnetic and strong interactions in a WD. 
 
 \subsection*{Coulomb Collisions}
 
-Generically, an incident (spin-0) particle of mass $m_i$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $m_t$, charge $Ze$ is described by the  differential cross section
+An incident particle of mass $m$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $M$, charge $Ze$ is described by the Rutherford differential cross section
 \begin{equation}
 \label{eq:rutherford}
-\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{m_t \beta^2} \frac{1}{E'^2} \l1- \frac{\beta^2 E'}{E_{\text{kin}}}\r,
+\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
  \end{equation}
-where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}. $E_{\text{kin}}$ denotes the maximum possible energy transfer satisfying kinematic constraints:
-\begin{equation}
-E_{\text{kin}} = \frac{2 m_t \beta^2 \gamma^2}{1+ 2\gamma(m_t/m_i) +(m_t/m_i)^2},
-\end{equation}
-where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor.
-
-For sufficiently heavy incident particles, the differential cross section depends only on the velocity of the incident particle. Note that higher-spin particles receive additional corrections to the cross section, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that softscattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
+where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}. Note that the differential cross section receives additional QED due to the incident spin, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that soft-scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
 
 We first consider the energy loss of high-energy charged particles colliding with non-degenerate targets. In this case, the stopping power due to collisions with a number density $n$ is given by:
 \begin{align}
 \label{eq:SP}
-\frac{dE}{dx} & = - \int dE' \left(\frac{d \sigma}{dE'}\right) n E' \\
-& \sim -\frac{n Z^2 \alpha^2}{m_t \beta^2} \log{\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}.
+-\frac{dE}{dx} & = - \int dE' \left(\frac{d \sigma}{dE'}\right) n E' \\
+& \simeq -\frac{\pi n Z^2 \alpha^2}{M \beta^2} \log\left\{{\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}^2+1\right\}
 \end{align}
-\eqref{eq:SP} must be integrated over all $E'$ within the regime of validity for \eqref{eq:rutherford}, thereby fixing the lower and upper bounds of the Coulomb logarithm. Quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target. In terms of the collisional impact parameter $b$, this results in a bound $b > \frac{1}{\text{min}\{{m_i, m_t}\} \beta \gamma}$ and in terms of energy transfer, this translates to the condition
+\eqref{eq:SP} must be integrated over all $E'$ within the regime of validity for \eqref{eq:rutherford}, thereby fixing the lower and upper bounds of the Coulomb logarithm. $E_{\text{kin}}$ denotes the maximum possible energy transfer satisfying kinematic constraints:
 \begin{equation}
-E' < E_\text{quant} \sim \frac{Z^2 \alpha^2 \gamma^2 ~\text{min}\{{m_i, m_t}\}^2}{m_t}.
+E_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2},
+\end{equation}
+where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor. Quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target. In terms of the collisional impact parameter $b$, this results in a bound $b > \frac{1}{\text{min}\{{M, m}\} \beta \gamma}$ and in terms of energy transfer, this translates to the condition
+\begin{equation}
+E' < E_\text{quant} = \frac{2 Z^2 \alpha^2 \gamma^2 ~\text{min}\{{M, m}\}^2}{M}.
 \end{equation}
 In addition, the expression for the differential cross section \eqref{eq:rutherford} no longer holds when $E'$ becomes larger than the mass of the target \cite{Rossi}. For our calculations, we take the maximum energy that an incident particle is able to transfer to be
 \begin{equation}
-E_{\text{max}} = \text{min}\{E_\text{quant}, E_{\text{kin}}, m_t\}.
+E_{\text{max}} = \text{min}\{E_\text{quant}, E_{\text{kin}}, M\}.
 \end{equation}
 On the other hand, the maximum impact parameter is set by Thomas-Fermi screening due to the degenerate electron gas:
 \begin{equation}
-\lambda_{\text{TF}} \sim \l \frac{Z e^2 n_e}{E_F}\r^{-1/2},
+\lambda_{\text{TF}} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2},
 \end{equation}
 This corresponds to a lower bound on the energy transfer
 \begin{equation}
-E' > E_{\text{sc}} \sim \frac{m_e^2 Z^2 \alpha^2}{m_t \beta^2}.
+E' > E_{\text{sc}} = \frac{12 \pi Z^3 \alpha ^3 n_e}{\beta^2 M E_F}.
 \end{equation}
 In addition, the lattice structure of ions in the WD introduces further complications \cite{Teukolsky}. The typical Coulomb lattice binding energy between ions of number density $n$ is given by the electric potential
 \begin{equation}
