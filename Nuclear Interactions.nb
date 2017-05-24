@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    108687,       2511]
-NotebookOptionsPosition[    106432,       2431]
-NotebookOutlinePosition[    106822,       2448]
-CellTagsIndexPosition[    106779,       2445]
+NotebookDataLength[    110188,       2553]
+NotebookOptionsPosition[    107782,       2467]
+NotebookOutlinePosition[    108172,       2484]
+CellTagsIndexPosition[    108129,       2481]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -88,7 +88,7 @@ may not be found; use Reduce for complete solution information. \
 ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", \
 ButtonNote -> \\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{{3.7043958260514793`*^9, 3.704395853329617*^9}, 
-   3.704509568536331*^9}],
+   3.704509568536331*^9, 3.704571395293263*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -142,16 +142,15 @@ Cell[BoxData[
        RowBox[{"(", 
         RowBox[{"m", "+", "M"}], ")"}]}]]}], "}"}]}], "}"}]], "Output",
  CellChangeTimes->{{3.7043958260598097`*^9, 3.7043958538832006`*^9}, 
-   3.704509569081953*^9}]
+   3.704509569081953*^9, 3.704571395829649*^9}]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["\<\
-First solution is physical one (based on definition of scattering angle)\
-\>", "Subsubsection",
- CellChangeTimes->{{3.7043980437290154`*^9, 3.7043980559534397`*^9}}],
+Cell["Second solution is physical one", "Subsubsection",
+ CellChangeTimes->{{3.7043980437290154`*^9, 3.7043980559534397`*^9}, {
+  3.704574584179956*^9, 3.704574588758279*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -164,7 +163,7 @@ Cell[BoxData[
        FractionBox[
         RowBox[{
          RowBox[{"2", " ", "m", " ", "vi", " ", 
-          RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "-", 
+          RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "+", 
          RowBox[{
           SqrtBox["2"], " ", 
           SqrtBox[
@@ -194,14 +193,32 @@ Cell[BoxData[
   3.7043968697025843`*^9}, {3.704397182522834*^9, 3.704397182658051*^9}, {
   3.704398005085311*^9, 3.7043980412580748`*^9}, {3.70439878158025*^9, 
   3.7043987979006968`*^9}, {3.704399752419772*^9, 3.70439975350599*^9}, {
-  3.704509994202764*^9, 3.7045099942736397`*^9}}],
+  3.704509994202764*^9, 3.7045099942736397`*^9}, {3.704572323167429*^9, 
+  3.704572323462879*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Efin", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"M", "\[Rule]", "12"}], ",", 
+     RowBox[{"m", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Theta]", "\[Rule]", "0"}]}], "}"}]}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.704572255415287*^9, 3.7045722802777233`*^9}, 
+   3.704572328902729*^9, {3.704572430660837*^9, 3.704572471466209*^9}}],
+
+Cell[BoxData["\[Epsilon]"], "Output",
+ CellChangeTimes->{3.704572473815295*^9, 3.704574593541905*^9}]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"etransfer", "=", 
    RowBox[{"FullSimplify", "[", 
     RowBox[{
-     FractionBox["Ef", "\[Epsilon]"], ",", 
+     FractionBox["Efin", "\[Epsilon]"], ",", 
      RowBox[{"Assumptions", "\[Rule]", 
       RowBox[{"{", 
        RowBox[{
@@ -218,7 +235,7 @@ Cell[BoxData[
   3.7044000245512333`*^9, 3.704400071471487*^9}, {3.704400135746211*^9, 
   3.704400144247656*^9}, {3.7044004096083508`*^9, 3.70440045654058*^9}, {
   3.704400519616852*^9, 3.704400542127236*^9}, {3.704400627018744*^9, 
-  3.704400630721491*^9}}],
+  3.704400630721491*^9}, {3.704571410513069*^9, 3.704571411851252*^9}}],
 
 Cell[CellGroupData[{
 
@@ -248,8 +265,7 @@ Cell[BoxData[
      RowBox[{"(", 
       RowBox[{"m", "+", "M"}], ")"}], "2"]], ",", 
    RowBox[{"m", "<", "M"}]}], "]"}]], "Output",
- CellChangeTimes->{3.704402319854295*^9, 3.704403891241229*^9, 
-  3.704509645742221*^9}]
+ CellChangeTimes->{3.704571470056452*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -810,9 +826,9 @@ FlRxIaiSdJpZYC2Jo7euGXM4Q1Btg50R9fUk/rCroDv+HEGNbbtYs9pA4nZW
          Spacer[{0., 0.}]], TraditionalForm], {0.005, 0.}, {
         AbsoluteThickness[0.1]}}}}]]], "Output",
  CellChangeTimes->{{3.704402426784129*^9, 3.704402432719862*^9}, {
-  3.7044024717895193`*^9, 3.704402489787025*^9}, {3.704403735794403*^9, 
-  3.704403835206456*^9}, {3.704404010715391*^9, 3.704404021995098*^9}, {
-  3.704509674792096*^9, 3.704509685528578*^9}}]
+   3.7044024717895193`*^9, 3.704402489787025*^9}, {3.704403735794403*^9, 
+   3.704403835206456*^9}, {3.704404010715391*^9, 3.704404021995098*^9}, {
+   3.704509674792096*^9, 3.704509685528578*^9}, 3.704571528732006*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -854,7 +870,23 @@ Cell[BoxData[
         RowBox[{"\[Epsilon]", "\[LessEqual]", "10"}]}], "}"}]}], "}"}], 
     "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.7045135563532257`*^9, 3.704513566019475*^9}, {
-   3.7045140717661543`*^9, 3.7045141830655212`*^9}, 3.704514586243409*^9}],
+   3.7045140717661543`*^9, 3.7045141830655212`*^9}, 3.704514586243409*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "In units of ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["MeV", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["10", 
+       RowBox[{"-", "5"}]], "cm"}], ")"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.704574619732512*^9, 3.70457463963356*^9}}],
 
 Cell[CellGroupData[{
 
@@ -881,7 +913,8 @@ Cell[BoxData[
  RowBox[{"2.5`*^-6", " ", 
   SuperscriptBox["ElectronVolt", "2"], " ", 
   SuperscriptBox["Mega", "2"]}]], "Output",
- CellChangeTimes->{3.704513724181877*^9, 3.704514595082625*^9}]
+ CellChangeTimes->{3.704513724181877*^9, 3.704514595082625*^9, 
+  3.704571537201365*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1032,10 +1065,11 @@ Cell[BoxData[
        "\"\<MeV\>\"", ",", 
         "\"\<MeV/(\!\(\*SuperscriptBox[\(10\), \(-5\)]\)cm)\>\""}], "}"}]}], 
      ",", 
-     RowBox[{"PlotLabel", "\[Rule]", "\"\<Energy Loss\>\""}]}], "]"}]}], 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Stopping Power\>\""}]}], "]"}]}], 
   ";"}]], "Input",
  CellChangeTimes->{{3.704513918893631*^9, 3.7045139420762377`*^9}, {
-  3.7045142304986773`*^9, 3.704514230761878*^9}}],
+  3.7045142304986773`*^9, 3.704514230761878*^9}, {3.704574665161747*^9, 
+  3.704574687830915*^9}}],
 
 Cell[CellGroupData[{
 
@@ -1671,7 +1705,7 @@ wn+QHtr+
   Method->{
    "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
     AbsolutePointSize[6], "ScalingFunctions" -> None},
-  PlotLabel->FormBox["\"Energy Loss\"", TraditionalForm],
+  PlotLabel->FormBox["\"Stopping Power\"", TraditionalForm],
   PlotRange->{{-1.1512924995054905`, 
    24.177142959530624`}, {-6.907755278982137, 11.512925464970229`}},
   PlotRangeClipping->True,
@@ -1685,7 +1719,8 @@ wn+QHtr+
   3.70451312710887*^9, 3.70451335960487*^9, 3.70451339884016*^9, 
    3.704513495751834*^9, 3.7045136077457542`*^9, 3.704513823525929*^9, 
    3.704513949375272*^9, 3.704514106869919*^9, {3.704514205671247*^9, 
-   3.7045142329460297`*^9}, 3.70451443714174*^9}]
+   3.7045142329460297`*^9}, 3.70451443714174*^9, 3.704571747576044*^9, {
+   3.7045746576182003`*^9, 3.704574690696206*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2315,7 +2350,7 @@ wn+QHtr+
   Method->{
    "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
     AbsolutePointSize[6], "ScalingFunctions" -> None},
-  PlotLabel->FormBox["\"Energy Loss\"", TraditionalForm],
+  PlotLabel->FormBox["\"Stopping Power\"", TraditionalForm],
   PlotRange->{{-1.1512924995054905`, 
    24.177142959530624`}, {-6.907755278982137, 11.512925464970229`}},
   PlotRangeClipping->True,
@@ -2329,7 +2364,8 @@ wn+QHtr+
   3.704513218542791*^9, {3.7045132938143682`*^9, 3.70451332610281*^9}, {
    3.704513429691435*^9, 3.7045134323955393`*^9}, 3.704513497349634*^9, 
    3.70451361007323*^9, 3.70451385310286*^9, 3.704513964429253*^9, {
-   3.704514211293573*^9, 3.704514237517212*^9}, 3.7045144401314983`*^9}]
+   3.704514211293573*^9, 3.704514237517212*^9}, 3.7045144401314983`*^9, 
+   3.70457174944674*^9, 3.7045746605409613`*^9, 3.704574693027214*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -2369,15 +2405,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.704510217152154*^9, 3.704510326908559*^9}, 
    3.704510387881446*^9, {3.704511304925384*^9, 3.704511322411583*^9}, {
    3.704514349174815*^9, 3.704514349284485*^9}, {3.704514395475381*^9, 
-   3.7045143964564257`*^9}, {3.7045144745826*^9, 3.7045144746620913`*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  FractionBox["1", 
-   RowBox[{
-    RowBox[{"Mega", " ", "ElectronVolt"}], ")"}]], "Mega", " ", 
-  "ElectronVolt", "*", "Milli", " ", "Barn"}]], "Input",
- CellChangeTimes->{{3.704514635825132*^9, 3.7045146557301407`*^9}}],
+   3.7045143964564257`*^9}, {3.7045144745826*^9, 3.7045144746620913`*^9}, {
+   3.704574755080599*^9, 3.704574768694088*^9}, {3.704574847371615*^9, 
+   3.7045748557153387`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -2389,29 +2419,34 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"ReplaceAll", "[", 
          RowBox[{
-          FractionBox["1", 
-           RowBox[{
-            SuperscriptBox["dedxelastic", 
-             RowBox[{"-", "1"}]], "*"}]], ",", 
+          SuperscriptBox["dedxelastic", 
+           RowBox[{"-", "1"}]], ",", 
           RowBox[{"{", 
            RowBox[{
-            RowBox[{"\[Sigma]", "\[Rule]", "0.1"}], ",", 
-            RowBox[{"M", "\[Rule]", "11180"}], ",", 
-            RowBox[{"m", "\[Rule]", "1000"}], ",", 
+            RowBox[{"\[Alpha]", "\[Rule]", 
+             FractionBox["1", "137"]}], ",", 
+            RowBox[{"M", "\[Rule]", "12000"}], ",", 
+            RowBox[{"Z", "\[Rule]", "6"}], ",", 
             RowBox[{"n", "\[Rule]", "8"}], ",", 
-            RowBox[{"Z", "\[Rule]", "6"}]}], "}"}]}], "]"}], ",", 
+            RowBox[{"m", "\[Rule]", "140"}], ",", 
+            RowBox[{"\[Sigma]", "\[Rule]", ".1"}]}], "}"}]}], "]"}], ",", 
         RowBox[{"{", 
          RowBox[{"\[Epsilon]", ",", "1", ",", "10"}], "}"}]}], "]"}], 
       FractionBox["1", 
-       RowBox[{"Mega", " ", "ElectronVolt"}]], "*", 
-      RowBox[{"(", 
-       RowBox[{"200", " ", "Mega", " ", "ElectronVolt", "*", "Fermi"}], 
-       ")"}]}], ",", "Centimeter"}], "]"}]}], ";"}]], "Input",
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"Mega", " ", "ElectronVolt"}], ")"}], "3"], "Milli", " ", 
+        "Barn"}]], "*", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"200", " ", "Mega", " ", "ElectronVolt", "*", "Fermi"}], 
+        ")"}], "3"]}], ",", "Centimeter"}], "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.704510961828734*^9, 3.704510971970772*^9}, {
   3.704511325459764*^9, 3.7045113305320063`*^9}, {3.704514381838121*^9, 
   3.70451439853666*^9}, {3.704514472389333*^9, 3.704514472598336*^9}, {
   3.70451450809024*^9, 3.70451451758154*^9}, {3.704514678336041*^9, 
-  3.704514680631435*^9}}],
+  3.704514680631435*^9}, {3.704574784467699*^9, 3.704574827928372*^9}}],
 
 Cell[CellGroupData[{
 
@@ -2423,14 +2458,15 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-   RowBox[{"3.050946193737929`*^-6", " ", "Centimeter"}], ",", 
-   RowBox[{"0.02825962323135285`", " ", "Centimeter"}]}], "}"}]], "Output",
- CellChangeTimes->{3.704511442230165*^9}]
+   RowBox[{"3.6017624787658283`*^-6", " ", "Centimeter"}], ",", 
+   RowBox[{"0.006024749733189019`", " ", "Centimeter"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.704511442230165*^9, {3.704574830872304*^9, 3.704574861738936*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{808, 675},
-WindowMargins->{{190, Automatic}, {Automatic, 32}},
+WindowMargins->{{200, Automatic}, {40, Automatic}},
 Magnification:>1.25 Inherited,
 FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
 2015)",
@@ -2456,54 +2492,60 @@ Cell[CellGroupData[{
 Cell[1124, 36, 110, 1, 43, "Subsubsection"],
 Cell[CellGroupData[{
 Cell[1259, 41, 1236, 35, 94, "Input"],
-Cell[2498, 78, 604, 12, 50, "Message"],
-Cell[3105, 92, 1699, 52, 132, "Output"]
+Cell[2498, 78, 626, 12, 50, "Message"],
+Cell[3127, 92, 1721, 52, 132, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4853, 150, 175, 3, 43, "Subsubsection"],
-Cell[5031, 155, 1635, 41, 134, "Input"],
-Cell[6669, 198, 1123, 22, 60, "Input"],
+Cell[4897, 150, 175, 2, 43, "Subsubsection"],
+Cell[5075, 154, 1684, 42, 134, "Input"],
 Cell[CellGroupData[{
-Cell[7817, 224, 527, 15, 82, "Input"],
-Cell[8347, 241, 338, 10, 64, "Output"]
+Cell[6784, 200, 380, 9, 35, "Input"],
+Cell[7167, 211, 101, 1, 35, "Output"]
+}, Open  ]],
+Cell[7283, 215, 1171, 22, 60, "Input"],
+Cell[CellGroupData[{
+Cell[8479, 241, 527, 15, 82, "Input"],
+Cell[9009, 258, 291, 9, 64, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8734, 257, 199, 2, 43, "Subsubsection"],
+Cell[9349, 273, 199, 2, 43, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[8958, 263, 982, 29, 103, "Input"],
-Cell[9943, 294, 22495, 520, 295, "Output"]
+Cell[9573, 279, 982, 29, 103, "Input"],
+Cell[10558, 310, 22520, 520, 295, "Output"]
 }, Open  ]],
-Cell[32453, 817, 438, 11, 66, "Input"],
-Cell[32894, 830, 308, 8, 56, "Input"],
-Cell[33205, 840, 594, 16, 56, "Input"],
-Cell[CellGroupData[{
-Cell[33824, 860, 558, 17, 70, "Input"],
-Cell[34385, 879, 193, 4, 39, "Output"]
-}, Open  ]],
-Cell[34593, 886, 1104, 29, 131, "Input"],
-Cell[35700, 917, 1146, 29, 131, "Input"],
-Cell[36849, 948, 1059, 29, 131, "Input"],
-Cell[37911, 979, 1188, 31, 152, "Input"],
-Cell[39102, 1012, 897, 25, 96, "Input"],
-Cell[CellGroupData[{
-Cell[40024, 1041, 280, 6, 57, "Input"],
-Cell[40307, 1049, 31345, 638, 329, "Output"]
+Cell[33093, 833, 438, 11, 66, "Input"],
+Cell[33534, 846, 308, 8, 56, "Input"],
+Cell[33845, 856, 594, 16, 56, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71689, 1692, 371, 7, 36, "Input"],
-Cell[72063, 1701, 30905, 630, 329, "Output"]
+Cell[34476, 877, 323, 11, 59, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[34824, 892, 558, 17, 70, "Input"],
+Cell[35385, 911, 218, 5, 39, "Output"]
+}, Open  ]],
+Cell[35618, 919, 1104, 29, 131, "Input"],
+Cell[36725, 950, 1146, 29, 131, "Input"],
+Cell[37874, 981, 1059, 29, 131, "Input"],
+Cell[38936, 1012, 1188, 31, 152, "Input"],
+Cell[40127, 1045, 949, 26, 96, "Input"],
+Cell[CellGroupData[{
+Cell[41101, 1075, 280, 6, 57, "Input"],
+Cell[41384, 1083, 31422, 639, 329, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72843, 1727, 371, 7, 36, "Input"],
+Cell[73217, 1736, 30979, 631, 329, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[103017, 2337, 170, 2, 43, "Subsubsection"],
-Cell[103190, 2341, 1252, 30, 203, "Input"],
-Cell[104445, 2373, 245, 6, 63, "Input"],
-Cell[104693, 2381, 1306, 32, 206, "Input"],
+Cell[104245, 2373, 170, 2, 43, "Subsubsection"],
+Cell[104418, 2377, 1354, 32, 203, "Input"],
+Cell[105775, 2411, 1523, 37, 241, "Input"],
 Cell[CellGroupData[{
-Cell[106024, 2417, 156, 3, 36, "Input"],
-Cell[106183, 2422, 221, 5, 42, "Output"]
+Cell[107323, 2452, 156, 3, 36, "Input"],
+Cell[107482, 2457, 272, 6, 42, "Output"]
 }, Open  ]]
 }, Open  ]]
 }

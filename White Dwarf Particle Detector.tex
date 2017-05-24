@@ -228,12 +228,18 @@ where $n_i$ is the number density of nuclei. Here we provide a detailed analysis
 
 \subsection*{Coulomb Collisions}
 
-An incident particle of mass $m$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $M$, charge $Ze$ is described by the Rutherford differential cross section
+An incident particle of mass $m$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $M$, charge $Ze$ with impact parameter $b$ will transfer energy 
+\begin{equation}
+\label{eq:impact}
+E' = \frac{2 Z^2 \alpha^2}{b^2 \beta ^2 M}.
+\end{equation}
+
+The differential cross section for the interaction is given by the Rutherford cross section
 \begin{equation}
 \label{eq:rutherford}
 \frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
  \end{equation}
-where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}. Note that the differential cross section receives additional QED due to the incident spin, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that soft-scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
+where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}.  Note that the differential cross section receives additional QED due to the incident spin, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that soft-scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
 
 We first consider the energy loss of high-energy charged particles colliding with non-degenerate targets. In this case, the stopping power due to collisions with a number density $n$ is given by:
 \begin{align}
@@ -245,11 +251,11 @@ We first consider the energy loss of high-energy charged particles colliding wit
 \begin{equation}
 E_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2},
 \end{equation}
-where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor. Quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target. In terms of the collisional impact parameter $b$, this results in a bound $b > \frac{1}{\text{min}\{{M, m}\} \beta \gamma}$ and in terms of energy transfer, this translates to the condition
+where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor. Quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target $b > \frac{1}{\text{min}\{{M, m}\} \beta \gamma}$. In terms of energy transfer, this translates to the condition
 \begin{equation}
 E' < E_\text{quant} = \frac{2 Z^2 \alpha^2 \gamma^2 ~\text{min}\{{M, m}\}^2}{M}.
 \end{equation}
-In addition, the expression for the differential cross section \eqref{eq:rutherford} no longer holds when $E'$ becomes larger than the mass of the target \cite{Rossi}. For our calculations, we take the maximum energy that an incident particle is able to transfer to be
+In addition, the expression for the energy loss per scatter \eqref{eq:impact} is modified by relativistic considerations when the energy transfer is larger than the target mass \cite{Rossi}. For our calculations, we take the maximum energy that an incident particle is able to transfer to be
 \begin{equation}
 E_{\text{max}} = \text{min}\{E_\text{quant}, E_{\text{kin}}, M\}.
 \end{equation}
@@ -300,34 +306,39 @@ evaluated in the rest frame of the target electron. Since the electrons in a WD 
 
 \subsection*{Nuclear Interactions}
 
-Nuclear interactions can be either elastic or nonelastic. A single, head-on elastic collision would result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, in this section we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls. An elastic collision between an incident (non-relativistic) mass $m$ and a heavy, stationary target mass $M$ results in a final energy
+Nuclear interactions can be either elastic or nonelastic. A single, backward elastic scatter would result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls. An elastic collision between an incident (non-relativistic) mass $m$ and a heavy, stationary target mass $M$ results in a final energy
 \begin{equation}
-\zeta \equiv \frac{E_f}{E_0} = \l \frac{M}{m+M} \r^2, ~~~ m<M.
+\label{eq:elasticratio}
+\zeta \equiv \frac{E_f}{E_0} \approx \l \frac{M}{m+M} \r^2, ~~~ m<M.
 \end{equation}
-where $E_0$ and $E_f$ denote the initial and final energy of the incident particle, averaged over all scattering angles. For instance, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision.
+where $E_0$ and $E_f$ denote the initial and final energy of the incident particle, averaged over all scattering angles. Therefore, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision. 
 
-The cross section for elastic scatters has considerable dependence on the hadron species. For neutrons and protons, the nuclear elastic cross section is of order $\sigma_\text{el} \sim 100 ~\text{mb}$ for energies greater than $\text{MeV}$. However at lower energies, the elastic cross section effectively vanishes for protons but rises to $\OO(\text{b})$ for neutrons. This can be understood physically as charged hadrons may only elastically scatter off nuclei if the incident energy is sufficient to overcome the mutual Coulomb barrier. Note that the neutron capture cross section in carbon and oxygen is negligible compared to the elastic cross section. The stopping power due to elastic collisions is given by
+The cross section for elastic scatters has considerable dependence on the incident particle species. For neutrons and protons, the nuclear elastic cross section is of order $\sigma_\text{el} \sim 100 ~\text{mb}$ for energies greater than $\sim \text{MeV}$. However at lower energies, the elastic cross section effectively vanishes for protons but rises to $\OO(\text{b})$ for neutrons. This can be understood physically as charged hadrons may only elastically scatter off nuclei if the incident energy is sufficient to overcome the mutual Coulomb barrier. Note that the neutron capture cross section in carbon and oxygen is negligible compared to the elastic cross section. The stopping power due to nuclear elastic collisions can be expressed as
 \begin{equation}
-\l\frac{dE}{dx}\r_\text{el} \sim E  (1-\zeta) ~n \sigma_\text{el}
+\label{eq:elastic}
+\l\frac{dE}{dx}\r_\text{el} \sim E  (1-\zeta) ~n \sigma_\text{el},
 \end{equation}
-in the form of a random-walk. However, since the ions in a WD form a Coulomb lattice with binding energy \eqref{eq:lattice}, elastic collisions cannot transfer energy less than $\sim E_B$. Due to the ionic lattice, nucleons of incident energy less than $\sim \text{MeV}$ are unable to deposit energy via nuclear elastic scatters. This is especially important when considering incident neutrons, which have suppressed electromagnetic interactions and for which the inelastic cross section effectively vanishes below an MeV. Therefore, the WD is an extremely poor moderator of neutrons at sub-MeV energies. \textcolor{red}{very bold statement - double check.}
+valid for non-relativistic nucleons traversing in the target in the form of a random-walk. However, since the ions in a WD form a Coulomb lattice with binding energy \eqref{eq:lattice}, elastic collisions cannot transfer energy less than $\sim E_B$ without exciting phonon modes. This limits the applicability of \eqref{eq:elastic} to energies below an $\sim \text{MeV}$ for both neutrons and protons. 
 
 Next we consider nonelastic collisions, which are relevant for sufficiently energetic incident particles. A particle $i$ of incident energy greater than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$ can interact to produce an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. In addition, the remnant nucleus will generally be left in an excited state and relax through the emission of low-energy $\OO(10 ~\text{MeV})$ nucleons (``nuclear evaporation") and photons \cite{Rossi}. A hadronic shower is a result of all such reactions caused by primary and secondary particles.
 
-To estimate the typical shower length $X_{\text{had}}$, we assume a model in which a primary particle of energy $\epsilon$ interacting with nuclei to produces $N$ secondary particles each of energy $\epsilon/N$ (we ignore the effects of the evaporative stage in each reaction as this will only introduce minor corrections at sufficiently large $\epsilon$). The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either set by the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. According to this model, we find a hadronic shower length
+There is considerable uncertainty in the evaluation of nuclear cross sections for high-energy particles, and a precise formulation is beyond the scope of this work. As a conservative estimate, we take the nonelastic nuclear cross sections for nucleons and photons to be constant (in the relevant energy regime):
 \begin{equation}
-X_{\text{had}} = l_i + l_\text{had} \l \frac{\log{(\epsilon/E_c)}}{\log{N}}\r,
+\sigma_{n A} \sim 100 ~\text{mb}, ~~~\sigma_{\gamma A} \sim 1 ~\text{mb}.
+\end{equation} 
+To determine the typical hadronic shower length $X_{\text{had}}$ initiated by species $i$, we assume the primary particle of energy $\epsilon$ interacts with nuclei to produces $N$ secondary particles each of energy $\epsilon/N$ (we ignore the effects of the evaporative stage in each reaction as this will only introduce minor corrections at sufficiently large $\epsilon$). The shower will end once final-state hadrons reach a critical energy $E_\text{crit}$ - this is either set by the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. Over this range of energies, the stopping power for nucleons is roughly
+\begin{equation}
+\l \frac{dE}{dx}\r_\text{nuc} \sim E n \sigma_{n A},
 \end{equation}
-where $l_i$ is the nuclear mean free path for incident particle $i$. Note that the shower length has a mild, logarithmic sensitivity to the initial energy $\epsilon \gg ~\text{10 ~\text{MeV}}$ and number of secondaries and is therefore primarily set by the nuclear mean free paths. In the case of an incident hadron (proton, neutron, pion), the hadronic shower length is approximately set by a single length scale $X_{\text{had}} \approx 10 ~l_\text{had}$.
-
-There is considerable uncertainty in the evaluation of nuclear mean free paths for high-energy particles. In fact, the cross sections under considerations generally rise with increasing energy, although this precise relation is beyond the scope of this work. Instead, we will approximate the relevant nuclear cross sections to be constant. As a conservative estimate, we take the nonelastic cross sections for hadrons and photons interacting with nuclei to be
+yielding a hadronic shower length of order
 \begin{equation}
-\sigma_{had-A} \sim 100 ~\text{mb}, ~~~\sigma_{\gamma-A} \sim 1 ~\text{mb}.
+X_{\text{had}} \sim l_\text{n} \l \frac{\log{(\epsilon/E_c)}}{\log{N}}\r \approx 10 ~l_\text{n}.
 \end{equation}
+Note that the shower length has a mild, logarithmic sensitivity to the initial energy $\epsilon \gg ~\text{10 ~\text{MeV}}$ and number of secondaries and is therefore primarily set by the nuclear mean free paths. In the case of an incident hadron (proton, neutron, pion), the hadronic shower length is approximately set by a single length scale $X_{\text{had}} \approx 10 ~l_\text{had}$.
 
-Charged leptons can also lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. In this case, it is more appropriate to describe the interaction as a radiative stopping power. This has been computed in \cite{Gerhardt:2010bj} in terms of the photonuclear mean free path:
+Charged leptons can also lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. This radiative stopping power has been computed in \cite{Gerhardt:2010bj} in terms of the photonuclear mean free path $l_\gamma = \frac{1}{n \sigma_{\gamma A}}$:
 \begin{equation}
-\l \frac{dE}{dx}\r_{e-A} \sim E \l \frac{\alpha}{l_\gamma}\r
+\l \frac{dE}{dx}\r_{eA} \sim E \l \frac{\alpha}{l_\gamma}\r
 \end{equation}
 \end{appendices}
 
