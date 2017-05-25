@@ -261,6 +261,7 @@ E_{\text{max}} = \text{min}\{E_\text{quant}, E_{\text{kin}}, M\}.
 
 On the other hand, the maximum impact parameter is set by Thomas-Fermi screening due to the degenerate electron gas:
 \begin{equation}
+\label{eq:TF}
 \lambda_{\text{TF}} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
 \end{equation}
 This corresponds to a lower bound on the energy transfer
@@ -304,6 +305,41 @@ evaluated in the rest frame of the target electron. Since the electrons in a WD 
 
 
 \subsection*{Bremsstrahlung and Pair Production}
+The bremsstrahlung cross section for an electron of energy $E$ to radiate a photon of energy $k$ in a medium of nuclear targets with number density $n$ is given by the semi-classical Bethe-Heitler formula
+\begin{equation}
+\label{eq:BH}
+\frac{d \sigma_\text{BH}}{dk} = \frac{1}{3 k n X_0} (y^2+2 [1+ (1-y)^2]), ~~~~ y = k/E.
+\end{equation}
+$X_0$ is the radiation length, and is generally of the form 
+\begin{equation}
+X_0^{-1} = 4 n Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \limits_{b_{min}}^{b_{max}} \frac{1}{b}. 
+\end{equation}
+where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this is simply the electron Compton wavelength 
+\begin{equation}
+b_{min} = \lambda_e = \frac{1}{m_e}. 
+\end{equation}
+It is important to note that collisions at impact parameters \emph{less} than $b_{min}$ will still radiate, but with exponentially suppressed intensity. Classically, this is manifested by the decoherence of radiation at large scattering angles. For relativistic electrons, screening is important over almost the entire range of $k$ and shields the radiating electron from the nucleus at large distances. Therefore, the maximum impact parameter is set by the distance at which the nuclear target is screened. For an atomic target, this is of order the Bohr radius. In the case of a WD, this is set by the Thomas-Fermi length \eqref{eq:TF}:
+\begin{equation}
+b_{max} = \lambda_\text{TF} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
+\end{equation}
+Immediately it is evident that there exists a critical number density at which the Thomas-Fermi length is of order the Compton wavelength. Roughly this occurs at an electron number density $n_{crit} \sim 10^{32} ~\text{cm}^{-3}$. For larger densities, the bremsstrahlung amplitude will be highly suppressed. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_{min} \lesssim b_{max}$. 
+
+Similar to \eqref{eq:BH}, the cross section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is 
+\begin{equation}
+\label{eq:PP}
+\frac{d \sigma_\text{BH}}{dE} = \frac{1}{3 k n X_0} (1+ 2[x^2+ (1-x)^2]), ~~~ x = E/k.
+\end{equation} 
+Note that unlike bremsstrahlung, pair production has a threshold energy so that \eqref{eq:PP} is only valid for high-energy radiation $k \gtrsim m_e$. Integrating \eqref{eq:BH}, the energy loss of a high-energy electron is simply 
+\begin{equation}
+\frac{dE}{dx} = \frac{E}{X_0},
+\end{equation}
+and the full pair production cross section is $\sigma_{pp} = \frac{7}{9} \frac{1}{n X_0}$. Therefore, $X_0$ is the typical length scale of a high-energy electromagnetic shower. 
+
+
+
+
+
+
 
 \subsection*{Nuclear Interactions}
 
