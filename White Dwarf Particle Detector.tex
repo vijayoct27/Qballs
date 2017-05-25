@@ -295,7 +295,7 @@ High-energy photons can efficiently deposit their energy to electrons in the WD 
 \begin{equation}
 {k^{\prime }={\frac {k}{1+{\frac {k}{m_{\text{e}}c^{2}}}(1-\cos \theta )}}},
 \end{equation}
-where $k$ and $\theta$ denote the energy and angle of deflection for the incident photon, respectively. Clearly when $\theta \to 0$, none of the initial energy is transferred. However, for generic scattering angles and sufficiently energetic photons $k \gg m_e$, the energy transfer due to a single Compton interaction is typically $\OO(1)$ of the initial energy.
+where $k$ and $\theta$ denote the energy and angle of deflection for the incident photon, respectively. For perfectly forward scatters, none of the initial energy is transferred. \textcolor{blue}{However, for generic scattering angles and sufficiently energetic photons $k \gg m_e$, the energy transfer due to a single Compton interaction is typically $\OO(1)$ of the initial energy.} \textcolor{red}{Differential cross section - dominated by forward scattering?}.
 The Klein-Nishina cross section integrated over all scattering angles is given by
 \begin{equation}
 \sigma_\text{comp}\approx \frac{\pi \alpha^2}{2 m_e k} \left \{1+\log{\l\frac{4 k^2}{m_e^2} \r}\right \}, ~~~ k \gg m_e,
@@ -335,19 +335,25 @@ Note that unlike bremsstrahlung, pair production has a threshold energy so that 
 \end{equation}
 and the full pair production cross section is $\sigma_{pp} = \frac{7}{9} \frac{1}{n X_0}$. $X_0$ is the typical length scale of a high-energy electromagnetic shower. 
 
-However, high-energy radiative processes are significantly suppressed in the WD medium by the Landau-Pomeranchuk-Migdal (LPM) effect. Highly-energetic electromagnetic interactions involve small longitudinal momentum transfers 
+However, bremsstrahlung and pair production will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect (see \cite{LPM} for an extensive review). High-energy radiative processes involve very small longitudinal momentum transfers to a nuclear target ($\propto k/E^2$ in the case of bremsstrahlung). Quantum mechanically, this interaction is delocalized across a formation length over which amplitudes from different scattering centers will interfere. This interference is usually destructive and must be taken into account in the case of ultra-high energies or high-density mediums. 
 
- reactions occur gradually, spread over long distances. During this time, even relatively weak factors can accumulate enough to disrupt the interaction.The longitudinal momentum transfer between a bremsstrahlung electron and the target nucleus is $q_{||} = km_e^2/2E(E-k)$. For pair production, $q_{||} = km_e^2/2E(k-E)$. This interaction is delocalized over a formation length $l_f \sim 1/q_{||}$ and so the amplitudes for all interactions must be added within this distance - if this scatters the electron or photon significantly, then bremsstrahlung/pair production will be reduced. 
-
-For bremsstrahlung and pair production, 
-
+Calculations of the LPM effect can be done semi-classically based on average multiple scattering. It is found that bremsstrahlung is suppressed for $k > (E-k)^2/E_\text{LPM}$ and pair production for $E(k-E) > k E_\text{LPM}$, where 
 \begin{equation}
 \label{eq:LPM}
-E_\text{LPM} = \frac{m^2 X_0 \alpha}{4 \pi}. 
+E_\text{LPM} = \frac{m_e^2 X_0 \alpha}{4 \pi}.
+\end{equation}
+For the WD densities under consideration, $E_\text{LPM} \sim 10-10^{3} ~\text{MeV}$. Note that $E_\text{LPM}$ generally scales as the fourth power of the mass of the incident particle so for muons, $E_\text{LPM} \sim 10^{10}-10^{12} ~\text{MeV}$. 
+We find that the bremsstrahlung stopping power with LPM suppression is parametrically
+\begin{equation}
+\l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}.
+\end{equation}
+Qualitatively, the LPM suppression diminishes the energy loss due to soft radiation so that the stopping power is dominated by \emph{hard} bremsstrahlung.
+Similarly, the pair production cross section reduces to 
+\begin{equation}
+\sigma_\text{LPM} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n X_0}.
 \end{equation}
 
-
-
+In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$. The emitted photon can coherently scatter off ions in the media, acquiring an effective mass of order the ion plasma frequency $\Omega_p \sim \l \frac{n_i Z^2 e^2}{m_i} \r^{1/2}$.  \textcolor{red}{fastest plasma frequency will dominate - electrons have the same form if degenerate?}. Semi-classically, this results in a suppression of order $(k m_e/\Omega_p E)^2$ when the radiated photon energy $k < \Omega_p E/m_e$. This is typically known as the ``dielectric effect", and is responsible for regulating the log divergence of the bremsstrahlung cross section for soft radiation. In the WD, the typical ion frequency is in the range $\Omega_p \sim 1 -10 ~\text{keV}$. However, when the LPM suppression is included, the radiative stopping power is less sensitive to the dielectric effect. For our purposes, this can be ignored. 
 
 \subsection*{Nuclear Interactions}
 
