@@ -113,14 +113,24 @@ where the trigger size $\lambda_T$ varies over a range of WD densities. This is 
 
 \section{Dark Matter Explosiveness}
 \label{sec:DMexplode}
-In this section, we parameterize the explosive power of a generic (ultra-heavy) DM interaction in the WD which releases $N_i$ SM particles of species $i$ each with kinetic energy $\epsilon$.
-\subsection{DM Transit}
-Consider a DM transit through the WD, interacting with stellar constituents in a general manner as shown in Figure \ref{fig:feynmandiag}. The cross section for this interaction is denoted as $\sigma_{i,\epsilon}$.
+
+In this section, we parameterize the ability of generic DM-SM interactions to destroy a white dwarf.  We focus on interactions of the general type shown in  Figure \ref{fig:feynmandiag}, where energetic SM particles are created in the star after either a DM particle scatters off of a WD constituent or two DM particles collide.  The first of these allows stellar heating via \emph{transit} events as the DM continually releases energy while traversing the star, and the second process leads to heating via point-like \emph{collision} events.  Note that these collisions are not necessarily particle-antiparticle annihilations, rather they could be a more general and complicated processes, like the collisions of heavy nuclei.  The heating physics and event rates are parametrically different for these two types of events, and so we will treat them separately below.  
+
 \begin{figure}
 \label{fig:feynmandiag}
 \includegraphics[scale=.05]{feynmandiag}
-\caption{General interaction between ultra-heavy DM and WD constituents, producing $n_i$ additional particles of species $i$.}
+\caption{General interaction between ultra-heavy DM and WD constituents. \textcolor{blue}{add collision diagram, remove $\epsilon_i$ and $n_i$ labels}}
 \end{figure}
+
+\subsection{DM Transit}
+
+A DM transit releases energy continually along the DM particle's trajectory, and so it is best described by a \emph{stopping power} $\chi$ defined as:
+\[
+    \chi = \frac{1}{n} \frac{\partial{E}}{\partial{x}}
+\]
+where $n$ is the number density of the stellar medium and $\partial{E}/\partial{x}$ is the energy lost by the DM per length traveled.  Normalized in this manner, $\chi$ is independent of $n$ and depends only the parameters of the particular DM model under consideration.  The stopping power has the interpretation of an interaction cross-section weighted by the energy transfered in that interaction.  For example, if the DM has a cross-section $\sigma$ to interact with a carbon ion to produce $N$ SM particles of energy $\epsilon$ each, then $\chi = N \sigma \epsilon$.  In general $\chi$ is given by an integral over all possible outgoing SM states.  We will use the terminology of \emph{stopping power} as this $\chi$ is the same quantity that is studied to determine the stopping of energetic particle in matter.  However, in all cases where a DM transit is capable of ignition it will turn out that only a small fraction of the DM's kinetic energy is transfered to the star before ignition, so we ignore any change in the DM velocity. 
+
+
 Setting the total energy released during a transit of length $\text{max}\{\lambda_T, L\}$ to be greater than the explosive energy \eqref{eqn:boom}, we find a lower bound on the interaction cross section sufficient to trigger runaway fusion:
 \begin{equation}
 \label{eq:transitexplosion}
