@@ -236,7 +236,7 @@ E' = \frac{2 Z^2 \alpha^2}{b^2 \beta ^2 M}.
 The differential cross section for the interaction is given by the Rutherford cross section
 \begin{equation}
 \label{eq:rutherford}
-\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
+\frac{d \sigma_R}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
  \end{equation}
 where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}.  Note that the differential cross section receives additional QED due to the incident spin, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that soft-scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
 
@@ -305,55 +305,55 @@ evaluated in the rest frame of the target electron. Since the electrons in a WD 
 
 
 \subsection*{Bremsstrahlung and Pair Production}
-The bremsstrahlung cross section for an electron of energy $E$ to radiate a photon of energy $k$ in a medium of nuclear targets with number density $n$ is given by the semi-classical Bethe-Heitler formula
+The cross section for an electron of energy $E$ to radiate a photon of energy $k$ in a medium with nuclear density $n$ is given by the Bethe-Heitler formula
 \begin{equation}
 \label{eq:BH}
-\frac{d \sigma_\text{BH}}{dk} = \frac{1}{3 k n X_0} (y^2+2 [1+ (1-y)^2]), ~~~~ y = k/E.
+\frac{d \sigma_\text{BH}}{dk} = \frac{1}{3 k n X_0} (y^2+2 [1+ (1-y)^2]), ~~~ y = k/E.
 \end{equation}
 $X_0$ is the radiation length, and is generally of the form 
 \begin{equation}
-X_0^{-1} = 4 n Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \limits_{b_{min}}^{b_{max}} \frac{1}{b}. 
+X_0^{-1} = 4 n Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \limits_{b_\text{min}}^{b_\text{max}} \frac{1}{b}. 
 \end{equation}
-where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this is simply the electron Compton wavelength 
+where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_\text{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this is simply the electron Compton wavelength 
 \begin{equation}
-b_{min} = \lambda_e = \frac{1}{m_e}. 
+b_\text{min} = \lambda_e = \frac{1}{m_e}. 
 \end{equation}
-It is important to note that collisions at impact parameters \emph{less} than $b_{min}$ will still radiate, but with exponentially suppressed intensity. Classically, this is manifested by the decoherence of radiation at large scattering angles. For relativistic electrons, screening is important over almost the entire range of $k$ and shields the radiating electron from the nucleus at large distances. Therefore, the maximum impact parameter is set by the distance at which the nuclear target is screened. For an atomic target, this is of order the Bohr radius. In the case of a WD, this is set by the Thomas-Fermi length \eqref{eq:TF}:
+It is important to note that collisions at impact parameters \emph{less} than $b_\text{min}$ will still radiate, but with exponentially suppressed intensity. Classically, this is manifested by the decoherence of radiation at large scattering angles. For relativistic electrons, screening is important over almost the entire range of $k$ and shields the radiating electron from the nucleus at large distances. Therefore, the maximum impact parameter is set by the distance at which the nuclear target is screened. For an atomic target, this is of order the Bohr radius. In the case of a WD, this is set by the Thomas-Fermi length \eqref{eq:TF}:
 \begin{equation}
-b_{max} = \lambda_\text{TF} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
+b_\text{max} = \lambda_\text{TF} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
 \end{equation}
-Immediately it is evident that there exists a critical number density at which the Thomas-Fermi length is of order the Compton wavelength. Roughly this occurs at an electron number density $n_{crit} \sim 10^{32} ~\text{cm}^{-3}$. For larger densities, the bremsstrahlung amplitude will be highly suppressed. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_{min} \lesssim b_{max}$. 
+Immediately it is evident that there exists a critical number density at which the Thomas-Fermi length is of order the Compton wavelength. Roughly this occurs at an electron number density $\sim 10^{32} ~\text{cm}^{-3}$. For larger densities, the bremsstrahlung amplitude will be highly suppressed. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$. 
 
 Similar to \eqref{eq:BH}, the cross section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is 
 \begin{equation}
 \label{eq:PP}
 \frac{d \sigma_\text{BH}}{dE} = \frac{1}{3 k n X_0} (1+ 2[x^2+ (1-x)^2]), ~~~ x = E/k.
 \end{equation} 
-Note that unlike bremsstrahlung, pair production has a threshold energy so that \eqref{eq:PP} is only valid for high-energy radiation $k \gtrsim m_e$. Integrating \eqref{eq:BH}, the energy loss of a high-energy electron is simply 
+Note that pair production has a threshold energy so that \eqref{eq:PP} is only valid for $k \gtrsim m_e$. Integrating \eqref{eq:BH}, the energy loss due to bremsstrahlung is simply
 \begin{equation}
 \frac{dE}{dx} = \frac{E}{X_0},
 \end{equation}
-and the full pair production cross section is $\sigma_{pp} = \frac{7}{9} \frac{1}{n X_0}$. $X_0$ is the typical length scale of a high-energy electromagnetic shower. 
+and the full pair production cross section is $\sigma_{pp} = \frac{7}{9} \frac{1}{n X_0}$. In effect, $X_0$ is the typical length scale of an electromagnetic shower. 
 
-However, bremsstrahlung and pair production will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect (see \cite{LPM} for an extensive review). High-energy radiative processes involve very small longitudinal momentum transfers to a nuclear target ($\propto k/E^2$ in the case of bremsstrahlung). Quantum mechanically, this interaction is delocalized across a formation length over which amplitudes from different scattering centers will interfere. This interference is usually destructive and must be taken into account in the case of ultra-high energies or high-density mediums. 
-
-Calculations of the LPM effect can be done semi-classically based on average multiple scattering. It is found that bremsstrahlung is suppressed for $k > (E-k)^2/E_\text{LPM}$ and pair production for $E(k-E) > k E_\text{LPM}$, where 
+However, bremsstrahlung and pair production will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect (see \cite{LPM} for an extensive review). High-energy radiative processes involve very small longitudinal momentum transfers to nuclear targets ($\propto k/E^2$ in the case of bremsstrahlung). Quantum mechanically, this interaction is delocalized across a formation length over which amplitudes from different scattering centers will interfere. This interference is usually destructive and must be taken into account in the case of high energies or high-density mediums. Calculations of the LPM effect can be done semi-classically based on average multiple scattering. It is found that bremsstrahlung is suppressed for $k > E(E-k)/E_\text{LPM}$ and pair production for $E(k-E) > k E_\text{LPM}$, where 
 \begin{equation}
 \label{eq:LPM}
 E_\text{LPM} = \frac{m_e^2 X_0 \alpha}{4 \pi}.
 \end{equation}
-For the WD densities under consideration, $E_\text{LPM} \sim 10-10^{3} ~\text{MeV}$. Note that $E_\text{LPM}$ generally scales as the fourth power of the mass of the incident particle so for muons, $E_\text{LPM} \sim 10^{10}-10^{12} ~\text{MeV}$. 
-We find that the bremsstrahlung stopping power with LPM suppression is parametrically
+For the WD densities under consideration, $E_\text{LPM} \sim 10-10^{3} ~\text{MeV}$. Note that $E_\text{LPM}$ generally scales as the fourth power of the mass of the incident particle so for muons, $E_\text{LPM} \sim 10^{10}-10^{12} ~\text{MeV}$. With LPM suppression, the bremsstrahlung stopping power is approximately
 \begin{equation}
-\l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}.
+\label{eq:bremloss}
+\l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}, ~~~ E>E_\text{LPM}. 
 \end{equation}
-Qualitatively, the LPM suppression diminishes the energy loss due to soft radiation so that the stopping power is dominated by \emph{hard} bremsstrahlung.
-Similarly, the pair production cross section reduces to 
+We find that the LPM effect diminishes the energy loss due to soft radiation so that the radiative stopping power is dominated by single, hard bremsstrahlung. Similarly, the pair production cross section reduces to 
 \begin{equation}
-\sigma_\text{LPM} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n X_0}.
+\sigma_{pp} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n X_0}, ~~~ E>E_\text{LPM}
 \end{equation}
 
-In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$. The emitted photon can coherently scatter off ions in the media, acquiring an effective mass of order the ion plasma frequency $\Omega_p \sim \l \frac{n_i Z^2 e^2}{m_i} \r^{1/2}$.  \textcolor{red}{fastest plasma frequency will dominate - electrons have the same form if degenerate?}. Semi-classically, this results in a suppression of order $(k m_e/\Omega_p E)^2$ when the radiated photon energy $k < \Omega_p E/m_e$. This is typically known as the ``dielectric effect", and is responsible for regulating the log divergence of the bremsstrahlung cross section for soft radiation. In the WD, the typical ion frequency is in the range $\Omega_p \sim 1 -10 ~\text{keV}$. However, when the LPM suppression is included, the radiative stopping power is less sensitive to the dielectric effect. For our purposes, this can be ignored. 
+In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$. The emitted photon can coherently scatter off electrons and ions in the media, acquiring an effective mass of order the plasma frequency $\omega_p$. The fastest plasma frequency will dominate, which is set by degenerate electrons.
+Semi-classically, this results in a suppression of order $(k m_e/\omega_p E)^2$ when the radiated photon energy $k < \omega_p E/m_e$. This is known as the ``dielectric effect". Note that for the densities in question, $\omega_p < m_e$ so for our purposes, we may simply set $\omega E/m_e$ as a minimum cutoff on allowed photon frequencies. For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect. Note that there is no apparent analog of the dielectric effect for pair production. 
+
+When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Klein} taking the LPM effect into account. Unlike electrons, high-energy muons have significant cross section for direct pair production. Results for muon energy loss in all radiative channels (bremsstrahlung, direct pair production, nuclear) are tabulated in http://pdg.lbl.gov/2016/AtomicNuclearProperties/.  
 
 \subsection*{Nuclear Interactions}
 
@@ -383,16 +383,13 @@ neglecting logarithmic factors of $\OO(1)$. The shower will end once final-state
 X_{\text{had}} \sim l_\text{had} \log{(E_0/E_c)} \approx 10 ~l_\text{had}.
 \end{equation}
  
-High-energy $k \gtrsim 10 ~\text{MeV}$ photons can also interact to nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a precise formulation is beyond the scope of this work. As a conservative estimate, we suppose a constant value of order 
+Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact to nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work. As a conservative estimate, we assume a constant value
 \begin{equation}
 l_\gamma \sim \frac{1}{n_i \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
 \end{equation}
-Similarly, charged leptons will lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. This radiative stopping power has been computed in \cite{Gerhardt:2010bj} in terms of the photonuclear mean free path, and is of order
-\begin{equation}
-\l \frac{dE}{dx}\r_{eA} \sim E \l \frac{\alpha}{l_\gamma}\r. 
-\end{equation}
-\end{appendices}
+In the energy regime of interest our choice roughly matches a calculated result of \cite{Klein} in which $\sigma_{\gamma A}$ is a slowly-varying function of energy. At ultra-high energies $k \gtrsim 10^{14} ~\text{GeV}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{PDG}. Similarly, charged leptons will lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation of the electron energy loss is done in \cite{Klein} and differs from our naive estimate by $\OO(10)$. For muon energy loss, the naive estimate matches tabulated values in \cite{PDG} to within $\OO(1)$. The largest uncertainty in calculating electronuclear stopping power comes from the uncertainties in hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results. 
 
+\end{appendices}
 
 \section*{Acknowledgements}
 We are grateful to S. Rajendran for suggesting this project and for helpful conversations. We would also like to thank D. Grabowska, K. Harigaya, R. McGehee, and J. Wurtele for stimulating discussions.
