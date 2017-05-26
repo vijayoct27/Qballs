@@ -81,7 +81,7 @@ Concrete examples of DM candidates with interactions of this type include baryon
 
 \textcolor{blue}{Other ignition sources exist (i.e., detector backgrounds). How does this limit our constraints? Discuss the specific tests we apply (WD lifetime, SN rate) to derive our constraints.} \textcolor{red}{Possible long term addition: improve constraints by using non-type IA sn rate instead of total rate. Should talk with SN people first.}
 
-We begin in Section~\ref{sec:review} by reviewing the explosion mechanism in a WD. In Section~\ref{sec:DMexplode}, we parametrize the properties of DM necessary to trigger explosions through non-gravitational interactions in the case of a DM transit or collision in the star. The precise explosive power will be determined by a heating length, which is computed in Section~\ref{sec:heatinglength} for different possible interactions. Following this general discussion, we apply the WD detector to place constraints on ultra-heavy dark matter in Section~\ref{sec:Constraints}, including constraints on Q-balls as a concrete example. We conclude in Section~\ref{sec:discussion}.
+We begin in Section~\ref{sec:review} by reviewing the explosion mechanism in a WD. In Section~\ref{sec:DMexplode}, we parametrize the properties of DM necessary to trigger explosions through non-gravitational interactions in the case of a DM transit or collision in the star. The precise explosive power will be determined by a heating length, which is computed in Section~\ref{sec:heatinglength} for different possible interactions. Following this general discussion, we apply the WD detector to place constraints on ultra-heavy dark matter in Section~\ref{sec:Constraints}, and apply these constraints in Section~\ref{sec:ConcreteExamples} to Q-balls and dark nuclei as concrete examples. We conclude in Section~\ref{sec:discussion}.
 
 \section{White Dwarf Runaway Fusion}
 \label{sec:review}
@@ -91,19 +91,19 @@ A general energy deposition event in the WD can be roughly characterized by two 
 
 We find that a heating event will destroy a given WD as long as the energy density \emph{and} energy deposited are sufficiently large:
 \begin{equation}
-\label{eqn:runaway}
+\label{eq:runaway}
 T \gtrsim T_f, ~~~~ L \gtrsim \lambda_T.
 \end{equation}
-Note that this condition determines if a region of size $L$ and temperature $T$ \emph{immediately} initiates runaway fusion.  Instead, it is more useful to determine whether a given energy deposit will \emph{eventually} initiate runaway fusion. In particular, a heating event that results in $T \gg T_f$ and $L  < \lambda_T$ is perhaps initially dominated by diffusive cooling but can potentially evolve into an ``explosive" temperature profile capable of igniting the star. When diffusion dominates, the thermal evolution will approximately be given by the dilution of the fixed total energy of the initial region over the final volume. Taking this into account, we can express the explosion condition \eqref{eqn:runaway} in terms of an excess energy within the temperature peak (rather than the temperature itself):
+Note that this condition determines if a region of size $L$ and temperature $T$ \emph{immediately} initiates runaway fusion.  Instead, it is more useful to determine whether a given energy deposit will \emph{eventually} initiate runaway fusion. In particular, a heating event that results in $T \gg T_f$ and $L  < \lambda_T$ is perhaps initially dominated by diffusive cooling but can potentially evolve into an ``explosive" temperature profile capable of igniting the star. When diffusion dominates, the thermal evolution will approximately be given by the dilution of the fixed total energy of the initial region over the final volume. Taking this into account, we can express the explosion condition \eqref{eq:runaway} in terms of an excess energy within the temperature peak (rather than the temperature itself):
 \begin{equation}
-\label{eqn:boom}
+\label{eq:boom}
 E \gtrsim n_i T_f \text{max}\{L, \lambda_T\}^3.
 \end{equation}
 In fact, there is an absolute minimum explosion energy given by
 \begin{equation}
 E_{\text{boom}} \sim n_i T_f \lambda_T^3 \sim 10^{14} - 10^{21} ~\GeV,
 \end{equation}
-where the trigger size $\lambda_T$ varies over a range of WD densities. This is plotted in Figure \ref{fig:Eboom}. However, this energy is sufficient only if it thermalizes within the trigger size.  If an energy is deposited on a length scale larger than $\lambda_T$, the explosion energy required is given by \eqref{eqn:boom} and may be parametrically larger. Since we are concerned with processes that have a fixed deliverable energy (the energy of the incoming DM), the most explosive processes will be those that result in the most localized heating. As a result, understanding the heating length $L$ for various processes is critical to assessing their explosive potential. This is done in Section~\ref{sec:heatinglength}.
+where the trigger size $\lambda_T$ varies over a range of WD densities. This is plotted in Figure \ref{fig:Eboom}. However, this energy is sufficient only if it thermalizes within the trigger size.  If an energy is deposited on a length scale larger than $\lambda_T$, the explosion energy required is given by \eqref{eq:boom} and may be parametrically larger. Since we are concerned with processes that have a fixed deliverable energy (the energy of the incoming DM), the most explosive processes will be those that result in the most localized heating. As a result, understanding the heating length $L$ for various processes is critical to assessing their explosive potential. This is done in Section~\ref{sec:heatinglength}.
 
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
@@ -117,7 +117,6 @@ where the trigger size $\lambda_T$ varies over a range of WD densities. This is 
 In this section, we parameterize the ability of generic DM-SM interactions to destroy a white dwarf.  We focus on interactions of the general type shown in  Figure \ref{fig:feynmandiag}, where energetic SM particles are created in the star after either a DM particle scatters off of a WD constituent or two DM particles collide.  The first of these allows stellar heating via \emph{transit} events as the DM continually releases energy while traversing the star, and the second process leads to heating via point-like \emph{collision} events.  Note that these collisions are not necessarily particle-antiparticle annihilations, but could be a more general and complicated processes, like the collisions of heavy nuclei.  The heating physics and event rates are parametrically different for transits and collisions, and thus so are the resulting constraints. We will treat these two types of events separately below.  
 
 \begin{figure}
-\label{fig:feynmandiag}
 \includegraphics[scale=.05]{feynmandiag}
 \caption{General interaction between ultra-heavy DM and WD constituents. \textcolor{blue}{add collision diagram, remove $\epsilon_i$ and $n_i$ labels}}
 \end{figure}
@@ -141,45 +140,44 @@ Nominally, the energy deposit and loss per length will depend on the stellar den
 crust shielding?
 
 Setting the total energy released during a transit of length $\text{max}\{\lambda_T, L\}$ to be greater than the explosive energy \eqref{eqn:boom}, we find a lower bound on the interaction cross section sufficient to trigger runaway fusion:
+
 \begin{equation}
 \label{eq:transitexplosion}
-N_i \sigma_{\epsilon,i} \gtrsim \left\{
-        \begin{array}{ll}
-            \displaystyle \lambda_T^2 \l \frac{T_f}{\epsilon} \r & \quad L < \lambda_T \\
-             \lambda_T^2 \l \frac{L}{\lambda_T}\r^2 \l \frac{T_f}{\epsilon} \r & \quad L > \lambda_T
-        \end{array}
-    \right..
+% N_i \sigma_{\epsilon,i} \gtrsim \left\{
+%         \begin{array}{ll}
+%             \displaystyle \lambda_T^2 \l \frac{T_f}{\epsilon} \r & \quad L < \lambda_T \\
+%              \lambda_T^2 \l \frac{L}{\lambda_T}\r^2 \l \frac{T_f}{\epsilon} \r & \quad L > \lambda_T
+%         \end{array}
+%     \right..
+N_i \epsilon\, \sigma_{\epsilon,i} \gtrsim \begin{cases}
+  \lambda_T^2\, T_f & \quad L < \lambda_T \\
+   \lambda_T^2\, T_f \l\frac{L}{\lambda_T}\r^2 & \quad L > \lambda_T
+\end{cases} \\
 \end{equation}
 
 Note that in deriving \eqref{eq:transitexplosion}, we require that the DM transit time is less than the diffusion time corresponding to the explosive temperature profile. This results in the condition
 \begin{equation}
 \tau_d \gtrsim \frac{\text{max}\{\lambda_T, L\}}{v_\text{esc}},
 \end{equation}
-where $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lambda_T, L\}$ and temperature $T_f$ to diffuse $\OO(1)$ of its heat, and $v_\text{esc}$ is the DM transit velocity (set by the escape velocity of the WD). An estimate from the heat equation yields $\tau_d \sim \frac{\lambda_T^2}{\alpha}$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{red}{Show condition is true for all densities.} Similarly, we also require that the time to transfer energy $\epsilon$ out to the initial temperature profile of length $L$ is less than the diffusion time scale $\tau_d$. Both of these conditions are necessary to ensure that energy depositions from individual collisions add coherently into a temperature profile during the full transit length. While a heating event can still be explosive if either of these conditions are violated, the formalism of \eqref{eq:transitexplosion} no longer holds in this case.
+where $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lambda_T, L\}$ and temperature $T_f$ to diffuse $\OO(1)$ of its heat, and $v_\text{esc}$ is the DM transit velocity (set by the escape velocity of the WD). An estimate from the heat equation yields $\tau_d \sim \lambda_T^2/\alpha$, where $\alpha$ is the (temperature-dependent) diffusivity. \textcolor{red}{Show condition is true for all densities.} Similarly, we also require that the time to transfer energy $\epsilon$ out to the initial temperature profile of length $L$ is less than the diffusion time scale $\tau_d$. Both of these conditions are necessary to ensure that energy depositions from individual collisions add coherently into a temperature profile during the full transit length. While a heating event can still be explosive if either of these conditions are violated, the formalism of \eqref{eq:transitexplosion} no longer holds in this case.
 
 In addition, we require that a DM with this interaction makes it through the crust of the WD of size of density $n_{\text{c}}$ and size $R_{\text{c}}$:
 \begin{equation}
-N_i \sigma_{\epsilon,i} \lesssim \l \frac{m_{\text{DM}} v_{\text{esc}}^2}{n_{\text{c}} R_{\text{c}}} \r \frac{1}{\epsilon}.
+% N_i \sigma_{\epsilon,i} \lesssim \l \frac{m_{\text{DM}} v_{\text{esc}}^2}{n_{\text{c}} R_{\text{c}}} \r \frac{1}{\epsilon}.
+N_i\epsilon\, \sigma_{\epsilon,i} \lesssim \frac{m_{\text{DM}} v_{\text{esc}}^2}{n_{\text{c}} R_{\text{c}}}.
 \end{equation}
 Imposing \eqref{eq:transitexplosion}, we find lower bound on $m_{\text{DM}}$ such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
 \begin{equation}
 \label{eq:transitmass}
 m_{\text{DM}} \gtrsim  T_f ~\text{max}\{\lambda_T, L\}^2 \l \frac{n_{\text{c}} R_{\text{c}}}{v_{\text{esc}}^2} \r
 \end{equation}
-If \eqref{eq:transitmass} is violated, than the DM interaction is either not strong enough to ignite the WD or it is too strong that it has no chance to transit the interior as it gets stopped in the crust. In the case of $\lambda_T > L$, this translates to a model-independent lower-bound on the DM mass $\sim 10^{27} - 10^{34} ~\GeV$. \textcolor{blue}{used 1 km crust and same number density as interior}.
-
-We now calculate the maximum possible DM mass that may transit a single WD within its lifetime $\sim \text{Gyr}$. The expected transit rate for an ultra-heavy DM state is given by
-\begin{equation}
-\Gamma_\text{DM} = n_\text{DM} \sigma_g v \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \pi R_{s}^2 \l\frac{v_\text{esc}}{v}\r^2 v,
-\end{equation}
-where $v \sim 10^{-3}$ is the virial velocity of DM and $\rho_{\text{DM}}$ is the energy density of DM in the region of interest. $\sigma_g$ denotes the capture cross section including a gravitational Sommerfeld enhancement. Considering a $1.25 M_{\odot}$ WD in the local dark matter halo $\rho_{\text{DM}} \sim 0.3 ~\text{GeV}/\text{cm}^3$, we find that $m_\text{DM} \lesssim 10^{44} ~\GeV \sim 10^{20} ~\text{g}$ will transit the WD at least once in a Gyr. If we instead consider (recently discovered) heavy white dwarfs in the galactic center $\rho_{\text{DM}} \sim 10^3 ~\text{GeV}/\text{cm}^3$, this upper bound improves to $m_\text{DM} \lesssim 10^{48} ~\GeV \sim 10^{24} ~\text{g}$.
-\textcolor{blue}{Hard to put this into ``scaling" notation}.
+If \eqref{eq:transitmass} is violated, then the DM interaction is either not strong enough to ignite the WD or it is so strong that it has no chance penetrate the crust and transit the interior. In the case of $\lambda_T > L$, this translates to a model-independent lower-bound on the DM mass $\sim 10^{27} - 10^{34} ~\GeV$. \textcolor{blue}{used 1 km crust and same number density as interior}.
 
 \subsection{DM-DM Collisions}
 
 \section{Heating Length}
 \label{sec:heatinglength}
-For the DM interactions under consideration, the released energy must be efficiently transferred to the WD in order to trigger runaway fusion. In this section, we summarize the available modes of energy loss for different SM particles in a WD - detailed calculations of the various interactions are presented in Appendix \ref{sec:appendix}. For a given process, the heating length $L$ is determined by the distance over which an incident particle of energy $\epsilon$ and any secondaries deposit $\OO(1)$ of the initial energy \emph{and} the energy transfer thermalizes ion constituents. As we are primarily concerned with depositing sufficient energy to ignite supernovae, we focus on high-energy particles $\epsilon \gg T_f \sim \text{MeV}$ which interact via the strong and electromagnetic forces: electrons, photons, muons, and hadrons. In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components.
+For the DM interactions under consideration, the released energy must be efficiently transferred to the WD in order to trigger runaway fusion. In this section, we summarize the available modes of energy loss for different SM particles in a WD - detailed calculations of the various interactions are presented in Appendix \ref{sec:appendix}. For a given process, the heating length $L$ is approximately the distance over which an incident particle of energy $\epsilon$ and any secondaries deposit $\OO(1)$ of the initial energy \emph{and} the energy transfer thermalizes ions in the WD. As we are primarily concerned with depositing sufficient energy to ignite supernovae, we focus on high-energy particles $\epsilon \gg T_f \sim \text{MeV}$ which interact via the strong and electromagnetic forces: electrons, photons, muons, and hadrons. In this way, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components.
 
 \subsection{Hadrons}
 
@@ -193,7 +191,58 @@ The end products of a hadronic shower will generally be hadrons of kinetic energ
 \section{Constraints}
 \label{sec:Constraints}
 
-With the heating lengths in hand for a wide variety of possible heating processes, we are now ready to place constraints on ultra-heavy dark matter models based on observations of white dwarfs and supernovae. As discussed in \cite{Graham:2015apa}, there are two ways we may exclude a dark matter candidate: (1)~by directly observing white dwarfs that should have blown up already due to the presence of the candidate in sufficient abundance, and (2)~by observing a supernovae rate incompatible with the expected rate due to the candidate detonating white dwarfs. 
+With the heating lengths in hand for a wide variety of possible heating processes, we are now ready to place constraints on ultra-heavy dark matter models based on observations of white dwarfs and supernovae. As discussed in \cite{Graham:2015apa}, there are two ways we may exclude a dark matter candidate: (1)~by directly observing white dwarfs that should have blown up already due to the presence of the candidate in sufficient abundance, and (2)~by observing a supernovae rate incompatible with the expected rate due to the DM candidate detonating WDs. We will consider each of these possibilities for both DM transits and collisions in the WD, but first we pause to consider the data available on white dwarfs and the supernovae rate.
+
+\textcolor{blue}{Exhibit a specific white dwarf candidate and discuss its parameters: age, radius, mass (density), local dark matter density. Also mention possible white dwarf candidates in higher dark matter densities.}
+
+\textcolor{blue}{Discuss the current supernovae rate and the attendant assumptions.}
+
+% lifetime
+% flux
+% radius
+% mass
+% dark matter density
+%
+% $n_i\epsilon \sigma$
+% $M_\text{WD}$
+% $\rho_\text{DM}$
+% $m_\text{DM}$
+% $i$
+
+\subsection{Dark Matter Transits}
+\label{sec:TransitConstraints}
+
+We may exclude a dark matter candidate if an observed white dwarf would have experienced $\OO(1)$ ``explosive'' transits which satisfy the conditions
+\begin{align}
+N_i \epsilon\, \sigma_{\epsilon,i} \gtrsim \begin{cases}
+  \lambda_T^2\, T_f & \quad L < \lambda_T \\
+   \lambda_T^2\, T_f \l\frac{L}{\lambda_T}\r^2 & \quad L > \lambda_T
+\end{cases} \tag{\ref{eq:transitexplosion}}\\
+m_{\text{DM}} \gtrsim  T_f ~\text{max}\{\lambda_T, L\}^2 \l \frac{n_{\text{c}} R_{\text{c}}}{v_{\text{esc}}^2} \r \tag{\ref{eq:transitmass}}
+\end{align}
+developed in Section~\ref{sec:DMexplode}, along with the diffusion conditions discussed there. The expected number of ultra-heavy dark matter transits through a white dwarf with lifetime $t_\text{WD} \sim \text{Gyr}$ is given by
+\begin{align}
+N_\text{transits}  &= t_\text{WD} \cdot n_\text{DM} \sigma_g v \\
+ &  \sim t_\text{WD} \cdot \frac{\rho_{\text{DM}}}{m_\text{DM}} \pi R_\text{WD}^2 \l\frac{v_\text{esc}}{v}\r^2 v,
+\end{align}
+where $v \sim 10^{-3}$ is the virial velocity of DM \textcolor{red}{(could be quite different near the galactic center with higher dark matter density?)} and $\rho_{\text{DM}}$ is the energy density of DM in the region of interest. $\sigma_g$ denotes the capture cross section including a gravitational Sommerfeld enhancement. Considering a $1.25 M_{\odot}$ WD in the local dark matter halo $\rho_{\text{DM}} \sim 0.3 ~\text{GeV}/\text{cm}^3$, we find that $m_\text{DM} \lesssim 10^{44} ~\GeV \sim 10^{20} ~\text{g}$ will transit the WD at least once in a Gyr. If we instead consider (recently discovered) heavy white dwarfs in the galactic center $\rho_{\text{DM}} \sim 10^3 ~\text{GeV}/\text{cm}^3$, this upper bound improves to $m_\text{DM} \lesssim 10^{48} ~\GeV \sim 10^{24} ~\text{g}$.
+
+Considering these conditions and the data available to us from a white dwarf observation, the independent parameters we are free to vary and constrain are the species $i$ released during a DM-SM collision, the energy $\epsilon$ released per particle, the weighted cross-section $N_i \epsilon\, \sigma_{\epsilon,i}$, the local mass density of the DM candidate $\rho_\text{DM}$, and the dark matter mass $m_\text{DM}$. The relevant heating length $L$ is then determined by $i$, $\epsilon$, and white dwarf parameters, and parameter constraints follow.
+
+\begin{figure}
+  \includegraphics[scale=0.65]{dummy_constraint_plot.png}
+  \caption{A placeholder plot illustrating how we may want to do the constraint plots for various white dwarf observations and released particle species. \textcolor{red}{Should also include variations on $\epsilon$.} If the plot gets too busy, we can reduce it to one white dwarf mass or one dark matter density per plot.}
+  \label{fig:PhotonConstraints 1}
+\end{figure}
+
+\subsection{DM-DM Collisions}
+\label{sec:CollisionConstraints}
+
+
+\section{Concrete Examples}
+\label{sec:ConcreteExamples}
+
+The constraints developed in the previous section can be applied to a wide variety of ultra-heavy dark matter models. In the section we give two concrete examples to illustrate their application and to put new bounds on parameter space inaccessible to terrestrial experiments.
 
 \subsection{Q-balls}
 \label{sec:Qballs}
@@ -225,7 +274,7 @@ is capable of triggering runaway fusion in a heavy $\sim 1.25 M_{\odot}$ WD.
 \includegraphics[scale=.45]{boomQball.pdf}
 \end{figure}
 
-\textcolor{blue}{Need to implement SN rate and transit rate here...} \textcolor{blue}{Triangle Plot of Q-ball constraints vs. terrestrial}.
+\textcolor{blue}{Triangle Plot constraints of $Q - m_F$ on top of cosmic ray, Super-K bounds on Q balls}.
 
 \section{Discussion}
 \label{sec:discussion}
@@ -247,55 +296,56 @@ where $n_i$ is the number density of nuclei. Here we provide a detailed analysis
 
 \subsection*{Coulomb Collisions}
 
-An incident particle of mass $m$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $M$, charge $Ze$ with impact parameter $b$ will transfer energy 
+An incident particle of mass $m$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $M$, charge $Ze$ with impact parameter $b$ will transfer energy
 \begin{equation}
 \label{eq:impact}
 E' = \frac{2 Z^2 \alpha^2}{b^2 \beta ^2 M}.
 \end{equation}
-
 The differential cross section for the interaction is given by the Rutherford cross section
 \begin{equation}
 \label{eq:rutherford}
-\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
+\frac{d \sigma_R}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
  \end{equation}
 where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}.  Note that the differential cross section receives additional QED due to the incident spin, but for small energy transfers these corrections are negligible. It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets. Therefore, one would expect that soft-scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons. This is certainly true for incident charged particles in non-degenerate matter. However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
 
-We first consider the energy loss of high-energy charged particles colliding with non-degenerate targets. In this case, the stopping power due to collisions with a number density $n$ is given by:
+We first consider the energy loss of high-energy charged particles colliding with non-degenerate targets. In this case, the stopping power is given by:
 \begin{align}
 \label{eq:SP}
 -\frac{dE}{dx} & = - \int dE' \left(\frac{d \sigma}{dE'}\right) n E' \\
-& \simeq -\frac{\pi n Z^2 \alpha^2}{M \beta^2} \log\left\{{\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}^2+1\right\}
+& \simeq -\frac{\pi n_i Z^2 \alpha^2}{M \beta^2} \log\left\{{\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}^2+1\right\}
 \end{align}
-\eqref{eq:SP} must be integrated over all $E'$ within the regime of validity for \eqref{eq:rutherford}, thereby fixing the lower and upper bounds of the Coulomb logarithm. $E_{\text{kin}}$ denotes the maximum possible energy transfer satisfying kinematic constraints:
+\eqref{eq:SP} must be integrated over all $E'$ within the regime of validity for \eqref{eq:rutherford}, thereby fixing the lower and upper bounds of the Coulomb logarithm. The maximum possible energy transfer satisfying kinematic constraints in a backward scatter is given by
 \begin{equation}
 E_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2},
 \end{equation}
-where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor. Quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target $b > \frac{1}{\text{min}\{{M, m}\} \beta \gamma}$. In terms of energy transfer, this translates to the condition
+where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor. In addition, quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target $b > \frac{1}{\text{min}\{{M, m}\} \beta \gamma}$. In terms of energy transfer, this translates to the condition
 \begin{equation}
 E' < E_\text{quant} = \frac{2 Z^2 \alpha^2 \gamma^2 ~\text{min}\{{M, m}\}^2}{M}.
 \end{equation}
-In addition, the expression for the energy loss per scatter \eqref{eq:impact} is modified by relativistic considerations when the energy transfer is larger than the target mass \cite{Rossi}. For our calculations, we take the maximum energy that an incident particle is able to transfer to be
+Furthermore, the expression for the energy loss in a scatter \eqref{eq:impact} is modified by relativistic considerations when the energy transfer is larger than the target mass \cite{Rossi}. For our purposes, we take the maximum energy that an incident particle is able to transfer to be
 \begin{equation}
 E_{\text{max}} = \text{min}\{E_\text{quant}, E_{\text{kin}}, M\}.
 \end{equation}
+
 On the other hand, the maximum impact parameter is set by Thomas-Fermi screening due to the degenerate electron gas:
 \begin{equation}
-\lambda_{\text{TF}} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2},
+\label{eq:TF}
+\lambda_{\text{TF}} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
 \end{equation}
 This corresponds to a lower bound on the energy transfer
 \begin{equation}
 E' > E_{\text{sc}} = \frac{12 \pi Z^3 \alpha ^3 n_e}{\beta^2 M E_F}.
 \end{equation}
-In addition, the lattice structure of ions in the WD introduces further complications \cite{Teukolsky}. The typical Coulomb lattice binding energy between ions of number density $n$ is given by the electric potential
+In addition, the lattice structure of ions in the WD introduces further complications \cite{Teukolsky}. The typical Coulomb lattice binding energy between ions is given by the electric potential
 \begin{equation}
 \label{eq:lattice}
-E_B \sim \frac{Z^2 \alpha}{n^{-1/3}} \sim 10^{-2} - 10^{-1} ~\text{MeV}
+E_B \sim \frac{Z^2 \alpha}{n_i^{-1/3}} \sim 10^{-2} - 10^{-1} ~\text{MeV}
 \end{equation}
-For energy transfers greater than $E_B$, lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold will lead to suppressed energy loss due to collective effects. For simplicity we set the lower bound on nuclei scattering (not applicable for electron targets) to be
+For energy transfers greater than $E_B$, lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold will lead to suppressed energy loss due to collective effects (i.e. phonon excitations) For simplicity, we set the lower bound on nuclei scattering (not applicable for electron targets) to be
 \begin{equation}
 E_{\text{min}} = \text{max} \{E_B,E_{\text{sc}}\}
 \end{equation}
-so that we only account for energy transfers greater than the ionic lattice binding energy.
+so that we only account for energy transfers greater than the ion lattice binding energy.
 
 Now consider collisions with degenerate electrons. An incident particle transferring energy $E'$ can only scatter those electrons within $E'$ of the Fermi surface. We define a modified density of electrons $n_e(E')$ as:
 \begin{equation}
@@ -313,53 +363,100 @@ High-energy photons can efficiently deposit their energy to electrons in the WD 
 \begin{equation}
 {k^{\prime }={\frac {k}{1+{\frac {k}{m_{\text{e}}c^{2}}}(1-\cos \theta )}}},
 \end{equation}
-where $k$ and $\theta$ denote the energy and angle of deflection for the incident photon, respectively. Clearly when $\theta \to 0$, none of the initial energy is transferred. However, for generic scattering angles and sufficiently energetic photons $k \gg m_e$, the energy transfer due to a single Compton interaction is typically $\OO(1)$ of the initial energy.
+where $k$ and $\theta$ denote the energy and angle of deflection for the incident photon, respectively. For perfectly forward scatters, none of the initial energy is transferred. \textcolor{blue}{However, for generic scattering angles and sufficiently energetic photons $k \gg m_e$, the energy transfer due to a single Compton interaction is typically $\OO(1)$ of the initial energy.} \textcolor{red}{Differential cross section - dominated by forward scattering?}.
 The Klein-Nishina cross section integrated over all scattering angles is given by
 \begin{equation}
 \sigma_\text{comp}\approx \frac{\pi \alpha^2}{2 m_e k} \left \{1+\log{\l\frac{4 k^2}{m_e^2} \r}\right \}, ~~~ k \gg m_e,
 \end{equation}
 evaluated in the rest frame of the target electron. Since the electrons in a WD are sufficiently relativistic, the Thomson scattering limit is never applicable. In addition, we ignore the effects of degeneracy when the incident photon transfers is highly energetic such that scatter is sufficient to knock electrons out of the Fermi sea.
+\textcolor{red}{Inverse Compton? Compton off nuclei?}
 
 
 \subsection*{Bremsstrahlung and Pair Production}
+The cross section for an electron of energy $E$ to radiate a photon of energy $k$ in a medium with nuclear density $n$ is given by the Bethe-Heitler formula
+\begin{equation}
+\label{eq:BH}
+\frac{d \sigma_\text{BH}}{dk} = \frac{1}{3 k n X_0} (y^2+2 [1+ (1-y)^2]), ~~~ y = k/E.
+\end{equation}
+$X_0$ is the radiation length, and is generally of the form
+\begin{equation}
+X_0^{-1} = 4 n Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \limits_{b_\text{min}}^{b_\text{max}} \frac{1}{b}. 
+\end{equation}
+where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_\text{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this is simply the electron Compton wavelength 
+\begin{equation}
+b_\text{min} = \lambda_e = \frac{1}{m_e}. 
+\end{equation}
+It is important to note that collisions at impact parameters \emph{less} than $b_\text{min}$ will still radiate, but with exponentially suppressed intensity. Classically, this is manifested by the decoherence of radiation at large scattering angles. For relativistic electrons, screening is important over almost the entire range of $k$ and shields the radiating electron from the nucleus at large distances. Therefore, the maximum impact parameter is set by the distance at which the nuclear target is screened. For an atomic target, this is of order the Bohr radius. In the case of a WD, this is set by the Thomas-Fermi length \eqref{eq:TF}:
+\begin{equation}
+b_\text{max} = \lambda_\text{TF} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
+\end{equation}
+Immediately it is evident that there exists a critical number density at which the Thomas-Fermi length is of order the Compton wavelength. Roughly this occurs at an electron number density $\sim 10^{32} ~\text{cm}^{-3}$. For larger densities, the bremsstrahlung amplitude will be highly suppressed. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$. 
 
+Similar to \eqref{eq:BH}, the cross section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is
+\begin{equation}
+\label{eq:PP}
+\frac{d \sigma_\text{BH}}{dE} = \frac{1}{3 k n X_0} (1+ 2[x^2+ (1-x)^2]), ~~~ x = E/k.
+\end{equation} 
+Note that pair production has a threshold energy so that \eqref{eq:PP} is only valid for $k \gtrsim m_e$. Integrating \eqref{eq:BH}, the energy loss due to bremsstrahlung is simply
+\begin{equation}
+\frac{dE}{dx} = \frac{E}{X_0},
+\end{equation}
+and the full pair production cross section is $\sigma_{pp} = \frac{7}{9} \frac{1}{n X_0}$. In effect, $X_0$ is the typical length scale of an electromagnetic shower. 
+
+However, bremsstrahlung and pair production will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect (see \cite{LPM} for an extensive review). High-energy radiative processes involve very small longitudinal momentum transfers to nuclear targets ($\propto k/E^2$ in the case of bremsstrahlung). Quantum mechanically, this interaction is delocalized across a formation length over which amplitudes from different scattering centers will interfere. This interference is usually destructive and must be taken into account in the case of high energies or high-density mediums. Calculations of the LPM effect can be done semi-classically based on average multiple scattering. It is found that bremsstrahlung is suppressed for $k > E(E-k)/E_\text{LPM}$ and pair production for $E(k-E) > k E_\text{LPM}$, where 
+\begin{equation}
+\label{eq:LPM}
+E_\text{LPM} = \frac{m_e^2 X_0 \alpha}{4 \pi}.
+\end{equation}
+For the WD densities under consideration, $E_\text{LPM} \sim 10-10^{3} ~\text{MeV}$. Note that $E_\text{LPM}$ generally scales as the fourth power of the mass of the incident particle so for muons, $E_\text{LPM} \sim 10^{10}-10^{12} ~\text{MeV}$. With LPM suppression, the bremsstrahlung stopping power is approximately
+\begin{equation}
+\label{eq:bremloss}
+\l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}, ~~~ E>E_\text{LPM}. 
+\end{equation}
+We find that the LPM effect diminishes the energy loss due to soft radiation so that the radiative stopping power is dominated by single, hard bremsstrahlung. Similarly, the pair production cross section reduces to 
+\begin{equation}
+\sigma_{pp} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n X_0}, ~~~ E>E_\text{LPM}
+\end{equation}
+
+In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$. The emitted photon can coherently scatter off electrons and ions in the media, acquiring an effective mass of order the plasma frequency $\omega_p$. The fastest plasma frequency will dominate, which is set by degenerate electrons.
+Semi-classically, this results in a suppression of order $(k m_e/\omega_p E)^2$ when the radiated photon energy $k < \omega_p E/m_e$. This is known as the ``dielectric effect". Note that for the densities in question, $\omega_p < m_e$ so for our purposes, we may simply set $\omega E/m_e$ as a minimum cutoff on allowed photon frequencies. For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect. Note that there is no apparent analog of the dielectric effect for pair production. 
+
+When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Klein} taking the LPM effect into account. Unlike electrons, high-energy muons have significant cross section for direct pair production. Results for muon energy loss in all radiative channels (bremsstrahlung, direct pair production, nuclear) are tabulated in http://pdg.lbl.gov/2016/AtomicNuclearProperties/.  
 \subsection*{Nuclear Interactions}
 
-Nuclear interactions can be either elastic or nonelastic. A single, backward elastic scatter would result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls. An elastic collision between an incident (non-relativistic) mass $m$ and a heavy, stationary target mass $M$ results in a final energy (averaged over all scattering angles)
+Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy. Elastic collisions are most relevant at scales less than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$. A single, backward elastic scatter would result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
+An elastic collision between an incident (non-relativistic) mass $m$ and a heavy, stationary target mass $M$ results in a final energy
 \begin{equation}
 \label{eq:elasticratio}
-\zeta \equiv \frac{E_f}{E_0} \approx \l \frac{M}{m+M} \r^2, ~~~ m<M.
+\zeta \equiv \frac{E_f}{E_0} \approx \l \frac{M}{M+m} \r^2, ~~~~ m < M.
 \end{equation}
-where $E_0$ and $E_f$ denote the initial and final energy of the incident particle. Therefore, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision. 
+$E_0$ and $E_f$ denote the initial and final energy of the incident particle, and we assume an isotropic distribution in the center-of-mass scattering angle. Thus, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision.
 
-The cross section for elastic scatters has considerable dependence on the incident particle species. For neutrons and protons, the nuclear elastic cross section is of order $\sigma_\text{el} \sim 100 ~\text{mb}$ at energies greater than $\sim \text{MeV}$. However at lower energies, the elastic cross section effectively vanishes for protons but rises to $\OO(\text{b})$ for neutrons. This can be understood physically as charged hadrons may only elastically scatter off nuclei if the incident energy is sufficient to overcome the mutual Coulomb barrier. Note that the neutron capture cross section in carbon and oxygen is negligible compared to the elastic cross section. However, since the ions in a WD form a Coulomb lattice, elastic collisions cannot transfer energy less than \eqref{eq:lattice} without exciting phonon modes. This limits the applicability of the energy loss function \eqref{eq:elasticratio} to energies above $\sim \text{MeV}$ for both neutrons and proton elastic collisions.  
+The cross section for elastic scatters has considerable dependence on the incident particle species. At energies below $\sim \text{MeV}$, the elastic cross section effectively vanishes for  protons. This can be understood physically as a strong interaction may only occur if an incident energy is sufficient to overcome the mutual Coulomb repulsion. For neutrons, the cross section is roughly constant below $\sim \text{MeV}$ but in the intermediate regime $1 ~\text{MeV} - \text{10} ~\text{MeV}$ is of a complicated form due to various nuclear resonances \textcolor{blue}{see evaluated nuclear data file}. For simplicity, we assume the elastic cross section for any hadron in this range to be a constant $\sigma_\text{el} \approx 0.1 ~\text{mb}$. Note that the neutron capture cross section in C and O nuclei is negligible compared to the elastic cross section in this energy range. However, since the ions in a WD form a Coulomb lattice, elastic collisions cannot transfer energy less than \eqref{eq:lattice} without exciting additional phonon modes. This limits the applicability of \eqref{eq:elasticratio} to energies above $\sim \text{MeV}$.
 
-Next we consider nonelastic collisions, which are relevant for highly energetic incident particles. Namely, a particle of incident energy greater than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$ can interact to produce an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. The remnant nucleus will generally be left in an excited state and relax through the emission of slow $\OO(10 ~\text{MeV})$ hadrons (``nuclear evaporation") and photons \cite{Rossi}. A hadronic shower is the result of all such reactions caused by primary and secondary particles. 
+Next we consider nonelastic collisions, which are only possible at incident energies $\sim E_\text{nuc}$. In this regime, a nuclear collision generally results in an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. The remnant nucleus will generally be left in an excited state and relax through the emission of $\OO(10 ~\text{MeV})$ hadrons (``nuclear evaporation") and photons \cite{Rossi}. A hadronic shower is the result of all such reactions caused by primary and secondary particles.
 
-For simplicity, we take the nuclear mean free path for a hadron (proton, neutron, pion) to be constant in energy
+For simplicity, we take the nuclear mean free path for a light hadron (proton, neutron, pion) to be constant in energy with characteristic cross section
 \begin{equation}
-l_\text{had} \sim  \frac{1}{n \sigma_\text{non}}, ~~~~ \sigma_\text{non} \sim 100 ~\text{mb}. 
+l_\text{had} \sim  \frac{1}{n_i \sigma_\text{non}}, ~~~~ \sigma_\text{non} \sim 100 ~\text{mb}.
 \end{equation}
 Note that the shower length is only logarithmically sensitive to the initial energy or number of secondaries, and is thus primarily set by the nuclear mean free path. In this case, the cascade induced by a high-energy initial hadron is adequately described by a stopping power
 \begin{equation}
 \label{eq:nucshower}
 \l \frac{dE}{dx}\r_\text{had} \sim \frac{E}{l_\text{had}},
 \end{equation}
-where we have dropped terms of logarithmic order. The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either set by the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. In this model, the total hadronic shower length $X_{\text{had}}$ for an incident hadron of energy $E_0 > 10 ~\text{MeV}$ is given by
+neglecting logarithmic factors of $\OO(1)$. The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either set by the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. In this model, the total hadronic shower length $X_{\text{had}}$ for an incident hadron of energy $E_0 > 10 ~\text{MeV}$ is given by
 \begin{equation}
 X_{\text{had}} \sim l_\text{had} \log{(E_0/E_c)} \approx 10 ~l_\text{had}.
 \end{equation}
  
-High-energy $k \gtrsim 10 ~\text{MeV}$ photons can also interact with nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a precise formulation is beyond the scope of this work. As a conservative estimate, we take a constant photonuclear mean free path and cross section: 
+Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact to nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work. As a conservative estimate, we assume a constant value
 \begin{equation}
-l_\gamma \sim \frac{1}{n \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
+l_\gamma \sim \frac{1}{n_i \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
 \end{equation}
-Similarly, charged leptons will lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. This radiative stopping power has been computed in \cite{Gerhardt:2010bj} in terms of the photonuclear mean free path, and is of order
-\begin{equation}
-\l \frac{dE}{dx}\r_{eA} \sim E \l \frac{\alpha}{l_\gamma}\r. 
-\end{equation}
-\end{appendices}
+In the energy regime of interest our choice roughly matches a calculated result of \cite{Klein} in which $\sigma_{\gamma A}$ is a slowly-varying function of energy. At ultra-high energies $k \gtrsim 10^{14} ~\text{GeV}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{PDG}. Similarly, charged leptons will lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation of the electron energy loss is done in \cite{Klein} and differs from our naive estimate by $\OO(10)$. For muon energy loss, the naive estimate matches tabulated values in \cite{PDG} to within $\OO(1)$. The largest uncertainty in calculating electronuclear stopping power comes from the uncertainties in hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results. 
 
+\end{appendices}
 
 \section*{Acknowledgements}
 We are grateful to S. Rajendran for suggesting this project and for helpful conversations. We would also like to thank D. Grabowska, K. Harigaya, R. McGehee, and J. Wurtele for stimulating discussions.
