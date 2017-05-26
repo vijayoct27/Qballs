@@ -123,21 +123,31 @@ In this section, we parameterize the ability of generic DM-SM interactions to de
 
 \subsection{DM Transit}
 
-A DM transit releases energy continually along the DM particle's trajectory, resulting in a cylindrical temperature profile with some transverse length scale $L$.  Ignition will be determined by both $L$ and the amount of energy deposited per length along the DM trajectory, so we parameterize this interaction in terms of a \emph{linear energy deposit} (LED) $\chi{}$:
+A DM transit releases energy continually along the DM particle's trajectory, resulting in a cylindrical temperature profile with some transverse length scale $L$.  Ignition will be determined by both $L$ and the amount of energy deposited per length along the DM trajectory, so we parameterize this interaction in terms of a \emph{linear energy deposit} (LED) $\chi_{led}$:
 \[
-    \chi_{d} = 
+    \chi_{led} = 
     \frac{1}{n} \frac{\partial{E_{\text{medium}}}}{\partial{x}}
 \]
-where $n$ is the number density of the stellar medium and $\partial{E}/\partial{x}$ is the energy deposited to the stellar medium per DM distance traveled.  We will also find it useful to discuss the kinetic energy lost by the DM, which is described by a similar quantity known as the \emph{stopping power} (SP) $\chi_s$:
+where $n$ is the number density of the stellar medium and $\partial{E}/\partial{x}$ is the kinetic energy deposited to the stellar medium per DM distance traveled.  We will also find it useful to discuss the kinetic energy lost by the DM, which is described by a similar quantity known as the \emph{stopping power} (SP) $\chi_{sp}$:
 \[
-    \chi_{s} = 
+    \chi_{sp} = 
     - \frac{1}{n} \frac{\partial{E_{DM}}}{\partial{x}}
 \]
-It may often be that $\chi_d = \chi_s$ and we will consider this special case below, but we maintain the distinction in general as it is not required that these two rate be equal.  For example, if the DM-SM interaction converts some of the mass energy of the stellar medium into kinetic energy of outgoing SM particles, then $\chi_d > \chi_s$ (which will indeed turn out to be true for Q-ball dark matter). 
+If the DM-SM interaction is such that it converts the only kinetic energy of DM into outgoing relativistic SM particles, then $\chi_{led} = \chi_{sp}$.  However, if the interaction involves significant changes in the mass energy of the particles involved, then it may be that $\chi_{led} \neq \chi_{sp}$ and so we will maintain a distinction between these two quantities. 
 
-Nominally, the energy deposit and loss per length will depend on the stellar density $n$, the instantaneous DM energy $E$, and the details of the DM-SM interaction.  However, over the range of WD densities we consider it is reasonable that these rates scale linearly in $n$.  \textcolor{blue}{does this need more justification?}  And, since all DM particles will enter the WD with speeds of order the escape velocity of the star, which is roughly a constant $v_{esc} \approx 10^{-2}$ for all WDs, the initial energy of a transiting DM particle depends only on its mass.  Thus $\chi_d$ and $\chi_s$ for DM transiting a WD are functions only of $m_{DM}$ and its particular SM interactions.  It is through $\chi_d$, $\chi_s$, and $m_{DM}$ that DM transits will constrain allowable DM models.
+Nominally, the LED and SP will depend on the stellar density $n$, the instantaneous DM energy $E$, and the details of the DM-SM interaction.  However, over the range of WD densities we consider it is reasonable that these rates scale linearly in $n$.  \textcolor{blue}{does this need more justification?}  And, since all DM particles will enter the WD with speeds of order the escape velocity of the star, which is roughly a constant $v_{esc} \approx 10^{-2}$ for all WDs, the initial energy of a transiting DM particle depends only on its mass.  Thus $\chi_{led}$ and $\chi_{sp}$ for DM transiting a WD are functions only of $m_{DM}$ and its particular SM interactions.  
 
-crust shielding?
+In order to ignite a star, a DM transit must satisfy two conditions: $\chi_{led}$ must be large enough that the deposited heat exceeds the threshold of \eqref{eqn:boom} and $\chi_{sp}$ must be small enough that the DM does not get stopped in the WD crust.  This second condition is necessary because runaway fusion will only occur if the DM heats the degenerate interior of the star. Further, these WD explosions only provide a meaningful constraint if the DM mass is small enough for transits to occur more frequently than the observed lifetime of WDs - this supplies a third constraint.
+
+Explicitly, the energy loss in the crust is
+\[
+    \Delta E \sim \chi_{sp} n R_c
+\]  
+where $R_c \sim 1 \, \text{km}$ \textcolor{red}{check this} is the thickness of the non-degenerate crust.  Requiring this to be less than the incoming DM energy
+\[
+    \chi_{sp} \lesssim \frac{m_{DM} v_{esc}}{n R_c}
+\]
+ensures that the DM particle penetrates the crust. 
 
 Setting the total energy released during a transit of length $\text{max}\{\lambda_T, L\}$ to be greater than the explosive energy \eqref{eqn:boom}, we find a lower bound on the interaction cross section sufficient to trigger runaway fusion:
 
