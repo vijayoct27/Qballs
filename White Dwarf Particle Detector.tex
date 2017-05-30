@@ -113,15 +113,34 @@ where the trigger size $\lambda_T$ varies over a range of WD densities. This is 
 
 \section{Dark Matter Explosiveness}
 \label{sec:DMexplode}
-In this section, we consider the conditions necessary for DM interactions to explode a WD. In particular, we consider generic (ultra-heavy) DM interactions in the WD which release $N_i$ SM particles of species $i$ each with kinetic energy $\epsilon$.
-\subsection{DM Transit}
-Consider a DM transit through the WD, interacting with stellar constituents in a general manner as shown in Figure~\ref{fig:feynmandiag}. The cross section for this interaction is denoted as $\sigma_{i,\epsilon}$.
+
+In this section, we parameterize the ability of generic DM-SM interactions to destroy a white dwarf.  We focus on interactions of the general type shown in  Figure \ref{fig:feynmandiag}, where energetic SM particles are created in the star after either a DM particle scatters off of a WD constituent or two DM particles collide.  The first of these allows stellar heating via \emph{transit} events as the DM continually releases energy while traversing the star, and the second process leads to heating via point-like \emph{collision} events.  Note that these collisions are not necessarily particle-antiparticle annihilations, but could be a more general and complicated processes, like the collisions of heavy nuclei.  The heating physics and event rates are parametrically different for transits and collisions, and thus so are the resulting constraints. We will treat these two types of events separately below.  
+
 \begin{figure}
 \includegraphics[scale=.05]{feynmandiag}
-\caption{General interaction between ultra-heavy DM and WD constituents, producing $n_i$ additional particles of species $i$.}
-\label{fig:feynmandiag}
+\caption{General interaction between ultra-heavy DM and WD constituents. \textcolor{blue}{add collision diagram, remove $\epsilon_i$ and $n_i$ labels}}
 \end{figure}
-Setting the total energy released during a transit of length $\text{max}\{\lambda_T, L\}$ to be greater than the explosive energy \eqref{eq:boom}, we find a lower bound on the interaction cross section sufficient to trigger runaway fusion:
+
+\subsection{DM Transit}
+
+A DM transit releases energy continually along the DM particle's trajectory, resulting in a cylindrical temperature profile with some transverse length scale $L$.  Ignition will be determined by both $L$ and the amount of energy deposited per length along the DM trajectory, so we parameterize this interaction in terms of a \emph{linear energy deposit} (LED) $\chi{}$:
+\[
+    \chi_{d} = 
+    \frac{1}{n} \frac{\partial{E_{\text{medium}}}}{\partial{x}}
+\]
+where $n$ is the number density of the stellar medium and $\partial{E}/\partial{x}$ is the energy deposited to the stellar medium per DM distance traveled.  We will also find it useful to discuss the kinetic energy lost by the DM, which is described by a similar quantity known as the \emph{stopping power} (SP) $\chi_s$:
+\[
+    \chi_{s} = 
+    - \frac{1}{n} \frac{\partial{E_{DM}}}{\partial{x}}
+\]
+It may often be that $\chi_d = \chi_s$ and we will consider this special case below, but we maintain the distinction in general as it is not required that these two rate be equal.  For example, if the DM-SM interaction converts some of the mass energy of the stellar medium into kinetic energy of outgoing SM particles, then $\chi_d > \chi_s$ (which will indeed turn out to be true for Q-ball dark matter). 
+
+Nominally, the energy deposit and loss per length will depend on the stellar density $n$, the instantaneous DM energy $E$, and the details of the DM-SM interaction.  However, over the range of WD densities we consider it is reasonable that these rates scale linearly in $n$.  \textcolor{blue}{does this need more justification?}  And, since all DM particles will enter the WD with speeds of order the escape velocity of the star, which is roughly a constant $v_{esc} \approx 10^{-2}$ for all WDs, the initial energy of a transiting DM particle depends only on its mass.  Thus $\chi_d$ and $\chi_s$ for DM transiting a WD are functions only of $m_{DM}$ and its particular SM interactions.  It is through $\chi_d$, $\chi_s$, and $m_{DM}$ that DM transits will constrain allowable DM models.
+
+crust shielding?
+
+Setting the total energy released during a transit of length $\text{max}\{\lambda_T, L\}$ to be greater than the explosive energy \eqref{eqn:boom}, we find a lower bound on the interaction cross section sufficient to trigger runaway fusion:
+
 \begin{equation}
 \label{eq:transitexplosion}
 % N_i \sigma_{\epsilon,i} \gtrsim \left\{
@@ -363,6 +382,7 @@ $X_0$ is the radiation length, and is generally of the form
 \begin{equation}
 X_0^{-1} = 4 n Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \limits_{b_\text{min}}^{b_\text{max}} \frac{1}{b}.
 \end{equation}
+<<<<<<< HEAD
 where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_\text{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this is simply the electron Compton wavelength
 \begin{equation}
 b_\text{min} = \lambda_e = \frac{1}{m_e}.
@@ -372,6 +392,9 @@ It is important to note that collisions at impact parameters \emph{less} than $b
 b_\text{max} = \lambda_\text{TF} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
 \end{equation}
 Immediately it is evident that there exists a critical number density at which the Thomas-Fermi length is of order the Compton wavelength. Roughly this occurs at an electron number density $\sim 10^{32} ~\text{cm}^{-3}$. For larger densities, the bremsstrahlung amplitude will be highly suppressed. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$.
+=======
+where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_\text{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this distance is the electron Compton wavelength $b_\text{min} = \lambda_e = \frac{1}{m_e}$. It is important to note that collisions at impact parameters \emph{less} than $b_\text{min}$ will still radiate, but with exponentially suppressed intensity. Classically, this is manifested by the decoherence of radiation at large scattering angles. $b_\text{max}$ is set by the distance at which the nuclear target is screened. For an atomic target this is of order the Bohr radius, and in the WD this is the Thomas-Fermi length \eqref{eq:TF}. Immediately it is evident that there exists a critical number density at which $\log \Lambda \to 0$. Roughly this occurs at an electron number density $\sim 10^{32} ~\text{cm}^{-3}$. In a dense WD medium, the bremsstrahlung amplitude will be highly suppressed. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$. 
+>>>>>>> 1275e8ad79d67b45a2a8f68bf04821da5998bdee
 
 Similar to \eqref{eq:BH}, the cross section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is
 \begin{equation}
@@ -402,9 +425,13 @@ We find that the LPM effect diminishes the energy loss due to soft radiation so 
 In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$. The emitted photon can coherently scatter off electrons and ions in the media, acquiring an effective mass of order the plasma frequency $\omega_p$. The fastest plasma frequency will dominate, which is set by degenerate electrons.
 Semi-classically, this results in a suppression of order $(k m_e/\omega_p E)^2$ when the radiated photon energy $k < \omega_p E/m_e$. This is known as the ``dielectric effect". Note that for the densities in question, $\omega_p < m_e$ so for our purposes, we may simply set $\omega E/m_e$ as a minimum cutoff on allowed photon frequencies. For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect. Note that there is no apparent analog of the dielectric effect for pair production.
 
+<<<<<<< HEAD
 When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Klein} taking the LPM effect into account. Unlike electrons, high-energy muons have significant cross section for direct pair production. Results for muon energy loss in all radiative channels (bremsstrahlung, direct pair production, nuclear) are tabulated in http://pdg.lbl.gov/2016/AtomicNuclearProperties/.
+=======
+When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Klein} taking the LPM effect into consideration. Unlike electrons, high-energy muons have significant cross section for direct pair production. Results for muon energy loss in all radiative channels (bremsstrahlung, direct pair production, nuclear) are tabulated in http://pdg.lbl.gov/2016/AtomicNuclearProperties/. 
+ 
+>>>>>>> 1275e8ad79d67b45a2a8f68bf04821da5998bdee
 \subsection*{Nuclear Interactions}
-
 Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy. Elastic collisions are most relevant at scales less than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$. A single, backward elastic scatter would result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
 An elastic collision between an incident (non-relativistic) mass $m$ and a heavy, stationary target mass $M$ results in a final energy
 \begin{equation}
@@ -435,7 +462,11 @@ Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact to nuclei and ind
 \begin{equation}
 l_\gamma \sim \frac{1}{n_i \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
 \end{equation}
+<<<<<<< HEAD
 In the energy regime of interest our choice roughly matches a calculated result of \cite{Klein} in which $\sigma_{\gamma A}$ is a slowly-varying function of energy. At ultra-high energies $k \gtrsim 10^{14} ~\text{GeV}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{PDG}. Similarly, charged leptons will lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation of the electron energy loss is done in \cite{Klein} and differs from our naive estimate by $\OO(10)$. For muon energy loss, the naive estimate matches tabulated values in \cite{PDG} to within $\OO(1)$. The largest uncertainty in calculating electronuclear stopping power comes from the uncertainties in hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results.
+=======
+In the energy regime of interest our choice roughly matches a calculated result of \cite{Klein} in which $\sigma_{\gamma A}$ is a slowly-varying function of energy. At ultra-high energies $k \gtrsim 10^{14} ~\text{GeV}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{PDG}. Similarly, charged leptons will lose energy via electronuclear interactions in which an incident electron or muon radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation of the electron energy loss is done in \cite{Klein} and differs from our naive estimate by $\OO(10)$. For muon energy loss, the naive estimate matches tabulated values in \cite{PDG} to within $\OO(1)$. The largest uncertainty in calculating electronuclear stopping power at high energies is in hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results. 
+>>>>>>> 1275e8ad79d67b45a2a8f68bf04821da5998bdee
 
 \end{appendices}
 
