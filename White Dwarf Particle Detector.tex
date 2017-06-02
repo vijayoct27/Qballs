@@ -114,24 +114,24 @@ where the trigger size $\lambda_T$ varies over a range of WD densities. This is 
 \section{Dark Matter Explosiveness}
 \label{sec:DMexplode}
 
-In this section we parameterize the ability of generic, non-gravitational dark matter interactions to destroy a WD.  We focus on DM-SM and DM-DM interactions, as depicted in Figure \ref{feynman}, which can cause local heating through the release of high-energy SM particles. The former allows stellar heating via \emph{transit} events as the DM continually releases energy while traversing the star, while the latter leads to heating via point-like \emph{collision} events.  Note that these collisions are not necessarily particle-antiparticle annihilations but may be of a more complicated nature, such as the collisions of heavy nuclei.  The heating mechanism and event rates will be parametrically different for DM transits and collision, and thus we treat of these scenarios separately. 
+In this section we parameterize the ability of generic, non-gravitational dark matter interactions to destroy a WD.  We focus on DM-SM and DM-DM interactions, as depicted in Figure \ref{feynman}, which can cause local heating through the release of high-energy SM particles. The former allows stellar heating via \emph{transit} events as the DM continually releases energy while traversing the star, while the latter leads to heating via point-like \emph{collision} events.  Note that these collisions are not necessarily particle-antiparticle annihilations but may be of a more complicated nature, such as the collisions of heavy nuclei.  The heating mechanism and event rates will be parametrically different for DM transits and collision, and thus we treat of these cases separately. 
 
 \begin{figure}
 \label{feynman}
 \includegraphics[scale=.05]{feynmandiag}
-\caption{General interaction between ultra-heavy DM and WD constituents. \textcolor{blue}{add collision diagram, remove $\epsilon_i$ and $n_i$ labels}}
+\caption{General interactions between ultra-heavy DM and WD constituents - \textcolor{blue}{do diagrams properly}}
 \end{figure}
 
 \subsection{DM Transit}
 
-A DM transit releases energy continually along the DM trajectory, resulting in a cylindrical temperature profile of transverse length scale $L$, the heating length.  This $L$ is determined by the DM-SM interaction parameters and $n$.  Ignition will be determined by both $L$ and the amount of energy deposited per length along the DM trajectory, so we parameterize this interaction in terms of a normalized linear energy deposit $\chi_{led}$:
+A DM transit releases energy continually along the DM trajectory, resulting in a cylindrical temperature profile of transverse length scale $L$, the heating length.  This $L$ is determined by the DM-SM interaction parameters and $n$.  Ignition will be determined by both $L$ and the amount of energy deposited per length along the DM trajectory, so we parameterize this interaction in terms of a (normalized) linear energy deposit $\chi_{led}$:
 \[
     \chi_{led} =
-    \frac{1}{n} \frac{\partial{E_{\text{medium}}}}{\partial{x}}
+    \frac{1}{n} \frac{\partial{E_{\text{led}}}}{\partial{x}}
 \]
-where $n$ is the number density of the stellar medium and $\partial{E}/\partial{x}$ is the kinetic energy deposited to the stellar medium per DM distance traveled.  Nominally, $\chi_{led}$ will depend on the stellar density $n$, the instantaneous DM energy $E$, and the details of the DM-SM interaction.  However, over the range of WD densities we consider it is reasonable that the only variation in $\partial E /\partial x$ for different stars is a linear scaling in $n$, so $\chi_{led}$ is independent of stellar variations.  \textcolor{blue}{does this need more justification?} \textcolor{red}{definitely, especially since we have processes turning on or off in different density regimes. perhaps this is true because were almost always dominated by showers?}  Further, all DM particles will enter the WD with speeds of order the escape velocity of the star, which is roughly a constant $v_{esc} \approx 10^{-2}$ for all WDs.  Thus the initial energy of a transiting DM particle depends only on its mass and so $\chi_{led}$ for a transit event is a function of only DM properties: $m_{DM}$ and its DM-SM interactions.
+where $n$ is the number density of the stellar medium and $d{E}/d{x}$ is the kinetic energy deposited to the stellar medium per DM distance traveled.  Nominally, $\chi_{led}$ will depend on the stellar density $n$, the instantaneous DM energy $E$, and the details of the DM-SM interaction.  However, over the range of WD densities we consider it is reasonable that the only variation in $\partial E /\partial x$ for different stars is a linear scaling in $n$, so $\chi_{led}$ is independent of stellar variations.  \textcolor{red}{does this need more justification?} Further, all DM particles will enter the WD with speeds of order the escape velocity of the star, which is roughly a constant $v_{esc} \approx 10^{-2}$ for all WDs.  Thus the initial energy of a transiting DM particle depends only on its mass and so $\chi_{led}$ for a transit event is a function of only DM properties: $m_{DM}$ and its DM-SM interactions.
 
-In order to ignite a WD during transit, the energy released must exceed the threshold \eqref{eq:boom}.  If the heating length $L > \lambda_T$, then we study one segment $L$ of the transit which behaves as a single energy deposit of length-scale $L$, as described in Section \ref{sec:review}. If $L < \lambda_T$, then over a $\lambda_T$ segment of the transit we have many $L$-scale heating events which sum to give a total energy deposited over the scale $\lambda_T$.  We consider thus the energy deposited in a transit of length $\text{max} \left\{ \lambda_T, L \right\}$, and requiring this to be greater than the threshold \eqref{eq:boom} we find a lower bound on the $\chi_{led}$ sufficient to trigger runaway fusion:
+In order to ignite a WD during transit, the energy released must exceed the threshold \eqref{eq:boom}.  If the heating length $L > \lambda_T$, then we study one segment $L$ of the transit which behaves as a single energy deposit of length-scale $L$, as described in Section \ref{sec:review}. If $L < \lambda_T$, then over a $\lambda_T$ segment of the transit we have many $L$-scale heating events which sum to give a total energy deposited over the scale $\lambda_T$.  We consider thus the energy deposited in a transit of length $\text{max} \left\{ \lambda_T, L \right\}$, and requiring this to be greater than the threshold \eqref{eq:boom} we find a lower bound on the $\chi_{dep}$ sufficient to trigger runaway fusion:
 \begin{equation}
 \label{eq:transitexplosion}
   \chi_{led} \gtrsim T_f\, \text{max}\left\{ \lambda_T, L \right\}^2
@@ -190,7 +190,7 @@ The end products of a hadronic shower will generally be hadrons of kinetic energ
 \section{Constraints}
 \label{sec:Constraints}
 
-In this section, we constrain potential DM models based on observations of white dwarfs and supernovae. In doing so, we follow the discussion of \cite{Graham:2015apa}, which excludes DM based on (1)~observation of white dwarfs that should have blown up already due to the presence of the candidate in sufficient abundance, and (2)~by observing a supernovae rate incompatible with the expected rate due to the DM candidate detonating WDs. We will consider each of these possibilities for both DM transits and collisions in the WD, but first we pause to consider the data available on white dwarfs and the supernovae rate.
+In this section, we constrain potential DM models following the discussion of \cite{Graham:2015apa} (1)~observation of white dwarfs that should have blown up already due to the presence of the candidate in sufficient abundance, and (2)~by observing a supernovae rate incompatible with the expected rate due to the DM candidate detonating WDs. We will consider each of these possibilities for both DM transits and collisions in the WD, but first we pause to consider the data available on white dwarfs and the supernovae rate.
 
 \textcolor{blue}{Exhibit a specific white dwarf candidate and discuss its parameters: age, radius, mass (density), local dark matter density. Also mention possible white dwarf candidates in higher dark matter densities.}
 
@@ -214,13 +214,8 @@ N_\text{transits}  &= t_\text{WD} \cdot n_\text{DM} \sigma_g v \\
 \end{align}
 where $v \sim 10^{-3}$ is the virial velocity of DM \textcolor{red}{(could be quite different near the galactic center with higher dark matter density?)} and $\rho_{\text{DM}}$ is the energy density of DM in the region of interest. $\sigma_g$ denotes the capture cross section including a gravitational Sommerfeld enhancement. Considering a $1.25 M_{\odot}$ WD in the local dark matter halo $\rho_{\text{DM}} \sim 0.3 ~\text{GeV}/\text{cm}^3$, we find that $m_\text{DM} \lesssim 10^{44} ~\GeV \sim 10^{20} ~\text{g}$ will transit the WD at least once in a Gyr. If we instead consider (recently discovered) heavy white dwarfs in the galactic center $\rho_{\text{DM}} \sim 10^3 ~\text{GeV}/\text{cm}^3$, this upper bound improves to $m_\text{DM} \lesssim 10^{48} ~\GeV \sim 10^{24} ~\text{g}$.
 
-Considering these conditions and the data available to us from a white dwarf observation, the independent parameters we are free to vary and constrain are the species $i$ released during a DM-SM collision, the energy $\epsilon$ released per particle, the weighted cross-section $N_i \epsilon\, \sigma_{\epsilon,i}$, the local mass density of the DM candidate $\rho_\text{DM}$, and the dark matter mass $m_\text{DM}$. The relevant heating length $L$ is then determined by $i$, $\epsilon$, and white dwarf parameters, and parameter constraints follow.
+\textcolor{blue}{Considering these conditions and the data available to us from a white dwarf observation, the independent parameters we are free to vary and constrain are the species $i$ released during a DM-SM collision, the energy $\epsilon$ released per particle, the weighted cross-section $N_i \epsilon\, \sigma_{\epsilon,i}$, the local mass density of the DM candidate $\rho_\text{DM}$, and the dark matter mass $m_\text{DM}$. The relevant heating length $L$ is then determined by $i$, $\epsilon$, and white dwarf parameters, and parameter constraints follow.}
 
-\begin{figure}
-  \includegraphics[scale=0.65]{dummy_constraint_plot.png}
-  \caption{A placeholder plot illustrating how we may want to do the constraint plots for various white dwarf observations and released particle species. \textcolor{red}{Should also include variations on $\epsilon$.} If the plot gets too busy, we can reduce it to one white dwarf mass or one dark matter density per plot.}
-  \label{fig:PhotonConstraints 1}
-\end{figure}
 
 \subsection{DM-DM Collisions}
 \label{sec:CollisionConstraints}
@@ -361,7 +356,7 @@ The stopping power due to Compton scattering can be expressed in terms of \eqref
 \begin{equation}
 \frac{dE}{dx} =  \int d (\cos \theta) n_e \frac{d\sigma_\text{KN}}{d (\cos \theta)} E' (\cos \theta), ~~~ E' = k - k'.
 \end{equation}
-Degeneracy can also be taken into account using a variable number density as in \eqref{pauli}, although this only introduces a significant suppression of $dE/dx$ for $k\lesssim 10 ~\text{MeV}$. 
+Degeneracy can also be taken into account using a variable number density as in \eqref{pauli}, although this only introduces a significant suppression of the Compton stopping power for $k\lesssim 10 ~\text{MeV}$. 
 
 \textcolor{blue}{Inverse Compton?}
 
@@ -393,7 +388,7 @@ However, bremsstrahlung and pair production will be suppressed by the ``Landau-P
 \label{eq:LPM}
 E_\text{LPM} = \frac{m_e^2 X_0 \alpha}{4 \pi}.
 \end{equation}
-For the WD densities under consideration, $E_\text{LPM} \sim 10-10^{3} ~\text{MeV}$. Note that $E_\text{LPM}$ generally scales as the fourth power of the mass of the incident particle so for muons, $E_\text{LPM} \sim 10^{10}-10^{12} ~\text{MeV}$. With LPM suppression, the bremsstrahlung stopping power is approximately
+For the WD densities under consideration, $E_\text{LPM} \sim 10-10^{3} ~\text{MeV}$. With LPM suppression, the bremsstrahlung stopping power is approximately
 \begin{equation}
 \label{eq:bremloss}
 \l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}, ~~~ E>E_\text{LPM}.
@@ -406,7 +401,7 @@ We find that the LPM effect diminishes the energy loss due to soft radiation so 
 In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$. The emitted photon can coherently scatter off electrons and ions in the media, acquiring an effective mass of order the plasma frequency $\omega_p$. The fastest plasma frequency will dominate, which is set by degenerate electrons.
 Semi-classically, this results in a suppression of order $(k m_e/\omega_p E)^2$ when the radiated photon energy $k < \omega_p E/m_e$. This is known as the ``dielectric effect". Note that for the densities in question, $\omega_p < m_e$ so for our purposes, we may simply set $\omega E/m_e$ as a minimum cutoff on allowed photon frequencies. For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect \cite{Klein}. 
 
-When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Klein} taking the LPM effect into consideration, although other possible diagrams have not been computed in the same manner. For our purposes, we simply ignore any electromagnetic process once LPM suppresses bremsstrahlung/pair-production by more than $\OO(\alpha)$. \textcolor{blue}{explain}
+When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Klein} taking the LPM effect into consideration, although other possible diagrams have not been computed in the same manner. For our purposes, we ignore any electromagnetic process once LPM suppresses bremsstrahlung and pair production by more than $\OO(\alpha)$. 
 
 \subsection*{Nuclear Interactions}
 Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy. Elastic collisions are most relevant at scales less than the nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$. A single, backward elastic scatter would result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
@@ -440,7 +435,7 @@ Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact to nuclei and ind
 l_\gamma \sim \frac{1}{n_i \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
 \end{equation}
 
-At ultra-high energies $k \gtrsim \textcolor{blue}{something}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{PDG}. Similarly, charged leptons will lose energy via electronuclear interactions in which the incident particle radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation of the electron energy loss is done in \cite{Klein} and differs from our naive estimate by $\OO(10)$. The largest uncertainty in calculating electronuclear stopping power at high energies is in hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results.
+At ultra-high energies $k \gtrsim \textcolor{blue}{something}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{PDG}. Similarly, charged leptons will lose energy via electronuclear interactions in which the incident particle radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation \cite{Klein} differs from our naive estimate an $\OO(10)$ factor. The largest uncertainty in calculating electronuclear stopping power at high energies is in evaluating hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results.
 
 \end{appendices}
 
