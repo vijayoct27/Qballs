@@ -1,0 +1,206 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6469,        197]
+NotebookOptionsPosition[      5766,        168]
+NotebookOutlinePosition[      6153,        185]
+CellTagsIndexPosition[      6110,        182]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "Units`"}]], "Input",
+ CellChangeTimes->{{3.705442907301923*^9, 3.7054429081174707`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "PhysicalConstants`"}]], "Input",
+ CellChangeTimes->{{3.705442909702791*^9, 3.705442911917809*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "obspkg"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], \
+"\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"PhysicalConstants`\\\\\\\"\\\"}]\\\
+)\[NoBreak] is now obsolete. The legacy version being loaded may conflict \
+with current functionality. See the Compatibility Guide for updating \
+information.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705442912434298*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"2", "Pi", " ", 
+      SuperscriptBox["\[Alpha]", "2"], 
+      SuperscriptBox["Z", "2"]}], 
+     RowBox[{"M", " ", 
+      SuperscriptBox["\[Beta]", "2"], 
+      SuperscriptBox["Ed", "2"]}]], ",", "Ed"}], "]"}], "//", 
+  "FullSimplify"}]], "Input",
+ CellChangeTimes->{{3.70544277079571*^9, 3.7054427925947943`*^9}, {
+  3.705442847123629*^9, 3.705442873265229*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", "\[Pi]", " ", 
+        SuperscriptBox["Z", "2"], " ", 
+        SuperscriptBox["\[Alpha]", "2"]}], 
+       RowBox[{"Ed", " ", "M", " ", 
+        SuperscriptBox["\[Beta]", "2"]}]]}], "*", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"200", " ", "Mega", " ", "ElectronVolt", "*", "Fermi"}], ")"}],
+       "2"], "*", 
+     SuperscriptBox["SpeedOfLight", "0"]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Z", "\[Rule]", "6"}], ",", 
+      RowBox[{"\[Alpha]", "\[Rule]", 
+       FractionBox["1", "137"]}], ",", 
+      RowBox[{"Ed", "\[Rule]", 
+       RowBox[{"1", " ", "Mega", " ", "ElectronVolt"}]}], ",", 
+      RowBox[{"M", "\[Rule]", 
+       RowBox[{"12", " ", "Giga", " ", "ElectronVolt"}]}], ",", 
+      RowBox[{"\[Beta]", "\[Rule]", "0.95"}]}], "}"}]}], " ", ",", "Second"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.705442887713056*^9, 3.7054429779555063`*^9}, {
+  3.705443014696952*^9, 3.705443035971246*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Convert", "::", "incomp"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Incompatible units in \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"-\\\", \
+FractionBox[RowBox[{\\\"44.51155530737092`\\\", \\\" \\\", \
+SuperscriptBox[\\\"Fermi\\\", \\\"2\\\"], \\\" \\\", \\\"Mega\\\"}], \\\"Giga\
+\\\"]}]\\)\[NoBreak] and \[NoBreak]\\!\\(\\*RowBox[{\\\"Second\\\"}]\\)\
+\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:Units/ref/Convert\\\", ButtonNote -> \
+\\\"Units`Convert::incomp\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.70544296445619*^9, 3.7054429788378057`*^9}, {
+  3.705443015633746*^9, 3.705443036657743*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"44.51155530737092`", " ", 
+    SuperscriptBox["Fermi", "2"], " ", "Mega"}], "Giga"]}]], "Output",
+ CellChangeTimes->{{3.705442930045616*^9, 3.705442978843033*^9}, {
+  3.7054430156389847`*^9, 3.705443036662979*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       FractionBox[
+        RowBox[{" ", 
+         RowBox[{"2", "Pi", " ", 
+          SuperscriptBox["Z", "2"], " ", 
+          SuperscriptBox["\[Alpha]", "2"]}]}], 
+        RowBox[{"Ed", " ", "M", " ", 
+         SuperscriptBox["\[Beta]", "2"]}]], "*", "n"}]], "*", 
+     RowBox[{"(", 
+      RowBox[{"200", " ", "Mega", " ", "ElectronVolt", "*", "Fermi"}], ")"}], 
+     "*", 
+     SuperscriptBox["SpeedOfLight", 
+      RowBox[{"-", "1"}]]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Z", "\[Rule]", "6"}], ",", 
+      RowBox[{"\[Alpha]", "\[Rule]", 
+       FractionBox["1", "137"]}], ",", 
+      RowBox[{"Ed", "\[Rule]", 
+       RowBox[{"5", "Mega", " ", "ElectronVolt"}]}], ",", 
+      RowBox[{"M", "\[Rule]", 
+       RowBox[{"12", "Giga", " ", "ElectronVolt"}]}], ",", 
+      RowBox[{"\[Beta]", "\[Rule]", "1"}], ",", 
+      RowBox[{"n", "\[Rule]", 
+       RowBox[{"0.8", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"Mega", " ", "ElectronVolt"}], ")"}], "3"]}]}]}], "}"}]}], 
+   ",", "Second"}], "]"}]], "Input",
+ CellChangeTimes->{{3.70544304682451*^9, 3.705443097364225*^9}, {
+  3.7054431301806517`*^9, 3.705443131980731*^9}, {3.705443183305853*^9, 
+  3.7054432020090218`*^9}, {3.705443271757247*^9, 3.7054433676646767`*^9}, {
+  3.70544343906643*^9, 3.705443446855605*^9}, {3.705443505257375*^9, 
+  3.705443506509747*^9}, {3.705443564810606*^9, 3.70544359584687*^9}}],
+
+Cell[BoxData[
+ RowBox[{"4.151732094401933`*^-15", " ", "Second"}]], "Output",
+ CellChangeTimes->{{3.705443177661141*^9, 3.705443202416854*^9}, {
+  3.705443305387328*^9, 3.7054433680758333`*^9}, {3.705443442583366*^9, 
+  3.705443447191491*^9}, {3.705443508091175*^9, 3.705443536345935*^9}, {
+  3.7054435667445*^9, 3.705443596339835*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 675},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 118, 2, 35, "Input"],
+Cell[CellGroupData[{
+Cell[701, 26, 128, 2, 36, "Input"],
+Cell[832, 30, 428, 10, 70, "Message"]
+}, Open  ]],
+Cell[1275, 43, 458, 13, 65, "Input"],
+Cell[CellGroupData[{
+Cell[1758, 60, 1076, 29, 151, InheritFromParent],
+Cell[2837, 91, 745, 15, 54, "Message"],
+Cell[3585, 108, 270, 6, 62, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3892, 119, 1519, 39, 164, "Input"],
+Cell[5414, 160, 336, 5, 38, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
