@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    221491,       5188]
-NotebookOptionsPosition[    217662,       5058]
-NotebookOutlinePosition[    218052,       5075]
-CellTagsIndexPosition[    218009,       5072]
+NotebookDataLength[    222617,       5218]
+NotebookOptionsPosition[    218628,       5083]
+NotebookOutlinePosition[    219018,       5100]
+CellTagsIndexPosition[    218975,       5097]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -406,6 +406,13 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{"piondecay", "=", 
+   FractionBox["\[Epsilon]", "piondecay"]}], ";"}]], "Input",
+ CellChangeTimes->{{3.705932038831245*^9, 3.705932043568157*^9}, {
+  3.705932176259293*^9, 3.705932182815379*^9}}],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{"dedxelasticnucleon", "=", 
    RowBox[{"Piecewise", "[", 
     RowBox[{"{", 
@@ -665,6 +672,28 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{"neutralpion", "=", 
+   RowBox[{"LogLogPlot", "[", 
+    RowBox[{
+     RowBox[{"piondecay", "*", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "5"}]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", "1", ",", 
+       SuperscriptBox["10", "10"]}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", "Thick"}], "}"}]}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.705932204600811*^9, 3.705932269393865*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Canvases for stopping power plots", "Subsubsection",
+ CellChangeTimes->{{3.705932188927627*^9, 3.70593219683154*^9}}],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{"canvasphoton", "=", 
    RowBox[{"LogLogPlot", "[", 
     RowBox[{
@@ -718,12 +747,10 @@ Cell[BoxData[
        "\"\<MeV\>\"", ",", 
         "\"\<MeV/(\!\(\*SuperscriptBox[\(10\), \(-5\)]\)cm)\>\""}], "}"}]}], 
      ",", 
-     RowBox[{
-     "PlotLabel", "\[Rule]", 
-      "\"\<Nucleon Stopping Power (\!\(\*SubscriptBox[\(n\), \(e\)]\) = \
-\!\(\*SuperscriptBox[\(10\), \(32\)]\)\!\(\*SuperscriptBox[\(cm\), \(-3\)]\))\
-\>\""}]}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.705885657514048*^9, 3.705885711941494*^9}}],
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Nucleon Stopping Power\>\""}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.705885657514048*^9, 3.705885711941494*^9}, {
+  3.7059313837275352`*^9, 3.705931383876892*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -747,12 +774,10 @@ Cell[BoxData[
        "\"\<MeV\>\"", ",", 
         "\"\<MeV/(\!\(\*SuperscriptBox[\(10\), \(-5\)]\)cm)\>\""}], "}"}]}], 
      ",", 
-     RowBox[{
-     "PlotLabel", "\[Rule]", 
-      "\"\<Pion Stopping Power (\!\(\*SubscriptBox[\(n\), \(e\)]\) = \
-\!\(\*SuperscriptBox[\(10\), \(32\)]\)\!\(\*SuperscriptBox[\(cm\), \(-3\)]\))\
-\>\""}]}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.705885757618943*^9, 3.705885761569564*^9}}],
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Pion Stopping Power\>\""}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.705885757618943*^9, 3.705885761569564*^9}, {
+  3.70593138858949*^9, 3.705931389061027*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1324,7 +1349,8 @@ wjfaiRhozyf/WX2cRrVP0LOesS//eIXspBM0QoK8D4dKGLTI8wNdwml0Ru4V
     Charting`ScaledTicks[{Log, Exp}]}]], "Output",
  CellChangeTimes->{
   3.705885338519164*^9, {3.705885648075981*^9, 3.705885688424677*^9}, 
-   3.705886145754664*^9, 3.7058882824359217`*^9}]
+   3.705886145754664*^9, 3.7058882824359217`*^9, {3.7059295198480587`*^9, 
+   3.70592952112871*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1332,10 +1358,10 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"Show", "[", 
   RowBox[{
-  "canvasnuclear", ",", "electronhad", ",", "electronbrem", ",", 
+  "canvaselectron", ",", "electronhad", ",", "electronbrem", ",", 
    "electrondpp", ",", "electron", ",", "electronpauli"}], "]"}]], "Input",
  CellChangeTimes->{{3.705886294227656*^9, 3.705886309689898*^9}, 
-   3.705886354455186*^9}],
+   3.705886354455186*^9, {3.7059295081654882`*^9, 3.70592952681656*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -2064,7 +2090,11 @@ lcD44ZKdt8uKdj5a8v8BgXKDOw==
   Method->{
    "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
     AbsolutePointSize[6], "ScalingFunctions" -> None},
-  PlotLabel->FormBox["\"Stopping Power\"", TraditionalForm],
+  PlotLabel->FormBox[
+   "\"Electron Stopping Power (\\!\\(\\*SubscriptBox[\\(n\\), \\(e\\)]\\) = \
+\\!\\(\\*SuperscriptBox[\\(10\\), \
+\\(32\\)]\\)\\!\\(\\*SuperscriptBox[\\(cm\\), \\(-3\\)]\\))\"", 
+    TraditionalForm],
   PlotRange->{{-1.1512924995054905`, 
    24.177142959530624`}, {-6.907755278982137, 16.11809565095832}},
   PlotRangeClipping->True,
@@ -2075,7 +2105,7 @@ lcD44ZKdt8uKdj5a8v8BgXKDOw==
     Charting`ScaledTicks[{Log, Exp}], 
     Charting`ScaledTicks[{Log, Exp}]}]], "Output",
  CellChangeTimes->{3.705886311245984*^9, 3.705886355668569*^9, 
-  3.705888287173539*^9}]
+  3.705888287173539*^9, 3.705929527078524*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2807,11 +2837,7 @@ Y4QQhvVHPrd0UOin9EUnDYSwf+s39KCTwmRYHTNvphBrFs3ueNRF4T9LigYK
   Method->{
    "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
     AbsolutePointSize[6], "ScalingFunctions" -> None},
-  PlotLabel->FormBox[
-   "\"Nucleon Stopping Power (\\!\\(\\*SubscriptBox[\\(n\\), \\(e\\)]\\) = \
-\\!\\(\\*SuperscriptBox[\\(10\\), \
-\\(32\\)]\\)\\!\\(\\*SuperscriptBox[\\(cm\\), \\(-3\\)]\\))\"", 
-    TraditionalForm],
+  PlotLabel->FormBox["\"Nucleon Stopping Power\"", TraditionalForm],
   PlotRange->{{-1.1512924995054905`, 
    24.177142959530624`}, {-6.907755278982137, 16.11809565095832}},
   PlotRangeClipping->True,
@@ -2836,7 +2862,8 @@ Y4QQhvVHPrd0UOin9EUnDYSwf+s39KCTwmRYHTNvphBrFs3ueNRF4T9LigYK
    3.7048354269560823`*^9, 3.7048354317123938`*^9}, 3.7048354960871277`*^9, 
    3.704836500966216*^9, 3.705405062935299*^9, 3.7058840736104107`*^9, 
    3.705885720377145*^9, {3.705886150684499*^9, 3.70588616666195*^9}, {
-   3.7058862448655157`*^9, 3.705886264495448*^9}, 3.705888311700225*^9}]
+   3.7058862448655157`*^9, 3.705886264495448*^9}, 3.705888311700225*^9, 
+   3.7059295341440287`*^9, 3.705931393941469*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2850,7 +2877,8 @@ Cell[BoxData[
   3.704513292437622*^9, 3.704513293290461*^9}, {3.704513851156581*^9, 
   3.704513852769822*^9}, {3.704513963836294*^9, 3.7045139640923443`*^9}, {
   3.7046537242058163`*^9, 3.7046537243174057`*^9}, {3.7058857682658033`*^9, 
-  3.7058857693448772`*^9}}],
+  3.7058857693448772`*^9}, {3.7059322742749968`*^9, 3.705932276916038*^9}, {
+  3.7059335120838737`*^9, 3.7059335122246943`*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -3500,11 +3528,7 @@ Y4QQhvVHPrd0UOin9EUnDYSwf+s39KCTwmRYHTNvphBrFs3ueNRF4T9LigYK
   Method->{
    "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
     AbsolutePointSize[6], "ScalingFunctions" -> None},
-  PlotLabel->FormBox[
-   "\"Pion Stopping Power (\\!\\(\\*SubscriptBox[\\(n\\), \\(e\\)]\\) = \
-\\!\\(\\*SuperscriptBox[\\(10\\), \
-\\(32\\)]\\)\\!\\(\\*SuperscriptBox[\\(cm\\), \\(-3\\)]\\))\"", 
-    TraditionalForm],
+  PlotLabel->FormBox["\"Pion Stopping Power\"", TraditionalForm],
   PlotRange->{{-1.1512924995054905`, 
    24.177142959530624`}, {-6.907755278982137, 16.11809565095832}},
   PlotRangeClipping->True,
@@ -3527,7 +3551,8 @@ Y4QQhvVHPrd0UOin9EUnDYSwf+s39KCTwmRYHTNvphBrFs3ueNRF4T9LigYK
    3.704660725428925*^9, 3.7046607911474447`*^9, 3.7048354363179073`*^9, 
    3.704836503014432*^9, 3.705405065480507*^9, 3.705884076837899*^9, 
    3.705885769696216*^9, 3.7058861698638687`*^9, {3.7058862592172813`*^9, 
-   3.705886266572674*^9}, 3.705888322811803*^9}]
+   3.705886266572674*^9}, 3.705888322811803*^9, 3.705929536811358*^9, 
+   3.705931396446094*^9, 3.705932277521295*^9, 3.705933513204687*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -5114,73 +5139,78 @@ Cell[12102, 358, 552, 11, 50, "Message"],
 Cell[12657, 371, 164, 4, 35, "Output"]
 }, Open  ]],
 Cell[12836, 378, 1166, 26, 76, "Input"],
-Cell[14005, 406, 648, 19, 75, "Input"],
-Cell[14656, 427, 697, 19, 56, "Input"]
+Cell[14005, 406, 229, 5, 60, "Input"],
+Cell[14237, 413, 648, 19, 75, "Input"],
+Cell[14888, 434, 697, 19, 56, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15390, 451, 323, 11, 59, "Subsubsection"],
+Cell[15622, 458, 323, 11, 59, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[15738, 466, 569, 17, 70, "Input"],
-Cell[16310, 485, 317, 7, 39, "Output"]
+Cell[15970, 473, 569, 17, 70, "Input"],
+Cell[16542, 492, 317, 7, 39, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16664, 497, 496, 14, 95, "Input"],
-Cell[17163, 513, 209, 5, 59, "Output"]
+Cell[16896, 504, 496, 14, 95, "Input"],
+Cell[17395, 520, 209, 5, 59, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17421, 524, 202, 3, 43, "Subsubsection"],
-Cell[17626, 529, 1303, 32, 131, "Input"],
-Cell[18932, 563, 1269, 31, 136, "Input"],
-Cell[20204, 596, 1307, 32, 136, "Input"],
-Cell[21514, 630, 1421, 33, 136, "Input"],
-Cell[22938, 665, 1231, 31, 98, "Input"],
-Cell[24172, 698, 985, 27, 98, "Input"],
-Cell[25160, 727, 979, 27, 98, "Input"],
-Cell[26142, 756, 989, 27, 98, "Input"],
-Cell[CellGroupData[{
-Cell[27156, 787, 202, 4, 36, "Input"],
-Cell[27361, 793, 23424, 533, 333, "Output"]
+Cell[17653, 531, 202, 3, 43, "Subsubsection"],
+Cell[17858, 536, 1303, 32, 131, "Input"],
+Cell[19164, 570, 1269, 31, 136, "Input"],
+Cell[20436, 603, 1307, 32, 136, "Input"],
+Cell[21746, 637, 1421, 33, 136, "Input"],
+Cell[23170, 672, 508, 14, 68, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[50822, 1331, 281, 6, 57, "Input"],
-Cell[51106, 1339, 35636, 738, 331, "Output"]
+Cell[23715, 691, 123, 1, 43, "Subsubsection"],
+Cell[23841, 694, 1231, 31, 98, "Input"],
+Cell[25075, 727, 908, 25, 96, "Input"],
+Cell[25986, 754, 899, 25, 96, "Input"],
+Cell[26888, 781, 989, 27, 98, "Input"],
+Cell[CellGroupData[{
+Cell[27902, 812, 202, 4, 36, "Input"],
+Cell[28107, 818, 23475, 534, 333, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[86779, 2082, 374, 7, 57, "Input"],
-Cell[87156, 2091, 36576, 747, 333, "Output"]
+Cell[51619, 1357, 329, 6, 57, "Input"],
+Cell[51951, 1365, 35820, 742, 333, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[123769, 2843, 474, 9, 36, "Input"],
-Cell[124246, 2854, 32193, 675, 333, "Output"]
+Cell[87808, 2112, 374, 7, 57, "Input"],
+Cell[88185, 2121, 36473, 744, 331, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[124695, 2870, 575, 10, 36, "Input"],
+Cell[125273, 2882, 32132, 672, 331, "Output"]
 }, Open  ]]
 }, Open  ]],
-Cell[156466, 3533, 143, 1, 43, "Subsubsection"],
+Cell[157432, 3558, 143, 1, 43, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[156634, 3538, 303, 4, 34, "Subsubsection"],
-Cell[156940, 3544, 1301, 35, 241, "Input"]
+Cell[157600, 3563, 303, 4, 34, "Subsubsection"],
+Cell[157906, 3569, 1301, 35, 241, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[158278, 3584, 183, 2, 43, "Subsubsection"],
-Cell[158464, 3588, 1525, 37, 241, "Input"]
+Cell[159244, 3609, 183, 2, 43, "Subsubsection"],
+Cell[159430, 3613, 1525, 37, 301, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[160026, 3630, 110, 1, 43, "Subsubsection"],
-Cell[160139, 3633, 619, 15, 60, "Input"],
-Cell[160761, 3650, 350, 8, 60, "Input"],
+Cell[160992, 3655, 110, 1, 53, "Subsubsection"],
+Cell[161105, 3658, 619, 15, 75, "Input"],
+Cell[161727, 3675, 350, 8, 75, "Input"],
 Cell[CellGroupData[{
-Cell[161136, 3662, 127, 2, 36, "Input"],
-Cell[161266, 3666, 296, 5, 39, "Output"]
+Cell[162102, 3687, 127, 2, 45, "Input"],
+Cell[162232, 3691, 296, 5, 48, "Output"]
 }, Open  ]],
-Cell[161577, 3674, 1047, 20, 42, "Input"],
+Cell[162543, 3699, 1047, 20, 52, "Input"],
 Cell[CellGroupData[{
-Cell[162649, 3698, 98, 1, 35, "Input"],
-Cell[162750, 3701, 20428, 502, 267, "Output"]
+Cell[163615, 3723, 98, 1, 43, "Input"],
+Cell[163716, 3726, 20428, 502, 333, "Output"]
 }, Open  ]],
-Cell[183193, 4206, 991, 28, 117, "Input"],
+Cell[184159, 4231, 991, 28, 146, "Input"],
 Cell[CellGroupData[{
-Cell[184209, 4238, 159, 3, 35, "Input"],
-Cell[184371, 4243, 33263, 811, 316, "Output"]
+Cell[185175, 4263, 159, 3, 43, "Input"],
+Cell[185337, 4268, 33263, 811, 395, "Output"]
 }, Open  ]]
 }, Open  ]]
 }

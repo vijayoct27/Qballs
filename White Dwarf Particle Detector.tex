@@ -202,16 +202,31 @@ If \eqref{eq:transitmass} is violated, then the DM interaction is either not str
 A heating event in the WD must efficiently transfer energy to ions in order to trigger runaway fusion, as concisely stated in \eqref{eq:runaway}. With regards to the processes described in Section \ref{sec:DMexplode}, the characteristic heating length $L$ depends on the exact nature of the DM interaction and must be explicitly calculated for a given DM model to determine its explosiveness \eqref{eq:transitexplosion}. However, any such calculation necessarily involves an understanding of how individual SM particles dump their energy to the stellar medium. In this section, we summarize the stopping powers for particles interacting via the strong and electromagnetic forces in a WD - a detailed analysis of the energy loss is given in Appendix \ref{sec:appendix}. We define $L_i(\epsilon)$ as the distance over which an incident particle $i$ of energy $\epsilon$ (and any secondaries) deposits $\OO(1)$ of the initial energy to the stellar medium \emph{and} thermalizes ions. This length scale is calculated in the case of incident hadrons, electrons, and photons. As we are only concerned with depositing sufficient energy to ignite supernovae, we restrict our attention to high-energy particles $\epsilon \gg T_f \sim \text{MeV}$. As such, the WD may be thought of as a ``particle detector" with electromagnetic and hadronic ``calorimeter" components.
 
 \subsection{Hadrons}
-We primarily consider consider protons, neutrons, and pions.
+\textcolor{blue}{Legend: Orange = Coulomb off electrons, Blue = Coulomb off Ions, Magenta = Nonelastic Nuclear, Green = Elastic Nuclear.} 
 
-For incident energy greater than the typical nuclear binding energy $\epsilon \gtrsim 10 ~\text{MeV}$, the energy loss is dominated by nonelastic nuclear collisions in which secondary hadrons carry the initial energy in a roughly collinear shower. The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$. As shown in Figure \ref{SPhad1}. In this model, the total hadronic shower length $X_{\text{had}}$ for an incident hadron of energy $E_0 \gtrsim 10 ~\text{MeV}$ is given by
+The stopping powers for incident nucleons (protons, neutrons) and pions in a WD are shown in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}, respectively. Note that the depicted energy loss due to Coulomb collisions is only applicable for incident charged particles - the electromagnetic couplings of neutral hadrons are suppressed by higher-dimension operators. 
+\begin{figure}
+\label{fig:SPnuc}
+\includegraphics[scale=.45]{SPnucleon.pdf}
+\caption{Nucleon energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$.} 
+\end{figure}
+
+\begin{figure}
+\label{fig:SPpion}
+\includegraphics[scale=.45]{SPpion.pdf}
+\caption{Pion energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$.}
+\end{figure}
+For incident energies greater than the typical nuclear binding energy $\epsilon \gtrsim 10 ~\text{MeV}$, the energy loss is dominated by nonelastic nuclear collisions in which secondary hadrons carry the initial energy in a roughly collinear shower. Although neutrons and $\pi^\pm$ have characteristically long lifetimes, the mean distance traversed by a neutral pion before decaying to photons $d_{\pi^0} = \gamma v \tau \approx 10^{-6} ~\text{cm}$ for $\epsilon \sim 10 ~\text{MeV}$. However in a WD density $n_e \sim 10^{32} ~\text{cm}^{-3}$, the nuclear mean free path for a nonelastic collision is roughly $l_\text{had} \approx 10^{-7} \text{cm}$. Therefore, there will be minimal electromagnetic contributions due to $\pi^0$ decays during the progression of a hadronic cascade. \textcolor{blue}{nontrivial - not true in ATLAS}. Since this remains the dominant stopping power, the end products of any hadronic shower will consist of hadrons of kinetic energy $1-10 ~\text{MeV}$. 
+
+
+
+As shown in Figure \ref{SPhad1}. In this model, the total hadronic shower length $X_{\text{had}}$ for an incident hadron of energy $E_0 \gtrsim 10 ~\text{MeV}$ is given by
 \begin{equation}
 X_{\text{had}} \sim l_\text{had} \log{(E_0/E_c)} \approx 10 ~l_\text{had}.
 \end{equation}
 
 
 
-Although neutrons and $\pi^\pm$ decay through the weak interaction and have characteristically long lifetimes, the mean distance traversed by a neutral pion before decaying to photons $d_{\pi^0} = \gamma v \tau$ is of order $\lambda_T$ for pion energies less than $\sim \text{GeV}$. 
 \subsection{Electrons and Photons}
 
 \section{Constraints}
@@ -340,11 +355,11 @@ In addition, the lattice structure of ions in the WD introduces further complica
 \label{eq:lattice}
 E_B \sim \frac{Z^2 \alpha}{n_i^{-1/3}} \sim 10^{-2} - 10^{-1} ~\text{MeV}
 \end{equation}
-For energy transfers greater than $E_B$, lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold will lead to suppressed energy loss due to collective effects (i.e. phonon excitations) For simplicity, we set the lower bound on nuclei scattering (not applicable for electron targets) to be
+For energy transfers greater than $E_B$, lattice effects can be safely ignored. On the other hand, momentum transfers from collisions below this threshold will lead to suppressed energy loss due to collective effects (i.e. phonon excitations). We set the lower bound on nuclei scattering (not applicable for electron targets) to be
 \begin{equation}
 E_{\text{min}} = \text{max} \{E_B,E_{\text{sc}}\}
 \end{equation}
-so that we only account for energy transfers greater than the ion lattice binding energy.
+so that we only account for energy transfers greater than the ion lattice binding energy. \textcolor{red}{Should relax this assumption. how?}
 
 Now consider collisions with degenerate electrons. An incident particle transferring energy $E'$ can only scatter those electrons within $E'$ of the Fermi surface. We define a modified density of electrons $n_e(E')$ as:
 \begin{equation}
@@ -387,18 +402,14 @@ $X_0$ is the radiation length, and is generally of the form
 \begin{equation}
 X_0^{-1} = 4 n_i Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \limits_{b_\text{min}}^{b_\text{max}} \frac{1}{b}.
 \end{equation}
-where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_\text{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this distance is the electron Compton wavelength $b_\text{min} = \lambda_e = \frac{1}{m_e}$. It is important to note that collisions at impact parameters \emph{less} than $b_\text{min}$ will still radiate, but with exponentially suppressed intensity. Classically, this is manifested by the decoherence of radiation at large scattering angles. $b_\text{max}$ is set by the distance at which the nuclear target is screened. For an atomic target this is of order the Bohr radius, and in the WD this is the Thomas-Fermi length \eqref{eq:TF}. Evidently, there exists a critical electron number density $n_\text{crit} \sim 10^{32} ~\text{cm}^{-3}$ at which the logarithmic form factor appears to vanish. Therefore, bremsstrahlung is highly suppressed in a WD of density $n_e \gtrsim n_\text{crit}$. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$ while effectively ignoring the energy loss due to bremsstrahlung in a sufficiently dense WD. \textcolor{blue}{rather than actually calculate its contribution.} \textcolor{red}{mention connection to ``critical density" at which inverse brem gives way to electron scattering in radiative transfer?}
+where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter. $b_\text{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. For a bare nucleus, this distance is the electron Compton wavelength $b_\text{min} = \lambda_e = \frac{1}{m_e}$. It is important to note that collisions at impact parameters \emph{less} than $b_\text{min}$ will still radiate, but with exponentially suppressed intensity. Classically, this is manifested by the decoherence of radiation at large scattering angles. $b_\text{max}$ is set by the distance at which the nuclear target is screened. For an atomic target this is of order the Bohr radius, and in the WD this is the Thomas-Fermi length \eqref{eq:TF}. Evidently, there exists a critical electron number density $n_\text{crit} \sim 10^{32} ~\text{cm}^{-3}$ at which the logarithmic form factor vanishes. This is an indication that the classical calculation is no longer valid and that bremsstrahlung is highly suppressed in a WD of density $n_e \gtrsim n_\text{crit}$. For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$ while effectively ignoring the energy loss due to bremsstrahlung in a sufficiently dense WD. \textcolor{blue}{rather than actually calculate its contribution.} \textcolor{red}{mention connection to ``critical density" at which inverse brem gives way to electron scattering in radiative transfer?}
 
 Similar to \eqref{eq:BH}, the cross section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is
 \begin{equation}
 \label{eq:PP}
-\frac{d \sigma_\text{BH}}{dE} = \frac{1}{3 k n_i X_0} (1+ 2[x^2+ (1-x)^2]), ~~~ x = E/k.
+\frac{d \sigma_\text{BH}}{dE} = \frac{1}{3 k n_i X_0} (1+ 2[x^2+ (1-x)^2]) ~~~ x = E/k,
 \end{equation}
-Note that pair production has a threshold energy so that \eqref{eq:PP} is only valid for $k \gtrsim m_e$. Integrating \eqref{eq:BH}, the energy loss due to bremsstrahlung is simply
-\begin{equation}
-\l \frac{dE}{dx}\r_\text{BH} = \frac{E}{X_0},
-\end{equation}
-and the full pair production cross section is $\sigma_{pp} = \frac{7}{9} \frac{1}{n_i X_0}$. As a result, $X_0$ is the typical length scale of an electromagnetic shower.
+valid beyond the threshold energy $k \gtrsim m_e$. As a result, the energy loss due to bremsstrahlung is simply $E/X_0$ and the full pair production cross section is $\sim 1/(n_i X_0)$. Essentially, $X_0$ is the typical length scale of an electromagnetic shower.
 
 However, bremsstrahlung and pair production will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect (see \cite{Klein:1998du} for an extensive review). High-energy radiative processes involve very small longitudinal momentum transfers to nuclear targets ($\propto k/E^2$ in the case of bremsstrahlung). Quantum mechanically, this interaction is delocalized across a formation length over which amplitudes from different scattering centers will interfere. This interference is usually destructive and must be taken into account in the case of high energies or high-density mediums. Calculations of the LPM effect can be done semi-classically based on average multiple scattering. It is found that bremsstrahlung is suppressed for $k > E(E-k)/E_\text{LPM}$ and pair production for $E(k-E) > k E_\text{LPM}$, where
 \begin{equation}
@@ -412,13 +423,13 @@ For the WD densities in which radiative energy loss is considered, $E_\text{LPM}
 \end{equation}
 We find that the LPM effect diminishes the energy loss due to soft radiation so that the radiative stopping power is dominated by single, hard bremsstrahlung. Similarly, the pair production cross section reduces to
 \begin{equation}
-\sigma_{pp} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n X_0}, ~~~ E>E_\text{LPM}
+\sigma_{pp} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n_i X_0}, ~~~ E>E_\text{LPM}
 \end{equation}
 
 In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$. The emitted photon can coherently scatter off electrons and ions in the media, acquiring an effective mass of order the plasma frequency $\omega_p$. The fastest plasma frequency will dominate, which is set by degenerate electrons.
-Semi-classically, this results in a suppression of order $(k m_e/\omega_p E)^2$ when the radiated photon energy $k < \omega_p E/m_e$. This is known as the ``dielectric effect". Note that for the densities in question, $\omega_p < m_e$ so for our purposes, we may simply set $\omega E/m_e$ as a minimum cutoff on allowed photon frequencies. For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect \cite{Klein:1998du}. 
+Semi-classically, this results in a suppression of order $(k/\gamma \omega_p)^2$ when the radiated photon energy $k < \gamma \omega_p $. This is known as the ``dielectric effect". Note that for the densities in question, $\omega_p < m_e$ so we may simply set $\gamma \omega_p$ as a minimum cutoff on allowed photon frequencies. For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect \cite{Klein:1998du}. 
 
-When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Gerhardt:2010bj} taking the LPM effect into consideration, although other higher-order diagrams have not been treated in the same manner. Such an analysis is beyond the scope of this work, and we simply ignore bremsstrahlung and pair production once the LPM suppression exceeds $\OO(\alpha)$ \textcolor{blue}{cite convo with Klein.}
+When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Gerhardt:2010bj} taking the LPM effect into consideration, although other higher-order diagrams have not been treated in the same manner. Such an analysis is beyond the scope of this work, and we instead ignore radiative energy loss once the LPM suppression exceeds $\OO(\alpha)$ \textcolor{blue}{cite convo with Klein.}
 
 \subsection*{Nuclear Interactions}
 Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy. Elastic collisions are most relevant at scales less than the nuclear binding energy, $E_\text{nuc} \sim 10 ~\text{MeV}$. A single, backward elastic scatter could result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
@@ -431,16 +442,13 @@ An elastic collision between an incident (non-relativistic) mass $m$ and a heavy
 $\epsilon$ and $\epsilon'$ denote the initial and final energy of the incident particle, and we assume an isotropic distribution in the center-of-mass scattering angle. Thus, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision. However, since the ions in a WD form a Coulomb lattice, elastic collisions cannot transfer energy less than \eqref{eq:lattice} without exciting phonon modes. In the case of a nucleon, this limits the applicability of \eqref{eq:elasticratio} to energies $\epsilon \gtrsim \text{MeV}$.
 
 
-The cross section for elastic scatters $\sigma_\text{el}$ has considerable dependence on the incident particle species and energy. At energies below $\sim \text{MeV}$, $\sigma_\text{el}$ effectively vanishes for protons. \textcolor{blue}{insufficient to overcome the mutual Coulomb repulsion.} In the case of neutrons, $\sigma_\text{el}$ is roughly constant below $\sim \text{MeV}$ but is of a complicated form in the intermediate regime $\text{MeV} - \text{10} ~\text{MeV}$ due to various nuclear resonances \textcolor{blue}{cite ENDF}. For our purposes, we assume the elastic cross section for any hadron to be constant 
-\begin{equation}
-\sigma_\text{el} \sim 1 ~\text{b}, ~~~ \epsilon \gtrsim \text{MeV}.
-\end{equation}
-\textcolor{blue}{neutron capture in C+O negligible compared to elastic cross section in relevant energy range}. 
+The cross section for elastic scatters $\sigma_\text{el}$ has considerable dependence on the incident particle species and energy. At energies below $\sim \text{MeV}$, $\sigma_\text{el}$ effectively vanishes for protons. \textcolor{blue}{insufficient to overcome the mutual Coulomb repulsion.} In the case of neutrons, $\sigma_\text{el}$ is roughly constant below $\sim \text{MeV}$ but is of a complicated form in the intermediate regime $\text{MeV} - \text{10} ~\text{MeV}$ due to various nuclear resonances \textcolor{blue}{cite ENDF}. For our purposes, we assume the elastic cross section for any hadron to be constant $\sigma_\text{el} \sim 1 ~\text{b}$ when $\epsilon \gtrsim \text{MeV}$. \textcolor{blue}{neutron capture in C+O negligible compared to elastic cross section in relevant energy range.} 
 
 Next we consider nonelastic collisions at incident energies $\epsilon \gtrsim E_\text{nuc}$. In this regime, a nuclear collision generally results in an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. The remnant nucleus will generally be left in an excited state and relax through the emission of $\OO(10 ~\text{MeV})$ hadrons (``nuclear evaporation") and photons \cite{Rossi}. A hadronic shower is the result of all such reactions caused by primary and secondary particles.
 
 For simplicity, we take the nuclear mean free path for a light hadron (proton, neutron, pion) to be constant in energy with characteristic cross section
 \begin{equation}
+\eqref{eq:nucmfp}
 l_\text{had} \sim  \frac{1}{n_i \sigma_\text{non}}, ~~~~ \sigma_\text{non} \sim 100 ~\text{mb}.
 \end{equation}
 Note that the shower length is only logarithmically sensitive to the initial energy or number of secondaries, and is thus primarily set by the nuclear mean free path. In this case, the cascade induced by a high-energy initial hadron is adequately described by a stopping power
@@ -450,11 +458,12 @@ Note that the shower length is only logarithmically sensitive to the initial ene
 \end{equation}
 neglecting logarithmic factors of $\OO(1)$. The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. 
 
-Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact with nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work. As a conservative estimate, \textcolor{blue}{neglecting the pomeron at $k^{0.08}$ dependence}
+Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact with nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work. In fact at sufficiently high energies, photonuclear interactions can become coherent with the photon interaction spread over multiple nuclei \cite{Gerhardt:2010bj}. This coherence will further reduce the photonuclear mean free path. As a conservative estimate, \textcolor{blue}{neglecting the $k^{0.08}$ dependence at high energies} we assume a constant photonuclear cross section in the relevant energy regime
 \begin{equation}
 l_\gamma \sim \frac{1}{n_i \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
 \end{equation}
-At ultra-high energies $k \gtrsim \textcolor{blue}{something}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{Agashe:2014kda}. Similarly, charged leptons will lose energy via electronuclear interactions in which the incident particle radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation \cite{Gerhardt:2010bj} differs from our naive estimate an $\OO(10)$ factor. The largest uncertainty in calculating electronuclear stopping power at high energies is in evaluating hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results.
+
+Similarly, charged leptons will lose energy via electronuclear interactions in which the incident particle radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation \cite{Gerhardt:2010bj} differs from our naive estimate an $\OO(10)$ factor. The largest uncertainty in calculating electronuclear stopping power at high energies is in evaluating hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results.
 
 \end{appendices}
 
