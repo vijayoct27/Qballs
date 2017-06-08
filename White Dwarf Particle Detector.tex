@@ -118,23 +118,23 @@ where the trigger size $\lambda_T$ varies over a range of WD densities.  This is
 \section{Dark Matter Induced Ignition}
 \label{sec:DMexplode}
 
-In this section we discuss and parameterize the ability of generic, non-gravitational dark matter interactions to destroy a WD.  We focus on DM interactions that cause heating through the production of high-energy SM particles in the WD, as this is a ubiquitous processes which will exist in some form in many DM models.  One may have, for example, SM states produced by SM-DM or DM-DM scatterings, or DM decays, depicted schematically in Figure \ref{feynman}.  We seek a condition on the parameters of these interactions that determines if an encounter of the WD with a DM particle will result in the destruction of the WD. 
+In this section we discuss and parameterize the ability of generic, non-gravitational dark matter interactions to destroy a WD.  We focus on DM interactions that cause heating through the production of high-energy SM particles in the WD, as this is a ubiquitous processes which will exist in some form in many DM models.  One may have, for example, SM states produced by SM-DM or DM-DM scatterings, or DM decays, depicted schematically in Figure \ref{fig:feynman}.  We seek a condition on the parameters of these interactions that determines if an encounter of the WD with a DM particle will result in the destruction of the WD. 
 
 Finding such a condition requires knowledge of model-dependent subtleties, such as the nature of the SM states produced by the interaction of the DM with the stellar medium and the response of the DM to this interaction.  However, in general the resolutionj of this question will always come down to a few basic building blocks.  A WD-DM encounter will result in some initial distribution, both in space and energy, of SM particles in the star.  This must be computed from the details of the DM model.  The produced SM particles will then travel through the star, giving up their energy to the stellar medium in a manner analogous to the passage of high-energy collier products through a calorimeter.  This is the source of the deposition energy, which will thermalize in the medium as outlined in Section \ref{sec:Review}.  Depending on the spacial distribution of the SM products and their energy loss timescales, the resulting heating may be in the form of a single temperature peak containing the energy of many SM products, or it may result in a number of smaller, separated peaks.  In any case, the energy $\mathcal{E}_0$ of these deposits will be of order the initial kinetic energy of the SM particles involved in the deposit.  The length $L_0$ of the deposit is set by the distance the SM products travel before loosing their kinetic energy to the medium, and the subsequent thermalization timescale of that energy within th medium.  This will be a function of both the SM species and its energy, as well as the density of the stellar medium.  
 
-Any explosion condition on interactions of the type in Figure \ref{feynman} thus depends on understanding the heating lengths of SM particles as a function of SM species, initial energy, and WD density.  We calculate these quantities in Section \ref{sec:HeatingLength} and discuss their driving physics, focusing on a representative subset of species: electrons, photon, and light hadrons. With these quantities in hand, explosion conditions may be derived for a given model by following the procured outlined above. 
+Any explosion condition on interactions of the type in Figure \ref{fig:feynman} thus depends on understanding the heating lengths of SM particles as a function of SM species, initial energy, and WD density.  We calculate these quantities in Section \ref{sec:HeatingLength} and discuss their driving physics, focusing on a representative subset of species: electrons, photon, and light hadrons. With these quantities in hand, explosion conditions may be derived for a given model by following the procured outlined above. 
 
 For the remained of this section, we will derive the explosion conditions for DM models that permit one of three types of DM-WD encounters: \textcolor{blue}{strong? unperturbed? bullet-like?} transits, DM-DM collisions, and DM decays.  We focus on these processes as they are both straightforward illustrations of above procedure, and they are physically reasonable processes that would be expected to be typical of ultra-heavy DM models. 
 
 
 \begin{figure}
-\label{feynman}
+\label{fig:feynman}
 \includegraphics[scale=.05]{feynmandiag}
 \caption{General interactions between ultra-heavy DM and WD constituents - \textcolor{blue}{do diagrams properly}}
 \end{figure}
 
 \subsection{DM-DM Collisions and DM Decays}
-
+\label{sec:coldecay}
 The collision of two DM particles or the decay of a single DM particle into a SM secondaries provides a simple heating mechanism.  For simplicity, we focus on $\emph{point-like}$ events, where the SM products are produced within one heating length $L_0$ of each other and thus give rise to one temperature peak.  This restriction excludes displaced-vertex processes where the production of SM products proceeds via long-lived dark intermediate states which might decay only after traveling a considerable distance, resulting in multiple small heating events.  The explosion condition for such a process depends on the model-dependent lifetimes and emission angles of the intermediate states.  For a point-like emission, however, the condition depends only on the total SM energy released and the heating length of the SM products.  As the released energy in this scenario comes only from the energy of the non-relativistic DM, we parametrize it as the fraction $\eta$ of the initial total DM mass that is converted to the SM.  The explosion condition is thus:
 \begin{equation}
 \label{eqn:coldecay}
@@ -143,59 +143,40 @@ The collision of two DM particles or the decay of a single DM particle into a SM
 \end{equation}
 where $g=1$ for a decay process and $g=2$ for a collision.  Considering the explosion threshold \eqref{eq:Eboom}, this process requires ultra-heavy DM: $m_{DM} \gtrsim 10^{14} \, \GeV$.
 
-
 \subsection{DM Transit}
-
-A DM transit releases energy continually along the DM trajectory, resulting in a cylindrical temperature profile of transverse length scale $L$, the heating length.  This $L$ is determined by the DM-SM interaction parameters and $n$.  Ignition will be determined by both $L$ and the amount of energy deposited per length along the DM trajectory, so we parameterize this interaction in terms of a (normalized) linear energy deposit $\chi_{led}$:
+\label{sec:transit}
+For models with a DM-SM scattering process as in Figure \ref{fig:feynman}, there will be a continuous production of SM particles along the trajectory of a DM particle as it traverses the dense WD medium.  We consider a \emph{transit} to be the special case of a DM particle that loses only a small fraction of its kinetic energy to the star during this process, so that we may ignore any evolution of the DM's trajectory during the transit.  To be more precise, a DM particle in a given model will have some \emph{stopping power} $\partial E_{dm}/\partial x$ with the WD medium, which is the kinetic energy lost by the DM per distance traveled.  We demand that:
 \[
-    \chi_{led} =
-    \frac{1}{n} \frac{\partial{E_{\text{led}}}}{\partial{x}}
-\]
-where $n$ is the number density of the stellar medium and $d{E}/d{x}$ is the kinetic energy deposited to the stellar medium per DM distance traveled.  Nominally, $\chi_{led}$ will depend on the stellar density $n$, the instantaneous DM energy $E$, and the details of the DM-SM interaction.  However, over the range of WD densities we consider it is reasonable that the only variation in $\partial E /\partial x$ for different stars is a linear scaling in $n$, so $\chi_{led}$ is independent of stellar variations.  \textcolor{red}{does this need more justification?} Further, all DM particles will enter the WD with speeds of order the escape velocity of the star, which is roughly a constant $v_{esc} \approx 10^{-2}$ for all WDs.  Thus the initial energy of a transiting DM particle depends only on its mass and so $\chi_{led}$ for a transit event is a function of only DM properties: $m_{DM}$ and its DM-SM interactions.
+    \left( \frac{\partial E_{dm}}{\partial x} \right)_{\text{stopping power}} << \frac{m_{dm} v^2_{esc}}{R_c}
+\] 
+where $R_c \sim 1 \, \text{km}$ \textcolor{red}{check this} is the width of the non-degenerate crust of the WD, and $v_{esc}$ is the escape velocity of the WD.  This condition ensures that the DM penetrates the WD crust with negligable deviation to its trajectory, where we have conservatively assumed here that the crust density is $\OO(1)$ the interior density.  This is important condition as it is only in the degenerate WD interior that a runaway fusion event can occur.  Were this condition not assumed, we would have to account for the possible variations in the kinematic state of the DM after traversing the crust for various stopping powers. Further, since $R_c$ will always be larger than the eventual heating lengths $L_0$, this condidtion ensures that the DM trajectory does not vary as it crosses the heating region. 
 
-In order to ignite a WD during transit, the energy released must exceed the threshold \eqref{eq:boom}.  If the heating length $L > \lambda_T$, then we study one segment $L$ of the transit which behaves as a single energy deposit of length-scale $L$, as described in Section \ref{sec:review}. If $L < \lambda_T$, then over a $\lambda_T$ segment of the transit we have many $L$-scale heating events which sum to give a total energy deposited over the scale $\lambda_T$.  We consider thus the energy deposited in a transit of length $\text{max} \left\{ \lambda_T, L \right\}$, and requiring this to be greater than the threshold \eqref{eq:boom} we find a lower bound on the $\chi_{dep}$ sufficient to trigger runaway fusion:
+The ability of a transit to ignite the star is best captured by a parameter analgous to the stopping power, the \emph{linear energy transfer} (LET) $\partial E_{\text{SM}}/\partial x$ which is the energy released into thermalizing SM products per distance traveled.  This quantity must be computed from the DM model, as it depends on the cross-sections for DM-SM energy transfer as well as the WD density.  Note also that this LET and the stopping power are not necessarily equal, though they will be in the sensible special case that the DM-SM interaction converts only DM kinetic energy into relativistic SM particles.  However, if most of the released energy is due to changes in mass, as is the case with Q-ball dark matter, then it is possible for these two quantites to be very different. 
+
+In order to ignite a WD during transit, the energy released must exceed the threshold \eqref{eq:boom}.  If the heating length $L_0$ of the SM products is larger than the trigger size, we consider one segment $L_0$ of the transit which behaves as a single energy deposit of size $L_0$ as described in Section \ref{sec:review}. The energy deposited in this event is simply 
+\[
+    \mathcal{E}_0 = \frac{\partial E_{SM}}{\partial x} L_0.
+\]
+Now, if $L_0 < \lambda_T$, then over a $\lambda_T$ segment of the transit we have many small-scale heating events which will overlap as they diffuse outward and sum to give a temperature peak over a region $\lambda_T$ with energy deposit
+\[
+    \mathcal{E}_0 = \frac{\partial E_{SM}}{\partial x} \lambda_T
+\]
+that is, the energy released over the entire region $\lambda_T$.  Combining these gives the the explosion condition for transits:
 \begin{equation}
 \label{eq:transitexplosion}
-  \chi_{led} \gtrsim T_f\, \text{max}\left\{ \lambda_T, L \right\}^2
+  \frac{\partial E_{SM}}{\partial x} \gtrsim n_i T_f\, \text{Max}\left[\lambda_T, L_0 \right]^2
 \end{equation}
 
-The validity of equation \eqref{eq:transitexplosion} requires two conditions.  First, in order for the deposited energy to to add coherently in forming an initial temperature profile, we need the DM transit time across the deposition region to be less than the thermal diffusion time across this region:
+Finally, note that this condition \eqref{eq:transitexplosion} is derived by summing the energy deposited along a length $\text{Max}\left[L_0, \lambda_T\right]$ to produce a net energy deposit.  This is only valid if the timescale for heat to diffuse out to this distance is much larger than the timescale over which the energy is deposited into the medium, i.e. the DM transit time:
 \begin{equation}
 \tau_d \gtrsim \frac{\text{max}\left\{ \lambda_T, L \right\}}{v_\text{esc}},
 \end{equation}
-where the DM transit velocity is given by the WD escape velocity and $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lambda_T, L\}$ and temperature $T_f$ to diffuse $\OO(1)$ of its thermal energy.  This scales as $\tau_d \sim \text{max}\left\{ \lambda_T, L \right\}^2/\alpha$, where $\alpha$ is the (temperature-dependent) diffusivity, so we require:
+where the DM transit velocity is given by the WD escape velocity and $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lambda_T, L\}$ and temperature $T_0 \sim \mathcal{E}_0 / n_i \text{max}\{\lambda_T, L\}^3$ to diffuse $\OO(1)$ of its thermal energy.  This scales as $\tau_d \sim \text{max}\left\{ \lambda_T, L \right\}^2/\alpha$, where $\alpha$ is thetemperature-dependent diffusivity, so we require:
 \begin{equation}
-\alpha\left(T_f\right) \lesssim v_\text{esc} \text{max}\left\{ \lambda_T, L \right\} \label{eq:SlowDiffusion}
+\alpha\left(T_0\right) \lesssim v_\text{esc} \text{max}\left\{ \lambda_T, L \right\} \label{eq:SlowDiffusion}
 \end{equation}
-This condition is independent of DM model, and is satisfied for all WD densities.
-\textcolor{red}{Show this is actually true for all densities.} \textcolor{blue}{Also comment on $T \gg T_f$ (which only helps us? any other subtleties?)}
-
-\textcolor{blue}{Similarly, we also require that the time to transfer energy $\epsilon$ out to the initial temperature profile of length $L$ is less than the diffusion time scale $\tau_d$.} \textcolor{red}{Is this necessarily a condition?}
-
-Second, we have assumed that the DM particle does not slow down appreciable during the transit of the heating region, and more stringent, that it transits the star with the stellar escape speed.  Both of these are ensured by requiring that the DM-SM interaction is weak enough that the DM penetrates the non-degenerate crust of the WD unscathed. As only the degenerate interior is susceptible to runaway fusion, we must consider the energy deposit only after the crust is traversed and can thus ignore any variation in transit velocity only if the crust provides negligible energy loss.  This requires that we think about the stopping power of the DM, which is defined analogous to the linear energy deposit above but tracks instead the energy loss of the DM particle:
-\begin{align}
-\chi_{sp} = - \frac{1}{n} \frac{\partial{E_{\text{DM}}}}{\partial{x}}
-\end{align}
-For a crust size $R_{\text{c}}$ \textcolor{blue}{$\sim 50\, \text{km}$}, and conservatively assuming the crust density is $\OO(1)$ the interior density, we then require:
-\begin{equation}
-\frac{\chi_{sp}}{m_{DM}} \lesssim \frac{v_{esc}^2}{n R_c} \label{eq:Crust}
-\end{equation}
-\textcolor{blue}{assuming $\partial E_\text{DM}/\partial x$ is roughly constant\ldots}
-Note that $\chi_{led}$ and $\chi_{sp}$ are not necessarily equal, though they will be in the important special case that the DM-SM interaction converts only DM kinetic energy into relativistic SM particles. We will consider this special case below, as well as an explicit model of Q-ball dark matter in which $\chi_{led} \gg \chi_{sp}$ .
-
-It is important to note that if diffusion is too fast or the crust dramatically slows the DM, it is still possible to have an explosive transit event, but one would need to account for the additional diffusive cooling and slower transits. In this work, we will focus on events that satisfy conditions~\eqref{eq:SlowDiffusion} and~\eqref{eq:Crust} for simplicity.
-
-{\color{red} Is the crust ``condition" a veto on explosiveness? probably not} 
-
-{\color{blue}
-Imposing \eqref{eq:transitexplosion}, we find lower bound on $m_{\text{DM}}$ such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
-\begin{equation}
-\label{eq:transitmass}
-m_{\text{DM}} \gtrsim  T_f ~\text{max}\{\lambda_T, L\}^2 \l \frac{n_{\text{c}} R_{\text{c}}}{v_{\text{esc}}^2} \r
-\end{equation}
-If \eqref{eq:transitmass} is violated, then the DM interaction is either not strong enough to ignite the WD or it is so strong that it has no chance penetrate the crust and transit the interior. In the case of $\lambda_T > L$, this translates to a model-independent lower-bound on the DM mass $\sim 10^{27} - 10^{34} ~\GeV$. \textcolor{blue}{used 1 km crust and same number density as interior}.
-}
-
+This condition is independent of DM model, and is satisfied for all WD densities .
+\textcolor{red}{Show this is actually true for all densities. There is some subtlety here, as $\alpha$ should increase with $T$. But we also do not need to consider arbitrary large $T$, as for large enough $T$ the runaway will occur even if we don't sum the profiles. Need to work this out. It would probably be useful in general to understand the $T$ dependence of $\alpha$.} 
 
 \section{Heating Length}
 \label{sec:HeatingLength}
