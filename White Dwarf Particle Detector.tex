@@ -193,7 +193,11 @@ A heating event in the WD must efficiently transfer energy to ions in order to t
 \subsection{Hadrons}
 We primarily consider consider protons, neutrons, and pions.
 
-For incident energy greater than the typical nuclear binding energy $\epsilon \gtrsim 10 ~\text{MeV}$, the energy loss is dominated by nonelastic nuclear collisions in which secondary hadrons carry the initial energy in a roughly collinear shower. The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$. As shown in Figure \ref{SPhad1}, 
+For incident energy greater than the typical nuclear binding energy $\epsilon \gtrsim 10 ~\text{MeV}$, the energy loss is dominated by nonelastic nuclear collisions in which secondary hadrons carry the initial energy in a roughly collinear shower. The end products of a hadronic shower will generally be hadrons of kinetic energy $1-10 ~\text{MeV}$. As shown in Figure \ref{SPhad1}. In this model, the total hadronic shower length $X_{\text{had}}$ for an incident hadron of energy $E_0 \gtrsim 10 ~\text{MeV}$ is given by
+\begin{equation}
+X_{\text{had}} \sim l_\text{had} \log{(E_0/E_c)} \approx 10 ~l_\text{had}.
+\end{equation}
+
 
 
 Although neutrons and $\pi^\pm$ decay through the weak interaction and have characteristically long lifetimes, the mean distance traversed by a neutral pion before decaying to photons $d_{\pi^0} = \gamma v \tau$ is of order $\lambda_T$ for pion energies less than $\sim \text{GeV}$. 
@@ -406,16 +410,21 @@ Semi-classically, this results in a suppression of order $(k m_e/\omega_p E)^2$ 
 When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered. The electron energy loss due to direct pair production has been computed in \cite{Gerhardt:2010bj} taking the LPM effect into consideration, although other higher-order diagrams have not been treated in the same manner. Such an analysis is beyond the scope of this work, and we simply ignore bremsstrahlung and pair production once the LPM suppression exceeds $\OO(\alpha)$ \textcolor{blue}{cite convo with Klein.}
 
 \subsection*{Nuclear Interactions}
-Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy. Elastic collisions are most relevant at scales less than the nuclear binding energy, $E_\text{nuc} \sim 10 ~\text{MeV}$. A single, backward elastic scatter would result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
+Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy. Elastic collisions are most relevant at scales less than the nuclear binding energy, $E_\text{nuc} \sim 10 ~\text{MeV}$. A single, backward elastic scatter could result in an incident particle losing virtually all of its energy if the incident and target masses are the same. However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
+
 An elastic collision between an incident (non-relativistic) mass $m$ and a heavy, stationary target mass $M$ results in a final energy
 \begin{equation}
 \label{eq:elasticratio}
 \zeta \equiv \frac{\epsilon'}{\epsilon} \approx \l \frac{M}{M+m} \r^2, ~~~~ m < M.
 \end{equation}
-$\epsilon$ and $\epsilon'$ denote the initial and final energy of the incident particle, and we assume an isotropic distribution in the center-of-mass scattering angle. Thus, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision. However, since the ions in a WD form a Coulomb lattice, elastic collisions cannot transfer energy less than \eqref{eq:lattice} without exciting phonon modes. For an incident nucleon depositing energy via elastic scatters, this limits the applicability of \eqref{eq:elasticratio} to energies $\epsilon \gtrsim \text{MeV}$.
+$\epsilon$ and $\epsilon'$ denote the initial and final energy of the incident particle, and we assume an isotropic distribution in the center-of-mass scattering angle. Thus, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision. However, since the ions in a WD form a Coulomb lattice, elastic collisions cannot transfer energy less than \eqref{eq:lattice} without exciting phonon modes. In the case of a nucleon, this limits the applicability of \eqref{eq:elasticratio} to energies $\epsilon \gtrsim \text{MeV}$.
 
 
-The cross section for elastic scatters $\sigma_\text{el}$ has considerable dependence on the incident particle species and energy. At energies below $\sim \text{MeV}$, $\sigma_\text{el}$ effectively vanishes for protons. \textcolor{blue}{insufficient to overcome the mutual Coulomb repulsion.} In the case of neutrons, $\sigma_\text{el}$ is roughly constant below $\sim \text{MeV}$ but is of a complicated form in the intermediate regime $1 ~\text{MeV} - \text{10} ~\text{MeV}$ due to various nuclear resonances \textcolor{blue}{cite ENDF}. For simplicity, we assume the elastic cross section for any hadron in this range to be a constant $\sigma_\text{el} \approx 0.1 ~\text{b}$. \textcolor{blue}{neutron capture in C+O negligible compared to elastic cross section in relevant energy range}. 
+The cross section for elastic scatters $\sigma_\text{el}$ has considerable dependence on the incident particle species and energy. At energies below $\sim \text{MeV}$, $\sigma_\text{el}$ effectively vanishes for protons. \textcolor{blue}{insufficient to overcome the mutual Coulomb repulsion.} In the case of neutrons, $\sigma_\text{el}$ is roughly constant below $\sim \text{MeV}$ but is of a complicated form in the intermediate regime $\text{MeV} - \text{10} ~\text{MeV}$ due to various nuclear resonances \textcolor{blue}{cite ENDF}. For our purposes, we assume the elastic cross section for any hadron to be constant 
+\begin{equation}
+\sigma_\text{el} \sim 1 ~\text{b}, ~~~ \epsilon \gtrsim \text{MeV}.
+\end{equation}
+\textcolor{blue}{neutron capture in C+O negligible compared to elastic cross section in relevant energy range}. 
 
 Next we consider nonelastic collisions at incident energies $\epsilon \gtrsim E_\text{nuc}$. In this regime, a nuclear collision generally results in an $\OO(1)$ number of energetic secondary hadrons (i.e. protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle. These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD. The remnant nucleus will generally be left in an excited state and relax through the emission of $\OO(10 ~\text{MeV})$ hadrons (``nuclear evaporation") and photons \cite{Rossi}. A hadronic shower is the result of all such reactions caused by primary and secondary particles.
 
@@ -428,16 +437,12 @@ Note that the shower length is only logarithmically sensitive to the initial ene
 \label{eq:nucshower}
 \l \frac{dE}{dx}\r_\text{had} \sim \frac{E}{l_\text{had}},
 \end{equation}
-neglecting logarithmic factors of $\OO(1)$. The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either set by the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. In this model, the total hadronic shower length $X_{\text{had}}$ for an incident hadron of energy $E_0 \gtrsim 10 ~\text{MeV}$ is given by
-\begin{equation}
-X_{\text{had}} \sim l_\text{had} \log{(E_0/E_c)} \approx 10 ~l_\text{had}.
-\end{equation}
+neglecting logarithmic factors of $\OO(1)$. The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$. 
 
-Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact with nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work. As a conservative estimate, \textcolor{blue}{we assume a constant value}
+Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact with nuclei and induce a hadronic shower. There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work. As a conservative estimate, \textcolor{blue}{neglecting the pomeron at $k^{0.08}$ dependence}
 \begin{equation}
 l_\gamma \sim \frac{1}{n_i \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
 \end{equation}
-
 At ultra-high energies $k \gtrsim \textcolor{blue}{something}$ photonuclear interactions can become coherent, with the photon interaction spread over multiple nuclei \cite{Agashe:2014kda}. Similarly, charged leptons will lose energy via electronuclear interactions in which the incident particle radiates a virtual photon that then interacts hadronically with a nearby nucleus. Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}. Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$. A more detailed calculation \cite{Gerhardt:2010bj} differs from our naive estimate an $\OO(10)$ factor. The largest uncertainty in calculating electronuclear stopping power at high energies is in evaluating hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results.
 
 \end{appendices}
