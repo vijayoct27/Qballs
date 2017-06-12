@@ -215,7 +215,7 @@ Therefore, at sufficiently high energies $\epsilon \gtrsim 10^5 ~\text{MeV}$ ele
 
 \begin{figure}
 \includegraphics[scale=.45]{cashmoney.pdf}
-\caption{$L_i (\epsilon)$ computed for incident electrons, photons, and hadrons in a WD of density $n_e \sim 10^{33} ~\text{cm}^{-3}$. \textcolor{blue}{Blue = Hadrons, Yellow = Photons, Red = Electrons}}
+\caption{$L_i (\epsilon)$ computed for incident electrons, photons, and hadrons in a WD of density $n_e \sim 10^{33} ~\text{cm}^{-3}$. \textcolor{blue}{Blue = Hadrons, Yellow = Photons, Red = Electrons. Comment on variation for different densities}}
 \label{fig:cash}
 \end{figure}
 
@@ -247,25 +247,25 @@ As shown in Section \ref{sec:DMexplode}, a general DM transit is described by a 
 \label{eq:schematicLET}
 \frac{d E_\text{SM}}{d x} = n_\text{ion} \sigma_{i,\epsilon} N_i\epsilon
 \end{equation}
-Of course, the LET rate for any realistic DM model would involve a sum over stellar targets along with species $i$ (and possible numbers $N_i$) that could be produced, as well as an integral over the produced particle energy spectrum. For simplicity, we will assume a schematic picture in which \eqref{eq:schematicLET} adequately describes the DM transit through a WD. The heating length of any such interaction is simply $L_i$ for each produced species of energy $\epsilon$, which was explicitly calculated in Section \ref{sec:HeatingLength} for hadrons, electrons and photons. As an example, an interaction with $i = \gamma$, $N_\gamma = 1$ and $\epsilon = \GeV$ would describe DM transferring energy to the stellar medium solely via the production of one $\GeV$ photon per nuclear collision. In addition, we make a sensible assumption that the stopping power and LET are related in a straightforward manner - the DM loses kinetic energy at the same rate as energy is deposited to the WD as per the LET (that is, $d E_\text{DM}/dx = dE_\text{SM} /dx$). As a result, condition \eqref{eq:CrustCondition} takes the simple form
+Of course, the LET rate for any realistic DM model would involve a sum over stellar targets along with species $i$ (and possible numbers $N_i$) that could be produced, as well as an integral over the produced particle energy spectrum. For simplicity, we will assume a schematic picture in which \eqref{eq:schematicLET} adequately describes the DM transit through a WD. The heating length of any such interaction is simply $L_i(\epsilon)$ (regardless of $N_i$) which was explicitly calculated in Section \ref{sec:HeatingLength} for $i = $ hadrons, electrons and photons. As an example, an interaction with $i = \gamma$, $N_\gamma = 1$ and $\epsilon = \GeV$ would describe DM transferring energy to the stellar medium solely via the production of one $\GeV$ photon per nuclear collision. In addition, we make a simplifying assumption that the stopping power and LET are equal ($d E_\text{DM}/dx = dE_\text{SM} /dx$) - that is, the DM loses kinetic energy at the same rate as energy is deposited to the WD. As a result, condition \eqref{eq:CrustCondition} takes the simple form
 \begin{equation}
 \label{eq:schematicCrust}
 \sigma_{i,\epsilon} N_i\epsilon \lesssim \frac{m_\text{DM}v_\text{esc}^2}{n_\text{ion} R_\text{crust}}.
 \end{equation}
-While such a statement is certainly not true for all DM models (such as the Q-ball), it provides a useful benchmark to express constraints. With this simplification, it is also interesting to note that combining \eqref{eq:schematicLET} and \eqref{eq:schematicCrust} with the transit explosion condition \eqref{eq:transitexplosion} yields a lower bound on $m_{\text{DM}}$ such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
+While such a statement is certainly not true for all DM models (such as the Q-ball, which liberates binding energy rather than transferring kinetic energy), it provides a useful benchmark to express constraints. With this simplification, it is also interesting to note that combining \eqref{eq:schematicLET} and \eqref{eq:schematicCrust} with the transit explosion condition \eqref{eq:transitexplosion} yields a lower bound on $m_{\text{DM}}$ such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
 \begin{equation}
 \label{eq:transitmass}
 m_{\text{DM}} \gtrsim  T_f ~\text{max}\{\lambda_T, L\}^2 \l \frac{n_{\text{ion}} R_{\text{crust}}}{v_{\text{esc}}^2} \r
 \end{equation}
 In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or it is so strong that it has no chance to penetrate the crust and transit the interior. In the case of $\lambda_T > L_0$, this translates to a lower-bound on the DM mass $\sim 10^{27} - 10^{34} ~\GeV$.
 
-Within this schematic for the DM-WD interaction, one can constrain the parameter $\sigma_{i,\epsilon} \epsilon$ as a function of DM mass $m_\text{DM}$. Note that this limit can be placed over a range of produced energies $\epsilon \sim 10^{6} - 10^{18} ~\text{MeV}$ using the values of $L_i (\epsilon)$ calculated in Section \ref{sec:HeatingLength}. As an example, this is done for released photons and electrons in Figures \ref{fig:photonconstraint} and \ref{fig:electron} for a WD of mass $\sim 1.25 M_\odot$.
+Within this schematic for the DM-WD interaction, one can constrain the parameter $\sigma_{i,\epsilon} \epsilon$ as a function of DM mass $m_\text{DM}$. Note that this limit can be placed over a range of produced energies $\epsilon \sim 10^{6} - 10^{18} ~\text{MeV}$ using the values of $L_i (\epsilon)$ calculated in Section \ref{sec:HeatingLength}. As an example, this is done for released photons and electrons in Figures \ref{fig:photonconstraint} and \ref{fig:electronconstraint} for a WD of mass $\sim 1.25 M_\odot$.
 \begin{figure}
 \includegraphics[scale=.45]{photonconstraint.pdf}
-\caption{\textcolor{blue}{Photons produced at $\epsilon = \text{TeV}$, constraint is region enclosed by three curves}}
+\caption{\textcolor{blue}{Photons produced at $\epsilon = \text{TeV}$, constraint is region enclosed by three curves: right bound is flux, bottom is boom, upper is crust}}
 \label{fig:photonconstraint}
 \end{figure}
-\textcolor{blue}{Electron plot looks nearly the same - only difference is in $L_i$, so maybe no need to show for different species?}.
+\textcolor{blue}{Show a couple examples varying $\epsilon$ and $N_i$ to show sensitivity. Electron plot looks nearly the same - only difference is in $L_i$, so maybe no need to show for different species?}.
 
 \subsection{DM-DM Collision Constraints}
 \label{sec:CollisionConstraints}
@@ -277,10 +277,12 @@ N_\text{collisions}  &= t_\text{WD} \cdot n_\text{DM}' \sigma_\text{DM-DM} v \cd
 \textcolor{red}{revisit this}
 where $n'_\text{DM}$ is the gravitationally enhanced dark matter density within the star.
 
+\textcolor{blue}{expand this section}
 
 \subsection{DM Decay Constraints}
 \label{sec:DecayConstraints}
 
+\textcolor{blue}{}
 
 
 
@@ -300,17 +302,18 @@ where $m_S$ is related to the scale of supersymmetry breaking. The condition $M_
 \end{equation}
 Note that a sufficiently massive Q-ball will become a black hole if the Q-ball radius is less than the Schwarzschild radius $R_Q \lesssim R_s \sim G M_Q$. In the model described above, this translates into a condition
 \begin{equation}
-m_S \l\frac{\Mpl}{m_S}\r^3 \lesssim m_Q, ~~~ \l\frac{\Mpl}{m_S}\r^4 \lesssim Q.
+m_S \l\frac{\Mpl}{m_S}\r^3 \lesssim m_Q, ~~\text{or}~~
+\l\frac{\Mpl}{m_S}\r^4 \lesssim Q.
 \end{equation}
 For Q-ball masses of this order, gravitational interactions become relevant.
 
 We now summarize the explosiveness of a Q-ball transit. According to the notation of Section \ref{sec:Constraints}, the Q-ball transit is parameterized by
 \begin{equation}
-\frac{d E_\text{SM}}{d x} = N_\pi \cdot n_\text{ion} \sigma_Q \epsilon,
+\frac{d E_\text{SM}}{d x} = N_\pi \cdot n_\text{ion} \sigma_{\pi, \epsilon} \epsilon,
 \end{equation}
 where the nuclear interaction results in $N_\pi \sim 30$ pions released, each with kinetic energy $\epsilon \sim 500 ~\text{MeV}$. Numerous experiments have studied interactions of pions in this energy range incident upon complex nuclei targets such as carbon. It is found that there is roughly equal cross section of order $\OO (100 ~\text{mb})$ for a (neutral or charged) pion to either elastically scatter or become absorbed in a nonelastic scatter with no final state pion \cite{Pionnuclear}. As seen in Section \ref{sec:HeatingLength}, nonelastic collisions are most relevant for energy loss and will induce a hadronic shower. The corresponding heating length of the Q-ball interaction is computed in a straightforward manner
 \begin{equation}
-L_0^\text{Q-ball} \sim \text{few} \times 10^{-7} ~\text{cm}
+L_0^\text{Q-ball} = L_\pi(500~\text{MeV}) \sim \text{few} \times 10^{-7} ~\text{cm}
 \end{equation}
 in WD density of $n_\text{ion} \sim 10^{32} ~\text{cm}^{-3}$. The resulting explosiveness of the Q-ball transit as a function of WD mass is plotted in Figure \ref{fig:boomQball}.
 \begin{figure}
@@ -320,11 +323,11 @@ in WD density of $n_\text{ion} \sim 10^{32} ~\text{cm}^{-3}$. The resulting expl
 If the Q-ball cross section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that
 \begin{equation}
 \label{eq:Qballbound}
-m_Q \gtrsim 10^8 ~\text{g} \l\frac{m_S}{\text{TeV}}\r^4, ~~~~ Q \gtrsim 10^{38} \l\frac{m_S}{\text{TeV}}\r^4
+m_Q \gtrsim 10^8 ~\text{g} \l\frac{m_S}{\text{TeV}}\r^4, ~~\text{or}~~ Q \gtrsim 10^{38} \l\frac{m_S}{\text{TeV}}\r^4
 \end{equation}
 is capable of triggering runaway fusion in a heavy $\sim 1.25 ~M_{\odot}$ WD. Note that for such large values of $Q$ there is negligible stopping power for the Q-ball to slow down in a WD, and as such condition \eqref{eq:CrustCondition} will be trivially satisfied.
 
-Combining \eqref{eq:Qballbound} with the model-independent limits derived in Section \ref{sec:Constraints}, we find that Q-ball DM of mass $10^{8} - 10^{20} ~\text{g}$ is ruled out and perhaps $10^{8} - 10^{24} ~\text{g}$ is under constrain \textcolor{blue}{if you trust the NuStar results}. We can make these constraints more robust by comparing the effectiveness of the WD detector with other bounds on Q-ball DM. Currently, the most stringent constraints on Q-balls come from air fluorescence detectors of cosmic rays (OA, TA) as well as the Super-Kamiokande Cherenkov detector. However, the constraints possible through WD observation are in a fundamentally inaccessible region of parameter space for these terrestrial-based experiments. This is shown in Figure \ref{fig:Qballconstraint}
+Combining \eqref{eq:Qballbound} with the model-independent transit flux condition derived in Section \ref{sec:Constraints}, we find that Q-ball DM of mass $10^{8} - 10^{20} ~\text{g}$ is ruled out, and perhaps even up to $10^{24} ~\text{g}$ \textcolor{blue}{if you trust the NuStar results}. Currently, the most stringent constraints on Q-balls come from air fluorescence detectors of cosmic rays (OA, TA) as well as the Super-Kamiokande Cherenkov detector. However, the constraints possible through WD observation are in a fundamentally inaccessible region of parameter space for these terrestrial-based experiments due to the extremely low flux, and thus our new constraints are wholly complementary. The existing constraints are plotted with our new results are plotted in Figure~\ref{fig:Qballconstraint}.
 
 \begin{figure}
 \includegraphics[scale=.45]{Qballconstraint.pdf}
