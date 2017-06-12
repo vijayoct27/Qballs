@@ -132,7 +132,7 @@ The heating lengths of SM particles in the WD is a critical building-block for c
 \label{sec:coldecay}
 The collision of two DM particles or the decay of a single DM particle into a SM secondaries within the WD is simple and generic WD-DM encounter found in many models.  Note that these DM-DM collisions are not necessarily particle-antiparticle annihilations, but can be of a more general, complicated nature, such as the collisions of heavy nuclei.  For simplicity, we restrict our attention to point-like events, where the SM products are produced near enough to the initial event site to give rise to a single temperature peak.  This excludes ``displaced vertex" events, whose explosion conditions would involve additional model-dependent parameters.  
 
-With this restriction, the explosion condition depends only on the total SM energy released and the heating length of the products.  Since the DM involved in this process is non-relativistic, the available energy for SM products is $\sim m_\text{DM}$ and we parameterize the released SM energy as a fraction $\eta$ of the DM mass.  The explosion condition is:
+With this restriction, the explosion condition depends only on the total SM energy released and the heating length of the products.  We parameterize the released SM energy as a fraction $\eta$ of the DM mass - since the DM involved in this process is non-relativistic, $\eta \lesssim 1$.  Taking $L_0$ to be the \textcolor{blue}{net heating length}, the explosion condition is:
 \begin{equation}
 \label{eq:coldecay}
     m_\text{DM} \gtrsim n_\text{ion} T_f \lambda_T^3 \cdot \frac{1}{\eta}
@@ -142,32 +142,26 @@ Considering the explosion threshold \eqref{eq:Eboom}, this process requires ultr
 
 \subsection{DM Transit}
 \label{sec:transit}
-For models with a DM-SM scattering process as in Figure \ref{fig:feynman}, there will be a continuous production of SM particles as the DM traverses a WD.  We consider a \emph{transit} to be the special case of a DM state that loses only a small fraction of its kinetic energy to the star during this process, so that we may ignore any perturbations to the DM trajectory. More precisely, any DM model will have a \emph{stopping power} $d E_\text{DM}/d x$ with the WD medium, which is the kinetic energy lost by the DM per distance traveled.  For a transit to occur, we require that
-\begin{align}
-\frac{d E_\text{DM}}{d x} \lesssim \frac{m_\text{DM} v^2_\text{esc}}{R_\text{crust}},
+For models with a DM-SM scattering process, there may be a continuous production of SM particles as a DM particle traverses a WD.  For simplicity, we consider the special case of a ``bullet-like" transit in which the DM penetrates the non-degenerate crust of the WD with negligible change in kinetic energy.  That is, 
+\begin{equation}
 \label{eq:CrustCondition}
-\end{align}
-where $R_\text{crust} \sim \text{km}$ \textcolor{red}{check this} is the width of the non-degenerate WD crust, and $v_\text{esc}$ is the escape velocity of the WD. Note that we have conservatively estimated the crust density to be $\OO(1)$ of the interior density. It is crucial that a transiting DM penetrate the crust as it is only in the degenerate WD interior that runaway fusion can occur.  If \eqref{eq:CrustCondition} were violated, we would have to account for possible variations in the kinematic state of the DM after traversing the crust for various stopping powers. Furthermore, since $R_\text{crust}$ will ultimately be larger than any of the heating lengths considered, \eqref{eq:CrustCondition} ensures that there is negligible variation in the DM trajectory through a heating region as well. 
+  \left( \frac{d E}{d x} \right)_\text{SP} << 
+  \frac{m_\text{DM} v^2_\text{esc}}{R_\text{crust}}
+\end{equation}
+where $R_\text{crust} \sim \text{km}$ \textcolor{red}{check this} is the width of the non-degenerate WD crust, the velocity of the transiting DM is $\sim v_\text{esc}$, the escape velocity of the WD, and $dE/dx$ here is kinetic energy loss of the DM per distance traveled (i.e., the \emph{stopping power}).  Note that we have also conservatively estimated the crust density to be $\OO(1)$ of the interior density. We define a transit in terms of the WD crust because a runaway fusion event can only occur via heating of the degenerate interior.  If condition \eqref{CrustCondition} is not satisfied, then the kinematics of the DM when entering the interior is highly dependent on details of the stopping power and must be calculated from the DM model.  With \eqref{eq:CrustCondition} we avoid this complexity, and the DM transits the star with kinetic energy $m_\text{DM} v^2_\text{esc}$. Further, since $R_\text{crust}$ will ultimately be larger than any of the heating lengths considered, we may also ignore any energy loss within the WD interior. 
 
-The ability of a transit to ignite the star is most generally parameterized by a \emph{linear energy transfer} (LET) $d E_\text{SM}/d x$, which is the energy released into thermalizing SM products per distance traveled. Note that the LET and stopping power are in fact equal in the special case that the DM-SM interaction converts only DM kinetic energy into SM particles. However, these two model-dependent parameters will generically be quite different. For instance, such a scenario occurs if most of the released energy is due to changes in mass, as is the case for the interaction of Q-ball DM considered in Section \ref{sec:ConcreteExamples}. 
-
-In order to ignite a WD during transit, the energy released must exceed the threshold \eqref{eq:boom}.  If the heating length $L_0$ of the SM products is larger than the trigger size, we consider one segment $L_0$ of the transit which behaves as a single energy deposit of size $L_0$ as described in Section \ref{sec:Review}. However, if $L_0 < \lambda_T$ then many small-scale heating events will overlap during a transit segment of length $\lambda_T$ as they diffuse outward and sum to give a temperature peak over the entire $\lambda_T$ sized region. Combining these gives the the explosion condition for transits
+The ability of a transit to ignite a WD can be parameterized by a \emph{linear energy transfer} (LET), which is the energy released into SM products per distance traveled. Note that while the LET and stopping power are conceptually related quantities and may be equal in important special cases, they can generically be quite different.  For a transit releasing particles of \textcolor{blue}{net heating length} $L_0$, we can view the heating as a series of depositions of size $L_0$ with an energy $\mathcal{E}_0 = L_0 (d E/d x)$.  If these individual depositions satisfy \eqref{eq:boom}, then a SN obviously occurs.  If they do not satisfy \eqref{eq:boom}, then in this case a SN may still occur due to the combined effect of multiple deposits.  If several nearby temperature peaks are individually unable to induce a SN, they will each diffuse outward and in so doing may merge and form a combined temperature profile that will induce a SN.  This effect is only relevant if $L_0 < \lambda_T$, and in that case it is sufficient to consider the combined deposit as a single heating event with length $\lambda_T$ and energy $\lambda_T (d E/d x)$.  We thus find the explosion condition for transits to be
 \begin{equation}
 \label{eq:transitexplosion}
-  \frac{d E_\text{SM}}{d x} \gtrsim n_\text{ion} T_f\, \text{max}\left\{\lambda_T, L_0 \right\}^2
+  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim n_\text{ion} T_f\, \text{max}\left\{\lambda_T, L_0 \right\}^2.
 \end{equation}
 
-Note that condition \eqref{eq:transitexplosion} has been derived by adding the energy deposited along a length $\text{max} \{L_0, \lambda_T\}$ to produce a net energy deposit.  This is only valid if the timescale for heat to diffuse out to this distance is larger than the timescale over which the energy is deposited into the medium, i.e. the DM transit time:
+Note that in deriving condition \eqref{eq:transitexplosion}, we have taken the energy of a deposit event along the transit to be given by $L (d E/d x)$ where $L$ is the effective size of the deposit (either $L_0$ or $\lambda_T$).  This assumes that energy is deposited simultaneous along the transit, and is valid only if the transit time of the DM $L/v_{esc}$ is much slower than the relevant thermal evolution timescale, which is the time required for the temperature peaks to appear and evolve into a state which satisfies \eqref{eq:runaway}.  This is dominated by the timescale to diffuse across the distance $L$ at temperature $T_F$, and so the above analysis requires that 
 \begin{equation}
-\tau_d \gtrsim \frac{\text{max}\left\{ \lambda_T, L \right\}}{v_\text{esc}},
-\end{equation}
-where the DM transit velocity is given by the WD escape velocity and $\tau_d$ is the characteristic time for a region of size $\text{max}\{\lambda_T, L\}$ and temperature $T_0 \sim \mathcal{E}_0 / n_\text{ion} \text{max}\{\lambda_T, L\}^3$ to diffuse $\OO(1)$ of its thermal energy.  According to the heat equation, this scales as $\tau_d \sim \text{max}\left\{ \lambda_T, L \right\}^2/\alpha$, where $\alpha$ is the temperature-dependent diffusivity. Thus, we require:
-\begin{equation}
-\alpha (T_0) \lesssim v_\text{esc} \text{max}\left\{ \lambda_T, L \right\} 
+\alpha (T_f) \lesssim v_\text{esc} L 
 \label{eq:SlowDiffusion}
 \end{equation}
-This condition is independent of DM model, and is satisfied for all WD densities. 
-\textcolor{red}{Show this is actually true for all densities.} \textcolor{red}{There is some subtlety here, as $\alpha$ should increase with $T$. But we also do not need to consider arbitrary large $T$, as for large enough $T$ the runaway will occur even if we don't sum the profiles. Need to work this out. It would probably be useful in general to understand the $T$ dependence of $\alpha$.}
+where $\alpha$ is the temperature-dependent diffusivity. This condition is independent of DM model, and is satisfied for all WD densities. \textcolor{red}{double check this}
 
 \section{Heating Length}
 \label{sec:HeatingLength}
