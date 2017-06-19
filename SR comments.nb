@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6529,        198]
-NotebookOptionsPosition[      5836,        169]
-NotebookOutlinePosition[      6223,        186]
-CellTagsIndexPosition[      6180,        183]
+NotebookDataLength[      6179,        185]
+NotebookOptionsPosition[      5470,        156]
+NotebookOutlinePosition[      5857,        173]
+CellTagsIndexPosition[      5814,        170]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -39,7 +39,8 @@ Cell[BoxData[
 )\[NoBreak] is now obsolete. The legacy version being loaded may conflict \
 with current functionality. See the Compatibility Guide for updating \
 information.\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.705442912434298*^9, 3.70567356771456*^9}]
+ CellChangeTimes->{3.705442912434298*^9, 3.70567356771456*^9, 
+  3.706877677927712*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -52,10 +53,16 @@ Cell[BoxData[
       SuperscriptBox["Z", "2"]}], 
      RowBox[{"M", " ", 
       SuperscriptBox["\[Beta]", "2"], 
-      SuperscriptBox["Ed", "2"]}]], ",", "Ed"}], "]"}], "//", 
+      SuperscriptBox["Ed", "2"]}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"Ed", ",", "Etransfer", ",", "Ekin"}], "}"}], ",", 
+    RowBox[{"Assumptions", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Ekin", ">", "Etransfer"}], "}"}]}]}], "]"}], "//", 
   "FullSimplify"}]], "Input",
  CellChangeTimes->{{3.70544277079571*^9, 3.7054427925947943`*^9}, {
-  3.705442847123629*^9, 3.705442873265229*^9}}],
+  3.705442847123629*^9, 3.705442873265229*^9}, {3.7068776793538923`*^9, 
+  3.706877703769006*^9}}],
 
 Cell[CellGroupData[{
 
@@ -64,108 +71,88 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{
-     RowBox[{"-", 
-      FractionBox[
-       RowBox[{"2", " ", "\[Pi]", " ", 
-        SuperscriptBox["Z", "2"], " ", 
-        SuperscriptBox["\[Alpha]", "2"]}], 
-       RowBox[{"Ed", " ", "M", " ", 
-        SuperscriptBox["\[Beta]", "2"]}]]}], "*", 
+     FractionBox[
+      RowBox[{"2", " ", 
+       RowBox[{"(", 
+        FractionBox["1", "Etransfer"], ")"}], " ", "\[Pi]", " ", 
+       SuperscriptBox["Z", "2"], " ", 
+       SuperscriptBox["\[Alpha]", "2"]}], 
+      RowBox[{"M", " ", 
+       SuperscriptBox["\[Beta]", "2"]}]], "*", 
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"Mega", " ", "ElectronVolt"}], ")"}], "2"], 
+      RowBox[{
+       SuperscriptBox["10", 
+        RowBox[{"-", "1"}]], "Mega", " ", "ElectronVolt", "*", "12", " ", 
+       "Giga", " ", "ElectronVolt"}]], "*", 
      SuperscriptBox[
       RowBox[{"(", 
        RowBox[{"200", " ", "Mega", " ", "ElectronVolt", "*", "Fermi"}], ")"}],
-       "2"], "*", 
-     SuperscriptBox["SpeedOfLight", "0"]}], "/.", 
+       "2"]}], "/.", 
     RowBox[{"{", 
      RowBox[{
       RowBox[{"Z", "\[Rule]", "6"}], ",", 
       RowBox[{"\[Alpha]", "\[Rule]", 
        FractionBox["1", "137"]}], ",", 
-      RowBox[{"Ed", "\[Rule]", 
-       RowBox[{"1", " ", "Mega", " ", "ElectronVolt"}]}], ",", 
+      RowBox[{"Etransfer", "\[Rule]", 
+       RowBox[{"Etransfer", " ", "ElectronVolt"}]}], ",", 
       RowBox[{"M", "\[Rule]", 
        RowBox[{"12", " ", "Giga", " ", "ElectronVolt"}]}], ",", 
-      RowBox[{"\[Beta]", "\[Rule]", "0.95"}]}], "}"}]}], " ", ",", "Second"}],
-   "]"}]], "Input",
- CellChangeTimes->{{3.705442887713056*^9, 3.7054429779555063`*^9}, {
-  3.705443014696952*^9, 3.705443035971246*^9}}],
+      RowBox[{"\[Beta]", "\[Rule]", "1"}]}], "}"}]}], ",", "Barn"}], "]"}]], \
+"Input",
+ CellChangeTimes->{{3.706877778868784*^9, 3.706877850050089*^9}, {
+  3.7068779970750103`*^9, 3.706878020313092*^9}, {3.706878187844551*^9, 
+  3.706878188603778*^9}, {3.706878274815463*^9, 3.706878292064196*^9}}],
 
 Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"Convert", "::", "incomp"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Incompatible units in \
-\[NoBreak]\\!\\(\\*RowBox[{\\\"-\\\", \
-FractionBox[RowBox[{\\\"44.51155530737092`\\\", \\\" \\\", \
-SuperscriptBox[\\\"Fermi\\\", \\\"2\\\"], \\\" \\\", \\\"Mega\\\"}], \\\"Giga\
-\\\"]}]\\)\[NoBreak] and \[NoBreak]\\!\\(\\*RowBox[{\\\"Second\\\"}]\\)\
-\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:Units/ref/Convert\\\", ButtonNote -> \
-\\\"Units`Convert::incomp\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{{3.70544296445619*^9, 3.7054429788378057`*^9}, {
-  3.705443015633746*^9, 3.705443036657743*^9}}],
-
-Cell[BoxData[
- RowBox[{"-", 
-  FractionBox[
-   RowBox[{"44.51155530737092`", " ", 
-    SuperscriptBox["Fermi", "2"], " ", "Mega"}], "Giga"]}]], "Output",
- CellChangeTimes->{{3.705442930045616*^9, 3.705442978843033*^9}, {
-  3.7054430156389847`*^9, 3.705443036662979*^9}}]
+ FractionBox[
+  RowBox[{"2000", " ", "Barn", " ", "\[Pi]"}], 
+  RowBox[{"18769", " ", "Etransfer"}]]], "Output",
+ CellChangeTimes->{{3.706877797921153*^9, 3.706877850241918*^9}, {
+   3.7068779906075153`*^9, 3.706877991778182*^9}, 3.706878024916634*^9, 
+   3.706878091958942*^9, 3.7068781504243*^9, 3.7068781889636583`*^9, {
+   3.7068782736728477`*^9, 3.706878282570395*^9}, 3.7068783174944468`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Convert", "[", 
-  RowBox[{
+ RowBox[{
+  RowBox[{"Convert", "[", 
    RowBox[{
     RowBox[{
-     FractionBox["1", 
-      RowBox[{
+     FractionBox[
+      FractionBox[
+       SuperscriptBox["10", "6"], "Etransfer"], 
+      RowBox[{"n", " ", 
+       SuperscriptBox["Centimeter", 
+        RowBox[{"-", "3"}]], "*", 
        FractionBox[
-        RowBox[{" ", 
-         RowBox[{"2", "Pi", " ", 
-          SuperscriptBox["Z", "2"], " ", 
-          SuperscriptBox["\[Alpha]", "2"]}]}], 
-        RowBox[{"Ed", " ", "M", " ", 
-         SuperscriptBox["\[Beta]", "2"]}]], "*", "n"}]], "*", 
-     RowBox[{"(", 
-      RowBox[{"200", " ", "Mega", " ", "ElectronVolt", "*", "Fermi"}], ")"}], 
-     "*", 
+        RowBox[{"2000", " ", "Barn", " ", "\[Pi]"}], 
+        RowBox[{"18769", " ", "Etransfer"}]]}]], "*", 
      SuperscriptBox["SpeedOfLight", 
-      RowBox[{"-", "1"}]]}], "/.", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"Z", "\[Rule]", "6"}], ",", 
-      RowBox[{"\[Alpha]", "\[Rule]", 
-       FractionBox["1", "137"]}], ",", 
-      RowBox[{"Ed", "\[Rule]", 
-       RowBox[{"5", "Mega", " ", "ElectronVolt"}]}], ",", 
-      RowBox[{"M", "\[Rule]", 
-       RowBox[{"12", "Giga", " ", "ElectronVolt"}]}], ",", 
-      RowBox[{"\[Beta]", "\[Rule]", "1"}], ",", 
-      RowBox[{"n", "\[Rule]", 
-       RowBox[{"0.8", 
-        SuperscriptBox[
-         RowBox[{"(", 
-          RowBox[{"Mega", " ", "ElectronVolt"}], ")"}], "3"]}]}]}], "}"}]}], 
-   ",", "Second"}], "]"}]], "Input",
- CellChangeTimes->{{3.70544304682451*^9, 3.705443097364225*^9}, {
-  3.7054431301806517`*^9, 3.705443131980731*^9}, {3.705443183305853*^9, 
-  3.7054432020090218`*^9}, {3.705443271757247*^9, 3.7054433676646767`*^9}, {
-  3.70544343906643*^9, 3.705443446855605*^9}, {3.705443505257375*^9, 
-  3.705443506509747*^9}, {3.705443564810606*^9, 3.70544359584687*^9}}],
+      RowBox[{"-", "1"}]]}], ",", "Second"}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.7068778655507603`*^9, 3.70687790150539*^9}, {
+   3.706877962699608*^9, 3.706877963763092*^9}, {3.706878035022378*^9, 
+   3.706878038497473*^9}, {3.706878096313654*^9, 3.706878096438202*^9}, {
+   3.706878155232081*^9, 3.7068782249940968`*^9}, 3.70687827949676*^9, 
+   3.7068783203937197`*^9, {3.70687842489268*^9, 3.706878433816972*^9}}],
 
 Cell[BoxData[
- RowBox[{"4.151732094401933`*^-15", " ", "Second"}]], "Output",
- CellChangeTimes->{{3.705443177661141*^9, 3.705443202416854*^9}, {
-  3.705443305387328*^9, 3.7054433680758333`*^9}, {3.705443442583366*^9, 
-  3.705443447191491*^9}, {3.705443508091175*^9, 3.705443536345935*^9}, {
-  3.7054435667445*^9, 3.705443596339835*^9}}]
-}, Open  ]]
+ FractionBox[
+  RowBox[{"9.964157026564637`*^19", " ", "Second"}], "n"]], "Output",
+ CellChangeTimes->{{3.706877897174102*^9, 3.706877901823354*^9}, {
+   3.706877964775745*^9, 3.7068779881143017`*^9}, 3.706878038965743*^9, 
+   3.706878100164978*^9, {3.706878155605928*^9, 3.706878174080853*^9}, {
+   3.7068782271761503`*^9, 3.7068782293279047`*^9}, {3.706878261015205*^9, 
+   3.7068782801465797`*^9}, 3.7068783207982397`*^9, {3.7068784257909937`*^9, 
+   3.706878434224965*^9}}]
+}, Open  ]],
+
+Cell["Seems like a coincidence, no?", "Subsubsection",
+ CellChangeTimes->{{3.706878341957902*^9, 3.706878345324234*^9}}]
 },
 WindowSize->{808, 675},
 WindowMargins->{{4, Automatic}, {Automatic, 4}},
@@ -188,18 +175,18 @@ Notebook[{
 Cell[558, 20, 167, 3, 35, "Input"],
 Cell[CellGroupData[{
 Cell[750, 27, 128, 2, 36, "Input"],
-Cell[881, 31, 449, 10, 70, "Message"]
+Cell[881, 31, 474, 11, 70, "Message"]
 }, Open  ]],
-Cell[1345, 44, 458, 13, 65, "Input"],
+Cell[1370, 45, 696, 19, 102, "Input"],
 Cell[CellGroupData[{
-Cell[1828, 61, 1076, 29, 151, "Input"],
-Cell[2907, 92, 745, 15, 54, "Message"],
-Cell[3655, 109, 270, 6, 62, "Output"]
+Cell[2091, 68, 1435, 38, 225, InheritFromParent],
+Cell[3529, 108, 412, 7, 56, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3962, 120, 1519, 39, 164, "Input"],
-Cell[5484, 161, 336, 5, 38, "Output"]
-}, Open  ]]
+Cell[3978, 120, 859, 20, 113, "Input"],
+Cell[4840, 142, 491, 8, 58, "Output"]
+}, Open  ]],
+Cell[5346, 153, 120, 1, 43, "Subsubsection"]
 }
 ]
 *)
