@@ -1,0 +1,283 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8217,        274]
+NotebookOptionsPosition[      7127,        231]
+NotebookOutlinePosition[      7485,        247]
+CellTagsIndexPosition[      7442,        244]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "Units`"}]], "Input",
+ CellChangeTimes->{{3.706904977865518*^9, 3.706904978719808*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "PhysicalConstants`"}]], "Input",
+ CellChangeTimes->{{3.7069049794297867`*^9, 3.706904982231764*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "obspkg"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], \
+"\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"PhysicalConstants`\\\\\\\"\\\"}]\\\
+)\[NoBreak] is now obsolete. The legacy version being loaded may conflict \
+with current functionality. See the Compatibility Guide for updating \
+information.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.706904982801614*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["EarthRadius"], "Input",
+ CellChangeTimes->{{3.70690501728342*^9, 3.706905027384644*^9}}],
+
+Cell[BoxData[
+ RowBox[{"6378140", " ", "Meter"}]], "Output",
+ CellChangeTimes->{3.7069050188501463`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox["\[Rho]", "m"], ")"}], "2"], "\[Sigma]", "*", "v", "*", 
+     "4", 
+     FractionBox["Pi", "3"], 
+     SuperscriptBox["R", "3"]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"R", "\[Rule]", 
+       RowBox[{"6000", " ", "Kilo", " ", "Meter"}]}], ",", 
+      RowBox[{"v", "\[Rule]", 
+       RowBox[{
+        SuperscriptBox["10", 
+         RowBox[{"-", "3"}]], " ", "SpeedOfLight"}]}], ",", 
+      RowBox[{"\[Rho]", "\[Rule]", 
+       RowBox[{"0.3", 
+        FractionBox[
+         RowBox[{"Giga", " ", "ElectronVolt"}], 
+         SuperscriptBox["Centimeter", "3"]]}]}], ",", 
+      RowBox[{"m", "\[Rule]", 
+       RowBox[{"m", " ", "Giga", " ", "ElectronVolt"}]}], ",", 
+      RowBox[{"\[Sigma]", "\[Rule]", 
+       RowBox[{"\[Sigma]", " ", "Barn"}]}]}], "}"}]}], ",", 
+   FractionBox["1", "Century"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7069049874680843`*^9, 3.7069051752843924`*^9}, {
+   3.706905418082808*^9, 3.706905418889243*^9}, 3.706905647591523*^9, {
+   3.706905708156166*^9, 3.706905709017873*^9}, {3.7069058173820667`*^9, 
+   3.706905817750128*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"7.698607523134097`*^18", " ", "\[Sigma]"}], 
+   RowBox[{"Century", " ", 
+    SuperscriptBox["m", "2"]}]], "/.", 
+  RowBox[{"{", 
+   RowBox[{"m", "\[Rule]", 
+    SuperscriptBox["10", "14"]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.706905823913344*^9, 3.706905832693789*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"7.698607523134098`*^-10", " ", "\[Sigma]"}], "Century"]], "Output",\
+
+ CellChangeTimes->{{3.706905824426379*^9, 3.706905833431387*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"Kilo", " ", "Meter"}], ")"}], "2"], "Century"}]], 
+   RowBox[{"(", 
+    RowBox[{"700", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"Kilo", " ", "Meter"}], ")"}], "2"]}], ")"}]}], "//", 
+  "N"}]], "Input",
+ CellChangeTimes->{{3.7069053050875187`*^9, 3.706905392706285*^9}, {
+  3.706905423100753*^9, 3.706905434228613*^9}}],
+
+Cell[BoxData[
+ FractionBox["700.`", "Century"]], "Output",
+ CellChangeTimes->{3.706905393104521*^9, 3.706905434487752*^9, 
+  3.7069056662468452`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expected flux", "Subsubsection",
+ CellChangeTimes->{{3.706909951903516*^9, 3.706909956998993*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"\[Rho]", "*", 
+    SuperscriptBox["r", "2"], "*", 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}], "\[CapitalGamma]", 
+    FractionBox[
+     RowBox[{"Pi", "*", 
+      SuperscriptBox["detector", "2"]}], 
+     RowBox[{"4", "Pi", "*", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["r", "2"], "-", 
+        SuperscriptBox["EarthCenter", "2"], "-", 
+        RowBox[{"2", " ", "r", " ", "EarthCenter", " ", 
+         RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ")"}]}]]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "0", ",", "Center"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", "Pi"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", "0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"detector", ">", "0"}], ",", 
+      RowBox[{"EarthCenter", ">", "0"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.70690995826084*^9, 3.7069099904942703`*^9}, {
+  3.706910033696932*^9, 3.7069101129237022`*^9}, {3.706910145302474*^9, 
+  3.706910157197975*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.706910143663868*^9, 3.706910282605933*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox["700", "Century"], "*", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"0.3", " ", 
+       FractionBox[
+        RowBox[{"Giga", " ", "ElectronVolt"}], 
+        SuperscriptBox["Centimeter", "3"]], 
+       FractionBox["1", 
+        RowBox[{"m", " ", "Giga", " ", "ElectronVolt"}]], "*", "\[Pi]", " ", 
+       FractionBox[
+        RowBox[{"700", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"Kilo", " ", "Meter"}], ")"}], "2"]}], 
+        RowBox[{"4", " ", "\[Pi]", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"10", " ", "Kilo", " ", "Parsec"}], ")"}], "2"]}]], 
+       RowBox[{"(", 
+        RowBox[{"4", 
+         FractionBox["Pi", "3"], "*", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"10", " ", "Kilo", " ", "Parsec"}], ")"}], "3"]}], ")"}]}],
+       ")"}], 
+     RowBox[{"-", "1"}]]}], ",", 
+   FractionBox["1", 
+    RowBox[{"Giga", " ", "Year"}]]}], "]"}]], "Input",
+ CellChangeTimes->{{3.70691044754454*^9, 3.7069105025792913`*^9}, {
+  3.7069105609831448`*^9, 3.7069105790847197`*^9}, {3.70691067302594*^9, 
+  3.706910763000861*^9}, {3.706910808684157*^9, 3.706910810521969*^9}, {
+  3.706911034078752*^9, 3.706911068621037*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"1.0315645920983595`*^-25", " ", "m"}], 
+   RowBox[{"Giga", " ", "Year"}]], "/.", 
+  RowBox[{"m", "\[Rule]", 
+   SuperscriptBox["10", 
+    RowBox[{"15", " "}]]}]}]], "Input",
+ CellChangeTimes->{{3.706911087266067*^9, 3.706911092320237*^9}}],
+
+Cell[BoxData[
+ FractionBox["1.0315645920983595`*^-10", 
+  RowBox[{"Giga", " ", "Year"}]]], "Output",
+ CellChangeTimes->{3.706911098824998*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 675},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 116, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[699, 26, 130, 2, 28, "Input"],
+Cell[832, 30, 428, 10, 42, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1297, 45, 102, 1, 28, "Input"],
+Cell[1402, 48, 104, 2, 28, "Output"]
+}, Open  ]],
+Cell[1521, 53, 1207, 32, 122, "Input"],
+Cell[CellGroupData[{
+Cell[2753, 89, 326, 9, 52, InheritFromParent],
+Cell[3082, 100, 174, 4, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3293, 109, 465, 15, 52, "Input"],
+Cell[3761, 126, 149, 3, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3947, 134, 104, 1, 35, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4076, 139, 1144, 30, 86, "Input"],
+Cell[5223, 171, 99, 1, 28, "Output"]
+}, Open  ]],
+Cell[5337, 175, 1302, 35, 174, "Input"],
+Cell[CellGroupData[{
+Cell[6664, 214, 290, 8, 51, InheritFromParent],
+Cell[6957, 224, 142, 3, 52, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
