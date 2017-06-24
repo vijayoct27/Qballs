@@ -588,7 +588,7 @@ Now consider collisions with degenerate electrons.
 An incident particle transferring energy $E'$ can only scatter those electrons within $E'$ of the Fermi surface.
 We define a modified density of electrons $n_e(E')$ as:
 \begin{equation}
-\label{pauli}
+\label{eq:pauliblocking}
 n_e(E') = \left\{
         \begin{array}{ll}
             \displaystyle \int \limits_{E_F -E'}^{E_F}dE ~g(E) & \quad E_F \geq E' \\
@@ -601,27 +601,68 @@ The effect of degeneracy can also be cast as a suppression of the differential c
 Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact \emph{subdominant} to the contributions from rare hard-scatters.
 The stopping power is also sensitive to the integration bounds $E_{\text{max}}$ and $E_{\text{min}}$ as a power-law dependence unlike the logarithmic sensitivity \eqref{eq:SP} in the case of a non-degenerate target.
 
-\subsection*{Compton Scattering}
-Photons can efficiently deposit their energy to electrons in the WD via Compton scattering
-\begin{equation}
-{k^{\prime }={\frac {k}{1+{\frac {k}{m_e}}(1-\cos \theta )}}},
-\end{equation}
-where $k$ and $\theta$ denote the energy and angle of deflection for the incident photon, respectively.
-For perfectly forward scatters, none of the initial energy is transferred while for high-energy photons $k \gg m_e$, the maximal energy transfer approaches the initial energy.
-The differential cross section for photons to scatter off a free electron is given by the Klein-Nishina formula:
+\subsection*{Compton and Inverse Compton Scattering}
+Photons and charged particles can elastically exchange energy via Compton scatters.
+We focus first on a incident incident photon losing energy to the WD medium.
+Since the cross-section for this process scales as $\sim Z^2 \alpha^2/m^2$ for a target mass $m$ and charge $Z$, we ignore photon-ion scatters in favor of photon-electron scatters. 
+
+Consider an incident photon of energy $k$ scattering off a electron of energy $E \sim E_F$.
+In the rest frame of the electron, this cross-section is given by the the Klein-Nishina formula,
 \begin{equation}
 \label{KN}
-\frac{d\sigma_\text{KN}}{d (\cos \theta)}=\frac{\pi \alpha^2}{m_e^2} \l \frac{k'}{k} + \frac{k}{k'} -\sin^2 \theta \r.
+  \frac{d\sigma_\text{KN}}{d (\cos \theta)} = \frac{\pi \alpha^2}{m_e^2} 
+  \l \frac{k^\prime}{k} \r^2 
+  \l \frac{k^\prime}{k} + \frac{k}{k^\prime} -\sin^2 \theta \r
 \end{equation}
-As a result, the stopping power due to Compton scattering can be expressed as
+where $k^\prime$ is the outgoing photon energy, related to the scattering angle by Compton's formula,
+\begin{equation}
+{k^{\prime }={\frac {k}{1+{\frac {k}{m_e}}(1-\cos \theta )}}}.
+\end{equation}
+We need only consider the case $k > m$. 
+In this limit the cross-section is suppressed by the incoming energy $k$:
+\begin{equation}
+\label{eq:KN-highenergy}
+  \sigma \sim \frac{\alpha^2}{m_e k}.
+\end{equation} 
+The outgoing photons will scatter predominately in a near-forward direction, $\cos \theta \approx m/k$, with an outgoing energy $k^\prime \sim m$.
+Thus the typical photon energy loss is large, $\Delta k \sim m_e - k$, and cooling proceeds via a small number of hard scatters.
+The stopping power is roughly:
+\begin{equation}
+\label{eq:approx-comptonSP}
+  \frac{dk}{dx} \sim n_e \sigma \Delta{k} 
+  \sim -n_e \frac{\alpha^2}{m_e} \l 1 - \frac{m_e}{k} \r
+\end{equation}
+which for $k \gg \MeV$ rapidly plateaus to
+\begin{equation}
+\label{eq:plateau-comptonSP}
+  -\frac{dk}{dx} \sim n_e \frac{\alpha^2}{m_e} 
+   \sim 100 \frac{\MeV}{10^{-5} \cm}.
+\end{equation}
+
+A more careful analysis computes the stopping power via 
 \begin{equation}
 \label{eq:comptonSP}
-\l \frac{dE}{dx}\r_\text{KN} =  \int d (\cos \theta) n_e \frac{d\sigma_\text{KN}}{d (\cos \theta)} E', ~~~ E' = k - k'.
+  \frac{dk}{dx} =  \int d (\cos \theta) n_e \frac{d\sigma_\text{KN}}{d (\cos \theta)} \l k - k' \r, 
 \end{equation}
-Note that Paul-blocking of the target electrons should also be taken into account.
-This is done using a variable number density \eqref{pauli}, although we find that degeneracy only introduces a significant suppression when $k\lesssim 10 ~\text{MeV}$.
+taking into account the Lorentz boost to the electron's rest frame.
+This does not alter the result beyond $\OO(1)$ factors, since the target electrons are only slightly relativistic, $\gamma_e \lesssim 10$.
+Further, Paul-blocking of the target electrons should be taken into account via \eqref{eq:pauliblocking}, although we find that degeneracy only introduces a significant suppression when $k\lesssim 10 ~\text{MeV}$.
+This is also expected, as the interaction is dominated by hard, near-forward scatters.
 
-\textcolor{blue}{Inverse Compton - negligible stopping power for electrons.}
+We now consider briefly to incident electrons which may cool by (inverse) Compton scatters with the thermal bath of photons in the WD.  
+The number density of these photons is set by the thermal temperature of the star, $n \sim T^3$, which for temperatures of $\keV$ gives $n \sim 10^{23} \cm^{-3}$.
+This is roughly ten orders of magnitude less dense than the ions and electrons in the medium, so this interaction is expected to always be negligible compared to electron-ion or even electron-electron scattering.
+An estimate in the manner of the above calculation (including the now-significant boost factors) gives the inverse Compton stopping power in terms of the photon temperature $T \sim \keV$ and incident electron energy $E$:  
+\begin{equation}
+\label{eq:invcomptonSP}
+  -\frac{dE}{dx} \sim 
+  \begin{cases}
+    \alpha^2 \frac{T^4}{m_e^4} E^2 & E < \frac{m_e^2}{T} \\
+    \alpha^2 T^2 & E > \frac{m_e^2}{T} \\
+  \end{cases}.
+\end{equation}
+Where the change in scaling with $E$ marks a transition from Thompson-like scattering in the electron rest frame to suppressed high-energy scattering (the regime studied above).
+This stopping power plateaus at roughly $5\cdot10^{-3}\,\MeV/(10^{-5} \cm)$, which is indeed negligible. 
 
 \subsection*{Bremsstrahlung and Pair Production}
 The cross section for an electron of energy $E$ to radiate a photon of energy $k$ is given by the Bethe-Heitler formula
