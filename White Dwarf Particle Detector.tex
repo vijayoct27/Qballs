@@ -527,64 +527,52 @@ where $n_\text{ion}$ is the number density of nuclei \cite{Teukolsky}.
 
 \subsection*{Coulomb Collisions}
 
-An incident particle of mass $m$, charge $e$, and velocity $\beta$ scattering off a (stationary) target of mass $M$, charge $Ze$ with impact parameter $b$ will transfer energy
+An incident particle of mass $m$, charge $e$, and velocity $\beta$ scattering off a stationary target of mass $M$, charge $Ze$ at impact parameter $b$ will transfer energy
 \begin{equation}
 \label{eq:impact}
-E' = \frac{2 Z^2 \alpha^2}{b^2 \beta ^2 M}.
+E' = \frac{2 Z^2 \alpha^2}{b^2 \beta ^2 M},
 \end{equation}
+valid for energy transfers less than the mass of the target. 
 The differential cross section for the interaction is given by the Rutherford cross section
 \begin{equation}
 \label{eq:rutherford}
-\frac{d \sigma_R}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
- \end{equation}
+\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{M \beta^2} \frac{1}{E'^2},
+\end{equation}
 where we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $E'$ \cite{Agashe:2014kda}.
- Note that the differential cross section receives additional QED due to the incident spin, although one can check these corrections do not significantly affect the derived results.
-It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing ``soft-scatters" against lighter targets.
-Therefore, one would expect that soft-scattering dominates the energy loss and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons.
+In the case of a target electron, the full QED calculation yields a cross section of the same form
+\begin{equation}
+\frac{d \sigma}{dE'} = \frac{2 \pi  \alpha^2 Z^2}{m_e \beta^2} \frac{1}{E'^2} \l1-\beta^2 \frac{E^\prime}{E_\text{kin}} \r,
+\end{equation}
+where $E_\text{kin}$ is the maximum possible energy transfer satisfying kinematic constraints in a backward scatter:
+\begin{equation}
+\label{eq:Ekin}
+E_{\text{kin}} = \frac{2 m_e \beta^2 \gamma^2}{1+ 2\gamma m_e/m +(m_e/m)^2}
+\end{equation}
+
+It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets.
+Therefore, one would expect that soft-scattering dominates the energy loss, and that collisions with nuclei of mass $M$ are suppressed by a factor $\OO\l\frac{Z m_e}{M}\r$ as compared to collisions with electrons.
 This is certainly true for incident charged particles in non-degenerate matter.
 However, both of these naive expectations turn out to be false when considering scattering off a degenerate species.
 
-We first consider the energy loss of high-energy charged particles colliding with non-degenerate targets.
+We first consider the energy loss of high-energy charged particles colliding with non-degenerate nuclear targets. 
 In this case, the stopping power is given by:
 \begin{align}
 \label{eq:SP}
-\l \frac{dE}{dx}\r_\text{coulomb} & =  \int dE' \left(\frac{d \sigma}{dE'}\right) n E' \\
-& \simeq \frac{n_\text{ion} \pi Z^2 \alpha^2}{M \beta^2} \log {\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}.
+-  \frac{dE}{dx} \sim \frac{n_\text{ion} Z^2 \alpha^2}{M \beta^2} \log {\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}.
 \end{align}
-\eqref{eq:SP} must be integrated over all $E'$ within the regime of validity for \eqref{eq:rutherford}, thereby fixing the lower and upper bounds of the Coulomb logarithm.
-The maximum possible energy transfer satisfying kinematic constraints in a backward scatter is given by
-\begin{equation}
-E_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2},
-\end{equation}
-where $\gamma = (1-\beta^2)^{-1/2}$ is the relativistic factor.
-In addition, quantum mechanical uncertainty sets a limit to the accuracy that can be achieved in ``aiming" an incident particle at a target $b > \frac{1}{\text{min}\{{M, m}\} \beta \gamma}$.
-In terms of energy transfer, this translates to the condition
-\begin{equation}
-E' < E_\text{quant} = \frac{2 Z^2 \alpha^2 \gamma^2 ~\text{min}\{{M, m}\}^2}{M}.
-\end{equation}
-Therefore, we set the maximum energy transfer possible in any Coulomb interaction to be
-\begin{equation}
-E_{\text{max}} = \text{min}\{E_\text{quant}, E_{\text{kin}}\}.
-\end{equation}
-
-On the other hand, the maximum impact parameter is set by Thomas-Fermi screening due to the degenerate electron gas:
+We take the upper limit on energy transfer to be the kinematic bound \eqref{eq:Ekin}, while the the maximum impact parameter is set by Thomas-Fermi screening due to the degenerate electron gas:
 \begin{equation}
 \label{eq:TF}
 \lambda_{\text{TF}} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
 \end{equation}
-This corresponds to a lower bound on the energy transfer
-\begin{equation}
-E' > E_{\text{sc}} = \frac{12 \pi Z^3 \alpha ^3 n_e}{\beta^2 M E_F}.
-\end{equation}
-In addition, the lattice structure of ions in the WD introduces further complications. For energy transfers greater than $\omega$, lattice effects can be safely ignored.
-On the other hand, momentum transfers from collisions below this threshold will lead to suppressed energy loss due to collective effects (i.e. phonon excitations).
-We set the lower bound on nuclei scattering (not applicable for electron targets) to be
-\begin{equation}
-E_{\text{min}} = \text{max} \{\omega,E_{\text{sc}}\}
-\end{equation}
-so that we only account for energy transfers greater than the ion lattice binding energy.
+
+However, for energy transfers greater than $\omega$, the lattice structure of ions in the WD introduces further complications.
+Namely, momentum transfers from collisions below this threshold will lead to suppressed energy loss due to collective effects.
+We set the lower bound on Coulomb scattering off nuclear targets (not applicable for electron targets) to be $\sim \omega$ so that we only account for energy transfers greater than the ion lattice binding energy.
+At lower energies, we estimate the stopping power into phonon excitations as follows: \textcolor{blue}{paragraph on phonons?}
 
 Now consider collisions with degenerate electrons.
+While a proper treatment would also take into account the relativistic motion of the degenerate electron gas, such a calculation would only modify these results by $\OO(1)$ factors. 
 An incident particle transferring energy $E'$ can only scatter those electrons within $E'$ of the Fermi surface.
 We define a modified density of electrons $n_e(E')$ as:
 \begin{equation}
@@ -598,7 +586,7 @@ n_e(E') = \left\{
 \end{equation}
 where $g(E)$ is the density of states per unit volume for a three-dimensional free electron gas.
 The effect of degeneracy can also be cast as a suppression of the differential cross section of order $\mathcal{O}(E'/E_F)$ whenever energy less than the Fermi energy is transferred.
-Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact \emph{subdominant} to the contributions from rare hard-scatters.
+Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact subdominant to the contributions from rare hard-scatters.
 The stopping power is also sensitive to the integration bounds $E_{\text{max}}$ and $E_{\text{min}}$ as a power-law dependence unlike the logarithmic sensitivity \eqref{eq:SP} in the case of a non-degenerate target.
 
 \subsection*{Compton and Inverse Compton Scattering}
@@ -623,8 +611,8 @@ Thus the typical photon energy loss is large, $\Delta k \sim m_e - k$, and cooli
 The stopping power is roughly:
 \begin{equation}
 \label{eq:approx-comptonSP}
-  \frac{dk}{dx} \sim n_e \sigma \Delta{k} 
-  \sim -n_e \frac{\alpha^2}{m_e} \l 1 - \frac{m_e}{k} \r
+  -\frac{dk}{dx} \sim n_e \sigma \Delta{k} 
+  \sim-n_e \frac{\alpha^2}{m_e} \l 1 - \frac{m_e}{k} \r
 \end{equation}
 which for $k \gg \MeV$ rapidly plateaus to
 \begin{equation}
@@ -672,7 +660,7 @@ X_0^{-1} = 4 n_\text{ion} Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\La
 where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter.
 Integrating \eqref{eq:BH}, we find the energy loss due to bremsstrahlung is simply 
 \begin{equation}
-\frac{dE}{dx} \sim \frac{E}{X_0}.
+-\frac{dE}{dx} \sim \frac{E}{X_0}.
 \end{equation}
 
 $b_\text{min}$ in \eqref{eq:radiationlength} is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. 
@@ -699,10 +687,10 @@ The degree of suppression is found to be
 \begin{equation}
 \frac{d\sigma_\text{LPM}/dk}{d\sigma_\text{BH}/dk} = \sqrt{\frac{k E_\text{LPM}}{E (E-k)}},
 \end{equation}
-so that the bremsstrahlung stopping power in the regime of high-suppression is approximately
+so that the bremsstrahlung stopping power in the regime of high-suppression is modified
 \begin{equation}
 \label{eq:bremloss}
-\l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}, ~~~ E>E_\text{LPM}.
+-\l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}, ~~~ E>E_\text{LPM}.
 \end{equation}
 We find that the LPM effect diminishes energy loss due to soft radiation so that the radiative stopping power is dominated by single, hard bremsstrahlung.
 
@@ -767,7 +755,7 @@ Note that the shower length is only logarithmically sensitive to the initial ene
 In this case, the cascade induced by a high-energy initial hadron is adequately described by a stopping power
 \begin{equation}
 \label{eq:nucshower}
-\l \frac{dE}{dx}\r_\text{had} \sim \frac{E}{l_\text{had}},
+-\l \frac{dE}{dx}\r_\text{had} \sim \frac{E}{l_\text{had}},
 \end{equation}
 neglecting logarithmic factors of $\OO(1)$.
 The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$.
