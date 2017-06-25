@@ -632,7 +632,6 @@ which for $k \gg \MeV$ rapidly plateaus to
   -\frac{dk}{dx} \sim n_e \frac{\alpha^2}{m_e} 
    \sim 100 \frac{\MeV}{10^{-5} \cm}.
 \end{equation}
-
 A more careful analysis computes the stopping power as 
 \begin{equation}
 \label{eq:comptonSP}
@@ -658,7 +657,8 @@ An estimate in the manner of the above calculation (including the now-significan
 where the change in scaling with $E$ marks a transition from Thompson-like scattering in the electron rest frame to suppressed high-energy scattering.
 This stopping power plateaus at roughly $5\cdot10^{-3}\,\MeV/(10^{-5} \cm)$, which is indeed negligible. 
 
-\subsection*{Bremsstrahlung and Pair Production}
+\subsection*{Bremsstrahlung and Pair Production with LPM Suppression}
+Bremsstrahlung and pair production can be significant sources of energy loss for high-energy electrons and photons. We restrict our attention to radiative processes off target nuclei rather than target electrons as the latter are additionally suppressed by degeneracy, kinematic recoil, and charge factors. 
 The cross section for an electron of energy $E$ to radiate a photon of energy $k$ is given by the Bethe-Heitler formula
 \begin{equation}
 \label{eq:BH}
@@ -666,62 +666,69 @@ The cross section for an electron of energy $E$ to radiate a photon of energy $k
 \end{equation}
 $X_0$ is the radiation length, and is generally of the form
 \begin{equation}
+\label{eq:radiationlength}
 X_0^{-1} = 4 n_\text{ion} Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \limits_{b_\text{min}}^{b_\text{max}} \frac{1}{b}.
 \end{equation}
 where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter.
-$b_\text{min}$ is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy.
-For a bare nucleus, this distance is the electron Compton wavelength $b_\text{min} = \lambda_e = \frac{1}{m_e}$.
+Integrating \eqref{eq:BH}, we find the energy loss due to bremsstrahlung is simply 
+\begin{equation}
+\frac{dE}{dx} \sim \frac{E}{X_0}.
+\end{equation}
+
+$b_\text{min}$ in \eqref{eq:radiationlength} is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. 
+For a bare nucleus, this distance is the electron Compton wavelength $b_\text{min} = \lambda_e = \frac{1}{m_e}$. \textcolor{blue}{another sentence to clarify}
 It is important to note that collisions at impact parameters \emph{less} than $b_\text{min}$ will still radiate, but with exponentially suppressed intensity.
 Classically, this is manifested by the decoherence of radiation at large scattering angles.
 $b_\text{max}$ is set by the distance at which the nuclear target is screened.
 For an atomic target this is of order the Bohr radius, and in the WD this is the Thomas-Fermi length \eqref{eq:TF}.
-Evidently, there exists a critical electron number density $n_\text{crit} \sim 10^{32} ~\text{cm}^{-3}$ at which the logarithmic form factor vanishes.
-This is an indication that the classical calculation is no longer valid and that bremsstrahlung is highly suppressed in a WD of density $n_e \gtrsim n_\text{crit}$.
+Evidently, there exists a critical electron number density $n_e \sim 10^{32} ~\text{cm}^{-3}$ at which the logarithmic form factor vanishes.
 For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$ while effectively ignoring the energy loss due to bremsstrahlung in a sufficiently dense WD.
-\textcolor{blue}{rather than actually calculate its contribution.} \textcolor{red}{mention connection to ``critical density" at which inverse brem gives way to electron scattering in radiative transfer?}
 
-Similar to \eqref{eq:BH}, the cross section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is
-\begin{equation}
-\label{eq:PP}
-\frac{d \sigma_\text{BH}}{dE} = \frac{1}{3 k n_\text{ion} X_0} (1+ 2[x^2+ (1-x)^2]) ~~~ x = E/k,
-\end{equation}
-valid beyond the threshold energy $k \gtrsim m_e$.
-As a result, the energy loss due to bremsstrahlung is simply $E/X_0$ and the full pair production cross section is $\sim 1/(n_\text{ion} X_0)$.
-Essentially, $X_0$ is the typical length scale of an electromagnetic shower.
-
-However, bremsstrahlung and pair production will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect (see \cite{Klein:1998du} for an extensive review).
+However, bremsstrahlung will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect - see \cite{Klein:1998du} for an extensive review.
 High-energy radiative processes involve very small longitudinal momentum transfers to nuclear targets ($\propto k/E^2$ in the case of bremsstrahlung).
 Quantum mechanically, this interaction is delocalized across a formation length over which amplitudes from different scattering centers will interfere.
-This interference is usually destructive and must be taken into account in the case of high energies or high-density mediums.
+This interference turns out to be destructive and must be taken into account in the case of high energies or high-density mediums.
 Calculations of the LPM effect can be done semi-classically based on average multiple scattering.
-It is found that bremsstrahlung is suppressed for $k > E(E-k)/E_\text{LPM}$ and pair production for $E(k-E) > k E_\text{LPM}$, where
+It is found that bremsstrahlung is suppressed for $k < E(E-k)/E_\text{LPM}$, where
 \begin{equation}
 \label{eq:LPM}
 E_\text{LPM} = \frac{m_e^2 X_0 \alpha}{4 \pi}.
 \end{equation}
 For the WD densities in which radiative energy loss is considered, $E_\text{LPM} \sim 10-10^{3} ~\text{MeV}$.
-With LPM suppression, the bremsstrahlung stopping power is approximately
+The degree of suppression is found to be
+\begin{equation}
+\frac{d\sigma_\text{LPM}/dk}{d\sigma_\text{BH}/dk} = \sqrt{\frac{k E_\text{LPM}}{E (E-k)}},
+\end{equation}
+so that the bremsstrahlung stopping power in the regime of high-suppression is approximately
 \begin{equation}
 \label{eq:bremloss}
 \l\frac{dE}{dx}\r_\text{LPM} \sim \l\frac{E_\text{LPM}}{E} \r^{1/2} \frac{E}{X_0}, ~~~ E>E_\text{LPM}.
 \end{equation}
-We find that the LPM effect diminishes the energy loss due to soft radiation so that the radiative stopping power is dominated by single, hard bremsstrahlung.
-Similarly, the pair production cross section reduces to
-\begin{equation}
-\sigma_{pp} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n_\text{ion} X_0}, ~~~ E>E_\text{LPM}
-\end{equation}
+We find that the LPM effect diminishes energy loss due to soft radiation so that the radiative stopping power is dominated by single, hard bremsstrahlung.
 
-In addition to multiple scattering, additional interactions within a formation length will suppress bremsstrahlung when $k \ll E$.
+In addition to the LPM effect, other forms of interaction within a formation length will suppress bremsstrahlung when $k \ll E$.
 The emitted photon can coherently scatter off electrons and ions in the media, acquiring an effective mass of order the plasma frequency $\omega_p$.
-The fastest plasma frequency will dominate, which is set by degenerate electrons.
-Semi-classically, this results in a suppression of order $(k/\gamma \omega_p)^2$ when the radiated photon energy $k < \gamma \omega_p $.
+Semi-classically, this results in a suppression of order $(k/\gamma \omega_p)^2$ when the radiated photon energy $k < \gamma \omega_p$.
 This is known as the ``dielectric effect".
-Note that for the densities in question, $\omega_p < m_e$ so we may simply set $\gamma \omega_p$ as a minimum cutoff on allowed photon frequencies.
 For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect \cite{Klein:1998du}.
 
-When bremsstrahlung is sufficiently suppressed, higher-order processes such as direct pair production $e N \rightarrow e^+ e^- e N$ should also be considered.
-The electron energy loss due to direct pair production has been computed in \cite{Gerhardt:2010bj} taking the LPM effect into consideration, although other higher-order diagrams have not been treated in the same manner.
-Such an analysis is beyond the scope of this work, and we instead ignore radiative energy loss once the LPM suppression exceeds $\OO(\alpha)$ \textcolor{blue}{cite convo with Klein.}
+We now briefly summarize the stopping of photons via pair production. Similar to \eqref{eq:BH}, the cross section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is
+\begin{equation}
+\label{eq:PP}
+\frac{d \sigma_\text{BH}}{dE} = \frac{1}{3 k n_\text{ion} X_0} (1+ 2[x^2+ (1-x)^2]) ~~~ x = E/k,
+\end{equation}
+valid beyond the threshold energy $k \gtrsim m_e$. 
+As a result, the pair production cross section $\sim 1/(n_\text{ion} X_0)$.
+However, the LPM effect suppresses pair production at energies $E(k-E) > k E_\text{LPM}$ so that the cross section reduces to
+\begin{equation}
+\sigma_{pp} \sim \l\frac{E_\text{LPM}}{k} \r^{1/2} \frac{1}{n_\text{ion} X_0}, ~~~ E>E_\text{LPM}.
+\end{equation}
+
+Note that the LPM effect is less significant for higher-order electromagnetic processes since these generally involve larger momentum transfers for the same final-state kinematics.
+Thus, when the suppression factor exceeds $\OO(\alpha)$, these interactions should also be considered.
+For instance, the energy loss due to electron direct pair production $e^-N \to e^+ e^- e^- N$ has been calculated in \cite{Gerhardt:2010bj} and is found to exceed that of bremsstrahlung at an energy $\sim 10^{8} ~\GeV$. 
+A similar crossover is to be expected for other higher-order diagrams as well, although such a calculation is beyond the scope of this work. 
+Rather, it is expected that at such high energies the stopping power is dominated by photonuclear and electronuclear interactions anyway, and we may simply ignore the contributions from other radiative processes. 
 
 \subsection*{Nuclear Interactions}
 Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy.
