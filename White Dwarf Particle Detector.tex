@@ -104,8 +104,8 @@ What allows the WD ``detector" to be effective in this regime is its enhanced su
 
 We begin in Section~\ref{sec:Review} by reviewing the conditions for runaway fusion in a WD.
 In Section~\ref{sec:DMexplode}, we parametrize the properties of DM necessary to ignite white dwarfs through non-gravitational interactions. 
-The ability for such interactions to trigger supernovae will be determined by a heating length, which is computed in Section~\ref{sec:HeatingLength} for different SM particles and energies. 
-Following this general discussion, we apply the WD detector to place constraints on ultra-heavy DM in Section~\ref{sec:Constraints}, and apply these constraints in Section~\ref{sec:ConcreteExamples} to Q-balls.
+The ability for such interactions to trigger supernovae will be determined by a heating length, which is computed in Section~\ref{sec:SMHeating} for different SM particles and energies. 
+Following this general discussion, we apply the WD detector to place constraints on ultra-heavy DM in Section~\ref{sec:Constraints}, and apply these constraints in Section~\ref{sec:QBalls} to Q-balls.
 We conclude in Section~\ref{sec:discussion}.
 
 \section{Runaway Fusion in a White Dwarf}
@@ -114,15 +114,15 @@ We conclude in Section~\ref{sec:discussion}.
 A generic energy deposit in a WD will, after an appropriate thermalization time, heat a localized region within the star. 
 Since we are interested in inciting nuclear fusion, we take this heated region to correspond to the local peak in ion temperature that forms as a result of the deposited energy. 
 Let $L_0$ be the length scale of the heated region and $\Ez$ be the excess thermal energy that it contains.
-This corresponds to an ion temperature $T_0 \sim \Ez L_0^3 n_\text{ion}$ within the heated region, where $n_\text{ion}$ is the number density of ions.
+This corresponds to an ion temperature $T_0 \sim \Ez / L_0^3 n_\text{ion}$ within the heated region, where $n_\text{ion}$ is the number density of ions.
 Note that the size and thermal properties of the heated region will evolve in time, but we take the above parameters to refer to it as it initially forms, i.e.\ immediately after the deposited energy has thermalized with ions.  
 
 The heating length $L_0$ for a given deposition event is thus a measure of the efficiency with which the deposited energy is transferred to ions in the stellar medium.
 This may vary significantly with the type of energy deposited and with WD density.
-For example, suppose that kinetic energy is transferred directly to ions via short-range elastic scatters.
-These ions would thermalize via direct collisions, resulting in a heating length of order the ion mean free path.
+For example, suppose that kinetic energy is transferred directly to a single ion via a short-range elastic scatter.
+This ion would thermalize with neighboring ions through via direct collisions, resulting in a heating length of order the ion mean free path.
 In the other extreme, suppose that a process produces electrons in the WD at energies just above the electron Fermi energy.
-These electrons have Pauli-suppressed interactions and will travel a long distance before their energy is scattered and thermalized, resulting in a much larger $L_0$.
+These electrons have Pauli-suppressed interactions and will travel a long distance before their energy is scattered and thermalized among ions, resulting in a much larger $L_0$.
 
 The fate of a localized heated region is either a (nonviolent) diffusion of the deposited energy across the star, or a runaway fusion chain-reaction that destroys the star.
 The outcome of a given heating event is governed by two WD parameters, the fusion temperature $T_f$ and the trigger size $\lambda_T$.
@@ -161,7 +161,6 @@ This is plotted in Figure \ref{fig:Eboom} as a function of WD mass.
 Note that the threshold \eqref{eq:Eboom} is only sufficient if the deposited energy thermalizes within a region of size $L_0 < \lambda_T$.
 The threshold energy for explosion is parametrically larger if energy is deposited on a larger length scale $L_0 > \lambda_T$.
 As a result, understanding the heating length $L_0$ of a processes is critical to assessing whether or not it results in a fusion runaway.
-This is the focus of Section~\ref{sec:HeatingLength}.
 
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
@@ -169,21 +168,27 @@ This is the focus of Section~\ref{sec:HeatingLength}.
 \label{fig:Eboom}
 \end{figure}
 
-\section{WD Heating Through SM Particles}
-\label{sec:HeatingLength}
+\section{Dark Matter Heating of White Dwarfs via Standard Model Secondaries}
+\label{sec:SMHeating}
 
-A heating event in the WD must efficiently transfer energy to ions in order to trigger runaway fusion.  
-As discussed in Section \ref{sec:Review}, this is parameterized by the heating length $L_0$ of the event. 
-In general, $L_0$ may depend on the exact nature of the DM model, yet any DM candidate that couples to the SM will generically be able to heat the star by releasing SM particles, as outlined in more detail \ref{sec:DMexplode}.
-In such processes, DM physics serves only to determine the initial spacial distribution and spectrum in energy and species of SM particles produced in the star, while the actual heating proceeds though SM interactions. 
-Understanding the heating length of such processes necessarily requires an understanding of how energy is transfered from SM particles to the stellar medium, so in this section we summarize the heating properties of individual SM particles of given energy $\epsilon$ and species $i$. 
-These results serve as building blocks for calculating the full heating length $L_0$ of any DM-WD encounter that heats the star though SM mediators, which may involve any number of SM particles, species, and energies. 
+We turn now to the heating of WDs through encounters with DM. 
+As discussed in \ref{sec:Review}, a heating event must efficiently transfer energy to ions in order to trigger runaway fusion, parameterized by the heating length $L_0$ of the event. 
+In general, $L_0$ depends on the particular nature of the DM particle and must be explicit calculated for given DM model. 
+However, any DM candidate that couples to the SM will generically be able to heat the star by releasing SM secondaries after interacting with the WD medium though some effective process like those illustrated in Figure \ref{fig:feynman}.
+In such an encounter, the DM physics serves only to determine the initial distribution in space, momentum, and species of the SM particles produced in the star, while the actual heating proceeds entirely though known SM interactions. 
+It is therefore necessary to understand how energy is transfered from SM particles to the stellar medium in order to compute heating lengths for these encounters.
+The remainder of this section is dedicated understanding these SM energy transfer mechanism. 
+The question of the initial secondary distribution due to DM encounters will be addressed later, either by identifying some simple forms for this distribution that are generic to DM models capable of ignition \ref{sec:DMexplode}, or by appealing directly to a specific model \ref{sec:QBalls}.
+
+\subsection{Heating Properties of SM Particles}
+
+We summarize here the heating properties of individual SM particles of given energy $\epsilon$ and species $i$. 
+These results serve as building blocks for calculating the full heating length $L_0$ of any DM-WD encounter that heats the star though SM secondaries.
 As we are only concerned with depositing sufficient energy to initiate runaway fusion, we restrict our attention to $\epsilon \gg T_f \sim \text{MeV}$.
 We also take a nominal upper bound $\epsilon \lesssim 10^{17} ~\GeV$, so we may conservatively ignore interactions beyond the SM. 
-An essential ingredient for this analysis is the stopping powers of SM particles in the WD medium. 
-We will summarize here as needed the dominant stopping powers for each species along with the relevant physics of the interactions, however we leave the details of computing these stopping powers and identifying the dominant contributions to Appendix \ref{sec:appendix}, as it is a long calculation that involves a number of subtleties due to the unique properties of the WD medium.
 
 The heating due to a single released SM particle is most accurately described by the shape of the resulting ion temperature profile.
+<<<<<<< HEAD
 For our purposes it will be sufficient to summarize this profile with two parameters: the displacement $R_i(\epsilon)$ of the center of the profile from the starting location of the SM particle, and the width $X_i(\epsilon)$ of the temperature peak. 
 Either of these quantities may be relevant in determining the heating length $L_0$ of a given process, depending on their relative sizes and on the number of particles involved.
 
@@ -198,6 +203,23 @@ In this particular example, the first process can lead to nuclear runaway if $\e
 However, for particle species with much smaller $R_i$, the second process can be much more explosive than the first.
 
 \subsection{Hadrons}
+=======
+For our purposes it will be sufficient to summarize this profile with two parameters: the displacement $R_i(\epsilon)$ of the center of the profile from the starting location of the SM particle, and the width $X_i(\epsilon)$ of the temperature peak.  
+Note that $R_i$ is at smallest of order $X_i$, but we may have $R_i \gg X_i$.
+It turns out that for most species indeed $R_i \sim X_i$, with the one unsurprising exception being neutrinos.
+
+Either of the quantities $R$ and $X$ may be relevant in determining the heating length $L_0$ of a given encounter, depending on their relative sizes and on the number of particles involved.
+If only a few SM secondaries are produced, say by a DM decay, then $L_0 \sim X_i$ as we focus only on the heating due to the individual particles.
+However, an encounter may produce many particles that act collectively to heat the star, in which case $L_0 \sim R_i$. 
+We will primarily focus on the many-secondary case, as heating by one particle requires individual particle energies of $\epsilon \gtrsim \mathcal{E}_\text{boom} \gtrsim 10^15 \GeV$, which begins the approach the bounds of our interaction confidence $\epsilon \lesssim 10^{17} ~\GeV$
+In addition, for secondary species with $X_i \sim R_i$, an encounter that deposits the same total energy by releasing more secondaries of less individual energy will always be more explosive than encounters that focus the deposited energy into fewer secondaries. 
+
+Finally, an essential ingredient for this analysis is the stopping powers of SM particles in the WD medium. 
+We will summarize here as needed the dominant stopping powers for each species along with the relevant physics of the interactions, however we leave the details of computing these stopping powers and identifying the dominant contributions to Appendix \ref{sec:appendix}, as it is a long calculation that involves a number of subtleties due to the unique properties of the WD medium.
+
+\subsubsection{Hadrons}
+\textcolor{blue}{Orange = Coulomb off electrons, Blue = Coulomb off Ions, Magenta = Nonelastic Nuclear, Green = Elastic Nuclear.}
+>>>>>>> origin/master
 The stopping powers for incident nucleons (protons, neutrons) and pions in a WD are depicted in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}.
 Note that the energy loss due to Coulomb collisions is only relevant for incident charged particles.
 At energies greater than the typical nuclear binding energy $\epsilon \gtrsim 10 ~\text{MeV}$, energy loss is dominated by nonelastic nuclear collisions in which secondary hadrons carry the initial energy in a roughly collinear shower.
@@ -228,7 +250,12 @@ As a result, $L_\text{hadron}$ scales roughly linearly in WD density.
 \label{fig:SPpion}
 \end{figure}
 
+<<<<<<< HEAD
 \subsection{Electrons and Photons}
+=======
+\subsubsection{Electrons and Photons}
+\textcolor{blue}{Orange = Coulomb off electrons, Blue = Coulomb off Ions, Blue dashed = Compton, Magenta = Nuclear, Green = Bremsstrahlung + PP, Red = Direct PP}
+>>>>>>> origin/master
 The stopping power of electrons and photons is highly sensitive to the density of the stellar medium.
 This is evident in the fact that there is a critical density $n_e \sim 10^{32} ~\text{cm}^{-3}$ above which bremsstrahlung and pair production can essentially be ignored.
 We begin by considering WD densities $n_e \lesssim 10^{32} ~\text{cm}^{-3}$.
@@ -252,6 +279,9 @@ We now consider $n_e \gtrsim 10^{32} ~\text{cm}^{-3}$, for which radiative proce
 In this density regime, the stopping of electrons of incident energy $\epsilon \sim 1 - 10^4 ~\text{MeV}$ is primarily due to Coulomb collisions off degenerate electrons in the star.
 At energies $\epsilon \gtrsim 10^4 ~\text{MeV}$, electronuclear and photonuclear processes become the dominant source of energy loss.
 
+\subsubsection{Collective Heating by Many Particles}
+
+\subsection{Summary of Standard Model Heating Channels}
 
 To summarize, $L_i$ has been computed and plotted in Figure \ref{fig:cash} for the maximal WD density $n_e \sim 10^{33} ~\text{cm}^{-3}$ in the case of hadrons, electrons, and photons.
 \textcolor{red}{caveat: we have not yet calculated the case of $\epsilon \lesssim 10^{5} ~\text{MeV}$ which proceeds through heating electrons.
@@ -269,22 +299,15 @@ This will result in a hot electron cloud after the shower distance $X_\text{em}$
 \label{fig:SPphoton}
 \end{figure}
 
-\section{Dark Matter Induced Ignition}
+\section{Specific Dark Matter Heating Modes and Ignition Criteria}
 \label{sec:DMexplode}
 
-In this section we discuss the possibility of non-gravitational DM interactions igniting white dwarfs, focusing on interactions that cause heating through the production of high-energy SM particles.
-In particular, we seek a condition on the parameters of such interactions that determines whether or not a WD-DM encounter results in a SN.
-Of course, finding such a condition requires knowledge of DM model-dependent subtleties such as the nature of the SM states produced in the WD and the response of the DM to this interaction.
-In what follows, we will outline this calculation in the general case and then specialize to three illustrative classes: DM-DM collisions, DM decays, and DM transits of a WD.
+In this section we discuss the DM-dependent aspects of heating WDs through SM secondaries produced from interactions as pictured in Figure \ref{fig:feynman}.
+In particular, we parameterize the non-gravitational DM interactions that may give rise to WD heating in this fashion, discuss the typical spacial distributions of secondary particles that may be expected from such processes, and derive the conditions on the interaction parameters that determine if such encounters result in nuclear runaway.
+Of course, these calculation in general require knowledge of model-dependent subtleties, particularly if the incoming DM particle is significantly effected by a collision with a carbon ion or if complex dark or SM states result from that interaction. 
+In what follows, we specialize to three simple and illustrative types of DM-WD encounter that generically exist for ultra-heavy DM models: transits, collisions, and decays. 
+The interactions giving rise to these encounters correspond to the diagrams shown in Figure \ref{fig:feynman}.
 
-The types of DM-WD encounters considered are depicted in Figure \ref{fig:feynman}.
-Any interaction of this sort will result in an initial distribution (in space and energy) of produced SM particles, which will travel some distance before giving up their energy to the stellar medium in a manner analogous to collider products in a calorimeter.
-Depending on the details of the initial distribution, this interaction may give rise to one temperature peak involving the energy of many produced particles, or a number of smaller, separated peaks.
- In any case, the energy of these deposits $\Ez$ will be of order the initial kinetic energy of the SM particles involved.
- The length of the deposit $L_0$ is set by the distance SM products travel before losing their kinetic energy to the medium (i.e., the \emph{range}), and the subsequent thermalization timescale of that energy within the medium.
- This will necessarily depend on the SM species and kinetic energy, as well as the stellar density.
-Once $\Ez$ and $L_0$ have been computed in this manner, the explosion condition is determined by \eqref{eq:boom}.
- 
 \begin{figure}
 \includegraphics[scale=0.09]{feynmandiag.jpg}
 \caption{Schematic of potential DM interactions in a WD: DM-DM collision, DM decay, and DM scattering off a stellar constituent.
@@ -393,7 +416,7 @@ where $\tau_\text{DM}$ is the mean lifetime of DM.
 
 In order for a collision or decay to trigger runaway fusion, it must release sufficient energy into SM particles.
 Here we focus on a simple scenario wherein such a process releases a number of SM particles $N_i$ of single species $i$ and energy $\epsilon$ in a point-like event.
-Each particle will deposit its energy and thermalize ions within a heating length $L_i (\epsilon)$, which was explicitly calculated in Section \ref{sec:HeatingLength} for hadrons, electrons, and photons.
+Each particle will deposit its energy and thermalize ions within a heating length $L_i (\epsilon)$, which was explicitly calculated in Section \ref{sec:SMHeating} for hadrons, electrons, and photons.
 We are able to constrain DM interaction parameters when the collision or decay releases total energy greater than the threshold $\eqref{eq:coldecay}$.
 If we assume a fractional parameter $\eta=1$, this corresponds to the entire mass of DM being converted into SM particles $i$, each with energy $m_\text{DM}/N_i$.
 At sufficiently large $\epsilon \gtrsim \text{TeV}$, it has been shown that the heating lengths of individual SM particles only varies logarithmically in energy, independent of the species $i$.
@@ -449,7 +472,7 @@ If this were the only available channel for the DM to deposit energy, then the L
 where we have now restricted to the case of nuclear collisions.
 Of course, the LET rate for any realistic DM model would necessarily involve a sum over stellar targets along with species $i$ that could be produced, as well as an integral over the produced particle spectrum.
 For simplicity, we will assume a schematic picture in which \eqref{eq:schematicLET} adequately describes the DM transit through a WD.
-The heating length of any such interaction is simply $L_i(\epsilon)$, computed in Section~\ref{sec:HeatingLength} for electrons, photons, and hadrons.
+The heating length of any such interaction is simply $L_i(\epsilon)$, computed in Section~\ref{sec:SMHeating} for electrons, photons, and hadrons.
 In addition, we make a sensible assumption that the stopping power and LET are equal - that is, the DM loses kinetic energy at the same rate as energy is deposited to the WD.
 While such a statement is certainly not true for all DM models (such as the Q-ball, which liberates binding energy rather than transferring kinetic energy), it provides a useful benchmark to express constraints.
 With this simplification, it is also interesting to note that combining \eqref{eq:schematicLET} with the transit explosion condition \eqref{eq:transitexplosion} yields a lower bound on $m_{\text{DM}}$ such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
@@ -471,7 +494,7 @@ This is done in Figures \ref{fig:transitclasses}, \ref{fig:transitepsilon}, and 
 \end{figure}
 
 \section{Q-balls}
-\label{sec:ConcreteExamples}
+\label{sec:QBalls}
 
 We now implement the formalism for general constraints outlined in Section \ref{sec:Constraints} to place bounds on a specific model of DM: Q-balls.
 In various supersymmetric extensions of the SM, non-topological solitons called Q-balls can be produced in the early universe \cite{Coleman:1985ki, Kusenko:1997si}.
@@ -503,7 +526,7 @@ According to the notation of Section \ref{sec:Constraints}, the Q-ball transit i
 where the nuclear interaction results in $N_\pi \sim 30$ pions released, each with kinetic energy $\epsilon \sim 500 ~\text{MeV}$.
 Numerous experiments have studied interactions of pions in this energy range incident upon complex nuclei targets such as carbon.
 It is found that there is roughly equal cross section of order $\OO (100 ~\text{mb})$ for a (neutral or charged) pion to either elastically scatter or become absorbed in a nonelastic scatter with no final state pion \cite{Pionnuclear}.
-As seen in Section \ref{sec:HeatingLength}, nonelastic collisions are most relevant for energy loss and will induce a hadronic shower.
+As seen in Section \ref{sec:SMHeating}, nonelastic collisions are most relevant for energy loss and will induce a hadronic shower.
 The corresponding heating length of the Q-ball interaction is computed in a straightforward manner
 \begin{align}
 L_0^\text{Q-ball} \sim \text{few} \times 10^{-7} ~\text{cm}
