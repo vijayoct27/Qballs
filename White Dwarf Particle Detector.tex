@@ -158,14 +158,14 @@ As a result, understanding the heating length $L_0$ of a process is critical to 
 
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
-\caption{Minimum energy required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
+\caption{Minimum energy $\mathcal{E}_\text{boom}$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
 \label{fig:Eboom}
 \end{figure}
 
 \section{Dark Matter and Non-Gravitational Heating of a White Dwarf}
 \label{sec:SMHeating}
 
-Having reviewed the conditions necessary for an energy deposit to initiate runaway fusion in a WD, we turn our attention towards heating events induced by DM. 
+Having reviewed the conditions necessary for an energy deposit to initiate runaway fusion in a WD, we turn our attention to DM triggers of SN. 
 A DM encounter with a WD must transfer energy to ions, as characterized by the heating length $L_0$ and total energy deposit $\Ez$ for the process, such that \eqref{eq:boom} is satisfied. 
 Of course, the heating of a WD due to such an encounter will necessarily depend on the nature of the DM and must be explicitly calculated for a given DM model. 
 This was done in \cite{Graham:2015apa} for the simple case of primordial black holes which transit a WD and locally heat the star through gravitational dynamical friction. 
@@ -176,7 +176,7 @@ It is therefore necessary to understand how energy is transferred from SM partic
 
 \begin{figure}
 \includegraphics[scale=0.09]{feynmandiag.jpg}
-\caption{Schematic of possible non-gravitational DM interactions in a WD. Heating of the WD occurs through SM particle production - also depicted are potential dark sector states involved in any such interaction.}
+\caption{Schematic of possible non-gravitational DM interactions in a WD. Heating of the WD occurs through SM particle production (also depicted are potential dark sector states involved).}
 \label{fig:feynman}
 \end{figure}
 
@@ -186,37 +186,35 @@ As we are only concerned with depositing sufficient energy to initiate runaway f
 The heating due to a single released SM particle is most accurately described by the shape of the resulting temperature profile, which we parameterize by two length scales: the displacement $R_i(\epsilon)$ of the center of the profile from the starting location of the SM particle, and the width $\Delta_i(\epsilon)$ of the temperature peak.  
 Note that $R_i \gtrsim \Delta_i$ is always true although for most species, $R_i \sim \Delta_i$ with neutrinos being the one (unsurprising) exception.
 Either of these quantities may be relevant in determining the heating length of a general DM-WD encounter depending on their relative sizes and on the number of SM particles involved.  
-Finally, an essential ingredient for calculating $R_i$ and $\Delta_i$ is the stopping power of high-energy SM particles in the WD medium. 
+% We will primarily focus on the many-secondary case, as heating by one particle requires individual particle energies of $\epsilon \gtrsim \mathcal{E}_\text{boom} \gtrsim 10^15 \GeV$, which begins the approach the bounds of our interaction confidence $\epsilon \lesssim 10^{17} ~\GeV$
+% In addition, for secondary species with $\Delta_i \sim R_i$, an encounter that deposits the same total energy by releasing more secondaries of less individual energy will always be more explosive than encounters that focus the deposited energy into fewer secondaries.
+An essential ingredient for calculating $R_i$ and $\Delta_i$ is the stopping power of high-energy SM particles in the WD medium. 
 We will summarize here as needed the dominant sources of energy loss for each species while a more detailed analysis is provided in Appendix \ref{sec:appendix}. 
 
 
-% We will primarily focus on the many-secondary case, as heating by one particle requires individual particle energies of $\epsilon \gtrsim \mathcal{E}_\text{boom} \gtrsim 10^15 \GeV$, which begins the approach the bounds of our interaction confidence $\epsilon \lesssim 10^{17} ~\GeV$
-% In addition, for secondary species with $\Delta_i \sim R_i$, an encounter that deposits the same total energy by releasing more secondaries of less individual energy will always be more explosive than encounters that focus the deposited energy into fewer secondaries. 
 
 
 
-\subsection{Heating Properties: Hadrons}
-The stopping powers for nucleons and pions in a WD are depicted in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}.
-\textcolor{blue}{add elastic nuclear scattering lines to these plots}
-In terrestrial detectors at the energies, the stopping powers would be dominated by Coulomb scattering of atomic electrons, however in the WD scattering of electrons is suppressed by degeneracy and efficient charge screening.
-For energies greater than the typical nuclear binding energy $E_N \sim 10 ~\text{MeV}$, the energy loss for all hadrons is dominated by inelastic nuclear collisions. 
-The collisions produce a lighter, excited nucleus and a few outgoing hadrons which roughly carry away the incident particle's kinetic energy in equal fractions. \textcolor{blue}{citation}
-If these secondary hadrons have energy above $E_N$, they too are predominantly stopped by inelastic nuclear collisions, producing a roughly collinear shower. 
-As each collision divides the incoming energy equally among a few products, energy of the shower constitutions is decaying via a stopping power
+\subsection{Heating Properties - Hadrons}
+The stopping powers for nucleons and pions in a WD are shown in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}.
+%In terrestrial detectors at the energies, the stopping powers would be dominated by Coulomb scattering of atomic electrons, however in the WD scattering of electrons is suppressed by degeneracy and efficient charge screening.
+For energies greater than the typical nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$, the energy loss for all hadrons is dominated by nonelastic nuclear collisions. 
+These collisions produce a lighter, excited nucleus and a few outgoing hadrons which roughly carry away the incident particle's kinetic energy in equal fractions. \textcolor{blue}{citation}
+If these secondary hadrons have energy above $E_\text{nuc}$, they too are predominantly stopped by nonelastic nuclear collisions, producing a roughly collinear shower. 
+As each collision divides the incoming energy equally among a few products, the energy loss of shower constituents is described by the radiative stopping power
 \begin{equation}
-  \l \frac{dE}{dx} \r \sim \frac{E}{l_\text{h,inel}}. 
+  \l \frac{dE}{dx} \r \sim \frac{E}{l_\text{h,inel}},
 \end{equation}
-Where $l_\text{h,inel}$ is the mean free path for inelastic hadron-nuclei collisions.
-The shower terminates when the constituents reach engery $E_N$, giving a shower length of 
+where $l_\text{h,non}$ is the mean free path for nonelastic hadron-nuclei collisions.
+The shower terminates when the constituents reach engery $E_\text{nuc}$, giving a shower length of 
 \begin{align}
 \label{eq:hadlength}
-  X_{\text{h}} \sim l_\text{h,inel} \log\l\frac{\epsilon}{E_c}\r
+  X_{\text{h}} \sim l_\text{h,inel} \log\l\frac{\epsilon}{E_\text{nuc}}\r
   \approx 10 ~l_\text{h,inel},
 \end{align}
 for an initial hadron energy of $\epsilon$. 
-We will approximate the logarithmic energy dependence as an $\sim 10$ constant
 
-The shower terminates in a small cloud of final state nucleons and pions, each with energy $E_N$. 
+The shower terminates in a small cloud of final state nucleons and pions, each with energy $E_\text{nuc}$. 
 The energy loss of these particles is dominated by elastic nuclear scatters, \textcolor{blue}{need to add this to the above plots} which represents the end-stage of the ion-heating process with thermalization occurring after the hadrons have scattered $\OO(1)$ of their energy.  
 % Hadrons with mass $m$ will transfer a fraction $\sim m/M_\text{carbon} \sim 0.1~m/m_p$ of their energy to nuclei per hard scatter
 This requires $\sim 10$ scatters for nucleons and $\sim 100$ for pions. 
@@ -235,19 +233,7 @@ The elastic scattering cross-section is roughly a factor of 10 larger than the i
         \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r
 \end{align}
 
-\begin{figure}
-\includegraphics[scale=.60]{SPnucleon.pdf}
-\caption{Nucleon energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to protons.}
-\label{fig:SPnuc}
-\end{figure}
-
-\begin{figure}
-\includegraphics[scale=.60]{SPpion.pdf}
-\caption{Pion energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to charged pion.}
-\label{fig:SPpion}
-\end{figure}
-
-\subsection{Heating Properties: Electrons and Photons}
+\subsection{Heating Properties - Electrons and Photons}
 The stopping power of electrons and photons is highly sensitive to the density of the stellar medium.
 This is evident in the fact that there is a critical density $n_e \sim 10^{32} ~\text{cm}^{-3}$ above which bremsstrahlung and pair production can essentially be ignored.
 We begin by considering WD densities $n_e \lesssim 10^{32} ~\text{cm}^{-3}$.
@@ -271,25 +257,11 @@ We now consider $n_e \gtrsim 10^{32} ~\text{cm}^{-3}$, for which radiative proce
 In this density regime, the stopping of electrons of incident energy $\epsilon \sim 1 - 10^4 ~\text{MeV}$ is primarily due to Coulomb collisions off degenerate electrons in the star.
 At energies $\epsilon \gtrsim 10^4 ~\text{MeV}$, electronuclear and photonuclear processes become the dominant source of energy loss.
 
-\subsection{Collective Heating}
-
 \subsection{Summary of Standard Model Heating Channels}
 
 To summarize, $L_i$ has been computed and plotted in Figure \ref{fig:cash} for the maximal WD density $n_e \sim 10^{33} ~\text{cm}^{-3}$ in the case of hadrons, electrons, and photons.
 \textcolor{red}{caveat: we have not yet calculated the case of $\epsilon \lesssim 10^{5} ~\text{MeV}$ which proceeds through heating electrons.
 This will result in a hot electron cloud after the shower distance $X_\text{em}$ that should ultimately thermalize ions.}
-
-\begin{figure}
-\includegraphics[scale=.60]{SPelectron.pdf}
-\caption{Electron energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$ For $n_e \gtrsim 10^{32} ~\text{cm}^{-3}$, bremsstrahlung and pair production contributions should be ignored}
-\label{fig:SPelectron}
-\end{figure}
-
-\begin{figure}
-\includegraphics[scale=.60]{SPphoton.pdf}
-\caption{Photon energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$ For $n_e \gtrsim 10^{32} ~\text{cm}^{-3}$, bremsstrahlung and pair production contributions should be ignored}
-\label{fig:SPphoton}
-\end{figure}
 
 \section{Dark Matter-Induced Ignition: Models and Conditions}
 \label{sec:DMexplode}
@@ -542,8 +514,8 @@ The strongest proposed limits due to the existence of a heavy WD in the galactic
 
 \section{Particle Interactions in a White Dwarf}
 \label{sec:appendix}
-In this appendix we provide a detailed analysis of the possible electromagnetic and strong interactions in a WD.
-This is primarily aimed towards calculating the stopping of high-energy electrons, photons, and light hadrons (protons, neutrons, pions) within the stellar medium.
+Here we provide a detailed analysis of the possible electromagnetic and strong interactions in a WD.
+This is primarily aimed towards calculating the stopping of high-energy electrons, photons, and light hadrons (protons, neutrons, pions) within the stellar medium, the results of which are summarized in Figures \ref{fig:SPelectron}, \ref{fig:SPphoton}, \ref{fig:SPnuc}, and \ref{fig:SPpion}.
 The interior of a WD is a complex environment (unless otherwise noted, we will assume a carbon-oxygen WD).
 Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy
 \begin{equation}
@@ -555,7 +527,28 @@ The nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly
 \label{eq:lattice}
 \omega \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}} \sim 10^{-2} - 10^{-1} ~\text{MeV}
 \end{equation}
-where $n_\text{ion}$ is the number density of nuclei \cite{Teukolsky}.
+where $n_\text{ion}$ is the number density of nuclei \cite{Teukolsky}. 
+\begin{figure}
+\includegraphics[scale=.60]{SPelectron.pdf}
+\caption{Electron energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$ For $n_e \gtrsim 10^{32} ~\text{cm}^{-3}$, bremsstrahlung and pair production contributions should be ignored}
+\label{fig:SPelectron}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=.60]{SPphoton.pdf}
+\caption{Photon energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$ For $n_e \gtrsim 10^{32} ~\text{cm}^{-3}$, bremsstrahlung and pair production contributions should be ignored}
+\label{fig:SPphoton}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=.60]{SPnucleon.pdf}
+\caption{Nucleon energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to protons.}
+\label{fig:SPnuc}
+\end{figure}
+\begin{figure}
+\includegraphics[scale=.60]{SPpion.pdf}
+\caption{Pion energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to charged pion.}
+\label{fig:SPpion}
+\end{figure}
+
 
 \subsection*{Coulomb Collisions}
 
@@ -590,7 +583,7 @@ We first consider the energy loss of high-energy charged particles colliding wit
 In this case, the stopping power is given by:
 \begin{align}
 \label{eq:SP}
--  \frac{dE}{dx} \sim \frac{n_\text{ion} Z^2 \alpha^2}{M \beta^2} \log {\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}.
+-  \l \frac{dE}{dx}\r \sim \frac{n_\text{ion} Z^2 \alpha^2}{M \beta^2} \log {\l\frac{E_{\text{max}}}{E_{\text{min}}}\r}.
 \end{align}
 We take the upper limit on energy transfer to be the kinematic bound \eqref{eq:Ekin}, while the the maximum impact parameter is set by Thomas-Fermi screening due to the degenerate electron gas:
 \begin{equation}
@@ -692,7 +685,7 @@ X_0^{-1} = 4 n_\text{ion} Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\La
 where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter.
 Integrating \eqref{eq:BH}, we find the energy loss due to bremsstrahlung is simply 
 \begin{equation}
--\frac{dE}{dx} \sim \frac{E}{X_0}.
+-\l\frac{dE}{dx}\r \sim \frac{E}{X_0}.
 \end{equation}
 
 $b_\text{min}$ in \eqref{eq:radiationlength} is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. 
@@ -757,16 +750,15 @@ A single, backward elastic scatter could result in an incident particle losing v
 However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e.
 ping-pong balls bouncing around a sea of bowling balls.
 
-An elastic collision between an incident (non-relativistic) mass $m$ and a heavy, stationary target mass $M$ results in a final energy
+An elastic collision between an incident (non-relativistic) mass $m$ with kinetic energy $\epsilon$ and a heavy, stationary target mass $M$ results in an energy transfer
 \begin{equation}
 \label{eq:elasticratio}
-\zeta \equiv \frac{\epsilon'}{\epsilon} \approx \l \frac{M}{M+m} \r^2, ~~~~ m < M.
+E' \approx \l \frac{2 m}{M}\r \epsilon, ~~~~ m < M,
 \end{equation}
-$\epsilon$ and $\epsilon'$ denote the initial and final energy of the incident particle, and we assume an isotropic distribution in the center-of-mass scattering angle.
+where it is assumed there is an isotropic distribution in the center-of-mass scattering angle.
 Thus, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision.
 However, since the ions in a WD form a Coulomb lattice, elastic collisions cannot transfer energy less than \eqref{eq:lattice} without exciting phonon modes.
-In the case of a nucleon, this limits the applicability of \eqref{eq:elasticratio} to energies $\epsilon \gtrsim \text{MeV}$.
-
+In the case of an incident nucleon, this limits the applicability of \eqref{eq:elasticratio} to energies $\epsilon \gtrsim \text{MeV}$.
 The cross section for elastic scatters $\sigma_\text{el}$ has considerable dependence on the incident particle species and energy.
 At energies below $\sim \text{MeV}$, $\sigma_\text{el}$ effectively vanishes for protons.
 In the case of neutrons, $\sigma_\text{el}$ is roughly constant below $\sim \text{MeV}$ but is of a complicated form in the intermediate regime $1 - 10 ~\text{MeV}$ due to various nuclear resonances \textcolor{blue}{cite ENDF}.
@@ -778,37 +770,38 @@ protons, neutrons, pions, etc.) emitted roughly in the direction of the primary 
 These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD.
 The remnant nucleus will generally be left in an excited state and relax through the emission of $\OO(10 ~\text{MeV})$ hadrons (``nuclear evaporation") and photons \cite{Rossi}.
 A hadronic shower is the result of all such reactions caused by primary and secondary particles.
-
 For simplicity, we take the nuclear mean free path for a light hadron (proton, neutron, pion) to be constant in energy with characteristic cross section
 \begin{equation}
-l_\text{h,inel} \sim  \frac{1}{n_\text{ion} \sigma_\text{non}}, ~~~~ \sigma_\text{non} \sim 100 ~\text{mb}.
+l_\text{h,non} \sim  \frac{1}{n_\text{ion} \sigma_\text{non}}, ~~~~ \sigma_\text{non} \sim 100 ~\text{mb}.
 \end{equation}
 Note that the shower length is only logarithmically sensitive to the initial energy or number of secondaries, and is thus primarily set by the nuclear mean free path.
 In this case, the cascade induced by a high-energy initial hadron is adequately described by a stopping power
 \begin{equation}
 \label{eq:nucshower}
--\l \frac{dE}{dx}\r_\text{had} \sim \frac{E}{l_\text{h,inel}},
+-\l \frac{dE}{dx}\r \sim \frac{E}{l_\text{h,inel}},
 \end{equation}
 neglecting logarithmic factors of $\OO(1)$.
 The shower will end once final-state hadrons reach a critical energy $E_c$ - this is either the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$.
-Note that while neutrons and $\pi^\pm$ have characteristically long lifetimes, the mean distance traversed by a neutral pion before decaying to photons $d_{\pi^0} = \gamma v \tau \approx 10^{-7} - 10^{-6} ~\text{cm}$ for $\epsilon \sim 1 - 10 ~\text{MeV}$.
-For the most dense WD under consideration, the nuclear mean free path for a nonelastic collision is roughly $l_\text{h,inel} \approx 10^{-7} \text{cm}$.
+Note that while neutrons and $\pi^\pm$ have characteristically long lifetimes, the mean distance traversed by a neutral pion before decaying to photons $\sim 10^{-7} - 10^{-6} ~\text{cm}$ for $\epsilon \sim 1 - 10 ~\text{MeV}$.
 Hence, there are minimal electromagnetic contributions from $\pi^0$ decays during the progression of a hadronic cascade.
 
 Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact with nuclei and induce a hadronic shower.
 There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work.
 In fact at sufficiently high energies, photonuclear interactions can become coherent with the photon interaction spread over multiple nuclei \cite{Gerhardt:2010bj}.
 This coherence will further reduce the photonuclear mean free path.
-As a conservative estimate, \textcolor{blue}{neglecting the $k^{0.08}$ dependence at high energies} we assume a constant photonuclear cross section in the relevant energy regime
-\begin{equation}
+As a conservative estimate, we assume a constant photonuclear cross section in the relevant energy regime
+\begin{align}
 l_\gamma \sim \frac{1}{n_\text{ion} \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \sim 1 ~\text{mb}.
-\end{equation}
-
+\end{align}
 Similarly, charged leptons will lose energy via electronuclear interactions in which the incident particle radiates a virtual photon that then interacts hadronically with a nearby nucleus.
 Note that a hadronic shower induced by electronuclear interactions are not affected by the LPM suppression \eqref{eq:LPM}.
 Naively we expect the stopping power to be of order $\sim E \alpha/l_\gamma$.
 A more detailed calculation \cite{Gerhardt:2010bj} differs from our naive estimate an $\OO(10)$ factor.
 The largest uncertainty in calculating electronuclear stopping power at high energies is in evaluating hadronic cross sections, which require significant extrapolation from existing data and for which different models yield different results.
+
+
+
+
 
 \end{appendices}
 
