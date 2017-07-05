@@ -43,6 +43,7 @@
 \newcommand{\GeV}{\text{GeV}}
 \newcommand{\Hz}{\text{Hz}}
 \newcommand{\eV}{\text{eV}}
+\newcommand{\MeV}{\text{MeV}}
 
 \newcommand{\ket}[1]{\ensuremath{\left|#1\right>}}
 \newcommand{\bra}[1]{\ensuremath{\left<#1\right|}}
@@ -114,6 +115,7 @@ W = \frac16 q^2 \langle u_j^2 \rangle = \frac{3 q^2}{8 M \Theta}\left\{ 1 + \fra
 Here $\Theta$ there is the Debye temperature. The Debye approximation describes a phonon distribution of $N$ phonon modes with energies between $ \sim \omega_D / N$ and $\omega_D$, where the maximum photon energy is given by (\cite{intro} 5.21-24)
 \begin{align}
 \omega_D = c_s(6 \pi^2 n_i)^{1/3}
+\label{eq:DebyeEnergy}
 \end{align}
 and $c_s$ is the sound speed. The Debye temperature is given by $\Theta = \omega_D$ (\cite{intro} 5.28). The dispersion relation for phonons in this approximation is given by
 \begin{align}
@@ -138,11 +140,12 @@ Evaluating the time integral yields a delta function in energy
 \begin{align}
 S(\omega, \textbf{q}) &= \frac{1}{2 \pi} (2 \pi)^3 n_i e^{-2 W}  \nonumber\\
 &\qquad\qquad  \sum_\nu\frac{q^2}{2 NM \omega_\nu} \langle n_\nu + 1 \rangle \delta(\omega - \omega_\nu) \sum_\textbf{G} \delta^{(3)}(\textbf{q} - \textbf{k}_\nu - \textbf{G})
+\label{eq:1PhononStructureFactor}
 \end{align}
 We know now that we have two delta functions that are not independent of one another. The momentum transfer $\textbf{q}$ and energy transfer $\omega$ are related to each other by the kinematics of the incident particle, and the phonon energy $\omega_\nu$ and crystal momentum $\textbf{k}_\nu$ related to each other by the dispersion relation. Specifically, we have the relations
 \begin{align}
-\omega &= \sqrt{m^2 + k^2} - \sqrt{m^2 + |\textbf{k} - \textbf{q}|^2} \\
-\omega_\nu &= c_sk_\nu
+\omega &= \sqrt{m^2 + k^2} - \sqrt{m^2 + |\textbf{k} - \textbf{q}|^2} \label{eq:EnergyTransfer} \\
+\omega_\nu &= c_sk_\nu \label{eq:DispersionRelation}
 \end{align}
 where $\textbf{k}$ is the initial momentum of the incident particle of mass $m$. Let's begin by considering a highly relativistic particle with small momentum transfer, so that
 \begin{align}
@@ -152,7 +155,7 @@ where $\textbf{k}$ is the initial momentum of the incident particle of mass $m$.
    &\approx q\cos\theta_{q} \label{eq:EnergyMomentumRelation}
 \end{align}
 where $\theta_q$ is the angle of the momentum transfer vector relative to the incident momentum $\textbf{k}$.
-To simplify, let us also suppose that we are only interested in energy transfers within first Brillioun zone, corresponding to momentum transfers $q\lesssim k_D$ and energy transfers $\omega \lesssim \omega_D$. Then we may take only the $\textbf{G} = 0$ term in the reciprocal lattice sum. We may then rewrite the structure factor in terms of momenta as
+To simplify, let us also suppose that we are only interested in momentum transfers within first Brillioun zone $q\lesssim k_D$ and energy transfers $\omega \lesssim \omega_D$. Then we may take only the $\textbf{G} = 0$ term in the reciprocal lattice sum. We may then rewrite the structure factor in terms of momenta as
 \begin{align}
 S(\omega, \textbf{q}) &= \frac{1}{2 \pi} (2 \pi)^3 n_i e^{-2 W}  \nonumber\\
 &\qquad \sum_\nu\frac{q^2}{2 NM (c_sk_\nu)} \langle n_\nu + 1 \rangle \delta(q \cos\theta_{q} - c_sk_\nu) \delta^{(3)}(\textbf{q} - \textbf{k}_\nu)
@@ -201,13 +204,14 @@ so we can write
 V_\textbf{q} = \frac{4 \pi Z\alpha}{q^2 + \lambda^2} = \frac{4 \pi Z\alpha}{(\omega / \cos\theta_q)^2+ \lambda^2}
 \label{eq:ScreenedInteractionPotential}
 \end{align}
-with the screening length
+with the screening momentum
 \begin{align}
 \lambda = \left( \frac{\pi}{4 \alpha E_F \sqrt{E_F^2 + m^2}} \right)^{-1/2} \approx \left( \frac{\pi}{4 \alpha E_F m} \right)^{-1/2}
 \end{align}
 We cannot ignore the dielectric function because our momentum transfers are coincidentally smaller than the Fermi energy by virtue of being smaller than the lattice binding energy.
 
 \subsection{Solid angle $d \Omega$}
+\label{sec:SolidAngle}
 
 We wish to rewrite the solid angle differential $d \Omega = d(\cos\theta_{k'})d \phi_{k'}$ in terms of $d(\cos\theta_q)$ and $d\phi_q$. To begin, we recall that $\textbf{k}' = \textbf{k} - \textbf{q}$. The momentum transfer vector $\textbf{q}$ entirely determines the transverse component of $\textbf{k}'$, so we may relate
 \begin{align}
@@ -215,7 +219,7 @@ q \sin\theta_q = k' \sin\theta_{k'} \approx k\sin\theta_{k'}
 \end{align}
 where in the last step we used the fact that $q\ll k$. Manipulating and using the trig identity $\sin\theta = \sqrt{1 - \cos^2 \theta}$, we find
 \begin{align}
-\cos\theta_{k'} &\approx\sqrt{1 - \left( \frac{q}{k} \right)^2 \sin^2 \theta_q} \\
+\cos\theta_{k'} &\approx\sqrt{1 - \left( \frac{q}{k} \right)^2 \sin^2 \theta_q} \label{eq:coskp}\\
   &\approx 1 - \frac12\left( \frac{q}{k} \right)^2 \sin^2 \theta_q \\
   &\approx 1 - \frac12\left( \frac{q}{k} \right)^2 (1 - \cos^2 \theta_q) \\
   &\approx 1 - \frac{\omega^2}{2 k^2} \left( \frac{1}{\cos^2 \theta_q} - 1 \right) \\
@@ -250,6 +254,98 @@ All that remains is to integrate this overall possible energy transfers within t
   &\approx \frac{3 \alpha^2 m^2 n_i Z^2}{k^2 M} \left( \frac{\omega_D^2}{c_s^2 \lambda^2 + \omega_D^2} + \ln \left[ \frac{c_s^2 \lambda^2}{c_s^2 \lambda^2 + \omega_D^2} \right]  \right) \\
   &\sim \frac{3 \alpha^2 m^2 n_i Z^2}{k^2 M} (10)
 \end{align}
+
+\section{Beyond the first Brillioun zone}
+
+When we restricted to the first Brillioun zone above, we found a phase space suppression of $ \sim q^2 / k^2$ resulting from the restriction to highly forward scatters. In actuality, however, we can transfer a nearly arbitrary amount of momentum to the let us while still in the transferring a minuscule amount of energy. Any large amount of momentum that we transfer must simply be shifted to within the first Brillioun zone to determine how much energy the corresponding phonon carries. This is the meaning of the sum over reciprocal lattice factors $\sum_\textbf{G}$ that we neglected. Standard white dwarf lore, however, suggests that the dominant contributions to scatters come from distant Brillioun zones, because the typical momentum transfer $k_F > k_D$ is outside the first Brillioun zone, and there is more phase space available for larger momentum transfers. The same is true for us, except that our momentum transfers are $\OO(k)$ instead of $\OO(k_F)$. We will now explore how this modifies our results, sticking for now to the single-phonon approximation.
+
+\subsection{Structure factor}
+
+Before dropping the sum over reciprocal lattice vectors, the one-phonon structure factor is given by
+\begin{align}
+S(\omega, \textbf{q}) &= \frac{1}{2 \pi} (2 \pi)^3 n_i e^{-2 W}  \nonumber\\
+&\qquad\qquad  \sum_\nu\frac{q^2}{2 NM \omega_\nu} \langle n_\nu + 1 \rangle \delta(\omega - \omega_\nu) \sum_\textbf{G} \delta^{(3)}(\textbf{q} - \textbf{k}_\nu - \textbf{G})
+\tag{\ref{eq:1PhononStructureFactor}}
+\end{align}
+In order to compute the sum over $\textbf{G}$, we convert this into an integral:
+\begin{align}
+\sum_\textbf{G} \to \int \frac{d^3 G}{\left( \frac{2 \pi}{a} \right)^3} = \int \frac{d^3 G}{(2 \pi)^3 n_i}
+\end{align}
+where $a$ is the lattice spacing. This integral serves to remove the delta function involving $\textbf{G}$, leaving
+\begin{align}
+S(\omega, \textbf{q}) &= \frac{1}{2 \pi}  \sum_\nu\frac{q^2}{2 NM \omega_\nu} \langle n_\nu + 1 \rangle \delta(\omega - \omega_\nu)
+\end{align}
+where we have also dropped the Debye-Waller factor because the temperature is small. Also converting the phonon sum to integral and evaluating, we find
+\begin{align}
+   S(\omega, \textbf{q}) &= \frac{1}{2 \pi}  3 \int^{\textbf{k}_D} d^3 k_\nu \frac{V}{(2 \pi)^3} \frac{q^2}{2 NM \omega_\nu} \langle n_\nu + 1 \rangle \delta(\omega - \omega_\nu) \nonumber\\
+   &= \frac{3}{(2 \pi)^4 n_i}  \int^{\textbf{k}_D} (k_\nu^2\, dk_\nu \, d \Omega_\nu) \frac{q^2}{2 M \omega_\nu} \langle n_\nu + 1 \rangle \delta(\omega - \omega_\nu) \nonumber\\
+   &= \frac{3(4 \pi)}{(2 \pi)^4 n_i}  \int_0^{\omega_D} \left( \frac{\omega_\nu}{c_s} \right)^2 d \omega_\nu \frac{q^2}{2 M \omega_\nu} \left[ \frac{1}{e^{\omega_\nu/T} - 1} + 1 \right] \delta(\omega - \omega_\nu) \nonumber\\
+   &= \frac{6}{(2 \pi)^3 n_i} \frac{q^2\omega}{2 M c_s^2} \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
+\end{align}
+where in the last step a heavyside function emerges, enforcing the requirement that $\omega \leq \omega_D$ so that we do not transfer more energy than a single phonon could carry. Note we used the dispersion relation $k_\nu = \omega_\nu / c_s$ to change variables in the integral.
+
+\subsection{Energy transfer, solid angle, interaction potential}
+
+The energy transfer $\omega$ is still given by \eqref{eq:EnergyTransfer}, but we can no longer assume that $q \ll k$. It is still true, however, that $|\textbf{k} - \textbf{q}| \sim |\textbf{k}|$, because the energies of the incident and outgoing particle are only allowed to differ by the energy of a single phonon, which is small compared to $k$. Thus the energy transfer is
+\begin{align}
+\omega \approx k - |\textbf{k} - \textbf{q}| = k - \sqrt{k^2 + q^2 - 2 kq \cos\theta_q}
+\end{align}
+or, solving for the momentum transfer in terms of $\omega$ and $\cos\theta_q$, we find
+\begin{align}
+q &= k \cos\theta_q + \sqrt{\omega(\omega - 2 k) + k^2 \cos^2 \theta_q} \\
+  &\approx 2k \cos\theta_q - \omega \sec \theta_q \\
+  &\approx 2k \cos\theta_q \label{eq:DistantBrilliounZone1PhononMomentumTransfer}
+\end{align}
+where in the latter two approximations we assumed $\omega\ll k$. Note that the angle of the momentum transfer relative to the incident momentum is only allowed to range between $0$ and $\cos^{-1}\sqrt{2 \omega / k} \approx \pi / 2$. ($q$ must be real and positive.) This results from the kinematic requirement that the final momentum $k'$ be smaller in magnitude than the incident momentum $k$ by only as much as the energy transfer $\omega$. In the last approximation we have ignored this small energy transfer, allowing the momentum transfer angle to vary all the way up to $\pi / 2$.
+
+In a moment we will also need the solid angle differential corresponding to the direction of the outgoing $\textbf{k}'$ (just as we calculated before in Section~\ref{sec:SolidAngle}). We start with equation~\eqref{eq:coskp}, but this time manipulate without assuming $q\ll k$:
+\begin{align}
+\cos\theta_{k'} &\approx\sqrt{1 - \left( \frac{q}{k} \right)^2 \sin^2 \theta_q} \tag{\ref{eq:coskp}}\\
+  &\approx \sqrt{1 - \left( \frac{2 k \cos\theta_q}{k} \right)^2 \sin^2 \theta_q} \\
+  &= \cos 2 \theta_q \\
+  &= 2 \cos^2 \theta_q - 1
+\end{align}
+Thus the solid angle becomes
+\begin{align}
+d \Omega &= d(\cos\theta_{k'})d \phi_{k'} \\
+   &= 4\cos\theta_q\, d(\cos\theta_q)d \phi_q
+\end{align}
+
+We will similarly need the interaction potential, which is given by equation~\eqref{eq:ScreenedInteractionPotential} except with $q$ given by \eqref{eq:DistantBrilliounZone1PhononMomentumTransfer}:
+\begin{align}
+V_\textbf{q} = \frac{4 \pi Z\alpha}{q^2 + \lambda^2} = \frac{4 \pi Z\alpha}{(2 k \cos\theta_q)^2+ \lambda^2}
+\end{align}
+
+\subsection{Singly differential cross-section}
+
+The singly differential cross-section \eqref{eq:SinglyDifferential} (approximating $k' \approx k$) is now given by
+\begin{align}
+\frac{d \sigma}{d \omega} &= \int d \Omega\, \left( \frac{m}{2 \pi} \right)^2 |V_\textbf{q}|^2 S(\omega, \cos\theta_q, \phi_q) \\
+   &\approx \int \left[ 4\cos\theta_q\, d(\cos\theta_q)d \phi_q \right] \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{(2 k \cos\theta_q)^2+ \lambda^2} \right]^2 \nonumber\\
+   &\qquad\qquad \left[ \frac{6}{(2 \pi)^3 n_i} \frac{(2 k\cos\theta_q)^2\omega}{2 M c_s^2} \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega) \right]
+\end{align}
+Recall that the only allowed momentum transfer angles are between 0 and $\pi/2$, so the integration over $d(\cos\theta_q)$ ranges from $0$ to $1$. Performing the angular integrals, we find
+\begin{align}
+\frac{d \sigma}{d \omega} &= \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^2 k^2 M n_i} \left[ \ln \left( \frac{4 k^2 + \lambda^2}{\lambda^2} \right) - \frac{4k^2}{4 k^2 + \lambda^2} \right] \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
+\end{align}
+The screening momentum $\lambda \sim 10^{-2}~\MeV \ll k$, so this reduces to
+\begin{align}
+\frac{d \sigma}{d \omega} &= \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^2 k^2 M n_i} \ln \left( \frac{4 k^2}{\lambda^2} \right) \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
+\end{align}
+
+\subsection{Stopping power}
+
+We are now ready to compute the stopping power. Before we perform the integral, we note that the Bose enhancement for small $\omega$ goes like $ \sim T / \omega$. This is therefore counterbalanced by the factor of $\omega^2$ in the stopping power integral, and the bose enhancement plays no appreciable role unless $T \sim \omega_D$. (This has been confirmed numerically.) We may thus neglect that term, in which case the stopping power becomes
+\begin{align}
+\frac{dE}{d x} &= \int d \omega \,\frac{d \sigma}{d \omega} n_i \omega \\
+  &\approx \int d \omega \,n_i \omega \left\{ \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^2 k^2 M n_i} \ln \left( \frac{4 k^2}{\lambda^2} \right) \left[ 1 \right] \theta(\omega_D - \omega) \right\} \\
+   &= \frac{m^2 Z^2 \alpha^2 \omega_D^3}{2 \pi^2 c_s^2 k^2 M} \ln\left( \frac{4 k^2}{\lambda^2} \right)
+\end{align}
+Inserting the Debye energy~\eqref{eq:DebyeEnergy}, we find the stopping power is
+\begin{align}
+\frac{d E}{d x} &= \frac{3 m^2 Z^2 \alpha^2 c_s n_i}{k^2 M} \ln\left( \frac{4 k^2}{\lambda^2} \right)
+\end{align}
+This result should be valid for all incident momenta $k\gg k_D = (6 \pi^2 n_i)^{1/3} \sim 4~\MeV$. 
 
 \section{Beyond the one-phonon approximation}
 
