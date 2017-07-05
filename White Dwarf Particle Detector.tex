@@ -82,7 +82,7 @@ As a concrete example, we are able to constrain supersymmetric Q-ball dark matte
 \section{Introduction}
 \label{sec:Introduction}
 
-The detection of ultra-heavy dark matter (DM) is an open problem which will ultimately require a confluence of astrophysical probes.
+The detection of ultra-heavy dark matter (DM) is an open problem which will likely require a confluence of astrophysical probes.
 For instance, DM masses above $\sim 10^{22} ~\GeV$ will register fewer than a single event per year in a typical terrestrial detector of size $\sim (100 ~\text{m})^2$.
 Furthermore, the lack of conclusive signatures on a variety of experimental fronts has led many to consider DM candidates far above the weak scale and their potential signatures \textcolor{blue}{cite}.
 One possibility proposed by \cite{Graham:2015apa} is that ultra-heavy DM can trigger supernovae (SN) in sub-Chandrasekhar white dwarf (WD) stars by inducing runaway fusion.
@@ -107,7 +107,7 @@ However, it is important to note that any such DM constraints are by nature comp
 What allows the WD detector to be effective in this regime is its enhanced surface area $\sim (10^4 ~\text{km})^2$, exceptionally long lifetime $\sim \text{Gyr}$, and astronomical abundance in the galaxy. 
 
 We begin in Section~\ref{sec:Review} by reviewing the mechanism of runaway fusion in a WD. 
-The ability for DM to trigger supernovae through non-gravitational interactions is ultimately based on the heating properties of ordinary SM particles, which is summarized in Section~\ref{sec:SMHeating} for different species and energies.
+The ability for DM to trigger SN through non-gravitational interactions is ultimately based on the heating properties of ordinary SM particles, which is summarized in Section~\ref{sec:SMHeating} for different species and energies.
 In Section~\ref{sec:DMexplode} we derive conditions on the properties of DM necessary to ignite white dwarfs, focusing on heating through annihilation, decay, and transit processes. 
 We constrain DM models parameterized in this way in Section~\ref{sec:Constraints}, and examine the specific case of Q-balls in Section~\ref{sec:QBalls}.
 We conclude in Section~\ref{sec:Discussion}.
@@ -188,7 +188,6 @@ As we are only concerned with depositing sufficient energy to initiate runaway f
 The heating due to a single released SM particle is most accurately described by the shape of the resulting temperature profile, which we parameterize by two length scales: the displacement $R_i(\epsilon)$ of the center of the profile from the starting location of the SM particle, and the width $\Delta_i(\epsilon)$ of the temperature peak.  
 Note that $R_i \gtrsim \Delta_i$ is always true although for most species, $R_i \sim \Delta_i$ with neutrinos being the one (unsurprising) exception.
 Either of these quantities may be relevant in determining the heating length of a general DM-WD encounter depending on their relative sizes and on the number of SM particles involved.  
-% We will primarily focus on the many-secondary case, as heating by one particle requires individual particle energies of $\epsilon \gtrsim \mathcal{E}_\text{boom} \gtrsim 10^15 \GeV$, which begins the approach the bounds of our interaction confidence $\epsilon \lesssim 10^{17} ~\GeV$
 % In addition, for secondary species with $\Delta_i \sim R_i$, an encounter that deposits the same total energy by releasing more secondaries of less individual energy will always be more explosive than encounters that focus the deposited energy into fewer secondaries.
 An essential ingredient for calculating $R_i$ and $\Delta_i$ is the stopping power of high-energy SM particles in the WD medium. 
 To this end, we summarize here as needed the dominant sources of energy loss for each species while a more detailed analysis is reserved for Appendix \ref{sec:appendix}. 
@@ -272,38 +271,37 @@ This is done for the three simple and illustrative examples depicted in Figure \
 
 The collision of two DM states or the decay of a single DM within the WD is a generic interaction found in many models.
 Note that these DM-DM collisions are not necessarily particle-antiparticle annihilations, but can be of a more general, complicated nature such as the collisions of heavy nuclei.
-Since any such event will likely result in both SM and dark sector products, we parameterize the energy released into SM particles as a fraction $\eta$ of the DM mass.
+Since any such event will likely result in both SM and dark sector products, we assume the energy released into the SM is a fraction $\eta$ of the DM mass.
 %Generically we might expect $\eta \ll 1$, although $\eta$ is at most unity for non-relativistic DM.
-For simplicity, we restrict our attention to point-like events, where the SM products are produced near enough to the initial event site to give rise to a single temperature peak.
-This excludes ``displaced vertex" events, whose explosion conditions would involve additional model-dependent parameters.
-With this restriction, the explosion condition depends only on the total SM energy released and the heating length of the SM products $L_0$:
+For simplicity, we only consider ``point-like" annihilations and decays which release SM particles within a sufficiently localized region. 
+This excludes interactions involving the decay of long-lived, meta-stable dark states or other displaced vertices. 
+With this parameterization, the explosion condition depends only on the DM mass the heating length for the process:
 \begin{equation}
 \label{eq:coldecay}
     m_\text{DM} \gtrsim \mathcal{E}_\text{boom} \cdot \frac{1}{\eta}
       \text{max}\left\{1, \frac{L_0}{\lambda_T}\right\}^3
 \end{equation}
-Considering the explosion threshold \eqref{eq:Eboom}, a DM-DM collision or DM decay requires masses larger than $\sim 10^{15} ~\GeV$ in order to release sufficient energy to trigger a SN.
+Considering the threshold \eqref{eq:Eboom}, such events require DM masses larger than $\sim 10^{15} ~\GeV$ in order to release sufficient energy to trigger a SN.
 
 \subsection{DM Transits}
 \label{sec:DMdecay}
 
-For DM models with a DM-SM scattering interaction, there may be a continuous production of SM particles as the DM traverses a WD.
-For simplicity, we consider the special case of a ``bullet-like" transit.
+For DM models with a DM-SM scattering interaction, there may be a continuous release of high-energy SM particles as the DM traverses a WD.
+We parametrize the DM kinetic energy loss per distance travelled in a WD by a DM stopping power $(dE/dx)_\text{SP}$ and restrict our attention to ``bullet-like" transits. 
 In such an encounter, DM penetrates the non-degenerate crust of a WD with negligible change in kinetic energy
 \begin{align}
 \label{eq:CrustCondition}
   \left( \frac{d E}{d x} \right)_\text{SP} \ll 
   \frac{m_\text{DM} v^2_\text{esc}}{R_\text{crust}},
 \end{align}
-where $R_\text{crust} \sim 50 ~\text{km}$ is the typical width of a WD crust, $v_\text{esc}$ is the the escape velocity of the WD, and $(dE/dx)_\text{SP}$ parametrizes the kinetic energy loss of the DM per distance travelled (i.e., the \emph{stopping power}).
-Note that we have conservatively estimated the crust density to be roughly $\OO(1)$ of the interior density.
-We define a transit event in terms of the WD crust since runaway fusion can only occur via heating of the degenerate stellar interior.
-If condition \eqref{eq:CrustCondition} were not satisfied, then the kinematics of the DM transit would be highly dependent on details of the stopping power and must be calculated from a given model.
-Instead, we avoid this complexity by imposing that the DM transits through a WD with approximately constant kinetic energy $\sim m_\text{DM} v^2_\text{esc}$.
-Furthermore, since $R_\text{crust}$ will ultimately be larger than any of the heating lengths considered, we may also ignore energy loss within the WD interior.
+where $R_\text{crust} \sim 50 ~\text{km}$ is the width of a WD crust and $v_\text{esc} \sim 10^{-2}$ is the escape velocity of the WD. 
+Typically, the density of the WD crust is a nominal $\OO(10^{-2})$ fraction of the central density \textcolor{blue}{cite}. 
+If \eqref{eq:CrustCondition} were not satisfied, then the kinematics of a transit would be highly dependent on details of the DM stopping power and must be calculated from a specific model.
+In addition, $R_\text{crust}$ is parametrically larger than any of the heating lengths considered in this work. 
+Therefore, the assumption of a DM transit at roughly constant velocity also allows us to ignore DM energy loss within the degenerate WD interior, where runaway fusion can be triggered. 
 
-The ability for a transit to ignite a star can be parameterized by a \emph{linear energy transfer} $(dE/dx)_\text{LET}$, which is the energy released into SM products per distance traveled.
-Note that while the LET and stopping power are conceptually related quantities and may be equal in important special cases, they are generically different.
+The ability for a transit to ignite a star can be parameterized by a linear energy transfer $(dE/dx)_\text{LET}$, which is the energy released into SM products per distance traveled.
+Note that while the LET and DM stopping power are conceptually related quantities and may be equal in important special cases, they are generically different.
 For a transit releasing high-energy particles with characteristic heating length $L_0$ per collision, the encounter can be broken up into a series of heating events of energy $\Ez = L_0 (d E/d x)_\text{LET}$.
 If any individual deposition satisfies \eqref{eq:boom}, then runaway fusion obviously occurs.
 If not, a SN may still be triggered due to the combined effect of many deposits.
@@ -327,10 +325,10 @@ Therefore, the explosion condition for transits satisfying \eqref{eq:CrustCondit
 \section{Dark Matter-Induced Ignition: Constraints}
 \label{sec:Constraints}
 
-We now turn towards constraining generic models of ultra-heavy DM which can ignite WDs via one of the processes described in Section~\ref{sec:DMexplode}. 
+We now turn towards constraining models of ultra-heavy DM which can ignite WDs via one of the processes described in Section~\ref{sec:DMexplode}. 
 Following the discussion of \cite{Graham:2015apa}, these constraints will come from (1)~the existence of heavy, long-lived white dwarfs and (2)~the measured type Ia SN rate.
 The typical age of a WD is of order the age of the universe $\sim \text{Gyr}$.
-RX~J0648.04418 is a nearby star and one of the heaviest known WDs with a mass $\sim 1.25 ~M_{\odot}$.
+RX~J0648.04418 is a nearby star and one of the heaviest known WDs with a mass $\sim 1.25 ~M_{\odot}$. 
 %Of course, this is not the only known heavy WD - the Sloan Digital Sky Survey has found $\sim 20$ others. 
 The NuStar collaboration has also recently uncovered evidence for the likely existence of $\sim 1.25 ~M_{\odot}$ WDs in the galactic center as well \textcolor{blue}{cite}.
 %From the WD mass-radius relation, we find the radius for such a star is $R_\text{WD} \approx 3000~\text{km}$ and the stellar escape velocity $v_\text{esc} \approx 4 \times 10^{-2}$.
@@ -438,10 +436,9 @@ This is done in Figures \ref{fig:transitclasses}, \ref{fig:transitepsilon}, and 
 \section{Q-balls}
 \label{sec:QBalls}
 
-We now implement the formalism for general constraints outlined in Section \ref{sec:Constraints} to place bounds on a specific model of DM: Q-balls.
+Having derived generic constraints on models of ultra-heavy DM in Section~\ref{sec:Constraints}, we turn towards a more concrete example: Q-balls.
 In various supersymmetric extensions of the SM, non-topological solitons called Q-balls can be produced in the early universe \cite{Coleman:1985ki, Kusenko:1997si}.
 If these Q-balls were stable, they would comprise a component of the DM today.
-
 For gauge-mediated models with flat scalar potentials, the Q-ball mass and radius are given by
 \begin{equation}
 \label{eq:Qballprop}
@@ -460,31 +457,18 @@ Note that a sufficiently massive Q-ball will become a black hole if the Q-ball r
 In the model described above, this translates into a condition $(M_\text{pl}/m_S)^4 \lesssim Q$.
 For Q-ball masses of this order, gravitational interactions become relevant.
 
-We now summarize the explosiveness of a Q-ball transit.
-According to the notation of Section \ref{sec:Constraints}, the Q-ball transit is described by an LET
-\begin{align}
-\left( \frac{d E}{d x} \right)^\text{Q-ball}_\text{LET} = N_\pi \cdot n_\text{ion} \sigma_Q \epsilon,
-\end{align}
-where the nuclear interaction results in $N_\pi \sim 30$ pions released, each with kinetic energy $\epsilon \sim 500 ~\text{MeV}$.
+We now determine the explosiveness of a Q-ball transit.
+In the notation of Section \ref{sec:Constraints}, this process is described by the parameter $(dE/dx)_\text{LET} \sim n_\text{ion} \cdot N_\pi \sigma_Q \epsilon$, where the nuclear interaction results in $N_\pi \sim 30$ pions released, each with kinetic energy $\epsilon \sim 500 ~\text{MeV}$.
 Numerous experiments have studied interactions of pions in this energy range incident upon complex nuclei targets such as carbon.
 It is found that there is roughly equal cross section of order $\OO (100 ~\text{mb})$ for a (neutral or charged) pion to either elastically scatter or become absorbed in a nonelastic scatter with no final state pion \cite{Pionnuclear}.
 As seen in Section \ref{sec:SMHeating}, nonelastic collisions are most relevant for energy loss and will induce a hadronic shower.
-The corresponding heating length of the Q-ball interaction is computed in a straightforward manner
-\begin{align}
-L_0^\text{Q-ball} \sim \text{few} \times 10^{-7} ~\text{cm}
-\end{align}
-in WD density of $n_\text{ion} \sim 10^{32} ~\text{cm}^{-3}$.
-If the Q-ball cross section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that 
-\begin{align}
-Q \gtrsim 10^{38} \l\frac{m_S}{\text{TeV}}\r^4
-\end{align}
-is capable of triggering runaway fusion in a heavy $\sim 1.25 ~M_{\odot}$ WD.
+The corresponding heating length of the Q-ball interaction is computed in a straightforward manner $L_0 \sim \text{few} \times 10^{-7} ~\text{cm}$ in WD density of $n_\text{ion} \sim 10^{32} ~\text{cm}^{-3}$.
+If the Q-ball cross section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that $Q \gtrsim 10^{38} \l\frac{m_S}{\text{TeV}}\r^4$ is capable of triggering runaway fusion in a heavy $\sim 1.25 ~M_{\odot}$ WD.
 Note that for such large values of $Q$ there is negligible stopping power for the Q-ball to slow down in a WD, and as such condition \eqref{eq:CrustCondition} will be trivially satisfied.
 
 Currently, the strongest constraints on Q-balls come from large detectors, i.e. Super-Kamiokande as well as air fluorescence detectors of cosmic rays
 However, the constraints possible with the WD detector are in a fundamentally inaccessible region of parameter space for these terrestrial-based experiments due to the extremely low flux, and thus our new constraints are wholly complementary.
 The strongest proposed limits due to the existence of a heavy WD in the galactic center are plotted in Figure~\ref{fig:Qballconstraint}. As a comparison, the combined limits from Super-K and the OA,TA cosmic ray detectors are shown in red. 
-
 \begin{figure}
 \includegraphics[scale=.45]{Qballconstraint.pdf}
 \caption{Constraints on baryonic Q-balls from transits of a $\sim 1.25 ~M_{\odot}$ WD in the galactic center. Also shown are the limits from Super-K and the OA, TA cosmic ray detectors (red), and the lower bound on $Q$ for which the Q-ball is stable against decay to nucleons (black).}
