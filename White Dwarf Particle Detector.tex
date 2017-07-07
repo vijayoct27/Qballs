@@ -25,6 +25,7 @@
 \usepackage{appendix}
 
 \newcommand{\Ez}{\mathcal{E}_0}
+\newcommand{\Eboom}{\mathcal{E}_\text{boom}}
 
 \newcommand{\OO}{\mathcal{O}}
 \newcommand{\LL}{\mathcal{L}}
@@ -160,7 +161,7 @@ The threshold energy for explosion is parametrically larger if energy is deposit
 As a result, understanding the heating length $L_0$ of a process is critical to determining whether or not it is capable of destroying a WD. 
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
-\caption{Minimum energy $\mathcal{E}_\text{boom}$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
+\caption{Minimum energy $\Eboom$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
 \label{fig:Eboom}
 \end{figure}
 
@@ -177,16 +178,22 @@ DM encounters that heat the star through this SM-mediated mechanism will be the 
 For these processes, the unknown DM physics serves only to determine the initial distribution of the SM particles produced in the star, while the heating proceeds entirely though known SM interactions. 
 It is therefore necessary to understand how energy is transferred from SM particles to the stellar medium in order to assess the explosiveness of these encounters, so the remainder of this section is dedicated to computing the heating properties of SM particles.
 
-We will consider a primitive process that releases $N$ SM particles of species $i$, each with energy $\epsilon$. 
-We begin by considering the heating due to a single released SM particle of energy $\epsilon$ and species $i$, which is most accurately described by the shape of the resulting temperature profile.
-We parameterize this profile by two length scales: the displacement $R_i(\epsilon)$ of the center of the profile from the starting location of the SM particle, and the width $\Delta_i(\epsilon)$ of the temperature peak.  
-Note that $R_i(\epsilon)$ may be much larger than $\Delta_i(\epsilon)$, but at its smallest $R_i(\epsilon) \sim \Delta_i(\epsilon)$.
-We identify these two length scales as either of them may be relevant in determining the heating length $L_0$ of a general DM-WD encounter, depending on their relative sizes and on the number of SM particles involved.  
-For example, if in an encounter a single high-energy SM secondary is produced, then $L_0 \sim \Delta_i(\epsilon)$ as the displacement of the heat from the SM production event is irrelevant. 
-
-
-As we are only concerned with depositing sufficient energy to initiate runaway fusion, we take $\epsilon \gtrsim T_f \sim \text{MeV}$.
+To focus the calculation, it will be helpful to consider some general properties that the DM-WD encounter must have in order to successfully initiate runway fusion.
+We focus on ultra-heavy DM candidates - if the energy of the secondaries is sourced from the DM's kinetic or mas energy, then $m_\text{DM} \gtrsim \Eboom$ for ignition. 
+It is possible that this energy is sourced from the stellar medium instead, in which case there is no fundamental limit on $m_\text{DM}$ needed for ignition, but in practice this mass will likely need to be large in order to achieve a DM-SM interaction cross-section sufficient for ignition.
+While still distant from the star, the DM will have the galactic viral velocity of $10^{-3}$, but as it passes through the star this will be accelerated to the WD escape speed, $v_\text{esc} \sim 10^{-2}$.
+If the DM then interacts to release $N$ particles of typical energy $\epsilon$, we require $\epsilon \gtrsim T_f$ and $N \epsilon \gtrsim \Eboom$.
+We are thus sensitive to a GUT-mass or heavier DM particle, likely a complex composite state, which interacts in the WD to produce either have a few GUT-scale SM particles or a very large number of collier-scale particles. 
 \textcolor{blue}{We also assume a nominal upper bound $\sim 10^{17} ~\GeV$ so that we may conservatively ignore interactions beyond the SM.} 
+The lightest SM states will be most typically produced, so for simplicity we consider only the release of electrons, photons, pions, and nucleons, though the heating due to heavier species is straightforward to determine following the approach used below.
+These light secondaries are typically very relativistic, with the exception being the least-energetic hadrons that we consider, with $v \gtrsim 10^{-2}$.
+Since this speed is never significantly less the DM velocity, and the ultra-heavy DM carries the bulk of the momentum in the interaction which produces the secondaries, we can to $\OO(1)$ take the momentum of the released SM particles to be isotropic. 
+
+With the above picture in mind, we then consider a primitive process that releases isotropically from a point in the WD interior $N$ particles of SM species $i$, each with energy $\epsilon$, and compute the width $\Delta_i(N, \epsilon)$ of the resulting ion temperature peak. 
+If the interaction indeed has this form, then the heating length is given simply by $L_0 \sim \Delta$. 
+In a more realistic interaction, however, with the SM secondaries produced according to some distribution in energy and species, one can find $L_0$ either by identifying the strongest-interacting subset of secondaries that carries $\OO(1)$ of the energy, or use an appropriate average of $\Delta$s. 
+Note also that any net displacement of the final ion temperature profile from the point of origin of the SM secondaries is irrelevant for determining ignition. 
+If $N$ is large this displacement will be vanishing anyway, but for $N \sim \text{few}$ it could be much larger than $\Delta$, so when applicable we will make note of this special case below. 
 An essential ingredient for calculating $R_i$ and $\Delta_i$ is the stopping power of high-energy SM particles in the WD medium. 
 To this end, we summarize here as needed the dominant sources of energy loss for each species while a more detailed analysis is reserved for Appendix \ref{sec:appendix}. 
 
@@ -297,7 +304,7 @@ This excludes interactions involving the decay of long-lived, meta-stable dark s
 With this parameterization, the explosion condition is approximately the same for both DM-DM collisions and DM decays:
 \begin{equation}
 \label{eq:coldecay}
-    m_\text{DM} \gtrsim \mathcal{E}_\text{boom} \cdot \frac{1}{\eta}
+    m_\text{DM} \gtrsim \Eboom \cdot \frac{1}{\eta}
       \text{max}\left\{1, \frac{L_0}{\lambda_T}\right\}^3
 \end{equation}
 Considering the threshold \eqref{eq:Eboom}, such heating events require DM masses larger than $\sim 10^{15} ~\GeV$ in order to release sufficient energy to trigger a SN.
