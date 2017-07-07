@@ -194,7 +194,8 @@ If the interaction indeed has this form, then the heating length is given simply
 In a more realistic interaction, however, with the SM secondaries produced according to some distribution in energy and species, one can find $L_0$ either by identifying the strongest-interacting subset of secondaries that carries $\OO(1)$ of the energy, or use an appropriate average of $\Delta$s. 
 Note also that any net displacement of the final ion temperature profile from the point of origin of the SM secondaries is irrelevant for determining ignition. 
 If $N$ is large this displacement will be vanishing anyway, but for $N \sim \text{few}$ it could be much larger than $\Delta$, so when applicable we will make note of this special case below. 
-An essential ingredient for calculating $R_i$ and $\Delta_i$ is the stopping power of high-energy SM particles in the WD medium. 
+To compute $\Delta$, we follow the energy transfer from the initial released particle into ions, possibly through several intermediary species, and identify the length scale over which the ions are thermalized.
+An essential ingredient in this calculation is the stopping power $dE/dx$ of SM species with various components of the WD medium, and the associated range $\lambda \sim E \cdot (dE/dx)^{-1}$, which is to $\OO(1)$ the distance a particle travels before losing $\OO(1)$ of its energy.  
 To this end, we summarize here as needed the dominant sources of energy loss for each species while a more detailed analysis is reserved for Appendix \ref{sec:appendix}. 
 
 \subsection{Heating Properties - Hadrons}
@@ -202,27 +203,35 @@ To this end, we summarize here as needed the dominant sources of energy loss for
 The stopping powers for nucleons and pions in a WD are shown in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}.
 For energies greater than the typical nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$, the energy loss for light hadrons is dominated by nonelastic nuclear collisions. 
 In these collisions the incoming hadron interacts with a single nucleon in the target nucleus, which is converted into several outgoing hadrons.
-The remaining nucleus is left in an excited state of energy $\sim E_\text{nuc}$ with negligible center-of-mass recoil \textcolor{blue}{cite}. 
-Thus incident energies $E \gtrsim E_\text{nuc}$ are to leading order transfered entirely to the secondary hadrons, each of which will carry an $\OO(1)$ fraction of the incident energy \textcolor{blue}{cite}. 
-If these secondaries also have energy above $E_\text{nuc}$, they are predominantly stopped by nonelastic nuclear collisions as well, and a roughly collinear hadron shower will result. 
+The remaining nucleus is left in an excited state of energy $\sim E_\text{nuc}$ with negligible center-of-mass recoil. 
+Thus incident energies $E \gtrsim E_\text{nuc}$ are to leading order transfered entirely to the secondary hadrons, each of which will carry an $\OO(1)$ fraction of the incident energy.
+The outgoing hadrons will be pions and nucleons in roughly equal fractions, along with a few heavier states, i.e.\ deuterons, alpha particles, etc.\ \textcolor{blue}{citation}
+If these secondaries have energy above $E_\text{nuc}$, they are alo predominantly stopped by nonelastic nuclear collisions and a roughly collinear hadron shower will result. 
 The energy loss of shower constituents is described by the radiative stopping power
 \begin{equation}
   \l \frac{dE}{dx} \r \sim \frac{E}{l_\text{h,non}},
 \end{equation}
-where $l_\text{h,non}$ is the mean free path for nonelastic hadron-nuclei collisions.
+where $l_\text{h,non}$ is the mean free path for nonelastic hadron-nuclei collisions, which is roughly constant over hadron species \textcolor{blue}{citation}.
 The shower terminates when constituents reach energies of order $E_\text{nuc}$ so that the shower length induced by an initial hadron of energy $\epsilon$ is approximately 
 \begin{align}
 \label{eq:hadlength}
-  X_{\text{h}} \sim l_\text{h,non} \log\l\frac{\epsilon}{E_\text{nuc}}\r
-  \approx 10 ~l_\text{h,non}. 
+  X_\text{h} \sim l_\text{h,non} \log\l\frac{\epsilon}{E_\text{nuc}}\r
+  \sim 10 ~l_\text{h,non} \sim
+  10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r . 
 \end{align}
 
-The hadronic shower terminates in a cloud of final state nucleons and pions, each with energy $\sim E_\text{nuc}$. 
-The energy loss of these particles is dominated by elastic nuclear scatters, which represents the end-stage of the ion heating process.
-Thermalization will occur after the hadrons have scattered $\OO(1)$ of their energy, which requires $\sim 10$ scatters for nucleons and $\sim 100$ for pions. 
-During this process the hadrons random walk over distance $\sim l_\text{h,el} \sqrt{N}$, with $ l_\text{h,el}$ the mean free path for elastic nuclear scattering and $N$ the number of scatters before for thermalization.
-Thus nucleons thermalize over a distance $\sim l_\text{h,el}$ and pions over a slightly larger distance. 
-As the shower will produce a near equal mix of nucleon and pion species, we conservatively take the products to thermalize over a distance $\approx 5~l_\text{h,el}$.
+The hadronic shower results in a cloud of light hadrons, each with energy $\sim E_\text{nuc}$. 
+The energy loss of these particles is now dominated by elastic scatters, but the target species that receives $\OO(1)$ of the energy depends on the charge of the shower products - charged hadrons will cool by Coulomb scattering electrons, while neutral hadrons will cool by elastic nuclear scatters. 
+Charged and neutral hadrons will both carry $\OO(1)$ fractions of the shower energy, so we may ignore the energy that passes into electrons via charged hadrons as this will thermalize ions over a much longer distance than will the neutral hadrons which scatter ions directly. 
+Similarly, we focus on the final-state neutrons over the neutral pions, as these thermalize on a slightly shorter distance due to their larger mass. 
+Thermalization of the neutrons occurs after they have scattered $\OO(1)$ of their energy, which requires $\sim 10$ hard nuclear collisions. 
+Thus during this process the neutrons random walk only a few mean free paths before thermalizing, and so the ions are thermalized over a distance
+\begin{equation}
+  X_{\pi,\text{el}} \sim 10~l_\text{h,el} \sim 
+  10^{-8} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r
+\end{equation}
+where $ l_\text{h,el}$ is the mean free path for elastic nuclear scattering. 
+
 
 The hadronic shower is mostly collinear, so in the above language a single released hadron produces a temperature profile with $R_\text{h} \sim 10 ~l_\text{h,non}$ and $\Delta_\text{h} \sim 5 ~l_\text{h,el}$.
 Specifically,
