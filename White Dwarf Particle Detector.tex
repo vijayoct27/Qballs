@@ -25,6 +25,7 @@
 \usepackage{appendix}
 
 \newcommand{\Ez}{\mathcal{E}_0}
+\newcommand{\Eboom}{\mathcal{E}_\text{boom}}
 
 \newcommand{\OO}{\mathcal{O}}
 \newcommand{\LL}{\mathcal{L}}
@@ -160,31 +161,41 @@ The threshold energy for explosion is parametrically larger if energy is deposit
 As a result, understanding the heating length $L_0$ of a process is critical to determining whether or not it is capable of destroying a WD. 
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
-\caption{Minimum energy $\mathcal{E}_\text{boom}$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
+\caption{Minimum energy $\Eboom$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
 \label{fig:Eboom}
 \end{figure}
 
 \section{Dark Matter and Non-Gravitational Heating of White Dwarfs}
 \label{sec:SMHeating}
 
-Having reviewed the conditions necessary for an energy deposit to initiate runaway fusion in a WD, we turn our attention to DM triggers of SN. 
-A DM encounter with a WD must transfer energy to ions, as characterized by the heating length $L_0$ and total energy deposit $\Ez$ for the process, such that \eqref{eq:boom} is satisfied. 
-Of course, the heating of a WD due to such an encounter will necessarily depend on the nature of the DM and must be explicitly calculated for a given DM model. 
-This was done in \cite{Graham:2015apa} for the trivial case of primordial black holes which transit a WD and locally heat the star through gravitational dynamical friction. 
+Having reviewed the requirements for runaway fusion in a WD, we turn now to the question of triggering these events with a DM encounter. 
+This amounts to understanding the heating length $L_0$ and energy deposit $\Ez$ due to a given DM-WD encounter - if these satisfy condition \eqref{eq:boom}, then the encounter is explosive.
+Of course, the heating parameters $L_0$ and $\Ez$ necessarily depend on the nature of the DM and must be explicitly calculated for a given DM model. 
+This was done in \cite{Graham:2015apa} for primordial black holes, which deposit energy through dynamical friction while transiting the star.
 However, non-gravitational interactions also have the potential to trigger SN. 
-In particular, any DM candidate which couples to the SM will generically be able to release SM secondaries. 
-For these types of processes, the unknown DM physics serves to determine the initial distribution in space, momentum, and species of the SM particles produced in the star, while the actual heating proceeds entirely though known SM interactions. 
-It is therefore necessary to understand how energy is transferred from SM particles to the stellar medium in order to assess the explosiveness of a more general non-gravitational DM-WD encounter. 
+In particular, any DM candidate which couples to the SM will generically be able to release SM secondaries in the star, which then thermalize with the stellar medium. 
+DM encounters that heat the star through this SM-mediated mechanism will be the focus of this work. 
+For these processes, the unknown DM physics serves only to determine the initial distribution of the SM particles produced in the star, while the heating proceeds entirely though known SM interactions. 
+It is therefore necessary to understand how energy is transferred from SM particles to the stellar medium in order to assess the explosiveness of these encounters, so the remainder of this section is dedicated to computing the heating properties of SM particles.
 
-
-For this reason, the remainder of this section is dedicated to the heating properties of individual SM particles of given energy $\epsilon$ and species $i$. 
-As we are only concerned with depositing sufficient energy to initiate runaway fusion, we take $\epsilon \gtrsim T_f \sim \text{MeV}$.
+To focus the calculation, it will be helpful to consider some general properties that the DM-WD encounter must have in order to successfully initiate runway fusion.
+We focus on ultra-heavy DM candidates - if the energy of the secondaries is sourced from the DM's kinetic or mas energy, then $m_\text{DM} \gtrsim \Eboom$ for ignition. 
+It is possible that this energy is sourced from the stellar medium instead, in which case there is no fundamental limit on $m_\text{DM}$ needed for ignition, but in practice this mass will likely need to be large in order to achieve a DM-SM interaction cross-section sufficient for ignition.
+While still distant from the star, the DM will have the galactic viral velocity of $10^{-3}$, but as it passes through the star this will be accelerated to the WD escape speed, $v_\text{esc} \sim 10^{-2}$.
+If the DM then interacts to release $N$ particles of typical energy $\epsilon$, we require $\epsilon \gtrsim T_f$ and $N \epsilon \gtrsim \Eboom$.
+We are thus sensitive to a GUT-mass or heavier DM particle, likely a complex composite state, which interacts in the WD to produce either have a few GUT-scale SM particles or a very large number of collier-scale particles. 
 \textcolor{blue}{We also assume a nominal upper bound $\sim 10^{17} ~\GeV$ so that we may conservatively ignore interactions beyond the SM.} 
-The heating due to a single released SM particle is most accurately described by the shape of the resulting temperature profile, which we parameterize by two length scales: the displacement $R_i(\epsilon)$ of the center of the profile from the starting location of the SM particle, and the width $\Delta_i(\epsilon)$ of the temperature peak.  
-Note that $R_i \gtrsim \Delta_i$ is always true although for most species, $R_i \sim \Delta_i$ with neutrinos being the one (unsurprising) exception.
-Either of these quantities may be relevant in determining the heating length of a general DM-WD encounter depending on their relative sizes and on the number of SM particles involved.  
-% In addition, for secondary species with $\Delta_i \sim R_i$, an encounter that deposits the same total energy by releasing more secondaries of less individual energy will always be more explosive than encounters that focus the deposited energy into fewer secondaries.
-An essential ingredient for calculating $R_i$ and $\Delta_i$ is the stopping power of high-energy SM particles in the WD medium. 
+The lightest SM states will be most typically produced, so for simplicity we consider only the release of electrons, photons, pions, and nucleons, though the heating due to heavier species is straightforward to determine following the approach used below.
+These light secondaries are typically very relativistic, with the exception being the least-energetic hadrons that we consider, with $v \gtrsim 10^{-2}$.
+Since this speed is never significantly less the DM velocity, and the ultra-heavy DM carries the bulk of the momentum in the interaction which produces the secondaries, we can to $\OO(1)$ take the momentum of the released SM particles to be isotropic. 
+
+With the above picture in mind, we then consider a primitive process that releases isotropically from a point in the WD interior $N$ particles of SM species $i$, each with energy $\epsilon$, and compute the width $\Delta_i(N, \epsilon)$ of the resulting ion temperature peak. 
+If the interaction indeed has this form, then the heating length is given simply by $L_0 \sim \Delta$. 
+In a more realistic interaction, however, with the SM secondaries produced according to some distribution in energy and species, one can find $L_0$ either by identifying the strongest-interacting subset of secondaries that carries $\OO(1)$ of the energy, or use an appropriate average of $\Delta$s. 
+Note also that any net displacement of the final ion temperature profile from the point of origin of the SM secondaries is irrelevant for determining ignition. 
+If $N$ is large this displacement will be vanishing anyway, but for $N \sim \text{few}$ it could be much larger than $\Delta$, so when applicable we will make note of this special case below. 
+To compute $\Delta$, we follow the energy transfer from the initial released particle into ions, possibly through several intermediary species, and identify the length scale over which the ions are thermalized.
+An essential ingredient in this calculation is the stopping power $dE/dx$ of SM species with various components of the WD medium, and the associated range $\lambda \sim E \cdot (dE/dx)^{-1}$, which is to $\OO(1)$ the distance a particle travels before losing $\OO(1)$ of its energy.  
 To this end, we summarize here as needed the dominant sources of energy loss for each species while a more detailed analysis is reserved for Appendix \ref{sec:appendix}. 
 
 \subsection{Heating Properties - Hadrons}
@@ -192,37 +203,45 @@ To this end, we summarize here as needed the dominant sources of energy loss for
 The stopping powers for nucleons and pions in a WD are shown in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}.
 For energies greater than the typical nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$, the energy loss for light hadrons is dominated by nonelastic nuclear collisions. 
 In these collisions the incoming hadron interacts with a single nucleon in the target nucleus, which is converted into several outgoing hadrons.
-The remaining nucleus is left in an excited state of energy $\sim E_\text{nuc}$ with negligible center-of-mass recoil \textcolor{blue}{cite}. 
-Thus incident energies $E \gtrsim E_\text{nuc}$ are to leading order transfered entirely to the secondary hadrons, each of which will carry an $\OO(1)$ fraction of the incident energy \textcolor{blue}{cite}. 
-If these secondaries also have energy above $E_\text{nuc}$, they are predominantly stopped by nonelastic nuclear collisions as well, and a roughly collinear hadron shower will result. 
+The remaining nucleus is left in an excited state of energy $\sim E_\text{nuc}$ with negligible center-of-mass recoil. 
+Thus incident energies $E \gtrsim E_\text{nuc}$ are to leading order transfered entirely to the secondary hadrons, each of which will carry an $\OO(1)$ fraction of the incident energy.
+The outgoing hadrons will be pions and nucleons in roughly equal fractions, along with a few heavier states, i.e.\ deuterons, alpha particles, etc.\ \textcolor{blue}{citation}
+If these secondaries have energy above $E_\text{nuc}$, they are alo predominantly stopped by nonelastic nuclear collisions and a roughly collinear hadron shower will result. 
 The energy loss of shower constituents is described by the radiative stopping power
 \begin{equation}
   \l \frac{dE}{dx} \r \sim \frac{E}{l_\text{h,non}},
 \end{equation}
-where $l_\text{h,non}$ is the mean free path for nonelastic hadron-nuclei collisions.
+where $l_\text{h,non}$ is the mean free path for nonelastic hadron-nuclei collisions, which is roughly constant over hadron species \textcolor{blue}{citation}.
 The shower terminates when constituents reach energies of order $E_\text{nuc}$ so that the shower length induced by an initial hadron of energy $\epsilon$ is approximately 
 \begin{align}
 \label{eq:hadlength}
-  X_{\text{h}} \sim l_\text{h,non} \log\l\frac{\epsilon}{E_\text{nuc}}\r
-  \approx 10 ~l_\text{h,non}. 
+  X_\text{h} \sim l_\text{h,non} \log\l\frac{\epsilon}{E_\text{nuc}}\r 
+  \sim 10 ~l_\text{h,non}. 
 \end{align}
 
-The hadronic shower terminates in a cloud of final state nucleons and pions, each with energy $\sim E_\text{nuc}$. 
-The energy loss of these particles is dominated by elastic nuclear scatters, which represents the end-stage of the ion heating process.
-Thermalization will occur after the hadrons have scattered $\OO(1)$ of their energy, which requires $\sim 10$ scatters for nucleons and $\sim 100$ for pions. 
-During this process the hadrons random walk over distance $\sim l_\text{h,el} \sqrt{N}$, with $ l_\text{h,el}$ the mean free path for elastic nuclear scattering and $N$ the number of scatters before for thermalization.
-Thus nucleons thermalize over a distance $\sim l_\text{h,el}$ and pions over a slightly larger distance. 
-As the shower will produce a near equal mix of nucleon and pion species, we conservatively take the products to thermalize over a distance $\approx 5~l_\text{h,el}$.
-
-The hadronic shower is mostly collinear, so in the above language a single released hadron produces a temperature profile with $R_\text{h} \sim 10 ~l_\text{h,non}$ and $\Delta_\text{h} \sim 5 ~l_\text{h,el}$.
-Specifically,
+The hadronic shower results in a cloud of light hadrons, each with energy $\sim E_\text{nuc}$. 
+The energy loss of these particles is now dominated by elastic scatters, but the target species that receives $\OO(1)$ of the energy depends on the charge of the shower products - charged hadrons will cool by Coulomb scattering electrons, while neutral hadrons will cool by elastic nuclear scatters. 
+Charged and neutral hadrons will both carry $\OO(1)$ fractions of the shower energy, so we may ignore the energy that passes into electrons via charged hadrons as this will thermalize ions over a much longer distance than will the neutral hadrons which scatter ions directly. 
+Similarly, we focus on the final-state neutrons over the neutral pions, as these thermalize on a slightly shorter distance due to their larger mass. 
+Thermalization of the neutrons occurs after they have scattered $\OO(1)$ of their energy, which requires $\sim 10$ hard nuclear collisions. 
+Thus during this process the neutrons random walk only a few mean free paths before thermalizing, and so the ions are thermalized over a distance
 \begin{align}
-    R_\text{h} &\sim 10^{-6} ~\text{cm}
-        \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r \\
-    \Delta_\text{h} &\sim 5\cdot10^{-8} ~\text{cm}
-        \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r
+  X_\text{n,el} \sim l_\text{h,el}  
+\end{align}
+where $ l_\text{h,el}$ is the mean free path for elastic nuclear scattering. 
+
+The hadronic shower is mostly collinear, so a single high-energy hadron will produce an ion temperature profile of size $X_\text{n,el}$ that is displaced by $X_\text{h}$ from its starting point. 
+If many low-energy hadrons are released and thermalize collectively, they will produce an ion profile centered on their origin with size $X_\text{h} + X_\text{n,el}$.
+These two scales are
+\begin{align}
+  X_\text{h} \sim 10 ~l_\text{h,non}
+  &\sim 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r \\ 
+  X_\text{n,el} \sim l_\text{h,el}  
+  &\sim  10^{-8} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r
 \end{align}
 where we have used empirically measured cross-sections $\sigma_\text{h,el} \approx 10~\sigma_\text{h,non} \approx 1~\text{barn}$ and conservatively taken these cross-sections to be constant with incoming particle energy.
+Note that $X_\text{h}$ dominates in the many-particle case and a more compact heating is achieved with a single high-energy hadron. 
+However, both of these scales are below the trigger size for the most massive WDs and so either mechanism will result in ignition with the deposit of the minimal energy $\Eboom$. 
 
 \subsection{Heating Properties - Electrons and Photons}
 
@@ -294,7 +313,7 @@ This excludes interactions involving the decay of long-lived, meta-stable dark s
 With this parameterization, the explosion condition is approximately the same for both DM-DM collisions and DM decays:
 \begin{equation}
 \label{eq:coldecay}
-    m_\text{DM} \gtrsim \mathcal{E}_\text{boom} \cdot \frac{1}{\eta}
+    m_\text{DM} \gtrsim \Eboom \cdot \frac{1}{\eta}
       \text{max}\left\{1, \frac{L_0}{\lambda_T}\right\}^3
 \end{equation}
 Considering the threshold \eqref{eq:Eboom}, such heating events require DM masses larger than $\sim 10^{15} ~\GeV$ in order to release sufficient energy to trigger a SN.
