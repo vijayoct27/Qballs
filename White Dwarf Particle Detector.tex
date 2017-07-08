@@ -199,23 +199,54 @@ If $N$ is large this displacement will be vanishing anyway, but for $N \sim \tex
 
 Finally, an essential ingredient in this calculation is the stopping power $dE/dx$ of SM species due to various components of the stellar medium. 
 Perhaps more directly useful is the range $\lambda$, which is the distance a particle travels before losing $\OO(1)$ of its energy and is given to $\OO(1)$ by $\lambda \sim E \cdot \l dE/dx \r^{-1}$.
-The lambda of various species are plotted in Figures \ref{fig:something}, with the dominant stopping mechanisms indicated. 
+The lambda of various species are plotted in Figures \ref{fig:SOMETHING}, with the dominant stopping mechanisms indicated. 
 We will summarize here the salient features of these dominant stopping mechanisms, with a more detailed analysis of these stopping powers is provided in Appendix \ref{sec:appendix}. 
 % add here figures showing dominant ranges (or stopping powers) for each species, with dominant mechanism annotated.  Maybe add the e-ion subdomiant processes to that plot, as those are important. 
 
 \subsection{Heating Properties of Hadrons}
 
-The stopping powers of nucleons and pions are quite simple, and are shown in Figure \ref{fig:something}.
-At large energies they are dominated by 
+First consider the release of low-energy light hadrons, $\epsilon \lesssim 10~\MeV$.
+For nucleons or neutral pions, the energy loss is dominated by elastic nuclear collisions, and since this scatters energy directly into ions the resulting $\Delta$ is simply the range $\lambda$ of these hadrons.
+For charged pions, however, the energy is predominantly transfered into the degenerate WD electrons via Coulomb scatters, and so the question now depends on the length scale for these electrons to transfer their energy to the ions. 
+As shown in Figure \ref{fig:SOMETHING}, below $10~\MeV$ there are effectively no processes that efficiently transfer energy from the electrons to the ions and so the ion heating will occur over a negligibly large distance. 
 
+The behavior of these low-energy hadrons is important both as a possible SM secondary in a DM-WD encounter, but also as the end-state of the cooling of very energetic hadrons. 
+Turning to hadrons with $\epsilon \gtrsim 10~\text{MeV}$, the energy loss of these particles is dominated by nonelastic nuclear collisions.
+The threshold here is $10~\MeV$ as this is the typical energy of an internal nuclear excitation.  
+In these collisions the incoming hadron interacts with a single nucleon in the target nucleus, which is converted into several outgoing hadrons.
+The remaining nucleus is left in an excited state of energy $\sim 10~\MeV$ with negligible center-of-mass recoil. 
+The incident energies is thus transfered to leading order entirely to the secondary hadrons, each of which will carry an $\OO(1)$ fraction of the incident energy.
+The outgoing hadrons will be pions and nucleons in roughly equal fractions, along with a few heavier states, i.e.\ deuterons, alpha particles, etc.\ \textcolor{blue}{citation}. 
+If these outgoing hardrons have energy above $E_\text{nuc}$, they are also predominantly stopped by nonelastic nuclear collisions and a roughly collinear hadron shower will result. 
+The energy loss of shower constituents is described by the radiative stopping power
+\begin{equation}
+  \l \frac{dE}{dx} \r \sim \frac{E}{l_\text{h,non}},
+\end{equation}
+where $l_\text{h,non}$ is the mean free path for nonelastic hadron-nuclei collisions, which is roughly constant over hadron species \textcolor{blue}{citation}.
+The shower terminates when constituents reach energies of order $10~\MeV$ so that the shower length induced by an initial hadron of energy $\epsilon$ is approximately 
+\begin{align}
+\label{eq:hadlength}
+  X_\text{h} \sim l_\text{h,non} \log\l\frac{\epsilon}{10~\MeV}\r 
+  \sim 10 ~l_\text{h,non}. 
+\end{align}
 
+The hadronic shower results in a cloud of light hadrons, each with energy $\sim E_\text{nuc}$. 
+The energy loss of these shower productions is now determined as above - the nucleons and neutral hadrons with thermalize ions via elastic nuclear scatters, and the charged pion energy will pass uselessly into degenerate electrons. 
+As each nucleon and pion species will carry an $\OO(1)$ fractions of the shower energy, we may simple ignore the energy that is lost into electrons and focus on the nucleons, which couple most strongly to the ions \textcolor{blue}{citation}. 
+Thus $\OO(1)$ of the shower energy will thermalize with ions over the range $\lambda_\text{nuc,el}$ of low-energy nucleons elastically scatter with ions. 
 
-% At high incident energies, $\epsilon \gtrsim 100~\GeV$, the stopping powers of all species are dominated by nonelastic nuclear collisions that produce hadronic showers. 
-% Effectively, electrons and photons at this energy behave like hadrons with just a slightly longer mean free path for nuclear collisions, and all species at this energy will transfer $\OO(1)$ of their initial energy into hadronic showers.
-% Hadrons will remain dominated by these showering processes until the very end of our range, $\epsilon \lesssim 10~\MeV$. 
-% The behavior of these low-energy hadrons is important for either their direct release, or as the end-state of a hadronic shower. 
-% Neutral low-energy hadrons are dominated by elastic nuclear scatters which directly thermalize ions, however charged hadrons, depending on their mass, may be dominated instead by Coulomb scattering off of WD electrons.
-% Thus hadronic showers, which produce a variety of hadron species, will terminate by directly thermalizing both electrons and ions with elastic scatters. 
+The hadronic shower is mostly collinear, so a single high-energy hadron will produce an ion temperature profile of size $\lambda_\text{nuc,el}$ that is displaced by $X_\text{h}$ from its starting point. 
+If many low-energy hadrons are released and thermalize collectively, they will produce an ion profile centered on their origin with size $X_\text{h} + \lambda_\text{nuc,el}$.
+These two scales are
+\begin{align}
+  X_\text{h} \sim 10 ~l_\text{h,non}
+  &\sim 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r \\ 
+  \lambda_\text{nuc,el} \sim \frac{m_\text{carbon}}{m_p} l_\text{h,el}  
+  &\sim  10^{-7} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r
+\end{align}
+where $l_\text{h,el}$ is the mean free path for elastic hadron-nucleus scattering and we have used empirical cross-sections $\sigma_\text{h,el} \approx 10~\sigma_\text{h,non} \approx 1~\text{barn}$, conservatively taking these cross-sections to be constant with incoming particle energy \textcolor{blue}{citation}.
+Note that $X_\text{h}$ dominates in the many-particle case and a more compact heating is achieved with a single high-energy hadron. 
+However, both of these scales are below the trigger size for the most massive WDs, and so either mechanism will result in ignition with the deposit of the minimal energy $\Eboom$. 
 
 % The stopping powers of electrons is more complicated, and is rightly discussed together with the photon stopping power as these two species are highly coupled. 
 % Electrons will lose energy via bremsstrahlung, though it is import that this process is suppressed in a WD by several mechanisms.
@@ -232,54 +263,7 @@ At large energies they are dominated by
 
 % Bremsstrahlung is also suppressed due to the efficient charge screening of ions by degenerate electrons - above a critical value of ion density $n_\text{EM} \sim 10^{31} ~\text{cm}^{-3}$, this effectually shuts off bremsstrahlung radiation for all energies.  and pair production from providing significant energy loss. 
 
-
-
-\subsection{Heating Properties - Hadrons}
-
-The stopping powers for nucleons and pions in a WD are shown in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}.
-For energies greater than the typical nuclear binding energy $E_\text{nuc} \sim 10 ~\text{MeV}$, the energy loss for light hadrons is dominated by nonelastic nuclear collisions. 
-In these collisions the incoming hadron interacts with a single nucleon in the target nucleus, which is converted into several outgoing hadrons.
-The remaining nucleus is left in an excited state of energy $\sim E_\text{nuc}$ with negligible center-of-mass recoil. 
-Thus incident energies $E \gtrsim E_\text{nuc}$ are to leading order transfered entirely to the secondary hadrons, each of which will carry an $\OO(1)$ fraction of the incident energy.
-The outgoing hadrons will be pions and nucleons in roughly equal fractions, along with a few heavier states, i.e.\ deuterons, alpha particles, etc.\ \textcolor{blue}{citation}
-If these secondaries have energy above $E_\text{nuc}$, they are alo predominantly stopped by nonelastic nuclear collisions and a roughly collinear hadron shower will result. 
-The energy loss of shower constituents is described by the radiative stopping power
-\begin{equation}
-  \l \frac{dE}{dx} \r \sim \frac{E}{l_\text{h,non}},
-\end{equation}
-where $l_\text{h,non}$ is the mean free path for nonelastic hadron-nuclei collisions, which is roughly constant over hadron species \textcolor{blue}{citation}.
-The shower terminates when constituents reach energies of order $E_\text{nuc}$ so that the shower length induced by an initial hadron of energy $\epsilon$ is approximately 
-\begin{align}
-\label{eq:hadlength}
-  X_\text{h} \sim l_\text{h,non} \log\l\frac{\epsilon}{E_\text{nuc}}\r 
-  \sim 10 ~l_\text{h,non}. 
-\end{align}
-
-The hadronic shower results in a cloud of light hadrons, each with energy $\sim E_\text{nuc}$. 
-The energy loss of these particles is now dominated by elastic scatters, but the target species that receives $\OO(1)$ of the energy depends on the charge of the shower products - charged hadrons will cool by Coulomb scattering electrons, while neutral hadrons will cool by elastic nuclear scatters. 
-Charged and neutral hadrons will both carry $\OO(1)$ fractions of the shower energy, so we may ignore the energy that passes into electrons via charged hadrons as this will thermalize ions over a much longer distance than will the neutral hadrons which scatter ions directly. 
-Similarly, we focus on the final-state neutrons over the neutral pions, as these thermalize on a slightly shorter distance due to their larger mass. 
-Thermalization of the neutrons occurs after they have scattered $\OO(1)$ of their energy, which requires $\sim 10$ hard nuclear collisions. 
-Thus during this process the neutrons random walk only a few mean free paths before thermalizing, and so the ions are thermalized over a distance
-\begin{align}
-  X_\text{n,el} \sim l_\text{h,el}  
-\end{align}
-where $ l_\text{h,el}$ is the mean free path for elastic nuclear scattering. 
-
-The hadronic shower is mostly collinear, so a single high-energy hadron will produce an ion temperature profile of size $X_\text{n,el}$ that is displaced by $X_\text{h}$ from its starting point. 
-If many low-energy hadrons are released and thermalize collectively, they will produce an ion profile centered on their origin with size $X_\text{h} + X_\text{n,el}$.
-These two scales are
-\begin{align}
-  X_\text{h} \sim 10 ~l_\text{h,non}
-  &\sim 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r \\ 
-  X_\text{n,el} \sim l_\text{h,el}  
-  &\sim  10^{-8} ~\text{cm} \l\frac{10^{32}~\text{cm}^3}{n_\text{ion}}\r
-\end{align}
-where we have used empirically measured cross-sections $\sigma_\text{h,el} \approx 10~\sigma_\text{h,non} \approx 1~\text{barn}$ and conservatively taken these cross-sections to be constant with incoming particle energy.
-Note that $X_\text{h}$ dominates in the many-particle case and a more compact heating is achieved with a single high-energy hadron. 
-However, both of these scales are below the trigger size for the most massive WDs and so either mechanism will result in ignition with the deposit of the minimal energy $\Eboom$. 
-
-\subsection{Heating Properties - Electrons and Photons}
+\subsection{Heating Properties of Electrons and Photons}
 
 Released electrons and photons will heat the stellar medium through several distinct channels, depending on the energy of the incident particles and the stellar density.  
 Roughly, at high energies $\epsilon \gtrsim 100~\GeV$, both electrons and photons will behave qualitatively as hadrons, producing hadronic showers after interacting with a nucleus via virtual quarks. 
