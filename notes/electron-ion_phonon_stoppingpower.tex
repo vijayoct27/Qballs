@@ -172,6 +172,7 @@ S(\omega, \textbf{q}) &= \frac{1}{2 \pi} (2 \pi)^3 n_i e^{-2 W}  \nonumber\\
 We note that $V / N = n_i^{-1}$. Simplifying this expression, we find
 \begin{align}
 S(\omega, \textbf{q}) &= \frac{3}{4 \pi M c_s} \left[ \frac{1}{e^{c_sq / T} - 1} +1 \right] \delta(\cos\theta_{q} - c_s)
+\label{eq:FirstBrilliounZoneStructureFactor}
 \end{align}
 Note that we have extracted the momenta factor $q$ from the remaining delta function. We may do this because we are only considering processes with non-zero momentum transfer. We have also neglected the Debye-Waller factor, since it is small and the exponential is $\OO(1)$.
 
@@ -216,6 +217,7 @@ We cannot ignore the dielectric function because our momentum transfers are coin
 We wish to rewrite the solid angle differential $d \Omega = d(\cos\theta_{k'})d \phi_{k'}$ in terms of $d(\cos\theta_q)$ and $d\phi_q$. To begin, we recall that $\textbf{k}' = \textbf{k} - \textbf{q}$. The momentum transfer vector $\textbf{q}$ entirely determines the transverse component of $\textbf{k}'$, so we may relate
 \begin{align}
 q \sin\theta_q = k' \sin\theta_{k'} \approx k\sin\theta_{k'}
+\label{eq:TransverseComponent}
 \end{align}
 where in the last step we used the fact that $q\ll k$. Manipulating and using the trig identity $\sin\theta = \sqrt{1 - \cos^2 \theta}$, we find
 \begin{align}
@@ -279,10 +281,11 @@ where we have also dropped the Debye-Waller factor because the temperature is sm
 \begin{align}
    S(\omega, \textbf{q}) &= \frac{1}{2 \pi}  3 \int^{\textbf{k}_D} d^3 k_\nu \frac{V}{(2 \pi)^3} \frac{q^2}{2 NM \omega_\nu} \langle n_\nu + 1 \rangle \delta(\omega - \omega_\nu) \nonumber\\
    &= \frac{3}{(2 \pi)^4 n_i}  \int^{\textbf{k}_D} (k_\nu^2\, dk_\nu \, d \Omega_\nu) \frac{q^2}{2 M \omega_\nu} \langle n_\nu + 1 \rangle \delta(\omega - \omega_\nu) \nonumber\\
-   &= \frac{3(4 \pi)}{(2 \pi)^4 n_i}  \int_0^{\omega_D} \left( \frac{\omega_\nu}{c_s} \right)^2 d \omega_\nu \frac{q^2}{2 M \omega_\nu} \left[ \frac{1}{e^{\omega_\nu/T} - 1} + 1 \right] \delta(\omega - \omega_\nu) \nonumber\\
-   &= \frac{6}{(2 \pi)^3 n_i} \frac{q^2\omega}{2 M c_s^2} \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
+   &= \frac{3(4 \pi)}{(2 \pi)^4 n_i}  \int_0^{\omega_D} \left( \frac{\omega_\nu}{c_s} \right)^2 \frac{d \omega_\nu}{c_s} \frac{q^2}{2 M \omega_\nu} \left[ \frac{1}{e^{\omega_\nu/T} - 1} + 1 \right] \delta(\omega - \omega_\nu) \nonumber\\
+   &= \frac{6}{(2 \pi)^3 n_i} \frac{q^2\omega}{2 M c_s^3} \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
+   \label{eq:UmklappStructureFactor}
 \end{align}
-where in the last step a heavyside function emerges, enforcing the requirement that $\omega \leq \omega_D$ so that we do not transfer more energy than a single phonon could carry. Note we used the dispersion relation $k_\nu = \omega_\nu / c_s$ to change variables in the integral.
+where in the last step a Heaviside function emerges, enforcing the requirement that $\omega \leq \omega_D$ so that we do not transfer more energy than a single phonon could carry. Note we used the dispersion relation $k_\nu = \omega_\nu / c_s$ to change variables in the integral.
 
 \subsection{Energy transfer, solid angle, interaction potential}
 
@@ -292,7 +295,7 @@ The energy transfer $\omega$ is still given by \eqref{eq:EnergyTransfer}, but we
 \end{align}
 or, solving for the momentum transfer in terms of $\omega$ and $\cos\theta_q$, we find
 \begin{align}
-q &= k \cos\theta_q + \sqrt{\omega(\omega - 2 k) + k^2 \cos^2 \theta_q} \\
+q &= k \cos\theta_q + \sqrt{\omega(\omega - 2 k) + k^2 \cos^2 \theta_q} \label{eq:LargeMomentumTransfer}\\
   &\approx 2k \cos\theta_q - \omega \sec \theta_q \\
   &\approx 2k \cos\theta_q \label{eq:DistantBrilliounZone1PhononMomentumTransfer}
 \end{align}
@@ -322,15 +325,15 @@ The singly differential cross-section \eqref{eq:SinglyDifferential} (approximati
 \begin{align}
 \frac{d \sigma}{d \omega} &= \int d \Omega\, \left( \frac{m}{2 \pi} \right)^2 |V_\textbf{q}|^2 S(\omega, \cos\theta_q, \phi_q) \\
    &\approx \int \left[ 4\cos\theta_q\, d(\cos\theta_q)d \phi_q \right] \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{(2 k \cos\theta_q)^2+ \lambda^2} \right]^2 \nonumber\\
-   &\qquad\qquad \left[ \frac{6}{(2 \pi)^3 n_i} \frac{(2 k\cos\theta_q)^2\omega}{2 M c_s^2} \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega) \right]
+   &\qquad\qquad \left[ \frac{6}{(2 \pi)^3 n_i} \frac{(2 k\cos\theta_q)^2\omega}{2 M c_s^3} \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega) \right]
 \end{align}
 Recall that the only allowed momentum transfer angles are between 0 and $\pi/2$, so the integration over $d(\cos\theta_q)$ ranges from $0$ to $1$. Performing the angular integrals, we find
 \begin{align}
-\frac{d \sigma}{d \omega} &= \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^2 k^2 M n_i} \left[ \ln \left( \frac{4 k^2 + \lambda^2}{\lambda^2} \right) - \frac{4k^2}{4 k^2 + \lambda^2} \right] \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
+\frac{d \sigma}{d \omega} &= \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^3 k^2 M n_i} \left[ \ln \left( \frac{4 k^2 + \lambda^2}{\lambda^2} \right) - \frac{4k^2}{4 k^2 + \lambda^2} \right] \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
 \end{align}
 The screening momentum $\lambda \sim 10^{-2}~\MeV \ll k$, so this reduces to
 \begin{align}
-\frac{d \sigma}{d \omega} &= \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^2 k^2 M n_i} \ln \left( \frac{4 k^2}{\lambda^2} \right) \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
+\frac{d \sigma}{d \omega} &= \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^3 k^2 M n_i} \ln \left( \frac{4 k^2}{\lambda^2} \right) \left[ \frac{1}{e^{\omega/T} - 1} + 1 \right] \theta(\omega_D - \omega)
 \end{align}
 
 \subsection{Stopping power}
@@ -338,67 +341,325 @@ The screening momentum $\lambda \sim 10^{-2}~\MeV \ll k$, so this reduces to
 We are now ready to compute the stopping power. Before we perform the integral, we note that the Bose enhancement for small $\omega$ goes like $ \sim T / \omega$. This is therefore counterbalanced by the factor of $\omega^2$ in the stopping power integral, and the bose enhancement plays no appreciable role unless $T \sim \omega_D$. (This has been confirmed numerically.) We may thus neglect that term, in which case the stopping power becomes
 \begin{align}
 \frac{dE}{d x} &= \int d \omega \,\frac{d \sigma}{d \omega} n_i \omega \\
-  &\approx \int d \omega \,n_i \omega \left\{ \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^2 k^2 M n_i} \ln \left( \frac{4 k^2}{\lambda^2} \right) \left[ 1 \right] \theta(\omega_D - \omega) \right\} \\
-   &= \frac{m^2 Z^2 \alpha^2 \omega_D^3}{2 \pi^2 c_s^2 k^2 M} \ln\left( \frac{4 k^2}{\lambda^2} \right)
+  &\approx \int d \omega \,n_i \omega \left\{ \frac{3 m^2 Z^2 \alpha^2 \omega}{2\pi^2 c_s^3 k^2 M n_i} \ln \left( \frac{4 k^2}{\lambda^2} \right) \left[ 1 \right] \theta(\omega_D - \omega) \right\} \\
+   &= \frac{m^2 Z^2 \alpha^2 \omega_D^3}{2 \pi^2 c_s^3 k^2 M} \ln\left( \frac{4 k^2}{\lambda^2} \right)
 \end{align}
 Inserting the Debye energy~\eqref{eq:DebyeEnergy}, we find the stopping power is
 \begin{align}
-\frac{d E}{d x} &= \frac{3 m^2 Z^2 \alpha^2 c_s n_i}{k^2 M} \ln\left( \frac{4 k^2}{\lambda^2} \right)
+\frac{d E}{d x} &= \frac{3 m^2 Z^2 \alpha^2 n_i}{k^2 M} \ln\left( \frac{4 k^2}{\lambda^2} \right)
 \end{align}
-This result should be valid for all incident momenta $k\gg k_D = (6 \pi^2 n_i)^{1/3} \sim 4~\MeV$. 
+This result should be valid for all incident momenta $k\gg k_D = (6 \pi^2 n_i)^{1/3} \sim 4~\MeV$.
 
 \section{Beyond the one-phonon approximation}
 
-In this section we will attempt to go beyond the one-phonon approximation to allow for larger transfers of energy and momentum from the electron to the lattice. If we do not employ the one-phonon approximation, the inelastic intermediate scattering function \eqref{eq:Fin} becomes
+In this section, we will attempt to characterize the contributions beyond the one-phonon approximation. We will draw chiefly on arguments from \cite{impulse} (note there seem to be some differences in convention there compared to \cite{quantum} in the definition of the intermediate scattering function, but this shouldn't affect the final answer).
+
+\subsection{Multiphonon structure factor in the incoherent approximation}
+
+In \cite{impulse}, we find the intermediate scattering function for a single harmonic oscillator given by
 \begin{align}
-  F_\text{in}(\textbf{q}, t) &= \sum_{ij} e^{i\textbf{q}\cdot(\textbf{R}_i - \textbf{R}_j)} \sum_{n = 1}^\infty \frac{1}{n!}\left\{ \frac{1}{2 MN} \sum_\nu \frac{q^2}{\omega_\nu} \langle n_\nu + 1 \rangle e^{-i \textbf{k}_\nu \cdot(\textbf{R}_i - \textbf{R}_j) + i \omega_\nu t} \right\}^n
+F_0(\textbf{q}, t) = \exp\left\{ \frac{q^2}{2 M \omega_0} G_0(\omega_0, t) \right\}
 \end{align}
-Note we have dropped the Debye-Waller factor $e^{-2 W}$ and the phonon-absorption terms because of the low temperature of the star relative to the lattice binding energy. The $n$th term in this expansion corresponds to the creation of $n$ phonons.
-
-The reciprocal lattice vectors in \eqref{eq:Fin} result from the sum
+where
 \begin{align}
-\sum_{ij} e^{i(\textbf{q} - \textbf{k}_\nu)\cdot(\textbf{R}_i - \textbf{R}_j)} = (2 \pi)^3 n_i\sum_\textbf{G} \delta^{(3)} (\textbf{q} - \textbf{k}_\nu - \textbf{G})
+G_0(\omega_0, t) &= (\cos\omega_0 t - 1) \coth\left( \frac{\omega_0}{2 T} \right) + i \sin\omega_0 t
 \end{align}
-The sum over $ij$ here will similarly serve to relate the momentum transfer $\textbf{q}$ to the total momentum of the created phonons in each of the higher phonon terms. For simplicity (and because it is a good approximation), we will take the star to be at zero temperature so that $\langle n_\nu + 1 \rangle = 1$ for all phonon modes. Let's see how this plays out in the 1- and 2-phonon terms $F_\text{in}^{(1)}$ and $F_\text{in}^{(2)}$:
+and we have defined $n(\omega) = 1 / (e^{\omega/T} - 1)$ as the Bose occupation of the mode. This function $G_0$ arises from the creation and annihilation operators corresponding to the emission and absorption of phonons (see, for instance, \cite{quantum} equations (20.41-49), or \cite{interactions} equations (12.93) and following). The time independent term is the Debye-Waller factor, and the first-order expansion in $q^2$ would yield to the one-phonon approximation.
+
+Similarly, we can describe the lattice with density of states $Z(\omega)$ with characteristic frequency $\omega_l$ with the intermediate scattering function
 \begin{align}
-F_\text{in}^{(1)} &= \sum_{ij} e^{i\textbf{q}\cdot(\textbf{R}_i - \textbf{R}_j)} \frac{1}{1!} \frac{1}{(2 MN)} \sum_{\nu_1} \frac{q^2}{\omega_{\nu_1}} e^{-i \textbf{k}_{\nu_1} \cdot(\textbf{R}_i - \textbf{R}_j) + i \omega_{\nu_1} t} \nonumber\\
-    &= \frac{1}{1!(2 MN)} \sum_{\nu_1} \frac{q^2}{\omega_{\nu_1}} (2 \pi)^3 n_i \sum_\textbf{G} \delta^{(3)}(\textbf{q} - \textbf{k}_{\nu_1} - \textbf{G}) e^{i \omega_{\nu_1} t} \nonumber\\
-    &= \frac{3}{1!(2 M n_i)} \int\frac{d^3 k_{\nu_1}}{(2 \pi)^3} \frac{q^2}{\omega_{\nu_1}} (2 \pi)^3 n_i \sum_\textbf{G} \delta^{(3)}(\textbf{q} - \textbf{k}_{\nu_1} - \textbf{G}) e^{i \omega_{\nu_1} t} \\
-    % &= \frac{3n_i}{1!(2 M n_i)} \sum_\textbf{G} \frac{q^2}{\omega_{\nu_1}}  e^{i \omega_{\nu_1} t} \bigg|_{\omega_{\nu_1} = c_s|\textbf{q} - \textbf{G}|} \\
- %
-  \nonumber\\
- %
-F_\text{in}^{(2)} &= \sum_{ij} e^{i\textbf{q}\cdot(\textbf{R}_i - \textbf{R}_j)} \frac{1}{2!} \frac{1}{(2 MN)^2} \sum_{\nu_1} \sum_{\nu_2} \frac{q^4}{\omega_{\nu_1}\omega_{\nu_2}} \nonumber\\
-&\qquad\qquad \times e^{-i (\textbf{k}_{\nu_1} + \textbf{k}_{\nu_2}) \cdot(\textbf{R}_i - \textbf{R}_j) + i (\omega_{\nu_1} + \omega_{\nu_2}) t} \nonumber\\
-   &= \frac{1}{2!(2 MN)^2} \sum_{\nu_1} \sum_{\nu_2} \frac{q^4}{\omega_{\nu_1}\omega_{\nu_2}} (2 \pi)^3 n_i\sum_\textbf{G} \delta^{(3)}(\textbf{q} - \textbf{k}_{\nu_1} - \textbf{k}_{\nu_2} - \textbf{G}) e^{i(\omega_{\nu_1} + \omega_{\nu_2})t} \nonumber\\
-   &= \frac{3^2}{2!(2 Mn_i)^2} \int\frac{d^3 k_{\nu_1}}{(2 \pi)^3} \int\frac{d^3 k_{\nu_2}}{(2 \pi)^3}  \frac{q^4}{\omega_{\nu_1}\omega_{\nu_2}}  \nonumber\\
-   & \qquad\qquad \times (2 \pi)^3 n_i\sum_\textbf{G} \delta^{(3)}(\textbf{q} - \textbf{k}_{\nu_1} - \textbf{k}_{\nu_2} - \textbf{G}) e^{i(\omega_{\nu_1} + \omega_{\nu_2})t}
-  %\\  &= \frac{3^2 n_i}{2!(2 Mn_i)^2} \sum_\textbf{G} \int\frac{d^3 k_{\nu_2}}{(2 \pi)^3}  \frac{q^4}{\omega_{\nu_1}\omega_{\nu_2}} e^{i(\omega_{\nu_1} + \omega_{\nu_2})t} \bigg|_{\omega_{\nu_1} = c_s|\textbf{q} - \textbf{k}_{\nu_2} - \textbf{G}|}
+F_L(\textbf{q}, t) = \exp\left\{ \frac{q^2}{2 M \omega_l} G_L(\omega_l, t) \right\}
 \end{align}
-At this point we can infer the pattern and write down the result for the $n$-phonon process:
+where
 \begin{align}
-F_\text{in}^{(n)} &= \frac{3^n (2 \pi)^3 n_i}{n!(2 Mn_i)^n} \sum_\textbf{G} q^{2 n} \prod_{j = 1}^n \left( \int\frac{d^3 k_{\nu_i}}{(2 \pi)^3} \frac{e^{i\omega_{\nu_i} t}}{\omega_{\nu_i}}  \right) \delta^{(3)}\bigg(\textbf{q} - \textbf{G} - \sum_{j = 1}^n \textbf{k}_{\nu_j} \bigg)
-%\\ F_\text{in}^{(n)} &= \frac{3^n n_i}{n!(2 Mn_i)^n} \sum_\textbf{G} q^{2 n} \prod_{j = 2}^n \left( \int\frac{d^3 k_{\nu_i}}{(2 \pi)^3} \frac{1}{\omega_{\nu_i}} e^{i\omega_{\nu_i} t} \right) \frac{e^{i\omega_{\nu_1}t}}{\omega_{\nu_1}} \bigg|_{\omega_{\nu_1} = c_s|\textbf{q} - \textbf{G} - \sum_{j = 2}^{n}\textbf{k}_{\nu_i}|}
+G_L(\omega_l, t) &= \int_0^\infty du \left\{ (\cos(u\omega_l t) - 1) \coth\left( \frac{u \omega_l}{2 T} \right) + i \sin(u\omega_l t) \right\} \frac{Z(u)}{u}
+\label{eq:LatticeScatteringFunctionExponent}
 \end{align}
-We will begin by considering only phonons created within the first Brillioun zone, so that we may take $\textbf{G} = 0$. Once we have explored this we may try a non-zero $\textbf{G}$ to see what the effects might be. With this simplification, the intermediate scattering function becomes
+and we have defined the dimensionless frequency $u = \omega / \omega_l$ and the corresponding dimensionless density of states $Z(u)\to\omega_l Z(\omega)$. Note this result for the lattice is only valid in the ``incoherent approximation'', treating each photon mode as independent. That is, this is what \cite{interactions} would describe as the ``intermediate self-scattering function'', reflecting correlations of each atom in the lattice with itself, and ignoring correlations of each atom in the lattice with others. This would seem a suspect approximation, except it turns out to be mathematically equivalent to the approximation employed in \cite{dwarf} to capture the fact that umklapp processes dominate in a white dwarf coulomb lattice (see \cite{dwarf} equation (7)). We can reproduce the single harmonic oscillator with a density of states $Z(u) = u\delta(u - 1)$ characterized by frequency $\omega_0$, so in what follows here we will always assume are working with the lattice.
+
+At this point \cite{impulse} introduces dimensionless variables for the momentum transfer, temperature, and time
 \begin{align}
-F_\text{in}^{(n)} &= \frac{3^n (2 \pi)^3 n_i}{n!(2 Mn_i)^n} q^{2 n} \prod_{j = 1}^n \left( \int\frac{d^3 k_{\nu_j}}{(2 \pi)^3} \frac{e^{i\omega_{\nu_j} t}}{\omega_{\nu_j}}  \right) \delta^{(3)}\bigg(\textbf{q} - \sum_{j = 1}^n \textbf{k}_{\nu_j} \bigg) \nonumber\\
-&= \frac{3^n n_i}{n!(2 Mn_i)^n} q^{2 n} \prod_{j = 2}^n \left( \int\frac{d^3 k_{\nu_j}}{(2 \pi)^3} \frac{e^{i\omega_{\nu_j} t}}{\omega_{\nu_j}}  \right) \frac{e^{i\omega_{\nu_1}t}}{\omega_{\nu_1}} \bigg|_{\omega_{\nu_1} = c_s|\textbf{q} - \sum_{j = 2}^{n}\textbf{k}_{\nu_j}|}
+Q^2 = \frac{q^2}{2 M \omega_l}, \qquad T^* = \frac{T}{\omega_l}, \qquad t' = \omega_l t
+\end{align}
+Then we can rewrite $G_L(\omega_l, t)$ as
+\begin{align}
+G(t') &= \int_0^\infty du' \left\{ (\cos u't' - 1) \coth\left( \frac{u'}{2 T^*} \right) + i \sin u't' \right\} \frac{Z(u')}{u'} \nonumber\\
+   &= \int_0^\infty du' \left\{ \cos u't' \coth\left( \frac{u'}{2 T^*} \right) + i \sin u't' \right\} \frac{Z(u')}{u'} - 2 W / Q^2 \nonumber\\
+    &= \int_{-\infty}^\infty \frac{du'}{u'}Z(u')n(u')e^{-iu't'} - 2 W / Q^2
+\end{align}
+where the rewrite in the last line employs a mathematical trick by defining $Z(u)$ as even and using the fact that $n(u) - n(-u) = \coth(u/2 T^*)$. Now the positive half of the integration encodes phonon absorption, while the negative half of the integration encodes phonon emission. We have also defined the Debye-Waller factor
+\begin{align}
+2 W = Q^2 \int_0^\infty du'\, \frac{Z(u')}{u'} \coth\left( \frac{u'}{2 T^*} \right)
+\end{align}
+Note we are using the integration variable $u'$ simply to distinguish it from the dimensionless energy transfer $u = \omega / \omega_l$ in the structure factor. We can write this structure factor as
+\begin{align}
+S(Q, u) &= \frac{1}{2 \pi \omega_l} \int_{-\infty}^\infty dt'\, e^{-iut'} e^{Q^2 G(t')} \nonumber\\
+   &= \frac{1}{2 \pi \omega_l} e^{-2 W} \int_{-\infty}^\infty dt'\, e^{-iut'} e^{Q^2 g(t')}
+   \label{eq:DimensionlessStructureFactor}
+\end{align}
+where we have defined the non-Debye-Waller piece of $G(t')$ as
+\begin{align}
+g(t') = \int_{-\infty}^\infty \frac{du'}{u'}Z(u')n(u')e^{-iu't'}
 \end{align}
 
-\begin{mdframed}[style=MyFrame]
-The assumption that $\textbf{G} = 0$ is probably a bad and overcomplicating one. Various papers (like \href{http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1980SvA....24..303Y&defaultprint=YES&filetype=.pdf}{this one}) argue that umklapp processes dominate in a coulomb lattice, such that it is only the distant Brillioun zones that contribute. This seems to be because the typical (maximum?) momentum transfer $ \sim k_F$ is large compared to the size of the Brillioun zone. (This is probably the same for us? Review the arguments that lead to their conclusion.) In these distant zones, one can approximate $\textbf{q} \sim \textbf{G}$, and then we simply need $\cos\theta_{kq} \ll1$ so that $\omega \sim G \cos\theta_{kq}$ is small enough to match a phonon energy. (Recall $\theta_{kq}$ is the angle between the momentum transfer and the incident momentum.)
+\subsection{Short-time approximation}
 
-So perhaps I can integrate over $\textbf{G}$, simply using the delta function to set $\textbf{q} \approx \textbf{G}$. Then the integration over time will match the energy to a phonon energy, and the integral over phonon momentum will \ldots restrict the allowed angles of $\textbf{q}$?
+For small transfers of energy and momentum, we expect to be dominated by one-phonon processes. For progressively larger transfers, we expect higher phonon processes to become more appreciable. For very large energy or large momentum transfers, we should expect to reject particles out of the lattice rather than simply exciting lattice vibrations. This last expectation gives rise to the so-called ``impulse approximation'', and the structure factor approaches a delta function corresponding to energy and momentum conservation of a free particle. An expression for this is given in \cite{impulse} (see equation (2.12) there), but we will derive it ourselves here.
 
-I expect the end result of this to be a larger cross-section and stopping power than the one I first calculated. The energy transfers aren't any larger, but there is a much larger phase space that the incident particle could be scattered into.
+Inspired by the suggestions in \cite{impulse}, we will derive this approximation by expanding $g(t)$ for short times about $t = 0$. This expansion is
+\begin{align}
+g(t) = \alpha_0 - it'\alpha_1 - t'^2 \alpha_2 + \OO(t'^3)
+\end{align}
+where
+\begin{align}
+\alpha_0 &= \int_{-\infty}^\infty du'\,\frac{1}{u'} Z(u')n(u') \\
+\alpha_1 &= \int_{-\infty}^\infty du'\,Z(u')n(u') \\
+\alpha_2 &=  \int_{-\infty}^\infty du'\,\frac{u'}{2} Z(u')n(u')
+\end{align}
+Note that $Q^2\alpha_0 = 2 W$ is the Debye-Waller factor, exchanging $n(u)$ for the $\coth$ as before. In the Debye approximation, where $Z(u) = 3 u^2\, \theta(1-|u|)$, we find
+\begin{align}
+\alpha_0 &= \int_{-1}^1 du'\, \frac{1}{u'} (3 u'^2) \frac{1}{e^{u'/T^*}-1} \approx \frac32 + \pi^2 (T^*)^2  \quad \text{for} \quad T^*\lesssim 0.1 \label{eq:alpha-0}\\
+\alpha_1 &= \int_{-1}^1 du'\, (3 u'^2) \frac{1}{e^{u'/T^*}-1} = -1 \label{eq:alpha-1}\\
+\alpha_2 &= \int_{-1}^1 du'\,\frac{u'}{2} (3 u'^2) \frac{1}{e^{u'/T^*}-1} \approx \frac{3}{8} + \frac{\pi^4}{5}(T^*)^4 \quad \text{for} \quad T^*\lesssim 0.1
+  \label{eq:alpha-2}
+\end{align}
+Then the structure factor is
+\begin{align}
+S(Q, u) &\approx\frac{1}{2 \pi \omega_l} e^{-2 W} \int_{-\infty}^\infty dt'\, e^{-iut'} e^{Q^2 (\alpha_0 - it'\alpha_1 - t'^2 \alpha_2)} \nonumber\\
+   &= \frac{1}{2 \pi \omega_l} e^{-2 W} \sqrt{\frac{\pi}{Q^2 \alpha_2}} e^{Q^2 \alpha_0} \exp\left\{ -\frac{(u + Q^2 \alpha_1)^2}{4 Q^2 \alpha_2} \right\} \nonumber\\
+   &= \frac{1}{\sqrt{4 \pi \omega_l^2 Q^2 \alpha_2}} \exp\left\{ -\frac{(u - Q^2)^2}{4 Q^2 \alpha_2} \right\} \\
+   &= \frac{1}{\sqrt{4 \pi \omega_l E_r \alpha_2}} \exp\left\{ -\frac{(\omega - E_r)^2}{4 \omega_lE_r \alpha_2} \right\}
+   \label{eq:ImpulseApproximationStructureFactor}
+\end{align}
+where in the last line we have rewritten the result in terms of dimensionful variables and the non-relativistic recoil energy $E_r = q^2 / 2 M$. This is the impulse approximation we were seeking, valid for $u \gg 1$. Note that it is a Gaussian centered at $\omega = E_r$ with characteristic width
+\begin{align}
+\Gamma^2 = 2 \alpha_2\, \omega_l E_r
+\end{align}
+ It is strongly peaked for energy transfers equal to the non-relativistic kinetic energy of the ejected particle, and we thus expected to be valid for energy transfers less than the mass of the ejected lattice particle (lest we pass into the relativistic regime).
 
-These same references say that multi-phonon excitations are only relevant near the melting point. I should review the argument behind this and see whether it still holds for high-energy incident particles.
-\end{mdframed}
+Compare this to the result for a free particle (see \cite{impulse} equation (2.17))
+\begin{align}
+S(q, \omega) = \frac{1}{\sqrt{4 \pi T E_r}} \exp \left\{ -\frac{(\omega - E_r)^2}{4 TE_r} \right\}
+\end{align}
+which has width $\Gamma_\text{free}^2 = 2 TE_r$. This approaches a delta function as $T\to 0$, but the lattice result does not. There is always an effective doppler broadening in the lattice (even at zero temperature), presumably because of zero-point fluctuations.
+
+\subsection{Term-by-term phonon contributions}
+
+\subsubsection{One-phonon contribution}
+
+For small momentum transfers, we can expand the structure factor \eqref{eq:DimensionlessStructureFactor} for small $Q$. Doing this, we can evaluate the time integrals to find energy delta functions:
+\begin{align}
+S(Q, u) &\approx \frac{1}{2 \pi \omega_l} e^{-2 W} \int_{-\infty}^\infty dt'\, e^{-iut'} (1 + Q^2 g(t')) \nonumber\\
+   &= \frac{1}{2 \pi \omega_l} e^{-2 W} \int_{-\infty}^\infty dt'\, e^{-iut'} \left( 1 + Q^2 \int_{-1}^1 \frac{du'}{u'}Z(u')n(u')e^{-iu't'} \right) \nonumber\\
+   &= \frac{1}{\omega_l} e^{-2 W} \left( \delta(u) + Q^2 \frac{Z(-u)}{-u}n(-u)\,\theta(1-|u|) \right) \nonumber\\
+   &= \frac{1}{\omega_l} e^{-2 W} \left( \delta(u) + Q^2 \frac{Z(u)}{u}[n(u) + 1]\,\theta(1-|u|) \right)
+\end{align}
+The first term is the elastic scattering term, which we will neglect since we are only interested in inelastic scattering. Note we have assumed that the density of states vanishes beyond the characteristic frequency $\omega_l$, so that a single phonon is bounded on the energy it can carry; the integral over $u'$ in $g(t')$ is then restricted to $-1 < u' < 1$, and results in the Heaviside function seen in the result.
+
+How does the one-phonon term compare with our previous results, which we derived from Kittel \cite{quantum} and massaged with our own approximations? Replacing the dimensionless variables with their definitions, we find
+\begin{align}
+S_\text{1-phonon}(q, \omega) &= \frac{1}{\omega_l} e^{-2 W} Q^2 \frac{Z(u)}{u}[n(u) + 1]\,\theta(\omega_D-|\omega|)  \label{eq:1PhononContribution}\\
+   &= \frac{1}{\omega_l} e^{-2 W} \frac{q^2}{2 m \omega_l} \frac{\omega_l Z(\omega)}{\omega/\omega_l}[n(\omega) + 1]\,\theta(\omega_D-|\omega|)
+\end{align}
+Using the Debye approximation, the dimensionful density of states is $Z(\omega) = 3 \omega^2 / \omega_D^3$ with the Debye energy $\omega_D = c_s(6 \pi^2 n_i)^{1/3}$, so
+\begin{align}
+S_\text{1-phonon}(q, \omega) &= e^{-2 W} \frac{q^2}{2 m} \frac{3 \omega^2 / \omega_D^3}{\omega}[n(\omega) + 1]\,\theta(\omega_D-|\omega|) \nonumber\\
+ &= e^{-2 W} \frac{1}{(2 \pi)^2 n_i} \frac{q^2\omega}{m c_s^3} [n(\omega) + 1]\,\theta(\omega_D-|\omega|)
+\end{align}
+This is a factor of 2 larger than \eqref{eq:UmklappStructureFactor} that we computed by approximating all of the umklapp contributions. It seems more different from the structure factor \eqref{eq:FirstBrilliounZoneStructureFactor} that we computed for the first Brillioun zone, but there the energy \emph{and} momentum transfers are restricted to be $\lesssim \omega_D$ or $\lesssim k_D$, respectively. Letting $\omega \sim \omega_D$ and $q \sim k_D$ here cancels the factor of density and then the two results are parametrically similar.
+
+\subsubsection{Gaussian approximation for $n$-phonon processes}
+
+Similar to the one-phonon approximation, we can examine higher-order terms in \eqref{eq:DimensionlessStructureFactor} to understand the contributions of higher-order phonon processes. This is the case even when $Q^2 \gtrsim 1$, although in that case every term may have an appreciable contribution to the final result. We will use the Debye approximation throughout. The $n$-phonon process contribution to the structure factor is given by
+\begin{align}
+S_{n\text{-ph.}}(Q, u) &= \frac{1}{2 \pi \omega_l} e^{-2 W} \int_{-\infty}^\infty dt'\, e^{-iut'} \frac{(Q^2 g(t'))^n}{n!} \nonumber\\
+   &= \frac{1}{2 \pi \omega_l} e^{-2 W} \int_{-\infty}^\infty dt'\, e^{-iut'} \frac{Q^{2 n}}{n!} \left( \int_{-1}^1 \frac{du'}{u'}Z(u')n(u')e^{-iu't'} \right)^n \nonumber\\
+   &= \frac{1}{2 \pi \omega_l} e^{-2 W} \int_{-\infty}^\infty dt'\, e^{-iut'} \frac{Q^{2 n}}{n!} \prod_{j = 1}^n \left( \int_{-1}^1 \frac{du_j}{u_j}Z(u_j)n(u_j)e^{-iu_jt'} \right)
+\end{align}
+Evaluating the time integral enforces conservation of energy, requiring that $u + \sum u_j = 0$. Recall that negative values of $u_j$ correspond to phonon emission. We may thus write
+\begin{align}
+S_{n\text{-ph.}}(Q, u) &= \frac{1}{\omega_l} e^{-2 W} \frac{Q^{2 n}}{n!} \prod_{j = 1}^n \left( \int_{-1}^1 \frac{du_j}{u_j}Z(u_j)n(u_j) \right)\,\bigg|_{u + \sum u_j = 0}
+\end{align}
+We will now proceed to employ a series of massages and approximations apparently originally due to Sj\"{o}lander (\cite{sj}) and Schofield and Hassitt (\cite{sch1}, \cite{sch2}). The results are allegedly quoted in \cite{impulse} (see equation (2.12) and following) but they don't seem quite right. The methods used to derive those equations are explained in \cite{multiphonon}, so we will reproduce the results on our own here. (The results are also given in \cite{multiphonon}, but there seem to be some typos, most critically in the definition of the Gaussian width $R$.)
+
+We begin by noting that
+\begin{align}
+\frac{Z(u_j)}{u_j} n(u_j) = \frac{Z(u_j)}{u_j} \frac{1}{e^{u_j/T^*} - 1} = \frac{Z(u_j)}{u_j} \frac{e^{-u_j/2T^*}}{2\sinh(u_j/2T^*)}
+\end{align}
+Inserting this, we can then pull out the exponentials in the combined integrands thanks to the condition $u + \sum u_j = 0$. The result is
+\begin{align}
+S_{n\text{-ph.}}(Q, u) &= \frac{1}{\omega_l} e^{-2 W} \frac{Q^{2 n}}{n!} e^{u/2T^*} \prod_{j = 1}^n \left( \int_{-1}^1 du_j\, \frac{Z(u_j)}{u_j} \frac{1}{2\sinh(u_j/2T^*)} \right)\,\bigg|_{u + \sum u_j = 0}
+\end{align}
+We now rewrite the integrand as
+\begin{align}
+G(u_j, T^*) = \frac{1}{2 \beta} \frac{Z(u_j)}{u_j\sinh(u_j / 2 T^*)}
+\end{align}
+with the normalization constant
+\begin{align}
+\beta = \int_0^1 du_j\, \frac{Z(u_j)}{u_j\sinh(u_j / 2 T^*)} \approx 3 \pi^2 T^2 \quad\text{for}\quad T^*\lesssim 0.1
+\end{align}
+chosen so that each integral $\int_{-1}^1 du_j\, G(u_j, T^*) = 1$. The structure factor written this way is
+\begin{align}
+S_{n\text{-ph.}}(Q, u) &= \frac{1}{\omega_l} e^{-2 W} \frac{Q^{2 n}}{n!} e^{u/2T^*} \beta^n \prod_{j = 1}^n \left( \int_{-1}^1 du_j\, G(u_j, T^*) \right)\,\bigg|_{u + \sum u_j = 0}
+\end{align}
+We now make two critical approximations that allow us to simplify this result. First, we suppose that the function $G(u_j, T)$ can be approximated by a Gaussian:
+\begin{align}
+G(u_j, T^*) &\approx \frac{1}{\sqrt{2 \pi R^2}} e^{-u_j^2 / 2 R^2} \quad\text{with}\quad R = \frac{\beta}{3\sqrt{2 \pi}\, T^*}
+\end{align}
+where we have chosen $R$ to match the value of $G(u_j, T^*)$ at $u_j = 0$. Checking in Mathematica, this seems to be a good approximation to the form of $G$ for a wide range of $T^*$, small and large. However, it drops off too rapidly for small temperatures, and will lead to a vanishing of multi-phonon processes in the final result for $T^*\to 0$.
+
+Secondly, we extend the limits of integration for each $u_j$ out to infinity. This seems to be a good approximation at least for $T^*\lesssim 0.1$, since then the Gaussian is negligible for $|u_j|\gtrsim1$. With these two approximations in hand, we can now use the following useful fact of Gaussian integrals to simplify the structure factor:
+\begin{align}
+\prod_{j = 1}^n \left( \int_{-\infty}^\infty \frac{1}{\sqrt{2 \pi R^2}} e^{-u_j^2 / 2 R^2} \right) \delta\left(u + \sum_{i = 1}^n u_i \right) = \frac{1}{\sqrt{2 \pi n R^2}} e^{-u^2 / 2 nR^2}
+\end{align}
+This is described in the various articles mentioned earlier as a central limit theorem result, but can also simply be checked in Mathematica.
+
+Finally, we find the $n$-phonon contribution to the structure factor is given approximately by
+\begin{align}
+S_{n\text{-ph.}}(Q, u) &\approx \frac{1}{\omega_l} e^{-2 W} \frac{Q^{2 n}}{n!} e^{u/2T^*} \beta^n \frac{1}{\sqrt{2 \pi n R^2}} e^{-u^2 / 2 nR^2}
+\label{eq:MultiPhononContribution}
+\end{align}
+In principle this should also come with a Heaviside function $\theta(n - |u|)$ just like the one-phonon contribution, but we find empirically that the $e^{-u^2 / 2 nR^2}$ term crushes the $n$-phonon contribution well before $u \sim n$.
+
+Unfortunately, we see in this result very undesirable behavior for $T^*\to 0$: the Gaussian width $R\to 0$, forcing the contribution of all $n\geq 2$ processes to zero. This is certainly unphysical. It arises because we extracted an exponential early on from the integrand, which otherwise would have balanced against the exact integrand would give rise to the $n(u) + 1$ that makes it possible for phonons to be created even at zero temperature.
+
+% \subsubsection{Total inelastic structure factor}
+%
+% We have now calculated the contributions from all available phonon processes in the incoherent approximation. We now sum these contributions to find the total inelastic structure factor, and consider the result. Combining equations \eqref{eq:1PhononContribution} and \eqref{eq:MultiPhononContribution}, we find
+% \begin{align}
+% S_\text{in}(Q, u) &\approx \frac{1}{\omega_l} e^{-2 W} Q^2 \frac{Z(u)}{u}[n(u) + 1]\,\theta(1-|u|) \nonumber\\ &\qquad + \sum_{n = 2}^\infty \left( \frac{1}{\omega_l} e^{-2 W} \frac{Q^{2 n}}{n!} e^{u/2T^*} \beta^n \frac{1}{\sqrt{2 \pi n R^2}} e^{-u^2 / 2 nR^2} \right) \\
+%    &=
+% \end{align}
 
 
+\subsection{Computing singly-differential cross-sections and stopping powers}
 
-% $\sum_\textbf{G}\sim\frac{4\pi G^2 dG}{\left(\frac{2\pi}{a}\right)^3}$ for large $|\textbf{q}-\textbf{k}_\nu|$?
+\subsubsection{Impulse approximation}
+
+Let us compute the singly-differential cross-section and subsequently the stopping power for the impulse approximation. We recall the structure factor is given by
+\begin{align}
+S(q, \omega) &\approx \frac{1}{\sqrt{4 \pi \omega_l E_r \alpha_2}} \exp\left\{ -\frac{(\omega - E_r)^2}{4 \omega_lE_r \alpha_2} \right\} \tag{\ref{eq:ImpulseApproximationStructureFactor}}
+\end{align}
+where $E_r = q^2 / 2 M$ is the non-relativistic recoil energy and $\alpha_2 \approx (3/8) + (\pi^4/5)(T^*)^4$ for $T^*\lesssim 0.1$ \eqref{eq:alpha-2}. This is valid for energy transfers $\omega \gg \omega_l = \omega_D$. An incident electron scattering of the lattice will be relativistic both before and after the scatter, because it cannot dip below the surface of the Fermi sea. Nevertheless, its incident energy may change by $\OO(1)$ in a high-energy scatter of this sort. In terms of the initial and final momenta and energy transfer, the momentum transfer is then
+\begin{align}
+q^2 &= |\textbf{k} - \textbf{k}'|^2 = k^2 + k'^2 - 2 kk'\cos\theta_{k'} \nonumber\\
+  &= k^2 + (k - \omega)^2 - 2 k(k - \omega)\cos\theta_{k'} \label{eq:RelativisticMomentumTransfer}
+\end{align}
+We can then change variables to the recoil energy, and write
+\begin{align}
+q^2 &= 2 ME_r \\
+d(\cos\theta_{k'}) &= \frac{M}{-k(k - \omega)}\,dE_r
+\end{align}
+where $E_r$ ranges from $(2 k - \omega)^2 / 2 M$ to $\omega^2 / 2 M$ correspondent to $d(\cos\theta_{k'})$ ranging from $-1$ to $1$.
+Writing the incident particle mass as $m$, the singly-differential cross-section for a Fermi-screened Coulomb scatter is then given by
+\begin{align}
+  \frac{d \sigma}{d \omega} &= \int d \Omega\, \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 |V_\textbf{q}|^2 S(q, \omega)  \nonumber\\
+     &\approx \int d(\cos\theta_{k'})\, d \phi_{k'}\, \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{q^2+ \lambda^2} \right]^2 \frac{1}{\sqrt{4 \pi \omega_l E_r \alpha_2}} e^{-(\omega - E_r)^2/4 \omega_lE_r \alpha_2} \nonumber\\
+     &= 2 \pi \int_{\frac{(2 k - \omega)^2}{2 M}}^{\frac{\omega^2}{2 M}} \frac{M\, dE_r}{-k(k - \omega)} \frac{k - \omega}{k} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{2 M E_r + \lambda^2} \right]^2 \frac{e^{-(\omega - E_r)^2/4 \omega_DE_r \alpha_2}}{\sqrt{4 \pi \omega_D E_r \alpha_2}}  \nonumber\\
+\end{align}
+Mathematica cannot handle this integral, so let us first non-dimensionalize and then numerically compute what we need to. We define the dimensionless variables $Q^2, u, \eta, \kappa$ as follows:
+\begin{align}
+E_r = Q^2 \omega_D \qquad \omega = u\, \omega_D \qquad \lambda^2 = \eta^2 (2 M \omega_D) \qquad k = \kappa\, \omega_D
+\end{align}
+Note $\kappa \gg 1$ because the incoming particle is energetic, $u\leq \kappa$ because of kinematics, $Q^2 \ll M / \omega_D \sim 10^6$ in order to stay non-relativistic, and $u\gg 1$ in order for the impulse approximation to be valid. In the white dwarf, $\eta^2 \sim 10^{-4}$. Then the cross-section becomes
+\begin{align}
+  \frac{d \sigma}{d \omega} &= 2 \pi \frac{M}{-k^2} \left( \frac{m}{2 \pi} \right)^2 \left( 4 \pi Z\alpha \right)^2 \int_{\frac{(2 k - \omega)^2}{2 M}}^{\frac{\omega^2}{2 M}} dE_r\, \left[ \frac{1}{2 M E_r + \lambda^2} \right]^2 \frac{e^{-(\omega - E_r)^2/4 \omega_DE_r \alpha_2}}{\sqrt{4 \pi \omega_D E_r \alpha_2}}  \nonumber\\
+   &= 2 \pi \frac{M}{-k^2} \left( \frac{m}{2 \pi} \right)^2 \left( 4 \pi Z\alpha \right)^2 \int_{\frac{\omega_D}{2M}(2 \kappa - u)^2}^{\frac{\omega_D}{2M}u^2} d(Q^2)\, \frac{\omega_D}{(2 M\omega_D)^2} \left[ \frac{1}{Q^2 + \eta^2} \right]^2 \frac{e^{-(u - Q^2)^2/4 Q^2 \alpha_2}}{\omega_D \sqrt{4 \pi Q^2 \alpha_2}}  \nonumber\\
+   &= \frac{2 \pi m^2 Z^2 \alpha^2}{Mk^2\omega_D^2} \int^{\frac{\omega_D}{2M}(2 \kappa - u)^2}_{\frac{\omega_D}{2M}u^2} d(Q^2)\, \left[ \frac{1}{Q^2 + \eta^2} \right]^2 \frac{e^{-(u - Q^2)^2/4 Q^2 \alpha_2}}{\sqrt{4 \pi Q^2 \alpha_2}}
+\end{align}
+We could numerically integrate this, but even doing so we find that it is a good approximation to simply treat the Gaussian as a delta function, so we find
+\begin{align}
+  \frac{d \sigma}{d \omega} &\approx \frac{2 \pi m^2 Z^2 \alpha^2}{Mk^2\omega_D^2} \frac{1}{(u + \eta^2)^2} \approx \frac{2 \pi m^2 Z^2 \alpha^2}{Mk^2\omega^2}
+\end{align}
+This is off from the result Vijay calculated for the appendix by a factor of $m^2 / k^2$, so it seems we must've made a mistake somewhere. Maybe there was something wrong with the change of variables?
+
+\subsubsection{Free particle}
+
+The previous subsection discovered a wrong result, but I cannot locate the error. Let us try with the structure factor for a free particle to try and narrow it down. The free particle structure factor is given by
+\begin{align}
+S(q, \omega) &= \delta\left( \omega - E_r \right)
+\end{align}
+where $E_r = q^2 / 2 M$ is the non-relativistic recoil energy. This is valid for energy transfers $\omega \ll M$. Suppose the incident electron is relativistic both before and after the collision. The momentum transfer is then
+\begin{align}
+q^2 &= |\textbf{k} - \textbf{k}'|^2 = k^2 + k'^2 - 2 kk'\cos\theta_{k'} \nonumber\\
+  &= k^2 + (k - \omega)^2 - 2 k(k - \omega)\cos\theta_{k'} \label{eq:RelativisticMomentumTransfer}
+\end{align}
+We can then change variables to the recoil energy, and write
+\begin{align}
+q^2 &= 2 ME_r \\
+d(\cos\theta_{k'}) &= \frac{M}{-k(k - \omega)}\,dE_r
+\end{align}
+where $E_r$ ranges from $(2 k - \omega)^2 / 2 M$ to $\omega^2 / 2 M$ correspondent to $d(\cos\theta_{k'})$ ranging from $-1$ to $1$.
+Writing the incident particle mass as $m$, the singly-differential cross-section for an unscreened Coulomb scatter is then given by
+\begin{align}
+  \frac{d \sigma}{d \omega} &= \int d \Omega\, \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 |V_\textbf{q}|^2 S(q, \omega)  \nonumber\\
+     &\approx \int d(\cos\theta_{k'})\, d \phi_{k'}\, \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{q^2} \right]^2 \delta(\omega - E_r) \nonumber\\
+     &= 2 \pi \int_{\frac{(2 k - \omega)^2}{2 M}}^{\frac{\omega^2}{2 M}} \frac{M\, dE_r}{-k(k - \omega)} \frac{k - \omega}{k} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{2 M E_r} \right]^2 \delta(\omega - E_r) \nonumber\\
+     &= 2 \pi \int^{\frac{(2 k - \omega)^2}{2 M}}_{\frac{\omega^2}{2 M}} \frac{M\, dE_r}{k^2} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{2 M E_r} \right]^2 \delta(\omega - E_r) \nonumber\\
+     &= 2 \pi  \frac{M}{k^2} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{2 M \omega} \right]^2 \nonumber\\
+     &= \frac{2 \pi m^2 Z^2 \alpha^2}{k^2 M\omega^2}
+\end{align}
+Once again this is off from the result Vijay calculated for the appendix by a factor of $m^2 / k^2$, so it seems we must've made a mistake somewhere. It is important we figure this out, because the $1/k^2$ behavior seems to appear generically in how we are evaluating these integrals, including for the harmonic oscillator approximation in the next section.
+
+Could it be that there is a difference between
+\begin{align}
+\frac{d \sigma}{d \omega} \qquad\text{and}\qquad \frac{d \sigma}{d E'}
+\end{align}
+where $\omega$ is the energy transfer and $E' = k'$ is the final energy, and there is some density of states or something that transforms between them?
+
+
+\section{Single harmonic oscillator approximation}
+
+Surjeet is adamant that we ought to be able to simply use the ``$q^2 / m \omega$'' correction to the cross-section and move on. I think we can clarify and formalize this intuition by approximating the phonon spectrum available in the lattice by a single frequency. That is, consider exciting phonons of the lattice as exciting energy states in a single harmonic oscillator, rather than in the collection of harmonic oscillators that is the photon spectrum. As commented after \eqref{eq:LatticeScatteringFunctionExponent}, this is tantamount to approximating the true density of states---e.g., $Z(\omega) = 3 \omega^2 / \omega_D^3$ for the Debye approximation---by a delta function with characteristic frequency $\omega_0$: $Z(\omega) = (\omega / \omega_0) \delta(\omega - \omega_0)$. This allows us to avoid all of the complicated integrals over the phonon spectrum, which simplifies our lives dramatically.
+
+We will begin here by repeating some results derived in \cite{interactions}, Section~12.2. The intermediate scattering function for a single harmonic oscillator is given by
+\begin{align}
+F(q, t) &= e^{-q^2 \langle X^2 \rangle} e^{q^2 \langle X(0)X(t) \rangle}
+\end{align}
+were the first term is the Debye-Waller factor, and the second captures the inelastic scattering. Inserting the position operator at finite temperature and manipulating, one finds
+\begin{align}
+\langle X^2 \rangle &= \frac{1}{2 M \omega_0} \coth(z) \\
+\langle X(0)X(t) \rangle &= \frac{1}{2 M \omega_0} \left( n(\omega_0)e^{-i \omega_0 t} + (n(\omega_0) + 1)e^{i \omega_0 t} \right) \nonumber\\
+  &= \frac{1}{2 M \omega_0} \left( \frac{e^z e^{i \omega_0 t} + e^{-z} e^{-i \omega_0 t}}{e^z - e^{-z}} \right)
+\end{align}
+where $z = \omega_0 / 2 T$. For small temperatures, where $z\gg 1$, these reduce to
+\begin{align}
+\langle X^2 \rangle &= \frac{1}{2 M \omega_0} \\
+\langle X(0)X(t) \rangle &= \frac{1}{2 M \omega_0} e^{i \omega_0 t}
+\end{align}
+Then the dynamic structure factor is
+\begin{align}
+S(q, \omega) &= \frac{1}{2 \pi} \int_{-\infty}^\infty dt \, e^{-i \omega t} F(q, t) \nonumber\\
+   &= \frac{1}{2 \pi} \int_{-\infty}^\infty dt \, e^{-i \omega t} e^{-q^2 / 2 M \omega_0} \left[ 1 + \frac{q^2}{2 M \omega_0}e^{i \omega_0t} + \frac12 \left( \frac{q^2}{2 M \omega_0} \right)^2 e^{i2 \omega_0 t} + \cdots \right] \nonumber\\
+   &= e^{-q^2 / 2 M \omega_0} \left[ \delta(\omega) + \frac{q^2}{2 M \omega_0}\delta(\omega - \omega_0) + \frac12 \left( \frac{q^2}{2 M \omega_0} \right)^2 \delta(\omega - 2\omega_0) + \cdots \right] \nonumber\\
+\end{align}
+For the inelastic part of this, simply neglect the $\delta(\omega)$ term.
+
+It now remains to computes the cross-section and stopping power. The singly-differential cross-section for the $n$th process is given by
+\begin{align}
+\frac{d \sigma_n}{d \omega} &= \int d \Omega\, \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 |V_\textbf{q}|^2 S(q, \omega)  \\
+&= \int d(\cos\theta_{k'})\, d \phi_{k'}\, \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{q^2 + \lambda^2} \right]^2 e^{-q^2 / 2 M \omega_0} \frac{1}{n!}\left( \frac{q^2}{2 M \omega_0} \right)^n \delta(\omega - n \omega_0) \nonumber
+\end{align}
+The momentum transfer is related to the solid angle by
+\begin{align}
+q^2 &= k^2 + (k - \omega)^2 - 2 k(k - \omega)\cos\theta_{k'} \tag{\ref{eq:RelativisticMomentumTransfer}}
+\end{align}
+Let us define dimensionless variables like we did in the last section:
+\begin{align}
+Q^2 = \frac{q^2}{2 M \omega_0} \qquad u = \omega / \omega_0 \qquad \kappa = k / \omega_0 \qquad \eta^2 = \frac{\lambda^2}{2 M \omega_0}
+\end{align}
+Then from the momentum transfer we find
+\begin{align}
+Q^2 &= \frac{\omega_0}{2 M}\left( \kappa^2 + (\kappa - u)^2 - 2 \kappa(\kappa - u)\cos\theta_{k'} \right) \\
+d(Q^2) &= -\frac{\omega_0}{M} \kappa(\kappa - u)\, d(\cos\theta_{k'})
+\end{align}
+where $Q^2$ ranges from $Q_2^2 \equiv (2 \kappa - u)^2 \omega_0 / 2 M$ to $Q_1^2 \equiv u^2 \omega_0 / 2 M$ correspondent to $d(\cos\theta_{k'})$ ranging from $-1$ to $1$. As in the previous section, note $\kappa \gg 1$ because the incoming particle is energetic, $u\leq \kappa$ because of kinematics, $Q^2 \ll M / \omega_0 \sim 10^6$ in order to stay non-relativistic, and $\eta^2 \sim 10^{-4}$ with typical white dwarf parameters.
+
+The singly-differential cross-section now becomes
+\begin{align}
+\frac{d \sigma_n}{d \omega} &= 2 \pi\int_{Q_1^2}^{Q_2^2} \frac{M\,d(Q^2)}{\omega_0 \kappa(\kappa - u)}\, \frac{(\kappa - u)}{\kappa} \left( \frac{m}{2 \pi} \right)^2 \left[ \frac{4 \pi Z\alpha}{(2 M \omega_0)(Q^2 + \eta^2)} \right]^2 e^{-Q^2} \frac{Q^{2 n}}{n!} \delta(\omega - n \omega_0) \nonumber\\
+   &= \frac{2 \pi Z^2 \alpha^2 m^2}{Mk^2 \omega_0^2} \delta(u - n) \int_{Q_1^2}^{Q_2^2} d(Q^2)\, \frac{e^{-Q^2}}{(Q^2 + \eta^2)^2} \frac{(Q^2)^n}{n!}
+\end{align}
 
 
 \begin{thebibliography}{1}
@@ -406,6 +667,14 @@ These same references say that multi-phonon excitations are only relevant near t
   \bibitem{dwarf} Baiko, \emph{Ion Structure Factors and Electron Transport in Dense Coulomb Plasmas}
   \bibitem{french} Jancovici, \emph{On the Relativistic Degenerate Electron Gas}
   \bibitem{intro} Kittel, \emph{Introduction to Solid State Physics}
+  \bibitem{impulse} Gunn, \emph{The Effect of High Momentum Transfer on Scattering from Oscillators and Crystals}
+  \bibitem{interactions} Chen, \emph{Interactions of Photons and Neutrons with Matter}
+  \bibitem{multiphonon} Kothari and Sinkwi, \emph{Interaction of Thermal Neutrons with Solids}
+  \bibitem{sj} Sj\"{o}lander, A.: Arkiv Fysik \textbf{14}, 315 (1958) (from \cite{impulse} and \cite{multiphonon})
+  \bibitem{sch1} P. Schofield and A. Hassitt, \emph{Proc. 2nd Intern. Conf. on Peaceful Uses of Atomic Energy, Geneva} P 18 (1958). (from \cite{multiphonon})
+  \bibitem{sch2} Schofield, P., Hassitt, A.: Progress in nuclear energy. Ser. I, Vol. 3, p dots in 194. London: Pergamon Press 1959 (from \cite{impulse})
+
+
 \end{thebibliography}
 
 \end{document}
