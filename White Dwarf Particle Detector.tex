@@ -78,8 +78,8 @@ As a concrete example, we are able to constrain supersymmetric Q-ball dark matte
 
 \end{abstract}
 \maketitle
-\tableofcontents
-\newpage
+%\tableofcontents
+%\newpage
 
 \section{Introduction}
 \label{sec:Introduction}
@@ -188,6 +188,7 @@ The remainder of this Section is dedicated to computing the heating properties o
 We characterize the heating due to $N$ particles of a single SM species and uniform energy $\epsilon$ released isotropically in the WD by the quantity $\Delta$, the width of the resulting initial ion temperature peak. 
 As we are only concerned with depositing sufficient energy to ignite SN, we only consider the case of $\epsilon \gg T_f \sim \text{MeV}$. 
 \textcolor{blue}{We also assume a nominal upper bound $\sim 10^{17} ~\GeV$ so that we may conservatively ignore interactions beyond the SM.} 
+As a benchmark, the value of $\Delta$ for any species should be compared to the trigger size $\lambda_T \sim 10^{-5} - 10^{-2} ~\text{cm}$ in order to gauge the efficiency with which it deposits energy. 
 It is important to note that any net displacement of this ion temperature profile from the point of origin of released SM particles is irrelevant for the sake of triggering runaway fusion. 
 If $N \gg 1$ this displacement is negligible but for $N \sim 1$ it could be much larger than $\Delta$. 
 We take care to distinguish the heating in this two scenarios when applicable.
@@ -199,9 +200,12 @@ To leading order $R \sim E \cdot \l dE/dx \r^{-1}$, and this is plotted in Figur
 
 \subsection{Heating Properties of Hadrons}
 
-The energy loss of nucleons and pions is depicted in Figures \ref{fig:SPnuc} and \ref{fig:SPpion}.
-First we consider the range of low-energy hadrons less than the nuclear binding energy $\epsilon \lesssim E_\text{nuc} \sim 10 ~\text{MeV}$. 
-At these energies, protons and neutrons are stopped predominantly through elastic nuclear scatters, characterized by a typical mean free path $ l_\text{h,el} \sim 1/n_\text{ion} \sigma_\text{h,el}$. 
+The range of nucleons and pions is depicted in Summary. 
+First we consider the energy loss of low-energy hadrons less than the nuclear binding energy $\epsilon \lesssim E_\text{nuc} \sim 10 ~\text{MeV}$. 
+At these energies, protons and neutrons are stopped predominantly through elastic nuclear scatters, characterized by a typical mean free path
+\begin{equation}
+l_\text{h,el} \sim 1/n_\text{ion} \sigma_\text{h,el} \approx 10^{-7} ~\text{cm} 
+\end{equation}
 Thermalization of ions will occur after these nucleons have transferred $\OO(1)$ of their energy in the form of a random walk, which occurs after $\sim 10$ nuclear collisions. 
 On the other hand, for charged pions the dominant stopping mechanism is to transfer energy to electrons in the stellar medium through Coulomb collisions.
 In this case, the heating of ions depends on the distance over which electrons below $\sim 10~\MeV$ are able to scatter off ions. 
@@ -210,7 +214,7 @@ This is to be expected since these electrons can acquire a temperature at most j
 
 For hadrons of energy $\epsilon > 10 ~\text{MeV}$, the energy loss is dominated by nonelastic nuclear collisions in which an incoming hadron strongly interacts with a target nuclear constituent to produce several secondary hadrons.
 The remaining nucleus is left in an excited state of energy $\sim 10 ~\text{MeV}$ with negligible center-of-mass recoil \textcolor{blue}{cite}, while the incident energy is transferred almost entirely to secondaries.
-For sufficiently high energies, the result will be a roughly collinear hadronic shower. 
+At sufficiently high energies, the result will be a roughly collinear hadronic shower. 
 Shower constituents will tend to be pions and nucleons in roughly equal fractions, along with a few heavier states, i.e.\ deuterons, alpha particles, etc.\ \textcolor{blue}{citation}
 The energy loss of a hadronic shower is set by the typical mean free path for nonelastic collisions with nuclei in the WD $l_\text{h,non} \sim 1/n_\text{ion} \sigma_\text{h,non}$. 
 with the key length scale being $l_\text{h,non} \sim 1/n_\text{ion} \sigma_\text{h,non}$, the typical mean free path for nonelastic collisions with nuclei in the WD.
@@ -220,7 +224,13 @@ The shower terminates when constituents reach the critical energy $\sim 10 ~\tex
   X_{\text{had}} \sim l_\text{h,non} \log\l\frac{\epsilon}{E_\text{nuc}}\r
   \approx 10 ~l_\text{h,non}.
 \end{align}
-Therefore a high-energy nucleon or pion ultimately transfers its energy to many low-energy $\sim 10 ~\text{MeV}$ hadrons, displaced a distance $X_\text{had}$ from its starting point. 
+Therefore a high-energy nucleon or pion ultimately transfers its energy to many low-energy $\sim 10 ~\text{MeV}$ hadrons, displaced a distance $X_\text{had}$ from its starting point.
+Note that while neutrons and $\pi^\pm$ are long-lived, neutral pions decay to photons with a mean lifetime $\sim 10^{-16} ~\text{s}$. 
+For instance, a $10 ~\text{MeV}$ neutral pion has a decay length of order $\sim 10^{-6} ~\text{cm}$ while more relativistic $\pi^0$ can travel much further.
+Hence, there will be electromagnetic contributions from $\pi^0$ decays during the progression of a hadronic shower for all but the most dense WDs. 
+These will 
+ 
+
 The energy loss of these shower products is determined as above - nucleons (and any heavier hadrons) will efficiently heat ions via elastic nuclear scatters while charged pions will instead heat electrons. 
 As each nucleon and pion species carries roughly an $\OO(1)$ fraction of the initial energy, we may simple ignore the energy lost into electrons.
 Thus $\OO(1)$ of the shower energy will thermalize with ions over a distance set by the mean free path for elastic scatters $ l_\text{h,el}$. 
@@ -468,9 +478,9 @@ With this assumption, it is interesting to note that combining the transit explo
 m_{\text{DM}} >  T_f \lambda_T^2 \l \frac{n_{\text{crust}} R_{\text{crust}}}{v_{\text{esc}}^2} \r.
 \end{align}
 For typical WD parameters we find that the DM mass must be greater than $\sim 10^{27} ~\GeV$, taking the density of the WD crust $n_\text{crust}$ to be a nominal $\OO(10^{-2})$ fraction of the central density $n_\text{ion}$ \textcolor{blue}{cite}. 
-In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or it is so strong that it does not penetrate the crust without losing appreciable kinetic energy.
+In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or is so strong that the DM cannot penetrate the crust without losing appreciable kinetic energy.
 However, it is important to note that this bound is only applicable when the energy input to the WD is chiefly coming from the DM kinetic energy, rather than binding energy or other sources.
-With the above schematic for a DM transit, we constrain the parameter $\sigma_{i,\epsilon} \epsilon$ as a function of DM mass $m_\text{DM}$ - for simplicity, we take a single SM particle released per interaction $N = 1$. 
+With the above schematic for a DM transit, we constrain the parameter $\sigma_{i,\epsilon}$ as a function of DM mass $m_\text{DM}$ - for simplicity, we take a single SM particle released per interaction $N = 1$. 
 This is done in Figures \ref{fig:transitclasses}, \ref{fig:transitepsilon}, and \ref{fig:transitspecies} using the different classes of observation available and for representative choices of $\epsilon$ and SM species $i$ released.
 
 \begin{figure}
@@ -493,7 +503,7 @@ M_Q \sim m_S Q^{3/4}, ~~~ R_Q \sim m_S^{-1} Q^{1/4},
 where $m_S$ is related to the scale of supersymmetry breaking.
 The condition $M_Q/Q < m_p$ ensures that the Q-ball is stable against decay to nucleons \cite{Dine:2003ax}.
 When an (electrically neutral) baryonic Q-ball interacts with a nucleon, it absorbs its baryonic charge as a minimum-energy configuration and induces the dissociation of the nucleon into free quarks.
-During this process, $\sim \text{GeV}$ of energy is released through the emission of 2 - 3 pions \cite{Dine:2003ax}.
+During this proton decay-like process, $\sim \text{GeV}$ of energy is released through the emission of 2 - 3 pions \cite{Dine:2003ax}.
 We assume that for each Q-ball collision, there is equal probability to produce $\pi^0$ and $\pi^\pm$ under the constraint of charge conservation.
 The cross section for this interaction is approximately geometric:
 \begin{align}
@@ -525,19 +535,20 @@ The strongest proposed limits due to the existence of a heavy WD in the galactic
 \section{Particle Interactions in a White Dwarf}
 \label{sec:Appendix}
 Here we provide a detailed analysis of the possible electromagnetic and strong interactions in a WD.
-This is primarily aimed towards calculating the stopping of high-energy electrons, photons, and light hadrons (protons, neutrons, pions) within the stellar medium, the results of which are summarized in Figures \ref{fig:SPelectron}, \ref{fig:SPphoton}, \ref{fig:SPnuc}, and \ref{fig:SPpion}.
+This is primarily aimed towards calculating the stopping of electrons, photons, and light hadrons (protons, neutrons, pions) within the stellar medium at energies greater than $\sim \text{MeV}$. 
+These results of these stopping powers are summarized in Figures \ref{fig:SPelectron}, \ref{fig:SPphoton}, \ref{fig:SPnuc}, and \ref{fig:SPpion}.
 The interior of a WD is a complex environment (unless otherwise noted, we will assume a carbon-oxygen WD).
 Famously, the star is supported against collapse by electron degeneracy pressure with a characteristic Fermi energy
 \begin{equation}
 E_F \sim (3 \pi^2 n_e)^{1/3} \sim 0.1 - 1 ~\text{MeV}
 \end{equation}
-where $n_e$ is the number density of electrons.
+where $n_e \sim 10^{30} - 10^{33} ~\text{cm}^{-3}$ is the number density of electrons (we take $\hbar = c = 1$ throughout). 
 The nuclei are at an ambient temperature $T \sim \text{keV}$ and form a strongly-coupled plasma with lattice energy
 \begin{equation}
 \label{eq:lattice}
 \omega \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}} \sim 10^{-2} - 10^{-1} ~\text{MeV}
 \end{equation}
-where $n_\text{ion}$ is the number density of nuclei \cite{Teukolsky}. 
+where $n_\text{ion} \sim 10^{29} - 10^{32} ~\text{cm}^{-3}$ is the number density of nuclei \cite{Teukolsky}. 
 \begin{figure}
 \includegraphics[scale=.60]{SPelectron.pdf}
 \caption{Electron energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$ For $n_e \gtrsim 10^{32} ~\text{cm}^{-3}$, bremsstrahlung and pair production contributions should be ignored}
@@ -559,7 +570,7 @@ where $n_\text{ion}$ is the number density of nuclei \cite{Teukolsky}.
 \label{fig:SPpion}
 \end{figure}
 
-\subsection*{Coulomb Collisions}
+\subsection{Coulomb Collisions}
 
 Elastic electromagnetic interactions are a dominant source of energy loss for low-energy charged particles scattering off ions or degenerate electrons in the WD. 
 A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationary target of mass $M$, charge $Ze$ at impact parameter $b$ will transfer energy
@@ -584,6 +595,7 @@ where $W_\text{kin}$ is the maximum possible energy transfer satisfying kinemati
 \label{eq:ekin}
 W_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2}.
 \end{equation}
+For light targets such as electrons $M = m_e \ll m$, this reduces to $W_\text{kin} \approx 2 m_e \beta^2 \gamma^2$, while for electron-electron scattering this is the full energy of the incident electron with a factor of 1/2 to account for the identical particles.
 It is straightforward to understand the parametric dependences of \eqref{eq:rutherford}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets.
 
 We first compute the energy loss of high-energy charged particles via Coulomb scattering off nuclear targets. 
@@ -593,11 +605,11 @@ In this case, the stopping power is parametrically of order
 -  \l \frac{dE}{dx}\r \sim \frac{n_\text{ion} Z^2 \alpha^2}{M \beta^2} \log {\l\frac{W_{\text{max}}}{W_{\text{min}}}\r}.
 \end{align}
 We take the upper limit $W_\text{max}$ to be the maximum energy transfer allowed kinematically \eqref{eq:ekin}. 
-The minimum energy transfer $W_\text{min}$ is set by the impact parameter at which charge screening becomes relevant. 
-In a WD, the degenerate electron gas exponentially screens Coulomb interactions at distances of order the Thomas-Fermi length:
+The minimum energy transfer $W_\text{min}$ should be set by the impact parameter at which charge screening becomes relevant. 
+In a WD, the screening length $\kappa_{\text{sc}}^{-1}$ due to the degenerate electron gas can be calculated in the Thomas-Fermi approximation
 \begin{equation}
 \label{eq:TF}
-\lambda_{\text{TF}} = \l \frac{6 \pi Z \alpha n_e}{E_F}\r^{-1/2}.
+\kappa_{\text{sc}}^{2} = \frac{6 \pi Z \alpha n_e}{E_F}.
 \end{equation}
 In addition, for energy transfers greater than $\omega$, the lattice structure of ions in the WD introduces further complications.
 In particular, momentum transfers from collisions below this threshold will lead to suppressed energy loss due to collective effects.
@@ -627,7 +639,7 @@ This yields a stopping power similar to that obtained with \eqref{eq:QED} up to 
 -\l \frac{dE}{dx} \r \sim \frac{n_e \alpha^2}{m_e}.
 \end{equation}
 
-\subsection*{Compton and Inverse Compton Scattering}
+\subsection{Compton and Inverse Compton Scattering}
 
 Photons and charged particles can elastically exchange energy through Compton scattering.
 We focus first on an incident photon losing energy to the WD medium.
@@ -650,19 +662,19 @@ Thus the typical photon energy loss is large, and cooling proceeds via a small n
 The Compton stopping power is estimated to be
 \begin{equation}
 \label{eq:approx-comptonSP}
-  - \l\frac{dk}{dx}\r \sim \frac{n_e \alpha^2}{m_e} \l 1 - \frac{m_e}{k} \r \approx \frac{n_e \alpha^2}{m_e}.
+  - \l\frac{dk}{dx}\r \sim \frac{n_e \alpha^2}{m_e} \l 1 - \frac{m_e}{k} \r.
 \end{equation}
 A more detailed analysis computes the stopping power as 
 \begin{equation}
 \label{eq:comptonSP}
-  -\l\frac{dk}{dx}\r =  \int d (\cos \theta) n_e \frac{d\sigma_\text{KN}}{d (\cos \theta)} \l k - k^\prime \r
+  -\l\frac{dk}{dx}\r =  \int d (\cos \theta) n_e \frac{d\sigma_\text{KN}}{d (\cos \theta)} \l k - k^\prime \r,
 \end{equation}
 with an appropriate Lorentz boost to the electron rest frame, although the full result only differs from the above estimate by $\OO(1)$ factors.
 Further, Pauli-blocking of the target electrons should be taken into account using a modified number density as in \eqref{eq:pauliblocking}.
 We find that degeneracy only introduces a significant suppression when $k \lesssim 10 ~\text{MeV}$, which is to be expected since the interaction is dominated by hard, near-forward scatters.
 
 We now briefly consider incident electrons which may cool by (inverse) Compton scatters with the thermal bath of photons in the WD.  
-The number density of these photons is set by the temperature of the star $n_\gamma \sim T^3 \approx 10^{23} ~\cm^{-3}$, where we have taken $T \sim \text{keV}$. 
+The number density of these photons is set by the temperature of the star $n_\gamma \sim T^3 \sim 10^{23} ~\cm^{-3}$, where we have taken $T \sim \text{keV}$. 
 As this is parametrically smaller than the number density of electrons, it is reasonable to suspect that the energy loss due to inverse Compton scattering is far subdominant to electron-electron collisions.
 An estimate in the manner of \eqref{eq:approx-comptonSP} gives the inverse Compton stopping power in terms of the photon temperature $T$ and incident electron energy $E$ 
 \begin{equation}
@@ -676,7 +688,7 @@ An estimate in the manner of \eqref{eq:approx-comptonSP} gives the inverse Compt
 where the change in scaling with $E$ marks a transition from Thompson-like scattering in the electron rest frame to suppressed high-energy scattering.
 As expected, we find that the inverse Compton stopping power is negligible compared to Coulomb scattering. 
 
-\subsection*{Bremsstrahlung and Pair Production with LPM Suppression}
+\subsection{Bremsstrahlung and Pair Production with LPM Suppression}
 Bremsstrahlung and pair production should also be considered as stopping mechanisms for high-energy electrons and photons. We restrict our attention to radiative processes off target nuclei rather than target electrons as the latter are additionally suppressed by degeneracy, kinematic recoil, and charge factors. 
 The cross section for an electron of energy $E$ to radiate a photon of energy $k$ is given by the Bethe-Heitler formula
 \begin{equation}
@@ -698,7 +710,7 @@ For a bare nucleus, this distance is the electron Compton wavelength $b_\text{mi
 It is important to note that collisions at impact parameters \emph{less} than $b_\text{min}$ will still radiate, but with exponentially suppressed intensity.
 Classically, this is manifested by the decoherence of radiation at large scattering angles.
 $b_\text{max}$ is set by the distance at which the nuclear target is screened.
-For an atomic target this is of order the Bohr radius, and in the WD this is the Thomas-Fermi length \eqref{eq:TF}.
+For an atomic target this is of order the Bohr radius, and for nuclear targets in the WD this is the Thomas-Fermi screening radius given by \eqref{eq:TF}.
 Evidently, there exists a critical electron number density $n_e \sim 10^{32} ~\text{cm}^{-3}$ at which the logarithmic form factor vanishes.
 For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ whenever $b_\text{min} \lesssim b_\text{max}$ while effectively ignoring the energy loss due to bremsstrahlung in a sufficiently dense WD.
 
@@ -743,40 +755,43 @@ However, the LPM effect suppresses pair production at energies $E(k-E) > k E_\te
 \end{equation}
 Note that the LPM effect is less significant for higher-order electromagnetic processes since these generally involve larger momentum transfers for the same final-state kinematics.
 Thus, when the suppression factor exceeds $\OO(\alpha)$, these interactions should also be considered.
-For instance, the energy loss due to electron direct pair production $e^-N \to e^+ e^- e^- N$ has been calculated in \cite{Gerhardt:2010bj} and is found to exceed that of bremsstrahlung at an energy $\sim 10^{8} ~\GeV$. 
+For instance, the energy loss due to electron direct pair production $eN \to e^+ e^- e N$ has been calculated in \cite{Gerhardt:2010bj} and is found to exceed that of bremsstrahlung at an energy $\sim 10^{8} ~\GeV$. 
 A similar crossover is to be expected for other higher-order diagrams as well, although such a calculation is beyond the scope of this work. 
 Rather, it is expected that at such high energies the stopping power is dominated by photonuclear and electronuclear interactions anyway, and we may simply ignore the contributions from other radiative processes \textcolor{blue}{cite convo with Klein}. 
 
-\subsection*{Nuclear Interactions}
-Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy.
-Elastic collisions are most relevant at scales less than the nuclear binding energy, $E_\text{nuc} \sim 10 ~\text{MeV}$.
+\subsection{Nuclear Interactions}
+Here we discuss particle interactions in the WD due the strong force. 
+Nuclear interactions can be either elastic or nonelastic - the nature of the interaction is largely determined by the incident particle energy. 
+Elastic collisions are most relevant for energy loss at scales less than the nuclear binding energy, $E_\text{nuc} \sim 10 ~\text{MeV}$.
 A single, backward elastic scatter could result in an incident particle losing virtually all of its energy if the incident and target masses are the same.
-However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e.
-ping-pong balls bouncing around a sea of bowling balls.
-An elastic collision between an incident (non-relativistic) mass $m$ with kinetic energy $E$ and a heavy, stationary target mass $M$ results in an energy transfer
+However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
+An elastic collision between a incident, non-relativistic hadron of mass $m$, kinetic energy $E$ and a stationary nuclear target of mass $M$ results in an average energy transfer
 \begin{equation}
 \label{eq:elasticratio}
-E' \approx \l \frac{2 m}{M}\r E, ~~~~ m < M,
+E' \sim \l \frac{m}{M}\r E, ~~~~ m < M,
 \end{equation}
 where it is assumed there is an isotropic distribution in the center-of-mass scattering angle.
-Thus, a nucleon interacting with carbon nuclei transfers roughly 15\% of its incident energy after each elastic collision.
-However, since the ions in a WD form a Coulomb lattice, elastic collisions cannot transfer energy less than \eqref{eq:lattice} without exciting phonon modes.
-In the case of an incident nucleon, this limits the applicability of \eqref{eq:elasticratio} to energies $E \gtrsim \text{MeV}$.
-The cross section for elastic scatters $\sigma_\text{el}$ has considerable dependence on the incident particle species and energy.
-At energies below $\sim \text{MeV}$, $\sigma_\text{el}$ effectively vanishes for protons.
-In the case of neutrons, $\sigma_\text{el}$ is roughly constant below $\sim \text{MeV}$ but is of a complicated form in the intermediate regime $1 - 10 ~\text{MeV}$ due to various nuclear resonances \textcolor{blue}{cite}.
-For our purposes, we assume the elastic cross section for any hadron to be constant $\sigma_\text{el} \approx 1 ~\text{b}$ when $E \gtrsim \text{MeV}$.
+Thus a nucleon interacting with carbon nuclei on average transfers 15\% of its incident energy after each elastic collision.
+At high-energies, the cross section for elastic scatters $\sigma_\text{el}$ more or less independent on the incident particle species and energy.
+Above $\sim \text{MeV}$, electrostatic repulsion is negligible for nuclear interactions of protons and $\pi^+$. 
+In the case of neutrons, $\sigma_\text{el}$ is dominated by nuclear resonances in the regime $1 - 10 ~\text{MeV}$ is still roughly $\sigma_\text{el} \approx 3$
+
+For our purposes, we assume the elastic cross section for any hadron to be constant $\sigma_\text{el} \sim 1 ~\text{b}$ when $E \gtrsim \text{MeV}$. 
+Therefore, the stopping power due to elastic collisions is of the form
+\begin{equation}
+\l \frac{dE}{dx} \r \sim \frac{E}{l_\text{had, el}} \frac{m}{M}, ~~~~ l_\text{had, el} \sim \frac{1}{n_\text{ion} \sigma_\text{el}}.
+\end{equation}
+where $l_\text{had, el}$ denotes the mean free path for elastic collisions. 
 
 Next we consider nonelastic collisions at incident energies $E \gtrsim E_\text{nuc}$.
-In this regime, a nuclear collision generally results in an $\OO(1)$ number of energetic secondary hadrons (i.e.
-protons, neutrons, pions, etc.) emitted roughly in the direction of the primary particle.
+In such a collision the target nucleus is broken up and the incident hadron interacts with one or more protons or neutrons in the nucleus. 
+This strong interaction results in an $\OO(1)$ number of secondary hadrons (i.e. pions, nucleons, etc.) emitted roughly in the direction of the primary particle.
 These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD.
-The remnant nucleus will generally be left in an excited state and relax through the emission of $\OO(10 ~\text{MeV})$ hadrons (``nuclear evaporation") and photons \cite{Rossi}.
+The remnant nucleus fragment will have negligible center-of-mass recoil and generally be unstable.
+
+ and relax through the emission of $\OO(10 ~\text{MeV})$ hadrons and photons \cite{Rossi}.
 A hadronic shower is the result of all such reactions caused by primary and secondary particles.
-For simplicity, we take the nuclear mean free path for a light hadron (proton, neutron, pion) to be constant in energy with characteristic cross section
-\begin{equation}
-l_\text{h,non} \sim  \frac{1}{n_\text{ion} \sigma_\text{non}}, ~~~~ \sigma_\text{non} \approx 100 ~\text{mb}.
-\end{equation}
+For simplicity, we take the nuclear mean free path for a light hadron (proton, neutron, pion) to be constant in energy with characteristic cross section $\sigma_\text{non} \sim 100 ~\text{mb}$. 
 Note that the shower length is only logarithmically sensitive to the initial energy or number of secondaries, and is thus primarily set by the nuclear mean free path.
 In this case, the cascade induced by a high-energy initial hadron is adequately described by a stopping power
 \begin{equation}
@@ -785,17 +800,16 @@ In this case, the cascade induced by a high-energy initial hadron is adequately 
 \end{equation}
 neglecting logarithmic factors of $\OO(1)$.
 The shower will end once final-state hadrons reach a critical energy - this is either the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$.
-Note that while neutrons and $\pi^\pm$ have characteristically long lifetimes, the mean distance traversed by a neutral pion before decaying to photons $\sim 10^{-7} - 10^{-6} ~\text{cm}$ for $E \sim 1 - 10 ~\text{MeV}$.
-Hence, there are minimal electromagnetic contributions from $\pi^0$ decays during the progression of a hadronic cascade.
 
-Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also interact with nuclei and induce a hadronic shower.
-There is considerable uncertainty in the evaluation of high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work.
+Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also strongly interact with nuclei through the production of virtual quark-antiquark pairs. 
+Photonuclear interactions are similar in nature to the interactions of any other hadron, although the cross section $\sigma_{\gamma A}$ is roughly a factor $\approx \alpha$ smaller. 
+Below $\sim \GeV$ the photonuclear cross section shows strong resonant behavior. 
+Above $\sim \GeV$, $\sigma_{\gamma A}$ is more or less constant in energy. 
+
+There is considerable uncertainty in the evaluation of ultra high-energy photonuclear cross sections, and a detailed model is beyond the scope of this work.
 In fact at sufficiently high energies, photonuclear interactions can become coherent with the photon interaction spread over multiple nuclei \cite{Gerhardt:2010bj}.
 This coherence will further reduce the photonuclear mean free path.
-As a conservative estimate, we assume a constant photonuclear cross section in the relevant energy regime
-\begin{align}
-l_{\gamma, \text{non}} \sim \frac{1}{n_\text{ion} \sigma_{\gamma A}}, ~~~~ \sigma_{\gamma A} \approx 1 ~\text{mb}.
-\end{align}
+As a conservative estimate, we assume a constant photonuclear cross section in the relevant energy regime $\sigma_{\gamma A} \sim 1 ~\text{mb}$. 
 Similarly, charged leptons will lose energy via electronuclear interactions in which the incident particle radiates a virtual photon that then interacts hadronically with a nearby nucleus.
 Naively we expect the stopping power to be approximately $\sim E \alpha/l_{\gamma, \text{non}}$.
 A more detailed calculation in \cite{Gerhardt:2010bj} obtains a result that only differs from this estimate by an $\OO(10)$ factor.
