@@ -595,8 +595,9 @@ $W_\text{kin}$ is the maximum possible energy transfer satisfying kinematic cons
 %    \frac{dE}{dx} = \int n_\text{target} W \l \frac{d \sigma}{dW} \r dW,
 %\end{equation}
 %where $n_\text{target}$ is the number density of target particles.
-For a heavy particle incident on an electron target this reduces to $W_\text{kin} \approx 2 m_e \beta^2 \gamma^2$, while for electron-electron scattering we take $W_\text{kin}$ to be half the energy of the incident electron to account for the identical particles \cite{jackson_classical_1999}.
-It is straightforward to understand the parametric dependences of \eqref{eq:mott}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets.
+
+% For a heavy particle incident on an electron target this reduces to $W_\text{kin} \approx 2 m_e \beta^2 \gamma^2$, while for electron-electron scattering we take $W_\text{kin}$ to be half the energy of the incident electron to account for the identical particles \cite{jackson_classical_1999}.
+% It is straightforward to understand the parametric dependences of \eqref{eq:mott}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets.
 
 We first compute the energy loss for scattering off nuclear targets.
 In this case, the Coulomb stopping power is parametrically of order
@@ -618,14 +619,16 @@ To estimate the energy transfer at this screening length, we use the fact that a
 \end{equation}
 In addition, for energy transfers less than the ion lattice energy $\omega$, the lattice structure of ions must be taken into account. 
 In particular, energy transfers below this threshold will occur via the creation of phonon excitations and will be suppressed from the free-particle results used above. 
+%%% Here we ought to explain how we account for phonons %%%
+
 %We thus take the lower bound for energy transfer via free-particle Coulomb scattering off nuclear targets to be $\text{Max}\{W_\text{sc},~\omega\$.
 %If $W_\text{TF} < \omega$, we estimate the stopping power for small energy transfers, $W < \omega$, by \textcolor{blue}{paragraph on phonons}. 
 
 Now consider Coulomb collisions with electrons targets. 
-The cross section \eqref{eq:mott} is no longer fully valid -  must account for a significant target recoil as well as identical particle effects in the case of electron-electron scattering (i.e., the M{\"o}ller cross section).
-One would also need to average over the relativistic motion of the degenerate electrons. 
+The cross section \eqref{eq:mott} is no longer fully valid for incident electrons, as we must account for a significant target recoil as well as identical particle effects (i.e., the M{\"o}ller cross section).
+One also needs to average over the relativistic motion of the degenerate electrons. 
 However, after integrating to find the stopping power, we find these are only $\OO(1)$ corrections. 
-The electron degeneracy now plays a significant role, as an incident particle transferring energy $W$ can only scatter electrons within $W$ of the Fermi surface.
+The electron degeneracy now plays a significant role, however, as an incident particle transferring energy $W$ can only scatter electrons within $W$ of the Fermi surface.
 We account for this with a modified density of target electrons:
 \begin{equation}
 \label{eq:pauliblocking}
@@ -636,7 +639,7 @@ We account for this with a modified density of target electrons:
   \end{cases}
 \end{equation}
 where $g(E)$ is the density of states per unit volume of a three-dimensional free electron gas.
-Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact subdominant to the contributions from rare hard-scatters due to Pauli-suppression.
+Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact subdominant to the contributions from rare hard-scatters.
 We additionally demand that the incident electron remains above the Fermi energy after scatting, that is $W < E - E_f$. 
 This yields a stopping power that is roughly constant at high energies:
 \begin{equation}
