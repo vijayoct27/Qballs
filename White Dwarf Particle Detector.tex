@@ -178,20 +178,18 @@ For these types of processes, the unknown DM physics serves only to determine th
 It is therefore necessary to understand how energy is transferred from SM particles to the stellar medium in order to assess the explosiveness of these encounters.
 If the energy of SM secondaries is sourced from the energy of the non-relativistic DM, then the DM mass must be greater than \eqref{eq:Eboom}.
 Thus we are sensitive to ultra-heavy $>10^{15} ~\GeV$ DM particles, most likely composite states, which interact in the WD to produce either a few ultra-high energy particles or many lower energy particles.
-As the lightest SM particles will be most typically produced, we focus on the release of light hadrons, electrons, and photons and neutrinos. 
 
-The remainder of this Section is dedicated to computing the heating properties of these SM species in a manner that is independent of the precise DM encounter. 
+The remainder of this Section is dedicated to computing the heating properties of SM species in a manner that is independent of the precise DM encounter. 
 Consider a schematic energy deposition in which $N$ particles of a single SM species and uniform energy $\epsilon$ are released isotropically in the stellar interior.
-As we are only concerned with triggering runaway fusion, it is sufficient to take $\epsilon \gg T_f \sim \text{MeV}$. 
-In order to assess the heating length of this deposition, it is necessary to calculate the distance a particle travels before giving up an $\OO(1)$ fraction of its energy to nuclei.
-We summarize here as needed the dominant source of energy loss for each species while a more detailed treatment of particle interactions in a WD is reserved for Appendix \ref{sec:Appendix}.
-For every possible interaction of a given species described by a stopping power $(dE/dx)$, we define a length scale $\lambda \sim (dE/dX)^{-1} E$ as the range over which that species deposits its energy to either stellar constituents or to additional secondaries. 
-The physical parameter which determines the explosiveness of such a schematic deposition is the resulting width $R$ of the initial ion temperature peak that forms. 
-As a benchmark, the value of $\Delta$ for any species should be compared to the trigger size $\lambda_T$ in order to gauge the efficiency with which it deposits energy. 
-It is important to note that any net displacement of this ion temperature profile from the point of origin of released SM particles is irrelevant for the sake of triggering runaway fusion. 
-If $N \gg 1$ this displacement is negligible but for $N \sim 1$ it could be much larger than $\Delta$. 
-We take care to distinguish the heating in this two scenarios when applicable.
-
+As we are primarily concerned with triggering runaway fusion, it is sufficient to take $\epsilon \gg T_f \sim \text{MeV}$. 
+The heating length of any such deposition is ultimately determined by the distances individual particles travel before giving up $\OO(1)$ of their energy.
+For every possible interaction of a given species described by a stopping power $(dE/dx)$, we define the length scale 
+\begin{equation}
+\lambda = \int_{\epsilon/2}^{\epsilon} \l \frac{dE}{dx}\r^{-1}E ~dE,
+\end{equation}
+which is the characteristic range over which that species would deposit its energy to either stellar constituents or to additional secondaries via this interaction. 
+We summarize here as needed the dominant source of energy loss for each species, while a more detailed treatment of particle interactions in a WD is reserved for Appendix \ref{sec:Appendix}.
+Subsequently, the resulting width of the initial ion temperature profile $L_0$ is computed for this schematic heating event in the case of light hadrons, electrons, photons, and neutrinos. 
 
 \subsection{Heating Properties of Hadrons}
 
@@ -291,6 +289,7 @@ For $100~\GeV \lesssim \epsilon \lesssim 1~\TeV$, the shower is always photonucl
 For $\epsilon \gtrsim 1~\TeV$, however, released electrons will start hadronic showers directly by radiating a virtual photon which undergoes a photonuclear collision.
 This slows the electron over a length scale $\sim 10~l_\gamma/\alpha \sim 10 l_\text{h,non}/\alpha^2 $.
 
+It is important to note that any net displacement of the resulting ion temperature profile from the point of origin of released SM particles is irrelevant for the sake of triggering runaway fusion. 
 As previously stated, It is possible that a single ultra-high energy particle with energy greater than $\Eboom$ is capable of triggering a SN. 
 This is especially intriguing when we consider a DM interaction that releases energy predominantly into neutrinos.
 Neutrinos interact very weakly, although their nuclear cross-section $\sigma_{\nu A}$ rises with energy.
@@ -624,12 +623,12 @@ In particular, energy transfers below this threshold will occur via the creation
 
 Now consider Coulomb collisions with electrons targets. 
 <<<<<<< HEAD
-The cross-section \eqref{eq:mott} is no longer fully valid -  must account for a significant target recoil as well as identical particle effects in the case of electron-electron scattering (i.e., the M{\"o}ller cross-section).
-One would also need to average over the relativistic motion of the degenerate electrons. 
-=======
 The cross section \eqref{eq:mott} is no longer fully valid for incident electrons, as we must account for a significant target recoil as well as identical particle effects (i.e., the M{\"o}ller cross section).
 One also needs to average over the relativistic motion of the degenerate electrons. 
->>>>>>> origin/master
+=======
+The cross-section \eqref{eq:mott} is no longer fully valid -  must account for a significant target recoil as well as identical particle effects in the case of electron-electron scattering (i.e., the M{\"o}ller cross-section).
+One would also need to average over the relativistic motion of the degenerate electrons. 
+>>>>>>> tinkering with SM Heating section
 However, after integrating to find the stopping power, we find these are only $\OO(1)$ corrections. 
 The electron degeneracy now plays a significant role, however, as an incident particle transferring energy $W$ can only scatter electrons within $W$ of the Fermi surface.
 We account for this with a modified density of target electrons:
