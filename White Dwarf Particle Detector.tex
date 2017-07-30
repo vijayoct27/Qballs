@@ -184,32 +184,18 @@ It is therefore necessary to understand how energy is transferred from SM partic
 The remainder of this Section is dedicated to computing the heating properties of SM species in a manner that is independent of the DM encounter. 
 Consider a schematic energy deposition in which $N$ particles of a single SM species and uniform energy $\epsilon$ are released isotropically in the stellar interior.
 As we are primarily concerned with triggering runaway fusion, it is sufficient to take $\epsilon \gg T_f \sim \text{MeV}$.
-Evidently, either a few $N \sim 1$ ultra-high energy particles or a $N \gg 1$ large number of lower energy particles can be released.
-When applicable, we will distinguish the heating between these two scenarios. 
+Evidently, either a few $N \sim 1$ ultra-high energy particles or a $N \gg 1$ large number of lower energy particles can be released, and either scenario will lead to different 
 We summarize here the dominant source of energy loss for each species while a more detailed treatment of particle interactions in a WD can be found in Appendix \ref{sec:Appendix}. 
 The heating length of any such deposition is ultimately determined by the distances individual particles travel in a WD before giving up $\OO(1)$ of their energy.
-For a given species and interaction described by a stopping power $(dE/dx)$, we define a length scale $\lambda$ which is the characteristic range over which that species would predominantly deposit its energy to either stellar constituents or to additional secondaries. 
+The primary quantity in calculating stopping power $(dE/dx)$, we define a length scale $\lambda$ which is the characteristic range over which that species would predominantly deposit its energy to either stellar constituents or to additional secondaries. 
 To leading order $\lambda \sim (dE/dx)^{-1} E$ although more precisely, $\lambda$ is given by integrating the inverse stopping power over a relevant energy regime.  
 Subsequently, the resulting width of the initial ion temperature profile $L_0$ is computed for this schematic heating event in the case of light hadrons, electrons, photons, and neutrinos.
 Note that the heating properties of heavier SM states can be calculated in an analagous manner, although we do not do so in this work. 
 
 \subsection{Heating Properties of Hadrons}
 
-First we consider the energy loss of low-energy hadrons less than the nuclear binding energy $\epsilon \lesssim E_\text{nuc} \sim 10 ~\text{MeV}$. 
-At these energies, protons and neutrons are stopped predominantly through elastic nuclear scatters, characterized by a typical mean free path
-\begin{equation}
-l_\text{h,el} \sim 1/n_\text{ion} \sigma_\text{h,el} \approx 10^{-7} ~\text{cm} 
-\end{equation}
-Thermalization of ions will occur after these nucleons have transferred $\OO(1)$ of their energy in the form of a random walk, which occurs after $\sim 10$ nuclear collisions. 
-On the other hand, for charged pions the dominant stopping mechanism is to transfer energy to electrons in the stellar medium through Coulomb collisions.
-In this case, the heating of ions depends on the distance over which electrons below $\sim 10~\MeV$ are able to scatter off ions. 
-As shown in Figure \ref{fig:SOMETHING}, there are effectively no processes that efficiently transfer energy from electrons to ions at these energies. 
-This is to be expected since these electrons can acquire a temperature at most just above the Fermi energy and disperse their energy over a large and therefore insignificant region. 
-
-For hadrons of energy $\epsilon > 10 ~\text{MeV}$, the energy loss is dominated by nonelastic nuclear collisions in which an incoming hadron strongly interacts with a target nuclear constituent to produce several secondary hadrons.
-The remaining nucleus is left in an excited state of energy $\sim 10 ~\text{MeV}$ with negligible center-of-mass recoil \textcolor{blue}{cite}, while the incident energy is transferred almost entirely to secondaries.
+For incident hadrons of energy $\epsilon > 10 ~\text{MeV}$, the energy loss is dominated by inelastic nuclear collisions in which an incoming hadron strongly interacts with a target nuclear constituent to produce several secondary hadrons.
 At sufficiently high energies, the result will be a roughly collinear hadronic shower. 
-Shower constituents will tend to be pions and nucleons in roughly equal fractions, along with a few heavier states, i.e.\ deuterons, alpha particles, etc.\ \textcolor{blue}{citation}
 The energy loss of a hadronic shower is set by the typical mean free path for nonelastic collisions with nuclei in the WD $l_\text{h,non} \sim 1/n_\text{ion} \sigma_\text{h,non}$. 
 with the key length scale being $l_\text{h,non} \sim 1/n_\text{ion} \sigma_\text{h,non}$, the typical mean free path for nonelastic collisions with nuclei in the WD.
 The shower terminates when constituents reach the critical energy $\sim 10 ~\text{MeV}$, so that the shower length $X_{\text{had}}$ is of order
@@ -223,6 +209,14 @@ Note that while neutrons and $\pi^\pm$ are long-lived, neutral pions decay to ph
 For instance, a $10 ~\text{MeV}$ neutral pion has a decay length of order $\sim 10^{-6} ~\text{cm}$ while more relativistic $\pi^0$ can travel much further.
 Hence, there will be electromagnetic contributions from $\pi^0$ decays during the progression of a hadronic shower for all but the most dense WDs. 
 These will 
+
+First we consider the energy loss of hadrons with energy less than the nuclear binding energy $\epsilon \lesssim 10 ~\text{MeV}$. 
+At these energies, protons and neutrons are stopped predominantly through elastic nuclear scatters, characterized by a typical elastic cross section of order $\sigma_\text{el} \sim 100 ~\text{mb}$. 
+Thermalization of ions will occur after these nucleons have transferred $\OO(1)$ of their energy in the form of a random walk, which occurs after $\sim 10$ nuclear collisions. 
+On the other hand, for charged pions the dominant stopping mechanism is to transfer energy to electrons in the stellar medium through Coulomb collisions.
+In this case, the heating of ions depends on the distance over which electrons below $\sim 10~\MeV$ are able to scatter off ions. 
+As shown in Figure \ref{fig:SOMETHING}, there are effectively no processes that efficiently transfer energy from electrons to ions at these energies. 
+This is to be expected since these electrons can acquire a temperature at most just above the Fermi energy and disperse their energy over a large and therefore insignificant region. 
  
 
 The energy loss of these shower products is determined as above - nucleons (and any heavier hadrons) will efficiently heat ions via elastic nuclear scatters while charged pions will instead heat electrons. 
@@ -247,11 +241,6 @@ However, both of these scales are below the trigger size for the most massive WD
 \subsection{Heating Properties of Electrons and Photons}
 
 The stopping of electrons and photons in a WD are shown in Figures \ref{fig:SPelectron} and \ref{fig:SPphoton}, and we consider the heating properties of these species together as their interactions are highly coupled.  
-However, stopping powers are more complicated than hadrons, in particular due to a sharp density dependence. 
-Generally, they will both lose energy via radiative processes involving soft ion scatters (bremsstrahlung and electron-positron pair production), however at sufficiently high WD density these processes are highly suppressed due to efficient charge screening by degenerate electrons.  
-This is manifest in a critical ion density $n_\text{EM} \sim 10^{31} ~\text{cm}^{-3}$, corresponding to a critical WD mass $M_\text{EM} \sim $ \textcolor{blue}{MASS}, above which radiative processes can be ignored. 
-We will first consider the heating properties of electrons and photons for $M_\text{WD} \lesssim M_\text{EM}$, and then discuss the correction necessary for $M_\text{WD} \gtrsim M_\text{EM}$.
- 
 At low energies, $\epsilon \lesssim 10~\GeV$, both electrons and photons primarily lose energy via elastic scattering off WD electrons.
 Thus the first stage of heating will be to establish a region of heated electron gas.
 Once the electrons equilibrate, they will begin to further lose energy via the previously sub-dominant bremsstrahlung process - this increases the photon number density, which transfers energy back into electrons by Compton scatters, and will eventually lead to the thermalization of the electrons and photon. 
@@ -687,7 +676,9 @@ where the change in scaling with $E$ marks a transition from Thompson-like scatt
 As expected, we find that the inverse Compton stopping power is negligible compared to Coulomb scattering. 
 
 \subsection{Bremsstrahlung and Pair Production with LPM Suppression}
-Bremsstrahlung and pair production should also be considered as stopping mechanisms for high-energy electrons and photons. We restrict our attention to radiative processes off target nuclei rather than target electrons as the latter are additionally suppressed by degeneracy, kinematic recoil, and charge factors. 
+
+Bremsstrahlung and pair production should also be considered as stopping mechanisms for high-energy electrons and photons. 
+We restrict our attention to radiative processes off target nuclei rather than target electrons as the latter are additionally suppressed by degeneracy, kinematic recoil, and charge factors. 
 The cross-section for an electron of energy $E$ to radiate a photon of energy $k$ is given by the Bethe-Heitler formula
 \begin{equation}
 \label{eq:BH}
@@ -758,9 +749,9 @@ A similar crossover is to be expected for other higher-order diagrams as well, a
 Rather, it is expected that at such high energies the stopping power is dominated by photonuclear and electronuclear interactions anyway, and we may simply ignore the contributions from other radiative processes \textcolor{blue}{cite convo with Klein}. 
 
 \subsection{Nuclear Interactions}
-Finally, we discuss particle interactions in the WD due to the strong force. 
+
 Nuclear interactions can be either elastic or inelastic - the nature of the interaction is largely determined by the incident particle energy. 
-Elastic collisions are most relevant for energy loss at scales less than the nuclear binding energy $\sim 10 ~\text{MeV}$.
+Elastic collisions are most significant for energy loss at scales less than the nuclear binding energy $\sim 10 ~\text{MeV}$.
 A single, backward elastic scatter could result in an incident particle losing virtually all of its energy if the incident and target masses are the same.
 However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
 An elastic collision between a incident, non-relativistic hadron of mass $m$, kinetic energy $E$ and a stationary nuclear target of mass $M$ results in an average final energy
@@ -775,46 +766,37 @@ Therefore, the stopping power for any light hadron due to elastic collisions is 
 - \l \frac{dE}{dx} \r \sim \l \frac{m}{M} \r \frac{E}{l_\text{el}}. 
 \end{equation}
 $l_\text{el}$ denotes the mean free path for elastic collisions characterized by cross-section $\sigma_\text{el}$. 
-Above $10 ~\MeV$ the cross section for nuclear elastic collisions is approximately the geometric cross section of carbon nuclei $\sim 100 ~\text{mb}$, while at $\MeV$ energies the elastic cross section generally rises to be of order $\sim \text{b}$. 
-The interaction in the intermediate regime $1 - 10 ~\MeV$ is dominated by nuclear resonances and is of a complicated form. 
-For our purposes, we will simply take the elastic cross section for nucleons and pions to be $\sigma_\text{el} \approx \text{b}$ when $E \lesssim 10 ~\MeV$, and ignore the energy loss due to elastic scatters at higher energies where inelastic processes will dominate. 
+Above $10 ~\MeV$ the nuclear elastic cross-section approaches the geometric cross-section for carbon $\sim 100 ~\text{mb}$, while at $\MeV$ energies the elastic cross section generally rises to be of order $\sim \text{b}$. 
+At intermediate energies $1 - 10 ~\MeV$, the interaction is dominated by various nuclear resonances. 
+For our purposes, we will conservatively estimate the elastic cross section for nucleons and pions to be $\sigma_\text{el} \approx 100 ~\text{mb}$ when $E \lesssim 10 ~\MeV$, and ignore the energy loss due to elastic scatters at higher energies where inelastic processes will dominate. 
 
-Next we consider inelastic collisions for hadron incident energies greater than the nuclear binding energy $\sim 10 ~\MeV$.  
-In such a collision the target nucleus is broken up and the nuclear fragment is typically in an unstable state.  
-The relaxation process occurs in a number of steps and proceeds primarily through the slow emission of low-energy hadrons and photons.
-The incident hadron will also will also undergo a violent collision with one or more nucleons in the 
-a violent collision with one or more protons or neutrons in the nucleus. In this collision
-a number of additional hadrons is produced 
-For incident energies are greater than the nuclear binding energy $\sim \GeV$, the interaction produces an $\OO(1)$ number of hadrons which roughly carry the initial energy. 
-Above the pion
-
-These secondary particles approximately split the initial total energy of the absorbed primary particle and can collide with other nuclei in the WD.
-If their energies are also greater than $\sim 10 ~\text{MeV}$, then further inelastic collisions will occur. 
-A hadronic shower is the result of all such reactions caused by primary and secondary particles.
-
-
-
-and relax through the emission of $\OO(10 ~\text{MeV})$ hadrons and photons \cite{Rossi}.
-For simplicity, we take the nuclear mean free path for a light hadron (proton, neutron, pion) to be constant in energy with characteristic cross-section $\sigma_\text{non} \sim 100 ~\text{mb}$. 
-Note that the shower length is only logarithmically sensitive to the initial energy or number of secondaries, and is thus primarily set by the nuclear mean free path.
-In this case, the cascade induced by a high-energy initial hadron is adequately described by a stopping power
+Now we determine the stopping power due to inelastic nuclear collisions at $E \gtrsim 10 ~\MeV$.  
+In such a collision, an incoming hadron interacts with one or more nucleons in the nucleus to produce a $\OO(1)$ number of additional hadrons which approximately split the initial energy. 
+For incident energies greater than the nucleon binding energy $\sim \GeV$, the secondary hadrons are mostly pions which carry transverse momentum of order $\sim 100 ~\MeV$. 
+In addition, during this process the target nucleus is broken up. 
+The nuclear fragment is typically left in an unstable state with negligible center-of-mass recoil, and relaxation occurs via the slow emission of low-energy $\sim \MeV$ hadrons and photons. 
+Note that for incident hadrons in the range $10 ~\MeV - \GeV$, it is found that roughly equal fractions of protons, neutrons, and pions are emitted after each inelastic collision. 
+In either case, if secondary hadrons are sufficiently energetic then they will induce further inelastic collisions.
+A roughly collinear hadronic shower is the result of all such interactions caused by primary and secondary particles.
+This cascade is adequately described by a radiative stopping power
 \begin{equation}
 \label{eq:nucshower}
--\l \frac{dE}{dx}\r \sim \frac{E}{l_\text{h,non}},
+-\l \frac{dE}{dx}\r \sim \frac{E}{l_\text{inel}},
 \end{equation}
-neglecting logarithmic factors of $\OO(1)$.
-The shower will end once final-state hadrons reach a critical energy - this is either the scale at which an additional mechanism dominates the stopping power or the minimum energy required to induce further showers $E_\text{nuc}$.
+neglecting of $\OO(1)$ logarithmic factors.
+$l_\text{inel}$ is the inelastic nuclear mean free path characterized by an inelastic cross-section $\sigma_\text{inel}$.
+At these energies, $\sigma_\text{inel} \approx 100 ~\text{mb}$ and is roughly constant in energy. 
+The shower will end once final-state hadrons reach a critical energy - this is either the scale at which an additional mechanism dominates the stopping power or the nuclear binding energy $\sim 10 ~\MeV$.
 
-Energetic $k \gtrsim 10 ~\text{MeV}$ photons can also strongly interact with nuclei through the production of virtual quark-antiquark pairs. 
+Photons of energy $k \gtrsim 10 ~\text{MeV}$ can also strongly interact with nuclei through the production of virtual quark-antiquark pairs. 
 Photonuclear interactions are similar in nature to the inelastic collisions of hadrons, although the cross-section $\sigma_{\gamma A}$ is roughly a factor $\approx \alpha$ smaller. 
-Below $\sim \GeV$ the photonuclear cross-section shows strong resonant behavior while above $\sim \GeV$, $\sigma_{\gamma A}$ is more or less constant in energy. 
+Below $\sim \GeV$ the photonuclear cross-section is complicated by nuclear resonances while above $\sim \GeV$, $\sigma_{\gamma A}$ is a slowly increasing function of energy. 
 At sufficiently high energies, photonuclear interactions can in fact become coherent with the photon interaction spread over multiple nuclei \cite{Gerhardt:2010bj}.
 This coherence will further reduce the photonuclear mean free path $l_{\gamma A}$. 
 As a conservative estimate, at energies $k \gtrsim 10 ~\text{MeV}$ we assume a constant photonuclear cross-section of order $\sigma_{\gamma A} \approx \text{mb}$. 
 Similarly, electrons can also lose energy by radiating a virtual photon that interacts hadronically with a nearby nucleus.
-As a result, we estimate the electronuclear stopping power to be of order $\sim E \alpha/l_{\gamma A}$.
+Naively we would expect the electronuclear stopping power to parametrically be of the form $(dE/dx) \sim E \alpha/l_{\gamma A}$.
 A more detailed calculation in \cite{Gerhardt:2010bj} obtains a similar result but with an additional $\OO(10)$ numerical factor. 
-The largest uncertainty in calculating electronuclear stopping power at high energies is in evaluating hadronic cross-sections, which require significant extrapolation from existing data and for which different models yield different results.
 
 \end{appendices}
 \section*{Acknowledgements}
