@@ -525,7 +525,7 @@ This is primarily aimed towards calculating the stopping of electrons, photons, 
 These results of these stopping powers are summarized in Figures \ref{fig:SPelectron}, \ref{fig:SPphoton}, \ref{fig:SPnuc}, and \ref{fig:SPpion}.
 Note that we will assume a carbon-oxygen WD.
 The stellar medium is very dense, with electron and ion number densities in the range $n_e = Z n_\text{ion} \sim 10^{30} - 10^{33} ~\cm^{-3}$.  
-Such high densities will result in the efficient stopping of incident particles while also giving rise to qualitatively different effects than seen in terrestrial detectors.  
+Such high densities will give rise to qualitatively different effects than seen in terrestrial detectors. 
 Famously, the star is supported against collapse by the relativistic electron degeneracy pressure with a characteristic Fermi energy
 \begin{equation}
   E_F \sim (3 \pi^2 n_e)^{1/3} \sim 0.1 - 1 ~\MeV,
@@ -538,29 +538,29 @@ The nuclei are fully-ionized and form a strongly-coupled plasma with Coulomb int
          \sim 10^{-2} - 10^{-1} ~\MeV.
 \end{equation}
 Since it is generally the case that $\omega >T$, the ions form a Coulomb lattice with lattice binding energy $\sim \omega$. 
-\begin{figure}
-\includegraphics[scale=.60]{SPelectron.pdf}
-\caption{Electron energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$}
-\label{fig:SPelectron}
-\end{figure}
+%\begin{figure}
+%\includegraphics[scale=.60]{SPelectron.pdf}
+%\caption{Electron energy loss in a WD density $n_e = 10^{33} ~\text{cm}^{-3}$}
+%\label{fig:SPelectron}
+%\end{figure}
 
-\begin{figure}
-\includegraphics[scale=.60]{SPphoton.pdf}
-\caption{Photon energy loss in a WD density $n_e = 10^{32} ~\text{cm}^{-3}$}
-\label{fig:SPphoton}
-\end{figure}
+%\begin{figure}
+%\includegraphics[scale=.60]{SPphoton.pdf}
+%\caption{Photon energy loss in a WD density $n_e = 10^{33} ~\text{cm}^{-3}$}
+%\label{fig:SPphoton}
+%\end{figure}
 
-\begin{figure}
-\includegraphics[scale=.60]{SPnucleon.pdf}
-\caption{Nucleon energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to protons.}
-\label{fig:SPnuc}
-\end{figure}
+%\begin{figure}
+%\includegraphics[scale=.60]{SPnucleon.pdf}
+%\caption{Nucleon energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to protons.}
+%\label{fig:SPnuc}
+%\end{figure}
 
-\begin{figure}
-\includegraphics[scale=.60]{SPpion.pdf}
-\caption{Pion energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to charged pion.}
-\label{fig:SPpion}
-\end{figure}
+%\begin{figure}
+%\includegraphics[scale=.60]{SPpion.pdf}
+%\caption{Pion energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to charged pion.}
+%\label{fig:SPpion}
+%\end{figure}
 
 \subsection{Coulomb Collisions}
 A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationary target of mass $M$ and charge $Ze$ will transfer an energy $W$ as given by the recoilless Mott cross-section 
@@ -569,23 +569,22 @@ A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationar
     \l 1-\beta^2 \frac{W}{W_\text{kin}} \r,
 \label{eq:mott}
 \end{equation}
-and we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $W$ \cite{Agashe:2014kda}.
+and we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $W$.
 $W_\text{kin}$ is the maximum possible energy transfer satisfying kinematic constraints (i.e., a backward scatter)
 \begin{equation}
 \label{eq:ekin}
   W_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2}.
 \end{equation}
-For a heavy particle incident on an electron target this reduces to $W_\text{kin} \approx 2 m_e \beta^2 \gamma^2$.
-It is straightforward to understand the parametric dependences of \eqref{eq:mott}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets.
+It is straightforward to understand the parametric dependences of \eqref{eq:mott}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets. 
+However, since we are ultimately interested in the transfer of energy to ions in the WD, we will consider the Coulomb energy loss to both nuclei and electron targets. 
 
-We first compute the energy loss for scattering off nuclear targets.
-In this case, the Coulomb stopping power is parametrically
+We first compute the stopping power due to scattering off nuclei, which is parametrically of the form
 \begin{align}
 \label{eq:SP}
   - \l \frac{dE}{dx}\r \sim \frac{2 \pi n_\text{ion} Z^2 \alpha^2}{M \beta^2} 
     \log {\l\frac{W_\text{kin}}{W_\text{min}}\r}.
 \end{align}
-The minimum energy transfer here is set by either charge screening or lattice effects.  
+The minimum energy transfer $W_\text{min}$ is set by either charge screening or lattice effects.  
 In a WD, the screening length $\kappa_{\text{sc}}^{-1}$ due to the degenerate electron gas can be calculated in the Thomas-Fermi approximation \cite{Teukolsky}
 \begin{equation}
 \label{eq:TF}
@@ -597,16 +596,16 @@ To estimate the energy transfer at this screening length, we use the fact that a
   W \sim \frac{Z^2 \alpha^2}{b^2 \beta^2 M}.
 \end{equation}
 In addition, for energy transfers less than the binding energy $\omega$, the lattice structure of ions must be taken into account. 
-Namely, energy transfers below this threshold will occur via the creation of phonon excitations and will be suppressed from the free-particle results used above. 
-% Probably something like using a phonon cross section for W < \omega, and a free-particle Coulomb cross-section otherwise. 
-% If W_TF < \omega, do we stll need the W_TF cutt-off for phonon scattering?
-%We thus take the lower bound for energy transfer via free-particle Coulomb scattering off nuclear targets to be $\text{Max}\{W_\text{sc},~\omega\$.
-%If $W_\text{TF} < \omega$, we estimate the stopping power for small energy transfers, $W < \omega$, by \textcolor{blue}{paragraph on phonons}. 
+Since the binding energy is much greater than the energy transfer set by screening, we take the lower-bound on free-particle Coulomb scattering to be $W_\text{min} \sim \omega$, only applicable in the case of nuclear targets.
+However, doing so we find that the stopping power of an electron-nuclei scattering vanishes at an incident energy $\sim 10 - 100 ~\MeV$ when the kinematic limit $W_\text{kin}$ becomes of order the binding energy $\omega$.
+A similar cutoff occurs in the stopping of heavy charged hadrons (i.e., protons and pions), although for these particles strong interactions will be a more dominant source of energy loss to nuclear targets than Coulomb scattering at these energies. 
+For smaller energy transfers $W < \omega$, we estimate the stopping power of electrons by considering the cross-section to scatter into phonon excitations of the lattice. 
+\textcolor{blue}{few sentences on phonons}. 
 
-Now consider Coulomb collisions with electrons targets. 
-Although one must consider the relativistic velocities of the degenerate electrons, to leading order we can simply average over this motion and treat the targets as stationary. 
-Note that electron degeneracy now plays a significant role as an incident particle transferring energy $W$ can only scatter electrons within $W$ of the Fermi surface.
-We account for this with a modified density of target electrons:
+We now turn to computing the stopping power due to collisions with electrons targets. 
+In this case, electron degeneracy plays a significant role as an incident particle transferring energy $W$ can only scatter electrons within $W$ of the Fermi surface.
+Although one must consider the relativistic velocities of the degenerate electrons, to leading order we simply average over this motion and treat the targets as stationary. 
+To account for degeneracy we define a modified number density of electrons in the WD
 \begin{equation}
 \label{eq:pauliblocking}
   n_e \l W \r = 
@@ -616,17 +615,17 @@ We account for this with a modified density of target electrons:
   \end{cases}
 \end{equation}
 where $g(E)$ is the density of states per unit volume of a three-dimensional free electron gas.
-Therefore, unlike in the non-degenerate case, the energy loss due to soft-scatters are in fact subdominant to the contributions from rare hard-scatters.
-For an incident electron, we additionally demand that the energy remains above the Fermi surface after scatting, that is $W < E - E_F$. 
-Furthermore, the cross-section \eqref{eq:mott} is also no longer fully valid in the case of electron-electron scattering as we must account for a significant target recoil as well as identical particle effects (i.e., the M{\"o}ller cross-section).
-However, after integrating to find the stopping power, we find that such a proper treatment only introduces $\OO(1)$ corrections. 
-In summary, the stopping power of any charged particle scattering off electrons is roughly constant at sufficiently high energies
+Therefore, unlike in the non-degenerate case, the energy loss from soft-scatters are in fact subdominant to the contributions from rare hard-scatters.
+For an incident electron, we additionally demand that the energy remains above the Fermi surface after scattering, $W < E - E_F$. 
+Note that \eqref{eq:mott} is no longer fully valid in the case of electron-electron scattering due to the significant target recoil as well as identical particle effects, and a more accurate calculation requires the M{\"o}ller cross-section.
+Nevertheless, at sufficiently high energies the stopping power for all charged particles scattering off electrons is roughly constant and of order
 \begin{equation}
 -\l \frac{dE}{dx} \r \sim \frac{2 \pi n_e \alpha^2}{m_e}. 
 \end{equation}
-However, the low-energy behavior is more complicated and requires the full calculation taking into account Pauli-blocking and charge screening effects. 
-
-\subsection{Compton and Inverse Compton Scattering}
+However, the low-energy behavior is not so straightforward due to the effects of Pauli-blocking and charge screening.
+In every case, we find that the stopping power decreases with incident energy until a critical threshold is reached where screening effectively cuts off the energy loss. 
+ 
+ \subsection{Compton and Inverse Compton Scattering}
 
 Photons and charged particles can elastically exchange energy through Compton scattering.
 We focus first on an incident photon losing energy to the WD medium.
@@ -657,7 +656,7 @@ A more detailed analysis computes the stopping power as
   -\l\frac{dk}{dx}\r =  \int d (\cos \theta) n_e \frac{d\sigma_\text{KN}}{d (\cos \theta)} \l k - k^\prime \r,
 \end{equation}
 with an appropriate Lorentz boost to the electron rest frame, although the full result only differs from the above estimate by $\OO(1)$ factors.
-Further, Pauli-blocking of the target electrons should be taken into account using a modified number density as in \eqref{eq:pauliblocking}.
+Further, Pauli-blocking of the target electrons is taken into account using a modified number density as in \eqref{eq:pauliblocking}.
 We find that degeneracy only introduces a significant suppression when $k \lesssim 10 ~\text{MeV}$, which is to be expected since the interaction is dominated by hard, near-forward scatters.
 
 We now briefly consider incident electrons which may cool by (inverse) Compton scatters with the thermal bath of photons in the WD.  
@@ -677,7 +676,7 @@ As expected, we find that the inverse Compton stopping power is negligible compa
 
 \subsection{Bremsstrahlung and Pair Production with LPM Suppression}
 
-Bremsstrahlung and pair production should also be considered as stopping mechanisms for high-energy electrons and photons. 
+Bremsstrahlung and pair production can be a dominant stopping mechanisms for high-energy electrons and photons. 
 We restrict our attention to radiative processes off target nuclei rather than target electrons as the latter are additionally suppressed by degeneracy, kinematic recoil, and charge factors. 
 The cross-section for an electron of energy $E$ to radiate a photon of energy $k$ is given by the Bethe-Heitler formula
 \begin{equation}
@@ -697,10 +696,9 @@ Integrating \eqref{eq:BH}, we find the energy loss due to bremsstrahlung is simp
 In \eqref{eq:radiationlength}, the minimum impact parameter is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy. 
 For a bare nucleus, this distance is the electron Compton wavelength. 
 It is important to note that collisions at lesser impact parameters will still radiate but with suppressed intensity.
-Classically, this is manifested by the decoherence of radiation at large scattering angles.
 The maximum impact parameter is set by the distance at which the nuclear target is screened.
 For an atomic target this is of order the Bohr radius, and for nuclear targets in the WD this is the Thomas-Fermi screening radius given by \eqref{eq:TF}.
-Evidently, there exists a critical electron number density $n_e \sim 10^{32} ~\text{cm}^{-3}$ for which the logarithmic form factor appears to vanish. 
+%Evidently, there exists a critical electron number density $n_e \sim 10^{32} ~\text{cm}^{-3}$ for which the logarithmic form factor appears to vanish. 
 For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ for all WD densities under consideration and refrain from a full quantum-mechanical calculation at small impact parameters. 
 
 However, bremsstrahlung will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect - see \cite{Klein:1998du} for an extensive review.
@@ -774,7 +772,7 @@ Now we determine the stopping power due to inelastic nuclear collisions at $E \g
 In such a collision, an incoming hadron interacts with one or more nucleons in the nucleus to produce a $\OO(1)$ number of additional hadrons which approximately split the initial energy. 
 For incident energies greater than the nucleon binding energy $\sim \GeV$, the secondary hadrons are mostly pions which carry transverse momentum of order $\sim 100 ~\MeV$. 
 In addition, during this process the target nucleus is broken up. 
-The nuclear fragment is typically left in an unstable state with negligible center-of-mass recoil, and relaxation occurs via the slow emission of low-energy $\sim \MeV$ hadrons and photons. 
+The nuclear fragment is typically left in an unstable state with negligible center-of-mass recoil, and relaxes via the slow emission of low-energy $\sim \MeV$ hadrons and photons. 
 Note that for incident hadrons in the range $10 ~\MeV - \GeV$, it is found that roughly equal fractions of protons, neutrons, and pions are emitted after each inelastic collision. 
 In either case, if secondary hadrons are sufficiently energetic then they will induce further inelastic collisions.
 A roughly collinear hadronic shower is the result of all such interactions caused by primary and secondary particles.
@@ -797,8 +795,8 @@ As a conservative estimate, at energies $k \gtrsim 10 ~\text{MeV}$ we assume a c
 Similarly, electrons can also lose energy by radiating a virtual photon that interacts hadronically with a nearby nucleus.
 Naively we would expect the electronuclear stopping power to parametrically be of the form $(dE/dx) \sim E \alpha/l_{\gamma A}$.
 A more detailed calculation in \cite{Gerhardt:2010bj} obtains a similar result but with an additional $\OO(10)$ numerical factor. 
-
 \end{appendices}
+
 \section*{Acknowledgements}
 We would like to thank D.Grabowska, K.Harigaya, S.R.Klein, R.McGehee, Lian-Tao Wang, and J.Wurtele for stimulating discussions.
 \textcolor{blue}{Grant acknowledgements}
