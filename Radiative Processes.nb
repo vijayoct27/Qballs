@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    102182,       2724]
-NotebookOptionsPosition[     97977,       2576]
-NotebookOutlinePosition[     98367,       2593]
-CellTagsIndexPosition[     98324,       2590]
+NotebookDataLength[    107154,       2858]
+NotebookOptionsPosition[    102900,       2709]
+NotebookOutlinePosition[    103290,       2726]
+CellTagsIndexPosition[    103247,       2723]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2109,32 +2109,12 @@ Cell[BoxData[{
            SqrtBox[
             FractionBox["Elpm", "\[Epsilon]"]], " ", "\[Epsilon]"}]}], "X0"], 
         ",", 
-        RowBox[{"Elpm", "\[LessEqual]", "\[Epsilon]", "\[LessEqual]", 
-         FractionBox[
-          SuperscriptBox["m", "4"], 
-          RowBox[{"16", " ", "n", " ", "\[Pi]", " ", "Z", " ", 
-           SuperscriptBox["\[Alpha]", "4"]}]]}]}], "}"}], ",", 
+        RowBox[{"Elpm", "\[LessEqual]", "\[Epsilon]"}]}], "}"}], ",", 
       RowBox[{"{", 
        RowBox[{
         FractionBox["\[Epsilon]", "X0"], ",", 
         RowBox[{"\[Epsilon]", "\[LessEqual]", "Elpm"}]}], "}"}]}], "}"}], 
     "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"bremalpha", "=", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{
-      FractionBox[
-       SuperscriptBox["m", "4"], 
-       RowBox[{"16", " ", "n", " ", "\[Pi]", " ", "Z", " ", 
-        SuperscriptBox["\[Alpha]", "4"]}]], "\[LessEqual]", "\[Epsilon]"}], 
-     ",", 
-     FractionBox[
-      RowBox[{" ", 
-       RowBox[{
-        SqrtBox[
-         FractionBox["Elpm", "\[Epsilon]"]], " ", "\[Epsilon]"}]}], "X0"], 
-     ",", "0"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"pp", "=", 
    RowBox[{"Piecewise", "[", 
@@ -2148,11 +2128,7 @@ Cell[BoxData[{
            SqrtBox[
             FractionBox["Elpm", "\[Epsilon]"]], " ", "\[Epsilon]"}]}], "X0"], 
         ",", 
-        RowBox[{"Elpm", "\[LessEqual]", "\[Epsilon]", "\[LessEqual]", 
-         FractionBox[
-          SuperscriptBox["m", "4"], 
-          RowBox[{"16", " ", "n", " ", "\[Pi]", " ", "Z", " ", 
-           SuperscriptBox["\[Alpha]", "4"]}]]}]}], "}"}], ",", 
+        RowBox[{"Elpm", "\[LessEqual]", "\[Epsilon]"}]}], "}"}], ",", 
       RowBox[{"{", 
        RowBox[{
         FractionBox["\[Epsilon]", "X0"], ",", 
@@ -2192,8 +2168,12 @@ Cell[BoxData[{
           SuperscriptBox["m", "2"]], 
          RowBox[{"(", 
           FractionBox["n", "Z"], ")"}], "10"}], ",", 
-        RowBox[{"\[Epsilon]", "<", "Elpm"}]}], "}"}]}], "}"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+        RowBox[{"1", "\[LessEqual]", "\[Epsilon]", "\[LessEqual]", "Elpm"}]}],
+        "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"\[Epsilon]", "\[LessEqual]", "1"}]}], "}"}]}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"electronuclear", "=", 
    RowBox[{"Piecewise", "[", 
@@ -2231,7 +2211,8 @@ Cell[BoxData[{
    3.707577888567218*^9}, {3.707578194016811*^9, 3.7075782004751062`*^9}, {
    3.70757824211246*^9, 3.7075782811087227`*^9}, {3.7075783240385027`*^9, 
    3.707578348759409*^9}, {3.707578424523193*^9, 3.7075785125391903`*^9}, 
-   3.707578592782193*^9}]
+   3.707578592782193*^9, {3.710500265000937*^9, 3.710500271306391*^9}, {
+   3.710500532378766*^9, 3.710500550760746*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2288,51 +2269,6 @@ Cell[BoxData[{
        RowBox[{"Green", ",", "Thick"}], "}"}]}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"electronbremalpha", "=", 
-   RowBox[{"LogLogPlot", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"ReplaceAll", "[", 
-       RowBox[{
-        RowBox[{"ReplaceAll", "[", 
-         RowBox[{
-          RowBox[{"ReplaceAll", "[", 
-           RowBox[{"bremalpha", ",", 
-            RowBox[{"{", 
-             RowBox[{"Elpm", "\[Rule]", 
-              FractionBox[
-               RowBox[{
-                SuperscriptBox["m", "2"], "X0", " ", "\[Alpha]"}], 
-               RowBox[{"4", "Pi"}]]}], "}"}]}], "]"}], ",", 
-          RowBox[{"X0", "\[Rule]", 
-           SuperscriptBox[
-            RowBox[{"(", 
-             RowBox[{"4", 
-              FractionBox[
-               RowBox[{"n", " "}], "Z"], 
-              SuperscriptBox["Z", "2"], 
-              FractionBox[
-               SuperscriptBox["\[Alpha]", "3"], 
-               SuperscriptBox["m", "2"]]}], ")"}], 
-            RowBox[{"-", "1"}]]}]}], "]"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"Z", "\[Rule]", "6"}], ",", 
-          RowBox[{"\[Alpha]", "\[Rule]", 
-           FractionBox["1", "137"]}], ",", 
-          RowBox[{"m", "\[Rule]", "0.511"}], ",", 
-          RowBox[{"n", "\[Rule]", "8"}]}], "}"}]}], "]"}], 
-      RowBox[{"(", "5.`*^5", ")"}]}], ",", 
-     RowBox[{"{", 
-      RowBox[{"\[Epsilon]", ",", 
-       SuperscriptBox["10", 
-        RowBox[{"-", "1"}]], ",", 
-       SuperscriptBox["10", "10"]}], "}"}], ",", 
-     RowBox[{"PlotStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"Green", ",", "Thick"}], "}"}]}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
   RowBox[{"electrondpp", "=", 
    RowBox[{"LogLogPlot", "[", 
     RowBox[{
@@ -2370,9 +2306,7 @@ Cell[BoxData[{
           RowBox[{"n", "\[Rule]", "8"}]}], "}"}]}], "]"}], 
       RowBox[{"(", "5.`*^5", ")"}]}], ",", 
      RowBox[{"{", 
-      RowBox[{"\[Epsilon]", ",", 
-       SuperscriptBox["10", 
-        RowBox[{"-", "1"}]], ",", 
+      RowBox[{"\[Epsilon]", ",", "1", ",", 
        SuperscriptBox["10", "10"]}], "}"}], ",", 
      RowBox[{"PlotLegends", "\[Rule]", 
       RowBox[{"{", "\"\<Direct Pair Production\>\"", "}"}]}], ",", 
@@ -2494,7 +2428,206 @@ Cell[BoxData[{
    3.707771493498411*^9}, {3.707771548615258*^9, 3.7077715494440813`*^9}, {
    3.707772923107759*^9, 3.707772965170805*^9}, {3.7077730551232843`*^9, 
    3.707773076259454*^9}, {3.707773348579788*^9, 3.707773350034092*^9}, {
-   3.710350501649817*^9, 3.710350521325397*^9}}]
+   3.710350501649817*^9, 3.710350521325397*^9}, {3.7105005645843153`*^9, 
+   3.710500565344434*^9}, 3.710501079182137*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"electronbrem2", "=", 
+   RowBox[{"LogLogPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ReplaceAll", "[", 
+       RowBox[{
+        RowBox[{"ReplaceAll", "[", 
+         RowBox[{
+          RowBox[{"ReplaceAll", "[", 
+           RowBox[{"brem", ",", 
+            RowBox[{"{", 
+             RowBox[{"Elpm", "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["m", "2"], "X0", " ", "\[Alpha]"}], 
+               RowBox[{"4", "Pi"}]]}], "}"}]}], "]"}], ",", 
+          RowBox[{"X0", "\[Rule]", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"4", 
+              FractionBox[
+               RowBox[{"n", " "}], "Z"], 
+              SuperscriptBox["Z", "2"], 
+              FractionBox[
+               SuperscriptBox["\[Alpha]", "3"], 
+               SuperscriptBox["m", "2"]]}], ")"}], 
+            RowBox[{"-", "1"}]]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Z", "\[Rule]", "6"}], ",", 
+          RowBox[{"\[Alpha]", "\[Rule]", 
+           FractionBox["1", "137"]}], ",", 
+          RowBox[{"m", "\[Rule]", "0.511"}], ",", 
+          RowBox[{"n", "\[Rule]", "0.008"}]}], "}"}]}], "]"}], 
+      RowBox[{"(", "5.`*^5", ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "1"}]], ",", 
+       SuperscriptBox["10", "10"]}], "}"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", "\"\<Bremsstrahlung\>\"", "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Green", ",", "Thick"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"electrondpp2", "=", 
+   RowBox[{"LogLogPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ReplaceAll", "[", 
+       RowBox[{
+        RowBox[{"ReplaceAll", "[", 
+         RowBox[{
+          RowBox[{"ReplaceAll", "[", 
+           RowBox[{"directpp", ",", 
+            RowBox[{"{", 
+             RowBox[{"Elpm", "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["m", "2"], "X0", " ", "\[Alpha]"}], 
+               RowBox[{"4", "Pi"}]]}], "}"}]}], "]"}], ",", 
+          RowBox[{"X0", "\[Rule]", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"4", 
+              RowBox[{"(", 
+               FractionBox[
+                RowBox[{"n", " "}], "Z"], ")"}], 
+              SuperscriptBox["Z", "2"], 
+              FractionBox[
+               SuperscriptBox["\[Alpha]", "3"], 
+               SuperscriptBox["m", "2"]]}], ")"}], 
+            RowBox[{"-", "1"}]]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Z", "\[Rule]", "6"}], ",", 
+          RowBox[{"\[Alpha]", "\[Rule]", 
+           FractionBox["1", "137"]}], ",", 
+          RowBox[{"m", "\[Rule]", "0.511"}], ",", 
+          RowBox[{"n", "\[Rule]", "0.008"}]}], "}"}]}], "]"}], 
+      RowBox[{"(", "5.`*^5", ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", "1", ",", 
+       SuperscriptBox["10", "10"]}], "}"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", "\"\<Direct Pair Production\>\"", "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Yellow", ",", "Thick"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"electronhad2", "=", 
+   RowBox[{"LogLogPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ReplaceAll", "[", 
+       RowBox[{"electronuclear", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[Sigma]\[Gamma]", "\[Rule]", 
+           SuperscriptBox["10", 
+            RowBox[{"-", "3"}]]}], ",", 
+          RowBox[{"n", "\[Rule]", "0.008"}], ",", 
+          RowBox[{"\[Alpha]", "\[Rule]", 
+           FractionBox["1", "137"]}], ",", 
+          RowBox[{"Z", "\[Rule]", "6"}]}], "}"}]}], "]"}], 
+      RowBox[{"(", "0.0025`", ")"}], 
+      RowBox[{"(", "5.`*^5", ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "1"}]], ",", 
+       SuperscriptBox["10", "10"]}], "}"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", "\"\<Electronuclear\>\"", "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Purple", ",", "Thick"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"photonhad2", "=", 
+   RowBox[{"LogLogPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ReplaceAll", "[", 
+       RowBox[{"photonuclear", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\[Sigma]\[Gamma]", "\[Rule]", 
+           SuperscriptBox["10", 
+            RowBox[{"-", "3"}]]}], ",", 
+          RowBox[{"n", "\[Rule]", "0.008"}], ",", 
+          RowBox[{"\[Alpha]", "\[Rule]", 
+           FractionBox["1", "137"]}], ",", 
+          RowBox[{"Z", "\[Rule]", "6"}]}], "}"}]}], "]"}], 
+      RowBox[{"(", "0.0025`", ")"}], 
+      RowBox[{"(", "5.`*^5", ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", 
+       SuperscriptBox["10", 
+        RowBox[{"-", "1"}]], ",", 
+       SuperscriptBox["10", "10"]}], "}"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", "\"\<Photonuclear\>\"", "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Purple", ",", "Thick"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"photonpp2", "=", 
+   RowBox[{"LogLogPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ReplaceAll", "[", 
+       RowBox[{
+        RowBox[{"ReplaceAll", "[", 
+         RowBox[{
+          RowBox[{"ReplaceAll", "[", 
+           RowBox[{"pp", ",", 
+            RowBox[{"{", 
+             RowBox[{"Elpm", "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["m", "2"], "X0", " ", "\[Alpha]"}], 
+               RowBox[{"4", "Pi"}]]}], "}"}]}], "]"}], ",", 
+          RowBox[{"X0", "\[Rule]", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"4", 
+              FractionBox[
+               RowBox[{"n", " "}], "Z"], 
+              SuperscriptBox["Z", "2"], 
+              FractionBox[
+               SuperscriptBox["\[Alpha]", "3"], 
+               SuperscriptBox["m", "2"]]}], ")"}], 
+            RowBox[{"-", "1"}]]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Z", "\[Rule]", "6"}], ",", 
+          RowBox[{"\[Alpha]", "\[Rule]", 
+           FractionBox["1", "137"]}], ",", 
+          RowBox[{"m", "\[Rule]", "0.511"}], ",", 
+          RowBox[{"n", "\[Rule]", "0.008"}]}], "}"}]}], "]"}], 
+      RowBox[{"(", "5.`*^5", ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", "1", ",", 
+       SuperscriptBox["10", "10"]}], "}"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", "\"\<Pair Production\>\"", "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Green", ",", "Thick"}], "}"}]}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.710507223614971*^9, 3.710507249645446*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2712,18 +2845,19 @@ Cell[80568, 2083, 214, 4, 35, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[80831, 2093, 136, 2, 43, "Subsubsection"],
-Cell[80970, 2097, 4718, 136, 530, "Input"]
+Cell[80970, 2097, 4101, 117, 399, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[85725, 2238, 115, 1, 43, "Subsubsection"],
-Cell[85843, 2241, 9570, 255, 1230, "Input"]
+Cell[85108, 2219, 115, 1, 43, "Subsubsection"],
+Cell[85226, 2222, 8007, 209, 1030, "Input"],
+Cell[93236, 2433, 7100, 196, 1030, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[95450, 2501, 133, 1, 43, "Subsubsection"],
-Cell[95586, 2504, 1028, 31, 129, "Input"],
+Cell[100373, 2634, 133, 1, 43, "Subsubsection"],
+Cell[100509, 2637, 1028, 31, 129, "Input"],
 Cell[CellGroupData[{
-Cell[96639, 2539, 886, 22, 114, "Input"],
-Cell[97528, 2563, 421, 9, 36, "Output"]
+Cell[101562, 2672, 886, 22, 114, "Input"],
+Cell[102451, 2696, 421, 9, 36, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
