@@ -622,6 +622,57 @@ Nevertheless, at sufficiently high energies the stopping power for all charged p
 However, the low-energy behavior is not so straightforward due to the effects of Pauli-blocking and charge screening.
 In every case, we find that the stopping power decreases with incident energy until a critical threshold is reached where screening effectively cuts off the energy loss.
 
+\subsubsection{Phonon production}
+
+To describe the contribution of phonons to the Coulomb scattering stopping power, we will calculate an approximate dynamic structure factor describing the white dwarf lattice. It is sufficient for our purposes to approximate the vibrational response of the white dwarf as a collection of harmonic oscillators at the plasma frequency
+\begin{align}
+\Omega_p = \sqrt{\frac{4 \pi n_i Z^2 \alpha}{M}} \sim 1 - 10~\text{keV}
+\end{align}
+where $M$ is the mass of carbon. (Note that the Debye temperature in a white dwarf is equal to its plasma frequency. \cite{reference}) We will assume that the white dwarf has temperature $T\lesssim 1~\text{keV}$ so that the temperature is low compared to the phonon energies. \textcolor{blue}{This is a typical white dwarf temperature \cite{reference}.}
+
+The doubly differential cross section (see, for instance \textcolor{blue}{[Kittel]}) is given by
+\begin{align}
+\frac{d^2 \sigma}{d \Omega\, d \omega} = \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 |V_\textbf{q}|^2 S(\textbf{q}, \omega)
+\label{eq:DoublyDifferentialCrossSection}
+\end{align}
+where $V_\textbf{q}$ is the fourier transform of the interaction potential and $S(\textbf{q}, \omega)$ is the dynamic structure factor. Here $\omega$ is the energy transferred to the target particle, $m$ is the mass of the incident particle, and $k$ and $k'$ are the initial and final momentum of the incident particle, respectively. This is a non-relativistic formalism, and while we may restrict ourselves to non-relativistic targets, any incident electrons of interest will be relativistic. Conveniently, however, we note that if we use the free particle structure factor $S(\textbf{q}, \omega) = \delta(\omega - q^2 / 2 M)$ we can recover exactly the first term of the proper relativistic result~\eqref{eq:mott} by simply making the substitution $m^2 / k^2\to 1/\beta^2$. This same factor appears in the phonon calculation we need, so we will make the same substitution and use this as an approximation for the proper relativistic result.
+
+The structure factor for a single harmonic oscillator with frequency $\omega_0$ at temperatures $T\ll \omega_0$ is (e.g., \cite{reference})
+\begin{align}
+S(\textbf{q}, \omega) &= e^{-q^2 / 2 M \omega_0} \bigg[ \delta(\omega) + \frac{q^2}{2 M \omega_0}\delta(\omega - \omega_0)\nonumber\\
+&\qquad + \frac12 \left( \frac{q^2}{2 M \omega_0} \right)^2 \delta(\omega - 2\omega_0) + \cdots \bigg]
+\label{eq:HarmonicOscillatorStructureFactor}
+\end{align}
+The first term encodes an elastic scatter, the second a 1-phonon process, the third a 2-phonon process, etc. We are only interested in the inelastic pieces which may transfer energy to the ions. As we should expect, equation~\eqref{eq:HarmonicOscillatorStructureFactor} approaches the structure factor for a free particle at large energy transfers $\omega \gg \omega_0$, and accordingly we should expect the stopping powers to match when the incident energy is so large that even the free particle stopping power is dominated by energy transfers above the plasma frequency. \textcolor{blue}{(Where is this, and how do we see it?)}
+
+The interaction potential between an incident particle with charge $\pm 1$ and a carbon ion is given by
+\begin{align}
+V_\textbf{q} = \frac{4 \pi Z\alpha}{q^2 + \lambda_T^2}
+\label{eq:InteractionPotential}
+\end{align}
+where $\lambda_T$ is the Thomas-Fermi screening length. Inserting equations~\eqref{eq:HarmonicOscillatorStructureFactor} and~\eqref{eq:InteractionPotential} into~\eqref{eq:DoublyDifferentialCrossSection}, integrating over solid angle with a relativistic incident particle, and making the substitution $m^2 / k^2\to 1/\beta^2$ discussed earlier, we find the cross section per unit energy transfer for a $n$-phonon process to be
+\begin{align}
+\frac{d \sigma_n}{d \omega}&= \frac{2 \pi Z^2 \alpha^2}{M\beta^2 \omega_0^2} \delta(u - n) g_n(u)
+\end{align}
+with the dimensionless function
+\begin{align}
+  g_n(u) &= \int_{Q_1^2}^{Q_2^2} d(Q^2)\, \frac{e^{-Q^2}}{(Q^2 + \eta^2)^2} \frac{(Q^2)^n}{n!}
+\end{align}
+where $Q_1^2 = u^2 \omega_0 / 2 M$ and $Q_2^2 = (2 \kappa - u)^2 \omega_0 / 2 M$, and we have defined the dimensionless variables $u = \omega / \omega_0$, $\kappa = k / \omega_0$, and $\eta^2 = \lambda^2 / 2 M \omega_0$.
+
+To compute the stopping power for an electron scattering off ions, we sum the contributions from all possible phonon processes and integrate over all energy transfers that would keep the electron above the Fermi sea:
+\begin{align}
+-\frac{dE}{dx} &= \int_0^{k - E_f} d\omega\, n_\text{ion}\omega_0\sum_{n = 1}^{\infty} \frac{d \sigma_n}{d \omega} \nonumber\\
+ &= \frac{2 \pi n_\text{ion} Z^2 \alpha^2}{M \beta^2} \sum_{n = 1}^{n_\text{max}} g_n(n)
+ \label{eq:PhononStoppingPower}
+\end{align}
+where $n_\text{max} = (k - E_f) / \omega_0$. One can easily check numerically that the sum is within 10\% of the Coulomb logarithm for the free particle calculation, so we have found that the free particle and phonon stopping powers \eqref{eq:SP} and \eqref{eq:PhononStoppingPower} are the same, and we can simply continue the free particle stopping power curve all the way down to the Fermi energy where it must cut off for degeneracy reasons anyways.
+
+\textcolor{blue}{omit this paragraph?} It is interesting that even though the phonon and free particle results have different total cross-sections and different typical energy transfers---free particle scatters are dominated by transfers of $ \sim 10^{-7}~\text{MeV}$ near the screen length, whereas phonon excitations are dominated by 1-phonon processes transferring $ \sim 10^{-2}~\text{MeV}$---these are just properly balanced so that the stopping powers come out the same. This would not be remarkable if the scattering were dominated by hard scatters, so that single-phonon processes were negligible, but we might not expect this of a process dominated by soft scatters. This seems to be a coincidence of the Coulomb interaction, and we would not expect to see this for interactions that drop off faster than $1 / r$.
+
+
+% \log {\l\frac{W_\text{kin}}{W_\text{min}}\r}
+
  \subsection{Compton and Inverse Compton Scattering}
 
 Photons and charged particles can elastically exchange energy through Compton scattering.
