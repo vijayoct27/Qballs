@@ -1,6 +1,11 @@
 %\documentclass[10pt, twocolumn]{article}
-\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prd,superscriptaddress]{revtex4}
-%\documentclass[11 pt,preprint,preprintnumbers,amsmath,amssymb, prd]{revtex4}
+%\documentclass[11pt]{article}
+\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl, superscriptaddress]{revtex4}
+%\documentclass[twocolumn,preprintnumbers,amsmath,amssymb,prl, superscriptaddress]{revtex4}
+%\documentclass[preprintnumbers,amsmath,amssymb,prd,superscriptaddress]{revtex4}
+%\documentclass[10pt, preprint,showpacs,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
+%\documentclass[11pt, prd,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
+%\documentclass[11pt, prd,preprintnumbers, amsmath,amssymb, superscriptaddress, nofootinbib, hyperref]{revtex4}
 
 
 \usepackage{latexsym}
@@ -11,7 +16,7 @@
 \usepackage{wasysym}
 \usepackage{hyperref}
 \usepackage{feynmp-auto} % feynman diagrams
-%\usepackage{subfig}
+\usepackage{subfig}
 \usepackage[utf8]{inputenc}
 \usepackage{xpatch}
 \usepackage{xcolor}
@@ -47,6 +52,9 @@
 \def\l{\left(}
 
 \begin{document}
+
+%\preprint{APS/123-QED}
+
 
 \title{White Dwarfs as Dark Matter Detectors}
 
@@ -87,13 +95,13 @@ As a concrete example, we are able to constrain supersymmetric Q-ball dark matte
 \section{Introduction}
 \label{sec:Introduction}
 
-The existence of dark matter (DM) is strong evidence for new physics beyond the Standard Model (SM).
-As with all of the matter content in the SM, it is natural to suspect that the DM also has non-gravitational interactions. 
-
-For instance, DM masses above $\sim 10^{22} ~\GeV$ will register fewer than a single event per year in a typical terrestrial detector of size $\sim (100 ~\text{m})^2$.
-Furthermore, the lack of conclusive signatures on a variety of experimental fronts has led many to consider DM candidates far above the weak scale and their potential signatures \textcolor{blue}{add few citations}.
-One possibility proposed by \cite{Graham:2015apa} is that DM can trigger supernovae (SN) in sub-Chandrasekhar white dwarf (WD) stars by inducing runaway fusion.
-As such, white dwarfs can serve as detectors for ultra-heavy DM states.
+The existence of dark matter (DM) in the universe is strong evidence for physics beyond the Standard Model (SM).
+Similar to the matter content in the SM, it is natural to suspect that the DM also has non-gravitational interactions.
+Although there are many experiments designed to detect DM at the weak scale or lighter, these experiments are unable to probe ultra-heavy candidates that have too low a flux on terrestrial detectors. 
+For instance, DM masses above $\sim 10^{22} ~\GeV$ will register fewer than a single event per year in a typical detector of size $\sim (100 ~\text{m})^2$.
+Although such candidates cannot be fundamental particles, in the presence of self-interactions it is natural to expect that the DM is able to form large composite states just as the SM produces complex structure of mass parametrically greater than the weak scale. 
+One possibility to detect ultra-heavy DM proposed by \cite{Graham:2015apa} is that DM can trigger supernovae (SN) in sub-Chandrasekhar white dwarf (WD) stars by inducing runaway fusion.
+As such, white dwarfs can serve as DM detectors. 
 
 White dwarfs are particularly suited to this task as they are more susceptible to runaway fusion than are main-sequence stars.
 Runaway fusion requires that two criteria be met: a region within the star must be hot enough to support exothermic fusion reactions, and the rate at which energy is released must dominate any cooling mechanisms that drain energy from the fusing region.
@@ -102,7 +110,7 @@ Therefore WD cooling relies on thermal diffusion, which becomes less important o
 
 The necessary trigger for runaway fusion was initially computed in \cite{Woosley} and recently implemented in \cite{Graham:2015apa} to place bounds on primordial black holes.
 In addition, the authors of \cite{Graham:2015apa} identify several other heating mechanisms involving DM which may be constrained in a similar manner.
-In this paper, we extend the reach of WD detectors to DM candidates with non-gravitational couplings which release energy in the form of high-energy standard model (SM) particles.
+Here we extend the reach of WD detectors to DM candidates with non-gravitational couplings which release energy in the form of high-energy standard model (SM) particles.
 DM models with interactions of this sort include Q-balls found in supersymmetric extensions of the SM and dark nuclei with higher-dimension couplings to the SM \cite{Hardy:2014mqa}.
 An essential ingredient in this analysis is an understanding of how individual SM particles deposit energy in a WD medium through strong and electromagnetic interactions.
 In this regard, the WD may be thought of as a detector with hadronic and electromagnetic ``calorimeter'' components.
@@ -133,7 +141,7 @@ These electrons have Pauli-suppressed interactions and will travel a long distan
 The fate of a locally heated region in a WD is either a nonviolent diffusion of the energy deposit across the star, or a runaway fusion chain-reaction that will destroy the star.
 The precise outcome is governed by two parameters: the fusion temperature $T_f$ and trigger size $\lambda_T$.
 The fusion temperature $T_f$ is the threshold for the onset of fusion and is given by the energy required for ions to overcome their mutual Coulomb barrier.
-In carbon-oxygen WDs, this is a constant $T_f \sim \MeV$ \textcolor{blue}{SR cite}.
+For carbon-carbon fusion, this is of order $T_f \sim \MeV$ \cite{Gasques:2005ar}. 
 However, while any region with $T_0 > T_f$ will initially support fusion, this condition is not sufficient for triggering a runaway process.
 Sustained heating through nuclear fusion can only be maintained if the timescale for cooling is consistently longer than the timescale for heating.
 Cooling in a WD is dominated by diffusion and the characteristic diffusion time for a heated region increases with its size while the rate of fusion is independent of size.
@@ -141,7 +149,7 @@ Therefore, there will always be a critical size of a heated region (at fixed tem
 For a region at the threshold of nuclear fusion $T_f$, this condition defines the trigger size $\lambda_T$.
 The value of $\lambda_T$ is highly dependent on stellar density, and is set by either the thermal diffusivity of photons or degenerate electrons.
 It has been calculated numerically in \cite{Woosley} and analytically scaled for varying WD masses in \cite{Graham:2015apa}.
-As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ which correspond to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$.
+As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ which correspond to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$ \cite{cococubed}.
 Over this range, the trigger size is approximately $\lambda_T \sim 10^{-5} - 10^{-3} ~\text{cm}$.
 
 In summary, a local temperature peak $T_f$ in a WD will either always be dominated by diffusive cooling if $L_0 < \lambda_T$ or sustained fusion if $L_0 > \lambda_T$.
@@ -359,8 +367,8 @@ However, we first review the different ways in which white dwarfs can constrain 
 Following the discussion of \cite{Graham:2015apa}, our constraints come from (1)~the existence of heavy, long-lived white dwarfs, or (2)~the measured type Ia SN rate.
 The typical age of a WD is of order the age of the universe $\sim \text{Gyr}$.
 RX~J0648.04418 is a nearby star and one of the heaviest known WDs with a mass $\sim 1.25 ~M_{\odot}$ \cite{Mereghetti:2013nba}.
-Of course, this is not the only known heavy WD - the Sloan Digital Sky Survey has found $\sim 20$ others \cite{SDSS}.
-The NuStar collaboration has also recently uncovered evidence for the likely existence of $\sim 1.25 ~M_{\odot}$ WDs in the galactic center as well \textcolor{blue}{cite}.
+Of course, this is not the only known heavy WD - the Sloan Digital Sky Survey \cite{SDSS} has found $\sim 20$ others.
+The NuStar collaboration has also recently uncovered evidence for the likely existence of $\sim 1.25 ~M_{\odot}$ WDs in the galactic center as well \cite{NuStar}.
 Such candidates are particularly suited for our constraints as the energy deposit necessary to trigger SN $\Eboom$ is a decreasing function of WD mass.
 However, less dense white dwarfs are significantly more abundant in the galaxy.
 Thus, even if a sufficiently massive DM is unable to trigger a violent heating event within the lifetime of a WD, it could still ignite enough lighter WDs to affect the measured SN rate of $\sim $ 0.3 per century.
@@ -373,7 +381,7 @@ Note that for low-mass WDs dominated by photon diffusion, $\Eboom$ is a strong f
 In \cite{Graham:2015apa} the central WD density is used to constrain black hole transits with the justification that the density is nearly constant for much of the star.
 The average density for WDs is typically a factor of $\sim 10^{-2} - 10^{-1}$ less than the central density, although it is found that the WD density changes by an $\OO(1)$ fraction from the central value out at a distance $\sim R_\text{WD}/2$ \cite{Chandrasekhar}.
 Therefore the central density is a valid approximation as long as we consider heating events within this ``modified" WD volume.
-For simplicity, we employ this approach.
+For simplicity, we employ this approach
 
 
 \subsection{Collision and Decay Constraints}
@@ -396,22 +404,34 @@ Likewise, the rate at which a single DM decay event occurs in the WD is
 where $\tau_\text{DM}$ is the mean lifetime of DM.
 
 We are able to constrain DM parameters whenever such processes satisfy the explosion condition $\eqref{eq:coldecay}$.
-Consider an annihilation or decay which releases a single SM particle of species $i$.
-If we assume a fractional parameter $f_\text{SM}=1$, this corresponds to the entire mass of DM being converted to an ultra-high energy SM species.
-This will deposit its energy and thermalize ions within a distance explicitly calculated in Section \ref{sec:SMHeating} and summarized in \textcolor{blue}{table}.
-With the above schematic for DM-DM collisions and DM decays, we place bounds on the cross-section $\sigma_\text{DM-DM}$ or lifetime $\tau_\text{DM}$ as a function of $m_\text{DM}$.
+Consider a schematic interaction where an annihilation or decay releases a number of SM particles $N_i$ of single species $i$ and individual energy $\epsilon$. 
+If we assume a fractional parameter $f_\text{SM}=1$, this corresponds to the entire mass of DM being converted into SM products $i$, each with energy $m_\text{DM}/N_i$.
+These will deposit their energy and thermalize ions within a distance explicitly calculated in Section \ref{sec:SMHeating}. 
+At sufficiently large $\epsilon \gtrsim \text{TeV}$, it has been shown that the heating properties of individual SM particles only varies logarithmically in energy, independent of the species $i$.
+Therefore, we treat $\epsilon$ as a free parameter whose precise value above $\sim \text{TeV}$ does not qualitatively modify the limits imposed.
+In this case, $N_i$ and $\epsilon$ can both be fixed to the value at which $N_i \epsilon$ is of order $m_\text{DM}$ without affecting the nature of the constraints.
+%The only caveat in this scenario is that the value of $L_i (\epsilon)$ extrapolated to energies beyond $\sim 10^{17} ~\GeV$ must be done with caution.
+%As a result, for $m_\text{DM}$ greater than this scale, one can simply impose $\epsilon \lesssim 10^{17} ~\GeV$ with the number of released particles necessarily $N_i > 1$.
+With the above schematic for DM-DM collisions, we constrain the cross section $\sigma_\text{DM-DM}$ as a function of $m_\text{DM}$ using the different classes of observation available and for representative choices of $\eta$ and SM species $i$ released.
+This is done in Figures \ref{fig:collisionclasses}, \ref{fig:collisioneta}, and \ref{fig:collisionspecies}. 
+In a similar manner, we constrain the lifetime $\tau_\text{DM}$ as a function of $m_\text{DM}$ in Figures \ref{fig:decayclasses}, \ref{fig:decayepsilon}, and \ref{fig:decayspecies}.
+Consider an annihilation or decay which releases $N$ SM particle of species $i$.
+These will deposit their energy and thermalize ions within a distance explicitly calculated in Section \ref{sec:SMHeating}. 
+With the above schematic for DM-DM collisions and DM decays, we can place bounds on the cross-section $\sigma_\text{DM-DM}$ or lifetime $\tau_\text{DM}$ as a function of $m_\text{DM}$.
+
+
+
 However, if the DM interacted in this way then there are other possible constraints as well.
-
-For one, DM can annihilate or decay into ultra-high energy particles within our galactic halo and therefore contribute to the cosmic ray flux seen on terrestrial air shower detectors.
-As we have not seen any cosmic rays with energy greater than $\sim 10^{12} \GeV$, this places a constraint on
-
+For one, DM can annihilate or decay into ultra-high energy particles within our galactic halo and therefore contribute to the cosmic ray flux seen in terrestrial air shower detectors.
+As we have not seen any cosmic rays with energy greater than $\sim 10^{12} ~\GeV$ \cite{ThePierreAuger:2015rha, AbuZayyad:2012ru}, this places a similar constraint on the DM interaction parameters $\sigma_\text{DM-DM}$ and $\tau_\text{DM}$. 
+For instance, one can estimate the expected cosmic ray flux due to a DM decay event in the galactic halo as follows. 
+In addition, there are various cosmological bounds on DM-DM collisions. If the DM-DM annihilation cross section were sufficiently big, this would affect our local halo by an $\OO(1)$ factor. 
+Furthermore, DM-DM annihilations into electrons and photons would cause ionization and therefore affect the measured CMB temperature profile and fluctuations. 
+It is found that the lifetime of DM $\tau_\text{DM} \gtrsim 100 ~\text{Gyr}$ in order to not screw up the CMB. 
 
 This is done in Figures \ref{fig:collisionclasses}, \ref{fig:collisioneta}, and \ref{fig:collisionspecies} using the different classes of observation available and for representative choices of $f_\text{SM}$ and SM species $i$ released.
 In a similar manner, we constrain the lifetime $\tau_\text{DM}$ as a function of $m_\text{DM}$ in Figures \ref{fig:decayclasses}, \ref{fig:decayepsilon}, and \ref{fig:decayspecies}.
 
-
-
-\textcolor{blue}{cosmic ray bounds...CMB polarization...lifetime bounds...deplete local halo}
 
 \begin{figure}
 \includegraphics[scale=.45]{collisionobservation.pdf}
@@ -514,7 +534,8 @@ The strongest proposed limits due to the existence of a heavy WD in the galactic
 \section{Discussion}
 
 It is clear that the detection of ultra-heavy DM is an open problem which will likely require a confluence of astrophysical probes.
-Here we have outlined the myriad ways in which white dwarfs can act as detectors of these states. 
+Here we have outlined the many ways in WDs can constrain DM candidates with.
+If a WD is   
 
 
 \label{sec:Discussion}
@@ -798,7 +819,7 @@ Note that the LPM effect is less significant for higher-order electromagnetic pr
 Thus, when the suppression factor exceeds $\OO(\alpha)$, these interactions should also be considered.
 For instance, the energy loss due to electron direct pair production $eN \to e^+ e^- e N$ has been calculated in \cite{Gerhardt:2010bj} and is found to exceed that of bremsstrahlung at an energy $\sim 10^{8} ~\GeV$.
 A similar crossover is to be expected for other higher-order diagrams as well, although such a calculation is beyond the scope of this work.
-Rather, at such high energies the stopping power is dominated by photonuclear and electronuclear interactions anyway, and we may simply ignore the contributions from other radiative processes \textcolor{blue}{cite convo with Klein}.
+Rather, at such high energies the stopping power is dominated by photonuclear and electronuclear interactions anyway, and we may simply ignore the contributions from other radiative processes \cite{Kleinconvo}.
 
 \subsection{Nuclear Interactions}
 
@@ -856,6 +877,7 @@ We would like to thank Dorota Grabowska, Keisuke Harigaya, Spencer Klein, Jacob 
 \textcolor{blue}{Grant acknowledgements}
 
 \begin{thebibliography}{99}
+\bibliographystyle{unsrt} 
 
 \bibitem{Graham:2015apa} 
   P.~W.~Graham, S.~Rajendran and J.~Varela,
@@ -864,8 +886,18 @@ We would like to thank Dorota Grabowska, Keisuke Harigaya, Spencer Klein, Jacob 
   %doi:10.1103/PhysRevD.92.063007
   [arXiv:1505.04444 [hep-ph]].
   
+\bibitem{Gasques:2005ar} 
+  L.~R.~Gasques, A.~V.~Afanasjev, E.~F.~Aguilera, M.~Beard, L.~C.~Chamon, P.~Ring, M.~Wiescher and D.~G.~Yakovlev,
+  %``Nuclear fusion in dense matter: Reaction rate and carbon burning,''
+  Phys.\ Rev.\ C {\bf 72}, 025806 (2005)
+  %doi:10.1103/PhysRevC.72.025806
+  [astro-ph/0506386].
+  
 \bibitem{Woosley}
  F.~X. Timmes and S.~E. Woosley, Astro. Phys. Journal {\bf 396}, 649 (1992).
+ 
+\bibitem{Tavernier}
+S.~Tavernier, "Experimental Techniques in Nuclear and Particle Physics", Springer (2010). 
  
 \bibitem{Teukolsky}
 S.~L.~Shapiro and S.~A.~Teukolsky, ``Black Holes, White Dwarfs, and Neutron Stars", Wiley (1983).
@@ -1007,6 +1039,12 @@ F.~X.~Timmes, http://cococubed.asu.edu/code pages/coldwd.shtml
 \bibitem{SDSS}
 S.~J.~Kleinman, S. O. Kepler, D. Koester, I. Pelisoli  {\it et al.}, Astrophys. J. Suppl. {\bf 204}, article
 id. 5, 14 pp. (2013)
+
+\bibitem{NuStar}
+K.~Perez, C.~J.~Hailey, F.~E.~Bauer, {\it et al.}, Nature {\bf 520}, 646 (2015)
+
+\bibitem{Kleinconvo}
+S.~Klein, private communication
 
 \end{thebibliography}
 
