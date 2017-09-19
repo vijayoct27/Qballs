@@ -170,9 +170,9 @@ This implies the explosion condition used in \cite{Graham:2015apa}, but also pro
 Thus there is an absolute minimum energy required to ignite a WD
 \begin{equation}
 \label{eq:Eboom}
-\mathcal{E}_{\text{boom}} \sim n_\text{ion} T_f \lambda_T^3 \sim 10^{15} - 10^{20} ~\GeV,
+\Eboom \sim n_\text{ion} T_f \lambda_T^3 \sim 10^{15} - 10^{20} ~\GeV,
 \end{equation}
-where $\mathcal{E}_{\text{boom}} $ varies with trigger size $\lambda_T$ over the range of WD densities.
+where $\Eboom $ varies with trigger size $\lambda_T$ over the range of WD densities.
 This is plotted in Figure \ref{fig:Eboom}.
 Note that the threshold \eqref{eq:Eboom} is only sufficient if the deposited energy thermalizes within a region of size $L_0 < \lambda_T$.
 The threshold energy for explosion is parametrically larger if energy is deposited on a larger length scale $L_0 > \lambda_T$.
@@ -358,7 +358,7 @@ Therefore, the assumption of a DM transit at roughly constant velocity also allo
 The explosion condition for transits satisfying \eqref{eq:SlowDiffusion} and \eqref{eq:CrustCondition} is given by
 \begin{equation}
 \label{eq:transitexplosion}
-  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim n_\text{ion} T_f\, \text{max}\left\{\lambda_T, L_0 \right\}^2.
+  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim \frac{\Eboom}{\text{max} \{\lambda_T, L_0\}}.
 \end{equation}
 
 \section{Dark Matter-Induced Ignition: Constraints}
@@ -498,9 +498,9 @@ While such a statement is certainly not true for all DM models (such as the Q-ba
 With this assumption, it is interesting to note that combining the transit explosion condition \eqref{eq:transitexplosion} with $\eqref{eq:schematicLET}$ yields a lower bound on DM mass such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
 \begin{align}
 \label{eq:transitmass}
-m_{\text{DM}} >  T_f \lambda_T^2 \l \frac{n_{\text{crust}} R_{\text{crust}}}{v_{\text{esc}}^2} \r.
+m_\text{DM} > \Eboom \l \frac{R_\text{crust}}{\lambda_T} \r \l \frac{\rho_\text{crust}}{\rho_\text{central}} \r v_\text{esc}^2. 
 \end{align}
-For typical WD parameters we find that the DM mass must be greater than $\sim 10^{27} ~\GeV$, taking the density of the WD crust $n_\text{crust}$ to be a nominal $\OO(10^{-2})$ fraction of the central density $n_\text{ion}$ \cite{Chandrasekhar}.
+For the typical parameters of a $1.25 ~M_{\odot}$ WD we find that the DM mass must be greater than $\sim 10^{29} ~\GeV$ to ensure a bullet-like and explosive transit, taking the density of the WD crust $\rho_\text{crust}$ to be a nominal $\OO(10^{-2})$ fraction of the central density $\rho_\text{central}$ \cite{Chandrasekhar}.
 In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or is so strong that the DM cannot penetrate the crust without losing appreciable kinetic energy.
 However, it is important to note that this bound is only applicable when the energy input to the WD is chiefly coming from the DM kinetic energy, rather than binding energy or other sources.
 With the above schematic for a DM transit, we constrain the parameter $\sigma_{i,\epsilon}$ as a function of DM mass $m_\text{DM}$.
@@ -546,9 +546,9 @@ The Q-ball interaction is simple enough that the heating length of a Q-ball tran
 $L_0$ scales inversely with $n_\text{ion}$ and is less than $\lambda_T$ for all WD densities.
 Therefore, the Q-ball cross-section necessary to trigger runaway fusion is given by
 \begin{equation}
-\sigma_Q \gtrsim \lambda_T^2 \l \frac{T_f}{\epsilon}\r \approx 10^{-4} \lambda_T^2.
+\sigma_Q \gtrsim \frac{1}{n_\text{ion}} \frac{\Eboom}{\lambda_T} \l \frac{T_f}{N \epsilon} \r. 
 \end{equation}
-If the Q-ball cross-section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that $Q \gtrsim 10^{38} (m_S/\text{TeV})^4$ is capable of destroying a heavy $\sim 1.25 ~M_{\odot}$ WD.
+Therefore $\sigma_Q \approx 10^{-12} ~\text{cm}^2$ is sufficient to blow up a  $\sim 1.25 ~M_{\odot}$ WD, so if the Q-ball cross-section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that $Q \gtrsim 10^{42} ~(m_S/\text{TeV})^4$ can be constrained.
 Note that for such large values of $Q$ there is negligible stopping power for the Q-ball to slow down in a WD, and as such condition \eqref{eq:CrustCondition} will be trivially satisfied.
 Currently, the strongest constraints on Q-balls come from Super-Kamiokande as well as air fluorescence detectors of cosmic rays.
 However, the constraints possible with the WD detector are in a fundamentally inaccessible region of parameter space for these terrestrial-based experiments due to the extremely low flux, and thus our new constraints are wholly complementary.
@@ -569,7 +569,7 @@ As a concrete example we are able to place bounds on supersymmetric Q-ball DM ov
 In general, the phenomenology of such a DM-induced event will be the ignition of sub-Chandrasekhar mass progenitors.
 This raises the tantalizing possibility that DM encounters with a WD can act as an alternative explosion mechanism and progenitor system for type Ia SN. 
 For decades, the standard lore has been that type Ia SN were due to the thermonuclear explosion of accreting carbon-oxygen white dwarfs in a binary system that reached the critical $\sim 1.4 ~M_{\odot}$ Chandrasekhar mass limit. 
-Since the Chandrasekhar mass is a value determined only by fundamental physics it is natural to expect that the properties of type Ia SN are independent of initial conditions, famously enabling their use as ideal standard candles for precision luminosity distance measurements. 
+Since the Chandrasekhar mass is a value determined only by fundamental physics it is natural to expect that the properties of type Ia SN are independent of initial conditions, enabling their use as ideal standard candles for precision luminosity distance measurements. 
 Nevertheless, it is well-known that such a mechanism cannot account for all observed type Ia SN. 
 In fact, recent observations \cite{Scalzo:2014sap, Scalzo:2014wxa} suggest that an $\OO(1)$ fraction of the observed type Ia SN appear to have sub-Chandrasekhar progenitors.
 The leading explanation for this phenomenon is the detonation of a surface layer of helium which drives a shock into the interior of a sub-Chandrasekhar-mass WD \cite{Woosley1994,Fink:2007fv}. 
@@ -587,14 +587,14 @@ The stellar medium is very dense, with electron and ion number densities in the 
 Such high densities will give rise to qualitatively different effects than seen in terrestrial detectors.
 Famously, the star is supported against collapse by the relativistic electron degeneracy pressure with a characteristic Fermi energy
 \begin{equation}
-  E_F \sim (3 \pi^2 n_e)^{1/3} \sim 0.1 - 1 ~\MeV,
+  E_F \sim (3 \pi^2 n_e)^{1/3} \sim \OO(\MeV),
 \end{equation}
 which is greater than the typical stellar temperature $T \sim \keV$.
 The nuclei are fully-ionized and form a strongly-coupled plasma with Coulomb interaction energy
 \begin{equation}
 \label{eq:lattice}
   \omega \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}}
-         \sim 10^{-2} - 10^{-1} ~\MeV.
+         \sim \OO(10^{-1} ~\MeV).
 \end{equation}
 Since it is generally the case that $\omega \gg T$, the ions form a Coulomb lattice with lattice binding energy $\sim \omega$.
 \begin{figure}
