@@ -130,9 +130,13 @@ We examine the specific case of Q-balls in Section~\ref{sec:QBalls}, and conclud
 \label{sec:Review}
 
 Any process which deposits energy in a WD will eventually heat a localized region within the star.
-Since we are interested in nuclear fusion, let $L_0$ be the length scale of the local peak in ion temperature $T_0$ and $\Ez \sim n_\text{ion} T_0 L_0^3$ be the excess thermal energy it contains, where $n_\text{ion}$ is the number density of ions.
+Since we are interested in nuclear fusion, let $L_0$ be the length scale of the local peak in ion temperature $T_0$ and $\Ez$ be the excess thermal energy contained in this region.
 Note that the size and thermal properties of any heated region will evolve in time, so we take $L_0$ and $\Ez$ to characterize this peak as it initially forms, i.e.\ immediately after a temperature profile for ions has been established.
-Thus for a given heating event, $L_0$ is a measure of the efficiency with which the energy deposit is transferred to ions in the stellar medium.
+Of course, if ions were the only WD constituents to establish a temperature profile at this scale then $\Ez \sim L_0^3 n_\text{ion} T_0$, where $n_\text{ion}$ is the number density of ions.
+In actuality the WD is a multi-component fluid consisting of ions, degenerate electrons, and photons, with each component having a different characteristic heat capacity. 
+In other words, the excess thermal energy $\Ez$ will necessarily depend on whether electrons and photons in the WD also thermalize to the same temperature as ions $T_0$ within the size of the ion temperature profile $L_0$.  
+
+Thus for a given heating event, $L_0$ is a measure of the efficiency with which the energy deposit is transferred to the stellar medium. 
 This may vary significantly with the form of the energy deposit and with WD density.
 For example, suppose that kinetic energy is transferred directly to a single ion through a short-range elastic scatter.
 This ion would thermalize with neighboring ions, resulting in a heating length $L_0$ of order the ion mean free path.
@@ -153,26 +157,29 @@ It has been calculated numerically in \cite{Woosley} and analytically scaled for
 As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ which correspond to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$ \cite{cococubed}.
 Over this range, the trigger size is approximately $\lambda_T \sim 10^{-5} - 10^{-3} ~\text{cm}$.
 
-In summary, a local temperature peak $T_f$ in a WD will either always be dominated by diffusive cooling if $L_0 < \lambda_T$ or sustained fusion if $L_0 > \lambda_T$.
-However, there is an additional possibility if $T_0 > T_f$ that the thermal evolution is initially dominated by diffusion but at a later time results in runaway fusion.
-We can assess this outcome by assuming the region with $T_0 > T_f$ begins to diffuse and cool until its temperature reaches $\sim T_f$.
-If the size of the region at this point is larger than $\lambda_T$, a runaway will occur.
-For a heated region of initial size $L_0$ and total energy deposit $\Ez$, the condition to trigger a type Ia SN via runaway fusion is
+In summary, a local temperature peak $T_f \sim \MeV$ in a WD will either always be dominated by diffusive cooling if $L_0 < \lambda_T$ or sustained fusion if $L_0 > \lambda_T$.
+Assuming all components of the WD (ions, electrons, photons) are thermalized, the energy deposit $\Ez$ necessary to achieve the latter scenario is simply 
 \begin{equation}
 \label{eq:boom}
-  \Ez \gtrsim n_\text{ion} T_f \text{max}\{L_0, \lambda_T\}^3.
+  \Ez \gtrsim L_0^3 \int_0^{T_f} dT ~(n_\text{ion} + n_e^{2/3} T + T^3),
 \end{equation}
-This implies the explosion condition used in \cite{Graham:2015apa}, but also provides a less stringent criteria applicable to regions of temperature greater than $T_f$ and size less than $\lambda_T$ which was not needed in that work.
-Thus there is an absolute minimum energy required to ignite a WD
-\begin{equation}
+neglecting $\OO(1)$ numerical coefficients in the heat capacities (per unit volume) of the different WD constituents. 
+$n_e$ is the number density of electrons, and it is necessary to use the heat capacity of a perfectly degenerate gas as the electron Fermi energy $E_F \gtrsim T_f$ in the relevant range of densities.
+However, there is the additional possibility if $L_0 < \lambda_T$ and $T_0 > T_f$ that the thermal evolution is initially dominated by diffusion but at a later time results in runaway fusion.
+To assess the explosiveness of such a scenario, we can suppose that the small but very hot region will diffuse and cool until its temperature reaches $T_f$.
+At this point, if the (now larger) temperature profile has a size greater than $\lambda_T$, a runaway necessarily occurs. 
+For a heated region of length $L_0 < \lambda_T$ which thermalizes all WD constituents upon expanding to size $\lambda_T$ at temperature $T_f$, we can compute the minimum energy required to ignite a WD:
+\begin{align}
 \label{eq:Eboom}
-\mathcal{E}_{\text{boom}} \sim n_\text{ion} T_f \lambda_T^3 \sim 10^{15} - 10^{20} ~\GeV,
-\end{equation}
-where $\mathcal{E}_{\text{boom}} $ varies with trigger size $\lambda_T$ over the range of WD densities.
-This is plotted in Figure \ref{fig:Eboom}.
-Note that the threshold \eqref{eq:Eboom} is only sufficient if the deposited energy thermalizes within a region of size $L_0 < \lambda_T$.
-The threshold energy for explosion is parametrically larger if energy is deposited on a larger length scale $L_0 > \lambda_T$.
-As a result, understanding the heating length $L_0$ of a process is critical to determining whether or not it is capable of destroying a WD.
+\Eboom &\sim \lambda_T^3 (n_\text{ion} T_f + n_e^{2/3} T_f^2 + T_f^4) \\  
+	     &\approx 10^{16} - 10^{22} ~\GeV \nonumber,
+\end{align}
+where $\Eboom$ varies with trigger size $\lambda_T$ over the range of WD densities.
+This is plotted in Figure \ref{fig:Eboom}. 
+In a sense \eqref{eq:Eboom} generalizes the explosion condition of \cite{Graham:2015apa}, providing a less stringent criteria applicable to regions of temperature greater than $T_f$ and size less than $\lambda_T$ which was not needed in that work.
+Note that while $\Eboom$ is independent of the precise value of the heating length $L_0$, this threshold is only sufficient if the deposited energy thermalizes within a region of size $L_0 < \lambda_T$.
+If not, the minimum energy for explosion would be parametrically larger by a ratio of the volumes $(L_0/\lambda_T)^3$.
+As a result, understanding the heating length $L_0$ of an energy releasing process in a WD is critical to determining whether or not it is capable of destroying a star.
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
 \caption{Minimum energy $\Eboom$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
@@ -293,7 +300,7 @@ Therefore, a ultra-high energy neutrino behaves like a hadron and the neutrino h
 \label{sec:DMexplode}
 
 In this Section, we parameterize aspects of the DM-induced heating of WDs that are purely dependent on the nature of DM.
-In particular, we derive explosion conditions on DM-WD encounters in terms of their heating lengths $L_0$ that determine whether or not they are capable of igniting the star.
+In particular, we derive explosion conditions on DM-WD encounters in terms of the heating length $L_0$ of the corresponding energy deposit that determine whether or not they are capable of igniting the star
 This is done for the three illustrative examples depicted in Figure \ref{fig:feynman}: DM-DM collisions, DM decays, and DM transits.
 \begin{figure}
 \includegraphics[scale=0.09]{feynmandiag.jpg}
@@ -313,9 +320,9 @@ This excludes interactions involving the decay of long-lived, meta-stable dark s
 With this parameterization, the explosion condition is approximately the same for both DM-DM collisions and DM decays:
 \begin{equation}
 \label{eq:coldecay}
-  m_\text{DM} \gtrsim \frac{1}{f_\text{SM}} \cdot n_\text{ion} T_f \text{max}\{L_0, \lambda_T\}^3
+  m_\text{DM} f_\text{SM}  \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3
 \end{equation}
-We are thus sensitive to ultra-heavy $(> 10^{15} ~\GeV)$ DM masses which annihilate or decay into SM particles. 
+We are thus sensitive to ultra-heavy $(> 10^{16} ~\GeV)$ DM masses which annihilate or decay into SM particles. 
 
 \subsection{DM Transits}
 \label{sec:DMdecay}
@@ -325,9 +332,9 @@ Since the DM will carry the bulk of the momentum in any such interaction produci
 This is parameterized by a linear energy transfer $(dE/dx)_\text{LET}$, which is the energy released into SM products per distance traveled in a WD.
 Such a process can be broken up into a series of multiple heating events depositing energy $L_0 (d E/d x)_\text{LET}$ into temperature peaks of size $L_0$, where $L_0$ is the heating length for a single scatter.
 If any individual deposition satisfies \eqref{eq:boom}, then runaway fusion obviously occurs.
-If not, a SN may still be triggered due to the combined effect of many deposits.
-In such a scenario a large number of nearby temperature peaks will each diffuse outward, eventually merging into an explosive thermal profile satisfying \eqref{eq:boom}.
-This is possible if the heating length is smaller than the trigger size $L_0 < \lambda_T$, in which case it is sensible to consider the combined deposit as a single heating event of length $\lambda_T$ and energy $\lambda_T (d E/d x)$.
+If not, runaway fusion may still be triggered due to the combined effect of many deposits.
+In such a scenario a large number of nearby temperature peaks will each diffuse outward, eventually merging into an explosive thermal profile.
+More explicitly, if the heating length is smaller than the trigger size $L_0 < \lambda_T$ it is sensible to consider the combined deposit as a single heating event of length $\lambda_T$ and energy deposit $\lambda_T (d E/d x)$.
 However, such a coherent addition of individual energy deposits is only possible if the DM transit time is smaller than the relevant thermal evolution timescale.
 The latter is dominated by the diffusion time $\tau_d$ across a distance $\lambda_T$ at temperature $T_f$.
 Thus we require
@@ -354,9 +361,8 @@ Therefore, the assumption of a DM transit at roughly constant velocity also allo
 The explosion condition for transits satisfying \eqref{eq:SlowDiffusion} and \eqref{eq:CrustCondition} is given by
 \begin{equation}
 \label{eq:transitexplosion}
-  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim n_\text{ion} T_f\, \text{max}\left\{\lambda_T, L_0 \right\}^2.
+  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim \frac{\Eboom}{\lambda_T} \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^2.
 \end{equation}
-
 \section{Dark Matter-Induced Ignition: Constraints}
 \label{sec:Constraints}
 
@@ -380,9 +386,9 @@ Therefore, most of the stars exploded in this manner will be in the mass range $
 To summarize, a bound on DM parameters can be placed if either a single explosive event occurs during the lifetime of an observed star such as RX~J0648.04418, or the SN rate due to such DM events throughout the galaxy exceeds the measured value.
 Note that for low-mass WDs dominated by photon diffusion, $\Eboom$ is a strong function of WD density.
 In \cite{Graham:2015apa} the central WD density is used to constrain black hole transits with the justification that the density is nearly constant for much of the star.
-The average density for WDs is typically a factor of $\sim 10^{-2} - 10^{-1}$ less than the central density, although it is found that the WD density changes by an $\OO(1)$ fraction from the central value out at a distance $\sim R_\text{WD}/2$ \cite{Chandrasekhar}.
+The average density for WDs is typically a factor $\sim 10^{-2} - 10^{-1}$ less than the central density, although it is found that the WD density changes by an $\OO(1)$ fraction from the central value out at a distance $\sim R_\text{WD}/2$ \cite{Chandrasekhar}.
 Therefore the central density is a valid approximation as long as we consider heating events within this ``modified" WD volume.
-For simplicity, we employ this approach
+For simplicity, we employ this approach. 
 
 
 \subsection{Collision and Decay Constraints}
@@ -390,29 +396,40 @@ For simplicity, we employ this approach
 
 We begin by calculating the rate for a DM-DM collision or DM decay event to occur within the WD.
 Note that it is possible that the DM has sufficient interactions with the SM capable of slowing it down in the WD.
-If we consider such interactions, then there are two limiting behaviors: the DM enters the star at velocity $v_\text{esc}$ and exits with only an $\OO(1)$ change in its kinetic energy (``DM wind" scenario), or the DM gets stopped and accumulates (``DM capture" scenario) inside the WD.
+If we consider such interactions, then there are two limiting behaviors: the DM enters the star at velocity $v_\text{esc}$ and exits with only an $\OO(1)$ change in its kinetic energy (``DM wind" scenario), or the DM gets stopped and accumulates inside the WD (``DM capture" scenario).
 The precise behavior is determined by the magnitude of the stopping power $(dE/dx)_\text{SP}$ relative to the quantity $m_\text{DM} v_\text{esc}^2/R_\text{WD}$. 
 For any realistic models, it is reasonable to suspect that $(dE/dx)_\text{SP}$ is a strong function of DM velocity.
 Therefore, we restrict ourselves to the two extreme cases of either negligible stopping or complete stopping of the DM. 
-For DM wind, the expected number density of DM particles in the WD volume is simply
+In the case of DM wind, the expected number density of DM particles in the WD volume 
 \begin{equation}
-n_\text{DM} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \frac{v_\text{esc}}{v},
+n_\text{DM} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r,
 \end{equation}
 taking into account the $\OO(10)$ gravitational enhancement of the number density in the star. 
 Here $v \sim 10^{-3}$ denotes the galactic virial velocity and $\rho_\text{DM}$ is the energy density of DM in the region of interest. 
 We assume $\rho_\text{DM} \sim 0.4 ~\GeV/\text{cm}^3$ for nearby stars, while for the white dwarfs observed in the galactic center it is estimated that $\rho_\text{DM} \sim 10^3 ~\text{GeV}/\text{cm}^3$ \cite{Nesti:2013uwa}.
-However, in the case of DM capture the number density of DM particles in the WD is dramatically increased due to the exceptionally long lifetime $\sim \text{Gyr}$ of the WD - as a comparison, the unstopped DM wind will spend of order $v_\text{esc}/R_\text{WD} \sim 1 ~\text{s}$ in the WD.
+
+However, in the case of DM capture the number density of DM particles in the WD is dramatically increased and there is the possibility for self-gravitational collapse.
+DM slows down in the WD to a velocity $\sim \sqrt{T/m_\text{DM}}$, where $T \sim \keV$ is the WD temperature. 
+The captured DM will virialize and accumulate at the thermal radius 
+\begin{equation}
+R_\text{th} \sim \l \frac{T}{G m_\text{DM} \rho_\text{WD}}\r^{1/2} \approx 10^{-3} ~\text{m} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2},
+\end{equation}
+where we have assumed the WD has roughly constant density $\rho_\text{WD}$ equal to the central value for a $\sim 1.25 ~M_{\odot}$ WD within a sphere of radius $R_\text{th}$. 
+Gravitational collapse into a compact DM core begins once when the total mass of DM exceeds the WD mass within this region. 
+To find the time necessary to accumulate this number of DM states, we use the transit rate for DM matter
+
+as a comparison, the unstopped DM wind will spend roughly $v_\text{esc}/R_\text{WD} \approx 1 ~\text{s}$ in the WD.
 We find that the enhanced number density as a result of accumulation over a WD lifetime $\tau_\text{WD}$ is of order  
 \begin{equation}
 n_\text{DM} \sim \l \frac{\rho_\text{DM}}{m_\text{DM}} \r R_\text{WD}^2 \tau_\text{WD} \l\frac{v_\text{esc}^2}{v}\r.
 \end{equation}
 Although exact kinematics and stopping of the DM must be computed for a given model and $(dE/dx)_\text{SP}$, it is reasonable that the captured DM thermalizes to the WD temperature $T \sim \keV$ in a timescale shorter than the WD lifetime. 
-Therefore, we can compute the expected DM-DM collision rate parameterized by cross-section $\sigma_\text{col}$
+
+We can compute the expected DM-DM collision rate parameterized by cross-section $\sigma_\text{DM-DM}$
 \begin{equation}
-\Gamma_\text{collision} \sim n_\text{DM}^2 \sigma_\text{col} v_\text{DM} R_\text{WD}^3,
+\Gamma_\text{collision} \sim n_\text{DM}^2 \sigma_\text{DM-DM} v R_\text{WD}^3,
 \label{eq:collisionDM}
 \end{equation}
-where $v_\text{DM}$ is the DM velocity in the WD and is either $\OO(v_\text{esc})$ for DM wind or $\OO(\sqrt{T/m_\text{DM}})$ for DM capture.
 Likewise, the rate at which a single DM decay event occurs in the WD parametrized by a mean lifetime of DM $\tau_\text{DM}$ is simply
 \begin{equation}
 \Gamma_\text{decay} \sim  \frac{1}{\tau_\text{DM}} n_\text{DM} R_\text{WD}^3,
@@ -428,7 +445,7 @@ As a result, to adequately place constraints on ultra-heavy DM above this scale 
 
 It is important to note that there are additional limits on DM interactions of this kind, complementary to the limits placed from WDs. 
 For instance, DM can annihilate or decay into ultra-high energy particles within our galactic halo and therefore contribute to the cosmic ray flux seen in terrestrial air shower detectors.
-As we have not seen any cosmic rays of energy greater than $\sim 10^{12} ~\GeV$ \cite{ThePierreAuger:2015rha, AbuZayyad:2012ru}, this places a concrete limit on the DM interaction parameters $\sigma_\text{col}$ and $\tau_\text{DM}$ when such ultra-high energy particles are released. 
+As we have not seen any cosmic rays of energy greater than $\sim 10^{12} ~\GeV$ \cite{ThePierreAuger:2015rha, AbuZayyad:2012ru}, this places a concrete limit on the DM interaction parameters $\sigma_\text{DM-DM}$ and $\tau_\text{DM}$ when such ultra-high energy particles are released. 
 In theory, a constraint may also be placed on lower-energy SM products from DM annihilations or decays which would provide an additional source for the measured cosmic ray flux, although such a detailed analysis is beyond the scope of this work. 
 The expected cosmic ray flux due to a DM decay in the galactic halo is given by:
 \begin{equation}
@@ -444,15 +461,15 @@ A cosmic ray detector sees events within a space-time volume $\sim (R_\text{det}
 Note that a similar calculation can be done in the case of DM-DM annihilations in the galactic halo, although in this case the gravitational enhancement is $\OO(10^3)$ and results in more stringent constraints from the WD observation. 
 
 In addition, there are various cosmological bounds on DM interactions. 
-By requiring that the galactic halo has not diminished by more than an $\OO(1)$ factor during its lifetime, we can constrain $\sigma_\text{col}/m_\text{DM} \lesssim \text{barn}/\GeV$, valid regardless of the precise details of the collision. 
+By requiring that the galactic halo has not diminished by more than an $\OO(1)$ factor during its lifetime, we can constrain $\sigma_\text{DM-DM}/m_\text{DM} \lesssim \text{barn}/\GeV$, valid regardless of the precise details of the collision. 
 The cosmological bound on DM lifetime $\tau_\text{DM} \gtrsim 100 ~\text{Gyr}$ is also independent of the nature of the decay products (see \cite{Poulin:2016nat} for details). 
-Note that a similar bound on DM self-interactions $(\sigma_\text{col}/m_\text{DM})$ due to colliding clusters of galaxies \cite{Randall:2007ph} is of the same order of magnitude as that derived considering our own galaxy.
-Since the limits imposed by the WD scale as $\sigma_\text{col} \propto m_\text{DM}^2$ and $\tau_\text{DM} \propto m_\text{DM}^{-1}$, there will necessary be a sufficiently large DM mass for which the above cosmological considerations are the more stringent constraints on its interactions. 
+Note that a similar bound on DM self-interactions $(\sigma_\text{DM-DM}/m_\text{DM})$ due to colliding clusters of galaxies \cite{Randall:2007ph} is of the same order of magnitude as that derived considering our own galaxy.
+Since the limits imposed by the WD scale as $\sigma_\text{DM-DM} \propto m_\text{DM}^2$ and $\tau_\text{DM} \propto m_\text{DM}^{-1}$, there will necessary be a sufficiently large DM mass for which the above cosmological considerations are the more stringent constraints on its interactions. 
 Lastly, we comment on the possibility for DM-DM collisions to affect the epoch of recombination and the observed properties of the cosmic microwave background (CMB). 
 This effect was first computed in \cite{Padmanabhan:2005es} to constrain DM annihilations into products that inject energy to the photon-baryon plasma and ionize neutral hydrogen and is of the form $\langle \sigma_{col} v \rangle \propto m_\text{DM}$. 
 Therefore, this could potentially be scaled to ultra-heavy DM masses if the cosmological history of such DM candidates is understood.
 
-With the above schematic for DM-DM collisions, we place bounds on the cross section $\sigma_\text{col}$ as a function of $m_\text{DM}$ using the different classes of observation available and for representative choices of $f_\text{SM}$ and SM species $i$ released.
+With the above schematic for DM-DM collisions, we place bounds on the cross section $\sigma_\text{DM-DM}$ as a function of $m_\text{DM}$ using the different classes of observation available and for representative choices of $f_\text{SM}$ and SM species $i$ released.
 This is done in Figures \ref{fig:collisionclasses}, \ref{fig:collisioneta}, and \ref{fig:collisionspecies}. 
 In a similar manner, we constrain the lifetime $\tau_\text{DM}$ as a function of $m_\text{DM}$ in Figures \ref{fig:decayclasses}, \ref{fig:decayepsilon}, and \ref{fig:decayspecies}.
 
@@ -494,9 +511,9 @@ While such a statement is certainly not true for all DM models (such as the Q-ba
 With this assumption, it is interesting to note that combining the transit explosion condition \eqref{eq:transitexplosion} with $\eqref{eq:schematicLET}$ yields a lower bound on DM mass such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
 \begin{align}
 \label{eq:transitmass}
-m_{\text{DM}} >  T_f \lambda_T^2 \l \frac{n_{\text{crust}} R_{\text{crust}}}{v_{\text{esc}}^2} \r.
+m_\text{DM} > \Eboom \l \frac{R_\text{crust}}{\lambda_T} \r \l \frac{\rho_\text{crust}}{\rho_\text{central}} \r v_\text{esc}^2. 
 \end{align}
-For typical WD parameters we find that the DM mass must be greater than $\sim 10^{27} ~\GeV$, taking the density of the WD crust $n_\text{crust}$ to be a nominal $\OO(10^{-2})$ fraction of the central density $n_\text{ion}$ \cite{Chandrasekhar}.
+For the typical parameters of a $1.25 ~M_{\odot}$ WD we find that the DM mass must be greater than $\sim 10^{29} ~\GeV$ to ensure a bullet-like and explosive transit, taking the density of the WD crust $\rho_\text{crust}$ to be a nominal $\OO(10^{-2})$ fraction of the central density $\rho_\text{central}$ \cite{Chandrasekhar}.
 In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or is so strong that the DM cannot penetrate the crust without losing appreciable kinetic energy.
 However, it is important to note that this bound is only applicable when the energy input to the WD is chiefly coming from the DM kinetic energy, rather than binding energy or other sources.
 With the above schematic for a DM transit, we constrain the parameter $\sigma_{i,\epsilon}$ as a function of DM mass $m_\text{DM}$.
@@ -542,9 +559,10 @@ The Q-ball interaction is simple enough that the heating length of a Q-ball tran
 $L_0$ scales inversely with $n_\text{ion}$ and is less than $\lambda_T$ for all WD densities.
 Therefore, the Q-ball cross-section necessary to trigger runaway fusion is given by
 \begin{equation}
-\sigma_Q \gtrsim \lambda_T^2 \l \frac{T_f}{\epsilon}\r \approx 10^{-4} \lambda_T^2.
+\sigma_Q \gtrsim \frac{1}{n_\text{ion}} \frac{\Eboom}{\lambda_T} \l \frac{T_f}{N \epsilon} \r. 
 \end{equation}
-If the Q-ball cross-section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that $Q \gtrsim 10^{38} (m_S/\text{TeV})^4$ is capable of destroying a heavy $\sim 1.25 ~M_{\odot}$ WD.
+Therefore $\sigma_Q \approx 10^{-12} ~\text{cm}^2$ is sufficient to blow up a $\sim 1.25 ~M_{\odot}$ WD.
+If the Q-ball cross-section is related to its mass and baryonic charge as in \eqref{eq:Qballprop}, we find that $Q \gtrsim 10^{42} ~(m_S/\text{TeV})^4$ can be adequately constrained from the observation of a single, heavy WD. 
 Note that for such large values of $Q$ there is negligible stopping power for the Q-ball to slow down in a WD, and as such condition \eqref{eq:CrustCondition} will be trivially satisfied.
 Currently, the strongest constraints on Q-balls come from Super-Kamiokande as well as air fluorescence detectors of cosmic rays.
 However, the constraints possible with the WD detector are in a fundamentally inaccessible region of parameter space for these terrestrial-based experiments due to the extremely low flux, and thus our new constraints are wholly complementary.
@@ -565,12 +583,11 @@ As a concrete example we are able to place bounds on supersymmetric Q-ball DM ov
 In general, the phenomenology of such a DM-induced event will be the ignition of sub-Chandrasekhar mass progenitors.
 This raises the tantalizing possibility that DM encounters with a WD can act as an alternative explosion mechanism and progenitor system for type Ia SN. 
 For decades, the standard lore has been that type Ia SN were due to the thermonuclear explosion of accreting carbon-oxygen white dwarfs in a binary system that reached the critical $\sim 1.4 ~M_{\odot}$ Chandrasekhar mass limit. 
-Since the Chandrasekhar mass is a value determined only by fundamental physics it is natural to expect that the properties of type Ia SN are independent of initial conditions, famously enabling their use as ideal standard candles for precision luminosity distance measurements. 
-However, it is well-known that such a mechanism cannot account for all observed type Ia SN. 
+Since the Chandrasekhar mass is a value determined only by fundamental physics it is natural to expect that the properties of type Ia SN are independent of initial conditions, enabling their use as ideal standard candles for precision luminosity distance measurements. 
+Nevertheless, it is well-known that such a mechanism cannot account for all observed type Ia SN. 
 In fact, recent observations \cite{Scalzo:2014sap, Scalzo:2014wxa} suggest that an $\OO(1)$ fraction of the observed type Ia SN appear to have sub-Chandrasekhar progenitors.
 The leading explanation for this phenomenon is the detonation of a surface layer of helium which drives a shock into the interior of a sub-Chandrasekhar-mass WD \cite{Woosley1994,Fink:2007fv}. 
-In light of the lack of understanding of DM and its interactions, it is worthwhile to consider whether a DM-WD encounter may play the role of type Ia SN progenitor.
-
+However, in light of the lack of understanding of DM and its interactions, it is worthwhile to consider whether a DM-WD encounter may play the role of type Ia SN progenitor. 
 
 \begin{appendices}
 
@@ -584,14 +601,14 @@ The stellar medium is very dense, with electron and ion number densities in the 
 Such high densities will give rise to qualitatively different effects than seen in terrestrial detectors.
 Famously, the star is supported against collapse by the relativistic electron degeneracy pressure with a characteristic Fermi energy
 \begin{equation}
-  E_F \sim (3 \pi^2 n_e)^{1/3} \sim 0.1 - 1 ~\MeV,
+  E_F \sim (3 \pi^2 n_e)^{1/3} \sim \OO(\MeV),
 \end{equation}
 which is greater than the typical stellar temperature $T \sim \keV$.
 The nuclei are fully-ionized and form a strongly-coupled plasma with Coulomb interaction energy
 \begin{equation}
 \label{eq:lattice}
   \omega \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}}
-         \sim 10^{-2} - 10^{-1} ~\MeV.
+         \sim \OO(10^{-1} ~\MeV).
 \end{equation}
 Since it is generally the case that $\omega \gg T$, the ions form a Coulomb lattice with lattice binding energy $\sim \omega$.
 \begin{figure}
