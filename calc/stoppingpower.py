@@ -161,7 +161,8 @@ class FermiSea_StoppingPower(object):
                 if important:
                     base_integrand, dist = self.get_weighted_integrand(pM, M, Asq_func) 
                     result, error = skm.mcimport(base_integrand, npoints=samples,
-                                                 distribution=dist, nprocs=4)
+                                                 distribution=dist, nprocs=4,
+                                                 weight=4*(self.pfermi**3)/3.0)
                 else:
                     integrand = self.get_stopping_power_integrand(pM, M, Asq_func) 
                     result, error = skm.mcmiser(integrand, npoints=samples, 
@@ -182,8 +183,9 @@ class FermiSea_StoppingPower(object):
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
         angular_integral = 2*np.pi  # need a real integral here, see notes
+        fuck_it = 0.008 # empirically determined bullshit 
         def le_limit(ke):
-            return factor*np.sqrt(2*ke/M)
+            return factor*angular_integral*fuck_it*np.sqrt(2*ke/M)
         return le_limit
 
     def high_density_fast_ion(self, M, Z, alpha=1.0/137.0):
@@ -212,7 +214,7 @@ def Asq_coulomb(s, t, u, m, z, M, Z, alpha=1.0/137.0):
     distinguishable spin-1/2 particles of mass and charge number m, z 
     and M, Z.  Given as a function of the Mandelstam variables.    
     """
-    scale = 32*(np.pi**2)*(alpha**2)*z*Z
+    scale = 32*(np.pi**2)*(alpha**2)*(z**2)*(Z**2)
     msq = m**2 + M**2
     numerator = u**2 + s**2 + 4*t*msq - 2*(msq**2)
     return scale*numerator/(t**2)
