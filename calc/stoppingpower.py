@@ -54,6 +54,7 @@ class FermiSea_StoppingPower(object):
                       "length":str(lengthunit)}
         self.pfermi = (3*(np.pi**2)*self.n0_m)**(1.0/3.0)
         self.Efermi = np.sqrt(self.m**2 + self.pfermi**2)
+            # This is the total energy, not kinetic energy
 
     def get_stopping_power_integrand(self, pM, M, Asq_func):
         """
@@ -74,6 +75,7 @@ class FermiSea_StoppingPower(object):
             omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
             # Pauli blocking
             blocked = pm_final_lab[0] <= self.Efermi
+                # compare total energies here
             if blocked:
                 return 0.0
             # kinematics, boost, measure factors
@@ -106,6 +108,7 @@ class FermiSea_StoppingPower(object):
             omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
             # Pauli blocking
             blocked = pm_final_lab[0] <= self.Efermi
+                # compare total energies here
             if blocked:
                 return 0.0
             # kinematics, boost, measure factors
@@ -180,6 +183,7 @@ class FermiSea_StoppingPower(object):
 
     def high_density_slow_ion(self, M, Z, alpha=1.0/137.0):
         factor = 4*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
+            # note this Efermi is the total, not kinetic electron energy
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
         angular_integral = 0.1 # empirically determined bullshit 
@@ -191,22 +195,13 @@ class FermiSea_StoppingPower(object):
 
     def high_density_fast_ion(self, M, Z, alpha=1.0/137.0):
         factor = 2*np.pi*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
+            # note this Efermi is the total, not kinetic electron energy
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
         coulomb_log = 10.0  # need a real integral here, see notes
         def he_limit(ke):
             return factor*coulomb_log*np.ones(ke.shape)
         return he_limit
-
-    def high_density_limiting(self, M, Z, alpha=1.0/137.0):
-        """
-        For high densities, where the electron Fermi energy is greater
-        than it's mass, this returns a quadrature sum of the low 
-        ion energy (k^{1/2}) and the high ion energy {p->0, k^0} limits.
-        """
-        le = self.high_density_slow_ion(M, Z, alpha=1.0/137.0)
-        he = self.high_density_fast_ion(M, Z, alpha=1.0/137.0)
-        return lambda ke: (le(ke)**(-2) + he(ke)**(-2))**(-0.5)
 
 
 def Asq_coulomb(s, t, u, m, z, M, Z, alpha=1.0/137.0):
