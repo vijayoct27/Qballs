@@ -182,10 +182,11 @@ class FermiSea_StoppingPower(object):
         factor = 4*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
-        angular_integral = 2*np.pi  # need a real integral here, see notes
-        fuck_it = 0.008 # empirically determined bullshit 
+        angular_integral = 0.1 # empirically determined bullshit 
+                                # a real constant that should go here, need to
+                                # do an integral for it - see notes
         def le_limit(ke):
-            return factor*angular_integral*fuck_it*np.sqrt(2*ke/M)
+            return factor*angular_integral*np.sqrt(2*ke/M)
         return le_limit
 
     def high_density_fast_ion(self, M, Z, alpha=1.0/137.0):
