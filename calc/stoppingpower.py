@@ -248,29 +248,29 @@ class FermiSea_StoppingPower(object):
         scale *= self.masstolength 
             # convert from mass^2 to mass/length
         blocked_integrand = lambda w: (
-            (1.0/w)*(1.0 - (1.0 + w*(w - 2*self.Efermi)/self.pfermi)**1.5))
+            (1.0/w)*(1.0 - (1.0 + w*(w - 2*self.Efermi)/self.pfermi**2)**1.5))
         unblocked_integrand = lambda w: 1.0/w
         undersea_blocked, undersea_blocked_err = integ.quad(
-            blocked_integrand, 0, self.KEfermi)
+            blocked_integrand, 0.0, self.KEfermi)
             # under-the-sea contribution for partially Pauli blocked case
         def sp_approx(ke):
             results = np.ones(ke.shape)*np.nan
+            errors = np.ones(ke.shape)*np.nan
             for index, ke_i in enumerate(ke):
-                q = kin.kinetic_to_momentum(ke, M)
+                q = kin.kinetic_to_momentum(ke_i, M)
                 w_kin = kin.maximal_energy_transfer(q, M, self.m)
-                if omega_kin > self.KEfermi: # partially Pauli blocked
+                if w_kin > self.KEfermi: # partially Pauli blocked
                     unblocked, unblocked_err = integ.quad(
                         unblocked_integrand, self.KEfermi, w_kin)
-                     
-                elif omega_kin <= self.KEfermi: # fully Pauli blocked 
-                    pass
-
-            blocking_arg = np.copy(omega_kin)
-            blocking_arg[unblocked] = self.KEfermi
-            heavyside_coulomb_log = np.zeros(ke.shape)
-            heavyside_coulomb_log[unblocked] = (
-                np.log(omega_kin[unblocked]/self.KEfermi))
-            return scale*(blocking_slope*blocking_arg + heavyside_coulomb_log)
+                    total = unblocked + undersea_blocked
+                    total_err = np.sqrt(unblocked_err**2 + 
+                                        undersea_blocked_err**2) 
+                elif w_kin <= self.KEfermi: # fully Pauli blocked 
+                    total, total_err = integ.quad(
+                        blocked_integrand, 0.0, w_kin)
+                results[index] = scale*total
+                errors[index] = scale*total_err
+            return results 
         return sp_approx
 
     def approx_sp_piecewise(self, M, Z, alpha=1.0/137.0):
@@ -280,7 +280,7 @@ class FermiSea_StoppingPower(object):
         momentum results.
         """
         nonrelativistic_approx = self.approx_sp_heavyslow(M, Z)
-        relativistic_approx = self.approx_sp_heavyfast_fancy(M, Z)
+        relativistic_approx = self.approx_sp_heavyfast_superfancy(M, Z)
         def sp_approx(ke):
             relativistic = ke > M 
             results = np.ones(ke.shape)*np.nan 
