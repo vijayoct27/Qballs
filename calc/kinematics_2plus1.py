@@ -26,6 +26,23 @@ def polarkinetic_to_4vec(ke, ptheta, m):
     return polarmomentum_to_4vec(pmag, ptheta, m)
 
 
+def momentum_to_kinetic(p, m):
+    """ 
+    Given the momentum p of a particle of mass m, returns its kinetic energy
+    """
+    # This is going to susceptible to numerical errors if p is much
+    # smaller than m due to a subtraction of nearly equal numbers. 
+    # Perhaps add non-relativistic case to catch that?
+    return np.sqrt(p**2 + m**2) - m
+
+
+def kinetic_to_momentum(ke, m):
+    """ 
+    Given the kinetic energy ke of a particle of mass m, returns its momentum
+    """
+    return np.sqrt(ke**2 + 2*ke*m)
+
+
 def boost_and_inverse_matricies(v):
     """ 2+1 Lorentz boost to a frame moving with 2D velocity v """
     vx, vy = v
@@ -91,3 +108,15 @@ def mandelstam_varibales_COM(pM, M, pm, m, costh, com=False):
         return s, t, u   
     else:
         raise Exception("vectors are not in the CoM frame")
+
+
+def maximal_energy_transfer(q_in, m_in, m_tar):
+    """
+    For an incident particle with momentum q_in and mass m_in striking
+    a stationary target with mass m_tar, this gives the maximal
+    kinematically allowed energy transfer to the stationary particle. 
+    """
+    E = np.sqrt(q_in**2 + m_in**2)
+    classical = 2*m_tar*(q_in**2)/(m_in**2)
+    denominator = 1.0 + 2*m_tar*E/(m_in**2) + (m_tar**2)/(m_in**2)
+    return classical/denominator

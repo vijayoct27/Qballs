@@ -54,7 +54,8 @@ class FermiSea_StoppingPower(object):
                       "length":str(lengthunit)}
         self.pfermi = (3*(np.pi**2)*self.n0_m)**(1.0/3.0)
         self.Efermi = np.sqrt(self.m**2 + self.pfermi**2)
-            # This is the total energy, not kinetic energy
+        self.KEfermi = self.Efermi - self.m
+
 
     def get_stopping_power_integrand(self, pM, M, Asq_func):
         """
@@ -75,7 +76,7 @@ class FermiSea_StoppingPower(object):
             omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
             # Pauli blocking
             blocked = pm_final_lab[0] <= self.Efermi
-                # compare total energies here
+                # compare total energies here, not just kinetic piece
             if blocked:
                 return 0.0
             # kinematics, boost, measure factors
@@ -108,7 +109,7 @@ class FermiSea_StoppingPower(object):
             omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
             # Pauli blocking
             blocked = pm_final_lab[0] <= self.Efermi
-                # compare total energies here
+                # compare total energies here, not just kinetic piece
             if blocked:
                 return 0.0
             # kinematics, boost, measure factors
@@ -181,27 +182,112 @@ class FermiSea_StoppingPower(object):
         Asq_func = lambda s, t, u: Asq_coulomb(s, t, u, self.m, self.z, M, Z)
         return self.get_stopping_power_func(M, Asq_func)
 
-    def high_density_slow_ion(self, M, Z, alpha=1.0/137.0):
+    def approx_sp_heavyslow(self, M, Z, alpha=1.0/137.0):
+        """ 
+        Approximate analytic result for stopping power of a very heavy
+        and slow particle incident on a field of relativistic targets
+        """
         factor = 4*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
-            # note this Efermi is the total, not kinetic electron energy
+            # Efermi here is total energy, not just kinetic
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
         angular_integral = 0.1 # empirically determined bullshit 
                                 # a real constant that should go here, need to
                                 # do an integral for it - see notes
-        def le_limit(ke):
+        def sp_approx(ke):
             return factor*angular_integral*np.sqrt(2*ke/M)
-        return le_limit
+        return sp_approx
 
-    def high_density_fast_ion(self, M, Z, alpha=1.0/137.0):
+    def approx_sp_heavyfast(self, M, Z, alpha=1.0/137.0):
+        """ 
+        Approximate constant stopping power of a very heavy and fast
+        particle incident on a field of stationary targets.
+        """
         factor = 2*np.pi*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
-            # note this Efermi is the total, not kinetic electron energy
+            # Efermi here is total energy, not just kinetic
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
         coulomb_log = 10.0  # need a real integral here, see notes
-        def he_limit(ke):
+        def sp_approx(ke):
             return factor*coulomb_log*np.ones(ke.shape)
-        return he_limit
+        return sp_approx
+
+    def approx_sp_heavyfast_fancy(self, M, Z, alpha=1.0/137.0):
+        """ 
+        Approximate analytic result for stopping power of a very heavy
+        and fast particle incident on a field of relativistic targets.
+        This uses a linear approximation to the Pauli-effective density.
+        """
+        scale = 2*np.pi*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
+            # Efermi here is total energy, not just kinetic
+        scale *= self.masstolength 
+            # convert from mass^2 to mass/length
+        blocking_slope = 3*self.Efermi/(self.pfermi**2)
+            # coefficient of linear Pauli-blocked term 
+        def sp_approx(ke):
+            q = kin.kinetic_to_momentum(ke, M)
+            omega_kin = kin.maximal_energy_transfer(q, M, self.m)
+            unblocked = omega_kin > self.KEfermi 
+                # energies with a non-Pauli blocked term in the stopping power
+            blocking_arg = np.copy(omega_kin)
+            blocking_arg[unblocked] = self.KEfermi
+            heavyside_coulomb_log = np.zeros(ke.shape)
+            heavyside_coulomb_log[unblocked] = (
+                np.log(omega_kin[unblocked]/self.KEfermi))
+            return scale*(blocking_slope*blocking_arg + heavyside_coulomb_log)
+        return sp_approx
+
+    def approx_sp_heavyfast_superfancy(self, M, Z, alpha=1.0/137.0):
+        """ 
+        Approximate analytic result for stopping power of a very heavy
+        and fast particle incident on a field of relativistic targets.
+        Thus uses the full Pauli-effective density.
+        """
+        scale = 2*np.pi*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
+            # Efermi here is total energy, not just kinetic
+        scale *= self.masstolength 
+            # convert from mass^2 to mass/length
+        blocked_integrand = lambda w: (
+            (1.0/w)*(1.0 - (1.0 + w*(w - 2*self.Efermi)/self.pfermi)**1.5))
+        unblocked_integrand = lambda w: 1.0/w
+        undersea_blocked, undersea_blocked_err = integ.quad(
+            blocked_integrand, 0, self.KEfermi)
+            # under-the-sea contribution for partially Pauli blocked case
+        def sp_approx(ke):
+            results = np.ones(ke.shape)*np.nan
+            for index, ke_i in enumerate(ke):
+                q = kin.kinetic_to_momentum(ke, M)
+                w_kin = kin.maximal_energy_transfer(q, M, self.m)
+                if omega_kin > self.KEfermi: # partially Pauli blocked
+                    unblocked, unblocked_err = integ.quad(
+                        unblocked_integrand, self.KEfermi, w_kin)
+                     
+                elif omega_kin <= self.KEfermi: # fully Pauli blocked 
+                    pass
+
+            blocking_arg = np.copy(omega_kin)
+            blocking_arg[unblocked] = self.KEfermi
+            heavyside_coulomb_log = np.zeros(ke.shape)
+            heavyside_coulomb_log[unblocked] = (
+                np.log(omega_kin[unblocked]/self.KEfermi))
+            return scale*(blocking_slope*blocking_arg + heavyside_coulomb_log)
+        return sp_approx
+
+    def approx_sp_piecewise(self, M, Z, alpha=1.0/137.0):
+        """ 
+        Approximate analytic result for stopping power, piecewise
+        over incoming momentum using separate low-momentum and high
+        momentum results.
+        """
+        nonrelativistic_approx = self.approx_sp_heavyslow(M, Z)
+        relativistic_approx = self.approx_sp_heavyfast_fancy(M, Z)
+        def sp_approx(ke):
+            relativistic = ke > M 
+            results = np.ones(ke.shape)*np.nan 
+            results[relativistic] = relativistic_approx(ke[relativistic])
+            results[~relativistic] = nonrelativistic_approx(ke[~relativistic])
+            return results
+        return sp_approx
 
 
 def Asq_coulomb(s, t, u, m, z, M, Z, alpha=1.0/137.0):
