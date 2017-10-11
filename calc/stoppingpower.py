@@ -180,6 +180,83 @@ class FermiSea_StoppingPower(object):
             return np.array([sp, sp_err])
         return stopping_power
 
+    def get_azimuthal_weighted_integrand(self, pM, M, Asq_func):
+        """ 
+        Includes integration over Com azimuthal scattering angle
+        """
+        def to_integrate(x):
+            """ Stopping power integrand, modulo target momentum weighting """
+            pm_mag, pm_costh, scatter_costh, scatter_phi = x  
+            # boosts
+            pm = kin.polarmomentum_to_4vec(pm_mag, np.arccos(pm_costh), self.m)
+            vel_com = kin.get_com_velocity(pM, pm)      
+            lab_to_com, com_to_lab = kin.boost_and_inverse_matricies(vel_com)
+            rotate = kin.rot_matrix(np.arccos(scatter_costh))
+            pm_com = lab_to_com.dot(pm)
+            pM_com = lab_to_com.dot(pM)
+            # energy transfer
+            pm_final_lab = com_to_lab.dot(rotate.dot(pm_com))
+            omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
+            # Pauli blocking
+            blocked = pm_final_lab[0] <= self.Efermi
+                # compare total energies here, not just kinetic piece
+            if blocked:
+                return 0.0
+            # kinematics, boost, measure factors
+            Ecom = pm_com[0] + pM_com[0]
+            pM_mag_com = la.norm(pM_com[1:3])
+            factor = pM_mag_com/(pm[0]*Ecom)  # removed p_mag**2
+            # square amplitude
+            Asq = Asq_func(
+                *kin.mandelstam_varibales_COM(pM_com, M, pm_com, self.m,
+                                              scatter_costh, com=True))
+            return factor*omega*Asq  
+        def weight_func(size):
+            """ 
+            Returns target momentum samples weighted by p^2 between 0
+            and p_fermi, and uniform samples for the cos(angles).
+            """
+            sample_pts = np.ones((size, 3))*np.nan
+            sample_pts[:, 1:3] = 2*np.random.rand(size, 2) - 1    
+                # cosine angles uniform in -1 to 1
+            sample_pts[:, 0] = self.pfermi*np.random.power(3, size)
+                # p distribution: 3*p^2/pfermi^3
+            return sample_pts
+        return to_integrate, weight_func
+
+    def get_azimuthal_stopping_power_func(self, M, Asq_func):
+        """ 
+        Includes integration over Com azimuthal scattering angle
+        """
+        def stopping_power(ke, samples=10**3):
+            """
+            The stopping power as a function of incident kinetic energy.
+            """
+            ke = np.asarray(ke, dtype=np.float)
+            if not ke.shape:
+                ke.resize((1,))  # convert scalar to 1-element array
+            theta_xdir = 0.0  # incident particle moving in x direction
+            sp = np.ones(ke.shape)*np.nan
+            sp_err = np.ones(ke.shape)*np.nan
+            for index, ke_i in enumerate(ke):                
+                pM = kin.polarkinetic_to_4vec(ke_i, theta_xdir, M)
+                pM_mag = la.norm(pM[1:3])
+                prefactor = 3*self.n0_m/(64*np.pi*(self.pfermi**3)*pM_mag)
+                    # for prefactor derivation, see notes
+                prefactor *= self.masstolength 
+                    # convert from mass^2 to mass/length
+                integrand, dist = (
+                    self.get_azimuthal_weighted_integrand(pM, M, Asq_func)) 
+                dist_norm = 4*(self.pfermi**3)/3.0  
+                    # norm of sampling distribution
+                result, error = skm.mcimport(integrand, npoints=samples,
+                                             distribution=dist, nprocs=4,
+                                             weight=dist_norm)
+                sp[index] = prefactor*result
+                sp_err[index] = prefactor*error
+            return np.array([sp, sp_err])
+        return stopping_power
+
     def get_coulomb_stopping_power(self, M, Z):
         Asq_func = lambda s, t, u: Asq_coulomb(s, t, u, self.m, self.z, M, Z)
         return self.get_stopping_power_func(M, Asq_func)
