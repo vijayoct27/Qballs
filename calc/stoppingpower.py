@@ -12,7 +12,7 @@ import skmonaco as skm
 import kinematics_2plus1 as kin 
 
 
-MeV_to_InvCM = 8065.54*(10**6)
+MeV_to_InvCM = 5.0*(10**10)
 
 
 class FermiSea_StoppingPower(object):
@@ -56,40 +56,6 @@ class FermiSea_StoppingPower(object):
         self.Efermi = np.sqrt(self.m**2 + self.pfermi**2)
         self.KEfermi = self.Efermi - self.m
 
-
-    # def get_stopping_power_integrand(self, pM, M, Asq_func):
-    #     """
-    #     Construct the integrand function for stopping powers. See 
-    #     notes for derivation.
-    #     """
-    #     def to_integrate(x):
-    #         pm_mag, pm_costh, scatter_costh = x  
-    #         # boosts
-    #         pm = kin.polarmomentum_to_4vec(pm_mag, np.arccos(pm_costh), self.m)
-    #         vel_com = kin.get_com_velocity(pM, pm)      
-    #         lab_to_com, com_to_lab = kin.boost_and_inverse_matricies(vel_com)
-    #         rotate = kin.rot_matrix(np.arccos(scatter_costh))
-    #         pm_com = lab_to_com.dot(pm)
-    #         pM_com = lab_to_com.dot(pM)
-    #         # energy transfer
-    #         pm_final_lab = com_to_lab.dot(rotate.dot(pm_com))
-    #         omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
-    #         # Pauli blocking
-    #         blocked = pm_final_lab[0] <= self.Efermi
-    #             # compare total energies here, not just kinetic piece
-    #         if blocked:
-    #             return 0.0
-    #         # kinematics, boost, measure factors
-    #         Ecom = pm_com[0] + pM_com[0]
-    #         pM_mag_com = la.norm(pM_com[1:3])
-    #         factor = (pm_mag**2)*pM_mag_com/(pm[0]*Ecom)
-    #         # square amplitude
-    #         Asq = Asq_func(
-    #             *kin.mandelstam_varibales_COM(pM_com, M, pm_com, self.m,
-    #                                           scatter_costh, com=True))
-    #         return factor*omega*Asq
-    #     return to_integrate
-
     def get_weighted_integrand(self, pM, M, Asq_func):
         """
         Construct the integrand function for stopping powers. See 
@@ -102,14 +68,18 @@ class FermiSea_StoppingPower(object):
             """ Stopping power integrand, modulo target momentum weighting """
             pm_mag, pm_costh, scatter_costh = x  
             # boosts
-            pm = kin.polarmomentum_to_4vec(pm_mag, np.arccos(pm_costh), self.m)
+            pm = kin.polarmomentum_to_4vec(self.m, pm_mag, np.arccos(pm_costh))
+                # in the lab frame the scattering particles are in the xz plane
             vel_com = kin.get_com_velocity(pM, pm)      
-            lab_to_com, com_to_lab = kin.boost_and_inverse_matricies(vel_com)
-            rotate = kin.rot_matrix(np.arccos(scatter_costh))
+            lab_to_com = kin.boost_matrix(vel_com)
+            com_to_lab = kin.boost_matrix(-vel_com)
             pm_com = lab_to_com.dot(pm)
             pM_com = lab_to_com.dot(pM)
             # energy transfer
-            pm_final_lab = com_to_lab.dot(rotate.dot(pm_com))
+            pm_final_com = kin.vec4_rotation(pm_com, [0.0, 1.0, 0.0],
+                                             np.arccos(scatter_costh))
+                # rotate about y-axis, which is perpendicular to the com plane
+            pm_final_lab = com_to_lab.dot(pm_final_com)
             omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
             # Pauli blocking
             blocked = pm_final_lab[0] <= self.Efermi
@@ -118,13 +88,13 @@ class FermiSea_StoppingPower(object):
                 return 0.0
             # kinematics, boost, measure factors
             Ecom = pm_com[0] + pM_com[0]
-            pM_mag_com = la.norm(pM_com[1:3])
+            pM_mag_com = la.norm(pM_com[1:])
             factor = pM_mag_com/(pm[0]*Ecom)  # removed p_mag**2
             # square amplitude
             Asq = Asq_func(
                 *kin.mandelstam_varibales_COM(pM_com, M, pm_com, self.m,
                                               scatter_costh, com=True))
-            return factor*omega*Asq  
+            return factor*omega*Asq
         def weight_func(size):
             """ 
             Returns target momentum samples weighted by p^2 between 0
@@ -134,7 +104,7 @@ class FermiSea_StoppingPower(object):
             sample_pts[:, 1:3] = 2*np.random.rand(size, 2) - 1    
                 # cosine angles uniform in -1 to 1
             sample_pts[:, 0] = self.pfermi*np.random.power(3, size)
-                # p distribution: 3*p^2/pfermi^3
+                # p distribution: 3*p^2/pfermi^3 between 0 and pfermi
             return sample_pts
         return to_integrate, weight_func
 
@@ -159,12 +129,11 @@ class FermiSea_StoppingPower(object):
             ke = np.asarray(ke, dtype=np.float)
             if not ke.shape:
                 ke.resize((1,))  # convert scalar to 1-element array
-            theta_xdir = 0.0  # incident particle moving in x direction
             sp = np.ones(ke.shape)*np.nan
             sp_err = np.ones(ke.shape)*np.nan
             for index, ke_i in enumerate(ke):                
-                pM = kin.polarkinetic_to_4vec(ke_i, theta_xdir, M)
-                pM_mag = la.norm(pM[1:3])
+                pM = kin.polarkinetic_to_4vec(M, ke_i) # in z-direction
+                pM_mag = la.norm(pM[1:])
                 prefactor = 3*self.n0_m/(64*np.pi*(self.pfermi**3)*pM_mag)
                     # for prefactor derivation, see notes
                 prefactor *= self.masstolength 
@@ -181,21 +150,27 @@ class FermiSea_StoppingPower(object):
         return stopping_power
 
     def get_azimuthal_weighted_integrand(self, pM, M, Asq_func):
-        """ 
-        Includes integration over Com azimuthal scattering angle
+        """
+        Includes integration over the com azimuthal scattering angle
         """
         def to_integrate(x):
             """ Stopping power integrand, modulo target momentum weighting """
             pm_mag, pm_costh, scatter_costh, scatter_phi = x  
             # boosts
-            pm = kin.polarmomentum_to_4vec(pm_mag, np.arccos(pm_costh), self.m)
+            pm = kin.polarmomentum_to_4vec(self.m, pm_mag, np.arccos(pm_costh))
+                # in the lab frame the scattering particles are in the xz plane
             vel_com = kin.get_com_velocity(pM, pm)      
-            lab_to_com, com_to_lab = kin.boost_and_inverse_matricies(vel_com)
-            rotate = kin.rot_matrix(np.arccos(scatter_costh))
+            lab_to_com = kin.boost_matrix(vel_com)
+            com_to_lab = kin.boost_matrix(-vel_com)
             pm_com = lab_to_com.dot(pm)
             pM_com = lab_to_com.dot(pM)
             # energy transfer
-            pm_final_lab = com_to_lab.dot(rotate.dot(pm_com))
+            intermediate = kin.vec4_rotation(pm_com, [0.0, 1.0, 0.0],
+                                             np.arccos(scatter_costh))
+            pm_final_com = kin.vec4_rotation(intermediate, pm_com[1:],
+                                             scatter_phi)
+                # rotate about y-axis, which is perpendicular to the com plane
+            pm_final_lab = com_to_lab.dot(pm_final_com)
             omega = pm_final_lab[0] - pm[0] # positive if energy lost by ion
             # Pauli blocking
             blocked = pm_final_lab[0] <= self.Efermi
@@ -204,29 +179,31 @@ class FermiSea_StoppingPower(object):
                 return 0.0
             # kinematics, boost, measure factors
             Ecom = pm_com[0] + pM_com[0]
-            pM_mag_com = la.norm(pM_com[1:3])
+            pM_mag_com = la.norm(pM_com[1:])
             factor = pM_mag_com/(pm[0]*Ecom)  # removed p_mag**2
             # square amplitude
             Asq = Asq_func(
                 *kin.mandelstam_varibales_COM(pM_com, M, pm_com, self.m,
                                               scatter_costh, com=True))
-            return factor*omega*Asq  
+            return factor*omega*Asq
         def weight_func(size):
             """ 
             Returns target momentum samples weighted by p^2 between 0
             and p_fermi, and uniform samples for the cos(angles).
             """
-            sample_pts = np.ones((size, 3))*np.nan
+            sample_pts = np.ones((size, 4))*np.nan
+            sample_pts[:, 0] = self.pfermi*np.random.power(3, size)
+                # p distribution: 3*p^2/pfermi^3 between 0 and pfermi
             sample_pts[:, 1:3] = 2*np.random.rand(size, 2) - 1    
                 # cosine angles uniform in -1 to 1
-            sample_pts[:, 0] = self.pfermi*np.random.power(3, size)
-                # p distribution: 3*p^2/pfermi^3
+            sample_pts[:, 3] = 2*np.pi*np.random.rand(size, 2)    
+                # cosine angles uniform in -1 to 1
             return sample_pts
         return to_integrate, weight_func
 
     def get_azimuthal_stopping_power_func(self, M, Asq_func):
         """ 
-        Includes integration over Com azimuthal scattering angle
+        Includes integration over the com azimuthal scattering angle
         """
         def stopping_power(ke, samples=10**3):
             """
@@ -235,19 +212,17 @@ class FermiSea_StoppingPower(object):
             ke = np.asarray(ke, dtype=np.float)
             if not ke.shape:
                 ke.resize((1,))  # convert scalar to 1-element array
-            theta_xdir = 0.0  # incident particle moving in x direction
             sp = np.ones(ke.shape)*np.nan
             sp_err = np.ones(ke.shape)*np.nan
             for index, ke_i in enumerate(ke):                
-                pM = kin.polarkinetic_to_4vec(ke_i, theta_xdir, M)
-                pM_mag = la.norm(pM[1:3])
-                prefactor = 3*self.n0_m/(64*np.pi*(self.pfermi**3)*pM_mag)
+                pM = kin.polarkinetic_to_4vec(M, ke_i) # in z-direction
+                pM_mag = la.norm(pM[1:])
+                prefactor = 3*self.n0_m/(128*(np.pi**2)*(self.pfermi**3)*pM_mag)
                     # for prefactor derivation, see notes
                 prefactor *= self.masstolength 
                     # convert from mass^2 to mass/length
-                integrand, dist = (
-                    self.get_azimuthal_weighted_integrand(pM, M, Asq_func)) 
-                dist_norm = 4*(self.pfermi**3)/3.0  
+                integrand, dist = self.get_weighted_integrand(pM, M, Asq_func) 
+                dist_norm = 8*np.pi*(self.pfermi**3)/3.0  
                     # norm of sampling distribution
                 result, error = skm.mcimport(integrand, npoints=samples,
                                              distribution=dist, nprocs=4,
@@ -257,9 +232,12 @@ class FermiSea_StoppingPower(object):
             return np.array([sp, sp_err])
         return stopping_power
 
-    def get_coulomb_stopping_power(self, M, Z):
+    def get_coulomb_stopping_power(self, M, Z, azi=False):
         Asq_func = lambda s, t, u: Asq_coulomb(s, t, u, self.m, self.z, M, Z)
-        return self.get_stopping_power_func(M, Asq_func)
+        if azi:
+            return self.get_azimuthal_stopping_power_func(M, Asq_func)
+        else:
+            return self.get_stopping_power_func(M, Asq_func)
 
     def get_thomasfermicoulomb_stopping_power(self, M, Z, alpha=1.0/137.0):
         m_tf = np.sqrt(6*np.pi*alpha*self.n0_m/self.KEfermi)
@@ -294,45 +272,6 @@ class FermiSea_StoppingPower(object):
         incident momentum falls below the fermi momentum. 
         """ 
         return kin.momentum_to_kinetic(self.pfermi, M)
-
-    # def approx_sp_heavyfast(self, M, Z, alpha=1.0/137.0):
-    #     """ 
-    #     Approximate constant stopping power of a very heavy and fast
-    #     particle incident on a field of stationary targets.
-    #     """
-    #     factor = 2*np.pi*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
-    #         # Efermi here is total energy, not just kinetic
-    #     factor *= self.masstolength 
-    #         # convert from mass^2 to mass/length
-    #     coulomb_log = 10.0  # need a real integral here, see notes
-    #     def sp_approx(ke):
-    #         return factor*coulomb_log*np.ones(ke.shape)
-    #     return sp_approx
-
-    # def approx_sp_heavyfast_fancy(self, M, Z, alpha=1.0/137.0):
-    #     """ 
-    #     Approximate analytic result for stopping power of a very heavy
-    #     and fast particle incident on a field of relativistic targets.
-    #     This uses a linear approximation to the Pauli-effective density.
-    #     """
-    #     scale = 2*np.pi*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
-    #         # Efermi here is total energy, not just kinetic
-    #     scale *= self.masstolength 
-    #         # convert from mass^2 to mass/length
-    #     blocking_slope = 3*self.Efermi/(self.pfermi**2)
-    #         # coefficient of linear Pauli-blocked term 
-    #     def sp_approx(ke):
-    #         q = kin.kinetic_to_momentum(ke, M)
-    #         omega_kin = kin.maximal_energy_transfer(q, M, self.m)
-    #         unblocked = omega_kin > self.KEfermi 
-    #             # energies with a non-Pauli blocked term in the stopping power
-    #         blocking_arg = np.copy(omega_kin)
-    #         blocking_arg[unblocked] = self.KEfermi
-    #         heavyside_coulomb_log = np.zeros(ke.shape)
-    #         heavyside_coulomb_log[unblocked] = (
-    #             np.log(omega_kin[unblocked]/self.KEfermi))
-    #         return scale*(blocking_slope*blocking_arg + heavyside_coulomb_log)
-    #     return sp_approx
 
     def approx_sp_heavyfast(self, M, Z, alpha=1.0/137.0):
         """ 
@@ -377,20 +316,22 @@ class FermiSea_StoppingPower(object):
     def approx_sp_piecewise(self, M, Z, alpha=1.0/137.0):
         """ 
         Approximate analytic result for stopping power, piecewise
-        over incoming momentum using separate non-relativistic and
-        relativistic results.
+        over incoming momentum using separate non-relativistic, 
+        relativistic, and cutoff results.
         """
-        nonrelativistic_approx = self.approx_sp_heavyslow(M, Z)
-        relativistic_approx = self.approx_sp_heavyfast(M, Z)
+        nonrel_approx = self.approx_sp_heavyslow(M, Z)
+        rel_approx = self.approx_sp_heavyfast(M, Z)
+        kinetic_threshold = self.kinetic_cutoff(M)
         def sp_approx(ke):
-            relativistic = ke > M 
+            cutoff = ke < kinetic_threshold
+            rel = (ke > M) & (~cutoff) 
+            nonrel = (ke <= M) & (~cutoff) 
             results = np.ones(ke.shape)*np.nan 
-            results[relativistic] = relativistic_approx(ke[relativistic])
-            results[~relativistic] = nonrelativistic_approx(ke[~relativistic])
+            results[cutoff] = 0.0
+            results[rel] = rel_approx(ke[rel])
+            results[nonrel] = nonrel_approx(ke[nonrel])
             return results
         return sp_approx
-
-
 
 
 def Asq_coulomb(s, t, u, m, z, M, Z, alpha=1.0/137.0):
