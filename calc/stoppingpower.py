@@ -331,7 +331,7 @@ class FermiSea_StoppingPower(object):
             rel = (ke > M) & (~cutoff) 
             nonrel = (ke <= M) & (~cutoff) 
             results = np.ones(ke.shape)*np.nan 
-            results[cutoff] = 0.0
+            results[cutoff] = nonrel_approx(ke[cutoff])*(2*M*ke[cutoff])/(self.pfermi**2)
             results[rel] = rel_approx(ke[rel])
             results[nonrel] = nonrel_approx(ke[nonrel])
             return results
