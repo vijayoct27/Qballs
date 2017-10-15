@@ -196,8 +196,8 @@ class FermiSea_StoppingPower(object):
                 # p distribution: 3*p^2/pfermi^3 between 0 and pfermi
             sample_pts[:, 1:3] = 2*np.random.rand(size, 2) - 1    
                 # cosine angles uniform in -1 to 1
-            sample_pts[:, 3] = 2*np.pi*np.random.rand(size, 2)    
-                # cosine angles uniform in -1 to 1
+            sample_pts[:, 3] = 2*np.pi*np.random.rand(size)    
+                # azimuthal angle uniform in 0 to 2pi
             return sample_pts
         return to_integrate, weight_func
 
@@ -221,7 +221,8 @@ class FermiSea_StoppingPower(object):
                     # for prefactor derivation, see notes
                 prefactor *= self.masstolength 
                     # convert from mass^2 to mass/length
-                integrand, dist = self.get_weighted_integrand(pM, M, Asq_func) 
+                integrand, dist = (
+                    self.get_azimuthal_weighted_integrand(pM, M, Asq_func)) 
                 dist_norm = 8*np.pi*(self.pfermi**3)/3.0  
                     # norm of sampling distribution
                 result, error = skm.mcimport(integrand, npoints=samples,
@@ -232,11 +233,11 @@ class FermiSea_StoppingPower(object):
             return np.array([sp, sp_err])
         return stopping_power
 
-    def get_coulomb_stopping_power(self, M, Z, azi=False):
+    def get_coulomb_stopping_power(self, M, Z, azi=True):
         Asq_func = lambda s, t, u: Asq_coulomb(s, t, u, self.m, self.z, M, Z)
         if azi:
             return self.get_azimuthal_stopping_power_func(M, Asq_func)
-        else:
+        elif ~azi:
             return self.get_stopping_power_func(M, Asq_func)
 
     def get_thomasfermicoulomb_stopping_power(self, M, Z, alpha=1.0/137.0):
@@ -257,7 +258,10 @@ class FermiSea_StoppingPower(object):
             # Efermi here is total energy, not just kinetic
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
-        angular_integral = 0.1 # empirically determined bullshit 
+        # angular_integral = 0.1 # empirically determined bullshit 
+                                # a real constant that should go here, need to
+                                # do an integral for it - see notes
+        angular_integral = 10.0 # empirically determined bullshit 
                                 # a real constant that should go here, need to
                                 # do an integral for it - see notes
         def sp_approx(ke):
