@@ -254,18 +254,15 @@ class FermiSea_StoppingPower(object):
         This using the approximation that the targets scatter off the
         incident as though the incident is stationary in the lab frame. 
         """
-        factor = 4*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.Efermi
+        factor = 1.5*self.n0_m*(self.z**2)*(Z**2)*(alpha**2)/self.pfermi
             # Efermi here is total energy, not just kinetic
         factor *= self.masstolength 
             # convert from mass^2 to mass/length
-        # angular_integral = 0.1 # empirically determined bullshit 
-                                # a real constant that should go here, need to
-                                # do an integral for it - see notes
-        angular_integral = 10.0 # empirically determined bullshit 
-                                # a real constant that should go here, need to
-                                # do an integral for it - see notes
+        angular_integral = 75.0 # Integral over incoming polar angle and 
+                                # outgoing solid angle. See notes. 
+        adjustment = 3.0/8 # empirically determined bullshit
         def sp_approx(ke):
-            return factor*angular_integral*np.sqrt(2*ke/M)
+            return factor*angular_integral*np.sqrt(2*ke/M)*adjustment
         return sp_approx
 
     def kinetic_cutoff(self, M):
