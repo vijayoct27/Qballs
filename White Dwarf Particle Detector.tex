@@ -614,49 +614,55 @@ However, in light of the lack of understanding of DM and its interactions, it is
 
 \begin{appendices}
 
-\section{Particle Interactions in a White Dwarf}
+\section{Particle Stopping in a White Dwarf}
 \label{sec:Appendix}
-Here we provide a detailed analysis of the electromagnetic and strong interactions in a WD.
-This is primarily aimed towards calculating the stopping of electrons, photons, and light hadrons (pions, protons, neutrons) within the stellar medium at energies greater than $\sim \text{MeV}$.
-These results of these stopping powers are summarized in Figures \ref{fig:SPelectron}, \ref{fig:SPphoton}, \ref{fig:SPnuc}, and \ref{fig:SPpion}.
-Note that we will assume a carbon-oxygen WD.
-The stellar medium is very dense, with electron and ion number densities in the range $n_e = Z n_\text{ion} \sim 10^{31} - 10^{33} ~\cm^{-3}$.
-Such high densities will give rise to qualitatively different effects than seen in terrestrial detectors.
-Famously, the star is supported against collapse by the relativistic electron degeneracy pressure with a characteristic Fermi energy
+Here we provide a detailed analysis of the electromagnetic and strong interactions in a carbon-oxygen WD, aimed towards calculating the energy loss per distance traveled (stopping power) for electrons, photons, and light hadrons within the stellar medium at energies greater than $1\,\text{MeV}$.
+These stopping powers are summarized in \textcolor{blue}{FIGURES}. 
+% Figures \ref{fig:SPelectron}, \ref{fig:SPphoton}, \ref{fig:SPnuc}, and \ref{fig:SPpion}.
+
+\subsection{Stellar Medium}
+The WD medium is very dense, with electron and ion number densities in the range $n_e = 6 n_\text{ion} \sim 10^{31} - 10^{33} ~\cm^{-3}$.
+Such high densities give rise to qualitatively different stopping behavior than is seen in terrestrial detectors.
+Famously, the star is supported against collapse by electron degeneracy pressure. 
+For $M \gtr 0.85 M_{\odot}$ the electrons are relativistic and have Fermi energy
 \begin{equation}
-  E_F \sim (3 \pi^2 n_e)^{1/3} \sim \OO(\MeV),
+  E_F \sim (3 \pi^2 n_e)^{1/3} \sim \OO{10 ~\Mev}.
 \end{equation}
-which is greater than the typical stellar temperature $T \sim \keV$.
-The nuclei are fully-ionized and form a strongly-coupled plasma with Coulomb interaction energy
+\textcolor{blue}{check E_F value}
+The carbon nuclei are fully-ionized, non-degenerate gas at the thermal temperature $T \sim \keV$. 
+Their Coulomb interaction energy is 
 \begin{equation}
 \label{eq:lattice}
   \omega \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}}
-         \sim \OO(10^{-1} ~\MeV).
+         \sim \OO(10^{-1} ~\MeV)
+         \gg T,
 \end{equation}
-Since it is generally the case that $\omega \gg T$, the ions form a Coulomb lattice with lattice binding energy $\sim \omega$.
-\begin{figure}
-\includegraphics[scale=.60]{SPelectron.pdf}
-\caption{Electron energy loss in a WD density $n_e = 10^{33} ~\text{cm}^{-3}$}
-\label{fig:SPelectron}
-\end{figure}
+so they form a Coulomb lattice with binding energy $\sim \omega$.
+The star also contains thermal photons, though they never play a dominant role in stopping as their number density $n_\text{photon} \sim T^3$ is much small than that of ions and electrons.
 
-\begin{figure}
-\includegraphics[scale=.60]{SPphoton.pdf}
-\caption{Photon energy loss in a WD density $n_e = 10^{33} ~\text{cm}^{-3}$}
-\label{fig:SPphoton}
-\end{figure}
+% \begin{figure}
+% \includegraphics[scale=.60]{SPelectron.pdf}
+% \caption{Electron energy loss in a WD density $n_e = 10^{33} ~\text{cm}^{-3}$}
+% \label{fig:SPelectron}
+% \end{figure}
 
-\begin{figure}
-\includegraphics[scale=.60]{SPnucleon.pdf}
-\caption{Nucleon energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to protons.}
-\label{fig:SPnuc}
-\end{figure}
+% \begin{figure}
+% \includegraphics[scale=.60]{SPphoton.pdf}
+% \caption{Photon energy loss in a WD density $n_e = 10^{33} ~\text{cm}^{-3}$}
+% \label{fig:SPphoton}
+% \end{figure}
 
-\begin{figure}
-\includegraphics[scale=.60]{SPpion.pdf}
-\caption{Pion energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to charged pion.}
-\label{fig:SPpion}
-\end{figure}
+% \begin{figure}
+% \includegraphics[scale=.60]{SPnucleon.pdf}
+% \caption{Nucleon energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to protons.}
+% \label{fig:SPnuc}
+% \end{figure}
+
+% \begin{figure}
+% \includegraphics[scale=.60]{SPpion.pdf}
+% \caption{Pion energy loss in a WD with density $n_e = 10^{33} ~\text{cm}^{-3}$. The Coulomb stopping powers apply only to charged pion.}
+% \label{fig:SPpion}
+% \end{figure}
 
 \subsection{Coulomb Collisions}
 A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationary target of mass $M$ and charge $Ze$ will transfer an energy $W$ as given by the recoilless Mott cross-section \cite{Rossi, Jackson}
