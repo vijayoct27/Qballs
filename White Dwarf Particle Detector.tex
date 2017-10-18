@@ -625,7 +625,7 @@ These stopping powers are summarized in \textcolor{blue}{FIGURES}.
 The WD medium is very dense, with electron and ion number densities in the range $n_e = 6 n_\text{ion} \sim 10^{31} - 10^{33} ~\cm^{-3}$.
 Such high densities give rise to qualitatively different stopping behavior than is seen in terrestrial detectors.
 Famously, the star is supported against collapse by electron degeneracy pressure. 
-For $M \gtr 0.85 M_{\odot}$ the electrons are relativistic and have Fermi energy
+For $M \grt 0.85 M_{\odot}$ the electrons are relativistic and have Fermi energy
 \begin{equation}
   E_F \sim (3 \pi^2 n_e)^{1/3} \sim \OO{10 ~\Mev}.
 \end{equation}
@@ -634,11 +634,11 @@ The carbon nuclei are fully-ionized, non-degenerate gas at the thermal temperatu
 Their Coulomb interaction energy is 
 \begin{equation}
 \label{eq:lattice}
-  \omega \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}}
+  \Omega_l \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}}
          \sim \OO(10^{-1} ~\MeV)
          \gg T,
 \end{equation}
-so they form a Coulomb lattice with binding energy $\sim \omega$.
+so they form a Coulomb lattice with binding energy $\sim \Omega_l$.
 The star also contains thermal photons, though they never play a dominant role in stopping as their number density $n_\text{photon} \sim T^3$ is much small than that of ions and electrons.
 
 % \begin{figure}
@@ -666,6 +666,37 @@ The star also contains thermal photons, though they never play a dominant role i
 % \end{figure}
 
 \subsection{Ionic Coulomb}
+An incident electron or charged light hadron will Coulomb scatter off carbon ions.
+The ion is nearly at rest and much heavier than the incident particle, so this scattering is given to a good approximation the recoilless Mott cross-section
+\begin{align}
+    \frac{d\sigma}{d\cos\theta} = \frac{e^4}{64\pi^2 \beta^2 p^2}
+    \frac{1}{\sin^4\left(\frac{\theta}{2}\right) 
+    \left(1 - \beta^2 \sin^2\left(\frac{\theta}{2}\right) \right)}.    
+\end{align}
+Here $\theta$ is the scattering angle, and $e$ is the charge, $\beta$ the velocity, and $p$ the momentum of the incident particle.
+Of course a small ion recoil does occur, which is responsible a small energy loss per scatter, given by
+\begin{align}
+    \omega = 2\frac{p^2}{M_c} \sin^2\left(\frac{\theta}{2}\right)
+\end{align}
+where $M_c$ is the carbon ion mass.
+These results are accurate so long as the ion recoil is non-relativistic, $p \lesssimm M_c \sim 10~\GeV$. 
+For very high incident energies, a good approximation is now obtained by taking $m \approx 0$, for which
+\begin{align}
+    \frac{d\sigma}{d\cos\theta} &= \frac{e^4}{64\pi^2 p^2}
+    \frac{1}{\sin^4\left(\frac{\theta}{2}\right) \frac{p_f}{p}
+    \left(\cos^2\left(\frac{\theta}{2}\right) +
+    \frac{p - p_f}{M_c} \sin^2\left(\frac{\theta}{2}\right) \right)} \\
+    \omega = p_f - p &= 
+      p\frac{\frac{2p}{m}\sin^2\left(\frac{\theta}{2}\right) \right)}
+      {1 + \frac{2p}{m}\sin^2\left(\frac{\theta}{2}\right) \right)}    
+\end{align}
+
+
+\begin{align}
+    
+\end{align}
+
+
 A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationary target of mass $M$ and charge $Ze$ will transfer an energy $W$ as given by the recoilless Mott cross-section \cite{Rossi, Jackson}
 \begin{equation}
   \frac{d \sigma}{dW} = \frac{2 \pi  Z^2 \alpha^2}{M \beta^2} \frac{1}{W^2}
