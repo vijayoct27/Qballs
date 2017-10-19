@@ -673,7 +673,7 @@ Taking the ions to be at rest, consider an incident particle of mass $m$, charge
 For soft scatters, 
 \begin{align}
   \label{eq:omega_soft}
-  \omega \approx \frac{e^2 Z^2}{2 m_c \beta^2 b^2}
+  \omega \approx \frac{\alpha^2 Z^2}{2 m_c \beta^2 b^2}
 \end{align}
 where $Z$ is the ion charge number and $m_c$ the ion mass.
 This is valid only for small $\omega$, and thus fails as $b\rightarrow0$.
@@ -681,7 +681,6 @@ While \eqref{eq:omega_soft} diverges for vanishing $b$, there is in fact a maxim
 For a stationary target $m_c$, this occurs for an exactly backwards scatter and is given in full by
 \begin{align}
   \omega_\text{kin} = \frac{2 m_c p^2}{m_c^2 + m^2 + 2E m_c} 
-    \approx \frac{2 p^2}{m_c}
 \end{align}
 where $p$, $E$ are the incoming momentum and energy, and the second expression is valid for large target masses.
 For small $b$, the energy transfer will saturate at $\omega_\text{kin}$ and we can thus characterize the energy transfer as 
@@ -689,10 +688,10 @@ For small $b$, the energy transfer will saturate at $\omega_\text{kin}$ and we c
     \omega \approx 
     \begin{dcases}
     \;\;\;\; \omega_\text{kin}        & \, b < b_0 \\
-    \frac{e^4 Z^2}{2 m_c \beta^2 b^2} & \, b > b_0
+    \frac{\alpha^2 Z^2}{2 m_c \beta^2 b^2} & \, b > b_0
     \end{dcases}
 \end{align}
-where $b_0^2 = e^4 Z^2 / 2 m_c \beta^2 \omega_\text{kin}$ is a characteristic transition scale between hard and soft scatters. 
+where $b_0^2 = \alpha^2 Z^2 / 2 m_c \beta^2 \omega_\text{kin}$ is a characteristic transition scale between hard and soft scatters. 
 The stopping power is given by integrating over all targets transverse to the incident particle direction
 \begin{align}
     \frac{dE}{dx} = n_\text{ion} 
@@ -706,22 +705,23 @@ The screening length scale $\lambda_{TF}$ is given in the Thomas-Fermi approxima
     \lambda_{TF}^{2} = \frac{E_F}{6 \pi \alpha n_e}{}
 \end{align} 
 where $E_F$ is the electron Fermi energy. 
-The finite stopping power is 
+The stopping power is 
 \begin{align}
   \frac{dE}{dx} &\approx n_\text{ion} 
-    \int_0^{\lambda_{TF}} \, 2\pi  \, db \cdot \omega \\ 
-    &\approx 2 \pi n_\text{ion} \left( \omega_\text{kin} \int_0^{b_0} \, db 
-    + \frac{e^4 Z^2}{2 m_c \beta^2}  
+    \int_0^{\lambda_{TF}} \, 2\pi b  \, db \cdot \omega \\ 
+    &\approx 2\pi n_\text{ion}\left(\omega_\text{kin}\int_0^{b_0} \, db \, b 
+    + \frac{\alpha^2 Z^2}{2 m_c \beta^2}  
     \int_{b_0}^{\lambda_{TF}} \,\frac{db}{b} \right)  \nonumber \\
     &= \begin{dcases}
-      n_\text{ion} \omega_\text{kin} 2 \pi \lambda_{TF}^2 
+      n_\text{ion} \frac{\pi \alpha^2 Z^2}{2 m_c \beta^2} 
+      \frac{\lambda_{TF}^2}{b_0^2} 
         & \lambda_{TF} < b_0 \\
-      n_\text{ion} \omega_\text{kin} 2 \pi b_0^2 \left[ 1 
-        + \log\left(\frac{\lambda_{TF}}{b_0}\right)
-        \right] & \lambda_{TF} > b_0 \nonumber 
+      n_\text{ion} \frac{\pi \alpha^2 Z^2}{2 m_c \beta^2} \left[ 1 
+        + \log\left(\frac{\lambda_{TF}^2}{b_0^2}\right)
+        \right] & \lambda_{TF} > b_0. \nonumber 
   \end{dcases}
 \end{align}
-\textcolor{blue}{plug shit in}
+Note that for incident electrons there is an additional upper bound on the energy transfer, $\omega_F = E - E_F$, as the electrons cannot be scattered into the Fermi sea.  If $\omega_F < \omega_\text{kin}$, then the above integrals should be taken with a lower limit of $b_F = \alpha^2 Z^2 / 2 m_c \beta^2 \left(E - E_F\right)$ instead of zero.
 
 % A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationary target of mass $M$ and charge $Ze$ will transfer an energy $W$ as given by the recoilless Mott cross-section \cite{Rossi, Jackson}
 % \begin{equation}
@@ -786,7 +786,6 @@ The finite stopping power is
 
 \subsection{Phonon Production}
 
-As
 To describe the contribution of phonons to the Coulomb scattering stopping power, we will calculate an approximate dynamic structure factor describing the white dwarf lattice. It is sufficient for our purposes to approximate the vibrational response of the white dwarf as a collection of harmonic oscillators at the plasma frequency
 \begin{align}
 \Omega_p = \sqrt{\frac{4 \pi n_i Z^2 \alpha}{M}} \sim 1 - 10~\text{keV}
@@ -833,11 +832,14 @@ where $n_\text{max} = (k - E_f) / \omega_0$. One can easily check numerically th
 
 \textcolor{blue}{omit this paragraph?} It is interesting that even though the phonon and free particle results have different total cross-sections and different typical energy transfers---free particle scatters are dominated by transfers of $ \sim 10^{-7}~\text{MeV}$ near the screen length, whereas phonon excitations are dominated by 1-phonon processes transferring $ \sim 10^{-2}~\text{MeV}$---these are just properly balanced so that the stopping powers come out the same. This would not be remarkable if the scattering were dominated by hard scatters, so that single-phonon processes were negligible, but we might not expect this of a process dominated by soft scatters. This seems to be a coincidence of the Coulomb interaction, and we would not expect to see this for interactions that drop off faster than $1 / r$.
 
-% \log {\l\frac{W_\text{kin}}{W_\text{min}}\r}
-
 \subsection{Electronic Coulomb Collisions}
 
- \subsection{Compton and Inverse Compton Scattering}
+Coulomb scattering off Fermi electrons has two additional features compared to scattering off ions: the electron targets are not stationary and they require a minimum threshold energy transfer in order to be scattered out of the Fermi sea.
+
+
+
+
+\subsection{Compton and Inverse Compton Scattering}
 
 Photons and charged particles can elastically exchange energy through Compton scattering.
 We focus first on an incident photon losing energy to the WD medium.
