@@ -861,9 +861,34 @@ For all incident species except electrons this occurs at energies below our regi
   \omega &\approx \frac{q p}{2m} 
   \hat{p} \cdot \left(\hat{q}_{out} - \hat{q}_{in}\right). 
 \end{align}
-At leading order the electron is not aware of the small ion velocity, so this scattering occurs with the recoilless Mott cross section: 
-
-
+At leading order the electron is not aware of the small ion velocity, so this scattering occurs with the recoilless Mott cross section
+\begin{align}
+    \frac{d\sigma}{d\cos\theta} \approx \frac{\alpha^2 Z^2}{4 q^2}
+    \frac{1}{\sin^4\left(\frac{\theta}{2}\right)} 
+    \left[1 - \sin^2\left(\frac{\theta}{2}\right) \right]    
+\end{align}
+where we have taken the electron speed to be nearly $1$ and $\cos\theta = \hat{q}_{out} \cdot \hat{q}_{in}$. 
+The incident particle will lose energy off electrons $\vec{q}$ at a rate
+\begin{align}
+  \frac{dE}{dt} &\approx dn \int d\left(\cos\theta\right) 
+    \frac{d\sigma}{d\cos\theta} \omega \, 
+    \Theta\left(\omega - E_f + q\right)
+\end{align}
+where $dn$ indicates the number density of electrons with momentum $\vec{q}$ and the Heavyside function enforces the Pauli energy threshold. 
+Note that the stopping power is given by $v_\text{ion}^{-1} (dE/dt)$.
+Now summing over all target electrons with the Fermi distribution 
+\begin{align}
+  \frac{dn}{d^3q} = n_e \frac{3}{4\pi q_f^3} \, \Theta(q_f - q)
+\end{align}
+gives the full stopping power
+\begin{align}
+  \frac{dE}{dx} \approx n_e \frac{3 \alpha^2 Z^2}{8\pi q_f^3} 
+  \int &d\left(\cos\theta_{out}\right) \, d^3q_{in} \, \frac{1}{q} \Bigg[ \\
+   \, &\frac{1 - \sin^2\left(\frac{\theta}{2}\right)}
+          {\sin^4\left(\frac{\theta}{2}\right)} 
+   \, \hat{p} \cdot \left(\hat{q}_{out} - \hat{q}_{in}\right) \\
+   \, &\Theta\left(\omega - E_f + q\right) \Theta(q_f - q) \Bigg]
+\end{align}
 
 The electrons are predominantly relativistic, and this looks li and moving much faster than the incident, this proceeds
 This scattering is qualitativley similar 
