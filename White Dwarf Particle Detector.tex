@@ -716,15 +716,19 @@ The stopping power is
     &\approx 2\pi n_\text{ion}\left(\omega_\text{kin}\int_0^{b_0} \, db \, b 
     + \frac{\alpha^2 Z^2}{2 m_c \beta^2}  
     \int_{b_0}^{\lambda_\text{tf}} \,\frac{db}{b} \right)  \nonumber \\
-    &= \begin{dcases}
-      n_\text{ion} \frac{\pi \alpha^2 Z^2}{2 m_c \beta^2} 
-      \frac{\lambda_\text{tf}^2}{b_0^2} 
-        & \lambda_\text{tf} < b_0 \\
-      n_\text{ion} \frac{\pi \alpha^2 Z^2}{2 m_c \beta^2} \left[ 1 
-        + \log\left(\frac{\lambda_\text{tf}^2}{b_0^2}\right)
-        \right] & \lambda_\text{tf} > b_0. \nonumber 
+    &= n_\text{ion} \frac{\pi \alpha^2 Z^2}{2 m_c \beta^2} 
+      \, F\left(\frac{\lambda_\text{tf}}{b_0}\right)
+\end{align}
+where $F$ is a dimensionless factor
+\begin{align}
+    F(x) = \begin{dcases}
+    x^2 & x < 1 \\
+    1 + \log(x) & x > 1 
   \end{dcases}
 \end{align}
+For low-energy, highly screened incident particles, $\lambda_\text{tf} < b_0$, this stopping power is simply $\sim \lambda_\text{tf}^2 \, \omega_\text{kin}$. 
+For high-energy particles, the screening enters only through the Coulomb logarithm. 
+
 Note that for incident electrons there is an additional upper bound on the energy transfer, $\omega_F = E - E_F$, as the electrons cannot be scattered into the Fermi sea.  If $\omega_F < \omega_\text{kin}$, then the above integrals should be taken with a lower limit of $b_F = \alpha^2 Z^2 / 2 m_c \beta^2 \left(E - E_F\right)$ instead of zero.
 
 \subsection{Phonon Production}
