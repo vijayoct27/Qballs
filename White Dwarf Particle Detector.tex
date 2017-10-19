@@ -20,6 +20,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{xpatch}
 \usepackage{xcolor}
+\usepackage{mathtools}
 \hypersetup{
     colorlinks,
     linkcolor={red!80!black},
@@ -666,29 +667,31 @@ The star also contains thermal photons, though they never play a dominant role i
 % \end{figure}
 
 \subsection{Ionic Coulomb Collisions}
-An incident electron or charged  hadron will Coulomb scatter off carbon ions.
-This stopping power is most easily understood if we describe these scatter in terms of an impact parameter $b$.
-For an incident particle of mass $m$, charge $e$, and speed $\beta$, the energy transfered in a soft scatter is 
+This stopping power is most easily understood if we describe these scatters in terms of an impact parameter $b$.
+Taking the ions to be at rest, consider an incident particle of mass $m$, charge $e$, and speed $\beta$ which transfers an energy $\omega$.
+For soft scatters, 
 \begin{align}
-\label{eq:omega_softscatter}
-    \omega \approx \frac{e^4 Z^2}{2 m_c \beta^2 b^2}
+  \label{eq:omega_soft}
+  \omega \approx \frac{e^2 Z^2}{2 m_c \beta^2 b^2}
 \end{align}
-where $Z$ is the ion charge number and $m_c$ the ion mass.  
-This is valid only for sufficiently small $\omega$, and thus fails as $b \rightarrow 0$.
-While \ref{eqn:omega_softscatter} diverges for vanishing $b$, there is in fact a maximal energy transfer allowed by kinematics, corresponding to an exactly backward scatter at $b=0$,
+where $Z$ is the ion charge number and $m_c$ the ion mass.
+This is valid only for small $\omega$, and thus fails as $b\rightarrow0$.
+While \eqref{eq:omega_soft} diverges for vanishing $b$, there is in fact a maximal energy transfer allowed by kinematics, $\omega_\text{kin}$. 
+For a stationary target $m_c$, this occurs for an exactly backwards scatter and is given in full by
 \begin{align}
-  \omega_\text{kin} \approx \frac{2 p^2}{m_c}
+  \omega_\text{kin} = \frac{2 m_c p^2}{m_c^2 + m^2 + 2E m_c} 
+    \approx \frac{2 p^2}{m_c}
 \end{align}
-where $p$ is the incident particle momentum. 
-For small $b$, the energy transfer will saturate at $\omega_\text{kin}$. 
-We can thus characterize the energy transfer as 
+where $p$, $E$ are the incoming momentum and energy, and the second expression is valid for large target masses.
+For small $b$, the energy transfer will saturate at $\omega_\text{kin}$ and we can thus characterize the energy transfer as 
 \begin{align}
-    \omega \approx \begin{cases}
-    \frac{2 p^2}{m_c},                 & \, b < b_0 \\
-    \frac{e^4 Z^2}{2 m_c \beta^2 b^2}, & \, b > b_0
-    \end{cases}
+    \omega \approx 
+    \begin{dcases}
+    \;\;\;\; \omega_\text{kin}        & \, b < b_0 \\
+    \frac{e^4 Z^2}{2 m_c \beta^2 b^2} & \, b > b_0
+    \end{dcases}
 \end{align}
-where $b_0 = e^2 Z / 4 \beta p$ is a characteristic transition scale between hard and soft scatters. 
+where $b_0^2 = e^4 Z^2 / 2 m_c \beta^2 \omega_\text{kin}$ is a characteristic transition scale between hard and soft scatters. 
 The stopping power is given by integrating over all targets transverse to the incident particle direction
 \begin{align}
     \frac{dE}{dx} = n_\text{ion} 
@@ -704,117 +707,85 @@ The screening length scale $\lambda_{TF}$ is given in the Thomas-Fermi approxima
 where $E_F$ is the electron Fermi energy. 
 The finite stopping power is 
 \begin{align}
-  \frac{dE}{dx} &= n_\text{ion} 
+  \frac{dE}{dx} &\approx n_\text{ion} 
     \int_0^{\lambda_{TF}} \, 2\pi  \, db \cdot \omega \\ 
-    & = 2 \pi n_\text{ion} \left( \omega_\text{kin} \int_0^{b_0} \, db 
-    + \frac{e^4 Z^2}{2 m_c \beta^2} 
-    \int_{b_0}^{\lambda_{TF}} \,\frac{db}{b} \right)
+    &\approx 2 \pi n_\text{ion} \left( \omega_\text{kin} \int_0^{b_0} \, db 
+    + \frac{e^4 Z^2}{2 m_c \beta^2}  
+    \int_{b_0}^{\lambda_{TF}} \,\frac{db}{b} \right)  \nonumber \\
+    &= \begin{dcases}
+      n_\text{ion} \omega_\text{kin} 2 \pi \lambda_{TF}^2 
+        & \lambda_{TF} < b_0 \\
+      n_\text{ion} \omega_\text{kin} 2 \pi b_0^2 \left[ 1 
+        + \log\left(\frac{\lambda_{TF}}{b_0}\right)
+        \right] & \lambda_{TF} > b_0 \nonumber 
+  \end{dcases}
 \end{align}
+\textcolor{blue}{plug shit in}
 
-%  momentum $p$. 
-% }
-% The energy loss in these scatters  is easily under
-% The ion is nearly at rest and heavier than the incident particles we consider, so this , so this scattering is given to a good approximation the recoilless Mott cross-section
-% \begin{align}
-%     \frac{d\sigma}{d\cos\theta} \approx \frac{e^4}{64\pi^2 \beta^2 p^2}
-%     \frac{1}{\sin^4\left(\frac{\theta}{2}\right)} 
-%     \left[1 - \beta^2 \sin^2\left(\frac{\theta}{2}\right) \right]    
-% \end{align}
-% provided that the incident particle is not too energetic.
-% Here $\theta$ is the scattering angle, and $e$ is the charge, $\beta$ the velocity, and $p$ the momentum of the incident particle.
-% Of course a small ion recoil does occur, which is responsible for a small energy loss per scatter, 
-% \begin{align}
-%     \omega \approx 2\frac{p^2}{m_c} \sin^2\left(\frac{\theta}{2}\right)
-% \end{align}
-% where $m_c$ is the carbon ion mass.
-% These results are accurate so long as the ion recoil is non-relativistic, $p \lesssim m_c \sim 10~\GeV$. 
-% For very high incident energies, a good approximation is now obtained by taking $m \approx 0$, for which
-% \begin{align}
-%     \frac{d\sigma}{d\cos\theta} &\approx \frac{e^4}{64\pi^2 p^2}
-%     \frac{1}{\sin^4\left(\frac{\theta}{2}\right)} \cdot \frac{1}{2} \\
-%     \omega &\approx p
-% \end{align}
-% \textcolor{blue}{add citation}
+% A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationary target of mass $M$ and charge $Ze$ will transfer an energy $W$ as given by the recoilless Mott cross-section \cite{Rossi, Jackson}
+% \begin{equation}
+%   \frac{d \sigma}{dW} = \frac{2 \pi  Z^2 \alpha^2}{M \beta^2} \frac{1}{W^2}
+%     \l 1-\beta^2 \frac{W}{W_\text{kin}} \r,
+% \label{eq:mott}
+% \end{equation}
+% and we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $W$.
+% $W_\text{kin}$ is the maximum possible energy transfer satisfying kinematic constraints (i.e., a backward scatter)
+% \begin{equation}
+% \label{eq:ekin}
+%   W_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2}.
+% \end{equation}
+% It is straightforward to understand the parametric dependences of \eqref{eq:mott}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets.
+% However, since we are ultimately interested in the transfer of energy to ions in the WD, we will consider the Coulomb energy loss to both nuclei and electron targets.
 
-% The stopping power is given by an integral over all possible scatters
+% We first compute the stopping power due to scattering off nuclei, which is parametrically of the form
 % \begin{align}
-%     \frac{dE}{dx} = n_\text{ion} 
-%         \int \; d\left(\cos\theta\right) 
-%         \left(\frac{d\sigma}{d\cos\theta}\right) \omega.      
+% \label{eq:SP}
+%   - \l \frac{dE}{dx}\r \sim \frac{2 \pi n_\text{ion} Z^2 \alpha^2}{M \beta^2}
+%     \log {\l\frac{W_\text{kin}}{W_\text{min}}\r}.
 % \end{align}
-% This is a nominally divergent quantity due to soft scatters ($\theta\rightarrow0$), corresponding to the infinite range of the Coulomb interaction. 
-% In the WD medium, however, electron plasma screening cuts off soft scatters. 
-% The screening length scale $\lambda_{TF}$ is given in the Thomas-Fermi approximation by \cite{Teukolsky}
-% \begin{align}
+% The minimum energy transfer $W_\text{min}$ is set by either charge screening or lattice effects.
+% In a WD, the screening length $\kappa_{\text{sc}}^{-1}$ due to the degenerate electron gas can be calculated in the Thomas-Fermi approximation \cite{Teukolsky}
+% \begin{equation}
 % \label{eq:TF}
-% \lambda_{TF}^{2} = \frac{E_F}{6 \pi \alpha n_e}{}
-% \end{align} 
-% where $E_F$ is the electron Fermi energy. 
+% \kappa_{\text{sc}}^{2} = \frac{6 \pi \alpha n_e}{E_F}.
+% \end{equation}
+% To estimate the energy transfer at this screening length, we use the fact that a soft Coulomb scatter at impact parameter $b$ will transfer energy of order
+% \begin{equation}
+% \label{eq:impact}
+%   W \sim \frac{Z^2 \alpha^2}{b^2 \beta^2 M}.
+% \end{equation}
+% In addition, for energy transfers less than the binding energy $\omega$, the lattice structure of ions must be taken into account.
+% Since the binding energy is much greater than the energy transfer set by screening, we take the lower-bound on free-particle Coulomb scattering to be $W_\text{min} \sim \omega$, only applicable in the case of nuclear targets.
+% However, doing so we find that the stopping power of electron-nuclei scattering vanishes at an incident energy $\sim 10 - 100 ~\MeV$ when the kinematic limit $W_\text{kin}$ becomes of order the binding energy $\omega$.
+% A similar cutoff occurs in the stopping of heavy charged hadrons (i.e., protons and pions), although in this energy range strong interactions will be a more dominant source of energy loss to nuclear targets anyway.
+% For low energy transfers $W < \omega$, we estimate the stopping power of electrons by considering the cross-section to scatter into phonon excitations of the lattice.
 
+% We now turn to computing the stopping power due to collisions with electrons targets.
+% In this case, electron degeneracy plays a significant role as an incident particle transferring energy $W$ can only scatter electrons within $W$ of the Fermi surface.
+% Although one must consider the relativistic velocities of the degenerate electrons, to leading order we simply average over this motion and treat the targets as stationary.
+% To account for degeneracy we define a modified number density of electrons in the WD
+% \begin{equation}
+% \label{eq:pauliblocking}
+%   n_e \l W \r =
+%   \begin{cases}
+%     \displaystyle \int \limits_{E_F - W}^{E_F} dE ~g(E), &  W < E_F  \\
+%     \quad             n_e                                &  W > E_F,
+%   \end{cases}
+% \end{equation}
+% where $g(E)$ is the density of states per unit volume of a three-dimensional free electron gas.
+% Therefore, unlike in the non-degenerate case, the energy loss from soft-scatters are in fact subdominant to the contributions from rare hard-scatters.
+% For an incident electron, we additionally demand that the energy remains above the Fermi surface after scattering, $W < E - E_F$.
+% Note that \eqref{eq:mott} is no longer fully valid in the case of electron-electron scattering due to the significant target recoil as well as identical particle effects, and a more accurate calculation requires the M{\"o}ller cross-section.
+% Nevertheless, at sufficiently high energies the stopping power for all charged particles scattering off electrons is roughly constant and of order
+% \begin{equation}
+% -\l \frac{dE}{dx} \r \sim \frac{2 \pi n_e \alpha^2}{m_e}.
+% \end{equation}
+% However, the low-energy behavior is not so straightforward due to the effects of Pauli-blocking and charge screening.
+% In every case, we find that the stopping power decreases with incident energy until a critical threshold is reached where screening effectively cuts off the energy loss.
 
-A particle of mass $m$, charge $e$, and velocity $\beta$ incident on a stationary target of mass $M$ and charge $Ze$ will transfer an energy $W$ as given by the recoilless Mott cross-section \cite{Rossi, Jackson}
-\begin{equation}
-  \frac{d \sigma}{dW} = \frac{2 \pi  Z^2 \alpha^2}{M \beta^2} \frac{1}{W^2}
-    \l 1-\beta^2 \frac{W}{W_\text{kin}} \r,
-\label{eq:mott}
-\end{equation}
-and we have assumed a sufficiently fast incident particle so that interactions are governed by single collisions with energy transfer $W$.
-$W_\text{kin}$ is the maximum possible energy transfer satisfying kinematic constraints (i.e., a backward scatter)
-\begin{equation}
-\label{eq:ekin}
-  W_{\text{kin}} = \frac{2 M \beta^2 \gamma^2}{1+ 2\gamma M/m +(M/m)^2}.
-\end{equation}
-It is straightforward to understand the parametric dependences of \eqref{eq:mott}: there is increased likelihood to scatter for slowly moving incident particles undergoing soft-scatters against lighter targets.
-However, since we are ultimately interested in the transfer of energy to ions in the WD, we will consider the Coulomb energy loss to both nuclei and electron targets.
+\subsection{Phonon Production}
 
-We first compute the stopping power due to scattering off nuclei, which is parametrically of the form
-\begin{align}
-\label{eq:SP}
-  - \l \frac{dE}{dx}\r \sim \frac{2 \pi n_\text{ion} Z^2 \alpha^2}{M \beta^2}
-    \log {\l\frac{W_\text{kin}}{W_\text{min}}\r}.
-\end{align}
-The minimum energy transfer $W_\text{min}$ is set by either charge screening or lattice effects.
-In a WD, the screening length $\kappa_{\text{sc}}^{-1}$ due to the degenerate electron gas can be calculated in the Thomas-Fermi approximation \cite{Teukolsky}
-\begin{equation}
-\label{eq:TF}
-\kappa_{\text{sc}}^{2} = \frac{6 \pi \alpha n_e}{E_F}.
-\end{equation}
-To estimate the energy transfer at this screening length, we use the fact that a soft Coulomb scatter at impact parameter $b$ will transfer energy of order
-\begin{equation}
-\label{eq:impact}
-  W \sim \frac{Z^2 \alpha^2}{b^2 \beta^2 M}.
-\end{equation}
-In addition, for energy transfers less than the binding energy $\omega$, the lattice structure of ions must be taken into account.
-Since the binding energy is much greater than the energy transfer set by screening, we take the lower-bound on free-particle Coulomb scattering to be $W_\text{min} \sim \omega$, only applicable in the case of nuclear targets.
-However, doing so we find that the stopping power of electron-nuclei scattering vanishes at an incident energy $\sim 10 - 100 ~\MeV$ when the kinematic limit $W_\text{kin}$ becomes of order the binding energy $\omega$.
-A similar cutoff occurs in the stopping of heavy charged hadrons (i.e., protons and pions), although in this energy range strong interactions will be a more dominant source of energy loss to nuclear targets anyway.
-For low energy transfers $W < \omega$, we estimate the stopping power of electrons by considering the cross-section to scatter into phonon excitations of the lattice.
-
-We now turn to computing the stopping power due to collisions with electrons targets.
-In this case, electron degeneracy plays a significant role as an incident particle transferring energy $W$ can only scatter electrons within $W$ of the Fermi surface.
-Although one must consider the relativistic velocities of the degenerate electrons, to leading order we simply average over this motion and treat the targets as stationary.
-To account for degeneracy we define a modified number density of electrons in the WD
-\begin{equation}
-\label{eq:pauliblocking}
-  n_e \l W \r =
-  \begin{cases}
-    \displaystyle \int \limits_{E_F - W}^{E_F} dE ~g(E), &  W < E_F  \\
-    \quad             n_e                                &  W > E_F,
-  \end{cases}
-\end{equation}
-where $g(E)$ is the density of states per unit volume of a three-dimensional free electron gas.
-Therefore, unlike in the non-degenerate case, the energy loss from soft-scatters are in fact subdominant to the contributions from rare hard-scatters.
-For an incident electron, we additionally demand that the energy remains above the Fermi surface after scattering, $W < E - E_F$.
-Note that \eqref{eq:mott} is no longer fully valid in the case of electron-electron scattering due to the significant target recoil as well as identical particle effects, and a more accurate calculation requires the M{\"o}ller cross-section.
-Nevertheless, at sufficiently high energies the stopping power for all charged particles scattering off electrons is roughly constant and of order
-\begin{equation}
--\l \frac{dE}{dx} \r \sim \frac{2 \pi n_e \alpha^2}{m_e}.
-\end{equation}
-However, the low-energy behavior is not so straightforward due to the effects of Pauli-blocking and charge screening.
-In every case, we find that the stopping power decreases with incident energy until a critical threshold is reached where screening effectively cuts off the energy loss.
-
-\subsubsection{Phonon production}
-
+As
 To describe the contribution of phonons to the Coulomb scattering stopping power, we will calculate an approximate dynamic structure factor describing the white dwarf lattice. It is sufficient for our purposes to approximate the vibrational response of the white dwarf as a collection of harmonic oscillators at the plasma frequency
 \begin{align}
 \Omega_p = \sqrt{\frac{4 \pi n_i Z^2 \alpha}{M}} \sim 1 - 10~\text{keV}
