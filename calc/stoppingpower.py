@@ -328,9 +328,35 @@ class FermiSea_StoppingPower(object):
             rel = (ke > M) & (~cutoff) 
             nonrel = (ke <= M) & (~cutoff) 
             results = np.ones(ke.shape)*np.nan 
-            results[cutoff] = nonrel_approx(ke[cutoff])*(2*M*ke[cutoff])/(self.pfermi**2)
+            pauli_supression = (2*M*ke[cutoff])/(self.pfermi**2)
+            results[cutoff] = nonrel_approx(ke[cutoff])*pauli_supression
             results[rel] = rel_approx(ke[rel])
             results[nonrel] = nonrel_approx(ke[nonrel])
+            return results
+        return sp_approx
+
+    def get_fitting_func(self, M, Z, alpha=1.0/137.0):
+        """ 
+        Approximate analytic result for stopping power, piecewise
+        over incoming momentum using separate non-relativistic, 
+        relativistic, and cutoff results.
+        """
+        nonrel_approx = self.approx_sp_heavyslow(M, Z)
+        rel_approx = self.approx_sp_heavyfast(M, Z)
+        kinetic_threshold = self.kinetic_cutoff(M)
+        def sp_approx(ke):
+            cutoff = ke < kinetic_threshold
+            rel = (ke > M) & (~cutoff) 
+            nonrel = (ke <= M) & (~cutoff) 
+            results = np.ones(ke.shape)*np.nan 
+            pauli_supression = (2*M*ke[cutoff])/(self.pfermi**2)
+            results[cutoff] = nonrel_approx(ke[cutoff])*pauli_supression
+            results[nonrel] = nonrel_approx(ke[nonrel])
+            results[rel] = rel_approx(ke[rel])
+            nonrel_edge = results[nonrel][np.argmax(ke[nonrel])]
+            rel_edge = results[rel][np.argmin(ke[rel])]
+            results[rel] = np.sqrt(nonrel_edge**2 + # empirical correction
+                                  (results[rel] - rel_edge)**2)
             return results
         return sp_approx
 
