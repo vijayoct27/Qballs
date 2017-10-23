@@ -689,6 +689,7 @@ For a stationary target $m_c$, this occurs for an exactly backwards scatter and 
 where $p$, $E$ are the incoming momentum and energy, and the second expression is valid for large target masses.
 For small $b$, the energy transfer will saturate at $\omega_\text{kin}$ and we can thus characterize the energy transfer as 
 \begin{align}
+\label{eq:omega_piecewise}
     \omega \approx 
     \begin{dcases}
     \;\;\;\; \omega_\text{kin}        & \, b < b_0 \\
@@ -696,8 +697,9 @@ For small $b$, the energy transfer will saturate at $\omega_\text{kin}$ and we c
     \end{dcases}
 \end{align}
 where $b_0^2 = \alpha^2 Z^2 / 2 m_c \beta^2 \omega_\text{kin}$ is a characteristic transition scale between hard and soft scatters. 
-The stopping power is given by integrating over all targets transverse to the incident particle direction
+The stopping power is given by integrating over all targets transverse to the incident particle's momentum
 \begin{align}
+\label{eq:stoppingpower_db}
     \frac{dE}{dx} = n_\text{ion} 
         \int \, 2\pi b \, db \cdot \omega.       
 \end{align}
@@ -782,11 +784,18 @@ where $n_\text{max} = (k - E_f) / \omega_0$. One can easily check numerically th
 \subsection{Electronic Coulomb Collisions}
 
 Coulomb scattering off Fermi electrons has two additional features compared to scattering off ions: the electron targets are not stationary and they require a threshold energy transfer in order to be scattered out of the Fermi sea.
-This qualitatively changes the stopping power at low energies.
+This qualitatively changes the behavior of the stopping power.
+
+The combined effect of these features is not obvious, though it can be understood by straightforward heuristic arguments which we present below. 
+In addition, the full result can be calculated numerically. 
+The scattering rate between an incident particle and the population of electrons with a given momentum $\vec{q}$ can be found easily in the center-of-mass frame.
+The stopping power then follows by boosting this result to the WD rest frame, calculating the corresponding energy transfers, and summing over the electron momentum distribution including only those scatters that excite electrons above the Fermi sea.  
+This calculation is well-approximated by the limiting cases described below, as shown in Figure~\textcolor{blue}{plot of coulomb-electron stopping powers}.
 
 \subsubsection{Non-relativistic Incident Particles}
-Consider first the limit of a non-relativistic incident particle of mass $m \gg m_e$, charge number $Z$, and incident momentum $\vec{p}$. 
-As the electron speeds are much faster than this incident, a target electron with momentum $\vec{q}$ will scatter off the incident to leading order with only a change in direction, 
+Consider first the limit of a slow incident particle of mass $m \gg m_e$, charge number $Z$, and incident momentum $\vec{p}$ with $m \gg p$. 
+This scatters off relativistic Fermi sea electrons. 
+As the electron speeds are much faster than the incident, a target electron with momentum $\vec{q}$ will scatter to leading order with only a change in direction, 
 \begin{align}
   \delta \vec{q} \approx q \left(\hat{q}_{out} - \hat{q}_{in}\right).
 \end{align}
@@ -811,14 +820,15 @@ Both of these effects achieve the same qualitative result, preventing the softes
 The Pauli effect will suppress scatters with energy transfer less than roughly the Fermi energy, while plasma screening suppresses scatters at impact parameter above $\lambda_\text{tf}$.
 This corresponds to a momentum transfer
 \begin{align}
-      \delta q \approx \frac{\alpha Z}{\beta \lambda_\text{tf}}
+      \delta q_\text{tf} \approx \frac{\alpha Z}{\beta \lambda_\text{tf}}
 \end{align}  
 and energy transfer 
 \begin{align}
-  \omega \sim \frac{p}{2m} \frac{\alpha Z}{\beta \lambda_\text{tf}}
+  \label{eq:cuttoff_compare}
+  \omega_\text{tf} \sim \frac{p}{2m} \frac{\alpha Z}{\beta \lambda_\text{tf}}
          \sim 5 \cdot 10^{-2} \frac{p}{m} E_f. 
 \end{align}
-This is always going to be less than the Fermi energy for non-relativistic incident particles, and so we can ignore the soft plasma cutoff in favor of the Pauli cutoff.
+This is always going to be less than the Fermi energy for non-relativistic incident particles, and so we can ignore the plasma cutoff in favor of the Pauli cutoff.
 
 At leading order the electron is not aware of the small ion velocity, so scattering occurs with the recoilless, relativistic Mott cross section
 \begin{align}
@@ -849,18 +859,18 @@ and noting that the stopping power is given by $v_\text{ion}^{-1} (dE/dt)$, we h
    \, \hat{p} \cdot \left(\hat{q}_{out} - \hat{q}_{in}\right) 
      \Bigg] \nonumber. 
 \end{align}
-The integral over target electron momenta selects only those near the top of the Fermi sea,
-\begin{align}
-  \int &dq \, q \, \Theta\left(\omega - q_f + q\right) \Theta(q_f - q) \\
-  &\approx \int_0^{q_f} dq \, q \; \Theta\left[\frac{q p}{2m} \hat{p} \cdot 
-  \left(\hat{q}_{out}-\hat{q}_{in}\right)-E_f+q\right] \\
-  &= \frac{1}{2} q_f^2 \left[ 1 - \frac{1}
-  {\left(1 + \frac{p}{2m} 
-  \hat{p}\cdot\left(\hat{q}_{out}-\hat{q}_{in}\right)\right)^2} \right]   \\
-  &\approx \frac{1}{2} q_f^2 \frac{p}{m} 
-  \hat{p}\cdot\left(\hat{q}_{out}-\hat{q}_{in} \right)     
-\end{align} 
-so the stopping power simplifies to 
+The integral over target electron momenta selects only those near the top of the Fermi sea,  
+% \begin{align}
+%   \int &dq \, q \, \Theta\left(\omega - q_f + q\right) \Theta(q_f - q) \\
+%   &\approx \int_0^{q_f} dq \, q \; \Theta\left[\frac{q p}{2m} \hat{p} \cdot 
+%   \left(\hat{q}_{out}-\hat{q}_{in}\right)-E_f+q\right] \\
+%   &= \frac{1}{2} q_f^2 \left[ 1 - \frac{1}
+%   {\left(1 + \frac{p}{2m} 
+%   \hat{p}\cdot\left(\hat{q}_{out}-\hat{q}_{in}\right)\right)^2} \right]   \\
+%   &\approx \frac{1}{2} q_f^2 \frac{p}{m} 
+%   \hat{p}\cdot\left(\hat{q}_{out}-\hat{q}_{in} \right)     
+% \end{align}  
+simplifying this to 
 \begin{align}
   \frac{dE}{dx} &\approx \, n_e \frac{\alpha^2 Z^2}{E_f} \frac{p}{m} \, I_a
 \end{align}
@@ -874,7 +884,38 @@ where $I_a \approx 10$ is a dimensionless angular integral that is independent o
 
 \subsubsection{Relativistic Incident Particles}
 
-
+Now consider a fast incident particle of mass $m \gg m_e$, charge number $Z$, and incident momentum $\vec{p}$ with $m \ll p$.
+The relative velocity between a target electron and the incident particle is of the same order as the ion's incident velocity itself, and we therefore expect the scattering to proceed, up to $\OO(1)$ factors, as though the electron were stationary.
+We take the energy transfer $\omega$ to be given by Equation~\eqref{eq:omega_piecewise} with the target mass $m_c$ replaced by the electron momentum $q$, which provides the appropriate target inertia in this context. 
+% \begin{align}
+%     \omega \approx 
+%     \begin{dcases}
+%     \; \omega_\text{kin}        & \, b < b_0 \\
+%     \frac{\alpha^2 Z^2}{2 q b^2} & \, b > b_0
+%     \end{dcases}
+% \end{align}
+The stopping is then given by the Pauli-blocked generalization of Equation~\eqref{eq:stoppingpower_db}
+\begin{align}
+\label{eq:stoppingpower_db}
+  &\begin{aligned}  \frac{dE}{dx} = \Bigg[ 
+      \int &dq \, n_e \frac{3}{4\pi q_f^3} \, \Theta(q_f - q) \, \cdot \\
+      \int &db \, 2\pi b \, \omega \, 
+      \Theta\left(\omega - q_f + q\right) \Bigg]. \end{aligned} \\
+  &\hphantom{\frac{dE}{dx}} 
+    \approx n_\text{ion} \frac{2\pi \alpha^2 Z^2}{E_f} 
+    \, G\left(\frac{\omega_\text{kin}}{E_f}\right).
+\end{align}
+where the dimensionless factor $G$ is given by a Pauli integral
+\begin{align}
+    G\left(x\right) = 
+    \begin{dcases}
+    \frac{1}{3} x^3 - \frac{3}{2} x^2 + 3 x & x < 1 \\
+    \;\;\;\, \frac{11}{6} + \log\left(x\right) & x > 1. \\
+    \end{dcases}
+\end{align}
+For large enough incident momenta, the plasma screening will provide the appropriate soft scatter cutoff instead of the Pauli cutoff used here. 
+This can be see by Equation~\eqref{eq:cuttoff_compare}.  
+However, in this regime the cutoff enters only through the Coulomb logarithm and so the difference is a matter of immaterial $\OO(1)$ factors.
 
 
 
