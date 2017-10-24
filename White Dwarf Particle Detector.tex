@@ -1,7 +1,7 @@
 %\documentclass[10pt, twocolumn]{article}
 %\documentclass[11pt]{article}
 %\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl, superscriptaddress]{revtex4}
-%\documentclass[twocolumn,preprintnumbers,amsmath,amssymb,prl, superscriptaddress]{revtex4}
+% \documentclass[twocolumn,preprintnumbers,amsmath,amssymb,prl, superscriptaddress]{revtex4}
 \documentclass[preprintnumbers,amsmath,amssymb,prd,superscriptaddress]{revtex4}
 %\documentclass[10pt, preprint,showpacs,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
 %\documentclass[11pt, prd,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
@@ -91,7 +91,7 @@ As a concrete example, we are able to constrain supersymmetric Q-ball dark matte
 \end{abstract}
 \maketitle
 \tableofcontents
-%\newpage
+\clearpage
 
 \section{Introduction}
 \label{sec:Introduction}
@@ -130,59 +130,67 @@ We examine the specific case of Q-ball DM in Section~\ref{sec:QBalls}, and concl
 \section{White Dwarf Runaway Fusion}
 \label{sec:Review}
 
-Any process which deposits energy in a WD will eventually heat a localized region within the star.
-Since we are interested in nuclear fusion, let $L_0$ be the length scale of the local peak in ion temperature $T_0$ and $\Ez$ be the excess thermal energy contained in this region.
-Note that the size and thermal properties of any heated region will evolve in time, so we take $L_0$ and $\Ez$ to characterize this peak as it initially forms, i.e.\ immediately after a temperature profile for ions has been established.
-Of course, if ions were the only WD constituents to establish a temperature profile at this scale then $\Ez \sim L_0^3 n_\text{ion} T_0$, where $n_\text{ion}$ is the number density of ions.
-In actuality the WD is a multi-component fluid consisting of ions, degenerate electrons, and photons, with each component having a different characteristic heat capacity. 
-In other words, the excess thermal energy $\Ez$ will necessarily depend on whether electrons and photons in the WD also thermalize to the same temperature as ions $T_0$ within the size of the ion temperature profile $L_0$.  
+We review here the conditions in which a local energy deposit in a carbon-oxygen WD results in runaway fusion. 
+Any such deposit will eventually heat carbon ions within some localized region.
+Parameterize this region by a linear size $L_0$ and peak temperature $T_0$. 
+These scales evolve in time, but it will be useful to describe a given heating event by their initial values. 
 
-Thus for a given heating event, $L_0$ is a measure of the efficiency with which the energy deposit is transferred to the stellar medium. 
-This may vary significantly with the form of the energy deposit and with WD density.
-For example, suppose that kinetic energy is transferred directly to a single ion through a short-range elastic scatter.
-This ion would thermalize with neighboring ions, resulting in a heating length $L_0$ of order the ion mean free path.
-In the other extreme, suppose that a process produces electrons in the WD at energies just above the Fermi energy.
-These electrons have Pauli-suppressed interactions and will travel a long distance before their energy is scattered and thermalized among ions, resulting in a much larger $L_0$.
+The fate of a heated region is either a nonviolent diffusion of the excess energy across the star, or a runaway fusion chain-reaction that destroys the star.
+The precise outcome depends on both $L_0$ and $T_0$. 
+There is a critical fusion temperature $T_f$, set by the energy required for ions to overcome their mutual Coulomb barrier, above which fusion occurs.
+For carbon-carbon fusion, $T_f \sim \MeV$ \cite{Gasques:2005ar}. 
+Any event with $T_0 > T_f$ will initially support fusion, however this condition is not sufficient for triggering runaway as cooling processes may quickly lower the temperature below $T_f$.
+This will not occur if the cooling timescale is larger than the timescale at which fusion releases energy.
 
-The fate of a locally heated region in a WD is either a nonviolent diffusion of the energy deposit across the star, or a runaway fusion chain-reaction that will destroy the star.
-The precise outcome is governed by two parameters: the fusion temperature $T_f$ and trigger size $\lambda_T$.
-The fusion temperature $T_f$ is the threshold for the onset of fusion and is given by the energy required for ions to overcome their mutual Coulomb barrier.
-For carbon-carbon fusion, this is of order $T_f \sim \MeV$ \cite{Gasques:2005ar}. 
-However, while any region with $T_0 > T_f$ will initially support fusion, this condition is not sufficient for triggering a runaway process.
-Sustained heating through nuclear fusion can only be maintained if the timescale for cooling is consistently longer than the timescale for heating.
-Cooling in a WD is dominated by diffusion and the characteristic diffusion time for a heated region increases with its size while the rate of fusion is independent of size.
-Therefore, there will always be a critical size of a heated region (at fixed temperature) above which fusion is maintained as the dominant thermal process.
-For a region at the threshold of nuclear fusion $T_f$, this condition defines the trigger size $\lambda_T$.
-The value of $\lambda_T$ is highly dependent on stellar density, and is set by either the thermal diffusivity of photons or degenerate electrons.
-It has been calculated numerically in \cite{Woosley} and analytically scaled for varying WD masses in \cite{Graham:2015apa}.
-As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ which correspond to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$.
-Over this range, the trigger size is approximately $\lambda_T \sim 10^{-5} - 10^{-3} ~\text{cm}$.
+Cooling in a WD is dominated by thermal diffusion, and the timescale for which increases with the size of heated region. 
+However, the rate of fusion is independent of region size.
+Thus, there is always a critical size above which a heated region (at fixed temperature) does not cool and initiates nuclear runaway. 
+For a region at the threshold $T_f$, this condition defines the trigger size $\lambda_T$.
+The value of $\lambda_T$ is highly dependent on density, and in a WD is set by the thermal diffusivity of either photons or degenerate electrons.
+It has been calculated numerically in \cite{Woosley} and scaled for varying WD masses in \cite{Graham:2015apa}.
+This is plotted in \textcolor{blue}{figure (same one with MeV thermalization lengths)}.
+As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ (only these give meaningful DM constraints).  
+This mass range correspond to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$ and a trigger size of $\lambda_T \sim 10^{-5} - 10^{-3} ~\text{cm}$.
+If a heated region is smaller than $\lambda_T$, its thermal evolution is initially dominated by diffusion. 
+However, at a later time this may still result in runaway fusion if the temperature remains above $T_f$ by the time the region has diffused out to the trigger size. 
+This yields the \emph{boom condition} for a heating event ($L_0$, $T_0$):
+\begin{align}
+    \label{eq:boom_condition}
+    T_0 \gtrsim T_f \cdot \text{Max}\left[1, \frac{\lambda_T}{L_0}\right]^3
+\end{align}
 
-In summary, a local temperature peak $T_f \sim \MeV$ in a WD will either always be dominated by diffusive cooling if $L_0 < \lambda_T$ or sustained fusion if $L_0 > \lambda_T$.
-Assuming all components of the WD (ions, electrons, photons) are thermalized, the energy deposit per unit volume $\Ez/V$ necessary to achieve the latter scenario is simply 
+It will be more useful for our purposes to phrase this condition in terms of the total energy $\Ez$ deposited during a heating event.
+The relation between $\Ez$ and $T_0$ will depend on which WD constituents, ion, degenerate electrons, or photons, are heated.
+These species are coupled, however, by electromagnetic interactions. 
+The lengths over which they mutually thermalize when heated to $\sim T_f$ are plotted in \textcolor{blue}{figure}, and as these are all smaller than the trigger size we will have all three species in equilibrium during any event capable of runaway:
 \begin{equation}
 \label{eq:boom}
   \frac{\Ez}{V} \gtrsim \int_0^{T_f} dT ~(n_\text{ion} + n_e^{2/3} T + T^3),
 \end{equation}
-neglecting $\OO(1)$ numerical coefficients in the heat capacities (per unit volume) of the different WD constituents. 
-$n_e$ is the number density of electrons, and it is necessary to use the heat capacity of a perfectly degenerate gas as the electron Fermi energy $E_F \gtrsim T_f$ in the relevant range of densities.
-However, there is the additional possibility if $L_0 < \lambda_T$ and $T_0 > T_f$ that the thermal evolution is initially dominated by diffusion but at a later time results in runaway fusion.
-To assess the explosiveness of such a scenario, we can suppose that the small but very hot region will diffuse and cool until its temperature reaches $T_f$.
-At this point, if the (now larger) temperature profile has a size greater than $\lambda_T$, a runaway necessarily occurs. 
-For a heated region of length $L_0 < \lambda_T$ which thermalizes all WD constituents upon expanding to size $\lambda_T$ at temperature $T_f$, we can compute the minimum energy required to ignite a WD:
+neglecting $\OO(1)$ coefficients in the heat capacities of the various species. 
+Note that $n_e$ is the electron density, and this contribution uses the heat capacity of a degenerate gas as the Fermi energy is larger then $T_f$ for the densities we consider.
+The absolute minimal ignition energy is 
 \begin{align}
 \label{eq:Eboom}
-\Eboom \sim \lambda_T^3 (n_\text{ion} T_f + n_e^{2/3} T_f^2 + T_f^4) \approx 10^{16} - 10^{22} ~\GeV,
+\Eboom &\sim \lambda_T^3 (n_\text{ion} T_f + n_e^{2/3} T_f^2 + T_f^4) \\  
+         &\approx 10^{16} - 10^{22} ~\GeV \nonumber,
 \end{align}
-where $\Eboom$ varies with trigger size $\lambda_T$ over the range of WD densities.
-This is plotted in Figure \ref{fig:Eboom}, with the precise WD mass-density relation extracted from \cite{cococubed}. 
-In a sense \eqref{eq:Eboom} generalizes the explosion condition of \cite{Graham:2015apa}, providing a less stringent criteria applicable to regions of temperature greater than $T_f$ and size less than $\lambda_T$ which was not needed in that work.
-Note that while $\Eboom$ is independent of the precise value of the heating length $L_0$, this threshold is only sufficient if the deposited energy thermalizes within a region of size $L_0 < \lambda_T$.
-If not, the minimum energy for explosion would be parametrically larger by a ratio of the volumes $(L_0/\lambda_T)^3$.
-As a result, understanding the heating length $L_0$ of an energy releasing process in a WD is critical to determining whether or not it is capable of destroying a star.
+which varies with $\lambda_T$ over the range of WD densities.
+This is plotted in Figure \ref{fig:Eboom}.
+The boom condition~\eqref{eq:boom_condition} can be restated as 
+\begin{align}
+    \Ez \gtrsim
+    \Eboom \cdot \text{Max}\left[1, \frac{L_0}{\lambda_T}\right]^3.
+\end{align}
+
+The energy needed for ignition is thus minimized for heating lengths $L_0$ less than the trigger size, where it is also independent of the precise value of $L_0$.  
+For broader deposits, the required energy is parametrically larger than $\Eboom$ by a volume ratio $(L_0/\lambda_T)^3$.
+Understanding the heating lengths $L_0$ resulting from the production of SM particles is therefore critical to determining whether or not these processes are capable of destroying a WD.
+
+
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
-\caption{Minimum energy $\Eboom$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley}.}
+\caption{Minimum energy $\Eboom$ required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley} and the WD mass-density relation \cite{cococubed}}
 \label{fig:Eboom}
 \end{figure}
 
