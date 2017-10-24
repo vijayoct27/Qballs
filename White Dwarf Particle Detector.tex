@@ -610,12 +610,10 @@ However, in light of the lack of understanding of DM and its interactions, it is
 
 \begin{appendices}
 
-\section{Stopping of SM Particles in a White Dwarf}
+\section{Particle Stopping in a White Dwarf}
 \label{sec:Appendix}
 Here we provide a detailed analysis of the electromagnetic and strong interactions in a carbon-oxygen WD, aimed towards calculating the energy loss per distance traveled of SM particles at an $\text{MeV}$ or greater.
 We consider incident electrons, photons, pions, and nucleons.
-These stopping powers are summarized in \textcolor{blue}{FIGURES}. 
-% Figures \ref{fig:SPelectron}, \ref{fig:SPphoton}, \ref{fig:SPnuc}, and \ref{fig:SPpion}.
 The WD medium is very dense, with electron and ion number densities in the range $n_e = Z n_\text{ion} \sim 10^{31} - 10^{33} ~\cm^{-3}$ assuming $Z=6$.
 Such high densities give rise to qualitatively different stopping behavior than is seen in terrestrial detectors.
 Famously, the star is supported against collapse by electron degeneracy pressure. 
@@ -625,13 +623,17 @@ For the WD masses we consider, the electrons are relativistic with a Fermi energ
 \end{equation}
 which is significantly larger then the WD thermal temperature $T \sim \keV$ \textcolor{blue}{CITATION}. 
 The nuclei are a fully ionized, non-degenerate gas at the thermal temperature. 
-Their characteristic Coulomb interaction energy is
+The strength of the Coulomb interaction energy relative to the temperature is described by the plasma parameter
 \begin{equation}
 \label{eq:lattice}
-  \Omega_l \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}}
-         \sim 10^{-2}-10^{-1} ~\MeV.
+ \Gamma \sim \frac{Z^2 \alpha}{n_\text{ion}^{-1/3}T} \gg 1, 
 \end{equation}
-As $\Omega_l \gg T$, the ions form a Coulomb lattice with binding energy $\sim \Omega_l$.
+indicating the ions are crystallized into a Coulomb lattice. 
+The ion plasma frequency is given by
+\begin{align}
+\Omega_p = \l \frac{4 \pi n_\text{ion} Z^2 \alpha}{m_i}\r^{1/2} \sim 1 - 10~\text{keV},
+\end{align}
+where $m_i$ is the ion mass. 
 As we will see, the thermal photons in the star never play a dominant role in stopping as the number density of photons $n_\gamma \sim T^3$ is order of magnitude less than that of electrons and ions.
 
 % \begin{figure}
@@ -658,7 +660,7 @@ As we will see, the thermal photons in the star never play a dominant role in st
 % \label{fig:SPpion}
 % \end{figure}
 
-\subsection{Ionic Coulomb Collisions}
+\subsection{Coulomb Collisions off Ions}
 This stopping power is most easily understood if we describe these scatters in terms of an impact parameter $b$.
 Taking the ions to be at rest, consider an incident particle of mass $m$, charge $e$, and speed $\beta$ which transfers an energy $\omega$.
 For soft scatters, 
@@ -720,12 +722,7 @@ For high-energy particles, the screening enters only through the Coulomb logarit
 
 Note that for incident electrons there is an additional upper bound on the energy transfer, $\omega_F = E - E_F$, as the electrons cannot be scattered into the Fermi sea.  If $\omega_F < \omega_\text{kin}$, then the above integrals should be taken with a lower limit of $b_F = \alpha^2 Z^2 / 2 m_c \beta^2 \left(E - E_F\right)$ instead of zero.
 
-To describe the contribution of phonons to the Coulomb scattering stopping power, we will calculate an approximate dynamic structure factor describing the white dwarf lattice. It is sufficient for our purposes to approximate the vibrational response of the white dwarf as a collection of harmonic oscillators at the plasma frequency
-\begin{align}
-\Omega_p = \sqrt{\frac{4 \pi n_i Z^2 \alpha}{M}} \sim 1 - 10~\text{keV}
-\end{align}
-where $M$ is the mass of carbon. (Note that the Debye temperature in a white dwarf is equal to its plasma frequency. \cite{reference}) We will assume that the white dwarf has temperature $T\lesssim 1~\text{keV}$ so that the temperature is low compared to the phonon energies. \textcolor{blue}{This is a typical white dwarf temperature \cite{reference}.}
-
+To describe the contribution of phonons to the Coulomb scattering stopping power, we will calculate an approximate dynamic structure factor describing the white dwarf lattice.
 The doubly differential cross section (see, for instance \textcolor{blue}{[Kittel]}) is given by
 \begin{align}
 \frac{d^2 \sigma}{d \Omega\, d \omega} = \frac{k'}{k} \left( \frac{m}{2 \pi} \right)^2 |V_\textbf{q}|^2 S(\textbf{q}, \omega)
@@ -764,11 +761,10 @@ To compute the stopping power for an electron scattering off ions, we sum the co
 \end{align}
 where $n_\text{max} = (k - E_f) / \omega_0$. One can easily check numerically that the sum is within 10\% of the Coulomb logarithm for the free particle calculation, so we have found that the free particle and phonon stopping powers \eqref{eq:SP} and \eqref{eq:PhononStoppingPower} are the same, and we can simply continue the free particle stopping power curve all the way down to the Fermi energy where it must cut off for degeneracy reasons anyways.
 
-\subsection{Electronic Coulomb Collisions}
+\subsection{Coulomb Collisions off Electrons}
 
-Coulomb scattering off Fermi electrons has two additional features compared to scattering off ions: the electron targets are not stationary and they require a threshold energy transfer in order to be scattered out of the Fermi sea.
-This qualitatively changes the behavior of the stopping power.
-
+Coulomb scattering off degenerate electrons has two additional features compared to scattering off ions: the electron targets are not stationary, and they require a threshold energy transfer in order to be scattered out of the Fermi sea.
+This qualitatively changes the behavior of the stopping power. 
 The combined effect of these features is not obvious, though it can be understood by straightforward heuristic arguments which we present below. 
 In addition, the full result can be calculated numerically. 
 The scattering rate between an incident particle and the population of electrons with a given momentum $\vec{q}$ can be found easily in the center-of-mass frame.
