@@ -152,7 +152,7 @@ If a heated region is smaller than $\lambda_T$, its thermal evolution is initial
 However, at a later time this may still result in runaway fusion if the temperature remains above $T_f$ by the time the region has diffused out to the trigger size.
 This yields the \emph{boom condition} for a heating event ($L_0$, $T_0$):
 \begin{align}
-    \label{eq:boom_condition}
+    \label{eq:energy_boom_condition_condition}
     T_0 \gtrsim T_f \cdot \text{Max}\left[1, \frac{\lambda_T}{L_0}\right]^3
 \end{align}
 
@@ -161,7 +161,6 @@ The relation between $\Ez$ and $T_0$ will depend on which WD constituents, ion, 
 These species are coupled, however, by electromagnetic interactions.
 The lengths over which they mutually thermalize when heated to $\sim T_f$ are plotted in \textcolor{blue}{figure}, and as these are all smaller than the trigger size we will have all three species in equilibrium during any event capable of runaway:
 \begin{equation}
-\label{eq:boom}
   \frac{\Ez}{V} \gtrsim \int_0^{T_f} dT ~(n_\text{ion} + n_e^{2/3} T + T^3),
 \end{equation}
 neglecting $\OO(1)$ coefficients in the heat capacities of the various species.
@@ -174,8 +173,9 @@ The absolute minimal ignition energy is
 \end{align}
 which varies with $\lambda_T$ over the range of WD densities.
 This is plotted in Figure \ref{fig:Eboom}.
-The boom condition~\eqref{eq:boom_condition} can be restated as
+The boom condition~\eqref{eq:energy_boom_condition_condition} can be restated as
 \begin{align}
+    \label{eq:energy_boom_condition}
     \Ez \gtrsim
     \Eboom \cdot \text{Max}\left[1, \frac{L_0}{\lambda_T}\right]^3.
 \end{align}
@@ -195,7 +195,7 @@ Understanding the heating lengths $L_0$ resulting from the production of SM part
 \label{sec:SMHeating}
 
 Having reviewed the requirements for runaway fusion in a WD, we turn to the question of triggering these events with DM.
-This amounts to determining the heating length $L_0$ and energy deposit $\Ez$ due to a given DM encounter with a WD - if condition \eqref{eq:boom} is satisfied, then the encounter is explosive.
+This amounts to determining the heating length $L_0$ and energy deposit $\Ez$ due to a given DM encounter with a WD - if condition \eqref{eq:energy_boom_condition} is satisfied, then the encounter is explosive.
 Of course, the parameters $L_0$ and $\Ez$ necessarily depend on the nature of the DM and must be explicitly calculated for a given DM model.
 This was done in \cite{Graham:2015apa} in the case of primordial black holes, which deposit energy through dynamical friction while transiting the star.
 However, non-gravitational interactions also have the potential to trigger SN.
@@ -299,33 +299,56 @@ In a nuclear interaction, $20 \%$ of the neutrino energy is transferred to the n
 In this case, the energy deposited to the nucleus is sufficient to start a hadronic shower.
 Therefore, a ultra-high energy neutrino behaves like a hadron and the neutrino heating length is simply $L_0 \sim X_\text{had}$.
 
-\section{Dark Matter-Induced Ignition: Conditions}
+\section{Dark Matter-Induced Ignition}
 \label{sec:DMexplode}
 
-In this Section, we parameterize aspects of the DM-induced heating of WDs that are purely dependent on the nature of DM.
-In particular, we derive explosion conditions on DM-WD encounters in terms of the heating length $L_0$ of the corresponding energy deposit that determine whether or not they are capable of igniting the star
-This is done for the three illustrative examples depicted in Figure \ref{fig:feynman}: DM-DM collisions, DM decays, and DM transits.
+We consider now those aspects of DM-induced heating that depend on the nature of DM and its interactions with the SM.
+This unknown DM physics determines the distribution in momentum, species, and space of the SM particles produced in the star, which is required to determine if a DM-WD encounter results in a SN and further to calculate the rate of those SN. 
+This may be done precisely for a particular DM model, as we do in Section~\ref{sec:QBalls} for Q-ball DM. 
+In this section, however, will remain agnostic about the identity of DM and instead consider several illustrative modes of DM-SM interaction to demonstrate simply the constraints which can be obtained by considering DM-induced SN.
+We describe these interactions below and then compute their DM-induced SN rates.
+
+A DM candidate with SM interactions may be generically expected to interact with the WD medium through the three processed depicted in Figure \ref{fig:feynman}: DM-DM collisions, DM decays, and DM-SM scattering. 
+Note that for ultra-heavy DM these processes may not be elementary interactions, but could rather be more complicated events analogous to the interactions of heavy nuclei. 
+
+We classify DM candidates first by the spatial extent of the SM products resulting from the encounter. 
+We consider either ``point" or ``continuous" heating of the WD medium. 
+In ``point" encounters, all SM products are produced in a localized region (smaller than the trigger size) after a rare interaction, whereas `continuous" encounters produce particles uniformly along the DM trajectory due to many interactions.
+DM-DM collisions and DM decays are both examples of ``point" heating, provided they directly produce SM products and not some population of long-lived dark states.  
+DM-SM collisions can fall in either category, with a hard catastrophic scatter giving ``point" heating and repeated soft scatters ``continuous" heating. 
+
+In addition, we further classify candidates according to the evolution of the DM itself inside the star.
+There will be some loss of kinetic energy due to DM-SM scatters.
+This may be incidental to the eventual heating of the star, e.g.~in the case of heating by DM decays, or it may represent the dominant heating process.
+We consider two simple limiting scenarios: ``DM wind" and ``DM capture".
+In the ``wind" case, a small fraction of the DM kinetic energy is lost and it simply passes through the star, whereas in the ``capture" case the energy loss is sufficient to stop the DM and cause it to accumulate inside the star.
+In the case of a ``continuous" energy deposit this distinction is unimportant as ignition will either occur on the initial segment of the DM trajectory or not at all. 
+However, ignition by ``point" depositions can be sensitive to the time spent in the WD (decays), presence of other DM particles (collision), etc., and thus models that undergo capture can be more strongly constrained.   
+
 \begin{figure}
 \includegraphics[scale=0.09]{feynmandiag.jpg}
-\caption{Schematic of possible non-gravitational DM interactions in a WD. Heating of the WD occurs through SM particle production (also depicted are potential dark sector states involved).}
+\caption{Schematic of possible non-gravitational DM interactions in a WD. Heating of the WD occurs via the SM products, though also depicted are potential dark sector products.}
 \label{fig:feynman}
 \end{figure}
 
-\subsection{DM-DM Collisions and DM Decays}
-\label{sec:DMcoldecay}
+\subsection{Point Heating}
 
-The collision of two DM states or the decay of a single DM within the WD is a generic interaction found in many models.
-Note that these DM-DM collisions are not necessarily particle-antiparticle annihilations, but can be of a more general, complicated nature such as the collisions of heavy nuclei.
-Since any such event will likely result in both SM and dark sector products, we assume the energy released into the SM is a fraction $f_\text{SM}$ of the DM mass.
-Generically we might expect $f_\text{SM} \ll 1$, although $f_\text{SM}$ is at most unity for non-relativistic DM.
-For simplicity, we only consider ``point-like" annihilations and decays which release SM particles within a sufficiently localized region.
-This excludes interactions involving the decay of long-lived, meta-stable dark states.
-With this parameterization, the explosion condition is approximately the same for both DM-DM collisions and DM decays:
+For a ``point" event releasing particles of heating length $L_0$, ignition will occur if the total energy in SM products satisfies condition~\eqref{eq:energy_boom_condition}. 
+Such an event will likely result in both SM and dark sector products, so we parameterize the resulting SM energy as a fraction $f_\text{SM}$ of the DM mass.
+Since we have non-relativistic, ultra-heavy DM, the DM mass is the dominant source of energy and therefore $f_\text{SM} \lesssim 1$ regardless of the interaction details, however we may well suspect that $f_\text{SM} \ll 1$ for realistic models. 
+With this parameterization, the explosion condition is 
 \begin{equation}
 \label{eq:coldecay}
-  m_\text{DM} f_\text{SM}  \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3
+  m_\text{DM} f_\text{SM}  \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3.
 \end{equation}
-We are thus sensitive to ultra-heavy $(> 10^{16} ~\GeV)$ DM masses which annihilate or decay into SM particles.
+We are thus sensitive to ``point" heating by DM with masses $m_\text{DM} \gtrsim 10^{16} ~\GeV$.
+
+
+\subsection{Continuous Heating}
+``Continuous" heating events are more subtle. 
+The deposited energy is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, which is the energy of SM products per distance traveled by the DM. 
+If these products have a heating length $L_0 < \lambda_T$,  
+
 
 \subsection{DM Transits}
 \label{sec:DMdecay}
@@ -334,7 +357,7 @@ For DM models with a DM-SM scattering interaction, there may be a continuous rel
 Since the DM will carry the bulk of the momentum in any such interaction producing light, relativistic SM secondaries, we can assume that the momentum of the released particles is isotropic.
 This is parameterized by a linear energy transfer $(dE/dx)_\text{LET}$, which is the energy released into SM products per distance traveled in a WD.
 Such a process can be broken up into a series of multiple heating events depositing energy $L_0 (d E/d x)_\text{LET}$ into temperature peaks of size $L_0$, where $L_0$ is the heating length for a single scatter.
-If any individual deposition satisfies \eqref{eq:boom}, then runaway fusion obviously occurs.
+If any individual deposition satisfies \eqref{eq:energy_boom_condition}, then runaway fusion obviously occurs.
 If not, runaway fusion may still be triggered due to the combined effect of many deposits.
 In such a scenario a large number of nearby temperature peaks will each diffuse outward, eventually merging into an explosive thermal profile.
 More explicitly, if the heating length is smaller than the trigger size $L_0 < \lambda_T$ it is sensible to consider the combined deposit as a single heating event of length $\lambda_T$ and energy deposit $\lambda_T (d E/d x)$.
@@ -366,7 +389,9 @@ The explosion condition for transits satisfying \eqref{eq:SlowDiffusion} and \eq
 \label{eq:transitexplosion}
   \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim \frac{\Eboom}{\lambda_T} \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^2.
 \end{equation}
-\section{Dark Matter-Induced Ignition: Constraints}
+
+
+\section{Dark Matter Constraints}
 \label{sec:Constraints}
 
 We now constrain models of DM which will ignite a WD via one of the processes parameterized in Section \ref{sec:DMexplode}.
