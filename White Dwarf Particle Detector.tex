@@ -352,12 +352,65 @@ With this parameterization, the explosion condition is
 \end{equation}
 We are thus sensitive to these events with for DM masses $m_\text{DM} \gtrsim 10^{16} ~\GeV$.
 
-\paragraph{SN Rate: Wind Scenario}.
-words
-
+\paragraph{SN Rate: Wind Scenario.}
+DM of mass $m_\text{DM}$ with negligible energy loss to the WD medium will traverse the star in roughly a time $R_\text{WD}/v_\text{esc}$ and have a number density within the WD of 
+\begin{equation}
+n_\text{DM} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r,
+\end{equation}
+which includes an $\OO(10)$ gravitational enhancement to the DM number density.
+Here $v_\text{esc} \sim 10^{-2} $ is the stellar escape velocity, $v \sim 10^{-3}$ the galactic virial velocity, and $\rho_\text{DM}$ the local energy density of DM.  
+The expected DM-DM collision rate parameterized by a cross-section $\sigma_\text{DM-DM}$ and net DM decay rate parameterized by a lifetime $\tau_\text{DM}$ are straightforward in the wind scenario,
+\begin{align}
+  \Gamma_\text{collision} 
+  &\sim n_\text{DM} \sigma_\text{DM-DM} v_\text{esc} 
+  \cdot n_\text{DM} R_\text{WD}^3 \\
+  &\sim \l \frac{\rho_\text{DM}}{m_\text{DM}} \r^2 \sigma_\text{DM-DM} \l \frac{v_\text{esc}}{v}\r^2 v_\text{esc} R_\text{WD}^3 \\
+  \label{eq:collisionDM}
+  \Gamma_\text{decay} 
+  &\sim \frac{1}{\tau_\text{DM}} \cdot n_\text{DM} R_\text{WD}^3 \\ 
+  &\sim \frac{1}{\tau_\text{DM}} \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r R_\text{WD}^3.
+  \label{eq:taugamma}
+\end{align}
+If the DM interaction is explosive, these rates give the rate of DM-induced SN. 
 
 \paragraph{SN Rate: Capture Scenario.}
-even more words
+\textcolor{blue}{should probably add a citation somewhere here or above to Bru-Monte}
+We first review the evolution of DM within the star during a capture scenario. 
+As the DM rapidly loses energy it will thermalize with the star and slow to velocity
+\begin{equation}
+v_\text{th} \sim \sqrt{\frac{T}{m_\text{DM}}} \approx 10^{-12} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2}
+\end{equation}
+where $T \sim \keV$ is the WD temperature.
+It will then accumulate at the virial radius set by $v_\text{th}$
+\begin{align}
+  R_\text{vr} &\sim \l \frac{T}{G m_\text{DM} \rho_\text{WD}}\r^{1/2} \\
+  &\approx 10^{-3} ~\text{m} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2} 
+  \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}, \nonumber
+\end{align}
+where we have assumed the WD has roughly constant density within $R_\text{vr}$.
+DM will collect at this radius until the total mass of the collected DM cloud exceeds the mass of the WD medium within $R_\text{vr}$.
+At that time, the DM cloud will begin gravitational collapse.
+
+
+ 
+To find the time necessary to accumulate this number of DM particles, we first write down the DM transit rate through the WD
+\begin{align}
+\Gamma_\text{transit} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2 \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
+\label{eq:TransitFluxCondition}
+\end{align}
+As a result, the amount of time $t_\text{collapse}$ required to capture sufficient DM to induce self-gravitational collapse is
+\begin{align}
+\label{eq:tcol}
+t_\text{collapse} &\sim \l \frac{\rho_\text{WD} R_\text{vr}^3}{m_\text{DM} \Gamma_\text{transit}} \r \approx 10 ~\text{s} \l \frac{10^{16} ~\GeV}{m_\text{DM}} \r^{3/2} \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
+\end{align}
+As a comparison, the unstopped DM wind will spend roughly $R_\text{WD}/v_\text{esc} \approx 0.1 ~\text{s}$ in the WD.
+However, there is a caveat - if $m_\text{DM}$ is too large, then there is insufficient time compared to the age of the WD for the DM to even collect at the thermal radius after it is captured.
+If the DM is able to collect at the thermal radius, it will collapse into a core after a time \eqref{eq:tcol}.
+The exact nature of this collapse is model-dependent - in the case of composite state DM, it is reasonable to suspect that the collapse is stabilized at some radius $R_\text{sta}$ at which the DM forms an inert object.
+$R_\text{sta}$ is at least as large as the Schwarzschild radius for the collapsed mass of DM, $R_\text{sch} \sim R_\text{vr} v_\text{th}^2$.
+Of course, it is also plausible that the DM stabilizes to a state which is still capable of colliding or decaying, as is the case for fermions supported by degeneracy pressure.
+
+
 
 \subsection{Transits}
 Continuous heating events are more subtle. 
@@ -433,61 +486,61 @@ For simplicity, we employ this approach.
 \subsection{Collision and Decay Constraints}
 \label{sec:CollisionConstraints}
 
-We begin by calculating the rate for a DM-DM collision or DM decay event to occur within the WD.
-It is possible that the DM has sufficient interactions with the SM capable of slowing it down in the WD.
-If we consider such interactions, then there are two limiting behaviors: the DM enters the star at velocity $v_\text{esc}$ and exits with only an $\OO(1)$ change in its kinetic energy (``DM wind" scenario), or the DM gets stopped and accumulates inside the WD (``DM capture" scenario).
-The precise behavior is determined by the magnitude of the stopping power $(dE/dx)_\text{SP}$ relative to the quantity $m_\text{DM} v_\text{esc}^2/R_\text{WD}$.
-For any realistic models, it is reasonable to suspect that $(dE/dx)_\text{SP}$ is a strong function of DM velocity.
-Therefore, we restrict ourselves to the two extreme cases of either negligible stopping or complete stopping of the DM.
-In the case of DM wind, the expected number density of DM particles in the WD volume
-\begin{equation}
-n_\text{DM} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r,
-\end{equation}
-taking into account the $\OO(10)$ gravitational enhancement of the number density in the star.
-Here $v \sim 10^{-3}$ denotes the galactic virial velocity and $\rho_\text{DM}$ is the energy density of DM in the region of interest.
+% We begin by calculating the rate for a DM-DM collision or DM decay event to occur within the WD.
+% It is possible that the DM has sufficient interactions with the SM capable of slowing it down in the WD.
+% If we consider such interactions, then there are two limiting behaviors: the DM enters the star at velocity $v_\text{esc}$ and exits with only an $\OO(1)$ change in its kinetic energy (``DM wind" scenario), or the DM gets stopped and accumulates inside the WD (``DM capture" scenario).
+% The precise behavior is determined by the magnitude of the stopping power $(dE/dx)_\text{SP}$ relative to the quantity $m_\text{DM} v_\text{esc}^2/R_\text{WD}$.
+% For any realistic models, it is reasonable to suspect that $(dE/dx)_\text{SP}$ is a strong function of DM velocity.
+% Therefore, we restrict ourselves to the two extreme cases of either negligible stopping or complete stopping of the DM.
+% In the case of DM wind, the expected number density of DM particles in the WD volume
+% \begin{equation}
+% n_\text{DM} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r,
+% \end{equation}
+% taking into account the $\OO(10)$ gravitational enhancement of the number density in the star.
+% Here $v \sim 10^{-3}$ denotes the galactic virial velocity and $\rho_\text{DM}$ is the energy density of DM in the region of interest.
 We take $\rho_\text{DM} \sim 0.4 ~\GeV/\text{cm}^3$ for nearby stars, while for the white dwarfs observed in the galactic center it is estimated that $\rho_\text{DM} \sim 10^3 ~\text{GeV}/\text{cm}^3$ \cite{Nesti:2013uwa}.
 
-However, in the case of DM capture the number density of DM particles in the WD is dramatically increased and there is the possibility for self-gravitational collapse.
-DM slows down in the WD to a velocity
-\begin{equation}
-v_\text{th} \sim \sqrt{\frac{T}{m_\text{DM}}} \approx 10^{-12} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2}
-\end{equation}
-where $T \sim \keV$ is the WD temperature.
-The captured DM will virialize and accumulate at the thermal radius
-\begin{align}
-R_\text{th} &\sim \l \frac{T}{G m_\text{DM} \rho_\text{WD}}\r^{1/2} \approx 10^{-3} ~\text{m} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2} \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}, \nonumber
-\end{align}
-where we have assumed the WD has roughly constant density within a sphere of radius $R_\text{th}$.
-Gravitational collapse into a compact DM core begins once when the total mass of DM exceeds the WD mass in this region.
-To find the time necessary to accumulate this number of DM particles, we first write down the DM transit rate through the WD
-\begin{align}
-\Gamma_\text{transit} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2 \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
-\label{eq:TransitFluxCondition}
-\end{align}
-As a result, the amount of time $t_\text{collapse}$ required to capture sufficient DM to induce self-gravitational collapse is
-\begin{align}
-\label{eq:tcol}
-t_\text{collapse} &\sim \l \frac{\rho_\text{WD} R_\text{th}^3}{m_\text{DM} \Gamma_\text{transit}} \r \approx 10 ~\text{s} \l \frac{10^{16} ~\GeV}{m_\text{DM}} \r^{3/2} \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
-\end{align}
-As a comparison, the unstopped DM wind will spend roughly $R_\text{WD}/v_\text{esc} \approx 0.1 ~\text{s}$ in the WD.
-However, there is a caveat - if $m_\text{DM}$ is too large, then there is insufficient time compared to the age of the WD for the DM to even collect at the thermal radius after it is captured.
-If the DM is able to collect at the thermal radius, it will collapse into a core after a time \eqref{eq:tcol}.
-The exact nature of this collapse is model-dependent - in the case of composite state DM, it is reasonable to suspect that the collapse is stabilized at some radius $R_\text{sta}$ at which the DM forms an inert object.
-$R_\text{sta}$ is at least as large as the Schwarzschild radius for the collapsed mass of DM, $R_\text{sch} \sim R_\text{th} v_\text{th}^2$.
-Of course, it is also plausible that the DM stabilizes to a state which is still capable of colliding or decaying, as is the case for fermions supported by degeneracy pressure.
+% However, in the case of DM capture the number density of DM particles in the WD is dramatically increased and there is the possibility for self-gravitational collapse.
+% DM slows down in the WD to a velocity
+% \begin{equation}
+% v_\text{th} \sim \sqrt{\frac{T}{m_\text{DM}}} \approx 10^{-12} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2}
+% \end{equation}
+% where $T \sim \keV$ is the WD temperature.
+% The captured DM will virialize and accumulate at the thermal radius
+% \begin{align}
+% R_\text{vr} &\sim \l \frac{T}{G m_\text{DM} \rho_\text{WD}}\r^{1/2} \approx 10^{-3} ~\text{m} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2} \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}, \nonumber
+% \end{align}
+% where we have assumed the WD has roughly constant density within a sphere of radius $R_\text{vr}$.
+% Gravitational collapse into a compact DM core begins once when the total mass of DM exceeds the WD mass in this region.
+% To find the time necessary to accumulate this number of DM particles, we first write down the DM transit rate through the WD
+% \begin{align}
+% \Gamma_\text{transit} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2 \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
+% \label{eq:TransitFluxCondition}
+% \end{align}
+% As a result, the amount of time $t_\text{collapse}$ required to capture sufficient DM to induce self-gravitational collapse is
+% \begin{align}
+% \label{eq:tcol}
+% t_\text{collapse} &\sim \l \frac{\rho_\text{WD} R_\text{vr}^3}{m_\text{DM} \Gamma_\text{transit}} \r \approx 10 ~\text{s} \l \frac{10^{16} ~\GeV}{m_\text{DM}} \r^{3/2} \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
+% \end{align}
+% As a comparison, the unstopped DM wind will spend roughly $R_\text{WD}/v_\text{esc} \approx 0.1 ~\text{s}$ in the WD.
+% However, there is a caveat - if $m_\text{DM}$ is too large, then there is insufficient time compared to the age of the WD for the DM to even collect at the thermal radius after it is captured.
+% If the DM is able to collect at the thermal radius, it will collapse into a core after a time \eqref{eq:tcol}.
+% The exact nature of this collapse is model-dependent - in the case of composite state DM, it is reasonable to suspect that the collapse is stabilized at some radius $R_\text{sta}$ at which the DM forms an inert object.
+% $R_\text{sta}$ is at least as large as the Schwarzschild radius for the collapsed mass of DM, $R_\text{sch} \sim R_\text{vr} v_\text{th}^2$.
+% Of course, it is also plausible that the DM stabilizes to a state which is still capable of colliding or decaying, as is the case for fermions supported by degeneracy pressure.
 
-We can compute the expected DM-DM collision rate parameterized by the cross-section $\sigma_\text{DM-DM}$ and DM decay rate parameterized by the mean lifetime $\tau_\text{DM}$ for the various scenarios outlined above.
-In the case of DM wind, this is simply
-\begin{equation}
-\Gamma_\text{collision} \sim \l \frac{\rho_\text{DM}}{m_\text{DM}} \r^2 \sigma_\text{DM-DM} \l \frac{v_\text{esc}}{v}\r^2 v_\text{esc} R_\text{WD}^3,
-\label{eq:collisionDM}
-\end{equation}
-Likewise, the rate at which a DM decay event occurs is
-\begin{equation}
-\Gamma_\text{decay} \sim  \frac{1}{\tau_\text{DM}} \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r R_\text{WD}^3,
-\label{eq:taugamma}
-\end{equation}
-Ultimately if the DM interaction is explosive, then we can place constraints by comparing \eqref{eq:collisionDM} and \eqref{eq:taugamma} to either the WD lifetime or the SN rate in an appropriate fashion.
+% We can compute the expected DM-DM collision rate parameterized by the cross-section $\sigma_\text{DM-DM}$ and DM decay rate parameterized by the mean lifetime $\tau_\text{DM}$ for the various scenarios outlined above.
+% In the case of DM wind, this is simply
+% \begin{equation}
+% \Gamma_\text{collision} \sim \l \frac{\rho_\text{DM}}{m_\text{DM}} \r^2 \sigma_\text{DM-DM} \l \frac{v_\text{esc}}{v}\r^2 v_\text{esc} R_\text{WD}^3,
+% \label{eq:collisionDM}
+% \end{equation}
+% Likewise, the rate at which a DM decay event occurs is
+% \begin{equation}
+% \Gamma_\text{decay} \sim  \frac{1}{\tau_\text{DM}} \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r R_\text{WD}^3,
+% \label{eq:taugamma}
+% \end{equation}
+% Ultimately if the DM interaction is explosive, then we can place constraints by comparing \eqref{eq:collisionDM} and \eqref{eq:taugamma} to either the WD lifetime or the SN rate in an appropriate fashion.
 A similar analysis can be done in the case of DM capture.
 The dominant constraint on $\sigma_\text{DM-DM}$ comes from demanding that the self-gravitating DM collected at the thermal radius does not annihilate once during the timescale of the collapse.
 For our purposes we will (conservatively) assume that the DM matter collapses into an inert object at a size $R_\text{sta}$.
