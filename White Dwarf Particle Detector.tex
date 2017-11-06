@@ -391,7 +391,13 @@ where we have assumed the WD has roughly constant density within $R_\text{vr}$.
 DM will collect at this radius until its total mass exceeds that of the WD medium within $R_\text{vr}$.
 The DM cloud will then begin gravitational collapse.
 The exact nature of this collapse is model-dependent, eventually being arrested by DM-DM interactions or the formation of a black hole. 
-In the case of composite DM, it is reasonable to suspect that the DM stabilizes into an inert core at a radius $R_\text{sta}$ larger than the Schwarzschild radius.
+In the case of composite DM, it is reasonable to suspect that the DM stabilizes into an inert core at a radius $R_\text{sta}$ larger than the Schwarzschild radius
+\begin{align}
+  R_\text{sch} \approx 10^{-24}~\text{cm} 
+  \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{3/2} 
+  \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
+\end{align}
+\textcolor{blue}{check these numbers}
 
 There are several timescales relevant to this process.
 The longest one is simply the time required for thermalized DM to drift down to the central core
@@ -425,19 +431,28 @@ In that case we have an enhancement of the net decay rate \eqref{eq:taugamma} by
 \end{align}
 due to the increased time spent by the DM in the WD medium before joining the inert core. 
 
-For DM-DM collision heating, there is high probability that the collapse of the core will induce an ignition event due to the enhancement of DM number density during the collapse.
- 
-one has both a large 
-A similar analysis can be done in the case of DM capture.
-The dominant constraint on $\sigma_\text{DM-DM}$ comes from demanding that the self-gravitating DM collected at the thermal radius does not annihilate once during the timescale of the collapse.
-For our purposes we will (conservatively) assume that the DM matter collapses into an inert object at a size $R_\text{sta}$.
-One can show this amounts to the condition
-\begin{equation}
-\frac{(\Gamma_\text{transit} t_\text{collapse})^2 \sigma_\text{DM-DM}}{R_\text{sta}^2} \lesssim 1,
-\end{equation}
-where the total number of DM particles in the collapsing sphere is roughly $\sim \Gamma_\text{transit} t_\text{collapse}$.
-This will hold regardless of if the DM is collapsing at a velocity set by free-fall or if the DM remains thermalized due to a scattering cross section with the WD (sufficient to stop the DM in the star to begin with.)
-Another complementary set of bounds comes from interpreting the captured DM as an enhanced number density outside of the collapsed inert core.
+For DM-DM collision heating, it is possible that the collapse of the core will induce an ignition event due to the enhancement of DM number density during the collapse. 
+This would cap the lifetime of WDs to $t_\text{collect}$. 
+For a DM-DM collision cross-section $\sigma_\text{DM-DM}$, the collapse is explosive if  
+\begin{align}
+  \frac{N^2 \sigma_\text{DM-DM}}{R_\text{sta}^2} \lesssim 1,
+\end{align}
+where $N$ is the total number of DM particles in the core,
+\begin{align}
+    N &\sim \frac{R^3_\text{vr} \rho_\text{WD}}{m_\text{DM}} \\
+    &\approx 10^{21} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{5/2} 
+  \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}. \nonumber
+\end{align}
+This will hold regardless of if the DM is collapsing in free fall or if the DM remains thermalized with the WD medium.
+If the collapse itself is not explosive, there is still an enhanced SN rate relative to the wind scenario due to DM colliding while infalling to the core. Again we look at the conservative situation of an inert core - the rate is obviously much enhanced if the core is stabilized in a fluid state which admits DM-DM collisions.  
+The rate of infalling collisions is enhanced over the wind collision rate \eqref{eq:collisionDM} by a factor 
+\begin{align}
+  \frac{v_\text{esc}}{v_\text{th}} \frac{R_\text{WD}}{R_\text{sta}} 
+  \approx 10^{20} \l \frac{m_\text{DM}}{10^{16}~\GeV} \r^{1/2} 
+  \l \frac{10^{-3}~\text{m}}{R_\text{sta}} \r
+\end{align}
+which is a very dramatic enchantment for the case of collapse to a central black hole. 
+
 
 
 \subsection{Transits}
@@ -582,8 +597,8 @@ We take $\rho_\text{DM} \sim 0.4 ~\GeV/\text{cm}^3$ for nearby stars, while for 
 
 % Note that the DM spends $R_\text{WD}/v_\text{th} \approx 50 ~\text{yr} ~(m_\text{DM}/10^{16} ~\GeV)^{1/2}$ in the WD before accruing at the stable radius and becoming useless from the point of view of triggering an explosion.
 
-% Therefore, the rate of decay in this case is a factor $v_\text{esc}/v_\text{th}$ larger than the DM wind value \eqref{eq:taugamma}.
-In addition, since the DM number density increases as closer to the stabilized radius $R_\text{sta}$, the annihilation rate is enhanced by an overall factor $(v_\text{esc}/v_\text{th} \times R_\text{WD}/R_\text{sta})$.
+% % Therefore, the rate of decay in this case is a factor $v_\text{esc}/v_\text{th}$ larger than the DM wind value \eqref{eq:taugamma}.
+% In addition, since the DM number density increases as closer to the stabilized radius $R_\text{sta}$, the annihilation rate is enhanced by an overall factor $(v_\text{esc}/v_\text{th} \times R_\text{WD}/R_\text{sta})$.
 
 We are able to constrain DM parameters whenever such processes are explosive according to the condition $\eqref{eq:coldecay}$.
 Consider a schematic interaction where an annihilation or decay releases a number of SM particles $N_i$ of single species $i$ and individual energy $\epsilon$.
