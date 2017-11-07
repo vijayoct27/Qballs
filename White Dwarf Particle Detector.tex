@@ -101,7 +101,7 @@ Therefore, it is fruitful to study the observable signatures of any yet-allowed 
 Many terrestrial direct section experiments have been designed to search for DM, yet these lack sensitivity to ultra-heavy DM due to its diminished number density and local flux.
 Even for a strongly-interacting candidate, if the DM mass is above $\sim 10^{22} ~\GeV$ a large detector of size $\sim (100 ~\text{m})^2$ will register fewer than a one event per year.
 While these masses are large compared to those of fundamental particles, it is reasonable to suppose that DM may exist as composite states just as the SM produces complex structures with mass much larger than fundamental scales (e.g., you, dear reader).
-Currently there is a wide range of unexplored parameter space for ultra-heavy DM candidates less than $\sim 10^{48} ~\GeV$, at which point the DM will have observable gravitational effects \textcolor{blue}{microlensing}.
+Currently there is a wide range of unexplored parameter space for ultra-heavy DM candidates less than $\sim 10^{48} ~\GeV$, at which point the DM will have observable gravitational microlensing effects. 
 For such ultra-heavy DM, indirect signatures in astrophysical systems are a natural way forward.
 One possibility originally proposed by \cite{Graham:2015apa} is that DM can trigger runaway fusion and ignite type 1a supernovae (SN) in sub-Chandrasekhar white dwarf (WD) stars.
 
@@ -150,14 +150,14 @@ For a region at the fusion threshold $T \sim T_f$, this critical size is what we
 The value of $\lambda_T$ is highly dependent on density, and in a WD is set by the thermal diffusivity of either photons or degenerate electrons.
 It has been calculated numerically in \cite{Woosley} and scaled for varying WD masses in \cite{Graham:2015apa}.
 This is plotted in \textcolor{blue}{figure (same one with MeV thermalization lengths)}.
-As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ (only these give meaningful DM constraints).
+As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ - we will see that only these give meaningful constraints.
 This mass range correspond to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$ and a trigger size of $\lambda_T \sim 10^{-3} - 10^{-5} ~\text{cm}$.
 If a heated region is smaller than $\lambda_T$, its thermal evolution is initially dominated by diffusion.
 However, at a later time this may still result in runaway fusion if the temperature remains above $T_f$ by the time the region has diffused out to the trigger size.
 This yields the \emph{boom condition} for a heating event ($L_0$, $T_0$):
 \begin{align}
-    \label{eq:energy_boom_condition_condition}
-    % T_0 \gtrsim T_f \cdot \text{Max}\left[1, \frac{\lambda_T}{L_0}\right]^3
+    \label{eq:Tboom}
+    % T_0 \gtrsim T_f \cdot \text{max}\left\{1, \frac{\lambda_T}{L_0}\right\}^3
     T_0 \gtrsim \begin{cases}
       T_f & L_0 \gtrsim \lambda_T \\
       T_f \left( \frac{\lambda_T}{L_0} \right)^3 & L_0 \lesssim \lambda_T
@@ -165,7 +165,7 @@ This yields the \emph{boom condition} for a heating event ($L_0$, $T_0$):
 \end{align}
 
 It will be more useful for our purposes to phrase this condition in terms of the total energy $\Ez$ deposited during a heating event.
-The relation between $\Ez$ and $T_0$ will depend on which WD constituents, ion, degenerate electrons, or photons, are heated.
+The relation between $\Ez$ and $T_0$ will depend on which WD constituents (ions, degenerate electrons, and photons) are heated.
 These species are coupled, however, by electromagnetic interactions.
 The lengths over which they mutually thermalize when heated to $\sim T_f$ are plotted in \textcolor{blue}{figure}, and as these are all smaller than the trigger size we will have all three species in equilibrium during any event capable of runaway:
 \begin{equation}
@@ -179,13 +179,13 @@ The absolute minimal ignition energy is
 \Eboom &\sim \frac{4 \pi}{3} \lambda_T^3 (n_\text{ion} T_f + n_e^{2/3} T_f^2 + T_f^4) \\
          &\sim  10^{15} - 10^{23} ~\GeV \nonumber,
 \end{align}
-(neglecting $\mathcal{O}(1)$ coefficients) which varies with $\lambda_T$ over the range of WD densities. % the coefficients are actually ~1.5, 1.6, and 0.7, respectively
+which varies with $\lambda_T$ over the range of WD densities. % the coefficients are actually ~1.5, 1.6, and 0.7, respectively
 This is plotted in Figure \ref{fig:Eboom}.
-The boom condition~\eqref{eq:energy_boom_condition_condition} can be restated as
+The boom condition~\eqref{eq:Tboom} can be restated as
 \begin{align}
     \label{eq:energy_boom_condition}
     \Ez \gtrsim
-    \Eboom \cdot \text{Max}\left[1, \frac{L_0}{\lambda_T}\right]^3.
+    \Eboom \cdot \text{max}\left\{1, \frac{L_0}{\lambda_T}\right\}^3.
 \end{align}
 The energy needed for ignition is thus minimized for heating lengths $L_0$ less than the trigger size, where it is also independent of the precise value of $L_0$.
 For broader deposits, the required energy is parametrically larger than $\Eboom$ by a volume ratio $(L_0/\lambda_T)^3$.
@@ -307,17 +307,16 @@ Therefore, a ultra-high energy neutrino behaves like a hadron and the neutrino h
 \section{Dark Matter-Induced Ignition}
 \label{sec:DMexplode}
 
-We consider now those aspects of DM-induced heating that depend on the nature of DM and its interactions with the SM.
-This unknown DM physics determines the distribution in momentum, species, and space of the SM particles produced in the star, which must be known in order to determine if a given DM-WD encounter results in a SN and to calculate the rate of such SN.
-This may be done precisely for a particular DM model, as we do in Section~\ref{sec:QBalls} for Q-ball DM.
-In this section, however, we remain agnostic about the identity of DM and instead consider several illustrative classes of DM-SM interaction which demonstrate simply the sorts of constraints obtained by considering DM-induced SN.
-We describe these interactions below and compute their DM-induced SN rates.
+We now consider those aspects of DM-induced heating of WDs by SM particle production that depend on the nature of DM and its interactions with the SM.
+Of course, the unknown DM physics determines the distribution in momentum, species, and space of particles produced in the star - this must be known in order to determine if the DM-WD encounter is capable of triggering a SN and the rate of such events. 
+In this Section, we remain agnostic about the identity of DM and instead consider several illustrative classes of DM-SM interaction which demonstrate simply the sorts of constraints obtained by considering DM-induced ignition.
+We describe these interactions below and compute their .
 Constraints for these processes are given in Section~\ref{sec:Constraints}.
 
-\subsection{Classifying DM-WD Encounters}
+\subsection{Classifying Dark Matter - White Dwarf Encounters}
 
 DM may be generically expected to interact with the WD medium through the three processes depicted in Figure \ref{fig:feynman}: DM-DM collisions, DM decays, and DM-SM scattering.
-Note that for ultra-heavy DM these processes may not be elementary interactions, but possibly more complicated events involving many final states, analogous to the interactions of high-energy hadrons or heavy nuclei.
+Note that for ultra-heavy DM these processes may not be elementary interactions, but possibly more complicated events involving many (potentially dark sector) final states, analogous to the interactions of heavy nuclei.
 We classify DM candidates into three types according to the interaction that provides the dominant source of heating, and refer to theses are decay, collision, and transit candidates.
 We also make some simplifying assumptions about the spatial extent of these interactions.
 We consider only decays and collisions that are point-like, with all SM products produced in a localized region (smaller than the trigger size).
@@ -327,9 +326,9 @@ We additionally classify candidates according to the evolution of the DM itself 
 There will be some loss of kinetic energy due to DM-SM scatters.
 This may be incidental to the eventual heating of the star, e.g.~in the case of heating by DM decays, or it may represent the dominant heating process.
 We consider two simple limiting scenarios depending on the magnitude of this energy loss: ``DM wind" and ``DM capture".
-In the ``wind" case, a small fraction of the DM kinetic energy is lost and it simply passes through the star, whereas in the ``capture" case the energy loss is sufficient to stop the DM and cause it to accumulate inside the star.
-We will consider both wind and capture scenarios for DM that heats by decay or DM-DM collisions, as for these models the capture scenario has a significantly enhanced SN rate.
-For simplicity, we consider only the wind scenario for transit candidates, though an enhancement due to capture is certainly possible in some models.
+In the ``wind" case only a small fraction of the DM kinetic energy is lost and it simply passes through the star, whereas in the ``capture" case the energy loss is sufficient to stop the DM and cause it to accumulate inside the star.
+We will consider both wind and capture scenarios for DM that heats by annihilations or decays, as for these models the capture scenario has a significantly enhanced rate of events.
+For simplicity, we consider only the wind scenario for transit candidates, though an enhancement of the heating due to capture is certainly possible in some models.
 
 Finally, a realistic interaction will produce SM particles with some distribution in momentum and species that ought to be summed over to asses the resulting heating.
 In what follows, however, for simplicity we will assume that each interaction produces particles of a single species $i$ and energy $\epsilon$.
@@ -337,7 +336,7 @@ This will demonstrate the typical scale of the resulting constraints on DM param
 
 \begin{figure}
 \includegraphics[scale=0.09]{feynmandiag.jpg}
-\caption{Schematic of possible non-gravitational DM interactions in a WD. Heating of the WD occurs via the SM products, though also depicted are potential dark sector products.}
+\caption{Rough schematic of possible non-gravitational DM interactions in a WD. Heating of the WD occurs via the SM products, though also depicted are potential dark sector products.}
 \label{fig:feynman}
 \end{figure}
 
@@ -365,7 +364,7 @@ With this parameterization, the explosion condition is
 \end{equation}
 We are thus sensitive to these events with for DM masses $m_\text{DM} \gtrsim 10^{16} ~\GeV$.
 
-\paragraph{SN Rate: Wind Scenario.}
+\paragraph{Event Rate: Wind Scenario.}
 DM of mass $m_\text{DM}$ with negligible energy loss to the WD medium will traverse the star in roughly a time $R_\text{WD}/v_\text{esc}$ and have a number density within the WD of
 \begin{equation}
 n_\text{DM} \sim \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r,
@@ -480,7 +479,7 @@ This yields the explosion condition for transit heating
 \label{eq:transitexplosion}
   \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim 
   \frac{\Eboom}{\lambda_T} \cdot \text{Max} 
-  \left[\frac{L_0}{\lambda_T}, 1 \right]^2.
+  \left\{\frac{L_0}{\lambda_T}, 1 \right\}^2.
 \end{align}
 
 The above argument sums the energy deposited along the DM trajectory as though it is all deposited simultaneously. 
@@ -636,7 +635,7 @@ For gauge-mediated models with flat scalar potentials, the Q-ball mass and radiu
 \label{eq:Qballprop}
 M_Q \sim m_S Q^{3/4}, ~~~ R_Q \sim m_S^{-1} Q^{1/4},
 \end{equation}
-the ``messenger mass'' $m_S$ is related to the scale of supersymmetry breaking, and $Q$ is the global charge of the Q-ball---in our case, baryon number.
+where $m_S$ is related to the scale of supersymmetry breaking, and $Q$ is the global charge of the Q-ball---in our case, baryon number.
 The condition $M_Q/Q < m_p$ ensures that the Q-ball is stable against decay to nucleons.
 When an (electrically neutral) baryonic Q-ball interacts with a nucleon, it absorbs its baryonic charge and induces the dissociation of the nucleon into free quarks.
 During this proton decay-like process, $\sim \text{GeV}$ of energy is released through the emission of 2--3 pions.
@@ -654,7 +653,7 @@ As in Section \ref{sec:Constraints}, this process is described by the parameter
 \l\frac{dE}{dx}\r_\text{LET} \sim n_\text{ion} \sigma_Q N \epsilon,
 \end{equation}
 where the nuclear collision results in $N \sim 30$ pions released, each with kinetic energy $\epsilon \sim 500 ~\text{MeV}$.
-These pions induce hadronic showers which terminate in low-energy hadrons that rapidly transfer their energy to ions via elastic scatters (as discussed in Section~\ref{sec:SMHeating}).
+These pions induce hadronic showers which terminate in low-energy hadrons that rapidly transfer their energy to ions via elastic scatters, as discussed in Section~\ref{sec:SMHeating}.
 As a result, nearby ions heated over a region of size $L_0 \approx 10^{-6} ~\text{cm}$ \textcolor{red}{why not $10^{-7}$?} at a number density $n_\text{ion} \sim 10^{32}~\text{cm}^{-3}$.
 $L_0$ scales inversely with $n_\text{ion}$ and is less than $\lambda_T$ for all WD densities.
 
@@ -719,9 +718,9 @@ The strength of the Coulomb interaction energy relative to the temperature is de
 indicating the ions are crystallized into a Coulomb lattice.
 The ion plasma frequency is given by
 \begin{align}
-\Omega_p = \l \frac{4 \pi n_\text{ion} Z^2 \alpha}{m_i}\r^{1/2} \sim 1 - 10~\text{keV},
+\Omega_p = \l \frac{4 \pi n_\text{ion} Z^2 \alpha}{m_\text{ion}}\r^{1/2} \sim 1 - 10~\text{keV},
 \end{align}
-where $m_i$ is the ion mass.
+where $m_\text{ion}$ is the ion mass.
 As we will see, the thermal photons in the star never play a dominant role in stopping as the number density of photons $n_\gamma \sim T^3$ is orders of magnitude less than that of electrons and ions.
 
 % \begin{figure}
@@ -749,19 +748,19 @@ As we will see, the thermal photons in the star never play a dominant role in st
 % \end{figure}
 
 \subsection{Coulomb Collisions off Ions}
-This stopping power is most easily understood if we describe these scatters in terms of an impact parameter $b$.
+The stopping power for Coulomb collisions with ions is most easily understood if we describe these scatters in terms of an impact parameter $b$.
 Taking the ions to be at rest, consider an incident particle of mass $m$, charge $e$, and speed $\beta$ which transfers an energy $\omega$.
 For soft scatters,
 \begin{align}
   \label{eq:omega_soft}
-  \omega \approx \frac{\alpha^2 Z^2}{2 m_c \beta^2 b^2}
+  \omega \approx \frac{\alpha^2 Z^2}{2 m_\text{ion} \beta^2 b^2}
 \end{align}
-where $Z$ is the ion charge number and $m_c$ the ion mass.
+where $Z$ is the ion charge number and $m_\text{ion}$ the ion mass.
 This is valid only for small $\omega$, and thus fails as $b\rightarrow0$.
 While \eqref{eq:omega_soft} diverges for vanishing $b$, there is in fact a maximal energy transfer allowed by kinematics, $\omega_\text{kin}$.
-For a stationary target $m_c$, this occurs for an exactly backwards scatter and is given in full by
+For a stationary target $m_\text{ion}$, this occurs for an exactly backwards scatter and is given in full by
 \begin{align}
-  \omega_\text{kin} = \frac{2 m_c p^2}{m_c^2 + m^2 + 2E m_c}
+  \omega_\text{kin} = \frac{2 m_\text{ion} p^2}{m_\text{ion}^2 + m^2 + 2E m_c}
 \end{align}
 where $p$, $E$ are the incoming momentum and energy, and the second expression is valid for large target masses.
 For small $b$, the energy transfer will saturate at $\omega_\text{kin}$ and we can thus characterize the energy transfer as
@@ -770,10 +769,10 @@ For small $b$, the energy transfer will saturate at $\omega_\text{kin}$ and we c
     \omega \approx
     \begin{dcases}
     \;\;\;\; \omega_\text{kin}        & \, b < b_0 \\
-    \frac{\alpha^2 Z^2}{2 m_c \beta^2 b^2} & \, b > b_0
+    \frac{\alpha^2 Z^2}{2 m_\text{ion} \beta^2 b^2} & \, b > b_0
     \end{dcases}
 \end{align}
-where $b_0^2 = \alpha^2 Z^2 / 2 m_c \beta^2 \omega_\text{kin}$ is a characteristic transition scale between hard and soft scatters.
+where $b_0^2 = \alpha^2 Z^2 / 2 m_\text{ion} \beta^2 \omega_\text{kin}$ is a characteristic transition scale between hard and soft scatters.
 The stopping power is given by integrating over all targets transverse to the incident particle's momentum
 \begin{align}
 \label{eq:stoppingpower_db}
@@ -794,9 +793,9 @@ The stopping power is
   \frac{dE}{dx} &\approx n_\text{ion}
     \int_0^{\lambda_\text{tf}} \, 2\pi b  \, db \cdot \omega \\
     &\approx 2\pi n_\text{ion}\left(\omega_\text{kin}\int_0^{b_0} \, db \, b
-    + \frac{\alpha^2 Z^2}{2 m_c \beta^2}
+    + \frac{\alpha^2 Z^2}{2 m_\text{ion} \beta^2}
     \int_{b_0}^{\lambda_\text{tf}} \,\frac{db}{b} \right)  \nonumber \\
-    &= n_\text{ion} \frac{\pi \alpha^2 Z^2}{2 m_c \beta^2}
+    &= n_\text{ion} \frac{\pi \alpha^2 Z^2}{2 m_\text{ion} \beta^2}
       \, F\left(\frac{\lambda_\text{tf}}{b_0}\right)
       \label{eq:StoppingPowerOffIons}
 \end{align}
@@ -810,15 +809,15 @@ where $F$ is a dimensionless factor
 For low-energy, highly screened incident particles, $\lambda_\text{tf} < b_0$, this stopping power is simply $\sim \lambda_\text{tf}^2 \, \omega_\text{kin}$.
 For high-energy particles, the screening enters only through the Coulomb logarithm.
 
-Note that for incident electrons there is an additional upper bound on the energy transfer, $\omega_F = E - E_F$, as the electrons cannot be scattered into the Fermi sea.  If $\omega_F < \omega_\text{kin}$, then the above integrals should be taken with a lower limit of $b_F = \alpha^2 Z^2 / 2 m_c \beta^2 \left(E - E_F\right)$ instead of zero.
+Note that for incident electrons there is an additional upper bound on the energy transfer, $\omega_F = E - E_F$, as the electrons cannot be scattered into the Fermi sea.  If $\omega_F < \omega_\text{kin}$, then the above integrals should be taken with a lower limit of $b_F = \alpha^2 Z^2 / 2 m_\text{ion} \beta^2 \left(E - E_F\right)$ instead of zero.
 
-One should also be careful about energy transfers smaller than the plasma frequency $\Omega_p \sim 1-10~\text{keV}$, for which phonon excitations may be important. A light incident particle with momentum $p$ and energy $E\ll m_c$ would transfer momentum $q\lesssim p$ and energy $\omega_\text{free} = q^2/2 m_c$ to a free ion. We therefore expect phonon effects to be important when $p^2/2 m_c \lesssim \Omega_p$, and indeed one can check that the stopping power \eqref{eq:StoppingPowerOffIons} becomes dominated by energy transfers $\lesssim \Omega_p$ for this range of momenta. In this regime the ion is essentially a fixed target, and a simple Born approximation calculation yields a low-energy limit of the cross section $d \sigma$ used above in \eqref{eq:stoppingpower_db} and \eqref{eq:StoppingPowerOffIons}. For a free ion, arbitrarily small energy transfer $\omega$ is quantum mechanically permissible.
+One should also be careful about energy transfers smaller than the plasma frequency $\Omega_p \sim 1-10~\text{keV}$, for which phonon excitations may be important. A light incident particle with momentum $p$ and energy $E\ll m_\text{ion}$ would transfer momentum $q\lesssim p$ and energy $\omega_\text{free} = q^2/2 m_\text{ion}$ to a free ion. We therefore expect phonon effects to be important when $p^2/2 m_\text{ion} \lesssim \Omega_p$, and indeed one can check that the stopping power \eqref{eq:StoppingPowerOffIons} becomes dominated by energy transfers $\lesssim \Omega_p$ for this range of momenta. In this regime the ion is essentially a fixed target, and a simple Born approximation calculation yields a low-energy limit of the cross section $d \sigma$ used above in \eqref{eq:stoppingpower_db} and \eqref{eq:StoppingPowerOffIons}. For a free ion, arbitrarily small energy transfer $\omega$ is quantum mechanically permissible.
 
-If we approximate the white dwarf as an Einstein solid instead, then each ion becomes a harmonic oscillator with frequency $\Omega_p$. The minimum permissible energy transfer is now $\omega = \Omega_p$, and we must compute the scattering cross section with the ion wave function in mind, transitioning from the harmonic oscillator ground state to the first excited state. This modifies the cross section by $|\bra{1}e^{i\textbf{q}\cdot \textbf{r}}\ket{0}|^2\approx q^2/2 m_c\Omega_p$. (For similar cross section calculations, see \cite{Hofstadter}.) The stopping power integrand is therefore modified from
+If we approximate the white dwarf as an Einstein solid instead, then each ion becomes a harmonic oscillator with frequency $\Omega_p$. The minimum permissible energy transfer is now $\omega = \Omega_p$, and we must compute the scattering cross section with the ion wave function in mind, transitioning from the harmonic oscillator ground state to the first excited state. This modifies the cross section by $|\bra{1}e^{i\textbf{q}\cdot \textbf{r}}\ket{0}|^2\approx q^2/2 m_\text{ion} \Omega_p$. (For similar cross section calculations, see \cite{Hofstadter}.) The stopping power integrand is therefore modified from
 \begin{align}
-(n_\text{ion}\, d\sigma)\cdot\omega_\text{free} \to (n_\text{ion}\, d\sigma\cdot\frac{q^2}{2 m_c\Omega_p})\cdot \Omega_p
+(n_\text{ion}\, d\sigma)\cdot\omega_\text{free} \to (n_\text{ion}\, d\sigma\cdot\frac{q^2}{2 m_\text{ion}\Omega_p})\cdot \Omega_p
 \end{align}
-However, since $\omega_\text{free} = q^2/2 m_c$ at these energies, the two stopping powers are the same. Scatters are rarer at incident momenta $p^2/2 m_c \lesssim \Omega_p$ where phonons matter, but each scatter transfers more energy so that the stopping power is equivalent.
+However, since $\omega_\text{free} = q^2/2 m_c$ at these energies, the two stopping powers are the same. Scatters are rarer at incident momenta $p^2/2 m_\text{ion} \lesssim \Omega_p$ where phonons matter, but each scatter transfers more energy so that the stopping power is equivalent.
 
 
 \subsection{Coulomb Collisions off Electrons}
@@ -925,7 +924,7 @@ where $I_a \approx 10$ is a dimensionless angular integral that is independent o
 
 Now consider a fast incident particle of mass $m \gg m_e$, charge number $Z$, and incident momentum $\vec{p}$ with $m \ll p$.
 The relative velocity between a target electron and the incident particle is of the same order as the ion's incident velocity itself, and we therefore expect the scattering to proceed, up to $\OO(1)$ factors, as though the electron were stationary.
-We take the energy transfer $\omega$ to be given by Equation~\eqref{eq:omega_piecewise} with the target mass $m_c$ replaced by the electron momentum $q$, which provides the appropriate target inertia in this context.
+We take the energy transfer $\omega$ to be given by Equation~\eqref{eq:omega_piecewise} with the target mass $m_\text{ion}$ replaced by the electron momentum $q$, which provides the appropriate target inertia in this context.
 % \begin{align}
 %     \omega \approx
 %     \begin{dcases}
