@@ -112,7 +112,7 @@ The localized heating necessary to trigger runaway fusion was computed in \cite{
 In addition, \cite{Graham:2015apa} identifies other heating mechanisms which may be similarly constrained, including the production of high energy SM particles within the WD.
 Here we focus on this scenario.
 It is important to note these constraints are complimentary to terrestrial ones---it is more massive DM that is likely to trigger SN, but also more massive DM that has low terrestrial flux.
-The WD detector excels in this regime due to its large surface area, long lifetime, and galactic abundance.
+The WD detector excels in this regime due to its large surface area $\sim (10^4 ~\text{km})^2$, long lifetime $\sim \text{Gyr}$, and galactic abundance.
 
 An essential ingredient in this analysis is understanding how SM particles deposit energy in a WD medium
 We find that most high energy particles tend to thermalize efficiently with ions in the WD, nearly independent of the particle species or energy.
@@ -194,7 +194,7 @@ Understanding the heating lengths $L_0$ resulting from the production of SM part
 
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
-\caption{Minimum energy $\Eboom$ (see equation \eqref{eq:Eboom}) required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley} and the WD mass-density relation \cite{cococubed}}
+\caption{Minimum energy $\Eboom$ \eqref{eq:Eboom} required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley} and the WD mass-density relation \cite{cococubed}}
 \label{fig:Eboom}
 \end{figure}
 
@@ -204,8 +204,10 @@ Understanding the heating lengths $L_0$ resulting from the production of SM part
 Having reviewed the requirements for runaway fusion in a WD, we turn to the question of triggering these events with DM.
 This amounts to determining the heating length $L_0$ and energy deposit $\Ez$ due to a given DM encounter with a WD---if condition \eqref{eq:energy_boom_condition} is satisfied, then the encounter is explosive.
 Of course, the parameters $L_0$ and $\Ez$ necessarily depend on the nature of the DM and must be explicitly calculated for a given DM model.
-In particular, any DM candidate which couples to the SM will generically be able to release SM secondaries which then thermalize with stellar constituents.
-For these types of processes, the unknown DM physics serves only to determine the initial distribution in space, energy, and species of the SM particles produced in the star, while the actual heating proceeds entirely though known SM interactions.
+This is done in \cite{Graham:2015apa} for the case of primordial black holes which transit a WD and cause heating through dynamical friction. 
+Here we instead consider non-gravitational heating of a WD due to the DM. 
+In particular, any DM candidate which couples to the SM will generically be able to release SM particles inside the star which then thermalize with stellar constituents.
+For these types of processes, the unknown DM physics serves only to determine the initial distribution in momentum, species, and space of SM particles produced in the star, while the actual heating proceeds entirely though known SM interactions.
 It is therefore necessary to understand how energy is transferred from SM particles to the stellar medium in order to assess the explosiveness of these encounters.
 
 The remainder of this Section is dedicated to computing the heating properties of SM species in a manner that is independent of the DM encounter.
@@ -313,7 +315,7 @@ In this Section, we remain agnostic about the identity of DM and instead conside
 We describe these interactions below and compute their .
 Constraints for these processes are given in Section~\ref{sec:Constraints}.
 
-\subsection{Classifying Dark Matter - White Dwarf Encounters}
+\subsection{Dark Matter Encounters with White Dwarfs}
 
 DM may be generically expected to interact with the WD medium through the three processes depicted in Figure \ref{fig:feynman}: DM-DM collisions, DM decays, and DM-SM scattering.
 Note that for ultra-heavy DM these processes may not be elementary interactions, but possibly more complicated events involving many (potentially dark sector) final states, analogous to the interactions of heavy nuclei.
@@ -351,6 +353,17 @@ We parameterize this with a stopping power $(dE/dx)_\text{SP}$, giving the kinet
 \end{align}
 where $R_\text{crust} \sim 50 ~\text{km}$ is the width of a WD crust \cite{Chandrasekhar} and $v_\text{esc} \sim 10^{-2}$ is the escape velocity of a WD. \textcolor{blue}{double check these numbers}. 
 
+
+\paragraph{SN Rate: Wind Scenario.}
+The rate of transit events is given by the flux of DM passing through a WD
+\begin{align}
+  \Gamma_\text{transit} \sim 
+  \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2 
+  \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
+\label{eq:TransitFluxCondition}
+\end{align} 
+which contains an $\OO(100)$ enhancement due to gravitational focusing.
+
 \subsection{Transits}
 
 \paragraph{Explosion Condition.}
@@ -365,7 +378,7 @@ This yields the explosion condition for transit heating
 \label{eq:transitexplosion}
   \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim 
   \frac{\Eboom}{\lambda_T} \cdot \text{Max} 
-  \left[\frac{L_0}{\lambda_T}, 1 \right]^2.
+  \left\{\frac{L_0}{\lambda_T}, 1 \right\}^2.
 \end{align}
 
 The above argument sums the energy deposited along the DM trajectory as though it is all deposited simultaneously. 
@@ -378,8 +391,8 @@ We therefore require that the diffusion time $\tau_d$ across a heated region at 
 \end{align}
 where $\alpha(T)$ is the temperature-dependent diffusivity and DM transits at the stellar escape speed $v_\text{esc}$.
 This condition is more stringent for smaller regions, so we focus on the smallest region of interest: $L = \lambda_T$. 
-The condition \eqref{eq:SlowDiffusion} is then equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
-Values of $v_\text{cond}$ have been tabulated in \cite{Woosley}, and indeed condition \eqref{eq:SlowDiffusion} is satisfied for all WD densities.
+\eqref{eq:SlowDiffusion} is then equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
+Numerical calculations of $v_\text{cond}$ are tabulated in \cite{Woosley}, and indeed condition \eqref{eq:SlowDiffusion} is satisfied for all WD densities.
 
 \paragraph{SN Rate: Wind Scenario.}
 The rate of transit events is given by the flux of DM passing through a WD
@@ -390,13 +403,6 @@ The rate of transit events is given by the flux of DM passing through a WD
 \label{eq:TransitFluxCondition}
 \end{align} 
 which contains an $\OO(100)$ enhancement due to gravitational focusing.
-
-\section{Dark Matter Constraints}
-\label{sec:Constraints}
-
-We now constrain models of DM which will ignite a WD via one of the processes parameterized in Section \ref{sec:DMexplode}.
-In order to do so, we will additionally assume a simple, schematic form for the DM interaction such that the heating length of the encounter can be calculated explicitly.
-However, we first review the different ways in which white dwarfs can constrain DM candidates capable of triggering SN.
 
 \subsection{Collisions and Decays}
 
@@ -442,12 +448,12 @@ v_\text{th} \sim \sqrt{\frac{T}{m_\text{DM}}} \approx 10^{-12} \l \frac{10^{16} 
 where $T \sim \keV$ is the WD temperature.
 It will then accumulate at the virial radius set by $v_\text{th}$
 \begin{align}
-  R_\text{vr} &\sim \l \frac{T}{G m_\text{DM} \rho_\text{WD}}\r^{1/2} \\
+  R_\text{vir} &\sim \l \frac{T}{G m_\text{DM} \rho_\text{WD}}\r^{1/2} \\
   &\approx 10^{-1} ~\text{cm} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2}
   \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}, \nonumber
 \end{align}
-where we have assumed the WD has roughly constant density within $R_\text{vr}$.
-DM will collect at this radius until its total mass exceeds that of the WD medium within $R_\text{vr}$.
+where we have assumed the WD has roughly constant density within $R_\text{vir}$.
+DM will collect at this radius until its total mass exceeds that of the WD medium within $R_\text{vir}$.
 The DM cloud will then begin gravitational collapse.
 The exact nature of this collapse is model-dependent, eventually being arrested by DM-DM interactions or the formation of a black hole.
 In the case of composite DM, it is reasonable to suspect that the DM stabilizes into an inert core at a radius $R_\text{sta}$ larger than the Schwarzschild radius
@@ -469,14 +475,14 @@ This is much larger than the time need to collect a critical mass of DM, governe
 \begin{align}
 \label{eq:tcol}
   t_\text{collect}
-  &\sim \frac{\rho_\text{WD} R_\text{vr}^3}
+  &\sim \frac{\rho_\text{WD} R_\text{vir}^3}
   {m_\text{DM} \Gamma_\text{transit}} \\
   &\approx 10 ~\text{s} \l \frac{10^{16} ~\GeV}{m_\text{DM}} \r^{3/2}
   \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}
 \end{align}
 or the timescale of the collapse itself
 \begin{align}
-  t_\text{collapse} &\sim R_\text{vr}/v_\text{th} \\
+  t_\text{collapse} &\sim R_\text{vir}/v_\text{th} \\
   &\approx 3 ~\text{s} ~ \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
 \end{align}
 The core thus forms in a time $t_\text{drift}$, provided the mass of DM is sufficiently small - for masses $m_\text{DM} \gtrsim 10^{30}~\GeV$ the core will not form within the lifetime of the star.
@@ -512,45 +518,6 @@ The rate of infalling collisions is enhanced over the wind collision rate \eqref
 \end{align}
 which is an obnoxious $\approx 10^{40}$ enchantment for the case of collapse to a central black hole.
 
-\subsection{Transits}
-
-\paragraph{Explosion Condition.}
-The energy deposited in a continuous heating event is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, which is the kinetic energy of SM particles produced per distance traveled by the DM.
-If these products have a heating length $L_0$, then then relevant energy deposit as used in the general explosion condition \eqref{eq:energy_boom_condition} must be taken at minimum to be the energy transfered over the length $L_0$. 
-We can always choose to consider the energy deposition over a longer segment of the DM trajectory, however by condition \eqref{eq:energy_boom_condition} such a deposition is \emph{less} explosive unless the length scale is smaller than the trigger size.
-Thus, if $L_0 < \lambda_T$ we consider the deposition over the length $\lambda_T$, and otherwise over the larger scale $L_0$. 
-We can take the energy of the DM to be roughly constant over this heating event, as for an explosive event any energy loss is subject to the condition 
-\eqref{eq:CrustCondition} in order to penetrate the non-degenerate layer, which also guarantees negligible energy loss over the trigger size or heating lengths $L_0$.   
-This yields the explosion condition for transit heating
-\begin{align}
-\label{eq:transitexplosion}
-  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim 
-  \frac{\Eboom}{\lambda_T} \cdot \text{Max} 
-  \left\{\frac{L_0}{\lambda_T}, 1 \right\}^2.
-\end{align}
-
-The above argument sums the energy deposited along the DM trajectory as though it is all deposited simultaneously. 
-This is only valid if the DM moves sufficiently quickly, so that the deposited energy does not diffuse out of the region of interest before the DM has traversed the region. 
-We therefore require that the diffusion time $\tau_d$ across a heated region at temperature $T_f$ be larger than the DM crossing time:
-\begin{align}
-  \tau_d \sim \frac{L^2}{\alpha(T_f)} \gg 
-  \frac{L}{v_\text{esc}},
-\label{eq:SlowDiffusion}
-\end{align}
-where $\alpha(T)$ is the temperature-dependent diffusivity and DM transits at the stellar escape speed $v_\text{esc}$.
-This condition is more stringent for smaller regions, so we focus on the smallest region of interest: $L = \lambda_T$. 
-The condition \eqref{eq:SlowDiffusion} is then equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
-Values of $v_\text{cond}$ have been tabulated in \cite{Woosley}, and indeed condition \eqref{eq:SlowDiffusion} is satisfied for all WD densities.
-
-\paragraph{SN Rate: Wind Scenario.}
-The rate of transit events is given by the flux of DM passing through a WD
-\begin{align}
-  \Gamma_\text{transit} \sim 
-  \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2 
-  \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
-\label{eq:TransitFluxCondition}
-\end{align} 
-which contains an $\OO(100)$ enhancement due to gravitational focusing.
 
 \section{Dark Matter Constraints}
 \label{sec:Constraints}
@@ -558,9 +525,6 @@ which contains an $\OO(100)$ enhancement due to gravitational focusing.
 We now constrain models of DM which will ignite a WD via one of the processes parameterized in Section \ref{sec:DMexplode}.
 In order to do so, we will additionally assume a simple, schematic form for the DM interaction such that the heating length of the encounter can be calculated explicitly.
 However, we first review the different ways in which white dwarfs can constrain DM candidates capable of triggering SN.
-=======
-which is an obnoxious $\approx 10^{40}$ enhancement for the case of collapse to a central black hole.
->>>>>>> origin/master
 
 \subsection{Review of WD Observables}
 Following the discussion of \cite{Graham:2015apa}, our constraints come from (1)~the existence of heavy, long-lived white dwarfs, or (2)~the measured type Ia SN rate.
@@ -585,6 +549,41 @@ For simplicity, we employ this approach.
 
 \subsection{Collision and Decay Constraints}
 \label{sec:CollisionConstraints}
+
+
+\subsection{Transit Constraints}
+\label{sec:TransitConstraints}
+
+In order to constrain a DM model through its transit interaction with a WD, we require that it satisfy the explosive condition \eqref{eq:transitexplosion}.
+This is given in terms of an LET, which parameterizes the ability for DM to release sufficient energy to the star in the form of SM particles.
+$(dE/dx)_\text{LET}$ for any realistic DM model would necessarily involve a sum over stellar targets along with species that could be produced, as well as an integral over the produced particle spectrum.
+However, consider a simplified interaction in which $\sigma_{i,\epsilon}$ denotes the cross-section for DM to scatter off a stellar constituent, producing a particle of species $i$ and and energy $\epsilon$.
+If this were the only available channel for the DM to deposit energy, then the LET could be written as
+\begin{align}
+\label{eq:schematicLET}
+  \left( \frac{d E}{d x} \right)_\text{LET} = n_\text{ion} \sigma_{i,\epsilon} \epsilon,
+\end{align}
+where we now specify to the case of DM collisions with nuclear targets.
+Assuming such a DM-SM scattering interaction, the transit heating length is computed in Section~\ref{sec:SMHeating}.
+
+In addition, we also make a sensible assumption that the LET $(dE/dx)_\text{LET}$ and DM stopping power $(dE/dx)_\text{SP}$ are equal for fixed number density - that is, the DM loses kinetic energy at the same rate as energy is deposited to the WD.
+While such a statement is certainly not true for all DM models (such as the Q-ball, which liberates binding energy rather than transferring kinetic energy), it provides a useful benchmark to express constraints.
+With this assumption, it is interesting to note that combining the transit explosion condition \eqref{eq:transitexplosion} with $\eqref{eq:schematicLET}$ yields a lower bound on DM mass such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
+\begin{align}
+\label{eq:transitmass}
+m_\text{DM} > \Eboom \l \frac{R_\text{crust}}{\lambda_T} \r \l \frac{\rho_\text{crust}}{\rho_\text{central}} \r v_\text{esc}^2.
+\end{align}
+For the typical parameters of a $1.25 ~M_{\odot}$ WD we find that the DM mass must be greater than $\sim 10^{29} ~\GeV$ to ensure a bullet-like and explosive transit, taking the density of the WD crust $\rho_\text{crust}$ to be a nominal $\OO(10^{-2})$ fraction of the central density $\rho_\text{central}$.
+In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or is so strong that the DM cannot penetrate the crust without losing appreciable kinetic energy.
+However, it is important to note that this bound is only applicable when the energy input to the WD is chiefly coming from the DM kinetic energy, rather than binding energy or other sources.
+With the above schematic for a DM transit, we constrain the parameter $\sigma_{i,\epsilon}$ as a function of DM mass $m_\text{DM}$.
+This is done in Figures \ref{fig:transitclasses}, \ref{fig:transitepsilon}, and \ref{fig:transitspecies} using the different classes of observation available and for representative choices of $\epsilon$ and SM species $i$ released.
+
+\begin{figure}
+\includegraphics[scale=.45]{transitobservation.pdf}
+\caption{Constraints on DM-nuclei scattering cross-section to produce photons of energy $\epsilon = \text{TeV}$. Bounds come from observations of a single WD (local and galactic center) and measured SN rate}
+\label{fig:transitclasses}
+\end{figure}
 
 \paragraph{Schematic Constants}
 We take $\rho_\text{DM} \sim 0.4 ~\GeV/\text{cm}^3$ for nearby stars, while for the white dwarfs observed in the galactic center it is estimated that $\rho_\text{DM} \sim 10^3 ~\text{GeV}/\text{cm}^3$ \cite{Nesti:2013uwa}.
@@ -638,40 +637,6 @@ In a similar manner, we constrain the lifetime $\tau_\text{DM}$ as a function of
 \includegraphics[scale=.45]{decayobservation.pdf}
 \caption{Constraints on DM decay lifetime into photons with $f_\text{SM} =1$. Bounds come from observations of a single WD (local and galactic center) and measured SN rate}
 \label{fig:decayclasses}
-\end{figure}
-
-\subsection{Transit Constraints}
-\label{sec:TransitConstraints}
-
-In order to constrain a DM model through its transit interaction with a WD, we require that it satisfy the explosive condition \eqref{eq:transitexplosion}.
-This is given in terms of an LET, which parameterizes the ability for DM to release sufficient energy to the star in the form of SM particles.
-$(dE/dx)_\text{LET}$ for any realistic DM model would necessarily involve a sum over stellar targets along with species that could be produced, as well as an integral over the produced particle spectrum.
-However, consider a simplified interaction in which $\sigma_{i,\epsilon}$ denotes the cross-section for DM to scatter off a stellar constituent, producing a particle of species $i$ and and energy $\epsilon$.
-If this were the only available channel for the DM to deposit energy, then the LET could be written as
-\begin{align}
-\label{eq:schematicLET}
-  \left( \frac{d E}{d x} \right)_\text{LET} = n_\text{ion} \sigma_{i,\epsilon} \epsilon,
-\end{align}
-where we now specify to the case of DM collisions with nuclear targets.
-Assuming such a DM-SM scattering interaction, the transit heating length is computed in Section~\ref{sec:SMHeating}.
-
-In addition, we also make a sensible assumption that the LET $(dE/dx)_\text{LET}$ and DM stopping power $(dE/dx)_\text{SP}$ are equal for fixed number density - that is, the DM loses kinetic energy at the same rate as energy is deposited to the WD.
-While such a statement is certainly not true for all DM models (such as the Q-ball, which liberates binding energy rather than transferring kinetic energy), it provides a useful benchmark to express constraints.
-With this assumption, it is interesting to note that combining the transit explosion condition \eqref{eq:transitexplosion} with $\eqref{eq:schematicLET}$ yields a lower bound on DM mass such that the DM is able to both penetrate the crust \emph{and} trigger an explosion:
-\begin{align}
-\label{eq:transitmass}
-m_\text{DM} > \Eboom \l \frac{R_\text{crust}}{\lambda_T} \r \l \frac{\rho_\text{crust}}{\rho_\text{central}} \r v_\text{esc}^2.
-\end{align}
-For the typical parameters of a $1.25 ~M_{\odot}$ WD we find that the DM mass must be greater than $\sim 10^{29} ~\GeV$ to ensure a bullet-like and explosive transit, taking the density of the WD crust $\rho_\text{crust}$ to be a nominal $\OO(10^{-2})$ fraction of the central density $\rho_\text{central}$.
-In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or is so strong that the DM cannot penetrate the crust without losing appreciable kinetic energy.
-However, it is important to note that this bound is only applicable when the energy input to the WD is chiefly coming from the DM kinetic energy, rather than binding energy or other sources.
-With the above schematic for a DM transit, we constrain the parameter $\sigma_{i,\epsilon}$ as a function of DM mass $m_\text{DM}$.
-This is done in Figures \ref{fig:transitclasses}, \ref{fig:transitepsilon}, and \ref{fig:transitspecies} using the different classes of observation available and for representative choices of $\epsilon$ and SM species $i$ released.
-
-\begin{figure}
-\includegraphics[scale=.45]{transitobservation.pdf}
-\caption{Constraints on DM-nuclei scattering cross-section to produce photons of energy $\epsilon = \text{TeV}$. Bounds come from observations of a single WD (local and galactic center) and measured SN rate}
-\label{fig:transitclasses}
 \end{figure}
 
 \section{Q-balls}
