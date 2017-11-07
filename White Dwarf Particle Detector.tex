@@ -351,6 +351,53 @@ We parameterize this with a stopping power $(dE/dx)_\text{SP}$, giving the kinet
 \end{align}
 where $R_\text{crust} \sim 50 ~\text{km}$ is the width of a WD crust \cite{Chandrasekhar} and $v_\text{esc} \sim 10^{-2}$ is the escape velocity of a WD. \textcolor{blue}{double check these numbers}. 
 
+\subsection{Transits}
+
+\paragraph{Explosion Condition.}
+The energy deposited in a continuous heating event is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, which is the kinetic energy of SM particles produced per distance traveled by the DM.
+If these products have a heating length $L_0$, then then relevant energy deposit as used in the general explosion condition \eqref{eq:energy_boom_condition} must be taken at minimum to be the energy transfered over the length $L_0$. 
+We can always choose to consider the energy deposition over a longer segment of the DM trajectory, however by condition \eqref{eq:energy_boom_condition} such a deposition is \emph{less} explosive unless the length scale is smaller than the trigger size.
+Thus, if $L_0 < \lambda_T$ we consider the deposition over the length $\lambda_T$, and otherwise over the larger scale $L_0$. 
+We can take the energy of the DM to be roughly constant over this heating event, as for an explosive event any energy loss is subject to the condition 
+\eqref{eq:CrustCondition} in order to penetrate the non-degenerate layer, which also guarantees negligible energy loss over the trigger size or heating lengths $L_0$.   
+This yields the explosion condition for transit heating
+\begin{align}
+\label{eq:transitexplosion}
+  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim 
+  \frac{\Eboom}{\lambda_T} \cdot \text{Max} 
+  \left[\frac{L_0}{\lambda_T}, 1 \right]^2.
+\end{align}
+
+The above argument sums the energy deposited along the DM trajectory as though it is all deposited simultaneously. 
+This is only valid if the DM moves sufficiently quickly, so that the deposited energy does not diffuse out of the region of interest before the DM has traversed the region. 
+We therefore require that the diffusion time $\tau_d$ across a heated region at temperature $T_f$ be larger than the DM crossing time:
+\begin{align}
+  \tau_d \sim \frac{L^2}{\alpha(T_f)} \gg 
+  \frac{L}{v_\text{esc}},
+\label{eq:SlowDiffusion}
+\end{align}
+where $\alpha(T)$ is the temperature-dependent diffusivity and DM transits at the stellar escape speed $v_\text{esc}$.
+This condition is more stringent for smaller regions, so we focus on the smallest region of interest: $L = \lambda_T$. 
+The condition \eqref{eq:SlowDiffusion} is then equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
+Values of $v_\text{cond}$ have been tabulated in \cite{Woosley}, and indeed condition \eqref{eq:SlowDiffusion} is satisfied for all WD densities.
+
+\paragraph{SN Rate: Wind Scenario.}
+The rate of transit events is given by the flux of DM passing through a WD
+\begin{align}
+  \Gamma_\text{transit} \sim 
+  \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2 
+  \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
+\label{eq:TransitFluxCondition}
+\end{align} 
+which contains an $\OO(100)$ enhancement due to gravitational focusing.
+
+\section{Dark Matter Constraints}
+\label{sec:Constraints}
+
+We now constrain models of DM which will ignite a WD via one of the processes parameterized in Section \ref{sec:DMexplode}.
+In order to do so, we will additionally assume a simple, schematic form for the DM interaction such that the heating length of the encounter can be calculated explicitly.
+However, we first review the different ways in which white dwarfs can constrain DM candidates capable of triggering SN.
+
 \subsection{Collisions and Decays}
 
 \paragraph{Explosion Condition.}
@@ -464,53 +511,6 @@ The rate of infalling collisions is enhanced over the wind collision rate \eqref
   \l \frac{10^{-1}~\text{cm}}{R_\text{sta}} \r
 \end{align}
 which is an obnoxious $\approx 10^{40}$ enhancement for the case of collapse to a central black hole.
-
-\subsection{Transits}
-
-\paragraph{Explosion Condition.}
-The energy deposited in a continuous heating event is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, which is the kinetic energy of SM particles produced per distance traveled by the DM.
-If these products have a heating length $L_0$, then then relevant energy deposit as used in the general explosion condition \eqref{eq:energy_boom_condition} must be taken at minimum to be the energy transfered over the length $L_0$. 
-We can always choose to consider the energy deposition over a longer segment of the DM trajectory, however by condition \eqref{eq:energy_boom_condition} such a deposition is \emph{less} explosive unless the length scale is smaller than the trigger size.
-Thus, if $L_0 < \lambda_T$ we consider the deposition over the length $\lambda_T$, and otherwise over the larger scale $L_0$. 
-We can take the energy of the DM to be roughly constant over this heating event, as for an explosive event any energy loss is subject to the condition 
-\eqref{eq:CrustCondition} in order to penetrate the non-degenerate layer, which also guarantees negligible energy loss over the trigger size or heating lengths $L_0$.   
-This yields the explosion condition for transit heating
-\begin{align}
-\label{eq:transitexplosion}
-  \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim 
-  \frac{\Eboom}{\lambda_T} \cdot \text{Max} 
-  \left[\frac{L_0}{\lambda_T}, 1 \right]^2.
-\end{align}
-
-The above argument sums the energy deposited along the DM trajectory as though it is all deposited simultaneously. 
-This is only valid if the DM moves sufficiently quickly, so that the deposited energy does not diffuse out of the region of interest before the DM has traversed the region. 
-We therefore require that the diffusion time $\tau_d$ across a heated region at temperature $T_f$ be larger than the DM crossing time:
-\begin{align}
-  \tau_d \sim \frac{L^2}{\alpha(T_f)} \gg 
-  \frac{L}{v_\text{esc}},
-\label{eq:SlowDiffusion}
-\end{align}
-where $\alpha(T)$ is the temperature-dependent diffusivity and DM transits at the stellar escape speed $v_\text{esc}$.
-This condition is more stringent for smaller regions, so we focus on the smallest region of interest: $L = \lambda_T$. 
-The condition \eqref{eq:SlowDiffusion} is then equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
-Values of $v_\text{cond}$ have been tabulated in \cite{Woosley}, and indeed condition \eqref{eq:SlowDiffusion} is satisfied for all WD densities.
-
-\paragraph{SN Rate: Wind Scenario.}
-The rate of transit events is given by the flux of DM passing through a WD
-\begin{align}
-  \Gamma_\text{transit} \sim 
-  \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2 
-  \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
-\label{eq:TransitFluxCondition}
-\end{align} 
-which contains an $\OO(100)$ enhancement due to gravitational focusing.
-
-\section{Dark Matter Constraints}
-\label{sec:Constraints}
-
-We now constrain models of DM which will ignite a WD via one of the processes parameterized in Section \ref{sec:DMexplode}.
-In order to do so, we will additionally assume a simple, schematic form for the DM interaction such that the heating length of the encounter can be calculated explicitly.
-However, we first review the different ways in which white dwarfs can constrain DM candidates capable of triggering SN.
 
 \subsection{Review of WD Observables}
 Following the discussion of \cite{Graham:2015apa}, our constraints come from (1)~the existence of heavy, long-lived white dwarfs, or (2)~the measured type Ia SN rate.
