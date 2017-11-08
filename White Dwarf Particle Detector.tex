@@ -1,8 +1,8 @@
 %\documentclass[10pt, twocolumn]{article}
 %\documentclass[11pt]{article}
 %\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl, superscriptaddress]{revtex4}
-%%\documentclass[twocolumn,preprintnumbers,amsmath,amssymb,prd, superscriptaddress]{revtex4}
-\documentclass[preprintnumbers,amsmath,amssymb,prd,superscriptaddress]{revtex4}
+\documentclass[preprintnumbers,amsmath,amssymb,prd, superscriptaddress,twocolumn]{revtex4}
+% \documentclass[preprintnumbers,amsmath,amssymb,prd,superscriptaddress]{revtex4}
 %\documentclass[10pt, preprint,showpacs,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
 %\documentclass[11pt, prd,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
 %\documentclass[11pt, prd,preprintnumbers, amsmath,amssymb, superscriptaddress, nofootinbib, hyperref]{revtex4}
@@ -89,10 +89,10 @@ It is interesting that the DM encounters with white dwarfs discussed in this wor
 
 \end{abstract}
 \maketitle
-\onecolumngrid
+% \onecolumngrid
 \tableofcontents
 \clearpage
-%\twocolumngrid
+\twocolumngrid
 
 \section{Introduction}
 \label{sec:Introduction}
@@ -740,31 +740,42 @@ As we will see, the thermal photons in the star never play a dominant role in st
 % \end{figure}
 
 \subsection{Coulomb Collisions off Ions}
-The stopping power for Coulomb collisions with ions is most easily understood if we describe these scatters in terms of the energy transfer $\omega$ or the momentum transfer $q$.
-Taking the ions to be at rest, consider an incident particle of mass $m$, charge $e$, and speed $\beta$ which transfers an energy $\omega$.
-The scattering cross section is (e.g., \cite{Jackson})
-\begin{align}
-  \label{eq:StationaryCoulombCrossSection}
-\frac{d \sigma}{d \omega} = \frac{2 \pi Z^2 \alpha^2}{m_\text{ion}\beta^2} \frac{1}{ \omega^2}
-\end{align}
-This cross section receives a correction for incident to spin-1/2 particles, but we will neglect this because it does not change our results appreciably.
+To understand the stopping power for Coulomb collisions with ions, let us first compute the cross section for incident energies $E \ll m_\text{ion}$.
+At these energies, recoil of the target ion is not important, and we may use the Born approximation.
 
-Integrating this to obtain the stopping power, we find
+Taking the ions to be at rest, consider a (possibly relativistic) incident particle of mass $m$, charge $e$, and speed $\beta$. Let $\textbf{k}$ ($\textbf{k}'$) and $E$ ($E'$) be the initial (final) momentum and energy of the particle.
+The particle has incoming wavefunction $\psi_k = L^{-3/2}e^{i \textbf{k}\cdot \textbf{r}}$ and outgoing wavefunction $\psi_{k'} = L^{-3/2}e^{i \textbf{k}'\cdot \textbf{r}}$, assuming a box of size $L$.
+The flux of particles through the box is $\beta/L^3$.
+Recalling Fermi's golden rule for the transition probability $W_{k\to k'}$, we find the cross section to be
 \begin{align}
-\frac{dE}{d x} &= \int_{\omega_\text{min}}^{\omega_\text{max}} d \omega \, n_\text{ion} \frac{d \sigma}{d \omega} \omega \nonumber\\
- &= \frac{2 \pi\, n_\text{ion} Z^2 \alpha^2 }{m_\text{ion}\beta^2} \log\left( \frac{\omega_\text{max}}{\omega_\text{min}} \right)
+  \label{eq:DifferentialBornCrossSection}
+d\sigma = \frac{W_{k\to k'}}{\text{flux}} = \frac{2 \pi|\int d^3r \, \psi_{k'}^* V(\textbf{r})\psi_k|^2 \rho_{k'}(E')}{\beta/L^3}
 \end{align}
-what we have specified the maximum and minimum allowed energy transfers $\omega_\text{max}$ and $\omega_\text{min}$.
-The maximum energy transfer is set by kinematics, and given by
-the energy transfer for an exactly backwards scatter off a stationary target ion:
+where $V(\textbf{r})$ is the interaction potential between the stationary ion and the incident charged particle and $\rho_{k'}(E')$ is the density of final states per unit energy.
+This density of states is
 \begin{align}
-  \omega_\text{max} = \omega_\text{kin} = \frac{2 m_\text{ion} p^2}{m_\text{ion}^2 + m^2 + 2E m_\text{ion}}
+\rho_{k'}(E') = \left( \frac{L}{2 \pi} \right)^3 \frac{d^3 \textbf{k}'}{dE'}
+ % = \left( \frac{L}{2 \pi} \right)^3 k'^2 \frac{dk'}{d E'} d \Omega
+  = \left( \frac{L}{2 \pi} \right)^3 k' E' d \Omega
 \end{align}
-where $p$, $E$ are the incoming momentum and energy.
+% letting $d^3 \textbf{k}' = k'^2 dk'd\Omega$ and using $E' = \sqrt{k'^2 + m^2}$.
+The scattering cross section is therefore
+\begin{align}
+d\sigma = \frac{1}{(2 \pi)^2} \frac{k'E'}{\beta} \left|\int d^3r \, e^{i\textbf{q}\cdot \textbf{r}}V(\textbf{r})\right|^2 d \Omega
+\end{align}
+where $\textbf{q} = \textbf{k} - \textbf{k}'$ is the momentum transferred to the ion.
 
-The minimum energy transfer is set by plasma screening in the WD, which cuts off soft scatters by changing the effective Coulomb potential around an ion to be
+At low energies, the scatter is effectively elastic, so $k' = k$ and the magnitude of the momentum transfer is given by $q^2 = 4 k^2\sin^2(\theta/2)$.
+Furthermore, the energy transferred to the ion is given by $\omega = q^2 / 2m_\text{ion}$.
+Changing variables, we find
 \begin{align}
-V_\text{eff}(\textbf{r}) = \frac{Z \alpha}{r} e^{-\lambda_\text{TF} r}
+  \label{eq:BornCrossSection}
+\frac{d \sigma}{d \omega} = \frac{m_\text{ion}}{2 \pi \beta^2} \left|\int d^3r \, e^{i\textbf{q}\cdot \textbf{r}}V(\textbf{r})\right|^2
+\end{align}
+The usual Coulomb interaction potential is modified by plasma screening in the WD, which cuts off soft scatters:
+\begin{align}
+  \label{eq:ScreenedPotential}
+V(\textbf{r}) = \frac{Z \alpha}{r} e^{-\lambda_\text{TF} r}
 \end{align}
 The screening length scale $\lambda_\text{TF}$ is given in the Thomas-Fermi approximation by \cite{Teukolsky}
 \begin{align}
@@ -772,28 +783,52 @@ The screening length scale $\lambda_\text{TF}$ is given in the Thomas-Fermi appr
     \lambda_\text{TF}^{2} = \frac{E_F}{6 \pi \alpha n_e}
 \end{align}
 where $E_F$ is the electron Fermi energy.
-To see how $\omega_\text{min}$ emerges from this, consider for a moment the Born approximation at low incident energies where the ion remains non-relativistic and the scatters are effectively elastic.
-It is at these low energies where small energy transfers near $\omega_\text{min}$ may comprise an appreciable fraction of the stopping power.
-In terms of the momentum transfer $q$, the cross section from the Born approximation is
+Inserting \eqref{eq:ScreenedPotential} into \eqref{eq:BornCrossSection}, we find
 \begin{align}
-\frac{d \sigma}{dq^2} = \frac{1}{4 \pi \beta^2} \left|\int d^3 r \, e^{i\textbf{q}\cdot \textbf{r}} V(\textbf{r}) \right|^2
+\label{eq:CoulombOffIonsCrossSection}
+\frac{d \sigma}{d \omega}
+ % = \frac{m_\text{ion}}{2 \pi \beta^2} \frac{Z^2 \alpha^2}{(q^2 + \lambda_\text{TF}^{-2})^2}
+  = \frac{2 \pi Z^2 \alpha^2}{m_\text{ion}\beta^2} \frac{1}{(\omega + \omega_\text{min})^2}
 \end{align}
-In this regime the energy transfer is $\omega = q^2 / 2 m_\text{ion}$, and plugging in $V(\textbf{r}) = Z \alpha / r$ we recover \eqref{eq:StationaryCoulombCrossSection}. Inserting the screened potential, we find
+where $\omega_\text{min} = \lambda_\text{TF}^{-2} / 2 m_\text{ion}$.
+So we see scatters that transfer momentum less than $ \sim \lambda_\text{TF}^{-1}$ are screened.
+
+Integrating this to obtain the stopping power, we find
 \begin{align}
-\frac{d \sigma}{dq^2} = \frac{4 \pi Z^2 \alpha^2}{\beta^2}\frac{1}{\left(q^2 + \lambda_\text{TF}^{-2}\right)^2}
+\frac{dE}{d x} &= \int_{0}^{\omega_\text{kin}} d \omega \, n_\text{ion} \frac{d \sigma}{d \omega} \omega \nonumber\\
+\label{eq:StoppingPowerOffIons}
+ &\approx \frac{2 \pi\, n_\text{ion} Z^2 \alpha^2 }{m_\text{ion}\beta^2} \log\left( \frac{\omega_\text{kin}}{\omega_\text{min}} \right)
 \end{align}
-
-
-Note that for incident electrons there is an additional upper bound on the energy transfer, $\omega_F = E - E_F$, as the electrons cannot be scattered into the Fermi sea.  If $\omega_F < \omega_\text{kin}$, then the above integrals should be taken with a lower limit of $b_F = \alpha^2 Z^2 / 2 m_\text{ion} \beta^2 \left(E - E_F\right)$ instead of zero.
-
-One should also be careful about energy transfers smaller than the plasma frequency $\Omega_p \sim 1-10~\text{keV}$, for which phonon excitations may be important. A light incident particle with momentum $p$ and energy $E\ll m_\text{ion}$ would transfer momentum $q\lesssim p$ and energy $\omega_\text{free} = q^2/2 m_\text{ion}$ to a free ion. We therefore expect phonon effects to be important when $p^2/2 m_\text{ion} \lesssim \Omega_p$, and indeed one can check that the stopping power \eqref{eq:StoppingPowerOffIons} becomes dominated by energy transfers $\lesssim \Omega_p$ for this range of momenta. In this regime the ion is essentially a fixed target, and a simple Born approximation calculation yields a low-energy limit of the cross section $d \sigma$ used above in \eqref{eq:stoppingpower_db} and \eqref{eq:StoppingPowerOffIons}. For a free ion, arbitrarily small energy transfer $\omega$ is quantum mechanically permissible.
-
-If we approximate the white dwarf as an Einstein solid instead, then each ion becomes a harmonic oscillator with frequency $\Omega_p$. The minimum permissible energy transfer is now $\omega = \Omega_p$, and we must compute the scattering cross section with the ion wave function in mind, transitioning from the harmonic oscillator ground state to the first excited state. This modifies the cross section by $|\bra{1}e^{i\textbf{q}\cdot \textbf{r}}\ket{0}|^2\approx q^2/2 m_\text{ion} \Omega_p$. (For similar cross section calculations, see \cite{Hofstadter}.) The stopping power integrand is therefore modified from
+The maximum energy transfer is set by kinematics, and given by
+the energy transfer for an exactly backwards scatter off a stationary target ion:
 \begin{align}
-(n_\text{ion}\, d\sigma)\cdot\omega_\text{free} \to (n_\text{ion}\, d\sigma\cdot\frac{q^2}{2 m_\text{ion}\Omega_p})\cdot \Omega_p
+  \omega_\text{kin} = \frac{2 m_\text{ion} p^2}{m_\text{ion}^2 + m^2 + 2E m_\text{ion}}
 \end{align}
-However, since $\omega_\text{free} = q^2/2 m_c$ at these energies, the two stopping powers are the same. Scatters are rarer at incident momenta $p^2/2 m_\text{ion} \lesssim \Omega_p$ where phonons matter, but each scatter transfers more energy so that the stopping power is equivalent.
+where $p$, $E$ are the incoming momentum and energy.
 
+Note that for incident electrons there is an additional upper bound on the energy transfer, $\omega_F = E - E_F$, as the electrons cannot be scattered into the Fermi sea.
+If $\omega_F < \omega_\text{kin}$, then the above integral should be taken with an upper limit of $\omega_F$ instead of $\omega_\text{kin}$.
+
+For higher energies $E \gtrsim m_\text{ion}$ where recoil is important, the cross section is more complicated (e.g., see \cite{Schwartz}), but the overall stopping power is well approximated by extrapolating \eqref{eq:StoppingPowerOffIons} to higher energies.
+
+One should also be careful about energy transfers smaller than the plasma frequency $\Omega_p \sim 1-10~\text{keV}$, for which phonon excitations may be important.
+A light incident particle with momentum $p$ and energy $E\ll m_\text{ion}$ would transfer momentum $q\lesssim p$ and energy $\omega_\text{free} = q^2/2 m_\text{ion}$ to a free ion.
+We therefore expect phonon effects to be important when $p^2/2 m_\text{ion} \lesssim \Omega_p$, and indeed one can check that the stopping power \eqref{eq:StoppingPowerOffIons} becomes dominated by energy transfers $\lesssim \Omega_p$ for this range of momenta.
+
+We can approximate the effect of these phonon excitations by treating the WD as an Einstein solid, so that each ion becomes a harmonic oscillator with frequency $\Omega_p$. We now must compute the scattering cross section with the ion wave function in mind, transitioning from the harmonic oscillator ground state $\phi_0$ to the first excited state $\phi_1$. This modifies the integral in \eqref{eq:DifferentialBornCrossSection} to
+\begin{align}
+% \int d^3r \, \psi_{k'}^* V(\textbf{r})\psi_k \to
+\int d^3r' d^3r \, \phi_1^*(\textbf{r}')\psi_{k'}^*(\textbf{r}) V(\textbf{r}-\textbf{r}')\psi_k(\textbf{r}) \phi_0(\textbf{r}')
+\end{align}
+% (For similar cross section calculations, see \cite{Hofstadter}.)
+The result is the same cross section \eqref{eq:CoulombOffIonsCrossSection} with an additional factor $q^2 / 2 m_\text{ion}\Omega_p = \omega_\text{free}/\Omega_p$.
+However, any scatters that excite phonons must transfer energy $\Omega_p$ rather than $\omega_\text{free}$.
+Thus the stopping power integrand becomes
+\begin{align}
+n_\text{ion}\cdot d\sigma\cdot\omega_\text{free} \to n_\text{ion} \cdot d\sigma\,\frac{\omega_\text{free}}{\Omega_p}\cdot \Omega_p
+\end{align}
+and we see the stopping powers with and without phonons are the same, even while the cross-sections and energy transfers are different. 
+% Scatters are rarer at incident momenta $p^2/2 m_\text{ion} \lesssim \Omega_p$ where phonons matter, but each scatter transfers more energy so that the stopping power is equivalent.
 
 \subsection{Coulomb Collisions off Electrons}
 
