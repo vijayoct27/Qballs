@@ -135,29 +135,27 @@ Finally we specialize to the case of Q-ball DM in Section~\ref{sec:QBalls}, and 
 \section{White Dwarf Runaway Fusion}
 \label{sec:Review}
 
-We review here the conditions in which a local energy deposit in a carbon-oxygen WD results in runaway fusion.
+We first review the conditions for which a local energy deposit in a WD results in runaway fusion.
 Any energy deposit will eventually heat carbon ions within some localized region.
 Parameterize this region by a linear size $L_0$ and peak temperature $T_0$.
-These scales evolve in time, but it will be useful to describe a given heating event by their initial values.
-
+Of course these scales evolve in time, but it will be useful to describe a given heating event by their initial values.
 The fate of a heated region is either a nonviolent diffusion of the excess energy across the star, or a runaway fusion chain-reaction that destroys the star.
 The precise outcome depends on both $L_0$ and $T_0$.
-There is a critical fusion temperature $T_f$, set by the energy required for ions to overcome their mutual Coulomb barrier, above which fusion occurs.
-For carbon-carbon fusion, $T_f \sim \MeV$ \cite{Gasques:2005ar}.
-Any event with $T_0 > T_f$ will initially support fusion, however this condition is not sufficient for triggering runaway as cooling processes may quickly lower the temperature below $T_f$.
-This cooling will not occur if the cooling timescale is larger than the timescale at which fusion releases energy.
-
-Cooling in a WD is dominated by thermal diffusion, the timescale for which increases with the size of heated region.
+There is a critical temperature $T_f$, set by the energy required for ions to overcome their mutual Coulomb barrier, above which fusion occurs.
+For carbon burning, $T_f \sim \MeV$ \cite{Gasques:2005ar}.
+Any event with $T_0 > T_f$ will initially support fusion, although this is not sufficient for triggering runaway as cooling processes may rapidly lower the temperature below $T_f$.
+This cooling will not occur if the corresponding cooling timescale is larger than the timescale at which fusion releases energy.
+Cooling in a WD is dominated by thermal diffusion, and the diffusion time increases as the size of the heated region.
 However, the timescale for heating due to fusion is independent of region size.
-Thus, for a given temperature $T\gtrsim T_f$, there is always a critical size above which the heated region does not cool and initiates nuclear runaway.
-For a region at the fusion threshold $T \sim T_f$, this critical size is what we will call the \emph{trigger size} $\lambda_T$.
+Thus, for a given temperature greater than $T_f$, there is always a critical size above which the heated region does not cool and initiates nuclear runaway.
+For a region at the critical fusion temperature, we call this the \emph{trigger size} $\lambda_T$.
 The value of $\lambda_T$ is highly dependent on density, and in a WD is set by the thermal diffusivity of either photons or degenerate electrons.
 It has been calculated numerically in \cite{Woosley} and scaled for varying WD masses in \cite{Graham:2015apa}.
-This is plotted in \textcolor{blue}{figure (same one with MeV thermalization lengths)}.
-As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ - we will see that only these give meaningful constraints.
+As in \cite{Graham:2015apa}, we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$---we will eventually see that only these give meaningful constraints on DM.
 This mass range correspond to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$ and a trigger size of $\lambda_T \sim 10^{-3} - 10^{-5} ~\text{cm}$.
-If a heated region is smaller than $\lambda_T$, its thermal evolution is initially dominated by diffusion.
-However, at a later time this may still result in runaway fusion if the temperature remains above $T_f$ by the time the region has diffused out to the trigger size.
+
+If a heated region is smaller than the trigger size, its thermal evolution is initially dominated by diffusion.
+However, this may still result in thermonuclear runaway if the temperature remains of order $T_f$ or greater by the time the region has diffused out to the trigger size.
 This yields the \emph{boom condition} for a heating event ($L_0$, $T_0$):
 \begin{align}
     \label{eq:Tboom}
@@ -165,12 +163,13 @@ This yields the \emph{boom condition} for a heating event ($L_0$, $T_0$):
     T_0 \gtrsim \begin{cases}
       T_f & L_0 \gtrsim \lambda_T \\
       T_f \left( \frac{\lambda_T}{L_0} \right)^3 & L_0 \lesssim \lambda_T
-    \end{cases}
+    \end{cases}.
 \end{align}
-
 It will be more useful for our purposes to phrase this condition in terms of the total energy $\Ez$ deposited during a heating event.
-The relation between $\Ez$ and $T_0$ will depend on which WD constituents (ions, degenerate electrons, and photons) are heated.
-These species are coupled, however, by electromagnetic interactions.
+The relation between $\Ez$ and $T_0$ depends on which WD constituents (ions, degenerate electrons, and photons) are heated.
+Of course, these different species interact with each other.
+
+to varying degrees each will may thermalize 
 The lengths over which they mutually thermalize when heated to $\sim T_f$ are plotted in \textcolor{blue}{figure}, and as these are all smaller than the trigger size we will have all three species in equilibrium during any event capable of runaway:
 \begin{equation}
   \frac{\Ez}{V} \gtrsim \int_0^{T_f} dT ~\left(\frac32 n_\text{ion} + \frac{\pi^{4/3}}{3^{1/3}}\, n_e^{2/3} T + \frac{4 \pi^2}{15} T^3 \right)
@@ -193,11 +192,9 @@ The boom condition~\eqref{eq:Tboom} can be restated as
 The energy needed for ignition is thus minimized for heating lengths $L_0$ less than the trigger size, where it is also independent of the precise value of $L_0$.
 For broader deposits, the required energy is parametrically larger than $\Eboom$ by a volume ratio $(L_0/\lambda_T)^3$.
 Understanding the heating lengths $L_0$ resulting from the production of SM particles is therefore critical to determining whether or not these processes are capable of destroying a WD.
-
-
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
-\caption{Minimum energy $\Eboom$ \eqref{eq:Eboom} required to trigger SN as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley} and the WD mass-density relation \cite{cococubed}}
+\caption{Minimum energy $\Eboom$ \eqref{eq:Eboom} required to trigger supernovae as a function of WD mass, based on numerical results for $\lambda_T$ \cite{Woosley} and the WD mass-density relation \cite{cococubed}}. 
 \label{fig:Eboom}
 \end{figure}
 
