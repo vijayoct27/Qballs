@@ -316,7 +316,7 @@ These scenarios may have very different heating lengths, and so we distinguish b
 \label{sec:DMexplode}
 
 The unknown physics of DM sets the rate of SM particle production within the star as well as the initial distribution in space, momentum, and species of the products.
-This information is needed to determine if a given DM encounter with a WD results in runaway fusion. 
+This information is needed to determine if a given DM encounter with a WD results in runaway fusion and with what frequency. 
 Of course, this can be done precisely for a specific DM model. 
 In this Section, we describe several general, illustrative classes of DM-WD encounters which demonstrate the explosiveness of ultra-heavy DM interactions.
 We also calculate the typical rate at which these violent events take place in a WD. 
@@ -326,7 +326,7 @@ We also calculate the typical rate at which these violent events take place in a
 DM can generically heat the WD medium through the three schematic interactions depicted in Figure \ref{fig:feynman}: DM-DM collisions, DM decays, and DM-SM scattering.
 Note that for ultra-heavy DM these can be complicated events involving many (possibly dark) final states, analogous to the interactions of heavy nuclei.
 We classify DM candidates into three types according to the interaction that provides the dominant source of heating, and refer to these as collision, decay, and transit candidates.
-We make some simplifying assumptions about the spatial extent of these interactions.
+We additionally make simplifying assumptions about the spatial extent of these interactions.
 For collisions and decays, we consider only ``point-like" heating events with all SM products produced in a localized region (smaller than the trigger size).
 For transits, we consider only soft DM-SM scatters that result in a continuous release of particles along the DM trajectory.
 
@@ -334,9 +334,9 @@ We can also classify candidates according to the evolution of the DM itself insi
 Generally there will be some loss of DM kinetic energy due to DM-SM scatters----this is either incidental to the eventual heating of the star or represents the dominant heating mechanism.
 We consider two simple, limiting cases depending on the magnitude of this energy loss relative to the DM kinetic energy: ``DM wind" and ``DM capture".
 In the DM wind scenario, there is negligible energy loss and the DM simply passes through the star.
-In the DM capture scenario, the energy loss due to DM-SM scatters is sufficient to stop the DM and cause it to accumulate inside the star, but not enough to trigger runaway. 
-We consider both scenarios for collision and decay candidates, for which the capture scenario has a significantly enhanced rate of explosive events. 
-For simplicity we consider only the wind scenario for transit candidates, though an enhancement of the event rate due to capture is certainly possible in some models.
+In the DM capture scenario, the energy loss due to DM-SM scatters is not capable of igniting runaway but is sufficient to stop the DM and cause it to accumulate inside the star. 
+We consider both scenarios for collision and decay candidates, for which the capture results in a significantly enhanced rate of events. 
+For simplicity we consider only the wind scenario for transit candidates, though an enhanced explosiveness from slowed DM continuously scattering off stellar constituents is certainly possible in some models.
 
 \begin{figure}
 \includegraphics[scale=0.09]{feynmandiag.jpg}
@@ -346,9 +346,9 @@ For simplicity we consider only the wind scenario for transit candidates, though
 
 \subsection{Transits}
 
-\paragraph{Explosion Condition.}
+\paragraph{Boom Condition:}
 The energy deposited in a continuous heating event is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, which is the kinetic energy of SM particles produced per distance traveled by the DM.
-If these products have a heating length $L_0$, then then relevant energy deposit as used in the general explosion condition \eqref{eq:energy_boom_condition} must be taken at minimum to be the energy transfered over the length $L_0$.
+If these products have a heating length $L_0$, then then relevant energy deposit as used in the general boom condition \eqref{eq:energy_boom_condition} must be taken at minimum to be the energy transfered over the length $L_0$.
 We can always choose to consider the energy deposition over a longer segment of the DM trajectory, however by condition \eqref{eq:energy_boom_condition} such a deposition is \emph{less} explosive unless the length scale is smaller than the trigger size.
 Thus, if $L_0 < \lambda_T$ we consider the deposition over the length $\lambda_T$, and otherwise over the larger scale $L_0$.
 We can take the energy of the DM to be roughly constant over this heating event, as for an explosive event any energy loss is subject to the condition
@@ -374,7 +374,7 @@ This condition is more stringent for smaller regions, so we focus on the smalles
 \eqref{eq:SlowDiffusion} is then equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
 Numerical calculations of $v_\text{cond}$ are tabulated in \cite{Woosley}, and indeed condition \eqref{eq:SlowDiffusion} is satisfied for all WD densities.
 
-\paragraph{Event Rate: Wind Scenario.}
+\paragraph{Event Rate.}
 The rate of transit events is given by the flux of DM passing through a WD
 \begin{align}
   \Gamma_\text{transit} \sim
@@ -398,7 +398,7 @@ Note that this stopping power in the non-degenerate layer and the above linear e
 
 \subsection{Collisions and Decays}
 
-\paragraph{Explosion Condition.}
+\paragraph{Boom Condition.}
 For a point-like decay or collision event releasing particles of heating length $L_0$, ignition will occur if the total energy in SM products satisfies condition~\eqref{eq:energy_boom_condition}.
 Such an event will likely result in both SM and dark sector products, so we parameterize the resulting SM energy as a fraction $f_\text{SM}$ of the DM mass.
 For non-relativistic DM, the DM mass is the dominant source of energy and therefore $f_\text{SM} \lesssim 1$ regardless of the interaction details, however we may well suspect that $f_\text{SM} \ll 1$ for realistic models.
@@ -409,24 +409,26 @@ With this parameterization, the explosion condition is
 \end{equation}
 We are thus sensitive to DM masses $m_\text{DM} \gtrsim 10^{16} ~\GeV$.
 
-\paragraph{Event Rate: Wind Scenario.}
+\paragraph{Event Rate: DM Wind.}
 DM of mass $m_\text{DM}$ with negligible energy loss to the WD medium will traverse the star in roughly a time $R_\text{WD}/v_\text{esc}$ and have a number density within the WD enhanced relative to the galactic density by a factor $v_\text{esc}/v \sim \OO(10)$ due to gravitational focusing.
 Here $v_\text{esc} \sim 10^{-2} $ is the stellar escape velocity and $v \sim 10^{-3}$ the galactic virial velocity.
-The expected DM-DM collision rate parameterized by a cross-section $\sigma_\text{DM-DM}$ and net DM decay rate parameterized by a lifetime $\tau_\text{DM}$ are in the wind scenario,
+In the wind scenario, the expected DM-DM collision rate parameterized by a cross-section $\sigma_\text{DM-DM}$ is:
 \begin{align}
   \Gamma_\text{collision}
-  &\sim n_\text{DM} \sigma_\text{DM-DM} v_\text{esc}
-  \cdot n_\text{DM} R_\text{WD}^3 \\
-  &\sim \l \frac{\rho_\text{DM}}{m_\text{DM}} \r^2 \sigma_\text{DM-DM} \l \frac{v_\text{esc}}{v}\r^2 v_\text{esc} R_\text{WD}^3 \\
+  %&\sim n_\text{DM} \sigma_\text{DM-DM} v_\text{esc}
+ %\cdot n_\text{DM} R_\text{WD}^3 \\
+  \sim \l \frac{\rho_\text{DM}}{m_\text{DM}} \r^2 \sigma_\text{DM-DM} \l \frac{v_\text{esc}}{v}\r^2 v_\text{esc} R_\text{WD}^3. 
   \label{eq:collisionDM}
-  \Gamma_\text{decay}
-  &\sim \frac{1}{\tau_\text{DM}} \cdot n_\text{DM} R_\text{WD}^3 \\
-  &\sim \frac{1}{\tau_\text{DM}} \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r R_\text{WD}^3.
+\end{align}
+Similarly, the net DM decay rate parameterized by a lifetime $\tau_\text{DM}$ is:
+\begin{align}
+ \Gamma_\text{decay}
+  %&\sim \frac{1}{\tau_\text{DM}} \cdot n_\text{DM} R_\text{WD}^3 \\
+  \sim \frac{1}{\tau_\text{DM}} \frac{\rho_{\text{DM}}}{m_\text{DM}} \l \frac{v_\text{esc}}{v}\r R_\text{WD}^3.
   \label{eq:taugamma}
 \end{align}
-If the DM interaction is explosive, these rates give the rate of DM-induced SN.
 
-\paragraph{SN Rate: Capture Scenario.}
+\paragraph{Event Rate: DM Capture.}
 \textcolor{blue}{should probably add a citation somewhere here or above to Bru Monte}
 We first review the evolution of DM within the star during a capture scenario.
 As the DM rapidly loses energy it will thermalize with the star and slow to velocity
@@ -501,7 +503,6 @@ The rate of infalling collisions is enhanced over the wind collision rate \eqref
   \approx 10^{27} \l \frac{m_\text{DM}}{10^{16}~\GeV} \r^{1/2}
   \l \frac{10^{-8}~\text{cm}}{R_\text{sta}} \r.
 \end{align}
-
 
 \section{Dark Matter Constraints}
 \label{sec:Constraints}
