@@ -136,24 +136,24 @@ Finally we specialize to the case of Q-balls in Section~\ref{sec:QBalls}, and co
 We first review the conditions for which a local energy deposition in a WD results in runaway fusion.
 Any energy deposit will eventually heat ions within some localized region---parameterize this region by its peak temperature $T_0$ and linear size $L_0$.
 These scales evolve in time, but it will be useful to describe a given heating event by their initial values.
+
 The fate of a heated region is either a nonviolent diffusion of the excess energy across the star, or a runaway fusion chain-reaction that destroys the star.
 The precise outcome depends on both $L_0$ and $T_0$.
 There is a critical temperature $T_f$, set by the energy required for ions to overcome their mutual Coulomb barrier, above which fusion occurs.
 For carbon burning, $T_f \sim \MeV$ \cite{Gasques:2005ar}.
-
-Any event with $T_0 > T_f$ will initially support fusion, although this is not sufficient for triggering runaway as cooling processes may rapidly lower the temperature below $T_f$.
-This cooling will not occur if the corresponding cooling timescale is larger than the timescale at which fusion releases energy.
+Any heated region $T_0 > T_f$ will initially support fusion, although this is not sufficient for runaway as cooling processes may rapidly lower the temperature below $T_f$.
+This cooling will not occur if the corresponding timescale is larger than the timescale at which fusion releases energy.
 Cooling in a WD is dominated by thermal diffusion, and the diffusion time increases as the size of the heated region.
 However, the timescale for heating due to fusion is independent of region size.
 Thus for a given temperature greater than $T_f$, there is a critical size above which the heated region does not cool but instead initiates runaway.
 For a region at the critical fusion temperature, we call this the \emph{trigger size} $\lambda_T$.
 The value of $\lambda_T$ is highly dependent on density, and in a WD is set by the thermal diffusivity of either photons or degenerate electrons.
 This critical length scale has been computed numerically in \cite{Woosley} for a narrow range of WD densities and analytically scaled for other WD masses in \cite{Graham:2015apa}.
-As in \cite{Graham:2015apa} we restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$---these will yield the most stringent constraints on DM.
+As in \cite{Graham:2015apa}, we will restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ (these will yield the most stringent constraints on DM).
 This corresponds to a central number density of ions $n_\text{ion} \sim 10^{30} - 10^{32} ~\cm^{-3}$ and a trigger size of $\lambda_T \sim 10^{-3} - 10^{-5} ~\text{cm}$.
 
 If a heated region is smaller than the trigger size, its thermal evolution is initially dominated by diffusion.
-However, this will still result in runaway fusion if the temperature is of order $T_f$ by the time the region has diffused out to the trigger size.
+However, this will still result in runaway fusion if the temperature is of order $T_f$ by the time the region diffuses out to the trigger size.
 %Sorry RJ
 %This yields the \emph{boom condition} for a heating event ($L_0$, $T_0$):
 %\begin{align}
@@ -165,33 +165,33 @@ However, this will still result in runaway fusion if the temperature is of order
     %\end{cases}.
 %\end{align}
 For our purposes it is more natural to phrase this in terms of the total energy $\Ez$ deposited during a heating event.
-Of course, the relation between $\Ez$ and $T_0$ depends on the rate at which WD constituents (ions, electrons, and photons) interact with each other. 
+Of course, the relation between energy $\Ez$ and temperature $T_0$ depends on the rate at which WD constituents---ions, electrons, and photons---interact with each other. 
 We explicitly calculate the length scale over which a hot bath of ions thermalizes electrons and the length scale over which a hot bath of electrons thermalizes photons in Section \ref{sec:SMHeating}. 
-Here we simply state the results: if ions are heated to temperatures $\sim 1 - 10 ~\MeV$, then electrons and photons are also both efficiently heated within the trigger size. 
-Therefore, any event which results in runaway necessarily has ions, electrons, and photons in thermal equilibrium once a region of size $\lambda_T$ or greater is at the critical temperature $T_f$. 
-The excess energy in a volume $V$ required to heat all species to $T_f$ is given by a sum of their heat capacities
+Here we simply state the results: if ions are heated to temperatures $T_0 \sim 1 - 10 ~\MeV$, then electrons and photons are also heated at distances within the trigger size. 
+Therefore, any heating event which results in runaway necessarily has ions, electrons, and photons in thermal equilibrium once a region of size $\lambda_T$ or greater is at the critical temperature $T_f$. 
+The excess energy in a volume $V$ required to heat all these species to $T_f$ is given by a sum of their heat capacities
 \begin{equation}
 \label{eq:heatcapacity}
   \frac{\Ez}{V} \gtrsim \int_0^{T_f} dT ~\left(\frac32 n_\text{ion} + \frac{\pi^{4/3}}{3^{1/3}}\, n_e^{2/3} T + \frac{4 \pi^2}{15} T^3 \right),
 \end{equation}
 where $n_e$ is the number density of electrons.
-Note that \eqref{eq:heatcapacity} uses the heat capacity of a degenerate gas of electrons as the Fermi energy $E_F \gtrapprox \MeV$ for the densities we consider.
-We find the minimum energy deposit necessary to trigger runaway fusion is
+Note that we use the heat capacity of a degenerate gas of electrons as the Fermi energy $E_F \gtrapprox \MeV$ for the densities we consider \textcolor{blue}{SR's fav symbol}.
+The minimum energy deposit necessary to trigger runaway fusion is simply
 \begin{align}
 \label{eq:Eboom}
 \Eboom &\sim \frac{4 \pi}{3} \lambda_T^3 (n_\text{ion} T_f + n_e^{2/3} T_f^2 + T_f^4) \\
-         &\approx  10^{15} - 10^{23} ~\GeV \nonumber.
+         &\approx 10^{15} - 10^{23} ~\GeV \nonumber.
 \end{align}
 $\Eboom$ varies with $\lambda_T$ over the range of WD densities and is plotted in Figure \ref{fig:Eboom}. 
-Thus for a general heating event characterized by $L_0$ and $\Ez$, there is a \emph{boom condition}:
+Thus for a heating event characterized by $L_0$ and $\Ez$, there is a \emph{boom condition}:
 \begin{align}
     \label{eq:energy_boom_condition}
     \Ez \gtrsim
     \Eboom \cdot \text{max}\left\{1, \frac{L_0}{\lambda_T}\right\}^3.
 \end{align}
 Any $\Ez$ satisfying this condition is minimized for $L_0$ less than the trigger size, where it is also independent of the precise value of $L_0$.
-For broader deposits, the required energy is parametrically larger than $\Eboom$ by a volume ratio $(L_0/\lambda_T)^3$.
-As a result, understanding the \emph{heating lengths} $L_0$ for different types of heating events in a WD is critical to determining whether they are capable of destroying the star.
+For broader deposits, the necessary energy is parametrically larger than $\Eboom$ by a volume ratio $(L_0/\lambda_T)^3$.
+As a result, understanding the \emph{heating length} $L_0$ for different types of heating events in a WD is critical to determining whether or not they are capable of destroying the star.
 \begin{figure}
 \includegraphics[scale=.45]{Eboom.pdf}
 \caption{The minimum energy deposit \eqref{eq:Eboom} necessary to trigger runaway fusion, based on numerical results for $\lambda_T$ \cite{Woosley} and WD mass-density relation \cite{cococubed}}.
@@ -201,7 +201,7 @@ As a result, understanding the \emph{heating lengths} $L_0$ for different types 
 \section{Non-Gravitational Heating of White Dwarfs}
 \label{sec:SMHeating}
 
-Having reviewed the requirements for runaway fusion in a WD, we turn to the question of triggering these events with DM.
+Having reviewed the requirements for runaway fusion, we turn to the question of igniting SN with DM.
 This amounts to determining the heating length $L_0$ and energy deposit $\Ez$ due to a given DM encounter with a WD---if condition \eqref{eq:energy_boom_condition} is satisfied, then the encounter is explosive.
 Of course, the parameters $L_0$ and $\Ez$ necessarily depend on the nature of the DM and must be explicitly calculated for a given DM model.
 This is done in \cite{Graham:2015apa} for the case of primordial black holes which transit a WD and cause heating through dynamical friction.
