@@ -1,7 +1,7 @@
 %\documentclass[10pt, twocolumn]{article}
 %\documentclass[11pt]{article}
 %\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb,prl, superscriptaddress]{revtex4}
-\documentclass[preprintnumbers,amsmath,amssymb,prd, superscriptaddress,twocolumn]{revtex4}
+\documentclass[twocolumn, preprintnumbers,amsmath,amssymb,prd, superscriptaddress]{revtex4}
 % \documentclass[preprintnumbers,amsmath,amssymb,prd,superscriptaddress]{revtex4}
 %\documentclass[10pt, preprint,showpacs,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
 %\documentclass[11pt, prd,preprintnumbers,amsmath,amssymb, superscriptaddress]{revtex4}
@@ -92,7 +92,7 @@ It is interesting that the DM encounters with white dwarfs discussed in this wor
 \onecolumngrid
 \tableofcontents
 \clearpage
-%\twocolumngrid
+\twocolumngrid
 
 \section{Introduction}
 \label{sec:Introduction}
@@ -176,6 +176,7 @@ The excess energy in a volume $V$ required to heat all these species to $T_f$ is
 \end{equation}
 where $n_e$ is the number density of electrons.
 Note that we use the heat capacity of a degenerate gas of electrons as the Fermi energy $E_F \gtrapprox \MeV$ for the densities we consider \textcolor{blue}{SR's fav symbol}.
+\textcolor{red}{wtf is a ``$\gtrapprox$"?}
 The minimum energy deposit necessary to trigger runaway fusion is simply
 \begin{align}
 \label{eq:Eboom}
@@ -201,6 +202,7 @@ As a result, understanding the \emph{heating length} $L_0$ for different kinds o
 \section{Non-Gravitational Heating of White Dwarfs}
 \label{sec:SMHeating}
 
+<<<<<<< HEAD
 We now turn towards the possibility of DM triggers of type 1a SN. 
 In particular, if DM were capable of sufficiently heating a localized region of a WD then it would ignite runaway fusion.
 This amounts to calculating the heating length $L_0$ and energy deposit $\Ez$ of the DM ---if \eqref{eq:energy_boom_condition} is satisfied, then the DM encounter is violent. 
@@ -232,33 +234,38 @@ These final-state hadrons will consist of roughly equal fractions of pions, prot
 For neutrons, $E_\text{crit}$ is of order the nuclear binding energy $\sim 10 ~\text{MeV}$ although for charged hadrons, it is either $\sim 10 ~\MeV$ or the energy when Coulomb collisions with electrons becomes dominant.
 The precise value of $E_\text{crit}$ is a nontrivial function of the WD density.
 The shower length is determined by the typical mean free path $l_\text{inel}$ and cross-section $\sigma_\text{inel} \approx 100 ~\text{mb}$ for inelastic collisions:
+=======
+We turn now to the question of heating the WD medium via the production of high-energy SM particles. 
+The critical quantity is the length scale over which such particles heat the medium, as this scale determines their efficiency in triggering runaway fusion, described by condition \eqref{eq:energy_boom_condition}.   
+Note that this depends entirely on SM physics - the unknown DM physics will serve only to set the initial properties of the SM particles.
+One may have expected that efficient heating occurs only for a limited range of SM species and energies, thus restricting the set of DM candidates capable of producing SN. 
+However, we find that regardless of species or energy, SM particles tend to efficiently heat the WD - the length scale of heating is typically less than or of order the trigger size, and is never parametrically larger.
+\textcolor{blue}{double-check this for muons, but don't mention it}
+DM-induced SN will thus be common to any candidate capable of producing the requisite SM energy, regardless of the detailed form of that energy. 
+
+This is accomplished primarily through hadronic showers due to collisions with carbon ions. 
+At very high incident energies, such interactions are dominant even for non-hadronic species and they stop the incident particles rapidly due to the logarithmic nature of showers. 
+In some cases radiative electromagnetic showers dominate, with essentially the same effect.
+High-energy particles are thus converted into low-energy particles, which can efficiently heat the WD medium through elastic scatters.  
+In this light, the WD operates analogously to a particle detector, including hadronic and electromagnetic ``calorimeter'' components.
+Runaway fusion provides the necessary amplification to convert a detected event into a recordable signal, in this case a violent SN.  
+
+In the remainder of this Section we present the above heating process in more detail.  
+We summarize the dominant source of energy loss and the resulting ranges $\lambda$ for SM particles of incident energy $\epsilon$, given to an order-of-magnitude by
+>>>>>>> origin/master
 \begin{align}
-\label{eq:hadlength}
-  X_\text{had} \sim l_\text{inel} \log\l\frac{\epsilon}{E_\text{crit}}\r
-  \approx 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
+    \lambda \sim \frac{\epsilon}{dE/dx}
 \end{align}
-As a result, a high-energy nucleon or pion ultimately transfers its energy to many low-energy hadrons, displaced a distance $X_\text{had}$ from its starting point.
-Note that neutral pions decay to photons with a mean lifetime $\sim 10^{-16} ~\text{s}$, so that a $10 - 100 ~\text{MeV}$ neutral pion has a decay length of order $\sim 10^{-6} ~\text{cm}$.
-Hence, there will be negligible electromagnetic contributions from $\pi^0$ decays during the progression of a hadronic shower.
-For simplicity we focus on the hadronic component, which will carry a significant fraction of the shower energy.
+where $dE/dx$ is the stopping power in the WD medium.  
+A detailed treatment of the stopping powers is reserved for Appendix \ref{sec:Appendix}. 
+We will consider incident electrons, photons, light hadrons, and neutrinos, and since we are concerned with triggering runaway fusion we take $\epsilon \gg T_f \sim \text{MeV}$. 
+Note that an explosive heating event may consist of either producing a few very high-energy particles, or $N \gg 1$ low-energy particles.
+These scenarios may have very different heating lengths, and so we distinguish between them when applicable.
 
-At energies less than $\sim 10 ~\MeV$, protons and neutrons are predominantly stopped by elastic nuclear scatters, characterized by a mean free path $l_\text{el}$ and cross-section $\sigma_\text{el} \approx 1 ~\text{b}$.
-On the other hand, charged pions will primarily transfer their energy to electrons in the stellar medium via Coulomb collisions.
-Nevertheless, since each final-state nucleon and pion species carries $\OO(1)$ of the initial energy, a reasonable estimate of the heating length is obtained by considering only the final energy deposition from protons and neutrons.
-We find that $\sim 10$ random-walk collisions are needed to slow $\sim 10 ~\MeV$ nucleons to $\sim \MeV$ energies, resulting in an elastic scattering distance of order
-\begin{equation}
- \lambda_\text{el} \sim \sqrt{10} \times l_\text{el} \approx 10^{-7} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r
-\end{equation}
-If a single high-energy hadron $N \sim 1$ is released in the WD, the resulting ion temperature profile will be displaced from the origin by the hadronic shower length $X_\text{had}$ with characteristic size $L_0 \sim \lambda_\text{el}$.
-If instead many hadrons $N \gg 1$ are initially released and thermalize collectively, the heating length will be of order $L_0 \sim X_\text{had} + \lambda_\text{el} \approx X_\text{had}$.
-In either case, the heating length is parametrically smaller than the trigger size $\lambda_T$ and so the release of high-energy hadrons is an efficient heating mechanism for WDs.
+\subsection{Hadronic Showers}
 
-\subsection{Heating Properties: Electrons and Photons}
 
-We now consider the heating properties of electrons and photons together as their interactions are highly coupled.
-In this case, the dependence on WD density is not as straightforward due to the LPM effect, which suppresses radiative processes at high densities.
-We explicitly calculate the heating of a WD $n_\text{ion} \sim 10^{32} ~\cm^3$, although it is straightforward to generalize these results to lower densities - the only difference will be the turning points that characterize the dominance of one interaction over another.
-
+<<<<<<< HEAD
 At low energies, $\epsilon \lesssim 10~\GeV$, both electrons and photons primarily lose energy via elastic scattering off WD electrons.
 Thus the first stage of heating will be to establish a region of heated electron gas.
 Once the electrons equilibrate, they will begin to further lose energy via the previously sub-dominant bremsstrahlung process - this increases the photon number density, which transfers energy back into electrons by Compton scatters, and will eventually lead to the thermalization of the electrons and photon.
@@ -307,6 +314,99 @@ However, if we consider the release of a single ultra-high energy neutrino, than
 In a nuclear interaction, $20 \%$ of the neutrino energy is transferred to the nucleus while the rest is transferred to produced electrons \cite{Formaggio:2013kya}.
 In this case, the energy deposited to the nucleus is sufficient to start a hadronic shower.
 Therefore, a ultra-high energy neutrino behaves like a hadron and the neutrino heating length is simply $L_0 \sim X_\text{had}$.
+=======
+\subsection{Electronmagnetic Showers}
+
+
+\subsection{Low-Energy Elastic Heating}
+
+\subsection{Neutrinos}
+
+% \subsection{Heating Properties: Hadrons}
+
+% For high-energy incident hadrons, the energy loss is dominated by inelastic nuclear collisions in which the incoming hadron violently interacts with a target nucleus to produce an $\OO(1)$ number of secondary hadrons.
+% This results in a roughly collinear hadronic shower that terminates when shower constituents reach a critical energy $E_\text{crit}$.
+% These final-state hadrons will consist of roughly equal fractions of pions, protons, and neutrons.
+% For neutrons, $E_\text{crit}$ is of order the nuclear binding energy $\sim 10 ~\text{MeV}$ although for charged hadrons, it is either $\sim 10 ~\MeV$ or the energy when Coulomb collisions with electrons becomes dominant.
+% The precise value of $E_\text{crit}$ is a nontrivial function of the WD density.
+% The shower length is determined by the typical mean free path $l_\text{inel}$ and cross-section $\sigma_\text{inel} \approx 100 ~\text{mb}$ for inelastic collisions:
+% \begin{align}
+% \label{eq:hadlength}
+%   X_\text{had} \sim l_\text{inel} \log\l\frac{\epsilon}{E_\text{crit}}\r
+%   \approx 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
+% \end{align}
+% As a result, a high-energy nucleon or pion ultimately transfers its energy to many low-energy hadrons, displaced a distance $X_\text{had}$ from its starting point.
+% Note that neutral pions decay to photons with a mean lifetime $\sim 10^{-16} ~\text{s}$, so that a $10 - 100 ~\text{MeV}$ neutral pion has a decay length of order $\sim 10^{-6} ~\text{cm}$.
+% Hence, there will be negligible electromagnetic contributions from $\pi^0$ decays during the progression of a hadronic shower.
+% For simplicity we focus on the hadronic component, which will carry a significant fraction of the shower energy.
+
+% At energies less than $\sim 10 ~\MeV$, protons and neutrons are predominantly stopped by elastic nuclear scatters, characterized by a mean free path $l_\text{el}$ and cross-section $\sigma_\text{el} \approx 1 ~\text{b}$.
+% On the other hand, charged pions will primarily transfer their energy to electrons in the stellar medium via Coulomb collisions.
+% Nevertheless, since each final-state nucleon and pion species carries $\OO(1)$ of the initial energy, a reasonable estimate of the heating length is obtained by considering only the final energy deposition from protons and neutrons.
+% We find that $\sim 10$ random-walk collisions are needed to slow $\sim 10 ~\MeV$ nucleons to $\sim \MeV$ energies, resulting in an elastic scattering distance of order
+% \begin{equation}
+%  \lambda_\text{el} \sim \sqrt{10} \times l_\text{el} \approx 10^{-7} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r
+% \end{equation}
+% If a single high-energy hadron $N \sim 1$ is released in the WD, the resulting ion temperature profile will be displaced from the origin by the hadronic shower length $X_\text{had}$ with characteristic size $L_0 \sim \lambda_\text{el}$.
+% If instead many hadrons $N \gg 1$ are initially released and thermalize collectively, the heating length will be of order $L_0 \sim X_\text{had} + \lambda_\text{el} \approx X_\text{had}$.
+% In either case, the heating length is parametrically smaller than the trigger size $\lambda_T$ and so the release of high-energy hadrons is an efficient heating mechanism for WDs.
+
+% \subsection{Heating Properties: Electrons and Photons}
+
+% We now consider the heating properties of electrons and photons together as their interactions are highly coupled.
+% In this case, the dependence on WD density is not as straightforward due to the LPM effect, which suppresses radiative processes at high densities.
+% We explicitly calculate the heating of a WD $n_\text{ion} \sim 10^{32} ~\cm^3$, although it is straightforward to generalize these results to lower densities - the only difference will be the turning points that characterize the dominance of one interaction over another.
+
+
+% At low energies, $\epsilon \lesssim 10~\GeV$, both electrons and photons primarily lose energy via elastic scattering off WD electrons.
+% Thus the first stage of heating will be to establish a region of heated electron gas.
+% Once the electrons equilibrate, they will begin to further lose energy via the previously sub-dominant bremsstrahlung process - this increases the photon number density, which transfers energy back into electrons by Compton scatters, and will eventually lead to the thermalization of the electrons and photon.
+% The establishment of this heated electron-photon gas will occur significantly before any energy is transfered to ions, as evidenced by the hierarchy between the electron-ion and photon-ion stopping powers and the election-photon stopping powers in Figure \ref{fig:SOMETHING}.
+% If the process originally released $N$ electrons or photons of energy $\epsilon \lesssim 10~\GeV$, then this electron-photon gas has a temperature of
+% \begin{align}
+%   T_{e\gamma} \sim \frac{N \epsilon}{Z n_\text{ion} \lambda_{e\gamma}^3}
+% \end{align}
+% where $\lambda_{e\gamma}$ is the range of electrons due to bremsstrahlung and we assume that $N$ is sufficiency large so that $T_{e\gamma} \gtrsim 1~\MeV$.
+
+% Note that if $T_{e\gamma} \lesssim 10~\MeV$, the only routes to transfer energy to ions are dramatically suppressed.
+% In that case, ion heating is dispersed over an insignificantly large region.
+% However, if $T_{e\gamma} \gtrsim 10~\MeV$, then photons in this gas will transfer their energy to ions via photonuclear scatters, which are nonelastic nuclear scatters as discussed in Section \ref{sec:SOMETHING} between a photon and a nucleus, mediated by a virtual quark pair.
+% As $N$ is large and each photon carries a small fraction of the total deposited energy, the effect here is to launch many hadronic showers from the electron-photon gas which heat ions as discussed.
+% The total length of these photo-nuclear showers is given by $l_\gamma + X_\text{had}$, where $X_\text{had}$ is the hadronic shower length and $l_\gamma$ the mean free path for a photonuclear collision, which is related to the hadronic mean free path for nonelastic nuclear collisions by $\sim l_\text{h,non}/\alpha$.
+% The photonuclear piece dominates, and it also dominates the initial scale of the heated electrons and photons $\lambda_{e\gamma}$, so we find that a low-energy cloud of electrons or photons will eventually heat ions over a distance $\sim l_\gamma$.
+
+% For slightly larger energies, there is a narrow window $10~\GeV \lesssim \epsilon \lesssim 100~\GeV$ in which both electrons and photons are dominated by radiative processes.
+% In this regime we thus have an EM shower, which terminated at energies of $\sim 10~\GeV$ into a cloud of electrons and photons, which thermalize as described above.
+% This is a collinear shower covering about a decade in energy, so its principle effect is to amplify the number of energetic particles by a factor of $10$ and to disperse them over an EM shower length (note that since many particles are necessary involved here, this is a broadening of the heating peak and not a displacement).
+% If $N$ electrons or photons are released with energy $\epsilon$ and create EM showers, the shower products with thermalize an electron-photon gas of temperature
+% \begin{align}
+%   T_{e\gamma} \sim \frac{10 N \epsilon}{Z n_\text{ion} X_\text{EM}^3}
+% \end{align}
+% where $X_\text{EM}$ is the length of the EM shower.
+% At these densities, the shower lengths are extended by the LPM effect and given by
+% \begin{align}
+%   X_\text{EM} \sim X_0 \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2},
+% \end{align}
+% where $E_\text{LPM} \sim$ \textcolor{blue}{NUMBERS} and $X_\text{EM} \sim$ \textcolor{blue}{NUMBERS}. \textcolor{blue}{citation}
+% As above, if $T_{e\gamma} \gtrsim 10~\MeV$ this will produce photonuclear hadronic showers and heat the ions over a scale $l_\gamma$.
+
+% Finally, at high energies $\epsilon \gtrsim 100~\GeV$ a released photon or electron will deposit energy directly into hadronic showers without first thermalizing a region of electron-photon gas.
+% Effectively, electrons and photons at this energy behave qualitatively like hadrons, with the quantitative difference in that they require a slightly longer distance to initiate a hadronic shower.
+% The physics is the same as that discussed in Section \ref{sec:SOMETHING}, though we now must add a photonuclear or electronucler length scale to the shower length $X_\text{had}$.
+% For $100~\GeV \lesssim \epsilon \lesssim 1~\TeV$, the shower is always photonuclear, as a released electron is more likely to bremsstrahlung than scatter off a nucleus and that bremmed photon is then able to start a photonuclear shower.
+% For $\epsilon \gtrsim 1~\TeV$, however, released electrons will start hadronic showers directly by radiating a virtual photon which undergoes a photonuclear collision.
+% This slows the electron over a length scale $\sim 10~l_\gamma/\alpha \sim 10 l_\text{h,non}/\alpha^2 $.
+
+% \subsection{Heating Properties: Neutrinos}
+
+% Neutrinos interact very weakly, although their nuclear cross-section $\sigma_{\nu A}$ rises with energy.
+% At an energy of $\sim 10^{11} ~\GeV$, \cite{Formaggio:2013kya} calculates the cross-section to be $\sigma_{\nu A} \sim 10^{-32} ~\cm^2$.
+% Taking this to be a conservative estimate for nuclear cross-section at even higher energies, we find the mean free path for a neutrino-nuclei scatter is of order $\sim \text{meter}$.
+% However, if we consider the release of a single ultra-high energy neutrino, than this mean free path is simply a displacement of the eventual thermal profile.
+% In a nuclear interaction, $20 \%$ of the neutrino energy is transferred to the nucleus while the rest is transferred to produced electrons \cite{Formaggio:2013kya}.
+% In this case, the energy deposited to the nucleus is sufficient to start a hadronic shower.
+% Therefore, a ultra-high energy neutrino behaves like a hadron and the neutrino heating length is simply $L_0 \sim X_\text{had}$.
+>>>>>>> origin/master
 
 \section{Dark Matter-Induced Ignition}
 \label{sec:DMexplode}
