@@ -134,19 +134,19 @@ Finally we specialize to the case of Q-balls in Section~\ref{sec:QBalls}, and co
 \label{sec:Review}
 
 We first review the conditions for which a local energy deposition in a WD results in runaway fusion.
-Any energy deposit will eventually heat ions within some localized region---parameterize this region by its linear size $L_0$ and peak temperature $T_0$.
+Any energy deposit will eventually heat ions within some localized region---parameterize this region by its linear size $L_0$, total kinetic energy $\Ez$ and typical temperature $T_0$.
 These scales evolve in time, but it will be useful to describe a given heating event by their initial values.
 
 The fate of a heated region is either a nonviolent diffusion of the excess energy across the star, or a runaway fusion chain-reaction that destroys the star.
-The precise outcome depends on both $L_0$ and $T_0$.
+The precise outcome depends on $L_0$, $\Ez$ and $T_0$.
 There is a critical temperature $T_f$, set by the energy required for ions to overcome their mutual Coulomb barrier, above which fusion occurs.
 For carbon burning, $T_f \sim \MeV$ \cite{Gasques:2005ar}.
 Any heated region $T_0 > T_f$ will initially support fusion, although this is not sufficient for runaway as cooling processes may rapidly lower the temperature below $T_f$.
 This cooling will not occur if the corresponding timescale is larger than the timescale at which fusion releases energy.
 Cooling in a WD is dominated by thermal diffusion, and the diffusion time increases as the size of the heated region.
 However, the timescale for heating due to fusion is independent of region size.
-Thus for a given temperature greater than $T_f$, there is a critical size above which the heated region does not cool but instead initiates runaway.
-For a region at the critical fusion temperature, we call this the \emph{trigger size} $\lambda_T$.
+Thus, for a region at temperature $\geq T_f$, there is a critical size above which the heated region does not cool but instead initiates runaway.
+For a region at the critical fusion temperature $T_f$, we call this critical size the \emph{trigger size} $\lambda_T$.
 The value of $\lambda_T$ is highly dependent on density, and in a WD is set by the thermal diffusivity of either photons or degenerate electrons.
 This critical length scale has been computed numerically in \cite{Woosley} for a narrow range of WD densities and analytically scaled for other WD masses in \cite{Graham:2015apa}.
 As in \cite{Graham:2015apa}, we will restrict our attention to carbon-oxygen WDs in the upper mass range $\sim 0.85 - 1.4 ~M_{\odot}$ (these will yield the most stringent constraints on DM).
@@ -155,25 +155,25 @@ This corresponds to a central number density of ions $n_\text{ion} \sim 10^{30} 
 If a heated region is smaller than the trigger size, its thermal evolution is initially dominated by diffusion.
 However, this will still result in runaway fusion if the temperature is of order $T_f$ by the time the region diffuses out to the trigger size.
 For our purposes it is more natural to phrase this in terms of the total energy $\Ez$ deposited during a heating event.
-Of course, the relation between energy $\Ez$ and temperature $T_0$ depends on the rate at which WD constituents---ions, electrons, and photons---interact with each other. 
-In Section \ref{sec:SMHeating} we explicitly calculate the length scales over which a hot bath of ions thermalizes electrons and photons. 
-Here we simply state the results: if ions are heated to temperatures $T_0 \sim 1 - 10 ~\MeV$, then electrons and photons are also heated at distances within the trigger size. 
-Therefore, any heating event which results in runaway necessarily has ions, electrons, and photons in thermal equilibrium once a region of size $\lambda_T$ or greater is at the critical temperature $T_f$. 
+Of course, the relation between energy $\Ez$ and temperature $T_0$ depends on the rate at which WD constituents---ions, electrons, and photons---thermalize with each other within the region size $L_0$.
+In Section \ref{sec:SMHeating} we explicitly calculate the length scales over which a hot bath of ions thermalizes electrons and photons, focusing our attention on ions because they are what ultimately must be heated in order for fusion to take place.
+Here we simply state the results: if ions are heated to temperatures $T_0 \sim 1 - 10 ~\MeV$, which we will see is typical for a wide variety of heating processes, then electrons and photons are also heated to $T_0$ within the trigger size.
+Therefore, any heating event which results in runaway necessarily has ions, electrons, and photons in thermal equilibrium once a region of size $\lambda_T$ or greater is at the critical temperature $T_f$.
 The excess energy in a volume $V$ required to heat all these species to $T_f$ is given by a sum of their heat capacities
 \begin{equation}
 \label{eq:heatcapacity}
   \frac{\Ez}{V} \gtrsim \int_0^{T_f} dT ~\left(\frac32 n_\text{ion} + \frac{\pi^{4/3}}{3^{1/3}}\, n_e^{2/3} T + \frac{4 \pi^2}{15} T^3 \right),
 \end{equation}
 where $n_e$ is the number density of electrons.
-Note that we use the heat capacity of a degenerate gas of electrons as the Fermi energy $E_F \gtrsim \MeV$ for the densities we consider.
+Note that we use the heat capacity of a degenerate gas of electrons, since the Fermi energy $E_F \gtrsim \MeV$ for the densities we consider.
 The minimum energy deposit necessary to trigger runaway fusion is simply
 \begin{align}
 \label{eq:Eboom}
 \Eboom &\sim \frac{4 \pi}{3} \lambda_T^3 (n_\text{ion} T_f + n_e^{2/3} T_f^2 + T_f^4) \\
          &\approx 10^{15} - 10^{23} ~\GeV \nonumber.
 \end{align}
-$\Eboom$ varies with $\lambda_T$ over the range of WD densities and is plotted in Figure \ref{fig:Eboom}. 
-Thus for a heating event characterized by its $L_0$ and $\Ez$, there is a \emph{boom condition}:
+$\Eboom$ varies with $\lambda_T$ over the range of WD densities and is plotted in Figure \ref{fig:Eboom}.
+Thus for a heating event characterized by its $L_0$, $\Ez$, and any $T_0 \gtrsim T_f$, there is a \emph{boom condition}:
 \begin{align}
     \label{eq:energy_boom_condition}
     \Ez \gtrsim
@@ -191,6 +191,7 @@ As a result, understanding the length scale $L_0$ for different kinds of heating
 \section{Non-Gravitational Heating of White Dwarfs}
 \label{sec:SMHeating}
 
+<<<<<<< HEAD
 We now turn towards the possibility of DM triggers of SN. 
 Namely, if DM were capable of sufficiently heating a localized region of a WD then it would ignite runaway fusion.
 We examine DM candidates which couple non-gravitationally to the SM and cause heating through the release of high-energy SM particles. 
@@ -200,22 +201,42 @@ Importantly, this length depends entirely on known SM physics---the unknown DM p
 One may have expected that efficient heating of a WD occurs only for a limited range of SM species and energies, thus restricting the DM candidates capable of triggering SN. 
 However, we find that regardless of species or energy, SM particles tend to efficiently deposit their energy in the star.
 In particular, the length scale of heating is typically less than or of order the trigger size $\lambda_T$, and is never parametrically larger.
-\textcolor{blue}{double-check this for muons, but don't mention it}
-This is accomplished primarily through hadronic showers due to collisions with carbon ions. 
-At very high incident energies, such interactions are dominant even for non-hadronic species and they stop the incident particles rapidly due to the logarithmic nature of showers. 
-In some cases radiative electromagnetic showers dominate, with essentially the same effect.
-High-energy particles are thus converted into low-energy particles, which rapidly heat the WD through elastic scatters.  
-In this light, the WD operates analogously to a particle detector, including hadronic and electromagnetic ``calorimeter'' components.
-Runaway fusion provides the necessary amplification to convert a detected event into a recordable signal, in this case a violent SN.  
+=======
+We now turn towards the possibility of DM triggers of type 1a SN.
+In particular, if DM were capable of sufficiently heating a localized region of a WD then it would ignite runaway fusion.
+We examine DM candidates which couple non-gravitationally to the SM and cause heating through the release of high-energy standard model particles.
+The critical quantity is the length scale over which such particles heat the medium, as this scale determines their efficiency in triggering runaway fusion, described by condition \eqref{eq:energy_boom_condition}.
+Note that this depends entirely on SM physics - the unknown DM physics will serve only to set the initial properties of the SM particles.
 
-In the remainder of this Section we present the above heating process in more detail.  
+One may have expected that efficient heating occurs only for a limited range of SM species and energies, thus restricting the set of DM candidates capable of producing SN.
+However, we find that regardless of species or energy, SM particles tend to efficiently heat the WD - the length scale of heating is typically less than or of order the trigger size $\lambda_T$, and is never parametrically larger.
+>>>>>>> origin/master
+\textcolor{blue}{double-check this for muons, but don't mention it}
+This is accomplished primarily through hadronic showers due to collisions with carbon ions.
+At very high incident energies, such interactions are dominant even for non-hadronic species and they stop the incident particles rapidly due to the logarithmic nature of showers.
+In some cases radiative electromagnetic showers dominate, with essentially the same effect.
+<<<<<<< HEAD
+High-energy particles are thus converted into low-energy particles, which rapidly heat the WD through elastic scatters.  
+=======
+High-energy particles are thus converted into low-energy particles, which can efficiently heat the WD medium through elastic scatters.
+>>>>>>> origin/master
+In this light, the WD operates analogously to a particle detector, including hadronic and electromagnetic ``calorimeter'' components.
+Runaway fusion provides the necessary amplification to convert a detected event into a recordable signal, in this case a violent SN.
+
+In the remainder of this Section we present the above heating process in more detail.
 We summarize the dominant source of energy loss and the resulting ranges $\lambda$ for SM particles of incident energy $\epsilon$, given to an order-of-magnitude by
 \begin{align}
     \lambda \sim \epsilon \l\frac{dE}{dx}\r^{-1}
 \end{align}
+<<<<<<< HEAD
 where $(dE/dx)$ is the stopping power in the WD medium.  
 A detailed treatment of the stopping powers is reserved for Appendix \ref{sec:Appendix}. 
 We will consider incident electrons, photons, light hadrons, and neutrinos, and since we are concerned with igniting runaway fusion we take $\epsilon \gg \text{MeV}$. 
+=======
+where $dE/dx$ is the stopping power in the WD medium.
+A detailed treatment of the stopping powers is reserved for Appendix \ref{sec:Appendix}.
+We will consider incident electrons, photons, light hadrons, and neutrinos, and since we are concerned with triggering runaway fusion we take $\epsilon \gg T_f \sim \text{MeV}$.
+>>>>>>> origin/master
 Note that an explosive heating event may consist of either producing a few very high-energy particles, or $N \gg 1$ low-energy particles.
 These scenarios may have very different heating lengths, and so we distinguish between them when applicable.
 
@@ -833,7 +854,7 @@ Thus the stopping power integrand becomes
 \begin{align}
 n_\text{ion}\cdot d\sigma\cdot\omega_\text{free} \to n_\text{ion} \cdot d\sigma\,\frac{\omega_\text{free}}{\Omega_p}\cdot \Omega_p
 \end{align}
-and we see the stopping powers with and without phonons are the same, even while the cross-sections and energy transfers are different. 
+and we see the stopping powers with and without phonons are the same, even while the cross-sections and energy transfers are different.
 % Scatters are rarer at incident momenta $p^2/2 m_\text{ion} \lesssim \Omega_p$ where phonons matter, but each scatter transfers more energy so that the stopping power is equivalent.
 
 \subsection{Coulomb Collisions off Electrons}
