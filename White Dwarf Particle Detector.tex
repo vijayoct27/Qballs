@@ -92,7 +92,7 @@ It is interesting that the DM encounters with white dwarfs discussed in this wor
 \onecolumngrid
 \tableofcontents
 \clearpage
-%\twocolumngrid
+\twocolumngrid
 
 \section{Introduction}
 \label{sec:Introduction}
@@ -191,14 +191,16 @@ As a result, understanding the $L_0$ for different kinds of heating events in a 
 \section{Non-Gravitational Heating of White Dwarfs}
 \label{sec:SMHeating}
 
-We now turn towards the possibility of DM triggers of type 1a SN.
-In particular, if DM were capable of sufficiently heating a localized region of a WD then it would ignite runaway fusion.
-We examine DM candidates which couple non-gravitationally to the SM and cause heating through the release of high-energy standard model particles.
-The critical quantity is the length scale over which such particles heat the medium, as this scale determines their efficiency in triggering runaway fusion, described by condition \eqref{eq:energy_boom_condition}.
-Note that this depends entirely on SM physics - the unknown DM physics will serve only to set the initial properties of the SM particles.
+% We now turn towards the possibility of DM triggers of type 1a SN.
+% In particular, if DM were capable of sufficiently heating a localized region of a WD then it would ignite runaway fusion.
+% We examine DM candidates which couple non-gravitationally to the SM and cause heating through the release of high-energy standard model particles.
+We address now the possibility of DM heating the WD medium via the production of SM particles. 
+The critical quantity is the length scale over which such SM particles heat the medium - this scale determines their efficiency in triggering runaway fusion, as described by condition \eqref{eq:energy_boom_condition}.
+Note that this is a question of purely SM physics. 
+The unknown physics of DM will serve only to set the initial properties of the SM particles.
 
 One may have expected that efficient heating occurs only for a limited range of SM species and energies, thus restricting the set of DM candidates capable of producing SN.
-However, we find that regardless of species or energy, SM particles tend to efficiently heat the WD - the length scale of heating is typically less than or of order the trigger size $\lambda_T$, and is never parametrically larger.
+However, we find that SM particles tend to efficiently heat the WD regardless of species or energy - the length scale of heating is typically less than or of order the trigger size $\lambda_T$, and is never parametrically larger.
 This is accomplished primarily through hadronic showers initiated by collisions with carbon ions.
 In some cases electromagnetic showers are important, however at high energies radiative processes are suppressed by density effects and all species are dominated by hadronic interactions. 
 These interactions rapidly stop high-energy particles due to the logarithmic nature of showers, converting them into a cloud of low-energy particles which efficiently heat the WD medium through elastic scatters.
@@ -218,17 +220,57 @@ These scenarios may have very different heating lengths, and we will distinguish
 
 \subsection{Hadronic and Electronmagnetic Showers}
 
-Incident hadrons with kinetic energies greater than the nuclear binding scale $E_\text{nuc} \sim 10~\MeV$ will undergo violent inelastic collisions with carbon ions resulting in an $\OO(1)$ number of secondary hadrons.
-These secondaries will consist of roughly equal fractions of pions, protons, and neutrons, each carrying an $\OO(1)$ of the incident energy.
-\textcolor{blue}{cite something}
-These secondaries will undergo similar collisions, resulting in a roughly collinear shower terminating when the shower constituents reach an energy $\sim E_\text{nuc}$.
-This occurs over a disance 
+Incident hadrons with kinetic energy $\epsilon$ larger than the nuclear binding scale $E_\text{nuc} \sim 10~\MeV$ will undergo violent inelastic collisions with carbon ions resulting in an $\OO(1)$ number of secondary hadrons. \textcolor{blue}{cite something}
+This results in a roughly collinear shower of hadrons which ends when the constituents reach an energy $\sim E_\text{nuc}$.
+This occurs over a shower length 
 \begin{align}
 \label{eq:hadlength}
   X_\text{had} \sim l_\text{inel} \log\l\frac{\epsilon}{E_\text{nuc}}\r
   \approx 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r
 \end{align}
-where $l_\text{inel}$ is the mean free path for nuclear scatters, set by the cross-section $\sigma_\text{inel} \approx 100 ~\text{mb}$.
+where $l_\text{inel}$ is the mean free path for nuclear scatters, set by the cross-section $\sigma_\text{inel} \approx 100 ~\text{mb}$. \textcolor{blue}{cite something}
+The shower terminates into a cloud of $\sim 10~\MeV$ hadrons, composed of roughly equal fractions of pions, protons, and neutrons. \textcolor{blue}{cite something}
+Note that neutral pions of energy $10 - 100 ~\text{MeV}$ have a decay length to photons of $\delta_\pi \sim 10^{-6} ~\text{cm}$.
+At the highest densities, therefore, hadronic showers will produce an electromagnetic component carrying an $\OO(1)$ fraction of the energy.
+
+Electromagnetic interactions can also lead to showers of electrons and photons sustained by successive bremsstrahlung or pair-production events. 
+At low energy these have a small shower length 
+\begin{align}
+\label{eq:emlength}
+  X_\text{EM} \sim \approx 10^{-9} ~\text{cm} 
+  \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
+\end{align}
+\textcolor{blue}{cite something}
+However, at high energy this is elongated due to the ``Landau-Pomeranchuk-Migdal" (LPM) effect. 
+In a high density environment, the virtual photon exchanged during a bremsstrahlung or pair-production event will interact incoherently with many nearby ions, suppressing the cross-section.  
+For energies $\epsilon > E_\text{LPM}$, this yields the shower length
+\begin{align}
+  X_\text{EM} &\sim 10^{-9} ~\text{cm} 
+  \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r 
+  \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2} \\
+ E_\text{EPM} &\sim \text{numbers}.
+\end{align}
+where $E_\text{LPM}$ is the characteristic scale of LPM suppression.
+\textcolor{blue}{cite something}
+This scaling ensures that hadronic interactions dominate at sufficiently high energies, even for incident electrons and photons. 
+
+  
+
+% For slightly larger energies, there is a narrow window $10~\GeV \lesssim \epsilon \lesssim 100~\GeV$ in which both electrons and photons are dominated by radiative processes.
+% In this regime we thus have an EM shower, which terminates at energies of $\sim 10~\GeV$ into a cloud of electrons and photons, which thermalize as described above.
+% This is a collinear shower covering about a decade in energy, so its principle effect is to amplify the number of energetic particles by a factor of $10$ and to disperse them over an EM shower length (note that since many particles are necessary involved here, this is a broadening of the heating peak and not a displacement).
+% If $N$ electrons or photons are released with energy $\epsilon$ and create EM showers, the shower products with thermalize an electron-photon gas of temperature
+% \begin{align}
+%   T_{e\gamma} \sim \frac{10 N \epsilon}{Z n_\text{ion} X_\text{EM}^3}
+% \end{align}
+% where $X_\text{EM}$ is the length of the EM shower.
+% At these densities, the shower lengths are extended by the LPM effect and given by
+% \begin{align}
+%   X_\text{EM} \sim X_0 \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2},
+% \end{align}
+% where $E_\text{LPM} \sim$ \textcolor{blue}{NUMBERS} and $X_\text{EM} \sim$ \textcolor{blue}{NUMBERS}. \textcolor{blue}{citation}
+% As above, if $T_{e\gamma} \gtrsim 10~\MeV$ this will produce photonuclear hadronic showers and heat the ions over a scale $l_\gamma$.
+
 \textcolor{blue}{cite something}
 
 \subsection{Low-Energy Elastic Heating}
