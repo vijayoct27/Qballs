@@ -92,7 +92,7 @@ It is interesting that the DM encounters with white dwarfs discussed in this wor
 \onecolumngrid
 \tableofcontents
 \clearpage
-\twocolumngrid
+%\twocolumngrid
 
 \section{Introduction}
 \label{sec:Introduction}
@@ -319,7 +319,7 @@ The unknown physics of DM sets the rate of SM particle production within the sta
 This information is needed to determine if a given DM encounter with a WD results in runaway fusion and with what frequency. 
 Of course, this can be done precisely for a specific DM model. 
 In this Section, we describe several general, illustrative classes of DM-WD encounters which demonstrate the explosiveness of ultra-heavy DM interactions.
-We also calculate the typical rate at which these violent events take place in a WD. 
+We also calculate the typical rates at which these violent events take place in a WD. 
 
 \subsection{Classifying DM-WD Encounters}
 
@@ -331,7 +331,7 @@ For collisions and decays, we consider only ``point-like" heating events with al
 For transits, we consider only soft DM-SM scatters that result in a continuous release of particles along the DM trajectory.
 
 We can also classify candidates according to the evolution of the DM itself inside the star.
-Generally there will be some loss of DM kinetic energy due to DM-SM scatters----this is either incidental to the eventual heating of the star or represents the dominant heating mechanism.
+Generally there will be some loss of DM kinetic energy due to DM-SM scatters---this is either incidental to the eventual heating of the star or represents the dominant heating mechanism.
 We consider two simple, limiting cases depending on the magnitude of this energy loss relative to the DM kinetic energy: ``DM wind" and ``DM capture".
 In the DM wind scenario, there is negligible energy loss and the DM simply passes through the star.
 In the DM capture scenario, the energy loss due to DM-SM scatters is not capable of igniting runaway but is sufficient to stop the DM and cause it to accumulate inside the star. 
@@ -340,20 +340,19 @@ For simplicity we consider only the wind scenario for transit candidates, though
 
 \begin{figure}
 \includegraphics[scale=0.09]{feynmandiag.jpg}
-\caption{Schematic of possible non-gravitational DM interactions in a WD which release SM particles.}
+\caption{Schematic of possible non-gravitational DM interactions in a WD which release SM (and possibly dark sector) particles.}
 \label{fig:feynman}
 \end{figure}
 
 \subsection{Transits}
 
 \paragraph{Boom Condition:}
-The energy deposited in a continuous heating event is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, which is the kinetic energy of SM particles produced per distance traveled by the DM.
-If these products have a heating length $L_0$, then then relevant energy deposit as used in the general boom condition \eqref{eq:energy_boom_condition} must be taken at minimum to be the energy transfered over the length $L_0$.
-We can always choose to consider the energy deposition over a longer segment of the DM trajectory, however by condition \eqref{eq:energy_boom_condition} such a deposition is \emph{less} explosive unless the length scale is smaller than the trigger size.
-Thus, if $L_0 < \lambda_T$ we consider the deposition over the length $\lambda_T$, and otherwise over the larger scale $L_0$.
-We can take the energy of the DM to be roughly constant over this heating event, as for an explosive event any energy loss is subject to the condition
-\eqref{eq:CrustCondition} in order to penetrate the non-degenerate layer, which also guarantees negligible energy loss over the trigger size or heating lengths $L_0$.
-This yields the explosion condition for transit heating
+The energy deposited during a continuous heating event such as a DM transit is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, the kinetic energy of SM particles produced per distance traveled by the DM.
+If these products have a heating length $L_0$ then the relevant energy deposit must at minimum be taken as the energy transferred over the transit distance $L_0$.
+Of course, we can always choose to consider energy deposits over a longer segment of the DM trajectory.
+Importantly, as per the general condition \eqref{eq:energy_boom_condition} such a deposition is \emph{less} explosive unless $L_0$ is smaller than the trigger size $\lambda_T$.
+Thus, we consider the energy deposited in a transit over the larger of these two length scales.    
+Assuming the energy of the DM is roughly constant over this heating event, the boom condition for transit heating is:
 \begin{align}
 \label{eq:transitexplosion}
   \left( \frac{d E}{d x} \right)_\text{LET} \gtrsim
@@ -361,16 +360,16 @@ This yields the explosion condition for transit heating
   \left\{\frac{L_0}{\lambda_T}, 1 \right\}^2.
 \end{align}
 
-The above argument sums the deposited along the DM trajectory as though it is all deposited simultaneously.
-This is valid if the DM moves sufficiently quickly, so that the energy does not diffuse out of the region of interest before the DM has traversed the region.
-We therefore require that the diffusion time $\tau_d$ across a heated region at temperature $T_f$ be larger than the DM crossing time:
+The above argument sums the individual energy deposits along the DM trajectory as though they are all deposited simultaneously.
+This is possible if the DM moves sufficiently quickly so that this energy does not diffuse out of the region of interest before the DM has traversed the region.
+We therefore require that the diffusion time $\tau_d$ across a heated region at temperature $T_f$ be larger than the DM crossing-time:
 \begin{align}
   \tau_d \sim \frac{L^2}{\alpha(T_f)} \gg
   \frac{L}{v_\text{esc}},
 \label{eq:SlowDiffusion}
 \end{align}
-where $\alpha(T)$ is the temperature-dependent diffusivity and DM transits at the stellar escape speed $v_\text{esc}$.
-This condition is more stringent for smaller regions, so we focus on the smallest region of interest: $L = \lambda_T$.
+where $\alpha(T)$ is the temperature-dependent diffusivity, and the DM transits at the stellar escape velocity $v_\text{esc} \approx 10^{-2}$.
+This condition is more stringent for smaller regions, so we focus on the smallest region of interest, $L = \lambda_T$.
 \eqref{eq:SlowDiffusion} is then equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
 Numerical calculations of $v_\text{cond}$ are tabulated in \cite{Woosley}, and indeed condition \eqref{eq:SlowDiffusion} is satisfied for all WD densities.
 
@@ -379,30 +378,32 @@ The rate of transit events is given by the flux of DM passing through a WD
 \begin{align}
   \Gamma_\text{transit} \sim
   \frac{\rho_{\text{DM}}}{m_\text{DM}} R_\text{WD}^2
-  \l\frac{v_\text{esc}}{v}\r v_\text{esc}.
+  \l\frac{v_\text{esc}}{v}\r v_\text{esc},
 \label{eq:TransitFluxCondition}
 \end{align}
-which contains an $\OO(100)$ enhancement due to gravitational focusing.
+where $m_\text{DM}$ is the DM mass, $\rho_\text{DM}$ is the local DM density near the WD, and $R_\text{WD}$ is the WD radius.
+Here $v \sim 10^{-3}$ is galactic virial velocity, and the transit rate contains an $\OO(100)$ enhancement due to gravitational focusing.
 
-\paragraph{Non-degenerate Shielding}
+\paragraph{WD Shielding.}
 Runaway fusion only occurs in the degenerate WD interior where thermal expansion is suppressed as a cooling mechanism.
-The outer layers of the WD, however, are composed of a non-degenerate gas and it is therefore essential that a DM candidate penetrate this layer in order to induce a SN.
-We parameterize this with a stopping power $(dE/dx)_\text{SP}$, giving the kinetic energy lost by the DM per distance traveled in the non-degenerate layer, and demand that
+The outer layers of the WD, however, are composed of a non-degenerate gas and it is therefore essential that a DM candidate penetrate this layer in order to ignite a SN.
+We parameterize this by a DM stopping power $(dE/dx)_\text{SP}$, the kinetic energy lost by the DM per distance traveled in the non-degenerate layer, and demand that
 \begin{align}
 \label{eq:CrustCondition}
   \left( \frac{d E}{d x} \right)_\text{SP} \ll
   \frac{m_\text{DM} v^2_\text{esc}}{R_\text{crust}},
 \end{align}
-where $R_\text{crust} \sim 50 ~\text{km}$ is the width of a WD crust \cite{Chandrasekhar} and $v_\text{esc} \sim 10^{-2}$ is the escape velocity of a WD. \textcolor{blue}{double check these numbers}.
-Note that this stopping power in the non-degenerate layer and the above linear energy transfer in the bulk are possibly controlled by different physics and may have very different numerical values.
+where $R_\text{crust} \approx 50 ~\text{km}$ is the width of a WD crust \cite{Chandrasekhar} \textcolor{blue}{check this number and citation}.
+Note that the DM stopping power in the non-degenerate layer $(dE/dx)_\text{SP}$ and the linear energy transfer in the degenerate interior $(dE/dx)_\text{LET}$ are possibly controlled by different physics and may have very different numerical values.
+In addition, a transit heating event satisfying condition \eqref{eq:CrustCondition} will have negligible energy loss over the parametrically smaller trigger size or heating length $L_0$, validating the boom condition \eqref{eq:transitexplosion}. 
 
 \subsection{Collisions and Decays}
 
 \paragraph{Boom Condition.}
-For a point-like decay or collision event releasing particles of heating length $L_0$, ignition will occur if the total energy in SM products satisfies condition~\eqref{eq:energy_boom_condition}.
-Such an event will likely result in both SM and dark sector products, so we parameterize the resulting SM energy as a fraction $f_\text{SM}$ of the DM mass.
-For non-relativistic DM, the DM mass is the dominant source of energy and therefore $f_\text{SM} \lesssim 1$ regardless of the interaction details, however we may well suspect that $f_\text{SM} \ll 1$ for realistic models.
-With this parameterization, the explosion condition is
+For a point-like DM-DM collision or DM decay event releasing particles of heating length $L_0$, ignition will occur if the total energy in SM products satisfies condition~\eqref{eq:energy_boom_condition}.
+Such an event will likely result in both SM and dark sector products, so we parameterize the resulting energy in SM particles as a fraction $f_\text{SM}$ of the DM mass.
+For non-relativistic DM, the DM mass is the dominant source of energy and therefore $f_\text{SM} \lesssim 1$ regardless of the interaction details, although we may well suspect that $f_\text{SM} \ll 1$ for realistic models.
+With this parameterization, the boom condition for both collisions and decays is
 \begin{equation}
 \label{eq:coldecay}
   m_\text{DM} f_\text{SM}  \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3.
@@ -410,17 +411,15 @@ With this parameterization, the explosion condition is
 We are thus sensitive to DM masses $m_\text{DM} \gtrsim 10^{16} ~\GeV$.
 
 \paragraph{Event Rate: DM Wind.}
-DM of mass $m_\text{DM}$ with negligible energy loss to the WD medium will traverse the star in roughly a time $R_\text{WD}/v_\text{esc}$ and have a number density within the WD enhanced relative to the galactic density by a factor $v_\text{esc}/v \sim \OO(10)$ due to gravitational focusing.
-Here $v_\text{esc} \sim 10^{-2} $ is the stellar escape velocity and $v \sim 10^{-3}$ the galactic virial velocity.
-In the wind scenario, the expected DM-DM collision rate parameterized by a cross-section $\sigma_\text{DM-DM}$ is:
+DM with negligible energy loss in the WD medium will traverse the star in roughly a time $\sim R_\text{WD}/v_\text{esc}$ and have a number density within the WD enhanced relative to the galactic density by a factor $v_\text{esc}/v \sim \OO(10)$.
+In the wind scenario, the DM-DM collision rate inside the WD parameterized by a cross-section $\sigma_\text{DM-DM}$ is:
 \begin{align}
   \Gamma_\text{collision}
-  %&\sim n_\text{DM} \sigma_\text{DM-DM} v_\text{esc}
- %\cdot n_\text{DM} R_\text{WD}^3 \\
+  %&\sim n_\text{DM} \sigma_\text{DM-DM} v_\text{esc} \cdot n_\text{DM} R_\text{WD}^3 \\
   \sim \l \frac{\rho_\text{DM}}{m_\text{DM}} \r^2 \sigma_\text{DM-DM} \l \frac{v_\text{esc}}{v}\r^2 v_\text{esc} R_\text{WD}^3. 
   \label{eq:collisionDM}
 \end{align}
-Similarly, the net DM decay rate parameterized by a lifetime $\tau_\text{DM}$ is:
+Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_\text{DM}$ is:
 \begin{align}
  \Gamma_\text{decay}
   %&\sim \frac{1}{\tau_\text{DM}} \cdot n_\text{DM} R_\text{WD}^3 \\
@@ -429,11 +428,10 @@ Similarly, the net DM decay rate parameterized by a lifetime $\tau_\text{DM}$ is
 \end{align}
 
 \paragraph{Event Rate: DM Capture.}
-\textcolor{blue}{should probably add a citation somewhere here or above to Bru Monte}
 We first review the evolution of DM within the star during a capture scenario.
-As the DM rapidly loses energy it will thermalize with the star and slow to velocity
+As the DM rapidly loses energy it will thermalize with the star and slow to a velocity
 \begin{equation}
-v_\text{th} \sim \sqrt{\frac{T}{m_\text{DM}}} \approx 10^{-12} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2}
+v_\text{th} \sim \sqrt{\frac{T}{m_\text{DM}}} \approx 10^{-12} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2},
 \end{equation}
 where $T \sim \keV$ is the WD temperature.
 It will then accumulate at the virial radius set by $v_\text{th}$
@@ -442,30 +440,29 @@ It will then accumulate at the virial radius set by $v_\text{th}$
   &\approx 10^{-1} ~\text{cm} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2}
   \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}, \nonumber
 \end{align}
-where we have assumed a constant WD density within $R_\text{vir}$.
-DM will collect at this radius until its total mass exceeds that of the WD medium within $R_\text{vir}$,
+where we have assumed a constant WD density $\rho_\text{WD}$ within $R_\text{vir}$.
+DM will collect at this radius until its total mass exceeds the WD mass within $R_\text{vir}$,
 \begin{align}
-    M_\text{core} &\sim R^3_\text{vr} \rho_\text{WD} \\
-    &\approx 10^{26}~\GeV ~\l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{3/2}
+    M_\text{core} &\sim \rho_\text{WD} R^3_\text{vir} \\
+    &\approx 10^{29}~\GeV ~\l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{3/2}
   \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}. \nonumber
 \end{align}
 The DM cloud will then begin gravitational collapse.
 The exact nature of this collapse is model-dependent, eventually being arrested by DM-DM interactions or the formation of a black hole.
-For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius of $M_\text{core}$.
+For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius $\sim G M_\text{core}$.
 
 There are several timescales relevant to this process.
 The longest one is simply the time required for thermalized DM to drift down to the central core
 \begin{align}
 \label{eq:tdrift}
-  t_\text{drift} \sim \frac{R_\text{WD}}{v_\text{th}}
-  \approx 50 ~\text{yr} ~ \l \frac{m_\text{DM}}{10^{16} ~\GeV} \r^{1/2}.
+  t_\text{drift} &\sim \frac{R_\text{WD}}{v_\text{th}} \\
+  &\approx 50 ~\text{yr} ~ \l \frac{m_\text{DM}}{10^{16} ~\GeV} \r^{1/2}. \nonumber
 \end{align}
 This is much larger than the time needed for the star to stop a critical mass of DM, governed by the rate $\Gamma_\text{transit}$ of DM passing through the star
 \begin{align}
 \label{eq:tcol}
-  t_\text{collect}
-  \approx 10 ~\text{s} \l \frac{10^{16} ~\GeV}{m_\text{DM}} \r^{3/2}
-  \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}
+  t_\text{collect} &\sim \l \frac{M_\text{core}}{m_\text{DM}}\r \frac{1}{\Gamma_\text{transit}} \\
+  & \approx 10 ~\text{s} \l \frac{10^{16} ~\GeV}{m_\text{DM}} \r^{3/2} \l \frac{0.3 ~\GeV/\text{cm}^3}{\rho_\text{DM}} \r \nonumber
 \end{align}
 or the timescale of the collapse itself
 \begin{align}
@@ -474,6 +471,7 @@ or the timescale of the collapse itself
 \end{align}
 which holds both if the DM collapses in gravitational free-fall or remains thermalized with the WD medium.
 The core thus forms in a time $t_\text{drift}$, provided the mass of DM is sufficiently small - for masses $m_\text{DM} \gtrsim 10^{30}~\GeV$ the core will not form within the lifetime of the star.
+Note that $t_\text{drift}$, $v_\text{esc}$ and $R_\text{WD}$ also scale with WD density, although not by more than an order of magnitude in our range of densities. 
 
 For decay heating, capture gives an enhancement due to the increased number of DM particles within the WD.
 This can be very large if the DM core admits decays, however it is still significantly enhanced over the wind scenario even for inert cores, as in the case that the DM forms a black hole.
