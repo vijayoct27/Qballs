@@ -217,6 +217,7 @@ These scenarios may have very different heating lengths, and we will distinguish
 
 \subsection{Hadronic and Electronmagnetic Showers}
 
+\paragraph{Hadronic Showers}
 Incident hadrons with kinetic energy $\epsilon$ larger than the nuclear binding scale $E_\text{nuc} \sim 10~\MeV$ will undergo violent inelastic collisions with carbon ions resulting in an $\OO(1)$ number of secondary hadrons. \textcolor{blue}{cite something}
 This results in a roughly collinear shower of hadrons which ends when the constituents reach an energy $\sim E_\text{nuc}$.
 This occurs over a shower length 
@@ -230,68 +231,65 @@ The shower terminates into a cloud of $\sim 10~\MeV$ hadrons, composed of roughl
 Note that neutral pions of energy $10 - 100 ~\text{MeV}$ have a decay length to photons of $\delta_\pi \sim 10^{-6} ~\text{cm}$.
 At the highest densities, therefore, hadronic showers will produce an electromagnetic component carrying an $\OO(1)$ fraction of the energy.
 
-Electromagnetic interactions can also lead to showers of electrons and photons sustained by successive bremsstrahlung or pair-production events. 
-At low energy these have a small shower length 
+\paragraph{Electromagnetic Showers}
+Electrons and photons will also undergo radiative showers sustained by successive bremsstrahlung and pair-production events. 
+These terminate in a cloud of electrons and photons at some critical energy $E_\text{crit}$,  set by the scale at which radiative processes become subdominant to elastic scatters. 
+This is a strong function of WD density, ranging between $10~\MeV$ and $10^4~\MeV$. \textcolor{blue}{verify against plots}
+At low energy these electromagnetic showers are short, 
 \begin{align}
 \label{eq:emlength}
   X_\text{EM} \sim \approx 10^{-9} ~\text{cm} 
   \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
 \end{align}
 \textcolor{blue}{cite something}
-However, at high energy this is elongated due to the ``Landau-Pomeranchuk-Migdal" (LPM) effect. 
-In a high density environment, the virtual photon exchanged during a bremsstrahlung or pair-production event will interact incoherently with many nearby ions, suppressing the cross-section.  
-For energies $\epsilon > E_\text{LPM}$, this yields the shower length
+However, at higher energies they are elongated by to the ``Landau-Pomeranchuk-Migdal" (LPM) effect. 
+In a density medium, soft virtual photons cannot be exchanged with only one ion, but rather interact simultaneously with multiple ions.
+This generates an incoherence, suppressing radiative cross-sections above the LPM scale $E_\text{LPM}$.
+The corresponding shower length is
 \begin{align}
   X_\text{EM} &\sim 10^{-9} ~\text{cm} 
   \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r 
   \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2} \\
  E_\text{EPM} &\sim \text{numbers}.
 \end{align}
-where $E_\text{LPM}$ is the characteristic scale of LPM suppression.
 \textcolor{blue}{cite something}
-This scaling ensures that hadronic interactions dominate at sufficiently high energies, even for incident electrons and photons. 
+For the most dense WDs, $E_\text{LPM} < T_f$ and electromagnetic showers are always suppressed.  
+Yet for low density WD, the energy scaling of LPM effect ensures that hadronic interactions dominate at sufficiently high energies even for electrons and photons. 
 
-  
+\paragraph{Photonuclear and Electronuclear Showers}
+Electrons and photons can interact hadronicly via quark-antiquark pairs and directly induce hadronic showers off ions. 
+The only quantitative difference between these showers and purely hadronic ones is that they require a slightly longer distance to initiate. 
+Essentially, the photonuclear process is suppressed by a factor of $\alpha$ required to produce a quark-antiquark pair,
+\begin{align}
+\label{eq:photonuclength}
+  X_{\gamma\text{-nuc}} \sim 
+  \approx 10^{-4} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
+\end{align}
+\textcolor{blue}{check numbers}
+The electronuclear interactions are similarly supressed by an addition factor of $\alpha$, however a full calculation also yield an $\OO(10)$ phase-space factor,
+\begin{align}
+\label{eq:electronuclength}
+  X_\text{e-nuc} \sim 
+  \approx 10^{-3} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
+\end{align}
+\textcolor{blue}{check numbers}
+Note that these are the distances to begin a shower, while the shower itself extends a distance $\sim X_\text{had}$.
+The heating length $L_0$ as defined in Section~\ref{sec:Review} is given by the initial distance only if the DM produces many outgoing particles.
+If a single high-energy particle is produced, the initial distance give only a displacement of the eventual heated region from the DM interaction vertex, while $L_0$ will be set by the thermalization of the final-state hadrons.  
+In the purely hadronic case there is no such hierarchy.
 
-% For slightly larger energies, there is a narrow window $10~\GeV \lesssim \epsilon \lesssim 100~\GeV$ in which both electrons and photons are dominated by radiative processes.
-% In this regime we thus have an EM shower, which terminates at energies of $\sim 10~\GeV$ into a cloud of electrons and photons, which thermalize as described above.
-% This is a collinear shower covering about a decade in energy, so its principle effect is to amplify the number of energetic particles by a factor of $10$ and to disperse them over an EM shower length (note that since many particles are necessary involved here, this is a broadening of the heating peak and not a displacement).
-% If $N$ electrons or photons are released with energy $\epsilon$ and create EM showers, the shower products with thermalize an electron-photon gas of temperature
-% \begin{align}
-%   T_{e\gamma} \sim \frac{10 N \epsilon}{Z n_\text{ion} X_\text{EM}^3}
-% \end{align}
-% where $X_\text{EM}$ is the length of the EM shower.
-% At these densities, the shower lengths are extended by the LPM effect and given by
-% \begin{align}
-%   X_\text{EM} \sim X_0 \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2},
-% \end{align}
-% where $E_\text{LPM} \sim$ \textcolor{blue}{NUMBERS} and $X_\text{EM} \sim$ \textcolor{blue}{NUMBERS}. \textcolor{blue}{citation}
-% As above, if $T_{e\gamma} \gtrsim 10~\MeV$ this will produce photonuclear hadronic showers and heat the ions over a scale $l_\gamma$.
+\paragraph{Neutrino-induced Showers}
+Neutrinos will scatter off ions with a cross section that increases with energy. 
+In these interaction, an $\OO(1)$ fraction of the neutrino energy is transferred to the nucleus with the rest going to produced electrons \cite{Formaggio:2013kya} - this is sufficient to start a hadronic shower.
+At an energy of $\sim 10^{11} ~\GeV$, \cite{Formaggio:2013kya} calculates the neutrino-nuclear cross section $\sigma_{\nu-\text{nuc}} \sim 10^{-32} ~\cm^2$, which we will conservatively take as an estimate for even higher energies.
+This gives length of $X_\nu \sim \text{meter}$ to initiate a shower.
+While this is too large to provide heating via the release of many low-energy neutrinos, a single neutrino of energy $\sim \Eboom$ is indeed explosive. 
 
-\textcolor{blue}{cite something}
 
-\subsection{Low-Energy Elastic Heating}
+\subsection{Elastic Heating}
 
-\subsection{Neutrinos}
 
 % \subsection{Heating Properties: Hadrons}
-
-
-% For high-energy incident hadrons, the energy loss is dominated by inelastic nuclear collisions in which the incoming hadron violently interacts with a target nucleus to produce an $\OO(1)$ number of secondary hadrons.
-% This results in a roughly collinear hadronic shower that terminates when shower constituents reach a critical energy $E_\text{crit}$.
-% These final-state hadrons will consist of roughly equal fractions of pions, protons, and neutrons.
-% For neutrons, $E_\text{crit}$ is of order the nuclear binding energy $\sim 10 ~\text{MeV}$ although for charged hadrons, it is either $\sim 10 ~\MeV$ or the energy when Coulomb collisions with electrons becomes dominant.
-% The precise value of $E_\text{crit}$ is a nontrivial function of the WD density.
-% The shower length is determined by the typical mean free path $l_\text{inel}$ and cross-section $\sigma_\text{inel} \approx 100 ~\text{mb}$ for inelastic collisions:
-% \begin{align}
-% \label{eq:hadlength}
-%   X_\text{had} \sim l_\text{inel} \log\l\frac{\epsilon}{E_\text{crit}}\r
-%   \approx 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
-% \end{align}
-% As a result, a high-energy nucleon or pion ultimately transfers its energy to many low-energy hadrons, displaced a distance $X_\text{had}$ from its starting point.
-% Note that neutral pions decay to photons with a mean lifetime $\sim 10^{-16} ~\text{s}$, so that a $10 - 100 ~\text{MeV}$ neutral pion has a decay length of order $\sim 10^{-6} ~\text{cm}$.
-% Hence, there will be negligible electromagnetic contributions from $\pi^0$ decays during the progression of a hadronic shower.
-% For simplicity we focus on the hadronic component, which will carry a significant fraction of the shower energy.
 
 % At energies less than $\sim 10 ~\MeV$, protons and neutrons are predominantly stopped by elastic nuclear scatters, characterized by a mean free path $l_\text{el}$ and cross-section $\sigma_\text{el} \approx 1 ~\text{b}$.
 % On the other hand, charged pions will primarily transfer their energy to electrons in the stellar medium via Coulomb collisions.
@@ -328,37 +326,6 @@ This scaling ensures that hadronic interactions dominate at sufficiently high en
 % The total length of these photo-nuclear showers is given by $l_\gamma + X_\text{had}$, where $X_\text{had}$ is the hadronic shower length and $l_\gamma$ the mean free path for a photonuclear collision, which is related to the hadronic mean free path for nonelastic nuclear collisions by $\sim l_\text{h,non}/\alpha$.
 % The photonuclear piece dominates, and it also dominates the initial scale of the heated electrons and photons $\lambda_{e\gamma}$, so we find that a low-energy cloud of electrons or photons will eventually heat ions over a distance $\sim l_\gamma$.
 
-% For slightly larger energies, there is a narrow window $10~\GeV \lesssim \epsilon \lesssim 100~\GeV$ in which both electrons and photons are dominated by radiative processes.
-% In this regime we thus have an EM shower, which terminated at energies of $\sim 10~\GeV$ into a cloud of electrons and photons, which thermalize as described above.
-% This is a collinear shower covering about a decade in energy, so its principle effect is to amplify the number of energetic particles by a factor of $10$ and to disperse them over an EM shower length (note that since many particles are necessary involved here, this is a broadening of the heating peak and not a displacement).
-% If $N$ electrons or photons are released with energy $\epsilon$ and create EM showers, the shower products with thermalize an electron-photon gas of temperature
-% \begin{align}
-%   T_{e\gamma} \sim \frac{10 N \epsilon}{Z n_\text{ion} X_\text{EM}^3}
-% \end{align}
-% where $X_\text{EM}$ is the length of the EM shower.
-% At these densities, the shower lengths are extended by the LPM effect and given by
-% \begin{align}
-%   X_\text{EM} \sim X_0 \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2},
-% \end{align}
-% where $E_\text{LPM} \sim$ \textcolor{blue}{NUMBERS} and $X_\text{EM} \sim$ \textcolor{blue}{NUMBERS}. \textcolor{blue}{citation}
-% As above, if $T_{e\gamma} \gtrsim 10~\MeV$ this will produce photonuclear hadronic showers and heat the ions over a scale $l_\gamma$.
-
-% Finally, at high energies $\epsilon \gtrsim 100~\GeV$ a released photon or electron will deposit energy directly into hadronic showers without first thermalizing a region of electron-photon gas.
-% Effectively, electrons and photons at this energy behave qualitatively like hadrons, with the quantitative difference in that they require a slightly longer distance to initiate a hadronic shower.
-% The physics is the same as that discussed in Section \ref{sec:SOMETHING}, though we now must add a photonuclear or electronucler length scale to the shower length $X_\text{had}$.
-% For $100~\GeV \lesssim \epsilon \lesssim 1~\TeV$, the shower is always photonuclear, as a released electron is more likely to bremsstrahlung than scatter off a nucleus and that bremmed photon is then able to start a photonuclear shower.
-% For $\epsilon \gtrsim 1~\TeV$, however, released electrons will start hadronic showers directly by radiating a virtual photon which undergoes a photonuclear collision.
-% This slows the electron over a length scale $\sim 10~l_\gamma/\alpha \sim 10 l_\text{h,non}/\alpha^2 $.
-
-% \subsection{Heating Properties: Neutrinos}
-
-% Neutrinos interact very weakly, although their nuclear cross-section $\sigma_{\nu A}$ rises with energy.
-% At an energy of $\sim 10^{11} ~\GeV$, \cite{Formaggio:2013kya} calculates the cross-section to be $\sigma_{\nu A} \sim 10^{-32} ~\cm^2$.
-% Taking this to be a conservative estimate for nuclear cross-section at even higher energies, we find the mean free path for a neutrino-nuclei scatter is of order $\sim \text{meter}$.
-% However, if we consider the release of a single ultra-high energy neutrino, than this mean free path is simply a displacement of the eventual thermal profile.
-% In a nuclear interaction, $20 \%$ of the neutrino energy is transferred to the nucleus while the rest is transferred to produced electrons \cite{Formaggio:2013kya}.
-% In this case, the energy deposited to the nucleus is sufficient to start a hadronic shower.
-% Therefore, a ultra-high energy neutrino behaves like a hadron and the neutrino heating length is simply $L_0 \sim X_\text{had}$.
 
 \section{Dark Matter-Induced Ignition}
 \label{sec:DMexplode}
