@@ -128,7 +128,7 @@ As a concrete example we consider ultra-heavy Q-ball DM as found in supersymmetr
 The rest of the paper is organized as follows.
 We begin in Section~\ref{sec:Review} by reviewing the mechanism of runaway fusion in a WD.
 In Section~\ref{sec:SMHeating} we study the non-gravitational heating of a WD due to the production of high-energy SM particles.
-Detailed calculations of the stopping of such particles are provided in Appendix \ref{sec:Appendix}.
+Detailed calculations of the stopping of such particles are provided in Appendix \ref{sec:wdpdg}.
 In Section~\ref{sec:DMexplode} we parameterize the explosiveness and rate of events for generic classes of DM-WD encounters, and in Section~\ref{sec:Constraints} we derive schematic constraints on such models using WD observables.
 Finally we specialize to the case of Q-balls in Section~\ref{sec:QBalls}, and conclude in Section~\ref{sec:Discussion}.
 
@@ -213,7 +213,7 @@ We summarize the dominant source of energy loss and the resulting ranges $\lambd
 \end{align}
 where $dE/dx$ is the stopping power in the WD medium.
 These are plotted in \textcolor{blue}{figures}.
-A detailed treatment of the stopping powers is reserved for Appendix \ref{sec:Appendix}.
+A detailed treatment of the stopping powers is reserved for Appendix \ref{sec:wdpdg}.
 We will consider incident electrons, photons, light hadrons, and neutrinos, and since we are concerned with triggering runaway fusion we take $\epsilon \gg T_f \sim \text{MeV}$.
 Note that an explosive heating event may consist of either producing a few very high-energy particles, or $N \gg 1$ low-energy particles.
 These scenarios may have very different heating lengths, and we will distinguish between them when applicable.
@@ -221,7 +221,7 @@ These scenarios may have very different heating lengths, and we will distinguish
 \subsection{High-Energy Showers}
 
 \paragraph{Hadronic Showers.}
-Incident hadrons with kinetic energy $\epsilon$ larger than the nuclear binding scale $E_\text{nuc} \sim 10~\MeV$ will undergo violent inelastic collisions with carbon ions resulting in an $\OO(1)$ number of secondary hadrons. \textcolor{blue}{cite something}
+Incident hadrons with kinetic energy $\epsilon$ larger than the nuclear binding scale $E_\text{nuc} \sim 10~\MeV$ will undergo violent inelastic collisions with carbon ions resulting in an $\OO(1)$ number of secondary hadrons.
 This results in a roughly collinear shower of hadrons which ends when the constituents reach an energy $\sim E_\text{nuc}$.
 This occurs over a shower length
 \begin{align}
@@ -229,35 +229,36 @@ This occurs over a shower length
   X_\text{had} \sim l_\text{inel} \log\l\frac{\epsilon}{E_\text{nuc}}\r
   \approx 10^{-6} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r
 \end{align}
-where $l_\text{inel}$ is the mean free path for nuclear scatters, set by the cross-section $\sigma_\text{inel} \approx 100 ~\text{mb}$ and we have suppressed the weak logarithmic energy dependence. \textcolor{blue}{cite something}
-The shower terminates into a cloud of $\sim 10~\MeV$ hadrons, composed of roughly equal fractions of pions, protons, and neutrons. \textcolor{blue}{cite something}
+where $l_\text{inel}$ is the mean free path for nuclear scatters, set by $\sigma_\text{inel} \approx 100 ~\text{mb}$ and we have taken the logarithm to be $\sim 10$. 
+The shower terminates into a cloud of $\sim 10~\MeV$ hadrons, composed of roughly equal fractions of pions, protons, and neutrons.
+For a more detailed discussion of hadronic showers, see Appendix~\ref{sec:nuclear}.
 Note that neutral pions of energy $10 - 100 ~\text{MeV}$ have a decay length to photons of $\delta_\pi \sim 10^{-6} ~\text{cm}$.
 Hadronic showers will therefore generate an electromagnetic component carrying an $\OO(1)$ fraction of the energy.
 
 \paragraph{Electromagnetic Showers.}
 Electrons and photons will also undergo radiative showers sustained by successive bremsstrahlung and pair-production events.
-These terminate in a cloud of electrons and photons at some critical energy $E_\text{crit}$,  set by the scale at which radiative processes become subdominant to elastic scatters.
-This is a strong function of WD density, ranging between $10~\MeV$ and $10^4~\MeV$. \textcolor{blue}{verify against plots}
-At low energy these electromagnetic showers are short,
+These terminate in a cloud of electrons and photons at some critical energy $E_\text{crit}$, set by the scale at which radiative processed become subdominant to elastic or hadron interactions.
+This is a strong function of WD density, ranging between $100~\MeV$ and $10^6~\MeV$, as evidenced by \textcolor{blue}{figure}.
+Note that these processes are strictly forbidden below the electron Fermi energy.  
+For sufficiently high energies, EM showers are elongated due to the ``Landau-Pomeranchuk-Migdal" (LPM) effect.
+In a dense medium, arbitrary soft virtual photons cannot be exchanged with only one ion, but rather interact simultaneously with multiple ions.
+This generates an incoherence, suppressing the radiative cross-section above the LPM scale $E_\text{LPM}$ which scales inversely with medium density,
 \begin{align}
-\label{eq:emlength}
-  X_\text{EM} \approx 10^{-9} ~\text{cm}
+    E_\text{LPM} \approx 1~\MeV 
+    \l \frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}} \r
+\end{align}
+See Appendix~\ref{sec:emshowers} for more details.
+At our highest densities EM showers are always LPM-suppressed, whereas at low densities we observe both regimes.  
+The corresponding shower lengths are
+\begin{align}
+  X_\text{EM} &\approx X_0 \cdot \begin{cases}
+  \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2} & \epsilon > E_\text{LPM} \\
+  \;\;\;\;\;\, 1 & \epsilon < E_\text{LPM} 
+  \end{cases} \\
+  X_0 &\approx 10^{-7} ~\text{cm} 
   \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
 \end{align}
-\textcolor{blue}{cite something}
-However, at higher energies they are elongated by to the ``Landau-Pomeranchuk-Migdal" (LPM) effect.
-In a density medium, soft virtual photons cannot be exchanged with only one ion, but rather interact simultaneously with multiple ions.
-This generates an incoherence, suppressing radiative cross-sections above the LPM scale $E_\text{LPM}$.
-The corresponding shower length is
-\begin{align}
-  X_\text{EM} &\approx 10^{-9} ~\text{cm}
-  \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r
-  \l \frac{\epsilon}{E_\text{LPM}} \r^{1/2} \\
- E_\text{EPM} &\approx \text{numbers}.
-\end{align}
-\textcolor{blue}{cite something}
-For the most dense WDs, $E_\text{LPM} < T_f$ and electromagnetic showers are always suppressed.
-Yet for low density WD, the energy scaling of LPM effect ensures that hadronic interactions dominate at sufficiently high energies even for electrons and photons.
+The energy scaling of LPM effect ensures that hadronic interactions dominate at sufficiently high energies even for electrons and photons.
 
 \paragraph{Photonuclear and Electronuclear Showers.}
 Electrons and photons can interact hadronicly via quark-antiquark pairs and directly induce hadronic showers off ions.
@@ -303,21 +304,25 @@ Thus any processes that heats ions will also establish an EM bath and must depos
 What remains to check, however, is the length scale of this bath which may nominally depend on the heating mechanism, though we will show below that it is indeed \textcolor{blue}{always below or of order the trigger size} for any SM heating species.
 
 \paragraph{Nucleons and Pions.}
-Neutrons and neutral pions are the simplest species we consider, interacting a these scales only via elastic nuclear scatters.
+Neutrons and neutral pions are the simplest species we consider, interacting at these energies only via elastic nuclear scatters.
 These are stronger than the inelastic interactions, $\sigma_\text{el} \approx 1 ~\text{b}$ \textcolor{blue}{cite something}.
-In addition, the mass hierarchy between these particles and ions will require $\sim 10 - 100$ scatters to transfer the hadron's energy, further suppressing the range by a random-walk factor,
+However, the mass hierarchy between these particles and ions will require $\sim 10 - 100$ scatters to transfer the hadron's energy, which elongates the range by a random-walk factor. 
+This range is
 \begin{align}
  \lambda_\text{el} &\approx
- 10^{-7} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
+ 10^{-7} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r,
 \end{align}
-This is always less than the trigger size, and also smaller than the $\pi^0$ decay length $\delta_\pi \sim 10^{-6} ~\text{cm}$, so neutrons and neutral pions provide efficient heating.
-In the context of a hadronic shower, the final-state neutrons contain a $\OO(1)$ fraction of the initial energy and thus hadronic showers are also an efficient heating mechanism.
+which is always less than the trigger size and the $\pi^0$ decay length $\delta_\pi \sim 10^{-6} ~\text{cm}$. 
+Low-energy neutrons and neutral pions thus provide efficient heating.
 
-Charged hadrons are subject 
-Finally, the low-energy charged hardrons will heat the WD medium in a manner effectively identical to heating by electrons.
-While they do undergo nuclear scatters similar to their neutral brethren, these interactions are subdominant to Coulomb collisions with WD electrons.
-This is plotted in \textcolor{blue}{figure}.
-Charged hadrons thus rapidly thermalize with electrons, who in turn establish a thermal EM cloud and heat ions as described above.
+Charged hadrons at are subject to Coulomb interactions with ions and electrons, as well as nuclear scatters similar to their neutral brethren. 
+These ranges are plotted in \textcolor{blue}{figure}.
+It is curious that for $E \lesssim 10~\MeV$ scattering off electrons proves the least dominant of these processes, contrary to the behavior of terrestrial detectors. 
+This is due to significant Pauli-suppression of electron interactions at these energies, as $E_F \sim 1-10~\MeV$.
+Low-energy charged hadrons will thus predominantly transfer energy to ions, which occurs below the trigger size for both nuclear-dominated and EM-dominated stopping. 
+
+In the context of a hadronic shower, the final-state hadrons are $\sim1~\MeV$ nucleons and pions carrying an $\OO(1)$ fraction of the initial energy. 
+These products will thermalize within a trigger size and thus hadronic showers are also an efficient heating mechanism.
 
 \paragraph{Electrons and Photons.}
 As shown in \textcolor{blue}{figure}, electron stopping will be dominated by bremsstrahlung at all energies, however below the shower threshold photon stopping is dominated by elastic Compton scatters.
@@ -368,7 +373,7 @@ For simplicity we consider only the wind scenario for transit candidates, though
 
 \subsection{Transits}
 
-\paragraph{Boom Condition:}
+\paragraph{Boom Condition.}
 The energy deposited during a continuous heating event such as a DM transit is best described in terms of a linear energy transfer $(dE/dx)_\text{LET}$, the kinetic energy of SM particles produced per distance traveled by the DM.
 If these products have a heating length $L_0$ then the relevant energy deposit must at minimum be taken as the energy transferred over the transit distance $L_0$.
 Of course, we can always choose to consider energy deposits over a longer segment of the DM trajectory.
@@ -707,7 +712,7 @@ However, in light of the lack of understanding of DM and its interactions, it is
 \begin{appendices}
 
 \section{Particle Stopping in a White Dwarf}
-\label{sec:Appendix}
+\label{sec:wdpdg}
 Here we provide a detailed analysis of the electromagnetic and strong interactions in a carbon-oxygen WD, aimed towards calculating the energy loss per distance traveled of SM particles at an $\text{MeV}$ or greater.
 We consider incident electrons, photons, pions, and nucleons.
 The WD medium is very dense, with electron and ion number densities in the range $n_e = Z n_\text{ion} \sim 10^{31} - 10^{33} ~\cm^{-3}$ assuming $Z=6$.
@@ -1008,6 +1013,7 @@ where the change in scaling with $E$ marks a transition from Thompson-like scatt
 As expected, we find that the inverse Compton stopping power is negligible compared to Coulomb scattering.
 
 \subsection{Bremsstrahlung and Pair Production with LPM Suppression}
+\label{sec:emshowers} 
 
 Bremsstrahlung and pair production can be a dominant stopping mechanisms for high-energy electrons and photons.
 We restrict our attention to radiative processes off target nuclei rather than target electrons as the latter are additionally suppressed by degeneracy, kinematic recoil, and charge factors.
@@ -1080,6 +1086,7 @@ A similar crossover is to be expected for other higher-order diagrams as well, a
 Rather, at such high energies the stopping power is dominated by photonuclear and electronuclear interactions anyway, and we may simply ignore the contributions from other radiative processes \cite{Kleinconvo}.
 
 \subsection{Nuclear Interactions}
+\label{sec:nuclear}
 
 Nuclear interactions can be either elastic or inelastic - the nature of the interaction is largely determined by the incident particle energy.
 Elastic collisions are most significant for energy loss at scales less than the nuclear binding energy $\sim 10 ~\text{MeV}$.
