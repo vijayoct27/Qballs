@@ -1108,53 +1108,75 @@ Rather, at such high energies the stopping power is dominated by photonuclear an
 \subsection{Nuclear Interactions}
 \label{sec:nuclear}
 
+\paragraph{Elastic Scattering.}
 Nuclear interactions can be either elastic or inelastic - the nature of the interaction is largely determined by the incident particle energy.
 Elastic collisions are most significant for energy loss at scales less than the nuclear binding energy $\sim 10 ~\text{MeV}$.
-A single, backward elastic scatter could result in an incident particle losing virtually all of its energy if the incident and target masses are the same.
-However, we will be primarily concerned with light hadrons incident on relatively heavy nuclei, i.e. ping-pong balls bouncing around a sea of bowling balls.
-An elastic collision between a incident, non-relativistic hadron of mass $m$, kinetic energy $E$ and a stationary nuclear target of mass $M$ results in an average final energy
+These are hard scatters, however, as we are primarily concerned with light hadrons incident on heavy nuclei, these scatters will each transfer a small fraction of the incident energy - i.e.,~ping-pong balls bouncing around a sea of bowling balls.
+An elastic collision between a incident, non-relativistic hadron of mass $m$, kinetic energy $E$ and a stationary nucleus of mass $M \gg m$ results in an average energy transfer $\omega$
 \begin{equation}
 \label{eq:elasticratio}
-E' \sim \l \frac{m}{M}\r E, ~~~~ m < M,
+\omega \sim \l \frac{m}{M}\r E
 \end{equation}
-where it is assumed there is an isotropic distribution in the center-of-mass scattering angle.
+where we assume the scattering is not dominated by soft, forward scatters. 
 Above $\sim \text{MeV}$, it is found that electrostatic repulsion is negligible for nuclear interactions of protons and $\pi^+$.
-Therefore, the stopping power for any light hadron due to elastic collisions is of the form
+Therefore, the stopping power for any light hadron due to elastic collisions is simply 
 \begin{equation}
-- \l \frac{dE}{dx} \r \sim \l \frac{m}{M} \r \frac{E}{l_\text{el}}.
+  \frac{dE}{dx} \sim \frac{m}{M} E n_\text{ion} \sigma_\text{el}
 \end{equation}
-$l_\text{el}$ denotes the mean free path for elastic collisions characterized by cross-section $\sigma_\text{el}$.
-Above $10 ~\MeV$ the nuclear elastic cross-section approaches the geometric cross-section for carbon $\sim 100 ~\text{mb}$, while at $\MeV$ energies the elastic cross section generally rises to be of order $\sim \text{b}$.
-At intermediate energies $1 - 10 ~\MeV$, the interaction is dominated by various nuclear resonances \cite{Tavernier}.
-For our purposes, we will conservatively estimate the elastic cross section for nucleons and pions to be $\sigma_\text{el} \approx 1 ~\text{b}$ when $E \lesssim 10 ~\MeV$, and ignore the energy loss due to elastic scatters at higher energies where inelastic processes will dominate.
+where $\sigma_\text{el}$ is the elastic nuclear scattering cross-section. 
+Above $10 ~\MeV$ this approaches the geometric cross-section, which for carbon is $\sim 100 ~\text{mb}$, while at $\MeV$ energies the elastic cross section generally rises to be of order $\sim \text{b}$~\cite{Tavernier}.
+At intermediate energies $1 - 10 ~\MeV$, the interaction is dominated by various nuclear resonances~\cite{Tavernier} which are of no concern here.
+We conservatively estimate the elastic cross-section for nucleons and pions to be $\sigma_\text{el} \approx 1 ~\text{b}$ when $E \lesssim 10 ~\MeV$.
+At higher energies, we ignore elastic interactions as inelastic scatters dominate the energy loss.
 
+\paragraph{Inelastic Scattering.}
 Now we determine the stopping power due to inelastic nuclear collisions at $E \gtrsim 10 ~\MeV$.
 In such a collision, an incoming hadron interacts with one or more nucleons in the nucleus to produce a $\OO(1)$ number of additional hadrons which approximately split the initial energy.
-For incident energies greater than the nucleon binding energy $\sim \GeV$, the majority of secondary hadrons are pions which carry transverse momentum of order $\sim 100 ~\MeV$ \cite{Tavernier}.
-In addition, during this process the target nucleus is broken up.
-The nuclear fragment is typically left in an unstable state with negligible center-of-mass recoil, and relaxes via the slow emission of low-energy $\sim \MeV$ hadrons and photons.
-Note that for incident hadrons in the range $10 ~\MeV - \GeV$, it is found that roughly equal fractions of protons, neutrons, and pions are emitted after each inelastic collision \cite{Pionnuclear}.
+During this process the target nucleus is broken up.
+The nuclear fragment is typically left in an unstable state with negligible center-of-mass recoil, and relaxes via slow emission of low-energy $\sim \MeV$ hadrons and photons, which are a negligible fraction of the incident energy.
+For energies greater than the nucleon binding energy $\sim \GeV$, the majority of secondary hadrons are pions which carry transverse momentum of order $\sim 100 ~\MeV$ \cite{Tavernier}.
+For incident hadrons in the range $10 ~\MeV - \GeV$, it is found that roughly equal fractions of protons, neutrons, and pions are emitted after each collision \cite{Pionnuclear}.
 In either case, if secondary hadrons are sufficiently energetic then they will induce further inelastic collisions.
-A roughly collinear hadronic shower is the result of all such interactions caused by primary and secondary particles.
-This cascade is adequately described by a radiative stopping power
+This results in a roughly collinear hadronic shower terminating at an energy $\sim 10~\MeV$, consisting of pions for most of the shower's development and converting to an mix of pions and nucleons in the final decade of energy.
+This cascade is described by a radiative stopping power
 \begin{equation}
 \label{eq:nucshower}
--\l \frac{dE}{dx}\r \sim \frac{E}{l_\text{inel}},
+  \frac{dE}{dx} \sim \frac{E}{l_\text{inel}},
 \end{equation}
-neglecting of $\OO(1)$ logarithmic factors.
-$l_\text{inel}$ is the inelastic nuclear mean free path characterized by an inelastic cross-section $\sigma_\text{inel}$.
-At these energies, $\sigma_\text{inel} \approx 100 ~\text{mb}$ and is roughly constant in energy.
-The shower will end once final-state hadrons reach a critical energy - this is either the scale at which an additional mechanism dominates the stopping power or the nuclear binding energy $\sim 10 ~\MeV$.
+where $l_\text{inel}$ is the inelastic nuclear mean free path characterized by an inelastic cross-section $\sigma_\text{inel}$.
+At these energies, $\sigma_\text{inel} \approx 100 ~\text{mb}$ and is roughly constant in energy~\cite{Tavernier}.
+The length of the shower is only logarithmically dependent on the incident energy,
+\begin{align}
+    X_\text{had} \sim l_\text{inex} \log\l\frac{E}{10~\MeV}\r.
+\end{align}
 
+\paragraph{Photonuclear and Electronucelar Interactions.}
 Photons of energy $k \gtrsim 10 ~\text{MeV}$ can also strongly interact with nuclei through the production of virtual quark-antiquark pairs.
-Photonuclear interactions are similar in nature to the inelastic collisions of hadrons, although the cross-section $\sigma_{\gamma A}$ is roughly a factor $\approx \alpha$ smaller.
+This destroys the photon and fragments the nucleus, producing outgoing hadrons in a manner similar to the inelastic collisions of hadrons, although the cross-section $\sigma_{\gamma A}$ is roughly a factor $\approx \alpha$ smaller.
 Below $\sim \GeV$ the photonuclear cross-section is complicated by nuclear resonances while above $\sim \GeV$, $\sigma_{\gamma A}$ is a slowly increasing function of energy \cite{Tavernier}.
-At sufficiently high energies, photonuclear interactions can in fact become coherent with the photon interaction spread over multiple nuclei \cite{Gerhardt:2010bj}.
-This coherence will further reduce the photonuclear mean free path $l_{\gamma A}$.
-As a conservative estimate, at energies $k \gtrsim 10 ~\text{MeV}$ we assume a constant photonuclear cross-section of order $\sigma_{\gamma A} \approx \text{mb}$.
-Similarly, electrons can also lose energy by radiating a virtual photon that interacts hadronically with a nearby nucleus.
-Naively we would expect the electronuclear stopping power to parametrically be of the form $(dE/dx) \sim E \alpha/l_{\gamma A}$.
-A more detailed calculation in \cite{Gerhardt:2010bj} obtains a similar result but with an additional $\OO(10)$ numerical factor.
+This increase is due to a coherent interaction of the photon over multiple nuclei at higher energies~\cite{Gerhardt:2010bj}, however instead of extrapolating this we conservatively take a constant photonuclear cross-section of order $\sigma_{\gamma A} \approx \text{mb}$ for energies $k \gtrsim 10 ~\text{MeV}$.
+
+Electrons can similarly lose energy by radiating a virtual photon that interacts hadronically with a nuclei. 
+The cross-section for this process is roughly given by the photonuclear cross-section and scaled by a factor representing the probability to radiate such a photon. 
+This is the Weizsacker-Williams approximation, which gives a cross-section for an electron of kinetic energy $E$ to exchange an energy $k$ with a nucleus
+\begin{align}
+    \frac{d\sigma}{dk} &\approx \frac{dN}{dk} \sigma_{\gamma A}
+\end{align}
+where $dN/dk$ is the virtual photon flux \cite{Gerhardt:2010bj}
+\begin{align} 
+    \frac{dN}{dk} &\sim \frac{\alpha}{k} \log\l \frac{E}{m_e} \r.
+\end{align}
+Integrating this give the stopping power, 
+\begin{align}
+    \frac{dE}{dx} &\sim n_\text{ion} \int_{k_\text{min}}^E dk \;
+    k \cdot \frac{\alpha}{k} \log\l \frac{E}{m_e} \r  \sigma_{\gamma A} \\
+    &\approx \alpha \log\l \frac{E}{m_e} \r \sigma_{\gamma A} n_\text{ion} E.
+\end{align}
+$k_min$ is taken to be the critical energy for photonuclear interactions.
+Electronuclear stopping thus proceeds as a radiative process with length scale larger than the photonuclear length by a factor $\sim (10 \alpha)^{-1}$.
+Unlike the photonuclear event, this is a continuous radiative process with equal energy-loss contritions from radiation with all energies up to $E$. 
+
+
 \end{appendices}
 
 \section*{Acknowledgements}
