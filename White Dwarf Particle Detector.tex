@@ -849,7 +849,7 @@ The combined effect of these features is not obvious, though it can be understoo
 In addition, the full result can be calculated numerically.
 The scattering rate between an incident particle and the population of electrons with a given momentum $\vec{q}$ can be found easily in the center-of-mass frame.
 The stopping power then follows by boosting this result to the WD rest frame, calculating the corresponding energy transfers, and summing over the electron momentum distribution including only those scatters that excite electrons above the Fermi sea.
-This calculation is well-approximated by the limiting cases described below, as shown in Figure~\textcolor{blue}{plot of coulomb-electron stopping powers}.
+This calculation is well-approximated by the limiting cases described below.
 
 \subsubsection{Non-relativistic Incident Particles}
 Consider first the limit of a slow incident particle of mass $m \gg m_e$, charge number $Z$, and incident momentum $\vec{p}$ with $m \gg p$.
@@ -867,7 +867,7 @@ This results in an energy $\omega$ transfered from the incident,
 \end{align}
 If the incident momentum $p$ is smaller than the electron momentum $q$, the incident particle nominally gains energy from the electron.
 This cannot happen, however, as there no phase space for an electron to lose energy within the Fermi sea.
-We thus expect a cutoff in the stopping power for incident momenta near the Fermi momentum.
+We thus expect a cutoff for incident momenta near the Fermi momentum.
 For all incident species except electrons this occurs at energies below our region of interest, and so we proceed with $q \lesssim p$:
 \begin{align}
   \omega &\approx \frac{q p}{2m}
@@ -877,7 +877,7 @@ For all incident species except electrons this occurs at energies below our regi
 Before computing the stopping power, consider the relative important of Pauli blocking and plasma screening.
 Both of these effects achieve the same qualitative result, preventing the softest scatters from occurring.
 The Pauli effect will suppress scatters with energy transfer less than roughly the Fermi energy, while plasma screening suppresses scatters at impact parameter above $\lambda_\text{TF}$.
-As realized in the previous section, this corresponds to a momentum transfer
+As noted in the previous section, this corresponds to a momentum transfer
 \begin{align}
       q_\text{TF} \approx \frac{1}{\lambda_\text{TF}}
 \end{align}
@@ -889,7 +889,7 @@ and energy transfer
 \end{align}
 This is always going to be less than the Fermi energy for non-relativistic incident particles, and so we can ignore the plasma cutoff in favor of the Pauli cutoff.
 
-At leading order the electron is not aware of the small ion velocity, so scattering occurs with the recoilless, relativistic Mott cross section
+At leading order the electron is not aware of the small ion velocity, so scattering occurs with the recoilless, relativistic Mott cross-section
 \begin{align}
     \frac{d\sigma}{d\hat{q}_{out}} \approx \frac{\alpha^2 Z^2}{4\pi q^2}
     \frac{\cos^2\left(\frac{\theta}{2}\right)}
@@ -943,34 +943,43 @@ where $I_a \approx 10$ is a dimensionless angular integral that is independent o
    \, \left[\hat{p} \cdot \left(\hat{q}_{out} - \hat{q}_{in}\right)\right]^2
 \end{align}
 
-For the case of incident electrons, the low-energy stopping power includes an additional restriction that the incident electron not fall into the Fermi sea after transferring energy. We approximate this effect by simply setting $dE / d x = 0$ for incident electrons with energies $E\lesssim E_F$ the Fermi energy. For any incident electrons with energies $E\gtrsim E_F$, the electrons are effectively relativistic, and we use the stopping power for relativistic incident particles.
+For the case of incident electrons, the low-energy stopping power includes an additional restriction that the incident electron not fall into the Fermi sea after transferring energy. We approximate this effect by simply setting $dE / d x = 0$ for incident electrons with energies $E\lesssim E_F$ the Fermi energy. For incident electrons with energies $E\gtrsim E_F$, the electrons are relativistic and the above results gives a good approximation. 
 
 \subsubsection{Relativistic Incident Particles}
 
 Now consider a fast incident particle of mass $m \gg m_e$, charge number $Z$, and incident momentum $\vec{p}$ with $m \ll p$.
 The relative velocity between a target electron and the incident particle is of the same order as the ion's incident velocity itself, and we therefore expect the scattering to proceed, up to $\OO(1)$ factors, as though the electron were stationary.
-We take the energy transfer $\omega$ to be given by Equation~\eqref{eq:omega_piecewise} with the target mass $m_\text{ion}$ replaced by the electron momentum $q$, which provides the appropriate target inertia in this context.
-% \begin{align}
-%     \omega \approx
-%     \begin{dcases}
-%     \; \omega_\text{kin}        & \, b < b_0 \\
-%     \frac{\alpha^2 Z^2}{2 q b^2} & \, b > b_0
-%     \end{dcases}
-% \end{align}
-The stopping is then given by the Pauli-blocked generalization of Equation~\eqref{eq:stoppingpower_db}
+The energy transfer cross-section will then be given by equation~\eqref{eq:CoulombOffIonsCrossSection} with the target mass $m_\text{ion}$ replaced by the energy $\sqrt{m_e^2 + q^2}$ which is the appropriate target inertia for possibly relativistic targets.
+Since electrons near the Fermi surface will provided the dominant stopping power, we approximate this as simply $E_F$.
+We again ignore the plasma screening $\omega_\text{min}$ here as Pauli-blocking will provide a more stringent cutoff, 
+\begin{align}
+  \frac{d \sigma}{d \omega} \approx 
+  \frac{2 \pi Z^2 \alpha^2}{E_F} \frac{1}{\omega^2}.
+  \label{eq:CoulombRelativisticApprox}
+\end{align}
+This is integrated over the target distribution and the possible energy transfers in a Pauli-blocked generalization of Equation~\eqref{eq:StoppingPowerOffIons}
 \begin{align}
 \label{eq:stoppingpower_db}
   &\begin{aligned}  \frac{dE}{dx} = \Bigg[
-      \int &dq \, n_e \frac{3}{4\pi q_f^3} \, \Theta(q_f - q) \, \cdot \\
-      \int &db \, 2\pi b \, \omega \,
-      \Theta\left(\omega - q_f + q\right) \Bigg]. \end{aligned} \\
-  &\hphantom{\frac{dE}{dx}}
-    \approx n_\text{e} \frac{2\pi \alpha^2 Z^2}{E_F}
-    \, G\left(\frac{\omega_\text{kin}}{E_F}\right).
+      &\int d^3q \, n_e \frac{3}{4\pi q_f^3} \, \Theta(q_f - q) \; \cdot \\
+      &\int_0^{\omega_\text{kin}} d\omega \; 
+      \omega \, \frac{d\sigma}{d\omega}
+      \Theta\left(\omega - E_f + E\right) \Bigg] \end{aligned}
 \end{align}
-where the dimensionless factor $G$ is given by a Pauli integral
+where $E$ is the energy of the target electron $q$. 
+Inserting equation~\eqref{eq:CoulombRelativisticApprox},
+\begin{align}  
+ &\begin{aligned} \frac{dE}{dx} \approx 
+    \frac{2 \pi Z^2 \alpha^2 n_e}{E_F}  \Bigg[
+      &\int dq \, \frac{3 q^2}{q_f^3} \, \Theta(q_f - q) \; \cdot \nonumber \\
+      &\int_0^{\omega_\text{kin}} d\omega \, \frac{1}{\omega}
+      \Theta\left(\omega - q_f + q\right) \Bigg] \end{aligned} \\
+  & \;\;\;\;\;\;\; \approx \frac{2 \pi Z^2 \alpha^2 n_e}{E_F} \, 
+  F\l\frac{\omega_\text{kin}}{E_F}\r
+\end{align}
+where the factor $F$ is given by the above Pauli integral
 \begin{align}
-    G\left(x\right) =
+    F\left(x\right) =
     \begin{dcases}
     \frac{1}{3} x^3 - \frac{3}{2} x^2 + 3 x & x < 1 \\
     \;\;\;\, \frac{11}{6} + \log\left(x\right) & x > 1. \\
