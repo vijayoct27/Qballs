@@ -943,8 +943,6 @@ where $I_a \approx 10$ is a dimensionless angular integral that is independent o
    \, \left[\hat{p} \cdot \left(\hat{q}_{out} - \hat{q}_{in}\right)\right]^2
 \end{align}
 
-For the case of incident electrons, the low-energy stopping power includes an additional restriction that the incident electron not fall into the Fermi sea after transferring energy. We approximate this effect by simply setting $dE / d x = 0$ for incident electrons with energies $E\lesssim E_F$ the Fermi energy. For incident electrons with energies $E\gtrsim E_F$, the electrons are relativistic and the above results gives a good approximation. 
-
 \subsubsection{Relativistic Incident Particles}
 
 Now consider a fast incident particle of mass $m \gg m_e$, charge number $Z$, and incident momentum $\vec{p}$ with $m \ll p$.
@@ -967,7 +965,8 @@ This is integrated over the target distribution and the possible energy transfer
       \Theta\left(\omega - E_f + E\right) \Bigg] \end{aligned}
 \end{align}
 where $E$ is the energy of the target electron $q$. 
-Inserting equation~\eqref{eq:CoulombRelativisticApprox},
+Again, this integral is dominated by electrons near the Fermi surface, which are always relativistic in our case, so take $E \approx q$. 
+Then inserting equation~\eqref{eq:CoulombRelativisticApprox},
 \begin{align}  
  &\begin{aligned} \frac{dE}{dx} \approx 
     \frac{2 \pi Z^2 \alpha^2 n_e}{E_F}  \Bigg[
@@ -986,9 +985,14 @@ where the factor $F$ is given by the above Pauli integral
     \end{dcases}
 \end{align}
 For large enough incident momenta, the plasma screening will provide the appropriate soft scatter cutoff instead of the Pauli cutoff used here.
-This can be see by Equation~\eqref{eq:cuttoff_compare}.
+This is evident in Equation~\eqref{eq:cuttoff_compare}.
 However, in this regime the cutoff enters only through the Coulomb logarithm and so the difference is a matter of immaterial $\OO(1)$ factors.
 
+Finally, we note here the special case of incident electrons. 
+These are always relativistic for the incident energies we consider. 
+We must include in this case an additional upper bound on $\omega$ such that the incident electron not fall into the Fermi sea after transferring energy. 
+This is well approximated by simply setting $dE / d x = 0$ for incident electrons with energies $E\lesssim E_F$ the Fermi energy, and using the above result for $E\gtrsim E_F$.
+Nominally the cross-section~\eqref{eq:CoulombOffIonsCrossSection} should also be modified to account for recoil and identical-particle effects (the M\o ller cross-section), however after integrating to find the stopping power this only amounts to a difference of $\OO(1)$ factors.
 
 
 \subsection{Compton and Inverse Compton Scattering}
