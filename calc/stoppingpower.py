@@ -375,7 +375,7 @@ class FermiSea_StoppingPower(object):
             fast = ke >= self.KEfermi
             results = np.ones(ke.shape)*np.nan 
             scale_fast = np.pi*(alpha**2)*self.masstolength 
-            results[fast] = scale_fast*self.n0_m*(np.log(2*ke[fast]/self.m) - 5.0/6.0)/self.Efermi
+            results[fast] = scale_fast*self.n0_m*(np.log(2*ke[fast]/self.m))/self.Efermi
             scale_slow = (alpha**2)*self.masstolength 
             results[slow] = scale_slow*self.n0_m*(ke[slow]**2)/(
                             (self.Efermi**2)*self.KEfermi)
