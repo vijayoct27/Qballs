@@ -1043,14 +1043,16 @@ Nominally the cross-section~\eqref{eq:CoulombOffIonsCrossSection} should also be
 Photons and charged particles can elastically exchange energy through Compton scattering.
 We focus first on an incident photon losing energy to the WD medium.
 The cross-section for this process scales inversely with target mass, so stopping due to photon-ion collisions is far subdominant to photon-electron collisions.
-The resulting range is significantly below the trigger size, and so we only present here a rough calculation of the Compton stopping power. 
-A detailed calculation analogous to that described in Appendix~\ref{sec:coulomb_elec} for the Coulomb case is straightforward, and matches well the heuristic results presented below. 
+The resulting range is significantly below the trigger size, and so we present here only a rough calculation of the Compton stopping power. 
+A detailed numerical calculation analogous to that described in Appendix~\ref{sec:coulomb_elec} for the Coulomb case is straightforward and matches well the heuristic results presented below. 
 
 For incident photons with energy $k$ much larger than the Fermi energy, we expect the scattering to be unaware of the electron motion to within $\OO(1)$ factors. 
+In addition, we expect for relativistic electrons that the Fermi energy ought to replace the electron mass as the appropriate target inertia. 
 This is analogous to the estimate presented in Appendix~\ref{sec:coulomb_elec} for the Coulomb stopping power.
-The cross-section is then given by the Klein-Nishina formula
+We begin then by studying the case of a photon incident on stationary electrons. 
+The cross-section is given by the Klein-Nishina formula
 \begin{equation}
-\label{KN}
+\label{eq:klein-nishina}
   \frac{d\sigma}{d (\cos \theta)} = \frac{\pi \alpha^2}{m_e^2}
   \l \frac{k^\prime}{k} \r^2
   \l \frac{k^\prime}{k} + \frac{k}{k^\prime} -\sin^2 \theta \r
@@ -1059,19 +1061,17 @@ where $k^\prime$ is the outgoing photon energy, related to the scattering angle 
 \begin{equation}
 {k^{\prime }={\frac {k}{1+{\frac {k}{m_e}}(1-\cos \theta )}}}.
 \end{equation}
-In the limit $k > E_F$ we also have that $k > m_e$. 
-The outgoing photon energy is then $k^\prime \approx m_e$ except for a negligible fraction of very forward scatters. 
+In the limit $k > E_F$ we also have that $k > m_e$ and the outgoing photon has energy $k^\prime \approx m_e$ except for a negligible fraction of very forward scatters. 
 This gives a cross-section 
 \begin{equation}
-  \frac{d\sigma}{d (\cos \theta)} \approx \frac{\pi \alpha^2}{m_e k}
+  \frac{d\sigma}{d (\cos \theta)} \sim \frac{\alpha^2}{m_e k}
 \end{equation}
-which is suppressed for high energies, and an energy transfer $\omega \approx k$.
- the cross-section is suppressed by the incoming energy $\sigma_\text{KN} \sim \frac{\alpha^2}{m_e k}$.
+and an energy transfer $\omega \approx k$.
 Cooling therefore proceeds via a small number of hard scatters, and we are justified in ignoring Pauli-blocking for $k > E_F$.
-Finally, the Compton stopping power is
+The stopping power is of order $dk/dx \sim \alpha^2 n_e/m_e$, and a more careful integration of equation~\eqref{eq:klein-nishina} yields a logarithmic energy dependence: 
 \begin{equation}
 \label{eq:approx-comptonSP}
-  \frac{dk}{dx} \sim \frac{2\pi \alpha^2 n_e}{m_e}.
+  \frac{dk}{dx} \approx \frac{\pi \alpha^2 n_e}{m_e} \log\l\frac{2k}{m_e}\r.
 \end{equation}
 
 For incident energies below the Fermi energy, this stopping power will be suppressed by electron motion and Pauli-blocking. 
