@@ -269,14 +269,14 @@ Hadronic showers will therefore generate an electromagnetic component carrying a
 
 \paragraph{Electromagnetic Showers.}
 Electrons and photons also shower through successive bremsstrahlung and pair-production interactions.
-This will proceed until a critical energy $\sim 100 ~\MeV$ set by the scale at which these radiative processes become subdominant to Coulomb and Compton scattering.
+An EM shower proceeds until a critical energy $\sim 100 ~\MeV$ set by the scale at which these radiative processes become subdominant to Coulomb and Compton scattering.
 %Below this scale radiation can still be important, though EM showers do not occur.
 Note that bremsstrahlung and pair-production are strictly forbidden for incident energies below the electron Fermi energy.
 
-At sufficiently high electron/photon energies or nuclear target densities, EM showers are elongated due to the ``Landau-Pomeranchuk-Migdal" (LPM) effect.
+At sufficiently high electron/photon energies and nuclear target densities, EM showers are elongated due to the ``Landau-Pomeranchuk-Migdal" (LPM) effect.
 High-energy radiative processes necessarily involve small momentum transfers to nuclei. 
-These soft virtual photons are delocalized and cannot be exchanged with only a single ion, but rather interact simultaneously with multiple ions---see Appendix~\ref{sec:emshowers} for details. 
-This generates a decoherence, suppressing the bremsstrahlung/pair-production cross sections above an energy $E_\text{LPM}$ which scales inversely with density:
+These soft virtual photons cannot be exchanged with only a single ion, but rather interact simultaneously with multiple ions. 
+This generates a decoherence, suppressing bremsstrahlung/pair-production above an energy $E_\text{LPM}$ which scales inversely with density:
 \begin{align}
     E_\text{LPM} \approx 1~\MeV
     \l \frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}} \r
@@ -294,13 +294,14 @@ where
   \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
 \end{align}
 %These are plotted in Figures \ref{fig:SPhighEM}, \ref{fig:SPlowEM}. 
+See Appendix~\ref{sec:emshowers} for further details. 
 At the highest WD densities radiative processes are always LPM-suppressed, while at lower densities we observe both regimes.
 In high-density WDs, EM showers completely carry the energy of $\sim 10^2 - 10^4~\text{MeV}$ electrons and photons. 
 The lower end of this range corresponds to the scale at which elastic scatters dominate, and the upper end corresponds to the scale at which photonuclear interactions dominate. 
-In low-density WDs, the latter will occur at a larger energy $\sim 10^6 ~\GeV$. 
+In low-density WDs, the latter will occur at an energy $\sim 10^6 ~\GeV$. 
 
 \paragraph{Photonuclear and Electronuclear Showers.}
-The LPM effect ensures that hadronic interactions dominate at sufficiently high energies even for electrons and photons.
+The LPM effect ensures that hadronic interactions become important at sufficiently high energies even for electrons and photons.
 Photons can interact hadronically via quark-antiquark pairs and directly induce hadronic showers off ions.
 The only quantitative difference between these showers and purely hadronic ones is that they require a slightly longer distance to initiate.
 Roughly, the photonuclear cross section is suppressed relative to the hadronic inelastic cross section by a factor of $\alpha$ required to produce a quark-antiquark pair.
@@ -331,23 +332,25 @@ For electron energies greater than $\sim 10^6 - 10^8 ~\GeV$ (depending on the WD
 \paragraph{Neutrino-induced Showers.}
 Neutrinos scatter off ions with a cross section that increases with energy.
 In these interaction, an $\OO(1)$ fraction of the neutrino energy is transferred to the nucleus with the rest going to produced electrons \cite{Formaggio:2013kya}---this is sufficient to start a hadronic shower.
-At an energy of $\sim 10^{11} ~\GeV$, \cite{Formaggio:2013kya} calculates the neutrino-nuclear cross section to be $\sigma_{\nu A} \sim 10^{-32} ~\cm^2$, which we will conservatively take as an estimate for even higher energies.
-This gives a length of order $\lambda_{\nu A} \sim \text{meter}$ to initiate a shower.
+At an energy of $\sim 10^{11} ~\GeV$, \cite{Formaggio:2013kya} calculates the neutrino-nuclear cross section to be $\sim 10^{-32} ~\cm^2$, which we will conservatively take as an estimate for even higher energies.
+This gives a distance of order $\lambda_{\nu A} \sim \text{meter}$ to initiate a shower.
 While it is much too large to efficiently heat a WD via the release of multiple neutrinos, $\lambda_{\nu A}$ is simply the displacement for a single high-energy neutrino to begin a shower of size $X_\text{had}$. 
-As such, $\lambda_{\nu A}$ is qualitatively similar to the photonuclear length scale \eqref{eq:photonuclength}. 
+As such, $\lambda_{\nu A}$ is qualitatively similar to the photonuclear length \eqref{eq:photonuclength}. 
 
 \subsection{Low-Energy Elastic Heating}
 
-The showering processes described above terminate with a cloud of $\sim 10~\MeV$ neutrons, protons, and charged pions, and $\sim 100~\MeV$ electrons and photons.
-Of course, particles at these energies may also be directly produced by the DM.
-At these energies, Coulomb, Compton, and elastic nuclear scatters eventually lead to the thermalization of ions.
+The showers of high-energy particles described above terminate in a cloud of low-energy $\sim 10~\MeV$ neutrons, protons, and charged pions, and $\sim 100~\MeV$ electrons and photons.
+At these energies, Coulomb, Compton, and elastic nuclear scatters dominate and eventually lead to the thermalization of ions.
+%Of course, particles at these energies may also be directly produced by the DM.
 The stopping powers for these processes are calculated in Appendix~\ref{sec:coulomb_ion},~\ref{sec:compton}, and~\ref{sec:coulomb_elec}. 
 
 \paragraph{Ions are a Leaky Bucket.}
-We first note that heating ions to a temperature $\gtrsim T_F$ over a size $\gtrsim \lambda_T$ necessarily also heats the WD electrons and photons in that region.
-Carbon ions themselves rapidly lose energy to cold electrons via Coulomb interactions, which in turn radiate photons that thermalize with other electrons via Compton scatters.
-The range of ions is given in Figures~\ref{fig:SPlowHad} and~\ref{fig:SPhighHad} and that of electron bremsstrahlung and Compton scattering in Figures~\ref{fig:SPlowEM} and~\ref{fig:SPhighEM}. 
-As previously stated, these are all below the trigger size $\lambda_T$ at energies $~\MeV$.
+First, we revisit a claim of Section \ref{sec:Review} that heating ions to a temperature $\gtrsim T_f$ over a size $\gtrsim \lambda_T$ also necessarily heats the WD electrons and photons in that region.
+Carbon ions themselves rapidly lose energy to cold electrons through Coulomb interactions.
+The range is given in Figures~\ref{fig:SPlowHad} and~\ref{fig:SPhighHad}. 
+In turn, these heated electrons radiate photons that will also thermalize with electrons via Compton scatters.
+The stopping lengths of bremsstrahlung and Compton scattering are shown in Figures~\ref{fig:SPlowEM} and~\ref{fig:SPhighEM}. 
+These are all below the trigger size $\lambda_T$ at energies $~\MeV$.
 Note one subtlety here: electron bremsstrahlung has a hard cutoff at the electron Fermi energy, which is possibly greater than the heated ion temperature $T \gtrsim \MeV$.
 However, after the ions warm the degenerate electron gas to temperature $T$, there will be a thermal population of electrons carrying energy $E \sim E_F + T$ that are able to radiate photons of energies up to $k\sim T$, and thus still thermalize photons.
 
@@ -365,7 +368,7 @@ This range is computed in Appendix~\ref{sec:nuclear} to be
  10^{-7} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r,
 \end{align}
 which is always less than the trigger size.
-Note that this may or may not be shorter than the $\pi^0$ decay length $\delta_\pi \sim 10^{-6} ~\text{cm}$, depending on the WD density.
+Note that this may or may not be shorter than the neutral pion decay length $\delta_{\pi^0} \sim 10^{-6} ~\text{cm}$, depending on the WD density.
 Low-energy neutrons thus always provide efficient heating, low-energy neutral pions provide efficient heating at high densities, and the efficiency of neutral pions at low densities depends on the heating efficiency of $\sim 70~\text{MeV}$ photons.
 
 Charged hadrons are subject to Coulomb interactions with ions and electrons, as well as nuclear scatters similar to their neutral brethren.
