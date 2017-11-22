@@ -246,6 +246,13 @@ class FermiSea_StoppingPower(object):
                                                        M, Z, m_tf)
         return self.get_stopping_power_func(M, Asq_func)
 
+    def get_compton_stopping_power(self, azi=True):
+        Asq_func = lambda s, t, u: Asq_compton(s, t, u, self.m, self.z)
+        if azi:
+            return self.get_azimuthal_stopping_power_func(0.0, Asq_func)
+        elif ~azi:
+            return self.get_stopping_power_func(0.0, Asq_func)
+
     def approx_sp_heavyslow(self, M, Z, alpha=1.0/137.0):
         """ 
         Approximate analytic result for stopping power of a very heavy
@@ -360,6 +367,24 @@ class FermiSea_StoppingPower(object):
             return results
         return sp_approx
 
+    def get_compton_piecewise(self, alpha=1.0/137.0):
+        """
+        """
+        def sp_approx(ke):
+            slow = ke < self.KEfermi
+            fast = ke >= self.KEfermi
+            results = np.ones(ke.shape)*np.nan 
+            scale_fast = np.pi*(alpha**2)*self.masstolength 
+            results[fast] = scale_fast*self.n0_m*(np.log(2*ke[fast]/self.m))/self.Efermi
+            scale_slow = (alpha**2)*self.masstolength 
+            results[slow] = scale_slow*self.n0_m*(ke[slow]**2)/(
+                            (self.Efermi**2)*self.KEfermi)
+            # scale_slow = (alpha**2)*self.masstolength/3.0
+            # neff = self.n0_m*(1.0 - (1.0 - ke[slow]/self.KEfermi)**3)
+            # results[slow] = scale_slow*ke[slow]*neff/(self.Efermi**2)
+            return results
+        return sp_approx
+
 
 def Asq_coulomb(s, t, u, m, z, M, Z, alpha=1.0/137.0):
     """
@@ -384,3 +409,17 @@ def Asq_massive_coulomb(s, t, u, m, z, M, Z, m_A, alpha=1.0/137.0):
     msq = m**2 + M**2
     numerator = u**2 + s**2 + 4*t*msq - 2*(msq**2)
     return scale*numerator/((t - m_A**2)**2)
+
+
+def Asq_compton(s, t, u, m, z, alpha=1.0/137.0):
+    """
+    Unpolarized amplitude-squared for EM 2 --> 2 Compton scattering
+    off spin-1/2 particles of mass m and charge number z. Given
+    as a function of the Mandelstam variables.    
+    """
+    scale = 32*(np.pi**2)*(alpha**2)*(z**2)
+    msq = m**2
+    s_m2 = s - msq  # = 2 p \cdot k, for photon 4-vec k and target p
+    u_m2 = u - msq  # = -2 p \cdot k', for final photon k'
+    term = msq*(1.0/s_m2 + 1.0/u_m2)
+    return scale*(4*term*(term + 1) - u_m2/s_m2 - s_m2/u_m2)
