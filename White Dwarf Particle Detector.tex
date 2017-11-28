@@ -324,9 +324,9 @@ The electronuclear stopping length is
   \lambda_{eA}
   \approx 10^{-4} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
 \end{align}
-%This process differs qualitatively from the hadronic and photonuclear-induced showers in that the original electron survives throughout the process.
-This process is best described as a continuous energy loss of the electron into minimal $\sim 10 ~\MeV$ hadronic showers.  
 For electron energies greater than $\sim 10^6 - 10^8 ~\GeV$ (depending on the WD density), electronuclear stopping even dominates over the bremsstrahlung of real photons that then interact hadronically. 
+%s differs qualitatively from the hadronic and photonuclear-induced showers in that the original electron survives throughout the process.
+This process is best described as a continuous energy loss of the electron into minimal $\sim 10 ~\MeV$ hadronic showers.  
 %Thus, the heating length due to very high-energy electrons is given by $\lambda_{eA}$ regardless of the number of electrons produced.
 
 \paragraph{Neutrino-induced Showers.}
@@ -417,7 +417,7 @@ Note that for ultra-heavy DM these can be complicated events involving many (pos
 We classify DM candidates into three types according to the interaction that provides the dominant source of heating, and refer to these as collision, decay, and transit candidates.
 We additionally make simplifying assumptions about the spatial extent of these interactions.
 For collisions and decays, we consider only ``point-like" heating events with all SM products produced in a localized region (smaller than the trigger size).
-For transits, we consider only soft DM-SM scatters that result in a continuous release of particles along the DM trajectory.
+For transits, we consider only DM-SM scatters that result in a continuous release of particles along the DM trajectory.
 
 We can also classify candidates according to the evolution of the DM itself inside the star.
 Generally there will be some loss of DM kinetic energy due to DM-SM scatters---this is either incidental to the eventual heating of the star or represents the dominant heating mechanism.
@@ -451,9 +451,9 @@ Assuming the energy of the DM is roughly constant over this heating event, the b
 
 The above argument sums the individual energy deposits along the DM trajectory as though they are all deposited simultaneously.
 This is possible if the DM moves sufficiently quickly so that this energy does not diffuse out of the region of interest before the DM has traversed the region.
-We therefore require that the diffusion time $\tau_d$ across a heated region at temperature $T_f$ be larger than the DM crossing-time:
+We therefore require that the diffusion time $\tau_\text{diff} \approx 10^{-12} ~\text{s}$ across a heated region at temperature $T_f$ be larger than the DM crossing-time:
 \begin{align}
-  \tau_d \sim \frac{L^2}{\alpha(T_f)} \gg
+  \tau_\text{diff} \sim \frac{L^2}{\alpha(T_f)} \gg
   \frac{L}{v_\text{esc}},
 \label{eq:SlowDiffusion}
 \end{align}
@@ -492,7 +492,7 @@ In addition, a transit heating event satisfying condition \eqref{eq:CrustConditi
 For a point-like DM-DM collision or DM decay event releasing particles of heating length $L_0$, ignition will occur if the total energy in SM products satisfies condition~\eqref{eq:energy_boom_condition}.
 Such an event will likely result in both SM and dark sector products, so we parameterize the resulting energy in SM particles as a fraction $f_\text{SM}$ of the DM mass.
 For non-relativistic DM, the DM mass is the dominant source of energy and therefore $f_\text{SM} \lesssim 1$ regardless of the interaction details, although we may well suspect that $f_\text{SM} \ll 1$ for realistic models.
-With this parameterization, the boom condition for both collisions and decays is
+With this parameterization, a single DM-DM collision or DM decay has a boom condition:
 \begin{equation}
 \label{eq:coldecay}
   m_\text{DM} f_\text{SM}  \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3.
@@ -500,7 +500,7 @@ With this parameterization, the boom condition for both collisions and decays is
 We are thus sensitive to DM masses $m_\text{DM} \gtrsim 10^{16} ~\GeV$.
 
 \paragraph{Event Rate: DM Wind.}
-DM with negligible energy loss in the WD medium will traverse the star in roughly a time $\sim R_\text{WD}/v_\text{esc} \approx 0.1 ~\text{s}$ and have a number density within the WD enhanced relative to the average galactic density by a factor $v_\text{esc}/v \sim \OO(10)$.
+DM with negligible energy loss in the WD medium will traverse the star in $\sim R_\text{WD}/v_\text{esc} \approx 0.1 ~\text{s}$ and have a number density within the WD enhanced relative to the average galactic density by a factor $v_\text{esc}/v \sim \OO(10)$.
 In the wind scenario, the DM-DM collision rate inside the WD parameterized by a cross-section $\sigma_\text{DM-DM}$ is:
 \begin{align}
   \Gamma_\text{collision}
@@ -521,8 +521,8 @@ For the DM to be able to stop in a WD, it must have sufficiently strong interact
 \begin{equation}
 \left( \frac{d E}{d x} \right)_\text{SP} \gtrsim \frac{m_\text{DM} v^2}{R_\text{WD}}.
 \end{equation}
-Note that the DM need only lose velocity of order the galactic virial velocity to get captured. 
-We now review the evolution of DM within the star once it has been captured. 
+Note that the DM need only lose velocity of order its galactic virial velocity to get captured. 
+First we review the evolution of DM within the star once it has been captured. 
 The DM eventually thermalizes at a velocity
 \begin{equation}
 v_\text{th} \sim \sqrt{\frac{T}{m_\text{DM}}} \approx 10^{-12} \l \frac{10^{16} ~\GeV}{m_\text{DM}}\r^{1/2},
@@ -547,17 +547,18 @@ The exact nature of this collapse is model-dependent, eventually being arrested 
 For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius due to some unknown physics. 
 
 There are several timescales relevant to the DM capture scenario. 
-First, the time for thermalized DM to ``drift" down to the thermal radius is roughly
+Initially there is a timescale for DM to slow down to the thermal velocity $v_\text{th}$---this depends on the nature of the DM-SM interaction and is highly model-dependent. 
+Next, the time for the thermalized DM to ``drift" down to the thermal radius is roughly
 \begin{align}
 \label{eq:tdrift}
   t_\text{drift} \sim \frac{R_\text{WD}}{v_\text{th}}
   \approx 50 ~\text{yr} ~ \l \frac{m_\text{DM}}{10^{16} ~\GeV} \r^{1/2}. 
 \end{align}
-Note that for DM masses greater than $\sim 10^{30}~\GeV$, a DM cloud cannot possibly form within the lifetime of the star.
-The time $t_\text{collect}$ needed for the star to collect a critical core mass of DM \eqref{eq:mcore} is given by
+Evidently for $m_\text{DM} \gtrsim 10^{30}~\GeV$, a DM cloud does not even form within the lifetime of the star. 
+Once formed, the DM cloud will continue to collect more DM until it reaches a critical core mass \eqref{eq:mcore} in a time
 \begin{align}
 \label{eq:tcol}
-  t_\text{collect} &\sim \l \frac{M_\text{core}}{m_\text{DM}}\r \frac{1}{\Gamma_\text{transit}} \\
+  t_\text{collect} &\sim \l \frac{M_\text{crit}}{m_\text{DM}}\r \frac{1}{\Gamma_\text{transit}} \\
   & \approx 10 ~\text{s} \l \frac{10^{16} ~\GeV}{m_\text{DM}} \r^{3/2} \l \frac{0.4 ~\GeV/\text{cm}^3}{\rho_\text{DM}} \r,\nonumber
 \end{align}
 evaluated at $n_\text{ion} \sim 10^{31} ~\cm^{-3}$.
@@ -568,6 +569,10 @@ Subsequently, the actual timescale for the collapse is independent of DM mass:
   \approx 3 ~\text{s} ~ \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
 \end{align}
 This expression is valid for the two cases that the DM core either initially remains thermalized while self-gravitating or collapses at free-fall velocity.  
+
+We now turn towards the rate of explosive collisions and decays for captured DM.
+Of course, if the slowing of DM itself is sufficient to ignite a SN, then the boom condition is instead given by the transit condition \eqref{eq:transitexplosion}.
+Assuming this is not the case, we calculate the rate of DM events during the various stages of the capture described above.  
 
 For decay heating, capture gives an enhancement due to the increased number of DM particles within the WD.
 This can be very large if the DM core admits decays, however it is still significantly enhanced over the wind scenario even for inert cores (as in the case that the DM forms a black hole).
