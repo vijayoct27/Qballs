@@ -126,6 +126,19 @@ With this parameterization, a single DM-DM collision or DM decay has a boom cond
 \end{equation}
 We are thus sensitive to DM masses $m_\chi \gtrsim 10^{16} ~\GeV$.
 
+However, there is an interesting alternative if the DM is captured that allows DM masses below $10^{16} ~\GeV$ to be constrained. 
+Multiple collisions in a sufficiently small region can occur rapidly enough to be counted as a single heating event.
+This is similar in nature to a transit heating event where individual scatters do not necessarily deposit $\Eboom$ but the sum total of multiple scatters across a transit length $\lambda_T$ can release this amount and satisfy \eqref{eq:transitexplosion}. 
+Thus, even if a single DM-DM collision is unable to ignite the star, the sum total of many collisions can still result in a SN if the following boom condition is satisfied:
+\begin{equation}
+\label{eq:multcolboom}
+ m_\chi f_\text{SM}  \gtrsim \frac{\Eboom}{N_\text{mult}} \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3, ~~~~ N_\text{mult} \gtrsim 1. 
+\end{equation}
+$N_\text{mult}$ is the number of collisions happening within a region of size $\lambda_T^3$ or smaller during a diffusion time $\tau_\text{diff}$.
+The precise expression for $N_\text{mult}$ will depend on the evolution of the DM in the star at the desired instance.
+Unlike the condition for a single collision \eqref{eq:coldecay}, the condition for multiple collisions to be explosive \eqref{eq:multcolboom} necessarily depend on the collision cross section and requires a number of assumptions on the DM interactions. 
+These will be discussed in detail below. 
+
 \paragraph{Event Rate: DM Wind.}
 DM with negligible energy loss in the WD medium will traverse the star in $\sim R_\text{WD}/v_\text{esc} \approx 0.1 ~\text{s}$ and have a number density within the WD enhanced relative to the average galactic density by a factor $(v_\text{esc}/v_\text{halo}) \sim 10$.
 In the wind scenario, the DM-DM collision rate inside the WD parameterized by a cross-section $\sigma_{\chi \chi}$ is:
@@ -143,7 +156,6 @@ Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_
   \label{eq:decayDM}
 \end{align}
 
-
 \paragraph{Event Rate: DM Capture.}
 For the DM to be captured in a WD, it must have sufficiently strong interactions with stellar constituents:
 \begin{equation}
@@ -152,7 +164,9 @@ For the DM to be captured in a WD, it must have sufficiently strong interactions
 \end{equation}
 where $v$ is the DM galactic virial velocity relative to the WD.  
 For $v \ll v_\text{esc}$, we demand that the DM lose a fraction $(v/v_\text{esc})^2$ of its energy to eventually become stopped in the star. 
-Of course, the most probable relative velocity will be $v_\text{halo}$.
+Of course, the most probable relative velocity is of order $v_\text{halo}$.
+However even if the interaction is unable to capture DM at a velocity $v_\text{halo}$, it may still capture those DM with a lower relative velocity. 
+The distribution of DM particles at relative velocity $v$ is given by:
 
 The physics of DM capture can be made more precise for a specific interaction: the simplest scenario is a spin-independent, elastic scatter off ions characterized by cross section $\sigma_{\chi A}$. 
 For $m_\chi \gg m_\text{ion}$, the typical momentum transfer in an elastic scatter is $q \sim \mu_{A} v_\text{esc} \sim 100 ~\MeV$, where $\mu_{A}$ is the reduced mass of the DM-ion system. 
@@ -231,16 +245,16 @@ evaluated at $n_\text{ion} \sim 10^{31} ~\cm^{-3}$.
 Note that $t_\text{collect}$ has a non-trivial dependence on WD density: this is manifest in the values for $v_\text{esc}$ and $R_\text{WD}$.
 Subsequently, the actual timescale for the collapse is independent of DM mass:
 \begin{align}
-  t_\text{collapse} \sim \frac{R_\text{th}}{v_\text{th}}
+  t_\text{ff} \sim \frac{R_\text{th}}{v_\text{th}}
   \approx 3 ~\text{s} ~ \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
 \end{align}
-This expression is valid for the two cases that the DM core either initially remains thermalized while self-gravitating or collapses at free-fall velocity.  
-
+This is roughly the collapse time whether the DM cloud initially remains thermalized while self-gravitating or collapses in free-fall.
+  
 We now turn towards the rate of explosive collisions and decays for captured DM.
 Of course, if the slowing of DM itself is sufficient to ignite a SN, then the boom condition is instead given by the transit condition \eqref{eq:transitexplosion}.
 Assuming this is not the case, we calculate the rate of DM events during the various stages of the capture described above.  
 
-For decay heating, capture gives an enhancement due to the increased number of DM particles within the WD.
+For decay heating, capture gives an enhancement due to the increased number of DM particles within the WD. 
 This can be very large if the DM core admits decays, however it is still significantly enhanced over the wind scenario even for inert cores (as in the case that the DM forms a black hole).
 We have an enhancement of the net decay rate \eqref{eq:decayDM} by a factor
 \begin{align}
@@ -251,7 +265,6 @@ We have an enhancement of the net decay rate \eqref{eq:decayDM} by a factor
 due to the increased time spent by the DM in the WD medium before joining the inert core.
 
 In the case of DM-DM collision heating, it is possible that the collapse of the core will induce an ignition event due to the enhancement of DM number density during the collapse.
-This would set the lifetime of WDs to $t_\text{collect}$.
 During the collapse, the rate of collisions taking place at a radius $r$ within the enclosed volume is given by
 \begin{align}
 \Gamma_\text{collision}(r) \sim \l \frac{M_\text{core}}{m_\chi} \r^2 \frac{1}{r^3} \sigma_{\chi \chi} v(r),
@@ -274,9 +287,5 @@ The rate of in-falling collisions is enhanced over the wind collision rate \eqre
 \end{align}
 which again depends on the physics of $R_\text{sta}$.
 
-\paragraph{Event Rate: DM Capture and Multiple Collisions}
-
-Up until now, we only considered the case that a single DM-DM collision releases sufficient energy \eqref{eq:coldecay} in order to trigger runaway fusion.
-However, the possibility of a DM core collapse in the star provides up an interesting alternative:
 
 \end{document}
