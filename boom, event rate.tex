@@ -145,18 +145,19 @@ Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_
 
 
 \paragraph{Event Rate: DM Capture.}
-For the DM to be able to stop in a WD, it must have sufficiently strong interactions with stellar constituents:
+For the DM to be captured in a WD, it must have sufficiently strong interactions with stellar constituents:
 \begin{equation}
 \label{eq:capture}
-\left( \frac{d E}{d x} \right)_\text{SP} \gtrsim \frac{m_\chi v_\text{halo}^2}{R_\text{WD}}.
+\left( \frac{d E}{d x} \right)_\text{SP} \gtrsim \frac{m_\chi v^2}{R_\text{WD}},
 \end{equation}
-Note that the DM need only lose velocity of order its galactic virial velocity relative to the WD to get captured. 
-If the DM initially has velocity of order $v \ll v_\text{esc}$ relative to the WD, we demand that it lose a fraction $(v/v_\text{esc})^2$ of its energy in the star. 
-This can be made more precise for a specified interaction: the simplest case to consider is spin-independent, elastic scatters off ions characterized by a cross section $\sigma_{\chi A}$. 
+where $v$ is the DM galactic virial velocity relative to the WD.  
+For $v \ll v_\text{esc}$, we demand that the DM lose a fraction $(v/v_\text{esc})^2$ of its energy to eventually become stopped in the star. 
+Of course, the most probable relative velocity will be $v_\text{halo}$.
+
+The physics of DM capture can be made more precise for a specific interaction: the simplest scenario is a spin-independent, elastic scatter off ions characterized by cross section $\sigma_{\chi A}$. 
 For $m_\chi \gg m_\text{ion}$, the typical momentum transfer in an elastic scatter is $q \sim \mu_{A} v_\text{esc} \sim 100 ~\MeV$, where $\mu_{A}$ is the reduced mass of the DM-ion system. 
 The typical energy transfer in a nuclear elastic scatter is simply $q^2/m_\text{ion} \sim m_\text{ion} v_\text{esc}^2 \approx \MeV$. 
-If the DM has an initial relative velocity with the WD $v_\text{halo}$, the DM masses $m_\text{chi} \gtr 10^3 ~\GeV$ will require multiple scatters to lose the necessary fraction of its energy. 
-
+If the DM has an initial relative velocity with the WD $v \approx v_\text{halo}$, then DM masses $m_\chi \gtrsim 10^3 ~\GeV$ will require multiple scatters to lose the necessary fraction of its energy. 
 The stopping power of the DM with this interaction is
 \begin{equation}
 \left( \frac{d E}{d x} \right)_\text{SP} \sim n_\text{ion} \sigma_{\chi A} m_\text{ion} v^2.
@@ -166,6 +167,11 @@ Demanding \eqref{eq:capture} yields a condition on the DM elastic nuclear cross 
 \label{eq:capturecross}
 \sigma_{\chi A} \gtrsim  \l \frac{m_\chi}{m_\text{ion}} \r \l \frac{v}{v_\text{esc}} \r^2 \frac{1}{n_\text{ion}} \frac{1}{R_\text{WD}}. 
 \end{equation}
+Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid one if the cross section satisfies
+\begin{equation}
+\sigma_{\chi A} < \l \frac{\Eboom}{\lambda_T} \r \l \frac{1}{m_\text{ion} v_\text{esc}^2} \r \l \frac{1}{n_\text{ion}} \r \sim 10^{-8} ~\text{cm}^2,
+\end{equation}
+evaluated at a WD density $n_\text{ion} \sim 10^{32} \text{cm}^{-3}$. 
 Since the momentum transfer $q$ is of order the inverse nuclear size, it is reasonable to expect the DM coherently scatters off all nucleons.
 Therefore, the average per-nucleon cross section (spin-independent)
 \begin{equation}
@@ -178,10 +184,6 @@ Currently, the most stringent bound on DM-nuclear elastic scatters comes from XE
 \label{eq:XENON}
 \sigma_{\chi n} < 10^{-45} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
 \end{equation}
-
-
-Implicitly, we are making the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD, i.e. \eqref{eq:transitboom} is never satisfied. 
-
 
 First we review the evolution of DM within the star once it has been captured. 
 The DM eventually thermalizes at a velocity
@@ -208,15 +210,18 @@ The exact nature of this collapse is model-dependent, eventually being arrested 
 For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius due to some unknown physics. 
 
 There are several timescales relevant to the DM capture scenario. 
-Initially there is a timescale for DM to slow down to the thermal velocity $v_\text{th}$ and ``drift" down to the thermal radius.
-This is roughly given by
+Initially there is a timescale for DM to slow down to the thermal velocity $v_\text{th}$ and settle to the thermal radius.
+If the DM thermalizes rapidly in the star e.g. via inelastic scatters, this time is at most
 \begin{align}
 \label{eq:tdrift}
-  t_\text{drift} \sim \frac{R_\text{WD}}{v_\text{th}}
+  t_\text{drift} \lesssim \frac{R_\text{WD}}{v_\text{th}}
   \approx 50 ~\text{yr} ~ \l \frac{m_\chi}{10^{16} ~\GeV} \r^{1/2}. 
 \end{align}
-Evidently for $m_\chi \gtrsim 10^{30}~\GeV$, a DM cloud at $R_\text{th}$ does not even form within the lifetime of the star. 
-Once formed, the DM cloud will continue to collect DM until it reaches a critical core mass \eqref{eq:mcore} in a time
+However, the settle time can be explicitly calculated for a given interaction.
+Consider the case of DM-nuclear elastic scatters. 
+
+
+Once formed, the DM cloud at $R_\text{th}$ will continue to collect DM until it reaches a critical core mass \eqref{eq:mcore} in a time
 \begin{align}
 \label{eq:tcol}
   t_\text{collect} &\sim \l \frac{M_\text{crit}}{m_\chi}\r \frac{1}{\Gamma_\text{transit}} \\
