@@ -246,7 +246,7 @@ Eventually, the collection and annihilation rates become comparable and there is
 \begin{equation}
 N_\text{eq} \sim \l \frac{\Gamma_\text{cap} R_\text{th}^3}{\sigma_{\chi \chi} v_\text{th}} \r^{1/2}.
 \end{equation}
-Of course, there is no guarantee that this equilibrium state is achieved within the lifetime of the WD. 
+Of course, there is no guarantee that this equilibrium state is achieved within the age of the WD. 
 In that case, we can ignore annihilations and the total number of DM particles accumulated is simply
 \begin{equation}
 N_\text{life} \sim \Gamma_\text{cap} \tau_\text{WD}.
@@ -257,33 +257,38 @@ The critical number of DM particles needed for collapse is given by
 \label{eq:mcore}
     N_\text{crit} &\sim \frac{\rho_\text{WD} R^3_\text{th} }{m_\chi}. 
 \end{align}
-However, this can only be achieved if the time to collect a critical mass of DM is shorter than the time for annihilations to deplete this mass sufficiently \emph{and} the age of the WD. 
-This condition can expressed as: 
+This can only be achieved if the time to collect a critical mass of DM is shorter than the time for annihilations to deplete this mass sufficiently \emph{and} shorter than WD lifetime. 
+In other words:
 \begin{equation}
 \label{eq:collapsecondition}
 N_\text{crit} < N_\text{eq}, ~~~~ N_\text{crit} < N_\text{life}.
 \end{equation}
-If \eqref{eq:collapsecondition} is satisfied, then a collapse is possible. 
-However, DM annihilations complicate the nature of this collapse. 
-
-
-
-The DM cloud will then begin self-gravitational collapse.
-The exact nature of this collapse is model-dependent, eventually being arrested by DM-DM interactions or the formation of a black hole.
-For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius due to some unknown physics. 
-
-
-Subsequently, the actual timescale for the collapse is independent of DM mass:
+We must also ensure that the collapsing DM is not immediately depleted due to annihilations.
+The timescale for self-gravitational collapse is independent of DM mass and is approximately given by:
 \begin{align}
   t_\text{ff} \sim \frac{R_\text{th}}{v_\text{th}}
   \approx 3 ~\text{s} ~ \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
 \end{align}
-This is roughly the collapse time whether the DM cloud initially remains thermalized while self-gravitating or collapses in free-fall.
-  
-We now turn towards the rate of explosive collisions and decays for captured DM.
-Of course, if the slowing of DM itself is sufficient to ignite a SN, then the boom condition is instead given by the transit condition \eqref{eq:transitexplosion}.
-Assuming this is not the case, we calculate the rate of DM events during the various stages of the capture described above.  
+Demanding that the free-fall time is less than the annihilation time of a single DM particle results in an additional condition:
+\begin{align}
+\label{eq:xicondition}
+\xi \equiv \frac{N_\text{crit} \sigma_{\chi \chi}}{R_\text{th}^2} < 1.
+\end{align}
+If both \eqref{eq:collapsecondition} and \eqref{eq:xicondition} are satisfied, the collected DM will undergo a gravitational collapse.
+The exact nature of this collapse is model-dependent, eventually being arrested by DM-DM interactions or the formation of a black hole.
+For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius $R_\text{sch} \sim G m_\chi N_\text{crit}$ due to some unknown physics. 
+Of course, even if DM annihilations can be ignored during the initial stages of the collapse, the annihilation rate increases with the number density of DM. 
+If the conditions for collapse are met, the number of DM particles in the collapsing core can be written as a function of collapse radius:
+\begin{equation}
+N(r) \sim \frac{N_\text{crit}}{1 + \xi \l \frac{R_\text{th}}{r}\r^2}. 
+\end{equation}
+Thus, the effect of annihilations on the collapsing DM mass becomes important at a radius,
+\begin{equation}
+R_{\chi \chi} \sim R_\text{th} \sqrt{\xi},
+\end{equation}
+below which the mass of collapsing DM depletes as $N \propto r^2$. 
 
+We now turn towards the rate of explosive collisions and decays for captured DM in the case that a single collision or decay is sufficient to ignite the star. 
 For decay heating, capture gives an enhancement due to the increased number of DM particles within the WD. 
 This can be very large if the DM core admits decays, however it is still significantly enhanced over the wind scenario even for inert cores (as in the case that the DM forms a black hole).
 We have an enhancement of the net decay rate \eqref{eq:decayDM} by a factor
