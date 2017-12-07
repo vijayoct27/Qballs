@@ -126,9 +126,9 @@ With this parameterization, a single DM-DM collision or DM decay has a boom cond
 \end{equation}
 We are thus sensitive to DM masses $m_\chi \gtrsim 10^{16} ~\GeV$.
 
-However, there is an interesting alternative if the DM is captured that enables lower DM masses to trigger runaway fusion. 
+However, there is an interesting possibility if DM is captured in the WD that allows collisions of lower mass DM to ignite the star. 
 Multiple DM-DM collisions in a sufficiently small region can occur rapidly enough to be counted as a single heating event.
-This is similar in nature to a transit heating event, where multiple scatters across a transit length $\lambda_T$ can release an energy $\Eboom$ and satisfy \eqref{eq:transitexplosion} even if no single scatter is explosive by itself.   
+This is similar in nature to a transit heating event, where multiple scatters across a transit length $\lambda_T$ can release an energy $\Eboom$ and satisfy \eqref{eq:transitexplosion} even if an individual scatter is not explosive by itself.   
 If a single DM-DM collision is unable to ignite the star, the sum total of the energy released in many collisions can still result in a SN if the following boom condition is satisfied:
 \begin{equation}
 \label{eq:multcolboom}
@@ -197,7 +197,7 @@ where $F^2(q) \approx 0.2$ is the Helm form factor, calculated based on the anal
 The cross section needed for capture \eqref{eq:capturecross} can be compared to limits from direct detection experiments.
 Currently, the most stringent bound on DM nuclear elastic scatters comes from XENON 1T:
 \begin{equation}
-\label{eq:XENON}
+\label{eq:xenon}
 \sigma_{\chi n} < 10^{-45} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
 \end{equation}
 
@@ -207,7 +207,7 @@ The DM eventually thermalizes at a velocity
 v_\text{th} \sim \sqrt{\frac{T}{m_\chi}} \approx 10^{-12} \l \frac{10^{16} ~\GeV}{m_\chi}\r^{1/2},
 \end{equation}
 where $T \sim \keV$ is the WD temperature.
-At this point, the DM accumulates at the thermal radius where its kinetic energy balances against the gravitational potential energy of the enclosed WD mass:
+At this point, the DM accumulates at the radius where its kinetic energy balances against the gravitational potential energy of the enclosed WD mass:
 \begin{align}
   R_\text{th} &\sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \\
   &\approx 0.1 ~\text{cm} \l \frac{10^{16} ~\GeV}{m_\chi}\r^{1/2}
@@ -221,7 +221,9 @@ If the DM is capable of losing energy rapidly in the star, we expect this time t
   t_\text{settle} \sim \frac{R_\text{WD}}{v_\text{th}}
   \approx 50 ~\text{yr} ~ \l \frac{m_\chi}{10^{16} ~\GeV} \r^{1/2}. 
 \end{align}
-In this case, the in-falling DM constitutes a number density of DM throughout the WD volume:
+Note that the settle time can be explicitly calculated in the case that the DM is captured via elastic nuclear scatters. 
+For the rest of this section, we demand that the settle time is less than the age of the WD $t_\text{settle} < \tau_\text{WD}$. 
+The in-falling DM constitutes a number density of DM throughout the WD volume:
 \begin{equation}
 n(r) \sim \frac{\Gamma_\text{cap}}{r^2 v(r)}.
 \end{equation}
@@ -235,9 +237,7 @@ We can ignore the depletion of in-falling DM as long as \eqref{eq:infallrate} do
 \label{eq:steadycollect}
 \frac{\Gamma_\text{cap} \sigma_{\chi \chi}}{R_\text{th} v_\text{th}} \lesssim 1. 
 \end{equation}
-Interestingly, this condition is independent of $m_\chi$ and translates to an upper bound on the cross section $\sigma_{\chi \chi} \lesssim 10^{-13} ~\text{cm}^2$, at WD densities $n_\text{ion} \sim 10^{31} \text{cm}^{-3}$. 
-However, the settle time can be explicitly calculated if the DM is captured through elastic nuclear scatters. 
-For the rest of this section, we demand that the settle time is less than the age of the WD $t_\text{settle} < \tau_\text{WD}$. 
+%Interestingly, this condition is independent of $m_\chi$ and translates to an upper bound on the cross section $\sigma_{\chi \chi} \lesssim 10^{-13} ~\text{cm}^2$, at WD densities $n_\text{ion} \sim 10^{31} ~\text{cm}^{-3}$. 
 
 After the initial off-set time $t_\text{settle}$, DM will begin steadily collecting at the thermal radius.
 Assuming \eqref{eq:steadycollect} is satisfied, the collection rate is roughly the same as the capture rate $\Gamma_\text{cap}$. 
@@ -254,73 +254,83 @@ N_\text{life} \sim \Gamma_\text{cap} \tau_\text{WD}.
 However, if the total collected mass of DM at some point exceeds the WD mass within $R_\text{th}$, then there is the possibility of self-gravitational collapse.
 The critical number of DM particles needed for collapse is given by
 \begin{align}
-\label{eq:mcore}
+\label{eq:Ncore}
     N_\text{crit} &\sim \frac{\rho_\text{WD} R^3_\text{th} }{m_\chi}. 
 \end{align}
-This can only be achieved if the time to collect a critical mass of DM is shorter than the time for annihilations to deplete this mass sufficiently \emph{and} shorter than WD lifetime. 
+This can only be achieved if the time to collect a critical mass of DM is shorter than the time for annihilations to deplete this mass sufficiently \emph{and} shorter than the WD lifetime. 
 In other words:
 \begin{equation}
 \label{eq:collapsecondition}
 N_\text{crit} < N_\text{eq}, ~~~~ N_\text{crit} < N_\text{life}.
 \end{equation}
+Evidently, DM masses below $\sim 10^{6} ~\GeV$ do not have enough time within the age of a WD to collect to the critical number \eqref{eq:Ncore} and trigger a collapse. 
 We must also ensure that the collapsing DM is not immediately depleted due to annihilations.
 The timescale for self-gravitational collapse is independent of DM mass and is approximately given by:
 \begin{align}
   t_\text{ff} \sim \frac{R_\text{th}}{v_\text{th}}
-  \approx 3 ~\text{s} ~ \l \frac{10^{31} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
+  \approx 1 ~\text{s} ~ \l \frac{10^{32} ~\cm^{-3}}{n_\text{ion}}\r^{1/2}.
 \end{align}
-Demanding that the free-fall time is less than the annihilation time of a single DM particle results in an additional condition:
+Demanding that the free-fall time is less than the time for annihilations to deplete $N_\text{crit}$ by an $\OO(1)$ fraction results in an additional condition:
 \begin{align}
 \label{eq:xicondition}
 \xi \equiv \frac{N_\text{crit} \sigma_{\chi \chi}}{R_\text{th}^2} < 1.
 \end{align}
 If both \eqref{eq:collapsecondition} and \eqref{eq:xicondition} are satisfied, the collected DM will undergo a gravitational collapse.
 The exact nature of this collapse is model-dependent, eventually being arrested by DM-DM interactions or the formation of a black hole.
-For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius $R_\text{sch} \sim G m_\chi N_\text{crit}$ due to some unknown physics. 
+%For composite DM, it is reasonable to suspect that the collapse stabilizes into a core of radius $R_\text{sta}$ larger than the Schwarzschild radius $R_\text{sch} \sim G m_\chi N_\text{crit}$. 
+%However, this depends on unknown physics. 
 Of course, even if DM annihilations can be ignored during the initial stages of the collapse, the annihilation rate increases with the number density of DM. 
-If the conditions for collapse are met, the number of DM particles in the collapsing core can be written as a function of collapse radius:
+The number of DM particles in the collapsing core can be written as a function of collapse radius:
 \begin{equation}
 N(r) \sim \frac{N_\text{crit}}{1 + \xi \l \frac{R_\text{th}}{r}\r^2}. 
 \end{equation}
-Thus, the effect of annihilations on the collapsing DM mass becomes important at a radius,
+Thus, the effect of annihilations on the collapsing DM mass becomes important when it reaches a size
 \begin{equation}
 R_{\chi \chi} \sim R_\text{th} \sqrt{\xi},
 \end{equation}
 below which the mass of collapsing DM depletes as $N \propto r^2$. 
 
-We now turn towards the rate of explosive collisions and decays for captured DM in the case that a single collision or decay is sufficient to ignite the star. 
-For decay heating, capture gives an enhancement due to the increased number of DM particles within the WD. 
-This can be very large if the DM core admits decays, however it is still significantly enhanced over the wind scenario even for inert cores (as in the case that the DM forms a black hole).
-We have an enhancement of the net decay rate \eqref{eq:decayDM} by a factor
-\begin{align}
-\label{eq:enhancedecay}
-  \frac{v_\text{esc}}{v_\text{th}}
-  \approx 10^{10} \l \frac{m_\chi}{10^{16}~\GeV} \r^{1/2}
-\end{align}
-due to the increased time spent by the DM in the WD medium before joining the inert core.
+There are two potential evolutions of the captured DM in which to examine in the boom condition \eqref{eq:multcolboom}: either the DM collapses or it does not. 
+In the later case, we have 
+\begin{equation}
+\label{eq:nocollapseann}
+\text{min}\{N_\text{eq}, N_\text{life}\} < N_\text{crit}.
+\end{equation}
+Either the DM has reached its equilibrated number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime. 
+For multiple collisions, we must count the number of collisions taking place in a trigger-sized subregion of the DM sphere within the fixed time interval set by $\tau_\text{diff}$.
+This is of the form:
+\begin{equation}
+\label{eq:nocollapse}
+N_\text{multi} \sim \l \frac{\text{min}\{N_\text{eq}, N_\text{life}\}}{R_\text{th}^3} \r^2 \sigma_{\chi \chi} v_\text{th} \lambda_T^3 \tau_\text{diff}. 
+\end{equation}
+Demanding that \eqref{eq:infallrate}, \eqref{eq:nocollapseann}, and \eqref{eq:nocollapse} all be satisfied, we find that
+ 
+We now turn towards multiple DM-DM collisions during a collapse. 
+If the DM-SM interaction is sufficiently strong, it is possible for the DM to initially remain thermalized while collapsing.
+The gravitational potential energy that is lost during this portion of the collapse goes into heating the surrounding WD medium rather than accelerating the DM. 
+This was considered by \cite{Bramante} for the capture and subsequent collapse of asymmetric DM in a WD.  
+Rather, we focus on a complementary scenario: the DM collapses at free-fall velocity and annihilates sufficiently rapidly to heat the star. 
+Here the number of collisions $N_\text{multi}$ depends on the radius $r$ at which we choose to analyze the collapse:
+\begin{equation}
+N_\text{multi} \sim \l \frac{N}{r^3}\r^2  \sigma_{\chi \chi} v_\text{ff} ~\text{min}\{\lambda_T, r\}^3 ~\text{min}\{\tau_\text{diff}, r/v_\text{ff}\},
+\end{equation}
+where $v_\text{ff} \sim \sqrt{\frac{G N m_\chi}{r}}$ is the free-fall velocity of the collapsing DM mass. 
+However, there is an optimal radius of the collapse at which $N_\text{multi}$ is maximized.
+Of course, $r$ must always be greater than the Schwarzschild radius
+\begin{equation}
+R_\text{sch} \sim G m_\chi N_\text{crit}.
+\end{equation}
+If $R_\text{sch} < \lambda_T$, then the DM collapse can possibly 
 
-In the case of DM-DM collision heating, it is possible that the collapse of the core will induce an ignition event due to the enhancement of DM number density during the collapse.
-During the collapse, the rate of collisions taking place at a radius $r$ within the enclosed volume is given by
-\begin{align}
-\Gamma_\text{collision}(r) \sim \l \frac{M_\text{core}}{m_\chi} \r^2 \frac{1}{r^3} \sigma_{\chi \chi} v(r),
-\end{align}
-where $v(r)$ is the velocity of DM - this could be either free-fall velocity or $v_\text{th}$ if the DM remains thermalized.
-Integrating to the stable radius $R_\text{sta}$, we find the total number of collisions during the collapse is
-\begin{align}
-  N_\text{col} \sim \l \frac{M_\text{core}}{m_\chi} \r^2 \frac{\sigma_{\chi \chi}}{R_\text{sta}^2}.
- \end{align}
-Assuming the collapse proceeds until the DM core becomes a black hole, the number of collisions is
-\begin{align}
-  N_\text{col} \sim \frac{\sigma_{\chi \chi}}{G^2 m_\chi^2}.
- \end{align}
-If the collapse itself is not explosive, there is still an enhanced collision rate relative to the wind scenario due to DM colliding while in-falling to the core.
-Again we look at the conservative situation of an inert core - the rate is obviously much greater if the core is stabilized in a fluid state which admits DM-DM collisions.
-The rate of in-falling collisions is enhanced over the wind collision rate \eqref{eq:collisionDM} by a factor
-\begin{align}
-\label{eq:enhancecollision}
-   \frac{R_\text{WD}}{R_\text{sta}} \times \frac{v_\text{esc}}{v_\text{th}},
-\end{align}
-which again depends on the physics of $R_\text{sta}$.
+This is straightforward to see: if the DM is collapsing above the trigger-size $r>\lambda_T$, then $N_\text{multi}$ scales inversely with $r$.
+Thus, we should restrict our attention to $r \lesssim \lambda_T$, provided that collapse to such a radius is physically allowed.
+$r$ must always be greater than the Schwarzschild radius
+\begin{equation}
+R_\text{sch} \sim G m_\chi N_\text{crit}.
+\end{equation}
+
+ \paragraph{GUTzilla:}
+
 
 
 \end{document}
