@@ -225,7 +225,7 @@ If the DM is capable of losing energy rapidly in the star, we expect this time t
 The settle time can be explicitly calculated in the case that the DM is captured via elastic nuclear scatters. 
 We simply demand that the settle time is shorter than the age of the WD:
 \begin{equation}
-t_\text{settle} \ll \tau_\text{WD}.
+t_\text{settle} < \tau_\text{WD}.
 \end{equation}
 Note that the in-falling DM constitutes a number density of DM throughout the WD volume.
 %\begin{equation}
@@ -236,7 +236,7 @@ Integrating over the WD, the total annihilation rate for the in-falling DM is of
 \label{eq:infallrate}
 \Gamma_\text{infall} \sim \frac{\Gamma_\text{cap}^2 \sigma_{\chi \chi}}{R_\text{th} v_\text{th}}.
 \end{equation}
-We can ignore the depletion of in-falling DM as long as \eqref{eq:infallrate} does not exceed the capture rate:
+We can ignore the depletion of in-falling DM as long as \eqref{eq:infallrate} is less than the capture rate:
 \begin{equation}
 \label{eq:steadycollect}
 \Gamma_\text{infall} < \Gamma_\text{cap}.
@@ -268,7 +268,7 @@ In other words:
 \label{eq:collapsecondition}
 N_\text{crit} < N_\text{eq}, ~~~~ N_\text{crit} < N_\text{life}.
 \end{equation}
-Importantly, we see that DM masses below $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD to collect to \eqref{eq:Ncore} and begin a collapse. 
+Importantly, we see that DM masses below $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD to collect to $N_\text{crit}$ and begin a collapse. 
 We must also ensure that the collapsing DM is not immediately depleted due to annihilations.
 The timescale for self-gravitational collapse at the thermal radius is independent of DM mass and is approximately:
 \begin{align}
@@ -294,18 +294,17 @@ R_{\chi \chi} \sim R_\text{th} \sqrt{\xi} \approx 10^{-9} ~\cm  \l \frac{10^{16}
 below which the number (and mass) of collapsing DM depletes as $N \propto r^2$. 
 
 There are two potential evolutions of the captured DM: either the DM collapses or it does not. 
-In the later case, it must be that the DM has reached its equilibrated number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime:
+For the later, it must be that the DM has reached its equilibrated number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime:
 \begin{equation}
 \label{eq:nocollapseann}
 \text{min}\{N_\text{eq}, N_\text{life}\} < N_\text{crit}.
 \end{equation}
-Turning towards the boom condition for multiple collisions \eqref{eq:multcolboom}, the number of collisions taking place in a trigger-sized subregion of the DM sphere within a time $\tau_\text{diff}$ is roughly:
+Turning towards the boom condition for multiple collisions \eqref{eq:multcolboom}, the number of collisions taking place in a trigger-sized subregion of $R_\text{th}$ within a time $\tau_\text{diff}$ is roughly:
 \begin{equation}
 \label{eq:nocollapse}
 N_\text{multi} \sim \l \frac{\text{min}\{N_\text{eq}, N_\text{life}\}}{R_\text{th}^3} \r^2 \sigma_{\chi \chi} v_\text{th} \lambda_T^3 \tau_\text{diff}. 
 \end{equation}
-Demanding that \eqref{eq:infallrate}, \eqref{eq:nocollapseann}, and \eqref{eq:nocollapse} all be satisfied, we find that
-
+Demanding that \eqref{eq:steadycollect}, \eqref{eq:nocollapseann}, and \eqref{eq:nocollapse} all be satisfied:
 On the other hand, if \eqref{eq:collapsecondition} is satisfied, then the DM will collapse.   
 Note that for sufficiently strong DM-SM interactions, it is possible that the DM initially remains thermalized while collapsing.
 During this portion of the collapse, the loss in gravitational potential energy goes into heating the surrounding WD medium rather than accelerating the DM. 
@@ -318,17 +317,17 @@ In general, this is given as an integral of the annihilation rate
 N_\text{multi} \sim \int \l \frac{N}{r^3}\r^2 \sigma_{\chi \chi} \text{min}\{\lambda_T, r\}^3 dr,
 \end{equation}
 integrating over the distance fell within a fixed time interval $\tau_\text{diff}$. 
-The expectation is that there exists an optimal value of the lower radius, which we denote as $R_*$, at which $N_\text{multi}$ is maximized. 
-However, even without knowing the details of this optimum choice, we may evaluate the integral \eqref{eq:capintegral}. 
-There are two limiting behaviors which simplify the calculation. 
+The expectation is that there exists an optimal value of the lower radius at which $N_\text{multi}$ is maximized.
+We denote this as $R_*$. 
+However, even without knowing the details of this optimum choice, we can calculate \eqref{eq:capintegral} by considering the following limits. 
 At a given radius $r$, the time it takes for the DM to free-fall an $\OO(1)$ fraction of this distance is roughly
 \begin{equation}
 t_\text{ff} \sim r/v_\text{ff}, ~~~~ v_\text{ff} \sim \sqrt{\frac{G N m_\chi}{r}}. 
 \end{equation}
 If the free-fall time at a distance of order $R_*$ is much larger than the diffusion time, the annihilation rate can be approximated as constant over a time $\tau_\text{diff}$.
 If this free-fall time is instead much smaller than the diffusion time, the annihilation rate is a rapidly increasing function over the interval $\tau_\text{diff}$.
-Therefore, \eqref{eq:capintegral} is approximated by the peak value of the annihilation rate (which is maximized at $R_*$) times the time spent at this peak (which is the time to free-fall $\sim R_*$).
-Considering both these possibilities, the maximum value of \eqref{eq:capintegral} can be expressed as:
+Therefore, \eqref{eq:capintegral} is approximated by the peak value of the annihilation rate (which is maximized at $R_*$) multiplied by the time spent at this peak (which is the time to free-fall $\sim R_*$).
+Considering both these possibilities, the maximum value of \eqref{eq:capintegral} is of the form: 
 \begin{equation}
 N_\text{multi} \sim \l \frac{N}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff} ~\text{min}\{\lambda_T, R_*\}^3 ~\text{min}\{\tau_\text{diff}, R_*/v_\text{ff}\},
 \end{equation}
@@ -342,7 +341,7 @@ In any case, the optimum radius is determined as follows:
 \begin{equation}
 R_* = \text{max}\{\text{min}\{\lambda_T, R_{\chi \chi}\}, R_\text{sta}\}.
 \end{equation}
-Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius via formation of a black hole. 
+Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole. 
 The Schwarzschild radius is at most
 \begin{equation}
 R_\text{BH} \sim G m_\chi N_\text{crit} \approx 5 \times 10^{-24} ~\cm \l \frac{10^{16} ~\GeV}{m_\chi} \r^{3/2},
