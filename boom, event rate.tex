@@ -171,7 +171,7 @@ For $m_\chi \gg m_\text{ion}$, the typical momentum transfer in an elastic scatt
 The typical energy transfer in a nuclear elastic scatter is simply $q^2/m_\text{ion} \sim m_\text{ion} v_\text{esc}^2 \approx 10 ~\MeV$. 
 Evidently, the DM is capable of losing the necessary fraction of its energy for capture after a single elastic scatter if
 \begin{equation}
-m_\chi \lesssim m_\text{ion} \l \frac{v_\text{esc}}{v} \r^2 \approx 10^4 ~\GeV \l \frac{v}{10^{-3}} \r^2
+m_\chi \lesssim m_\text{ion} \l \frac{v_\text{esc}}{v} \r^2 \approx 10^4 ~\GeV \l \frac{10^{-3}}{v} \r^2
 \end{equation}
 In the case of multiple scatters, the stopping power of the DM is
 \begin{equation}
@@ -189,7 +189,7 @@ Demanding \eqref{eq:capture} yields a condition on the DM elastic nuclear cross 
 Since the momentum transfer $q$ is roughly of order the inverse nuclear size, it is reasonable to expect the DM coherently scatters off all nucleons in the nucleus. 
 The average per-nucleon cross section (spin-independent) is
 \begin{equation}
-\sigma_{\chi n} = A^2 \l \frac{\mu_{A}}{\mu_{n}}\r^2 F^2(q) \sigma_{\chi A} \sim A^4 F^2(q) \sigma_{\chi A},
+\sigma_{\chi A} = A^2 \l \frac{\mu_{A}}{\mu_{n}}\r^2 F^2(q) \sigma_{\chi n} \sim A^4 F^2(q) \sigma_{\chi n},
 \end{equation}
 where $F^2(q) \sim 10^{-2}-10^{-1}$ is the Helm form factor, calculated based on the analytic expression in \cite{LUX thesis}. 
 Thus, the cross section sufficient for capture
@@ -282,16 +282,16 @@ Demanding that the free-fall time \eqref{eq:freefalltime} is less than the time 
 \end{align}
 If both \eqref{eq:collapsecondition} and \eqref{eq:xicondition} are satisfied, the collected DM will undergo a gravitational collapse.
 Of course, even if DM annihilations can be ignored during the initial stages of the collapse, the annihilation rate increases with the number density of DM. 
+The effect of annihilations on the collapsing DM mass becomes important when it reaches a size
+\begin{align}
+R_{\chi \chi} \sim R_\text{th} \sqrt{\xi} \approx 10^{-9} ~\cm  \l \frac{10^{16} ~\GeV}{m_\chi} \r^{5/4} \l \frac{\sigma_{\chi \chi}}{10^{-30} ~\cm^2} \r^{1/2}. 
+\end{align}
 The number of DM particles in the collapsing core can be written as a function of collapse radius:
 \begin{equation}
 \label{eq:DMcollapsedeplete}
 N(r) \sim \frac{N_\text{crit}}{1 + \xi \l \frac{R_\text{th}}{r}\r^2}. 
 \end{equation}
-Thus, the effect of annihilations on the collapsing DM mass becomes important when it reaches a size
-\begin{align}
-R_{\chi \chi} \sim R_\text{th} \sqrt{\xi} \approx 10^{-9} ~\cm  \l \frac{10^{16} ~\GeV}{m_\chi} \r^{5/4} \l \frac{\sigma_{\chi \chi}}{10^{-30} ~\cm^2} \r^{1/2}, 
-\end{align}
-below which the number (and mass) of collapsing DM depletes as $N \propto r^2$. 
+Thus, below which the number (and mass) of collapsing DM depletes as $N \propto r^2$. 
 
 There are two potential evolutions of the captured DM: either the DM collapses or it does not. 
 For the later, it must be that the DM has reached its equilibrated number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime:
@@ -344,10 +344,10 @@ R_* = \text{max}\{\text{min}\{\lambda_T, R_{\chi \chi}\}, R_\text{sta}\}.
 Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole. 
 The Schwarzschild radius is at most
 \begin{equation}
-R_\text{BH} \sim G m_\chi N_\text{crit} \approx 5 \times 10^{-24} ~\cm \l \frac{10^{16} ~\GeV}{m_\chi} \r^{3/2},
+R_\text{BH} \sim G m_\chi N_\text{crit} \approx 5 \times 10^{-24} ~\cm \l \frac{10^{16} ~\GeV}{m_\chi} \r^{3/2}.
 \end{equation}
-but will be smaller if the DM number is substantially depleting according to \eqref{eq:DMcollapsedeplete}.
-
+Note that if the DM number is substantially depleting according to \eqref{eq:DMcollapsedeplete} in the case that $R_\text{BH} \lesssim R_{\chi \chi}$, then a BH will never form.
+ 
 \subsection{GUTzilla}
 
 \end{document}
