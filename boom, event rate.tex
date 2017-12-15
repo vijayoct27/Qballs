@@ -153,12 +153,21 @@ For the DM to be captured in a WD, it must have sufficiently strong interactions
 \label{eq:capture}
 \left( \frac{d E}{d x} \right)_\text{SP} \gtrsim \frac{m_\chi v^2}{R_\text{WD}},
 \end{equation}
-where $v$ is the DM galactic virial velocity relative to the WD.  
+where $v \in [0, 2 v_\text{halo}]$ is the DM galactic virial velocity relative to the WD.  
 For $v \ll v_\text{esc}$, we demand that the DM lose a fraction $(v/v_\text{esc})^2$ of its energy to eventually become stopped in the star. 
 Of course, the most probable relative velocity is of order $v_\text{halo} \sim 10^{-3}$.
-If every DM that passes through the WD is captured, then the capture rate $\Gamma_\text{cap}$ is simply \eqref{eq:TransitFluxCondition}. 
-However even if the interaction is unable to capture DM at a velocity $v_\text{halo}$, it may still capture those DM with a lower relative velocity. 
 The distribution of DM particles at relative velocity $v$ is given by:
+\begin{equation}
+\frac{dn}{dv} \sim \frac{\rho_\chi}{m_\chi} \frac{v}{v_\text{halo}^2}.
+\end{equation}
+If every DM that passes through the WD is captured, then the capture rate $\Gamma_\text{cap}$ is simply \eqref{eq:TransitFluxCondition}. 
+However even if the interaction is unable to capture DM at a velocity $v_\text{halo}$, it may still capture those DM with a lower relative velocity.
+The capture rate is roughly
+\begin{equation}
+\Gamma_\text{cap} \sim \Gamma_\text{transit} \cdot \text{min} \left \{ \frac{v_\text{cap}}{v_\text{halo}}, 1\right \}. 
+\end{equation}
+where $v_\text{cap}$ is the velocity below which the DM-SM interaction is capable of capture the DM. 
+
 For the remainder of this section, all numerical quantities are evaluated assuming a WD lifetime $\tau_\text{WD} \sim 5 ~\text{Gyr}$ and central WD density $n_\text{ion} \sim 10^{31} ~\cm^{-3}$. 
 At this density, the relevant WD parameters are approximately: 
 \begin{equation}
@@ -180,12 +189,17 @@ In the case of multiple scatters, the stopping power of the DM is
 Demanding \eqref{eq:capture} yields a condition on the DM elastic nuclear cross section sufficient for capture:
 \begin{equation}
 \label{eq:capturecross}
-\sigma_{\chi A} \gtrsim  \l \frac{m_\chi}{m_\text{ion}} \r \l \frac{v}{v_\text{esc}} \r^2 \frac{1}{n_\text{ion}} \frac{1}{R_\text{WD}} \approx 10^{-28} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r \l \frac{v}{10^{-3}} \r^2,
+\sigma_{\chi A} \gtrsim  \l \frac{m_\chi}{m_\text{ion}} \r \l \frac{v}{v_\text{esc}} \r^2 \frac{1}{n_\text{ion}} \frac{1}{R_\text{WD}} \approx 10^{-38} ~\cm^2 \l \frac{m_\chi}{10^{6} ~\GeV} \r \l \frac{v}{10^{-3}} \r^2,
 \end{equation}
-%Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid one if the cross section satisfies
-%\begin{equation}
-%\sigma_{\chi A} < \l \frac{\Eboom}{\lambda_T} \r \l \frac{1}{m_\text{ion} v_\text{esc}^2} \r \l \frac{1}{n_\text{ion}} \r \approx 10^{-8} ~\cm^2,
-%\end{equation}
+Thus, DM with velocities less than
+\begin{equation}
+v_\text{cap}^2 \sim v_\text{esc}^2 \sigma_{\chi A} \l \frac{m_\text{ion}}{m_\chi} \r n_\text{ion} R_\text{WD} 
+\end{equation}
+are sufficiently captured by the WD. 
+Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid one if the cross section satisfies
+\begin{equation}
+\sigma_{\chi A} < \l \frac{\Eboom}{\lambda_T} \r \l \frac{1}{m_\text{ion} v_\text{esc}^2} \r \l \frac{1}{n_\text{ion}} \r \approx 10^{-8} ~\cm^2,
+\end{equation}
 Since the momentum transfer $q$ is roughly of order the inverse nuclear size, it is reasonable to expect the DM coherently scatters off all nucleons in the nucleus. 
 The average per-nucleon cross section (spin-independent) is
 \begin{equation}
@@ -194,7 +208,7 @@ The average per-nucleon cross section (spin-independent) is
 where $F^2(q) \sim 10^{-2}-10^{-1}$ is the Helm form factor, calculated based on the analytic expression in \cite{LUX thesis}. 
 Thus, the cross section sufficient for capture
 \begin{equation}
-\sigma_{\chi n} \gtrsim 10^{-43} ~\cm^2 \l \frac{m_\chi}{10^{3} ~\GeV} \r \l \frac{v}{10^{-3}} \r^2
+\sigma_{\chi n} \gtrsim 10^{-41} ~\cm^2 \l \frac{m_\chi}{10^{6} ~\GeV} \r \l \frac{v}{10^{-3}} \r^2
 \end{equation}
 can be compared to limits from direct detection experiments. 
 Currently, the most stringent bound on DM nuclear elastic scatters comes from XENON 1T:
@@ -202,7 +216,7 @@ Currently, the most stringent bound on DM nuclear elastic scatters comes from XE
 \label{eq:xenon}
 \sigma^\text{XENON}_{\chi n} < 10^{-45} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
 \end{equation}
-Evidently, direct detection bounds constrain the capture of DM in WDs via elastic scatters: only those DM particles with an initial relative velocity $v \lesssim 10^{-4}$ can be stopped in a $\sim 1.25 ~M_{\astrosun}$ WD while still avoiding current limits. 
+Evidently, direct detection bounds constrain the capture of DM in WDs via elastic scatters.
 
 We now review the evolution of DM within the star once it has been captured. 
 The DM eventually thermalizes at a velocity
