@@ -309,7 +309,6 @@ This can be seen explicitly by solving the differential equation for the total r
 \label{eq:DMcollapsedeplete}
 \frac{dN}{dr} \sim \frac{N^2}{r^3} \sigma_{\chi \chi} \Rightarrow N(r) \approx \frac{N_\text{crit}}{1+ R_{\chi \chi}^2 \l \frac{1}{r^2} -\frac{1}{R_\text{th}^2}\r}
 \end{equation}
-Thus, below $R_{\chi \chi}$ the number (and mass) of collapsing DM depletes as $N(r) \propto r^2$. 
 This is only sensible if the DM collapses below the thermal radius (so we are justified calling the evolving DM density profile a ``collapse"):
 \begin{align}
 \label{eq:xicondition}
@@ -352,6 +351,7 @@ N_\text{multi} \sim \l \frac{N}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff} ~\tex
 \end{equation}
 The questions is: what is $R_*$?
 Ultimately, the answer depends on the parameters $m_\chi$ and $\sigma_{\chi \chi}$. 
+As an example, first consider the case where $\sigma_{\chi \chi}$ is independent of position or velocity. 
 If $R_{\chi \chi} > L_\text{heat}$, then clearly $N_\text{multi}$ is maximized at $R_* \sim L_\text{heat}$.
 On the other hand, if $R_{\chi \chi} < L_\text{heat}$ then $N_\text{multi}$ is maximized at $R_* \sim R_{\chi \chi}$.
 However, there may be some stabilizing pressure which prevents the DM from collapsing below a radius $R_\text{sta}$.
@@ -360,12 +360,18 @@ In any case, the optimum radius is determined as follows:
 \begin{equation}
 R_* = \text{max}\{\text{min}\left \{L_\text{heat}, R_{\chi \chi}\}, R_\text{sta}\right\}.
 \end{equation}
-
 Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole (BH):
 \begin{equation}
 R_\text{BH} \sim G m_\chi N_\text{crit} \approx 5 \times 10^{-24} ~\cm \l \frac{10^{16} ~\GeV}{m_\chi} \r^{3/2}.
 \end{equation}
 Note that if the DM number is substantially depleting according to \eqref{eq:DMcollapsedeplete} in the case that $R_\text{BH} < R_{\chi \chi}$, then a BH never forms and the optimal radius is simply $R_* \sim L_\text{heat}$. 
+Of course, this choice of radius will necessarily change for a specific model that relates $\sigma_{\chi \chi}$ to velocity in some way. 
+If $\sigma_{\chi \chi} \propto 1/v$, then a similar argument results in an optimum radius:
+\begin{equation}
+R_* = \text{max}\{R_{\chi \chi}, R_\text{sta}\}.
+\end{equation}
+The same holds true for cross sections $\sigma_{\chi \chi} \propto 1/v^2$, in which case one can show that there is even no collapse to radii below $R_{\chi \chi}$ due to excessive depletion.  
+
 
 \subsection{Constraints}
 
@@ -382,8 +388,8 @@ We can understand the shape of this excluded region as follows.
 If the DM mass is too low, then there is not enough time within the age of the WD to collect the critical mass needed for initiating collapse.
 Similarly if the cross section for annihilation is too large, then the DM will effectively deplete before reaching this critical mass. 
 However, $m_\chi$ cannot be arbitrarily large or $\sigma_{\chi \chi}$ arbitrarily small---these limits are determined in a non-trivial way by the boom condition for multiple collisions \eqref{eq:multcolboom}. 
-The region in Figure \ref{fig:multicapture} are the set of all points which satisfy \eqref{eq:collapsecondition} and \eqref{eq:eq:multcolboom}, with $N_\text{multi}$ given by \eqref{eq:nmulti} assuming that the DM collapse is stabilized by formation of a BH. 
-Additionally, one can check that the conditions \eqref{eq:steadycollect} and \eqref{eq:xicondition} are automatically satisfied if \eqref{eq:collapsecondition} and \eqref{eq:multcolboom} are satisfied. 
+The region in Figure \ref{fig:multicapture} are the set of all points which satisfy \eqref{eq:collapsecondition} and \eqref{eq:multcolboom}----with $N_\text{multi}$ given by \eqref{eq:nmulti}---assuming that the DM collapse is stabilized by formation of a BH. 
+Additionally, one can check that the conditions \eqref{eq:steadycollect} and \eqref{eq:xicondition} hold if \eqref{eq:collapsecondition} and \eqref{eq:multcolboom} are satisfied.
 
 Of course, the constraints on multiple DM collisions in a collapse can be made concrete for a specified DM interaction. 
 As in Section \ref{sec:previous}, we consider the case where the DM is captured in a WD via elastic scatters. 
@@ -412,5 +418,11 @@ The W boson decays predominantly to quarks with a decay length (including the re
 \delta_W \sim \frac{8\pi}{g_W^2 m_W^2} \l \frac{m_\chi}{m_W} \r \sim 10^{-7} ~\cm \l \frac{m_\chi}{10^{9} ~\GeV} \r. 
 \end{equation} 
 
+\begin{figure}
+\includegraphics[scale=.35]{GZcapture.pdf}
+\caption{Constraints on a generic class of DM models which elastically scatter off nuclei through Z boson-exchange and annihilate into W bosons. Bounds come from observation of a single $1.25~M_{\astrosun}$ WD.
+We assume the DM collapse is stabilized by formation of a BH. Also shown are the naive order of magnitude (blue) estimate and unitarity limit (black) for this annihilation cross section.}
+\label{fig:multicapture}
+\end{figure}
 
 \end{document}
