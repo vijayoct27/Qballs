@@ -256,7 +256,7 @@ We can ignore the depletion of in-falling DM as long as \eqref{eq:infallrate} is
 \label{eq:steadycollect}
 \Gamma_\text{infall} < \Gamma_\text{cap}.
 \end{equation}
-Interestingly, this condition is independent of $m_\chi$ and translates to an upper bound on the cross section $\sigma_{\chi \chi} < 10^{-13} ~\text{cm}^2$. 
+In fact, this condition is independent of $m_\chi$ and translates to an upper bound on the cross section $\sigma_{\chi \chi} < 10^{-13} ~\text{cm}^2$. 
 
 After the initial off-set time $t_\text{settle}$, DM will begin steadily collecting at the thermal radius.
 Assuming \eqref{eq:steadycollect} is satisfied, the collection rate is roughly the same as the capture rate $\Gamma_\text{cap}$. 
@@ -283,7 +283,7 @@ In other words:
 \label{eq:collapsecondition}
 N_\text{crit} < N_\text{eq}, ~~~~ N_\text{crit} < N_\text{life}.
 \end{equation}
-Importantly, we see that DM masses below $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD to collect to $N_\text{crit}$ and begin a collapse. 
+Importantly, we see that DM masses less than $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD in a DM density $\rho_\chi \sim 0.4 ~\GeV/\cm^3$ to collect a number $N_\text{crit}$ and begin a collapse. 
 At a given radius $r$, the time it takes for the DM to free-fall an $\OO(1)$ fraction of this distance is roughly
 \begin{equation}
 \label{eq:freefalltime}
@@ -316,8 +316,7 @@ This is only sensible if the DM collapses below the thermal radius (so we are ju
 \label{eq:xicondition}
 R_{\chi \chi} < R_\text{th}.
 \end{align}
-It turns out condition \eqref{eq:xicondition} is always true if both \eqref{eq:collapsecondition} and the associated boom condition \eqref{eq:multcolboom}, described in detail below, are satisfied. 
-
+%It turns out condition \eqref{eq:xicondition} is always true if both \eqref{eq:collapsecondition} and the associated boom condition \eqref{eq:multcolboom}, described in detail below, are satisfied. 
 
 There are two potential evolutions of the captured DM: either the DM collapses or it does not. 
 For the later, it must be that the DM has reached its equilibrated number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime:
@@ -349,10 +348,11 @@ If this free-fall time is instead much smaller than the diffusion time, the anni
 Therefore, \eqref{eq:capintegral} is approximated by the peak value of the annihilation rate (which is maximized at $R_*$) multiplied by the time spent at this peak (which is the time to free-fall $\sim R_*$).
 Considering both these possibilities, the maximum value of \eqref{eq:capintegral} is of the form: 
 \begin{equation}
+\label{eq:nmulti}
 N_\text{multi} \sim \l \frac{N}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff} ~\text{min}\{\lambda_T, R_*\}^3 ~\text{min}\{\tau_\text{diff}, R_*/v_\text{ff}\},
 \end{equation}
 The questions is: what is $R_*$?
-Ultimately, the answer depends on the parameters $tm_\chi$ and $\sigma_{\chi \chi}$. 
+Ultimately, the answer depends on the parameters $m_\chi$ and $\sigma_{\chi \chi}$. 
 If $R_{\chi \chi} > \lambda_T$, then clearly $N_\text{multi}$ is maximized at $R_* \sim \lambda_T$.
 On the other hand, if $R_{\chi \chi} < \lambda_T$ then $N_\text{multi}$ is maximized at $R_* \sim R_{\chi \chi}$.
 However, there may be some stabilizing pressure which prevents the DM from collapsing below a radius $R_\text{sta}$.
@@ -361,13 +361,39 @@ In any case, the optimum radius is determined as follows:
 \begin{equation}
 R_* = \text{max}\{\text{min}\left \{\lambda_T, R_{\chi \chi}\}, R_\text{sta}\right\}.
 \end{equation}
-It it easy to check that if the DM initially thermalizes via elastic nuclear scatters, then the DM is in fact free-falling and does not remain thermalized
+
 Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole (BH):
 \begin{equation}
 R_\text{BH} \sim G m_\chi N_\text{crit} \approx 5 \times 10^{-24} ~\cm \l \frac{10^{16} ~\GeV}{m_\chi} \r^{3/2}.
 \end{equation}
 Note that if the DM number is substantially depleting according to \eqref{eq:DMcollapsedeplete} in the case that $R_\text{BH} < R_{\chi \chi}$, then a BH never forms and the optimal radius is simply $R_* \sim \lambda_T$. 
- 
-\subsection{GUTzilla}
+
+\subsection{Constraints}
+
+We now turn towards constraints on DM interactions in the capture scenario. 
+In Figure \ref{fig:multicapture}, we show the constraints on DM-DM annihilation cross section $\sigma_{\chi \chi}$ into SM particles during self-gravitational collapse in a WD, i.e. multiple collisions.
+We have assumed that the DM is efficiently captured, i.e. $\Gamma_\text{transit} \sim \Gamma_\text{capture}$. 
+\begin{figure}
+\includegraphics[scale=.35]{multicapture.pdf}
+\caption{Constraints on DM-DM annihilation cross-section into SM particles which deposit their energy compactly within a trigger size $\lambda_T$ during self-gravitational collapse in a WD. Bounds come from observation of a single $1.25~M_{\astrosun}$ WD assuming efficient capture of the DM ($\Gamma_\text{transit} \sim \Gamma_\text{capture}$). We also assume the DM collapse is stabilized by formation of a BH.}
+\label{fig:multicapture}
+\end{figure}
+The bounds in Figure \ref{fig:multicapture} are valid for any SM annihilation products which deposit their energy compactly upon release within a trigger size $\lambda_T$.
+We can understand the shape of this excluded region as follows.
+If the DM mass is too low, then there is not enough time within the age of the WD to collect the critical mass needed for initiating collapse.
+Similarly if the cross section for annihilation is too large, then the DM will effectively deplete before reaching this critical mass. 
+However, $m_\chi$ cannot be arbitrarily large or $\sigma_{\chi \chi}$ arbitrarily small---these limits are determined in a non-trivial way by the boom condition for multiple collisions \eqref{eq:multcolboom}. 
+The region in Figure \ref{fig:multicapture} are the set of all points which satisfy \eqref{eq:collapsecondition} and \eqref{eq:eq:multcolboom}, with $N_\text{multi}$ given by \eqref{eq:nmulti} assuming that the DM collapse is stabilized by formation of a BH. 
+Additionally, one can check that the conditions \eqref{eq:steadycollect} and \eqref{eq:xicondition} are automatically satisfied if \eqref{eq:collapsecondition} and \eqref{eq:multcolboom} are satisfied. 
+
+
+Of course, the constraints on multiple DM collisions in a collapse can be made more concrete for a specific model of the DM.
+As in Section \ref{sec:previous}, we consider the case where the DM is captured in a WD via elastic scatters. 
+Suppose the DM scatters off nuclear targets through Z-boson exchange:
+\begin{equation}
+\sigma_{\chi n} \sim 
+\end{equation}
+This is a well-motivated scattering cross section seen in many models of DM. 
+
 
 \end{document}
