@@ -158,8 +158,9 @@ For $v \ll v_\text{esc}$, we demand that the DM lose a fraction $(v/v_\text{esc}
 Of course, the most probable relative velocity is of order $v_\text{halo} \sim 10^{-3}$.
 The distribution of DM particles at relative velocity $v$ is given by:
 \begin{equation}
-\frac{dn}{dv} \sim \frac{\rho_\chi}{m_\chi} \frac{v}{v_\text{halo}^2}.
+\frac{dn}{dv} \sim \frac{\rho_\chi}{m_\chi} \frac{v}{v_\text{halo}^2},
 \end{equation}
+appropriately normalized. 
 If every DM that passes through the WD is captured, then the capture rate $\Gamma_\text{cap}$ is simply \eqref{eq:TransitFluxCondition}. 
 However even if the interaction is unable to capture DM at a velocity $v_\text{halo}$, it may still capture those DM with a lower relative velocity.
 The capture rate is roughly
@@ -214,7 +215,7 @@ can be compared to limits from direct detection experiments.
 Currently, the most stringent bound on DM nuclear elastic scatters comes from XENON 1T:
 \begin{equation}
 \label{eq:xenon}
-\sigma^\text{XENON}_{\chi n} < 10^{-45} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
+\sigma^\text{XENON}_{\chi n} < 10^{-42} ~\text{cm}^2 \l \frac{m_\chi}{10^6 ~\GeV} \r.
 \end{equation}
 Evidently, direct detection bounds constrain the capture of DM in WDs via elastic scatters.
 
@@ -283,29 +284,40 @@ In other words:
 N_\text{crit} < N_\text{eq}, ~~~~ N_\text{crit} < N_\text{life}.
 \end{equation}
 Importantly, we see that DM masses below $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD to collect to $N_\text{crit}$ and begin a collapse. 
-We must also ensure that the collapsing DM is not immediately depleted due to annihilations.
-The timescale for self-gravitational collapse at the thermal radius is independent of DM mass and is approximately:
-\begin{align}
+At a given radius $r$, the time it takes for the DM to free-fall an $\OO(1)$ fraction of this distance is roughly
+\begin{equation}
 \label{eq:freefalltime}
-  t_\text{collapse} \sim \frac{R_\text{th}}{v_\text{th}} \approx 0.1 ~\text{s}
-\end{align}
-Demanding that the free-fall time \eqref{eq:freefalltime} is less than the time for annihilations to deplete $N_\text{crit}$ by an $\OO(1)$ fraction results in an additional condition:
+t_\text{ff} \sim \frac{r}{v_\text{ff}}, ~~~~ v_\text{ff} \sim \sqrt{\frac{G N m_\chi}{r}}.
+\end{equation}
+Thus, the timescale for self-gravitational collapse at the thermal radius is independent of DM mass:
 \begin{align}
-\label{eq:xicondition}
-\xi \equiv \frac{N_\text{crit} \sigma_{\chi \chi}}{R_\text{th}^2} < 1.
+\label{eq:collapsetime}
+  t_\text{collapse} \sim \frac{R_\text{th}}{v_\text{th}} \approx 0.1 ~\text{s}.
 \end{align}
-If both \eqref{eq:collapsecondition} and \eqref{eq:xicondition} are satisfied, the collected DM will undergo a gravitational collapse.
-Of course, even if DM annihilations can be ignored during the initial stages of the collapse, the annihilation rate increases with the number density of DM. 
-The effect of annihilations on the collapsing DM mass becomes important when it reaches a size
+Of course, it is possible that the DM initially remains thermalized while collapsing due to sufficiently strong DM-SM interactions. 
+In the case of elastic nuclear scatters, the collapsing DM is free-falling at the thermal radius if
+\begin{equation}
+\sigma_{\chi n} \lesssim \frac{1}{n_\text{ion} R_\text{th}} \l \frac{m_\chi}{m_\text{ion}}\r \approx 10^{-33} ~\cm^2 \l \frac{m_\chi}{10^6 ~\GeV} \r^{3/2},
+\end{equation}
+which is trivially satisfied for any cross sections which satisfies the XENON bound. 
+Depletion of the collapsing DM mass becomes important when the timescale for collapse is of order the timescale for annihilation.
+This happens at a radius
 \begin{align}
-R_{\chi \chi} \sim R_\text{th} \sqrt{\xi} \approx 10^{-9} ~\cm  \l \frac{10^{16} ~\GeV}{m_\chi} \r^{5/4} \l \frac{\sigma_{\chi \chi}}{10^{-30} ~\cm^2} \r^{1/2}. 
+R_{\chi \chi} \sim \sqrt{N_\text{crit} \sigma_{\chi \chi}} \approx 10^{-9} ~\cm  \l \frac{10^{16} ~\GeV}{m_\chi} \r^{5/4} \l \frac{\sigma_{\chi \chi}}{10^{-30} ~\cm^2} \r^{1/2}. 
 \end{align}
-The number of DM particles in the collapsing core can be written as a function of collapse radius:
+This can be seen explicitly by solving the differential equation for the total rate of annihilations in the collapsing volume:
 \begin{equation}
 \label{eq:DMcollapsedeplete}
-N(r) \sim \frac{N_\text{crit}}{1 + \xi \l \frac{R_\text{th}}{r}\r^2}. 
+\frac{dN}{dr} \sim \frac{N^2}{r^3} \sigma_{\chi \chi} \Rightarrow N(r) \approx \frac{N_\text{crit}}{1+ R_{\chi \chi}^2 \l \frac{1}{r^2} -\frac{1}{R_\text{th}^2}\r}
 \end{equation}
-Thus, below which the number (and mass) of collapsing DM depletes as $N \propto r^2$. 
+Thus, below $R_{\chi \chi}$ the number (and mass) of collapsing DM depletes as $N(r) \propto r^2$. 
+This is only sensible if the DM collapses below the thermal radius (so we are justified calling the evolving DM density profile a ``collapse"):
+\begin{align}
+\label{eq:xicondition}
+R_{\chi \chi} < R_\text{th}.
+\end{align}
+It turns out condition \eqref{eq:xicondition} is always true if both \eqref{eq:collapsecondition} and the associated boom condition \eqref{eq:multcolboom}, described in detail below, are satisfied. 
+
 
 There are two potential evolutions of the captured DM: either the DM collapses or it does not. 
 For the later, it must be that the DM has reached its equilibrated number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime:
@@ -318,12 +330,10 @@ Turning towards the boom condition for multiple collisions \eqref{eq:multcolboom
 \label{eq:nocollapse}
 N_\text{multi} \sim \l \frac{\text{min}\{N_\text{eq}, N_\text{life}\}}{R_\text{th}^3} \r^2 \sigma_{\chi \chi} v_\text{th} \lambda_T^3 \tau_\text{diff}. 
 \end{equation}
-Demanding that \eqref{eq:steadycollect}, \eqref{eq:nocollapseann}, and \eqref{eq:nocollapse} all be satisfied:
-On the other hand, if \eqref{eq:collapsecondition} is satisfied, then the DM will collapse.   
-Note that for sufficiently strong DM-SM interactions, it is possible that the DM initially remains thermalized while collapsing.
-During this portion of the collapse, the loss in gravitational potential energy goes into heating the surrounding WD medium rather than accelerating the DM. 
-This was considered by \cite{Bramante} for igniting WDs via the capture and subsequent collapse of asymmetric DM.
-Here, we focus on a complementary scenario: the DM collapses at free-fall velocity and annihilates sufficiently rapidly to heat the star. 
+As an example, consider the case in which the DM is efficiently captured by the WD $v_\text{cap} \sim v_\text{halo}$. 
+Even in this ``best-case" scenario, we find that there is no available parameter space $\{m_\chi, \sigma_{\chi \chi}\}$ where both \eqref{eq:nocollapseann} and \eqref{eq:multcolboom}---with $N_\text{multi}$ given by \eqref{eq:nocollapse}---are simultaneously satisfied. 
+
+Therefore, we instead turn our attention to collapsing DM, characterized by \eqref{eq:collapsecondition}. 
 Of course, the number of DM-DM collisions $N_\text{multi}$ that can be counted as a single heating event depends on the where we examine the collapse. 
 In general, this is given as an integral of the annihilation rate
 \begin{equation}
@@ -334,11 +344,7 @@ integrating over the distance fell within a fixed time interval $\tau_\text{diff
 The expectation is that there exists an optimal value of the lower radius at which $N_\text{multi}$ is maximized.
 We denote this as $R_*$. 
 However, even without knowing the details of this optimum choice, we can calculate \eqref{eq:capintegral} by considering the following limits. 
-At a given radius $r$, the time it takes for the DM to free-fall an $\OO(1)$ fraction of this distance is roughly
-\begin{equation}
-t_\text{ff} \sim r/v_\text{ff}, ~~~~ v_\text{ff} \sim \sqrt{\frac{G N m_\chi}{r}}. 
-\end{equation}
-If the free-fall time at a distance of order $R_*$ is much larger than the diffusion time, the annihilation rate can be approximated as constant over a time $\tau_\text{diff}$.
+If the free-fall time \eqref{eq:freefalltime} at a distance of order $R_*$ is much larger than the diffusion time, the annihilation rate can be approximated as constant over a time $\tau_\text{diff}$.
 If this free-fall time is instead much smaller than the diffusion time, the annihilation rate is a rapidly increasing function over the interval $\tau_\text{diff}$.
 Therefore, \eqref{eq:capintegral} is approximated by the peak value of the annihilation rate (which is maximized at $R_*$) multiplied by the time spent at this peak (which is the time to free-fall $\sim R_*$).
 Considering both these possibilities, the maximum value of \eqref{eq:capintegral} is of the form: 
@@ -346,21 +352,21 @@ Considering both these possibilities, the maximum value of \eqref{eq:capintegral
 N_\text{multi} \sim \l \frac{N}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff} ~\text{min}\{\lambda_T, R_*\}^3 ~\text{min}\{\tau_\text{diff}, R_*/v_\text{ff}\},
 \end{equation}
 The questions is: what is $R_*$?
-Ultimately, the answer depends on the parameters $m_\chi$ and $\sigma_{\chi \chi}$. 
+Ultimately, the answer depends on the parameters $tm_\chi$ and $\sigma_{\chi \chi}$. 
 If $R_{\chi \chi} > \lambda_T$, then clearly $N_\text{multi}$ is maximized at $R_* \sim \lambda_T$.
 On the other hand, if $R_{\chi \chi} < \lambda_T$ then $N_\text{multi}$ is maximized at $R_* \sim R_{\chi \chi}$.
 However, there may be some stabilizing pressure which prevents the DM from collapsing below a radius $R_\text{sta}$.
 This is reasonable to expect in the case of composite DM, although such a stable radius necessarily depends on unknown physics. 
 In any case, the optimum radius is determined as follows:
 \begin{equation}
-R_* = \text{max}\{\text{min}\{\lambda_T, R_{\chi \chi}\}, R_\text{sta}\}.
+R_* = \text{max}\{\text{min}\left \{\lambda_T, R_{\chi \chi}\}, R_\text{sta}\right\}.
 \end{equation}
-Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole. 
-The Schwarzschild radius is at most
+It it easy to check that if the DM initially thermalizes via elastic nuclear scatters, then the DM is in fact free-falling and does not remain thermalized
+Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole (BH):
 \begin{equation}
 R_\text{BH} \sim G m_\chi N_\text{crit} \approx 5 \times 10^{-24} ~\cm \l \frac{10^{16} ~\GeV}{m_\chi} \r^{3/2}.
 \end{equation}
-Note that if the DM number is substantially depleting according to \eqref{eq:DMcollapsedeplete} in the case that $R_\text{BH} \lesssim R_{\chi \chi}$, then a BH will never form.
+Note that if the DM number is substantially depleting according to \eqref{eq:DMcollapsedeplete} in the case that $R_\text{BH} < R_{\chi \chi}$, then a BH never forms and the optimal radius is simply $R_* \sim \lambda_T$. 
  
 \subsection{GUTzilla}
 
