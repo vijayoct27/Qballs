@@ -155,54 +155,26 @@ Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_
 \end{align}
 
 \paragraph{Event Rate: DM Capture.}
-For the DM to be captured in a WD, it must have sufficiently strong interactions with stellar constituents:
-\begin{equation}
-\label{eq:capture}
-\left( \frac{d E}{d x} \right)_\text{SP} \gtrsim \frac{m_\chi v^2}{R_\text{WD}},
-\end{equation}
-where $v \in [0, 2 v_\text{halo}]$ is the DM galactic virial velocity relative to the WD.  
-Since $v \ll v_\text{esc}$, we demand that the DM lose a fraction $(v/v_\text{esc})^2$ of its energy to eventually become stopped in the star. 
-Of course, the most probable relative velocity is of order $v_\text{halo} \sim 10^{-3}$.
-The distribution of DM particles at relative velocity $v$ is given by:
-%\begin{equation}
-%\frac{dn_\chi}{dv} \sim \frac{\rho_\chi}{m_\chi} \frac{v}{v_\text{halo}^2},
-%\end{equation}
-%appropriately normalized. 
-If every DM that passes through the WD is captured, then the capture rate is simply \eqref{eq:TransitFluxCondition}. 
-However even if the interaction is unable to capture DM at a velocity $v_\text{halo}$, it may still capture those DM with a lower relative velocity.
+For the DM to be captured in a WD, it must lose energy $\sim m_\chi v^2$, where $v$ is the relative DM velocity (in the rest frame of the WD) asymptotically far away.
+Properly, this DM velocity is described by a (boosted) Maxwell distribution peaked at the galactic virial velocity $v_\text{halo} \sim 10^{-3}$. 
+If $v \ll v_\text{esc}$, we demand that the DM lose a fraction $(v/v_\text{esc})^2$ of its energy to eventually stop in the star. 
 
 The physics of DM capture can be made more precise for a specific interaction.
-The simplest scenario is a spin-independent, elastic scattering off ions characterized by cross section $\sigma_{\chi A}$. 
-For $m_\chi \gg m_\text{ion}$, the typical momentum transfer in an elastic scatter is $q \sim \mu_{A} v_\text{esc} \approx 200 ~\MeV$, where $\mu_{A}$ is the reduced mass of the DM-nuclei system. 
-The typical energy transfer in a nuclear elastic scatter is simply $q^2/m_\text{ion} \sim m_\text{ion} v_\text{esc}^2 \approx 10 ~\MeV$. 
-Evidently, the DM is capable of losing the necessary fraction of its energy for capture after a single elastic scatter if
-\begin{equation}
-m_\chi \lesssim m_\text{ion} \l \frac{v_\text{esc}}{v} \r^2 \approx 10^4 ~\GeV \l \frac{10^{-3}}{v} \r^2.
-\end{equation}
-In a WD, the typical number of scatters expected is of order
-\begin{equation}
-N_\text{scatters} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD}. 
-\end{equation}
-In the case of multiple scatters $N_\text{scatters} \gg 1$, the energy loss per distance travelled at velocity $\sim v_\text{esc}$ is
-\begin{equation}
-\left( \frac{d E}{d x} \right)_\text{SP} \sim n_\text{ion} \sigma_{\chi A} m_\text{ion} v_\text{esc}^2.
-\end{equation}
-Demanding \eqref{eq:capture} yields a condition on the DM elastic nuclear cross section sufficient for capture:
-\begin{equation}
-\label{eq:capturecross}
-\sigma_{\chi A} \gtrsim  \l \frac{m_\chi}{m_\text{ion}} \r \l \frac{v}{v_\text{esc}} \r^2 \frac{1}{n_\text{ion}} \frac{1}{R_\text{WD}} \approx 10^{-38} ~\cm^2 \l \frac{m_\chi}{10^{6} ~\GeV} \r \l \frac{v}{10^{-3}} \r^2,
-\end{equation}
+Consider a spin-independent, elastic scattering off ions characterized by cross section $\sigma_{\chi A}$. 
+Assuming $m_\chi \gg m_\text{ion}$, the typical momentum transfer in an elastic scatter is $q \sim \mu_{A} v_\text{esc} \approx 200 ~\MeV$, where $\mu_{A}$ is the reduced mass of the DM-nuclei system. 
+This corresponds to an energy transfer $q^2/m_\text{ion} \sim m_\text{ion} v_\text{esc}^2 \approx 10 ~\MeV$. 
+Note that the average number of DM scatters in the WD is simply a ratio of the mean free path to the size of the WD $\sim n_\text{ion} \sigma_{\chi A} R_\text{WD}$. 
 Thus, DM with velocities less than
 \begin{equation}
-v_\text{cap}^2 \sim v_\text{esc}^2 \sigma_{\chi A} \l \frac{m_\text{ion}}{m_\chi} \r n_\text{ion} R_\text{WD} 
+\label{eq:capture}
+v_\text{cap}^2 \sim v_\text{esc}^2 \l \frac{m_\text{ion}}{m_\chi} \r \sigma_{\chi A} n_\text{ion} R_\text{WD} 
 \end{equation}
-are sufficiently captured by the WD. 
-In this case, one can show \cite{Gould} that the capture rate is modified to
+are sufficiently captured in the WD. 
+A detailed calculation of the rate of DM capture \cite{Gould} shows that this rate is parametrically
 \begin{equation}
-\Gamma_\text{cap} \sim \Gamma_\text{transit} \cdot \text{min} \left \{ \l \frac{v_\text{cap}}{v_\text{halo}} \r^2, 1\right \}. 
+\Gamma_\text{cap} \sim \Gamma_\text{transit} \l \frac{v_\text{cap}}{v_\text{halo}} \r^2
 \end{equation}
-
-Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid for cross sections
+Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid one for cross sections
 \begin{equation}
 \sigma_{\chi A} < \l \frac{\Eboom}{\lambda_T} \r \l \frac{1}{m_\text{ion} v_\text{esc}^2} \r \l \frac{1}{n_\text{ion}} \r \approx 10^{-8} ~\cm^2,
 \end{equation}
@@ -212,21 +184,16 @@ The average per-nucleon cross section (spin-independent) is
 \sigma_{\chi A} = A^2 \l \frac{\mu_{A}}{\mu_{n}}\r^2 F^2(q) \sigma_{\chi n},
 \end{equation}
 where $F^2(q) \approx 0.1$ is the Helm form factor, calculated based on the analytic expression in \cite{LUX thesis}. 
-Thus, the cross section sufficient for capture
-\begin{equation}
-\sigma_{\chi n} \gtrsim 10^{-41} ~\cm^2 \l \frac{m_\chi}{10^{6} ~\GeV} \r \l \frac{v}{10^{-3}} \r^2
-\end{equation}
-can be compared to limits from direct detection experiments.
-In addition, the assumption that the DM mean free path is smaller than the size of the WD is valid for
-\begin{equation}
-\sigma_{\chi n} \gtrsim 10^{-43} ~\cm^2.
-\end{equation}
-Currently, the most stringent bound on DM nuclear elastic scatters comes from XENON 1T:
+We can compare the cross section sufficient for capture \eqref{eq:capture} to the limits from direct detection experiments.
+%In addition, the assumption that the DM mean free path is smaller than the size of the WD is valid for
+%\begin{equation}
+%\sigma_{\chi n} \gtrsim 10^{-43} ~\cm^2.
+%\end{equation}
+Currently, the most stringent bound on DM nuclear elastic scatters is from XENON 1T:
 \begin{equation}
 \label{eq:xenon}
-\sigma^\text{XENON}_{\chi n} < 10^{-42} ~\text{cm}^2 \l \frac{m_\chi}{10^6 ~\GeV} \r.
+\sigma^\text{Xe}_{\chi n} < 10^{-42} ~\text{cm}^2 \l \frac{m_\chi}{10^6 ~\GeV} \r.
 \end{equation}
-Evidently, direct detection bounds constrain the capture of DM in WDs via elastic scatters.
 
 We now review the evolution of DM within the star once it has been captured. 
 The DM eventually thermalizes at a velocity
@@ -239,14 +206,15 @@ R_\text{th} \sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \approx 0.1 ~\cm \
 \end{align}
 assuming for simplicity a constant WD density $\rho_\text{WD} \sim n_\text{ion} m_\text{ion}$ within $R_\text{th}$.
 Of course, the timescale for captured DM to thermalize and settle at $R_\text{th}$ depends on the nature of the DM-SM interaction.
-If the DM is capable of losing energy rapidly in the star, we expect this time to be of order
+If the DM rapidly loses energy in the star, we expect this time to be of order
 \begin{align}
 \label{eq:tdrift}
   t_\text{settle} \sim \frac{R_\text{WD}}{v_\text{th}}
   \approx 50 ~\text{yr} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{1/2}. 
 \end{align}
-The settle time can be explicitly calculated in the case that the DM is captured via elastic nuclear scatters. 
-For our purposes, we simply demand that the settle time is shorter than the age of the WD:
+The settle time has been calculated in the case that the DM is captured via elastic nuclear scatters \cite{Tinyakov}.
+ 
+We demand that the settle time is shorter than the age of the WD:
 \begin{equation}
 t_\text{settle} < \tau_\text{WD}.
 \end{equation}
@@ -293,8 +261,7 @@ Thus the condition for a collapse is:
 N_\text{crit} < \text{min}\{N_\text{eq}, N_\text{life}\}. 
 \end{equation}
 Importantly, we see that DM masses less than $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD in a DM density $\rho_\chi \sim 0.4 ~\GeV/\cm^3$ to collect a number $N_\text{crit}$ and begin a collapse. 
-Also, DM masses greater than $\sim 10^{21} ~\GeV$ will collapse before accumulating more than a single particle $N_\text{crit} < 1$, which is ultimately a limiting case of the boom condition \eqref{eq:multcolboom} that requires at least one annihilation during the collapse. 
-
+Also, DM masses greater than $\sim 10^{21} ~\GeV$ will collapse with just a single particle $N_\text{crit} < 1$.
 At a given radius $r$, the time it takes for the DM to free-fall an $\OO(1)$ fraction of this distance is roughly
 \begin{equation}
 \label{eq:freefalltime}
@@ -311,14 +278,13 @@ In the case of elastic nuclear scatters the DM loses a fraction $\sim m_\text{io
 \sigma_{\chi A} \lesssim \frac{1}{n_\text{ion} R_\text{th}} \l \frac{m_\chi}{m_\text{ion}}\r \approx 10^{-30} ~\cm^2 \l \frac{m_\chi}{10^6 ~\GeV} \r^{3/2}.
 \end{equation}
 It is straightforward to see that this is the case for any cross sections which satisfy the XENON bound \eqref{eq:xenon}.
-Depletion of the collapsing DM mass becomes important when the timescale for collapse is of order the timescale for annihilation, which occurs at a radius
+Depletion of the collapsing DM mass becomes important when the timescale for collapse is of order the timescale for annihilation, which occurs at the characteristic radius
 \begin{align}
 R_{\chi \chi} \sim \sqrt{N_\text{crit} \sigma_{\chi \chi}} \approx 10^{-9} ~\cm  \l \frac{10^{16} ~\GeV}{m_\chi} \r^{5/4} \l \frac{\sigma_{\chi \chi}}{10^{-30} ~\cm^2} \r^{1/2}. 
 \end{align}
-This can be seen explicitly by solving the differential equation for the total rate of annihilations in the collapsing volume:
+The number (and mass) of collapsing DM is depleting by an $\OO(1)$ fraction at a distance $R_{\chi \chi}$, while below this radius the number is determined by the differential equation:
 \begin{equation}
-\label{eq:DMcollapsedeplete}
-\frac{dN}{dr} \sim \frac{N^2}{r^3} \sigma_{\chi \chi} \Rightarrow N(r) \approx \frac{N_\text{crit}}{1+ R_{\chi \chi}^2 \l \frac{1}{r^2} -\frac{1}{R_\text{th}^2}\r}
+\frac{dN(r)}{dr} \sim \frac{N(r)^2}{r^3} \sigma_{\chi \chi}.
 \end{equation}
 This is only sensible if the DM collapses below the thermal radius (so we are justified calling the evolving DM density profile a ``collapse"):
 \begin{align}
@@ -326,6 +292,7 @@ This is only sensible if the DM collapses below the thermal radius (so we are ju
 R_{\chi \chi} < R_\text{th}.
 \end{align}
 It turns out this will always be true if both \eqref{eq:collapsecondition} and the boom condition \eqref{eq:multcolboom}, described in detail below, are satisfied. 
+It is possible that if $N(r)$ is substantially depleting below $R_{\chi \chi}$, then the collapse is halted. 
 
 There are two potential evolutions of the captured DM: either the DM collapses or it does not. 
 In the later case, either the DM has reached its equilibrium number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime:
@@ -339,11 +306,10 @@ Turning towards the boom condition for multiple collisions \eqref{eq:multcolboom
 \label{eq:nocollapse}
 N_\text{multi} \sim \l \frac{\text{min}\{N_\text{eq}, N_\text{life}\}}{R_\text{th}^3} \r^2 \sigma_{\chi \chi} v_\text{th} \text{max}\{\lambda_T,L_0\}^3 \tau_\text{diff}. 
 \end{equation}
-As an example, consider the case of efficient capture $\Gamma_\text{cap} \sim \Gamma_\text{transit}$ and a heating length within the trigger size $L_0 \sim \lambda_T$. 
-Even in this ``best-case" scenario, we find that there is no available parameter space $\{m_\chi, \sigma_{\chi \chi}\}$ where both \eqref{eq:nocollapseann} and \eqref{eq:multcolboom}---with $N_\text{multi}$ given by \eqref{eq:nocollapse}---are simultaneously satisfied. 
+Even in the ``best-case" scenario of efficient capture $\Gamma_\text{cap} \sim \Gamma_\text{transit}$ and $L_0 \sim \lambda_T$, we find there is no parameter space $\{m_\chi, \sigma_{\chi \chi}\}$ where both \eqref{eq:nocollapseann} and \eqref{eq:multcolboom}---with $N_\text{multi}$ given by \eqref{eq:nocollapse}---are simultaneously satisfied. 
 
-Therefore, we instead turn our attention to collapsing DM, characterized by \eqref{eq:collapsecondition}. 
-Of course, the number of DM-DM collisions $N_\text{multi}$ that can be counted as a single heating event depends on where we examine the collapse. 
+We instead turn our attention to collapsing DM, characterized by \eqref{eq:collapsecondition}. 
+Of course, the number of collisions $N_\text{multi}$ that can be counted as a single heating event depends on where we examine the collapse. 
 In general, this is given as an integral of the annihilation rate
 \begin{equation}
 \label{eq:capintegral}
@@ -364,28 +330,21 @@ N_\text{multi} \sim \l \frac{N}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff} ~\tex
 
 The questions is: what is $R_*$?
 Ultimately, the answer depends on the parameters $m_\chi$ and $\sigma_{\chi \chi}$. 
-As an example, suppose $\sigma_{\chi \chi}$ is independent of position or velocity. 
-If $R_{\chi \chi} > L_\text{heat}$, then clearly $N_\text{multi}$ is maximized at $R_* \sim L_\text{heat}$.
-On the other hand, if $R_{\chi \chi} < L_\text{heat}$ then $N_\text{multi}$ is maximized at $R_* \sim R_{\chi \chi}$.
+Suppose $\sigma_{\chi \chi}$ is independent of velocity or position.
+In this case, the scaling is such that $N_\text{multi}$ is maximized at the smaller of the two scales $R_* \sim \text{min}\{R_{\chi \chi}, L_\text{heat}\}$. 
 However, there may be some stabilizing pressure which prevents the DM from collapsing below a certain radius.
-This is reasonable to expect in the case of composite DM, although such a stable radius necessarily depends on unknown physics. 
-Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole (BH):
+This is reasonable to expect in the case of composite DM, although such a stable radius would depend on unknown physics. 
+Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole:
 \begin{equation}
 R_\text{BH} \sim G N_\text{crit} m_\chi \approx 5 \times 10^{-24} ~\cm \l \frac{10^{16} ~\GeV}{m_\chi} \r^{3/2}.
 \end{equation}
-%In any case, the optimum radius is determined as follows:
-%\begin{equation}
-%R_* = \text{max}\{\text{min}\left \{L_\text{heat}, R_{\chi \chi}\}, R_\text{sta}\right\}.
-%\end{equation}
-Note that if the DM number is substantially depleting below $R_{\chi \chi}$ according to \eqref{eq:DMcollapsedeplete}, then one can show that a BH never forms. 
 Of course, this choice of radius will necessarily change for a specific model that relates $\sigma_{\chi \chi}$ to velocity in some way. 
-If either $\sigma_{\chi \chi} \propto 1/v$ or $\sigma_{\chi \chi} \propto 1/v^2$, then the optimum radius is instead given by 
+For instance if $\sigma_{\chi \chi} \propto 1/v$ then the optimum radius is instead just $R_* \sim R_{\chi \chi}$.
+For the sake of simplicity, we choose to examine the collapse at a radius
 \begin{equation}
-R_* = \text{max}\{R_{\chi \chi}, R_\text{BH}\},
+R_* = \text{max}\{R_{\chi \chi}, R_\text{BH}\}.
 \end{equation}
-taking the collapse to be stabilized at a black hole. 
-For simplicity, we employ this optimum radius in the expression \eqref{eq:nmulti} for $N_\text{multi}$. 
-It is straightforward to check that $N_\text{multi}$ is at most $N_\text{crit}$, the total number of DM particles collapsing, and saturates this value for $R_* \sim R_{\chi \chi}$, with $ R_{\chi \chi} < L_\text{heat}$ and $R_{\chi \chi}/v_\text{ff} < \tau_\text{diff}$. 
+It is straightforward to check that $N_\text{multi}$ is at most $N_\text{crit}$, the total number of DM particles collapsing, saturating this number if $R_\text{BH} < R_{\chi \chi} < L_\text{heat}$ and $R_{\chi \chi}/v_\text{ff} < \tau_\text{diff}$. 
 
 \subsection{Constraints}
 
@@ -403,7 +362,6 @@ One can check that the additional conditions \eqref{eq:steadycollect} and \eqref
 We can qualitatively understand the range of excluded cross sections as follows:
 If $\sigma_{\chi \chi}$ is too large, then the DM will effectively deplete before reaching the critical number needed for collapse.
 However, $\sigma_{\chi \chi}$ cannot be arbitrarily small while still satisfying the boom condition \eqref{eq:multcolboom}. 
-
 
 Of course, the constraints on multiple DM collisions in a collapse can be made concrete for a specified DM interaction. 
 As in Section \ref{sec:previous}, we consider the case where the DM is captured in a WD via elastic scatters. 
