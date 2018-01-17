@@ -1,0 +1,83 @@
+We now constrain some simplified models of DM which will ignite a WD via one of the processes parameterized in Section \ref{sec:dmignition}.
+First, however, we review how WD observables constrain DM candidates capable of triggering SN.
+
+\subsection{Review of WD Observables}
+Following the discussion of \cite{Graham:2015apa}, our constraints come from (1)~the existence of heavy, long-lived white dwarfs, or (2)~the measured type 1a SN rate.
+The typical age of a WD is of order the age of the universe $\sim \text{Gyr}$.
+RX~J0648.04418 is a nearby star and one of the heavier known WDs, with a mass $\sim 1.25 ~M_{\astrosun}$ \cite{Mereghetti:2013nba} and local dark matter density which we will take to be $\rho_\chi \sim 0.4 ~\GeV/\text{cm}^3$.
+Of course, this is not the only known heavy WD---the Sloan Digital Sky Survey \cite{SDSS} has found $20+$ others.
+ % https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3hdprods.pl
+The NuStar collaboration has also recently uncovered evidence for the likely existence of $\sim 1.25 ~M_{\astrosun}$ WDs in the galactic center \cite{NuStar}, where it is estimated that $\rho_\chi \sim 10^3 ~\text{GeV}/\text{cm}^3$ \cite{Nesti:2013uwa}.
+Such heavy candidates are particularly suited for our constraints as the energy deposit necessary to trigger SN $\Eboom$ is a decreasing function of WD mass.
+However, less dense white dwarfs are significantly more abundant in the galaxy.
+Thus, even if a sufficiently massive DM is unable to trigger a violent heating event within the lifetime of a WD, it could still ignite enough lighter WDs to affect the measured SN rate of $\sim $ 0.3 per century.
+The DM-induced SN rate is estimated using the expected number of white dwarfs per galaxy $\sim 10^{10}$ and their mass distribution \cite{SDSS}.
+Simulations indicate that only WD masses heavier than $\sim 0.85 ~M_{\astrosun}$ will result in optically visible SN \cite{Graham:2015apa}.
+Therefore, most of the stars exploded in this manner will be in the mass range $\sim 0.85 - 1 ~M_{\astrosun}$, resulting in weaker SN than expected of typical Chandrasekhar mass WDs.
+
+To summarize, a bound on DM parameters can be placed if either a single explosive event occurs during the lifetime of an observed star such as RX~J0648.04418, or the SN rate due to such DM events throughout the galaxy exceeds the measured value.
+Note that for low-mass WDs dominated by photon diffusion, $\Eboom$ is a strong function of WD density.
+In \cite{Graham:2015apa} the central WD density is used to constrain black hole transits with the justification that the density is nearly constant for much of the star.
+The average density for WDs is typically a factor $\sim 10^{-2} - 10^{-1}$ less than the central density, although it is found that the WD density only changes by an $\OO(1)$ fraction from the central value up to a distance $\sim R_\text{WD}/2$ \cite{Chandrasekhar}.
+Therefore the central density is a valid approximation as long as we consider heating events within this ``modified" WD volume.
+For simplicity, we employ this approach.
+
+\subsection{Transit Constraints}
+\label{sec:TransitConstraints}
+
+In order to constrain a DM model through its transit interaction with a WD, we require that it satisfy the boom condition \eqref{eq:transitexplosion}.
+This is given in terms of an LET, which parameterizes the ability for DM to release sufficient energy to the star in the form of SM particles.
+$(dE/dx)_\text{LET}$ for any realistic DM model would necessarily involve a sum over stellar targets along with species that could be produced, as well as an integral over the produced particle spectrum.
+However, we will consider a simplified interaction in which $\sigma_{Ni\epsilon}$ denotes the cross-section for DM to scatter off a stellar constituent (e.g. ions), producing $N$ particles of SM species $i$ and individual energy $\epsilon$.
+If this were the only available channel for the DM to deposit energy, then the LET could be written as
+\begin{align}
+\label{eq:schematicLET}
+  \left( \frac{d E}{d x} \right)_\text{LET} = n_\text{ion} \sigma_{Ni\epsilon} N\epsilon.
+\end{align}
+The heating length for such a DM-SM scattering interaction is computed in Section~\ref{sec:smheating}.
+
+Additionally, consider the case that the LET $(dE/dx)_\text{LET}$ and DM stopping power $(dE/dx)_\text{SP}$ are equal---that is, the DM loses kinetic energy at the same rate as energy is deposited to the WD.
+While such a statement is certainly not true for all DM models (such as the Q-ball, which liberates binding energy rather than transferring kinetic energy), it provides a useful benchmark to express constraints.
+It is interesting to note that in this case combining the transit explosion condition \eqref{eq:transitexplosion} with $\eqref{eq:schematicLET}$ yields a lower bound on DM mass such that the DM is able to both penetrate the envelope \emph{and} trigger an explosion:
+\begin{align}
+\label{eq:transitmass}
+m_\chi > \Eboom \l \frac{R_\text{envelope}}{\lambda_T} \r \l \frac{\rho_\text{envelope}}{\rho_\text{central}} \r \frac{1}{v_\text{esc}^2}.
+\end{align}
+For the typical parameters of a $1.25 ~M_{\astrosun}$ WD we find that the DM mass must be greater than $\sim 10^{28} ~\GeV$ to ensure a penetrating and explosive transit, taking the density of the WD envelope $\rho_\text{envelope}$ to be a nominal $\OO(10^{-3})$ fraction of the central density $\rho_\text{central}$~\cite{KippenhahnWeigert}.
+In other words, if \eqref{eq:transitmass} were violated then the DM interaction is either not strong enough to ignite the WD or is so strong that the DM cannot penetrate the envelope without losing appreciable kinetic energy.
+We reiterate, however, that this bound is only applicable when the energy input to the WD is chiefly coming from the DM kinetic energy, rather than binding energy or other sources.
+
+With the above schematic for a DM transit, we use the rates and heating lengths computed in previous sections to constrain the parameter $\sigma_{Ni\epsilon}$ as a function of DM mass $m_\chi$.
+This is done in Figure \ref{fig:transitclasses} using the different classes of observation available and for representative choices of $\epsilon$ and SM species $i$ released.
+
+
+
+\subsection{Collision and Decay Constraints}
+\label{sec:CollisionConstraints}
+
+In order to constrain a DM model through its annihilations or decays within a WD, we require that it satisfy the boom condition \eqref{eq:coldecay}.
+Consider a simplified interaction where an annihilation or decay releases $N$ particles of SM species $i$ and individual energy $\epsilon$.
+If we assume a fractional parameter $f_\text{SM}=1$, this corresponds to the entire mass of DM being converted into SM products $i$, each with energy $m_\chi/N$.
+These will deposit their energy and thermalize ions within a distance described in Section \ref{sec:smheating}.
+
+With this schematic for DM-DM collisions, we use the rates and heating lengths computed in previous sections to constrain the cross section $\sigma_{\chi \chi}$ as a function of $m_\chi$ using the different classes of observation available and for representative choices of $f_\text{SM}$ and SM species $i$ released.
+This is done in Figure \ref{fig:collisionclasses} for the wind scenario and Figure \ref{fig:collisionclassescap} for the capture scenario.
+The constraints obtained by considering multiple collisions are shown in Figure \ref{fig:multiplecollision}. 
+In a similar manner, we constrain the lifetime $\tau_\chi$ as a function of $m_\chi$ in Figures \ref{fig:decayclasses} and \ref{fig:collisionclassescap}.
+
+\emph{Complementary Limits}~~It is important to note that there are additional limits on DM interactions of this kind, complementary to the limits placed from WDs.
+For instance, DM can annihilate or decay into ultra-high energy particles within our galactic halo and therefore contribute to the cosmic ray flux seen in terrestrial air shower detectors.
+As cosmic rays of energy greater than $\sim 10^{12} ~\GeV$ have not yet been observed \cite{ThePierreAuger:2015rha, AbuZayyad:2012ru}, this places a concrete limit on DM interaction parameters $\sigma_{\chi \chi}$ and $\tau_\chi$ which involve the release of such ultra-high energy particles.
+In theory, a constraint may also be placed on lower-energy SM products from DM annihilations or decays, which would provide an additional source for the measured cosmic ray flux, although such a detailed analysis is beyond the scope of this work.
+
+The cosmic ray constraint on DM is derived by requiring that the expected time for an event to strike earth is less than the lifetime of the detector $\sim 10 ~\text{yr}$.
+For a cosmic ray detector with area $ \sim (50~\text{km})^2$ \cite{ThePierreAuger:2015rha}, we find that the cosmic ray bounds are weaker than the WD bounds except in the DM decay ``wind scenario", where the cosmic rays bounds are comparable within a couple orders of magnitude to those due to the observation of a local WD.
+This coincidence is simply a consequence of the similar ``space-time volumes" of the two systems.
+A cosmic ray detector sees events within a space-time volume $\sim (R_\text{det}^2 R_\text{halo} \times 10 ~\text{yr})$ which is comparable to the WD space-time volume for decay events $\sim (R_\text{WD}^3 \times 10^9 ~\text{yr}\times 10)$, including the factor of 10 gravitational enhancement.
+
+In addition, there are various cosmological bounds on DM interactions.
+By requiring that the galactic halo has not diminished by more than an $\OO(1)$ factor during its lifetime, we constrain $\sigma_{\chi \chi}/m_\chi \lesssim \text{barn}/\GeV$, regardless of the precise details of the collision.
+This is similar in magnitude to the DM self-interaction bounds from colliding galaxy clusters \cite{Randall:2007ph}.
+The cosmological bound on DM lifetime $\tau_\chi \gtrsim 100 ~\text{Gyr}$ is also independent of the nature of the decay products (see \cite{Poulin:2016nat} for details).
+Since the limits imposed by the WD scale as $\sigma_{\chi \chi} \propto m_\chi^2$ and $\tau_\chi \propto m_\chi^{-1}$, there will necessarily be a sufficiently large DM mass for which the above cosmological considerations are the more stringent constraints on its interactions.
+This occurs for DM masses $m_\chi \sim 10^{25} - 10^{30} ~\GeV$.
