@@ -19,8 +19,8 @@ Finally, the medium also contains thermal photons, though these are never signif
 \subsection{Coulomb Scattering}
 \label{sec:coulomb}
 
-\paragraph{Scattering off Ions.}
-Coulomb collisions with carbon ions provide the dominant mechanism by which electrons with energy $1~\MeV \lesssim E \lesssim 10~\MeV$ thermalize ions.
+\paragraph{Scattering off Carbon Ions.}
+Coulomb collisions with ions provide the dominant mechanism by which electrons with energy $1~\MeV \lesssim E \lesssim 10~\MeV$ thermalize ions.
 In this scenario we may treat the ions as stationary and ignore their recoil during collisions.
 The ionic charge will be screened by the mobile electrons of the medium, so incident particles will scatter via a potential
 \begin{align}
@@ -51,8 +51,8 @@ and a stopping power
    \log\left( \frac{\omega_\xmax}{\omega_\xmin} \right)
 \end{align}
 where the second line is valid if $\omega_\xmax \gg \omega_\xmin$.
-$\omega_\xmax$ is the maximum allowed energy transfer. 
-This may be due to 4-momentum conservation, or in the case of incident electrons the impossibility of scattering to a final energy less than $E_F$. 
+$\omega_\xmax$ is the maximum possible energy transfer. 
+This may be due to 4-momentum conservation, or in the case of incident electrons, the impossibility of scattering to a final energy less than $E_F$. 
 4-momentum conservation sets an upper bound $\omega_\kin$, which for a stationary target is
 \begin{align}
   \omega_\kin &= \frac{2 m_\ion p^2}{m_\ion^2 + m^2 + 2E m_\ion}
@@ -60,11 +60,11 @@ This may be due to 4-momentum conservation, or in the case of incident electrons
 with $p$, $E$ the incoming momentum and energy. 
 The Fermi upper bound is simply $\omega_F = E - E_F$ and for incident electrons $\omega_\xmax = \min\l\omega_\kin, \omega_F\r$.
 
-One should also be careful about energy transfers smaller than the plasma frequency $\Omega_p \sim 1-10~\keV$, for which phonon excitations may be important.
-We can estimate this by treating each ion in the medium as an oscillator with frequency $\Omega_p$ (i.e., an Einstein solid). 
-The has two major effects: incident particles must transfer energy in multiples of $\Omega_p$ and the cross-section to transfer momentum $q$ is supressed by one factor of $q^2 / 2 m_\ion\Omega_p = \omega_\x{free}/\Omega_p$ for each oscilator quanta excited by the scatter.
-$\omega_\x{free}$ is the energy transfer that would accompany an elastic scatter with momentum transfer $q$. 
-The resulting stopping power is unchanged from the result~\eqref{eq:StoppingPowerOffIons} that ignored phonon excitations, as the increased energy transfer compenstates for the supressed cross-section:
+For scatters that transfer energy less than the plasma frequency $\Omega_p$, one may be concerned about phonon excitations.
+We estimate this by treating each ion as an independent oscillator with frequency $\Omega_p$ (an Einstein solid) and compute the stopping power due to scatters which excite a single oscillator quanta. 
+There are two key differences between this and the free ion case: incident particles must transfer an energy $\Omega_p$ and the cross-section to transfer momentum $q$ is suppressed by a factor $q^2 / 2 m_\ion\Omega_p = \omega_\x{free}/\Omega_p$. 
+$\omega_\x{free}$ is the energy transfer that would accompany a free ion scatter with momentum transfer $q$. 
+The resulting stopping power is unchanged from the free case~\eqref{eq:StoppingPowerOffIons}, as the increased energy transfer compensates for the suppressed cross-section:
 \begin{align}
   d\sigma \cdot \omega \sim 
   d\sigma_\x{free} \frac{\omega_\x{free}}{\Omega_p} 
@@ -72,8 +72,8 @@ The resulting stopping power is unchanged from the result~\eqref{eq:StoppingPowe
   d\sigma_\x{free} \cdot \omega_\x{free}.
 \end{align}
 
-% NOTE: Do we want to comment here on other stopping scenairos? 
-% For higher energies $E \gtrsim m_\ion$ where recoil is important, the cross section is more complicated (e.g., see \cite{Schwartz}), but the overall stopping power is well approximated by extrapolating \eqref{eq:StoppingPowerOffIons} to higher energies.
+Finally, we note that for more massive or more energetic incident particles the cross-section~\eqref{eq:CoulombOffIonsCrossSection} must be replaced with a more complicated expression to account for the recoil of the ion during collisions. 
+In these scenarios, however, this stopping power is far subdominant to hadronic or electromagnetic showers.  
 
 \subsection{Coulomb Collisions off Electrons}
 \label{sec:coulomb_elec}
