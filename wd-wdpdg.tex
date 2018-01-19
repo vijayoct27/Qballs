@@ -108,63 +108,29 @@ This is a good estimate of the stopping power provided the incident electrons ha
 
 \subsection{Compton Scattering}
 \label{sec:compton}
-
-Photons and charged particles can elastically exchange energy through Compton scattering.
-We focus first on an incident photon losing energy to the WD medium.
-The cross-section for this process scales inversely with target mass, so stopping due to photon-ion collisions is far subdominant to photon-electron collisions.
-The resulting range is significantly below the trigger size, and so we present here only a rough calculation of the Compton stopping power. 
-A detailed numerical calculation analogous to that described in Appendix~\ref{sec:coulomb_elec} for the Coulomb case is straightforward and matches well the heuristic results presented below. 
-
-For incident photons with energy $k$ much larger than the Fermi energy, we expect the scattering to be unaware of the electron motion to within $\OO(1)$ factors. 
-In addition, we expect for relativistic electrons that the Fermi energy ought to replace the electron mass as the appropriate target inertia. 
-This is analogous to the estimate presented in Appendix~\ref{sec:coulomb_elec} for the Coulomb stopping power.
-We begin then by studying the case of a photon incident on stationary electrons. 
-The cross-section is given by the Klein-Nishina formula
-\begin{equation}
-\label{eq:klein-nishina}
-  \frac{d\sigma}{d (\cos \theta)} = \frac{\pi \alpha^2}{m_e^2}
-  \l \frac{k^\prime}{k} \r^2
-  \l \frac{k^\prime}{k} + \frac{k}{k^\prime} -\sin^2 \theta \r
-\end{equation}
-where $k^\prime$ is the outgoing photon energy, related to the scattering angle $\theta$ by the Compton formula
-\begin{equation}
-{k^{\prime }={\frac {k}{1+{\frac {k}{m_e}}(1-\cos \theta )}}}.
-\end{equation}
-In the limit $k > E_F$ we also have that $k > m_e$ and the outgoing photon has energy $k^\prime \approx m_e$ except for a negligible fraction of very forward scatters. 
-This gives a cross-section 
-\begin{equation}
-  \frac{d\sigma}{d (\cos \theta)} \sim \frac{\alpha^2}{m_e k}
-\end{equation}
-and an energy transfer $\omega \approx k$.
-Cooling therefore proceeds via a small number of hard scatters, and we are justified in ignoring Pauli-blocking for $k > E_F$.
-The stopping power is of order $dk/dx \sim \alpha^2 n_e/m_e$, and a more careful integration of equation~\eqref{eq:klein-nishina} yields a logarithmic energy dependence: 
+Low-energy photons will predominately stop via Compton scatters off degenerate WD electrons.
+As with Coulomb scatters in Appendix~\ref{sec:coulomb}, for incident particles of energy greater than the Fermi energy we may approximate the cross-section by using the stationary target result (Klein-Nishina) with the replacement $m_e \rightarrow E_F$. 
+It is then straightforward to get the stopping power of a photon with energy $k$,
 \begin{equation}
 \label{eq:approx-comptonSP}
-  \frac{dk}{dx} \approx \frac{\pi \alpha^2 n_e}{m_e} \log\l\frac{2k}{m_e}\r.
-\end{equation}
-This form remains a good approximation for Compton stopping off moving electrons, provided the photon momentum is much larger than the electron's and we replace $m_e$ with the total electron energy for relativistic targets. 
-More mechanically, this amounts to rescaling by the electron $\gamma$, which arises in boosting the above result into a frame with initial electron motion. 
-In the case of the WD, stopping is dominated by electrons near the Fermi energy, so we have
-\begin{equation}
-\label{eq:approx-comptonSP}
-  \frac{dk}{dx} \approx \frac{\pi \alpha^2 n_e}{E_F} \log\l\frac{2k}{E_F}\r.
+  \frac{dk}{dx} \approx \frac{\pi \alpha^2 n_e}{E_F} \log\l\frac{2k}{E_F}\r,
+  \quad k > E_F.
 \end{equation}
 
-For incident energies below the Fermi energy, this stopping power will be suppressed by electron motion and Pauli-blocking. 
-Most collisions that would otherwise occur in a non-degenerate system do not happen in the WD as they would transfer energy from the electron to the photon (i.e.~an inverse Compton scatter), for which there is no available phase space.
-In order for the photon to lose energy, the scatter must occur with the photon and ion initially moving in roughly the same direction.  
+For incident energies less than Fermi energy, this stopping power is parametrically modified by electron motion and Pauli-blocking. 
+The full Fermi sea prevents electrons from losing energy in a Compton scatter, which restricts possible scatters to those in which the photon and electron initially have roughly collinear momentum. 
 In this configuration, the energy of the photon in the rest frame of the electron is red-shifted $k_\x{rest} = k/2\gamma$ where $\gamma$ refers to the electron motion in the WD rest frame. 
-For relativistic electrons near $E_F$, we have that $k/2\gamma < m_e$ and so the scattering is Thompson-like in the electron rest frame. 
-Energy transfer is thus dominated by backward scatters - these photons have a final energy $k^\prime = k/4\gamma^2 \ll k$ in the WD rest frame, which is an energy transfer $\omega \approx k$. 
-The cross section for these scatters is of order the Thompson cross-section $\sim 8\pi\alpha^2/3m^2$ as well as an `aiming' factor $1/4\pi$ to account for the fact that only initially parallel scatters contribute. 
-Finally, note that for $k \ll E_F$ only those electrons near the top of the Fermi sea are available to scatter, so the photon interacts with an effective electron density of 
+For electrons near $E_F$ and $k < E_F$, we thus have $k_\x{rest} < m_e$ and the scattering is Thompson-like in the electron rest frame. 
+Energy transfer is thus dominated by backward scatters, for which photons have a final energy $k^\prime = k/4\gamma^2 \ll k$ in the WD rest frame, i.e.~an energy transfer $\omega \approx k$. 
+The cross-section for these scatters is of order the Thompson cross-section $\sim \alpha^2/m^2$ as well as an `aiming' factor $1/4\pi$ to account for the restriction to initially parallel trajectories.  
+Finally, for $k \ll E_F$ only those electrons near the top of the Fermi sea are available to scatter, so the photon interacts with an effective electron density of 
 \begin{align}
     n_\x{eff} = n_e \left[ 1 - \left(1 - \frac{k}{E_f} \right)^3\right]
     \approx 3 n_e \frac{k}{E_f}.
 \end{align}
 This gives the stopping power 
 \begin{align}
-  \frac{dk}{dx} \approx \frac{2 \alpha^2 n_e k^2}{m_e^2 E_F} 
+  \frac{dk}{dx} \approx \frac{\alpha^2 n_e k^2}{m_e^2 E_F} 
 \end{align}
 and again we replace $m_e \rightarrow E_F$ to account for relativistic electron motion, 
 \begin{align}
