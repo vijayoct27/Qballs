@@ -1,0 +1,283 @@
+Here we provide a more detailed analysis of the stopping power (energy loss per distance traveled) of high-energy SM particles in a carbon-oxygen WD due to electromagnetic and strong interactions.
+We consider incident electrons, photons, pions, and nucleons with kinetic energy greater than an $\MeV$.
+
+\subsection{WD Medium}
+For the WD masses that we consider, the stellar medium consists of electrons and fully-ionized carbon nuclei with densities in the range $n_e = Z n_\ion \sim 10^{31} - 10^{33} ~\cm^{-3}$ where $Z=6$.
+The internal temperature is $T \sim \keV$~\cite{KippenhahnWeigert}.
+The electrons are degenerate and predominantly relativistic free gas, with Fermi energy
+\begin{equation}
+  E_F \sim (3 \pi^2 n_e)^{1/3} \sim 1 -10 ~\MeV.
+\end{equation}
+The carbon ions, however, are non-degenerate and do not form a free gas. 
+The plasma frequency due to ion-ion Coulomb interactions is given by
+\begin{align}
+\Omega_p = \l \frac{4 \pi n_\ion Z^2 \alpha}{m_\ion}\r^{1/2} \sim 1 - 10~\keV,
+\end{align}
+where $m_\ion$ is the ion mass.
+Finally, the medium also contains thermal photons, though these are never significant for stopping particles as the photon number density $n_\gamma \sim T^3$ is much smaller than that of electrons or ions.
+
+\subsection{Coulomb Scattering}
+\label{sec:coulomb}
+
+\paragraph{Scattering off Carbon Ions.}
+\label{sec:coulomb_ion}
+Coulomb collisions with ions provide the dominant mechanism by which electrons with energy $1~\MeV \lesssim E \lesssim 10~\MeV$ thermalize ions.
+In this scenario we may treat the ions as stationary and ignore their recoil during collisions.
+The ionic charge will be screened by the mobile electrons of the medium, so incident particles will scatter via a potential
+\begin{align}
+  \label{eq:ScreenedPotential}
+V(\textbf{r}) = \frac{Z \alpha}{r} e^{-\lambda_\TF r}.
+\end{align}
+The screening length $\lambda_\TF$ is given in the Thomas-Fermi approximation by \cite{Teukolsky}
+\begin{align}
+\label{eq:TF}
+    \lambda_\TF^{2} = \frac{E_F}{6 \pi \alpha n_e} 
+    \sim \frac{1}{\alpha n_e^{2/3}}
+\end{align}
+where $E_F$ is the electron Fermi energy.
+This plasma screening suppresses scatters with momentum transfers below $\sim \lambda_\TF^{-1}$, corresponding to a minimal energy transfer of $\omega_\xmin = \lambda_\TF^{-2} / 2 m_\ion$.
+Using the Born approximation, we have a cross-section for energy transfer $\omega$
+\begin{align}
+\label{eq:CoulombOffIonsCrossSection}
+  \frac{d \sigma}{d \omega} = 
+  \frac{2 \pi Z^2 \alpha^2}{m_\ion\beta^2} 
+  \frac{1}{(\omega + \omega_\xmin)^2}
+\end{align}
+and a stopping power 
+\begin{align}
+  \frac{dE}{d x} &= \int_{0}^{\omega_\xmax} d \omega \, n_\ion 
+  \frac{d \sigma}{d \omega} \omega \nonumber\\
+  \label{eq:StoppingPowerOffIons}
+   &\approx \frac{2 \pi\, n_\ion Z^2 \alpha^2 }{m_\ion\beta^2} 
+   \log\left( \frac{\omega_\xmax}{\omega_\xmin} \right)
+\end{align}
+where the second line is valid if $\omega_\xmax \gg \omega_\xmin$.
+$\omega_\xmax$ is the maximum possible energy transfer. 
+This may be due to 4-momentum conservation, or in the case of incident electrons, the impossibility of scattering to a final energy less than $E_F$. 
+4-momentum conservation sets an upper bound $\omega_\kin$, which for a stationary target is
+\begin{align}
+  \omega_\kin &= \frac{2 m_\ion p^2}{m_\ion^2 + m^2 + 2E m_\ion}
+\end{align}
+with $p$, $E$ the incoming momentum and energy. 
+The Fermi upper bound is simply $\omega_F = E - E_F$ and for incident electrons $\omega_\xmax = \min\l\omega_\kin, \omega_F\r$.
+
+For scatters that transfer energy less than the plasma frequency $\Omega_p$, one may be concerned about phonon excitations.
+We estimate this by treating each ion as an independent oscillator with frequency $\Omega_p$ (an Einstein solid) and compute the stopping power due to scatters which excite a single oscillator quanta. 
+There are two key differences between this and the free ion case: incident particles must transfer an energy $\Omega_p$ and the cross-section to transfer momentum $q$ is suppressed by a factor $q^2 / 2 m_\ion\Omega_p = \omega_\x{free}/\Omega_p$. 
+$\omega_\x{free}$ is the energy transfer that would accompany a free ion scatter with momentum transfer $q$. 
+The resulting stopping power is unchanged from the free case~\eqref{eq:StoppingPowerOffIons}, as the increased energy transfer compensates for the suppressed cross-section:
+\begin{align}
+  d\sigma \cdot \omega \sim 
+  d\sigma_\x{free} \frac{\omega_\x{free}}{\Omega_p} 
+  \cdot \Omega_p \sim 
+  d\sigma_\x{free} \cdot \omega_\x{free}.
+\end{align}
+
+Finally, we note that for more massive or more energetic incident particles the cross-section~\eqref{eq:CoulombOffIonsCrossSection} must be replaced with a more complicated expression to account for the recoil of the ion during collisions. 
+In these scenarios, however, this stopping power is far subdominant to hadronic or electromagnetic showers. \\
+
+\paragraph{Scattering off Degenerate Electrons.}
+\label{sec:coulomb_elec}
+The scattering of incident electrons with the degenerate electron sea determines the termination energy of electromagnetic showers, and so we focus here on that scenario. 
+This calculation demands two considerations not present when scattering off ions: the targets are not stationary and they require a threshold energy transfer in order to be scattered out of the Fermi sea.
+In the scenario of interest, however, these do not result in a parametrically different stopping power than was found for ions in equation~\eqref{eq:StoppingPowerOffIons}. 
+
+For incident momenta much greater than the Fermi momentum, the relative velocity is of order the incident velocity and the deflection of the incident particle will be generally small. 
+We thus expect scattering to proceed up to $\OO(1)$ factors as though a heavy incident particle is striking a light, stationary target.  
+The cross-section is then given by the usual result, 
+\begin{align}
+  \frac{d \sigma}{d \omega} \approx
+  \frac{2 \pi \alpha^2}{E_F} \frac{1}{\omega^2},
+  \label{eq:CoulombRelativisticApprox}
+\end{align}
+where we have accounted for the target's momentum by replacing its mass with the relativistic inertia $\sqrt{m_e^2 + p^2} \approx E_F$.
+This is admittedly heuristic, though its accuracy can be verified with a detailed calculation.  
+
+Equation~\eqref{eq:CoulombRelativisticApprox} also ignores plasma screening, as Pauli-blocking will provide the most stringent cutoff on soft scatters in this case. 
+Scatters that transfer an energy $\omega \leq E_F$ will have a suppressed contribution to the stopping power as the only occur with WD electrons near the top of the Fermi sea. 
+We simply ignore these suppressed scatters, which gives a stopping power 
+\begin{align}
+  \frac{dE}{d x} &= \int_{E_F}^{\omega_\xmax} d \omega \, n_e 
+  \frac{d \sigma}{d \omega} \omega \nonumber\\
+  \label{eq:StoppingPowerOffIons}
+   &\approx \frac{2 \pi\, n_e \alpha^2 }{E_F} 
+   \log\left( \frac{\omega_\xmax}{E_F} \right)
+\end{align}
+where, as above, $\omega_\xmax = \min\l\omega_\kin, \omega_F\r$.
+This is a good estimate of the stopping power provided the incident electrons have energy much larger than $E_F$. 
+
+\subsection{Compton Scattering}
+\label{sec:compton}
+Low-energy photons will predominately stop via Compton scatters off degenerate WD electrons.
+As with Coulomb scatters in Appendix~\ref{sec:coulomb}, for incident particles of energy greater than the Fermi energy we may approximate the cross-section by using the stationary target result (Klein-Nishina) with the replacement $m_e \rightarrow E_F$. 
+It is then straightforward to get the stopping power of a photon with energy $k$,
+\begin{equation}
+\label{eq:approx-comptonSP}
+  \frac{dk}{dx} \approx \frac{\pi \alpha^2 n_e}{E_F} \log\l\frac{2k}{E_F}\r,
+  \quad k > E_F.
+\end{equation}
+
+For incident energies less than Fermi energy, this stopping power is parametrically modified by electron motion and Pauli-blocking. 
+The full Fermi sea prevents electrons from losing energy in a Compton scatter, which restricts possible scatters to those in which the photon and electron initially have roughly collinear momentum. 
+In this configuration, the energy of the photon in the rest frame of the electron is red-shifted $k_\x{rest} = k/2\gamma$ where $\gamma$ refers to the electron motion in the WD rest frame. 
+For electrons near $E_F$ and $k < E_F$, we thus have $k_\x{rest} < m_e$ and the scattering is Thompson-like in the electron rest frame. 
+Energy transfer is thus dominated by backward scatters, for which photons have a final energy $k^\prime = k/4\gamma^2 \ll k$ in the WD rest frame, i.e.~an energy transfer $\omega \approx k$. 
+The cross-section for these scatters is of order the Thompson cross-section $\sim \alpha^2/m^2$ as well as an `aiming' factor $1/4\pi$ to account for the restriction to initially parallel trajectories.  
+Finally, for $k \ll E_F$ only those electrons near the top of the Fermi sea are available to scatter, so the photon interacts with an effective electron density of 
+\begin{align}
+    n_\x{eff} = n_e \left[ 1 - \left(1 - \frac{k}{E_f} \right)^3\right]
+    \approx 3 n_e \frac{k}{E_f}.
+\end{align}
+This gives the stopping power 
+\begin{align}
+  \frac{dk}{dx} \approx \frac{\alpha^2 n_e k^2}{m_e^2 E_F} 
+\end{align}
+and again we replace $m_e \rightarrow E_F$ to account for relativistic electron motion, 
+\begin{align}
+  \frac{dk}{dx} \approx \frac{2 \alpha^2 n_e k^2}{E_F^3}. 
+\end{align}
+Note that $E_F \sim n_e^{1/3}$ for a relativistic degenerate gas and thus the low-energy Compton stopping power is approximately independent of density. 
+
+\subsection{Bremsstrahlung and Pair Production with LPM Suppression}
+\label{sec:emshowers}
+
+Bremsstrahlung and pair production can be a dominant stopping mechanisms for high-energy electrons and photons.
+We restrict our attention to radiative processes off target nuclei rather than target electrons as the latter are additionally suppressed by degeneracy, kinematic recoil, and charge factors.
+The cross-section for an electron of energy $E$ to radiate a photon of energy $k$ is given by the Bethe-Heitler formula
+\begin{equation}
+\label{eq:BH}
+\frac{d \sigma_\x{BH}}{dk} = \frac{1}{3 k n_\ion X_0} (y^2+2 [1+ (1-y)^2]), ~~~ y = k/E.
+\end{equation}
+$X_0$ is the radiation length, and is generally of the form
+\begin{equation}
+\label{eq:radiationlength}
+X_0^{-1} = 4 n_\ion Z^2 \frac{\alpha^3}{m_e^2} \log{\Lambda}, ~~~ \log{\Lambda} \sim \int \frac{1}{b}.
+\end{equation}
+where $\log{\Lambda}$ is a logarithmic form factor containing the maximum and minimum effective impact parameters allowed in the scatter.
+Integrating \eqref{eq:BH}, we find the energy loss due to bremsstrahlung is simply
+\begin{equation}
+\l\frac{dE}{dx}\r \sim \frac{E}{X_0}.
+\end{equation}
+In \eqref{eq:radiationlength}, the minimum impact parameter is set by a quantum-mechanical bound such that the radiated photon frequency is not larger than the initial electron energy.
+For a bare nucleus, this distance is the electron Compton wavelength.
+It is important to note that collisions at lesser impact parameters will still radiate but with suppressed intensity.
+The maximum impact parameter is set by the distance at which the nuclear target is screened.
+For an atomic target this is of order the Bohr radius, and for nuclear targets in the WD this is the Thomas-Fermi screening radius given by \eqref{eq:TF}.
+%Evidently, there exists a critical electron number density $n_e \sim 10^{32} ~\cm^{-3}$ for which the logarithmic form factor appears to vanish.
+For our purposes, we simply take $\log{\Lambda} \sim \OO(1)$ for all WD densities under consideration and refrain from a full quantum-mechanical calculation at small impact parameters.
+
+However, bremsstrahlung will be suppressed by the ``Landau-Pomeranchuk-Migdal" (LPM) effect - see \cite{Klein:1998du} for an extensive review.
+High-energy radiative processes involve very small longitudinal momentum transfers to nuclear targets ($\propto k/E^2$ in the case of bremsstrahlung).
+Quantum mechanically, this interaction is delocalized across a formation length over which amplitudes from different scattering centers will interfere.
+This interference turns out to be destructive and must be taken into account in the case of high energies or high-density mediums.
+Calculations of the LPM effect can be done semi-classically based on average multiple scattering.
+It is found that bremsstrahlung is suppressed for $k < E(E-k)/E_\LPM$, where
+\begin{equation}
+\label{eq:LPM}
+E_\LPM = \frac{m_e^2 X_0 \alpha}{4 \pi}.
+\end{equation}
+For the WD densities in which radiative energy loss is considered, $E_\LPM \sim 1-100 ~\MeV$.
+The degree of suppression is found to be
+\begin{equation}
+\frac{d\sigma_\LPM/dk}{d\sigma_\x{BH}/dk} = \sqrt{\frac{k E_\LPM}{E (E-k)}},
+\end{equation}
+so that the bremsstrahlung stopping power in the regime of high-suppression is modified
+\begin{equation}
+\label{eq:bremloss}
+\l\frac{dE}{dx}\r_\LPM \sim \l\frac{E_\LPM}{E} \r^{1/2} \frac{E}{X_0}, ~~~ E>E_\LPM.
+\end{equation}
+We find that the LPM effect diminishes energy loss due to soft radiation so that the radiative stopping power is dominated by single, hard bremsstrahlung.
+
+In addition to the LPM effect, other forms of interaction within a formation length will suppress bremsstrahlung when $k \ll E$.
+The emitted photon can coherently scatter off electrons and ions in the media, acquiring an effective mass of order the plasma frequency $\omega_p$.
+Semi-classically, this results in a suppression of order $(k/\gamma \omega_p)^2$ when the radiated photon energy $k < \gamma \omega_p$.
+This is known as the ``dielectric effect".
+For high-energy electrons, this dielectric suppression only introduces a minor correction to \eqref{eq:bremloss}, in which soft radiation is already suppressed by the LPM effect \cite{Klein:1998du}.
+
+We now briefly summarize the stopping of photons via pair production. Similar to \eqref{eq:BH}, the cross-section for a photon of energy $k$ to produce an electron-positron pair with energies $E$ and $k-E$ is
+\begin{equation}
+\label{eq:PP}
+\frac{d \sigma_\x{BH}}{dE} = \frac{1}{3 k n_\ion X_0} (1+ 2[x^2+ (1-x)^2]) ~~~ x = E/k,
+\end{equation}
+valid beyond the threshold energy $k \gtrsim m_e$.
+As a result, the pair production cross-section $\sim 1/(n_\ion X_0)$.
+However, the LPM effect suppresses pair production at energies $E(k-E) > k E_\LPM$ so that the cross-section reduces to
+\begin{equation}
+\sigma_{pp} \sim \l\frac{E_\LPM}{k} \r^{1/2} \frac{1}{n_\ion X_0}, ~~~ E>E_\LPM.
+\end{equation}
+Note that the LPM effect is less significant for higher-order electromagnetic processes since these generally involve larger momentum transfers for the same final-state kinematics.
+Thus, when the suppression factor exceeds $\OO(\alpha)$, these interactions should also be considered.
+For instance, the energy loss due to electron direct pair production $eN \to e^+ e^- e N$ has been calculated in \cite{Gerhardt:2010bj} and is found to exceed that of bremsstrahlung at an energy $\sim 10^{8} ~\GeV$.
+A similar crossover is to be expected for other higher-order diagrams as well, although such a calculation is beyond the scope of this work.
+Rather, at such high energies the stopping power is dominated by photonuclear and electronuclear interactions anyway, and we may simply ignore the contributions from other radiative processes \cite{Kleinconvo}.
+
+\subsection{Nuclear Interactions}
+\label{sec:nuclear}
+
+\paragraph{Elastic Scattering.}
+Nuclear interactions can be either elastic or inelastic - the nature of the interaction is largely determined by the incident particle energy.
+Elastic collisions are most significant for energy loss at scales less than the nuclear binding energy $\sim 10 ~\MeV$.
+These are hard scatters, however, as we are primarily concerned with light hadrons incident on heavy nuclei, these scatters will each transfer a small fraction of the incident energy - i.e.,~ping-pong balls bouncing around a sea of bowling balls.
+An elastic collision between a incident, non-relativistic hadron of mass $m$, kinetic energy $E$ and a stationary nucleus of mass $M \gg m$ results in an average energy transfer $\omega$
+\begin{equation}
+\label{eq:elasticratio}
+\omega \sim \l \frac{m}{M}\r E
+\end{equation}
+where we assume the scattering is not dominated by soft, forward scatters.
+Above $\sim \MeV$, it is found that electrostatic repulsion is negligible for nuclear interactions of protons and $\pi^+$.
+Therefore, the stopping power for any light hadron due to elastic collisions is simply
+\begin{equation}
+  \frac{dE}{dx} \sim \frac{m}{M} E n_\ion \sigma_\el
+\end{equation}
+where $\sigma_\el$ is the elastic nuclear scattering cross-section.
+Above $10 ~\MeV$ this approaches the geometric cross-section, which for carbon is $\sim 100 ~\mbn$, while at $\MeV$ energies the elastic cross section generally rises to be of order $\sim \bn$~\cite{Tavernier}.
+At intermediate energies $1 - 10 ~\MeV$, the interaction is dominated by various nuclear resonances~\cite{Tavernier} which are of no concern here.
+We conservatively estimate the elastic cross-section for nucleons and pions to be $\sigma_\el \approx 1 ~\bn$ when $E \lesssim 10 ~\MeV$.
+At higher energies, we ignore elastic interactions as inelastic scatters dominate the energy loss.
+
+\paragraph{Inelastic Scattering.}
+Now we determine the stopping power due to inelastic nuclear collisions at $E \gtrsim 10 ~\MeV$.
+In such a collision, an incoming hadron interacts with one or more nucleons in the nucleus to produce a $\OO(1)$ number of additional hadrons which approximately split the initial energy.
+During this process the target nucleus is broken up.
+The nuclear fragment is typically left in an unstable state with negligible center-of-mass recoil, and relaxes via slow emission of low-energy $\sim \MeV$ hadrons and photons, which are a negligible fraction of the incident energy.
+For energies greater than the nucleon binding energy $\sim \GeV$, the majority of secondary hadrons are pions which carry transverse momentum of order $\sim 100 ~\MeV$ \cite{Tavernier}.
+For incident hadrons in the range $10 ~\MeV - \GeV$, it is found that roughly equal fractions of protons, neutrons, and pions are emitted after each collision \cite{Pionnuclear}.
+In either case, if secondary hadrons are sufficiently energetic then they will induce further inelastic collisions.
+This results in a roughly collinear hadronic shower terminating at an energy $\sim 10~\MeV$, consisting of pions for most of the shower's development and converting to an mix of pions and nucleons in the final decade of energy.
+This cascade is described by a radiative stopping power
+\begin{equation}
+\label{eq:nucshower}
+  \frac{dE}{dx} \sim \frac{E}{l_\inel},
+\end{equation}
+where $l_\inel$ is the inelastic nuclear mean free path characterized by an inelastic cross-section $\sigma_\inel$.
+At these energies, $\sigma_\inel \approx 100 ~\mbn$ and is roughly constant in energy~\cite{Tavernier}.
+The length of the shower is only logarithmically dependent on the incident energy,
+\begin{align}
+    X_\x{had} \sim l_\inel \log\l\frac{E}{10~\MeV}\r.
+\end{align}
+
+\paragraph{Photonuclear and Electronucelar Interactions.}
+Photons of energy $k \gtrsim 10 ~\MeV$ can also strongly interact with nuclei through the production of virtual quark-antiquark pairs.
+This destroys the photon and fragments the nucleus, producing outgoing hadrons in a manner similar to the inelastic collisions of hadrons, although the cross-section $\sigma_{\gamma A}$ is roughly a factor $\approx \alpha$ smaller.
+Below $\sim \GeV$ the photonuclear cross-section is complicated by nuclear resonances while above $\sim \GeV$, $\sigma_{\gamma A}$ is a slowly increasing function of energy \cite{Tavernier}.
+This increase is due to a coherent interaction of the photon over multiple nuclei at higher energies~\cite{Gerhardt:2010bj}, however instead of extrapolating this we conservatively take a constant photonuclear cross-section of order $\sigma_{\gamma A} \approx \mbn$ for energies $k \gtrsim 10 ~\MeV$.
+
+Electrons can similarly lose energy by radiating a virtual photon that interacts hadronically with a nuclei.
+The cross-section for this process is roughly given by the photonuclear cross-section and scaled by a factor representing the probability to radiate such a photon.
+This is the Weizsacker-Williams approximation, which gives a cross-section for an electron of kinetic energy $E$ to exchange an energy $k$ with a nucleus
+\begin{align}
+    \frac{d\sigma}{dk} &\approx \frac{dN}{dk} \sigma_{\gamma A}
+\end{align}
+where $dN/dk$ is the virtual photon flux \cite{Gerhardt:2010bj}
+\begin{align}
+    \frac{dN}{dk} &\sim \frac{\alpha}{k} \log\l \frac{E}{m_e} \r.
+\end{align}
+Integrating this give the stopping power,
+\begin{align}
+    \frac{dE}{dx} &\sim n_\ion \int_{k_\xmin}^E dk \;
+    k \cdot \frac{\alpha}{k} \log\l \frac{E}{m_e} \r  \sigma_{\gamma A} \\
+    &\approx \alpha \log\l \frac{E}{m_e} \r \sigma_{\gamma A} n_\ion E.
+\end{align}
+$k_\xmin$ is taken to be the critical energy for photonuclear interactions.
+Electronuclear stopping thus proceeds as a radiative process with length scale larger than the photonuclear length by a factor $\sim 10$.
+Unlike the photonuclear event, this is a continuous radiative process with equal energy-loss contritions from radiation with all energies up to $E$.
