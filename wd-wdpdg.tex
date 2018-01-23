@@ -110,25 +110,23 @@ Equation~\eqref{eq:StoppingPowerOffElectrons} is indeed a good approximation to 
 For incident photon energies less than the Fermi energy, the dominant stopping is provided by Compton scatters with degenerate electrons. 
 This stopping power differs parametrically from its usual form due to the target electron motion and degeneracy.
 
-The full Fermi sea prevents electrons from losing energy in a Compton scatter, which restricts possible scatters to those in which the photon and electron initially have roughly collinear momentum. 
-In this configuration, the energy of the photon in the rest frame of the electron is red-shifted $k_\x{rest} = k/2\gamma$ where $\gamma$ refers to the electron motion in the WD rest frame. 
-For electrons near $E_F$ and $k < E_F$, we thus have $k_\x{rest} < m_e$ and the scattering is Thompson-like in the electron rest frame. 
-Energy transfer is thus dominated by backward scatters, for which photons have a final energy $k^\prime = k/4\gamma^2 \ll k$ in the WD rest frame, i.e.~an energy transfer $\omega \approx k$. 
-The cross-section for these scatters is of order the Thompson cross-section $\sim \alpha^2/m^2$ as well as an `aiming' factor $1/4\pi$ to account for the restriction to initially parallel trajectories.  
+Consider an incident photon with energy $k \leq E_F$. 
+Compton scatters will only occur off electrons moving roughly collinear with the photon momentum - a head-on collision would result in an energy loss for the electron, which is forbidden by Pauli exclusion. 
+In the electron rest frame these collinear scatters are Thompson-like, and so the photon energy loss is dominated by backward scatters. 
+For relativistic electrons near the Fermi surface, these scatters transfer an energy
+\begin{align}
+  \omega \approx k \l 1 - \frac{m_e^2}{4 E_F^2} \r \sim k.
+\end{align}  
+The cross-section can be taken in the electron rest frame, $\sigma_T \sim \alpha^2/m_e^2$, along with an `aiming' factor $1/4\pi$ to account for the restriction to initially parallel trajectories.  
 Finally, for $k \ll E_F$ only those electrons near the top of the Fermi sea are available to scatter, so the photon interacts with an effective electron density of 
 \begin{align}
-    n_\x{eff} = n_e \left[ 1 - \left(1 - \frac{k}{E_f} \right)^3\right]
-    \approx 3 n_e \frac{k}{E_f}.
+    n_\x{eff} = \int_{E_F - k}^{E_F} g(E) \; dE 
+    \approx 3 n_e \frac{k}{E_f}
 \end{align}
-This gives the stopping power 
+where $g(E)$ is the Fermi density of states. This gives a stopping power 
 \begin{align}
-  \frac{dk}{dx} \approx \frac{\alpha^2 n_e k^2}{m_e^2 E_F} 
+  \frac{dk}{dx} \approx \frac{\alpha^2 n_e k^2}{m_e^2 E_F}. 
 \end{align}
-and again we replace $m_e \rightarrow E_F$ to account for relativistic electron motion, 
-\begin{align}
-  \frac{dk}{dx} \approx \frac{2 \alpha^2 n_e k^2}{E_F^3}. 
-\end{align}
-Note that $E_F \sim n_e^{1/3}$ for a relativistic degenerate gas and thus the low-energy Compton stopping power is surprisingly independent of density. 
 
 \subsection{Bremsstrahlung and Pair Production with LPM Suppression}
 \label{sec:emshowers}
