@@ -36,6 +36,7 @@ The screening length $\lambda_\TF$ is given in the Thomas-Fermi approximation by
 \end{align}
 where $E_F$ is the electron Fermi energy.
 This plasma screening suppresses scatters with momentum transfers below $\sim \lambda_\TF^{-1}$, corresponding to a minimal energy transfer of $\omega_\xmin = \lambda_\TF^{-2} / 2 m_\ion$.
+Ions may in principle also cause screening through lattice distortion, however this may be ignored as the sound speed of the lattice $c_s \sim 10^{-2}$ is much smaller than the speed of an incident relativistic electron. 
 Using the Born approximation, we have a cross-section for energy transfer $\omega$
 \begin{align}
 \label{eq:CoulombOffIonsCrossSection}
@@ -82,29 +83,27 @@ The scattering of incident electrons with the degenerate electron sea determines
 This calculation demands two considerations not present when scattering off ions: the targets are not stationary and they require a threshold energy transfer in order to be scattered out of the Fermi sea.
 In the scenario of interest, however, these do not result in a parametrically different stopping power than was found for ions in equation~\eqref{eq:StoppingPowerOffIons}. 
 
-For incident momenta much greater than the Fermi momentum, the relative velocity is of order the incident velocity and the deflection of the incident particle will be generally small. 
-We thus expect scattering to proceed up to $\OO(1)$ factors as though a heavy incident particle is striking a light, stationary target.  
+For incident momenta much greater than the Fermi momentum, the relative velocity is of order the incident velocity and the deflection of the incident particle will generally be small. 
+It is reasonable then that scattering proceeds, up to $\OO(1)$ factors, as though a heavy incident particle is striking a light, stationary target.  
 The cross-section is then given by the usual result, 
 \begin{align}
   \frac{d \sigma}{d \omega} \approx
   \frac{2 \pi \alpha^2}{E_F} \frac{1}{\omega^2},
   \label{eq:CoulombRelativisticApprox}
 \end{align}
-where we have accounted for the target's momentum by replacing its mass with the relativistic inertia $\sqrt{m_e^2 + p^2} \approx E_F$.
-This is admittedly heuristic, though its accuracy can be verified with a detailed calculation.  
-
-Equation~\eqref{eq:CoulombRelativisticApprox} also ignores plasma screening, as Pauli-blocking will provide the most stringent cutoff on soft scatters in this case. 
-Scatters that transfer an energy $\omega \leq E_F$ will have a suppressed contribution to the stopping power as the only occur with WD electrons near the top of the Fermi sea. 
-We simply ignore these suppressed scatters, which gives a stopping power 
+where we have accounted for the target's motion by replacing its mass with the relativistic inertia $\sqrt{m_e^2 + p^2} \approx E_F$.  We have ignored plasma screening, as Pauli-blocking will provide a more stringent cutoff on soft scatters in this case. 
+Scatters which transfer an energy $\omega \leq E_F$ will have a suppressed contribution to the stopping power as they can only access a fraction of the Fermi sea. 
+For incident energies $E \gg E_F$ it is sufficient to ignore these suppressed scatters, i.e.,
 \begin{align}
   \frac{dE}{d x} &= \int_{E_F}^{\omega_\xmax} d \omega \, n_e 
   \frac{d \sigma}{d \omega} \omega \nonumber\\
-  \label{eq:StoppingPowerOffIons}
+  \label{eq:StoppingPowerOffElectrons}
    &\approx \frac{2 \pi\, n_e \alpha^2 }{E_F} 
    \log\left( \frac{\omega_\xmax}{E_F} \right)
 \end{align}
 where, as above, $\omega_\xmax = \min\l\omega_\kin, \omega_F\r$.
-This is a good estimate of the stopping power provided the incident electrons have energy much larger than $E_F$. 
+This derivation is admittedly quite heuristic, and so it has been checked with a detailed numerical calculation accounting fully for the target's motion and degeneracy.
+Equation~\eqref{eq:StoppingPowerOffElectrons} is indeed a good approximation to the stopping power for incient energies larger than the Fermi energy. 
 
 \subsection{Compton Scattering}
 \label{sec:compton}
