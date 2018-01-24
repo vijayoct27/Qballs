@@ -21,46 +21,30 @@ Finally, the medium also contains thermal photons, though these are never signif
 \subsection{Nuclear Interactions}
 \label{sec:nuclear}
 
-\paragraph{Elastic Scattering.}
-Nuclear interactions can be either elastic or inelastic - the nature of the interaction is largely determined by the incident particle energy.
-Elastic collisions are most significant for energy loss at scales less than the nuclear binding energy $\sim 10 ~\MeV$.
-These are hard scatters, however, as we are primarily concerned with light hadrons incident on heavy nuclei, these scatters will each transfer a small fraction of the incident energy - i.e.,~ping-pong balls bouncing around a sea of bowling balls.
-An elastic collision between a incident, non-relativistic hadron of mass $m$, kinetic energy $E$ and a stationary nucleus of mass $M \gg m$ results in an average energy transfer $\omega$
-\begin{equation}
-\label{eq:elasticratio}
-\omega \sim \l \frac{m}{M}\r E
-\end{equation}
-where we assume the scattering is not dominated by soft, forward scatters.
-Above $\sim \MeV$, it is found that electrostatic repulsion is negligible for nuclear interactions of protons and $\pi^+$.
-Therefore, the stopping power for any light hadron due to elastic collisions is simply
-\begin{equation}
-  \frac{dE}{dx} \sim \frac{m}{M} E n_\ion \sigma_\el
-\end{equation}
-where $\sigma_\el$ is the elastic nuclear scattering cross-section.
-Above $10 ~\MeV$ this approaches the geometric cross-section, which for carbon is $\sim 100 ~\mbn$, while at $\MeV$ energies the elastic cross section generally rises to be of order $\sim \bn$~\cite{Tavernier}.
-At intermediate energies $1 - 10 ~\MeV$, the interaction is dominated by various nuclear resonances~\cite{Tavernier} which are of no concern here.
-We conservatively estimate the elastic cross-section for nucleons and pions to be $\sigma_\el \approx 1 ~\bn$ when $E \lesssim 10 ~\MeV$.
-At higher energies, we ignore elastic interactions as inelastic scatters dominate the energy loss.
+\paragraph{Elastic Scattering of Hadrons.}
+Hadrons with energy less than $10~\MeV$ will predominantly stop due to elastic nuclear scatters with ions. 
+These are hard scatters, resulting in a stopping power 
+\begin{align}
+  \frac{dE}{dx} \sim \frac{m}{m_\ion} E n_\ion \sigma_\el
+\end{align}
+for a hadron of mass $m \ll m_\ion$ and kinetic energy $E$. 
+$\sigma_\el$ is the elastic nuclear scattering cross-section, which is of order $\sim \bn$ at these energies and drops to $\sim 0.1 \bn$ above $10~\MeV$~\cite{Tavernier}, ignoring the presence of various nuclear resonances in the range $1~\MeV$ to $10~\MeV$. 
 
-\paragraph{Inelastic Scattering.}
-Now we determine the stopping power due to inelastic nuclear collisions at $E \gtrsim 10 ~\MeV$.
-In such a collision, an incoming hadron interacts with one or more nucleons in the nucleus to produce a $\OO(1)$ number of additional hadrons which approximately split the initial energy.
-During this process the target nucleus is broken up.
-The nuclear fragment is typically left in an unstable state with negligible center-of-mass recoil, and relaxes via slow emission of low-energy $\sim \MeV$ hadrons and photons, which are a negligible fraction of the incident energy.
-For energies greater than the nucleon binding energy $\sim \GeV$, the majority of secondary hadrons are pions which carry transverse momentum of order $\sim 100 ~\MeV$ \cite{Tavernier}.
-For incident hadrons in the range $10 ~\MeV - \GeV$, it is found that roughly equal fractions of protons, neutrons, and pions are emitted after each collision \cite{Pionnuclear}.
-In either case, if secondary hadrons are sufficiently energetic then they will induce further inelastic collisions.
-This results in a roughly collinear hadronic shower terminating at an energy $\sim 10~\MeV$, consisting of pions for most of the shower's development and converting to an mix of pions and nucleons in the final decade of energy.
+\paragraph{Inelastic Scattering of Hadrons.}
+For energies above $10 ~\MeV$, the stopping of hadrons is dominated by inelastic nuclear scatters.
+In such a collision, an incoming hadron interacts with one or more nucleons to produce a $\OO(1)$ number of additional hadrons which approximately split the initial energy.
+For incident energy greater than $\sim \GeV$, the majority of secondary hadrons are pions with transverse momenta $\sim 100 ~\MeV$ \cite{Tavernier}.
+Below $\sim\GeV$, it is found that roughly equal fractions of protons, neutrons, and pions are produced in each collision \cite{Pionnuclear}.
+We will thus have a roughly collinear shower terminating at an energy $\sim 10~\MeV$ which consists of pions for most of the shower's development and converts to an mix of pions and nucleons in the final decade of energy.
 This cascade is described by a radiative stopping power
 \begin{equation}
 \label{eq:nucshower}
-  \frac{dE}{dx} \sim \frac{E}{l_\inel},
+  \frac{dE}{dx} \sim n_\ion \sigma_\inel E,
 \end{equation}
-where $l_\inel$ is the inelastic nuclear mean free path characterized by an inelastic cross-section $\sigma_\inel$.
-At these energies, $\sigma_\inel \approx 100 ~\mbn$ and is roughly constant in energy~\cite{Tavernier}.
-The length of the shower is only logarithmically dependent on the incident energy,
+where the inelastic nuclear cross-section $\sigma_\inel$ is given by $\sigma_\inel \approx 100 ~\mbn$ and is roughly constant in energy~\cite{Tavernier}.
+The total length of the shower is only logarithmically dependent on the initial hadron energy $E$,
 \begin{align}
-    X_\x{had} \sim l_\inel \log\l\frac{E}{10~\MeV}\r.
+    X_\x{had} \sim \frac{1}{n_\ion \sigma_\inel} \log\l\frac{E}{10~\MeV}\r.
 \end{align}
 
 \paragraph{Photonuclear and Electronucelar Interactions.}
