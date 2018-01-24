@@ -47,31 +47,21 @@ The total length of the shower is only logarithmically dependent on the initial 
     X_\x{had} \sim \frac{1}{n_\ion \sigma_\inel} \log\l\frac{E}{10~\MeV}\r.
 \end{align}
 
-\paragraph{Photonuclear and Electronucelar Interactions.}
+\paragraph{Photonuclear Interactions.}
 Photons of energy $k \gtrsim 10 ~\MeV$ can also strongly interact with nuclei through the production of virtual quark-antiquark pairs.
-This destroys the photon and fragments the nucleus, producing outgoing hadrons in a manner similar to the inelastic collisions of hadrons, although the cross-section $\sigma_{\gamma A}$ is roughly a factor $\approx \alpha$ smaller.
-Below $\sim \GeV$ the photonuclear cross-section is complicated by nuclear resonances while above $\sim \GeV$, $\sigma_{\gamma A}$ is a slowly increasing function of energy \cite{Tavernier}.
-This increase is due to a coherent interaction of the photon over multiple nuclei at higher energies~\cite{Gerhardt:2010bj}, however instead of extrapolating this we conservatively take a constant photonuclear cross-section of order $\sigma_{\gamma A} \approx \mbn$ for energies $k \gtrsim 10 ~\MeV$.
+This is the dominant mode of photon energy loss at high energy.
+The photonuclear scatter destroys the photon and fragments the nucleus, producing secondary hadrons in a shower analogous to that described above. 
+The photonuclear cross-section $\sigma_{\gamma A}$ is roughly given by $\sigma_{\gamma A} \approx \alpha \sigma_\inel$, again ignoring the nuclear resonances that occur for $E \lesssim \GeV$.~\cite{Tavernier} 
+For $E \gtrsim \GeV$, $\sigma_{\gamma A}$ is likely a slowly increasing function of energy due to the coherent interaction of the photon over multiple nucleons~\cite{Gerhardt:2010bj}, however, instead of extrapolating this behavior we conservatively take a constant photonuclear cross-section $\sigma_{\gamma A} \approx 1~\mbn$.
 
-Electrons can similarly lose energy by radiating a virtual photon that interacts hadronically with a nuclei.
+\paragraph{Electronucelar Interactions.}
+Electrons can similarly lose energy to nuclei by radiating a virtual photon that undergoes a photonuclear scatter, which indeed provides the dominant energy loss for high energy electrons. 
 The cross-section for this process is roughly given by the photonuclear cross-section and scaled by a factor representing the probability to radiate such a photon.
-This is the Weizsacker-Williams approximation, which gives a cross-section for an electron of kinetic energy $E$ to exchange an energy $k$ with a nucleus
+This can be estimated with the Weizsacker-Williams approximation, which gives a stopping power that is scaled from the photonuclear result by $\alpha$ as well as an $\OO(10)$ kinematic factor~ \cite{Gerhardt:2010bj}: 
 \begin{align}
-    \frac{d\sigma}{dk} &\approx \frac{dN}{dk} \sigma_{\gamma A}
+    \frac{dE}{dx} \sim 10^{-3} \cdot \sigma_\inel n_\ion E.
 \end{align}
-where $dN/dk$ is the virtual photon flux \cite{Gerhardt:2010bj}
-\begin{align}
-    \frac{dN}{dk} &\sim \frac{\alpha}{k} \log\l \frac{E}{m_e} \r.
-\end{align}
-Integrating this give the stopping power,
-\begin{align}
-    \frac{dE}{dx} &\sim n_\ion \int_{k_\xmin}^E dk \;
-    k \cdot \frac{\alpha}{k} \log\l \frac{E}{m_e} \r  \sigma_{\gamma A} \\
-    &\approx \alpha \log\l \frac{E}{m_e} \r \sigma_{\gamma A} n_\ion E.
-\end{align}
-$k_\xmin$ is taken to be the critical energy for photonuclear interactions.
-Electronuclear stopping thus proceeds as a radiative process with length scale larger than the photonuclear length by a factor $\sim 10$.
-Unlike the photonuclear event, this is a continuous radiative process with equal energy-loss contritions from radiation with all energies up to $E$.
+Unlike the photonuclear interaction, the electronuclear event is a radiative process that preserves the original electron while leaving hadronic showers in its wake. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Radiative Processes}
