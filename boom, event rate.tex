@@ -174,7 +174,7 @@ A detailed calculation of the rate of DM capture \cite{Gould} yields
 \begin{equation}
 \Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\{N_\text{scat}, 1\} \l \frac{v_\text{cap}}{v_\text{halo}} \r^2.
 \end{equation}
-Here we assume $v_\text{cap} < v_\text{halo}$; otherwise, the capture rate is simply $\Gamma_\text{trans}$. 
+Here we assume $v_\text{cap} \lesssim v_\text{halo}$; otherwise, the capture rate is simply $\Gamma_\text{trans}$. 
 %Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid one for cross sections
 %\begin{equation}
 %\sigma_{\chi A} < \l \frac{\Eboom}{\lambda_T} \r \l \frac{1}{m_\text{ion} v_\text{esc}^2} \r \l \frac{1}{n_\text{ion}} \r \approx 10^{-8} ~\cm^2,
@@ -224,7 +224,7 @@ This occurs after a characteristic time
 \begin{equation}
 t_2 \sim \l \frac{m_\chi}{m_\text{ion}} \r \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \approx 30 ~\text{yr} \l \frac{m_\chi}{10^{10} ~\GeV} \r \l \frac{\sigma_{\chi A}}{10^{-38} ~\cm^2} \r^{-1}. 
 \end{equation}
-where $v_\text{ion} \sim \sqrt{\frac{T}{m_\text{ion}}}$ is the thermal velocity of ions. 
+where $v_\text{ion} \sim \sqrt{\frac{T}{m_\text{ion}}}$.  
 %If instead the DM rapidly loses energy in the star, we expect this time to be of order
 %\begin{align}
 %\label{eq:tdrift}
@@ -326,43 +326,39 @@ If $\Gamma_\text{cap} \sim \Gamma_\text{trans}$, this is true for DM masses abov
 Here the DM cloud at $R_\text{th}$ will continue to collect more DM until a saturation number $\sim N_\text{crit}^{1/3} (\Gamma_\text{cap} t_\text{col})^{2/3}$ greater than $N_\text{crit}$, at which point the timescale for free-fall matches the timescale for collection.
 
 There are two potential evolutions of the captured DM: either the DM collapses or it does not. 
-In the later case, either the DM has reached its equilibrium number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime:
-\begin{equation}
-\label{eq:nocollapseann}
-\text{min}\{N_\text{eq}, N_\text{life}\} < N_\text{crit}.
-\end{equation}
-First we see if this scenario allows for any meaningful constraints. 
-The number of collisions that can be counted as a single heating event is roughly
-\begin{equation}
-\label{eq:nocollapse}
-N_\text{mult} \sim \l \frac{\text{min}\{N_\text{eq}, N_\text{life}\}}{R_\text{th}^3} \r^2 \sigma_{\chi \chi} v_\text{th} L_\text{heat}^3 \tau_\text{diff}, ~~~~ L_\text{heat} \equiv \text{max}\{\lambda_T, L_0\}. 
-\end{equation}
-Even in the ``best-case" scenario of efficient capture and $L_0 \sim \lambda_T$, we find there is no parameter space $\{m_\chi, \sigma_{\chi \chi}\}$ where both \eqref{eq:nocollapseann} and \eqref{eq:multcolboom}---with $N_\text{mult}$ given by \eqref{eq:nocollapse}---are simultaneously satisfied. 
-
-We instead turn our attention to collapsing DM, characterized by \eqref{eq:collapsecondition}. 
-Of course, the number of collisions $N_\text{mult}$ that can be counted as a single heating event depends on where we examine the collapse. 
-In general, this is given as an integral of the annihilation rate
-\begin{equation}
-\label{eq:capintegral}
-N_\text{mult} \sim \int \l \frac{N}{r^3}\r^2 \sigma_{\chi \chi} \text{min}\{L_\text{heat}, r\}^3 dr
-\end{equation}
-integrating over the distance fell within a fixed time interval $\tau_\text{diff}$. 
-The expectation is that there exists an optimal value of the lower radius at which $N_\text{mult}$ is maximized.
-We denote this as $R_*$. 
-However, even without knowing the details of this optimum choice, we can calculate \eqref{eq:capintegral} by considering the following limits. 
-If the free-fall time \eqref{eq:freefalltime} at a distance of order $R_*$ is much larger than the diffusion time, the annihilation rate can be approximated as constant over a time $\tau_\text{diff}$.
-If this free-fall time is instead much smaller than the diffusion time, the annihilation rate is a rapidly increasing function over the interval $\tau_\text{diff}$.
-Therefore, \eqref{eq:capintegral} is approximated by the peak value of the annihilation rate (which is maximized at $R_*$) multiplied by the time spent at this peak (which is the time to free-fall $\sim R_*$).
-Considering both these possibilities, the maximum value of \eqref{eq:capintegral} is of the form: 
+In the later case, the DM has reached its equilibrium number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime.
+%\begin{equation}
+%\label{eq:nocollapseann}
+%\text{min}\{N_\text{eq}, N_\text{life}\} < N_\text{crit}. 
+%\end{equation}
+We have checked that this scenario does not yield any constraints on DM parameters which ignite the star. 
+%The number of collisions that can be counted as a single heating event is roughly
+%\begin{equation}
+%\label{eq:nocollapse}
+%N_\text{mult} \sim \l \frac{\text{min}\{N_\text{eq}, N_\text{life}\}}{R_\text{th}^3} \r^2 \sigma_{\chi \chi} v_\text{th} L_\text{heat}^3 \tau_\text{diff}, ~~~~ L_\text{heat} \equiv \text{max}\{\lambda_T, L_0\}. 
+%\end{equation}
+%Even in the ``best-case" scenario of efficient capture and $L_0 \sim \lambda_T$, we find there is no parameter space $\{m_\chi, \sigma_{\chi \chi}\}$ where both \eqref{eq:nocollapseann} and \eqref{eq:multcolboom}---with $N_\text{mult}$ given by \eqref{eq:nocollapse}---are simultaneously satisfied. 
+Thus we turn our attention to collapsing DM, characterized by \eqref{eq:collapsecondition}. 
+In general, the number of collisions $N_\text{mult}$ that can be counted as a single heating event is given by an integral of the annihilation rate over a diffusion time $\tau_\text{diff}$.
+Of course this depends on the radius of the collapsing DM sphere, but there exists an \emph{optimum radius} $R_*$ at which the annihilation rate is maximized:
+%\begin{equation}
+%\label{eq:capintegral}
+%N_\text{mult} \sim \int \l \frac{N}{r^3}\r^2 \sigma_{\chi \chi} \text{min}\{L_\text{heat}, r\}^3 dr
+%\end{equation}
+%The expectation is that there exists an optimal value of the lower radius at which $N_\text{mult}$ is maximized.
+%We denote this as $R_*$. 
+%However, even without knowing the details of this optimum choice, we can calculate \eqref{eq:capintegral} by considering the following limits. 
+%If the free-fall time \eqref{eq:freefalltime} at a distance of order $R_*$ is much larger than the diffusion time, the annihilation rate can be approximated as constant over a time $\tau_\text{diff}$.
+%If this free-fall time is instead much smaller than the diffusion time, the annihilation rate is a rapidly increasing function over the interval $\tau_\text{diff}$.
+%Therefore, \eqref{eq:capintegral} is approximated by the peak value of the annihilation rate (which is maximized at $R_*$) multiplied by the time spent at this peak (which is the time to free-fall $\sim R_*$).
 \begin{equation}
 \label{eq:nmulti}
-N_\text{mult} \sim \l \frac{N}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff} ~\text{min}\{L_\text{heat}, R_*\}^3 ~\text{min}\left \{\tau_\text{diff}, \frac{R_*}{v_\text{ff}}\right \},
+N_\text{mult} \sim \l \frac{N(R_*)}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff}(R_*) ~\text{min}\{L_\text{heat}, R_*\}^3 ~\text{min}\left \{\tau_\text{diff}, \frac{R_*}{v_\text{ff}(R_*)}\right \},
 \end{equation}
-
-The questions is: what is $R_*$?
-Ultimately, the answer depends on the parameters $m_\chi$ and $\sigma_{\chi \chi}$. 
-Suppose $\sigma_{\chi \chi}$ is independent of velocity or position.
-In this case, the scaling is such that $N_\text{mult}$ is maximized at the smaller of the two scales $R_* \sim \text{min}\{R_{\chi \chi}, L_\text{heat}\}$. 
+The question is: what is $R_*$?
+Ultimately, the answer depends on DM parameters $m_\chi$ and $\sigma_{\chi \chi}$. 
+For instance, suppose $\sigma_{\chi \chi}$ is independent of velocity or position.
+In this case, we find that $N_\text{mult}$ is in fact maximized at the smaller of the two scales $\text{min}\{R_{\chi \chi}, L_\text{heat}\}$. 
 However, there may be some stabilizing pressure which prevents the DM from collapsing below a certain radius.
 This is reasonable to expect in the case of composite DM, although such a stable radius would depend on unknown physics. 
 Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole:
@@ -371,8 +367,8 @@ R_\text{BH} \sim G N_\text{crit} m_\chi \approx 5 \times 10^{-24} ~\cm \l \frac{
 \end{equation}
 Of course, this choice of radius will necessarily change for a specific model that relates $\sigma_{\chi \chi}$ to velocity in some way. 
 For instance if $\sigma_{\chi \chi} \propto 1/v$ then the optimum radius is instead just $R_* \sim R_{\chi \chi}$.
-Regardless, it ends up being the case that for most cross sections and DM masses which satisfy the collapse condition \eqref{eq:collapsecondition}, the scale $R_{\chi \chi}$ is less than $10^{-5} ~\cm$. 
-Thus for the sake of simplicity, we look at the collapse at a radius
+%Regardless, it ends up being the case that for most cross sections and DM masses which satisfy the collapse condition \eqref{eq:collapsecondition}, the scale $R_{\chi \chi}$ is less than $10^{-5} ~\cm$. 
+For the sake of simplicity, we choose to look at the collapse at a radius:
 \begin{equation}
 R_* = \text{max}\{R_{\chi \chi}, R_\text{BH}\}.
 \end{equation}
@@ -393,14 +389,13 @@ If the DM is captured via elastic scatters, the rate of decays is given by
 \Gamma_\text{decay} \sim  \frac{1}{\tau_\chi} \Gamma_\text{cap} t_2
 \label{eq:decayDMcap}
 \end{equation}
-We see that if the scattering cross section is sufficiently large such that $N_\text{scat} >1$, then \eqref{eq:decayDMcap} is independent of $\sigma_{\chi A}$ and scales inversely with $m_\chi$ just as \eqref{eq:decayDM} does. 
-Thus in this regime, the rate of captured DM decays in the WD is simply enhanced by a numerical factor $\sim 10^{7}$ compared to the rate of transiting ``wind" decays.  
+Since, \eqref{eq:decayDMcap} is independent of $\sigma_{\chi A}$ and scales inversely with $m_\chi$, the rate of captured DM decays in the WD is simply enhanced by a factor $\approx 10^5$ compared to the rate of transiting ``wind" decays \eqref{eq:decayDM}.  
 Lastly, we have checked that the enhancement of the DM number in the star is never sufficient to yield novel bounds on the DM lifetime if multiple decays are required.
 
 \subsection{Constraints: Capture Scenario}
 
 We now turn towards constraints on DM-DM collisions in the capture scenario.
-We do not explicitly show the constraints on DM lifetimes since, as stated in Section \ref{sec:previous}, the resulting bounds are simply that of the wind scenario enhanced by a factor $\sim 10^{7}$. 
+We do not explicitly show the constraints on DM lifetimes since, as stated in Section \ref{sec:previous}, the resulting bounds are simply that of the wind scenario enhanced by a numerical factor. 
 In Figure \ref{fig:multicapture}, we derive the constraints on $\sigma_{\chi \chi}$ due to the observation of a single $1.25 ~ M_{\astrosun}$ in our local DM density. 
 We distinguish between whether a single collision can blow up the WD or multiple collisions are required, although both bounds are derived from the focusing of annihilations during gravitational core collapse of DM in the star.
 Here we have additionally assumed that the DM is efficiently captured ($\Gamma_\text{cap} \sim \Gamma_\text{trans}$), and that the settling time is less than the WD lifetime.
