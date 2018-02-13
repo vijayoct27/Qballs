@@ -161,41 +161,43 @@ Assuming $m_\text{ion} \ll m_\chi$, the typical momentum transfer in an elastic 
 This corresponds to an energy transfer $q^2/m_\text{ion} \sim m_\text{ion} v_\text{esc}^2 \approx 10 ~\MeV$. 
 The average number of DM scatters during a full transit of the WD is simply a ratio of the mean free path to the size of the WD
 \begin{equation}
-N_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD}.
+\bar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD}.
 \end{equation}
-If $N_\text{scat} < 1$, then $N_\text{scat}$ is the probability for a \emph{single} scatter to occur during the transit. 
+If $\bar{N}_\text{scat} < 1$, then $\bar{N}_\text{scat}$ is the probability for a \emph{single} scatter to occur during the transit. 
 Thus, DM with initial velocities less than
 \begin{equation}
 \label{eq:capture}
-v_\text{cap}^2 \sim v_\text{esc}^2 \l \frac{m_\text{ion}}{m_\chi} \r \text{max}\{N_\text{scat} ,1\}.
+v_\text{cap}^2 \sim v_\text{esc}^2 \l \frac{m_\text{ion}}{m_\chi} \r \text{max}\{\bar{N}_\text{scat} ,1\}.
 \end{equation}
 will be captured in the WD. 
-A detailed calculation of the rate of DM capture \cite{Gould} yields  
+The capture of DM in gravitating bodies is well-studied \cite{Gould}. 
+In the case that the star captures only captures a fraction of the traversing DM, this rate can be expressed as:
 \begin{equation}
-\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\{N_\text{scat}, 1\} \l \frac{v_\text{cap}}{v_\text{halo}} \r^2.
+\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot 
 \end{equation}
-Here we assume $v_\text{cap} \lesssim v_\text{halo}$; otherwise, the capture rate is simply $\Gamma_\text{trans}$. 
 %Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid one for cross sections
 %\begin{equation}
 %\sigma_{\chi A} < \l \frac{\Eboom}{\lambda_T} \r \l \frac{1}{m_\text{ion} v_\text{esc}^2} \r \l \frac{1}{n_\text{ion}} \r \approx 10^{-8} ~\cm^2,
 %\end{equation}
 Since the momentum transfer $q$ is roughly of order the inverse nuclear size, it is reasonable to expect the DM coherently scatters off all nucleons in the nucleus. 
-Indeed, the average per-nucleon cross section (spin-independent) is
+The average per-nucleon cross section (spin-independent) is given by
 \begin{equation}
-\sigma_{\chi A} = A^2 \l \frac{\mu_{A}}{\mu_{n}}\r^2 F^2(q) \sigma_{\chi n},
+\sigma_{\chi A} = A^2 \l \frac{\mu_{A}}{\mu_{n}}\r^2 F^2(q) \sigma_{\chi n} \sim A^4 F^2(q) \sigma_{\chi n},
 \end{equation}
-where $F^2(q) \approx 0.1$ is the Helm form factor \cite{LUX thesis}.  
-We can compare the cross section sufficient for capture \eqref{eq:capture} to the limits from direct detection experiments.
-%In addition, the assumption that the DM mean free path is smaller than the size of the WD is valid for
-%\begin{equation}
-%\sigma_{\chi n} \gtrsim 10^{-43} ~\cm^2.
-%\end{equation}
+where 
+\begin{equation}
+F_\text{SI}^2(q) = \exp (-q^2 s^2) \left(\frac{3 j_1(q R_n)}{q R_n}\right)^2 
+\end{equation}
+is the Helm form factor \cite{LUX thesis}, with $s \sim \text{fm}$, $R_n \approx \sqrt{(A^{1/3})^2 - 5s}$.  
+For momentum transfers corresponding to a DM velocity $v_\text{esc} \sim 2 \times 10^{-2}$, we find that $F^2 \approx 0.1$. 
+In general, the form factor should range from $F^2 \sim 10^{-2} - 1$, where at sufficiently large momentum transfers the DM is scattering off individual nucleons. 
+As a result we will conservatively take $F^2 \approx 0.1$ for all momentum transfers, and this does not affect the results significantly. 
 Currently, the bound on spin-independent DM nuclear elastic scatters from XENON 1T is
 \begin{equation}
 \label{eq:xenon}
 \sigma_{\chi n} < 10^{-45} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
 \end{equation}
-It is interesting that any DM candidate whose scattering cross section barely avoids the direct detection constraint can be efficiently captured in a WD, $v_\text{cap} \approx 0.5 ~v_\text{halo}$. 
+Interestingly, any DM candidate whose scattering cross section satisfies the direct detection constraint is necessarily capturing only a fraction $\sim 10^{-2}$ of those DM which transit the star.
 
 If the DM is captured, it eventually thermalizes to an average velocity
 \begin{equation}
@@ -212,30 +214,24 @@ This has been explicitly calculated in the case that the DM loses energy via ela
 First, the DM passes through the WD many times before the size of its orbit becomes fully contained within the star.
 This occurs after a time
 \begin{equation}
-t_1 \sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{N_\text{scat}} \frac{1}{\text{max}\{N_\text{scat}, 1\}^{1/2}} \approx 2 \times 10^{3} ~\text{yr} \l \frac{m_\chi}{10^{10} ~\GeV} \r^{3/2} \l \frac{\sigma_{\chi A}}{10^{-38} ~\cm^2} \r^{-3/2}. 
+t_1 \sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{\bar{N}_\text{scat}} \frac{1}{\text{max}\{\bar{N}_\text{scat}, 1\}^{1/2}} \approx 2 \times 10^{3} ~\text{yr} \l \frac{m_\chi}{10^{10} ~\GeV} \r^{3/2} \l \frac{\sigma_{\chi A}}{10^{-38} ~\cm^2} \r^{-3/2}. 
 \end{equation}
 Note that the time to complete a single orbit is simply the free-fall timescale:
 \begin{equation}
 \label{eq:freefalltime}
-t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \approx 0.5 ~\text{s}.
+t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \approx 0.1 ~\text{s}.
 \end{equation}
 This stage is relevant only if the energy loss after a single transit is does not exceed $\sim m_\chi v_\text{esc}^2$:
 \begin{equation}
-\l \frac{m_\text{ion}}{m_\chi} \r \text{max}\{N_\text{scat},1\} < 1. 
+\l \frac{m_\text{ion}}{m_\chi} \r \text{max}\{\bar{N}_\text{scat},1\} < 1. 
 \end{equation}
 This is the case for any cross sections which satisfy the XENON bound \eqref{eq:xenon}. 
 Subsequently, the DM completes many orbits within the star until dissipation from elastic scatters reduces the orbital size to the thermal radius.
-This occurs after a characteristic time
+This occurs after a time
 \begin{equation}
-t_2 \sim \l \frac{m_\chi}{m_\text{ion}} \r \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \approx 30 ~\text{yr} \l \frac{m_\chi}{10^{10} ~\GeV} \r \l \frac{\sigma_{\chi A}}{10^{-38} ~\cm^2} \r^{-1}. 
+t_2 \sim \l \frac{m_\chi}{m_\text{ion}} \r \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \l 1+\log \l \frac{m_\chi}{m_\text{ion}}\r \r \approx 10^2 ~\text{yr} \l \frac{m_\chi}{10^{10} ~\GeV} \r \l \frac{\sigma_{\chi A}}{10^{-38} ~\cm^2} \r^{-1}. 
 \end{equation}
 where $v_\text{ion} \sim \sqrt{\frac{T}{m_\text{ion}}}$.  
-%If instead the DM rapidly loses energy in the star, we expect this time to be of order
-%\begin{align}
-%\label{eq:tdrift}
-%  t_\text{settle} \sim \frac{R_\text{WD}}{v_\text{th}}
- % \approx 50 ~\text{yr} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{1/2}. 
-%\end{align}
 Thus, DM will only settle at the thermal radius if the total thermalization time is shorter than the age of the WD:
 \begin{equation}
 t_1 + t_2 < \tau_\text{WD}.
@@ -245,10 +241,7 @@ We now turn towards the rate of DM-DM collisions for captured DM.
 Ultimately, the most interesting constraint in the capture scenario will be from the focusing of annihilations during self-gravitational collapse of a DM sphere at the thermal radius.
 However, we first carefully examine the effect of annihilations on the evolution of captured DM. 
 To begin, the settling DM constitutes a number density of DM throughout the WD volume as well as outside the star. 
-We can compare the total rate of annihilations of in-falling DM to the rate of DM capture.  
-This annihilation rate is dominated by the DM density inside the star with orbits near the thermal radius, and the depletion of in-falling DM can be ignored as long as:
-\texcolor{blue}{condition}
-
+\textcolor{blue}{discuss annihilations of infall?}
 After a settling time has passed, DM will begin steadily accumulating at $R_\text{th}$.
 If \eqref{eq:steadycollect} is satisfied, the accumulation rate is roughly the same as the capture rate. 
 However, this density of accumulating DM is also depleting due to annihilations. 
@@ -273,19 +266,26 @@ Thus the condition for collapse is:
 \label{eq:collapsecondition}
 N_\text{sg} < N_\text{eq}, ~~~~ N_\text{sg} < N_\text{life}. 
 \end{equation}
-%DM masses less than $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD to collect a number $N_\text{sg}$ and begin a collapse.
+DM masses less than $\sim 10^{6} ~\GeV$ do not have enough time within the age of the WD to collect a number $N_\text{sg}$ and begin a collapse.
 
 Once the DM sphere becomes self-gravitating, it will start to collapse. 
-
-When the DM sphere collapses, its initial evolution is determined by the dynamical free-fall time $t_\text{ff}$. 
-Soon after, further collapse will proceed as a result of the DM dissipating its energy through elastic scatters, thereby reducing its orbital radius.
-The timescale for collapse is initially independent of DM velocity but decreases once the DM velocity exceeds the velocity of ions $v_\text{ion}$:
+Although the evolution of the collapsing DM is initially set by the dynamical free-fall time, it is ultimately slowed by the need to release gravitational potential energy and happens on a timescale set by DM cooling. 
+In this sense the nature of the collapsing DM sphere shares similarities with the formation of DM halos, with an essential difference being dissipation. 
+If the dominant source of dissipation is elastic nuclear scatters, the timescale for cooling is initially independent of DM velocity but decreases once the DM velocity exceeds the velocity of ions $v_\text{ion}$:
 \begin{equation}
-t_\text{cool} \sim \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A}} \frac{1}{\text{max}\{{v_\text{ion},v\}}}, ~~~~ v \sim \sqrt{\frac{G N_\text{sg} m_\chi}{r}}.
+t_\text{cool}(r) \sim \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A}} \frac{1}{\text{max}\{{v_\text{ion},v_\chi\}}},
 \end{equation}
-%It is straightforward to see that the dynamical free-fall time $\propto r^{3/2}$ is always smaller the collapse time, so that the DM requires many orbits before dissipation affects its trajectory. 
-Annihilations in the collapsing DM density can be ignored until the timescale for annihilations becomes of order the collapse time.
-This occurs at a characteristic radius
+where the velocity of DM is simply set by the virial relation 
+\begin{equation}
+v_\chi \sim \sqrt{\frac{G N_\text{sg} m_\chi}{r}}. 
+\end{equation}
+It is straightforward to see that the dynamical free-fall time $\propto r^{3/2}$ is always smaller the collapse time, so that the DM requires many orbits before dissipation affects its trajectory. 
+The timescale for $\OO(1)$ of the collapsing DM at a radius $r$ and number $N_\text{sg}$ to deplete by annihilations is simply:
+\begin{equation}
+t_\text{ann}(r) \sim \frac{r^3}{N_\text{sg} \sigma_{\chi \chi} v_\chi}. 
+\end{equation}
+The collapse of the full DM sphere proceeds the timescale for annihilations becomes of order the timescale for cooling.
+This occurs at a characteristic radius:
 \begin{align}
 R_{\chi \chi} \sim R_\text{th}  \text{min} \left \{ \l \frac{\sigma_{\chi \chi}}{\sigma_{\chi A}}\r^{1/3}, \l \frac{\sigma_{\chi \chi}}{\sigma_{\chi A}}\r^{2/7} \l \frac{m_\text{ion}}{m_\chi} \r^{1/7} \right \}.
 \end{align}
@@ -295,17 +295,19 @@ Of course, such a collapse of the accumulated DM in the WD is only sensible if
 \label{eq:xicondition}
 R_{\chi \chi} < R_\text{th}.
 \end{align}
-This condition will ultimately be satisfied for any DM mass and annihilation cross section which satisfy the ignition condition \eqref{eq:multcolboom} during a collapse. 
-%The enclosed WD mass is also dropping by $M_\text{WD}(r) \propto r^3$ during the collapse, so if the DM sphere depletes as a stronger function of radius then the collapse will halt below $R_{\chi \chi}$. 
+It turns out this condition is ultimately satisfied for any DM mass and annihilation cross section which satisfy the ignition condition \eqref{eq:multcolboom} during a collapse. 
+%Note, the enclosed WD mass is also dropping by $M_\text{WD}(r) \propto r^3$ during the collapse, so if the DM sphere depletes as a stronger function of radius then the collapse will halt below $R_{\chi \chi}$. 
 
 We also briefly mention the possibility that the number of DM particles initially collapsing can be much larger than $N_\text{sg}$. 
-Once the accumulated DM reaches $N_\text{sg}$, evolution of the DM profile can either be collapse or further collection.
-The later scenario occurs if the collapse time is greater than the time to collect a critical number of DM particles:
+\textcolor{blue}{elaborate}. 
+Once the accumulated DM becomes self-gravitating, evolution of the DM sphere can either be collapse (by cooling) or further collection.
+The later occurs if the timescale for collapse is greater than the timescale of collection:
 \begin{equation}
-N_\text{sg} < \Gamma_\text{cap} t_\text{col}.
+\frac{N_\text{sg}}{\Gamma_\text{cap}} < \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A} v_\text{ion}},
 \end{equation}
-This is true for DM masses above $\sim 10^{14} ~\GeV$, independent of scattering cross section $\sigma_{\chi A}$. 
-%Here the DM sphere at $R_\text{th}$ will continue to collect more DM until a saturation number $\sim N_\text{sg}^{1/3} (\Gamma_\text{cap} t_\text{col})^{2/3}$ greater than $N_\text{sg}$, at which point the timescale for free-fall matches the timescale for collection.
+which occurs for DM masses above $\sim 10^{14} ~\GeV$, independent of $\sigma_{\chi A}$. 
+In this case, the number of collapsing DM particles saturates to $\Gamma_\text{cap} t_\text{cool}$, with the the cooling time set to match the collection time.  
+If in addition the collection time is also initially shorter than the dynamical free-fall time, then the DM sphere at $R_\text{th}$ will simply continue to collect more DM until a saturation number $\sim N_\text{sg}^{1/3} (\Gamma_\text{cap} t_\text{ff})^{2/3}$ greater than $N_\text{sg}$ is reached. 
 
 There are two potential evolutions of the captured DM: either the DM collapses or it does not. 
 In the later case, the DM has reached its equilibrium number at the thermal radius or is still continuing to accumulate, not yet having the critical mass necessary for collapse within its lifetime.
@@ -317,25 +319,45 @@ We have checked that this scenario does not yield any constraints on DM paramete
 %\end{equation}
 %Even in the ``best-case" scenario of efficient capture and $L_0 \sim \lambda_T$, we find there is no parameter space $\{m_\chi, \sigma_{\chi \chi}\}$ where both \eqref{eq:nocollapseann} and \eqref{eq:multcolboom}---with $N_\text{mult}$ given by \eqref{eq:nocollapse}---are simultaneously satisfied. 
 Thus we turn our attention to collapsing DM, characterized by \eqref{eq:collapsecondition}. 
-The number of collisions $N_\text{mult}$ that can be counted as a single heating event is given by an integral of the annihilation rate over a diffusion time $\tau_\text{diff}$.
+The number of collisions $N_\text{mult}$ that are counted as a single heating event is given by an integral of the annihilation rate over a diffusion time $\tau_\text{diff}$.
 This depends on the radius of the collapsing DM sphere, but there exists an optimum radius $R_*$ at which the annihilation rate is maximized.
-Assuming the diffusion time is the shortest timescale during the collapse, this number is of order:
+Assuming the diffusion time is the shortest timescale during the collapse and the number of particles collapsing is $N_\text{sg}$, this number is of order:
 \begin{equation}
 \label{eq:nmulti}
-N_\text{mult} \sim \l \frac{N_\text{sg}}{R_*^3}\r^2  \sigma_{\chi \chi} v_\text{ff}(R_*) ~\text{min}\{L_\text{heat}, R_*\}^3 \tau_\text{diff},
+N_\text{mult} \sim \l \frac{N_\text{sg}}{R_*^3}\r^2  \sigma_{\chi \chi} v_\chi ~\text{min}\{\lambda_T, R_*\}^3 \tau_\text{diff},
 \end{equation}
-Naively, we would suspect that the optimum radius is just set by the scale at which annihilations during the collapse become relevant $R_* \sim R_{\chi \chi}$. 
-However, there may be some stabilizing pressure which prevents the DM from collapsing below a certain radius.
+Naively, we would suspect that the optimum radius is just $R_* \sim R_{\chi \chi}$. 
+Of course, the process of cooling via elastic nuclear scatters becomes slightly complicated if the DM sphere collapses to within a radius $n_\text{ion}^{-1/3} \approx 10^{-10} ~\text{cm}$. 
+However, there may be some stabilizing pressure which prevents the DM from ever collapsing or annihilating below a certain radius.
 This is to be expected for heavy, composite DM, although such a stable radius would depend on unknown physics. 
 Famously, gravity itself provides such a ``pressure", arresting collapses below the Schwarzschild radius by the formation of a black hole:
 \begin{equation}
 R_\text{BH} \sim G N_\text{sg} m_\chi \approx 5 \times 10^{-15} ~\cm \l \frac{m_\chi}{10^{10} ~\GeV} \r^{-3/2}.
 \end{equation}
-If the DM stabilizes into a BH, the condition that not even a \emph{single} collision occurs during the collapse to $R_\text{BH}$ is simply
+If the DM is a fermion, degeneracy pressure may also affect the collapse. 
+Even more famously, this is never an issue if the collapsing DM mass $N_\text{sg} m_\chi$ than the Chandrasekhar mass
 \begin{equation}
-\l \frac{N_\text{sg}}{R_\text{BH}^3}\r \sigma_{\chi \chi} \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A}} \lesssim 1. 
+M_\text{ch} \sim \frac{1}{G^{3/2} m_\chi^2},
 \end{equation}
-This is the most stringent bound that can be placed on DM masses greater than $\Eboom$, for which a single collision is capable of igniting the star. 
+which is the case for $m_\chi \gtrsim 10^{9} ~\GeV$.
+Otherwise, the DM will collapse until it reaches a radius
+\begin{equation}
+R_\text{deg} \sim \frac{1}{G m_\chi^3 N_\text{sg}^{1/3}} \approx 3 \times 10^{-11} ~\cm \l\frac{m_\chi}{10^{8} ~\GeV}\r^{-13/6},
+\end{equation}
+where the DM sphere can will either continue collecting until it reaches the Chandrasekhar mass, or annihilate beforehand. 
+If the timescale for annihilations is less than the time to collect $\sim N_\text{sg}$ DM particles, than $\OO(1)$ of the DM sphere annihilates while still supported by degeneracy pressure at the initial radius $R_\text{deg}$. 
+If the timescale for annihilations matches the collection time for a number great than $N_\text{sg}$ but less than the Chandrasekhar number $M_\text{ch}/m_\chi$, we have checked that the energy released is not sufficient to satisfy\eqref{eq:multcolboom}. 
+To summarize, for fermions we take
+\begin{equation}
+R_* \sim \text{max}\left \{R_{\chi \chi}, \text{max}\{R_\text{BH}, R_\text{deg}\} \right \}. 
+\end{equation}
+\textcolor{blue}{add boson story}. 
+
+%If the DM stabilizes into a BH, the condition that not even a \emph{single} collision occurs during the collapse to $R_\text{BH}$ is simply
+%\begin{equation}
+%\l \frac{N_\text{sg}}{R_\text{BH}^3}\r \sigma_{\chi \chi} \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A}} \lesssim 1. 
+%\end{equation}
+%This is the most stringent bound that can be placed on DM masses greater than $\Eboom$, for which a single collision is capable of igniting the star. 
 
 Finally, we examine the decay rate of captured DM in the WD. 
 Of course, this rate is proportional to the number of DM particles within the WD at any given instance.  
@@ -348,18 +370,18 @@ If the DM is captured via elastic scatters, the rate of decays is given by
 \label{eq:decayDMcap}
 \end{equation}
 Since, \eqref{eq:decayDMcap} is independent of $\sigma_{\chi A}$ and scales inversely with $m_\chi$, the rate of captured DM decays in the WD is simply enhanced by a factor $\approx 10^5$ compared to the rate of transiting ``wind" decays \eqref{eq:decayDM}.  
-Lastly, we have checked that the enhancement of the DM number in the star is never sufficient to yield novel bounds on the DM lifetime if multiple decays are required.
+Lastly, we have checked that the enhancement of the DM number in the star is not sufficient to yield novel bounds on the DM lifetime if multiple decays are examined. 
 
 \subsection{Constraints}
 We now turn towards constraints on DM-DM collisions in the capture scenario.
-%We do not explicitly show the constraints on DM lifetimes since, as stated in Section \ref{sec:previous}, the resulting bounds are simply that of the wind scenario enhanced by a numerical factor. 
-In Figure \ref{fig:multicapture}, we derive the constraints on $\sigma_{\chi \chi}$ due to the observation of a single $1.25 ~ M_{\astrosun}$ in our local DM density. 
-We distinguish between whether a single collision can blow up the WD or multiple collisions are required, although both bounds are derived from the focusing of annihilations during gravitational core collapse of DM in the star.
-We also take the DM collapse to be stabilized by formation of a BH.
-The results of Figure \ref{fig:multicapture} are valid for any SM annihilation products which deposit their energy compactly upon release within the trigger size $\lambda_T$ \textcolor{blue}{see discussion in section 3}. 
+We do not show the bounds that can be placed if $m_\chi > \Eboom$ and a single collision is capable of blowing up the star. 
+These are obviously much more stringent than the wind scenario. 
+In Figure \ref{fig:multicapture}, we derive the constraints on $\sigma_{\chi \chi}$ from the focusing of multiple collisions during gravitational collapse due of DM in the star.
+Bounds are from the observation of a single $1.25 ~ M_{\astrosun}$ in our local DM density. 
+The results of Figure \ref{fig:multicapture} are valid for any SM annihilation products which deposit their energy compactly upon release within the trigger size $\lambda_T$.
 \begin{figure}
 \includegraphics[scale=.35]{multicollision.pdf}
-\caption{Constraints on DM-DM annihilation cross-section into SM particles which deposit their energy compactly within a trigger size $\lambda_T$ during self-gravitational collapse in a WD. Bounds come from observation of a single $1.25~M_{\astrosun}$ WD assuming efficient capture of the DM and settling time (see text). We also take the DM collapse to be stabilized by formation of a BH.}
+\caption{Constraints on DM-DM annihilation cross-section into SM particles which deposit their energy compactly within a trigger size $\lambda_T$ during self-gravitational collapse in a WD. Bounds come from observation of a single $1.25~M_{\astrosun}$ WD. Here we assume a value of $\sigma_{\chi A}$ saturated at the direct detection bounds.}
 \label{fig:multicapture}
 \end{figure}
 \end{document}
