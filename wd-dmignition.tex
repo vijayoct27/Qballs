@@ -101,64 +101,48 @@ Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_
 \end{align}
 
 \paragraph{Event Rate: DM Capture.}
-For the remainder of this section, all numerical quantities are evaluated assuming a central WD density $n_\text{ion} \sim 10^{31} ~\cm^{-3}$. 
-At this density, the relevant WD parameters are approximately: 
+For the remainder of this section all numerical quantities are evaluated at a WD density $n_\text{ion} \sim 10^{31} ~\cm^{-3}$, for which the relevant WD parameters are \cite{cococubed}: 
 \begin{equation}
 M_\text{WD} \sim 1.25 ~M_{\astrosun}, ~~~~ R_\text{WD} \sim 4000 ~\text{km}, ~~~~ v_\text{esc} \sim 2 \times 10^{-2}. 
 \end{equation}
 We also assume a typical WD temperature $T \sim \text{keV}$.
 
 For the DM to be captured in a WD, it must lose energy $\sim m_\chi v^2$, where $v$ is the relative DM velocity (in the rest frame of the WD) asymptotically far away.
-Properly, this DM velocity is described by a (boosted) Maxwell distribution peaked at the galactic virial velocity $v_\text{halo} \sim 10^{-3}$. 
-Since typically $v \ll v_\text{esc}$, the DM has initial velocity $v_\text{esc}$ in the star and must lose a fraction $(v/v_\text{esc})^2$ of its energy to become captured. 
+Properly, this DM velocity is described by a (boosted) Maxwell distribution peaked at the galactic virial velocity $v_\text{halo}$. 
 The physics of DM capture can be made more precise for a specific interaction.
 Consider a spin-independent, elastic scattering off ions with cross section $\sigma_{\chi A}$. 
-Assuming $m_\text{ion} \ll m_\chi$, the typical momentum transfer in an elastic scatter is $q \sim \mu_{A} v_\text{esc} \sim 200 ~\MeV$, where $\mu_{A} \sim m_\text{ion}$ is the reduced mass of the DM-nuclei system. 
-This corresponds to an energy transfer $q^2/m_\text{ion} \sim m_\text{ion} v_\text{esc}^2 \sim 10 ~\MeV$. 
+For $m_\text{ion} \ll m_\chi$, the typical momentum transfer in an elastic scatter is $q \sim m_\text{ion} v_\text{esc} \sim 200 ~\MeV$. 
+This corresponds to an energy transfer $q^2/m_\text{ion} \sim 10 ~\MeV$. 
 The average number of DM scatters during a full transit of the WD is simply a ratio of the mean free path to the size of the WD
 \begin{equation}
 \bar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD}.
 \end{equation}
 If $\bar{N}_\text{scat} < 1$, then $\bar{N}_\text{scat}$ is the probability for a \emph{single} scatter to occur during the transit. 
 
-The capture of DM in gravitating bodies is very well-studied \cite{Gould}. 
-This calculation becomes slightly involved if a single scatter is ever insufficient to capture the DM.
-For incoming DM with asymptotic velocity $\sim v_\text{halo}$ (the peak of the Maxwell distribution), multiple scatters are required if
+We now compute the capture rate of DM in a WD through elastic scatters. 
+Of course, the capture of DM in gravitating bodies is very well-studied \cite{Press:1985ug, Gould:1987ir}. 
+However, the rate becomes slightly modified when the DM requires multiple scatters to lose the necessary energy for capture.
+Parametrically the capture rate is of the form:
 \begin{equation}
-B \equiv \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2} \lesssim 1. 
+\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\left \{1, \bar{N}_\text{scat} \text{min}\{B^2,1\}\right\}, ~~~~ B^2 \equiv \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2}. 
 \end{equation}
-It can be shown that the general rate of capture is approximately of the form
-\begin{equation}
-\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\left \{1, \bar{N}_\text{scat} \text{min}\{B,1\}\right\}.
-\end{equation}
-Evidently, the assumption that the scatters responsible for slowing the DM are not sufficient to blow up the WD \eqref{eq:transitexplosion} is a valid one for cross sections
-\begin{equation}
-\sigma_{\chi A} < \l \frac{\Eboom}{\lambda_T} \r \l \frac{1}{m_\text{ion} v_\text{esc}^2} \r \l \frac{1}{n_\text{ion}} \r \sim 10^{-8} ~\cm^2,
-\end{equation}
-Since the momentum transfer $q \sim 100 ~\text{MeV}$ is of order the inverse nuclear size, it is reasonable to expect the DM coherently scatters off all nucleons in any nucleus. 
+See \cite{Bramante:2017xlb} for a more detailed numerical calculation of this rate.  
+Since the momentum transfer $q \sim 200 ~\text{MeV}$ is of order the inverse nuclear size, it is reasonable to expect the DM coherently scatters off all nucleons in a nucleus. 
 The average per-nucleon cross section (spin-independent) is given by
 \begin{equation}
 \sigma_{\chi A} = A^2 \l \frac{\mu_{A}}{\mu_{n}}\r^2 F^2(q) \sigma_{\chi n} \sim A^4 F^2(q) \sigma_{\chi n},
 \end{equation}
-where $F^2(q)$ is the Helm form factor \cite{LUX thesis}:
-\begin{equation}
-F^2(q) = \exp (-q^2 s^2) \left(\frac{3 j_1(q R_n)}{q R_n}\right)^2, ~~~~ s \sim \text{fm}, ~ R_n \sim \sqrt{(A^{1/3})^2 - 5s}. 
-\end{equation}
-For momentum transfers at a DM velocity $v_\text{esc}$, we find that $F^2(q) \sim 0.1$. 
-In general, the form factor should range from $F^2 \sim 10^{-2} - 1$, where for sufficiently $q$ the DM is effectively scattering off individual nucleons. 
-We will conservatively take $F^2 \sim 0.1$ for all momentum transfers, and this does not affect the results significantly. 
-Currently, the bound on spin-independent DM nuclear elastic scatters from XENON 1T \cite{Xenon} is
+where $F^2(q)$ is the Helm form factor \cite{Helm:1956zz}.
+For a DM velocity $v_\text{esc}$, we find that $F^2(q) \sim 0.1$. 
+Currently, the most stringent bound on DM spin-independent nuclear cross sections is from XENON 1T \cite{Aprile:2017iyp}:
 \begin{equation}
 \label{eq:xenon}
-\sigma_{\chi n} < 10^{-45} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
+\sigma_{\chi n} < 5 \times 10^{-46} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
 \end{equation}
-Interestingly, any DM candidate whose scattering cross section satisfies the direct detection constraint is necessarily capturing only a fraction $10^{-2}$ or fewer of those DM which transit the star.
-Therefore, we are in the regime where capture rate has the following parametric dependence on mass and scattering cross section:
-\begin{equation}
-\Gamma_\text{cap} \propto \frac{\sigma_{\chi A}}{m_\chi^2}. 
-\end{equation}
+Note that any DM candidate whose scattering cross section satisfies the direct detection constraint is necessarily capturing fewer than $1 \%$ of those DM which transit the star.
+In this regime, the capture rate scales as $\Gamma_\text{cap} \propto \sigma_{\chi A}/m_\chi^2$. 
 
-First we review the evolution of captured DM in the WD ignoring DM collisions or decays. 
+First we review the evolution of captured DM in the WD ignoring annihilations or decays. 
 Once DM is captured, it eventually thermalizes to an average velocity
 \begin{equation}
 v_\text{th} \sim \sqrt{\frac{T}{m_\chi}} \sim 10^{-12} \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}
@@ -167,10 +151,9 @@ and settles at the thermal radius
 \begin{align}
 R_\text{th} \sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \sim 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2},
 \end{align}
-where its kinetic energy balances against the gravitational potential energy of the (enclosed) WD mass (for simplicity, we take a constant WD density $\rho_\text{WD} \sim n_\text{ion} m_\text{ion}$ within $R_\text{th}$). 
-Of course, the timescale for thermalization depends on the nature of the DM-SM interaction.
-This has been explicitly calculated in the case that the DM loses energy via elastic nuclear scatters, see \cite{Tinyakov}. 
-First, the DM passes through the WD many times before the size of its orbit becomes fully contained within the star.
+where its kinetic energy balances against the gravitational potential energy of the (enclosed) WD mass. 
+This thermalization time can be explicitly calculated if the DM predominantly loses energy via elastic nuclear scatters, as in \cite{Kouvaris:2010jy}. 
+First, the DM passes through the WD many times until the size of its orbit becomes fully contained within the star.
 This occurs after a time
 \begin{equation}
 t_1 \sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{\bar{N}_\text{scat}} \frac{1}{\text{max}\{\bar{N}_\text{scat}, 1\}^{1/2}} \sim 7 \times 10^7~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} \l \frac{\sigma_{\chi A}}{10^{-30} ~\cm^2} \r^{-3/2}. 
@@ -180,18 +163,18 @@ This stage is relevant only if the energy loss after a single transit does not e
 \l \frac{m_\text{ion}}{m_\chi} \r \text{max}\{\bar{N}_\text{scat},1\} < 1,
 \end{equation}
 which is the case for any cross sections which satisfy the XENON bound \eqref{eq:xenon}. 
-Subsequently, the DM completes many orbits within the star until dissipation from elastic scatters reduces the orbital size to the thermal radius.
+Subsequently, the DM completes many orbits within the star until dissipation reduces the orbital size to the thermal radius.
 This occurs after a time
 \begin{equation}
 t_2 \sim \l \frac{m_\chi}{m_\text{ion}} \r \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \left \{ 1+\log \l \frac{m_\chi}{m_\text{ion}}\r \right \} \sim 3 \times 10^8~\text{s}\l \frac{m_\chi}{10^{10} ~\GeV} \r \l \frac{\sigma_{\chi A}}{10^{-38} ~\cm^2} \r^{-1}. 
 \end{equation}
 where $v_\text{ion} \sim \sqrt{\frac{T}{m_\text{ion}}}$.
-Note that the time to complete a single orbit is simply the free-fall timescale:
+Note that the time to complete a single orbit is simply the gravitational free-fall timescale:
 \begin{equation}
 \label{eq:freefalltime}
 t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \sim 0.1 ~\text{s}.
 \end{equation}
-If the settling time $t_1 + t_2$ is less than the age of the WD, then the DM will begin steadily accumulating at $R_\text{th}$.
+After a time $t_1 + t_2$, the DM will begin steadily accumulating at $R_\text{th}$ (assuming thermalization occurs within the age of the WD). 
 However, if the collected mass of DM at the thermal radius ever exceeds the WD mass within this volume, then there is the possibility of self-gravitational collapse of the DM.
 The time to collect a critical number of DM particles needed for self-gravitation is given by
 \begin{align}
@@ -199,20 +182,19 @@ The time to collect a critical number of DM particles needed for self-gravitatio
     t_\text{sg} \sim \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \sim 10^{4} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} \l \frac{\sigma_{\chi A}}{10^{-30} ~\cm^2} \r^{-1}. .
 \end{align}
 
-We now turn towards the rate of DM-DM collisions during various stages of the described evolution. 
-After a time $t_1$, the settling DM constitutes a number density throughout the WD volume. 
+We now turn towards the rate of DM-DM collisions during the various stages of the above evolution. 
+Of course, the settling DM constitutes a number density throughout the WD volume. 
 The total rate of annihilations of this DM population is given by:
 \begin{equation}
 \Gamma_\text{ann} \sim \Gamma_\text{cap}^2 \l \frac{R_\text{WD}}{R_\text{th}}\r^2 \sigma_{\chi \chi} \frac{m_\chi}{\sigma_{\chi A}} \frac{G}{R_\text{th}^2 v_\text{esc} v_\text{ion}^2}.
 \end{equation}
-Even if the annihilation rate for infalling DM is too small, a complementary constraint can be derived from DM-DM collisions at the thermal radius. 
+If a collision does not occur during a time $t_2$, then a constraint can be derived from DM-DM collisions at the thermal radius. 
 As this population of DM only lasts for a time $t_\text{sg}$, the condition that a single collision does not occur before self-gravitation is:
 \begin{equation}
 \frac{(\Gamma_\text{cap} t_\text{sg})^2}{R_\text{th}^3} \sigma_{\chi \chi} v_\text{th} t_\text{sg} < 1. 
 \end{equation}
-At this point, the DM sphere will start to shrink.
 The ability for a self-gravitating DM sphere to ignite the WD via annihilations is especially interesting. 
-Such a process yields novel bounds that also extend to lower DM masses, and will be discussed in detail in forthcoming work \cite{us}. 
+In fact, such a process yields novel bounds that also extend to lower DM masses, and will be discussed in detail in forthcoming work \cite{us}. 
 
 Finally, we compute the decay rate of captured DM.  
 Of course, this rate is proportional to the number of DM particles within the WD at any given instance.  
