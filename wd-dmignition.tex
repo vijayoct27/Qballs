@@ -51,7 +51,7 @@ In addition, a transit heating event satisfying condition \eqref{eq:CrustConditi
 
 The above argument sums the individual energy deposits along the DM trajectory as though they are all deposited simultaneously.
 This is possible if the DM moves sufficiently quickly so that this energy does not diffuse out of the region of interest before the DM has traversed the region.
-We therefore require that the diffusion time $\tau_\text{diff} \sim 10^{-12} ~\text{s}$ across a heated region at temperature $T_f$ be larger than the DM crossing-time:
+We therefore require that the diffusion time $\tau_\text{diff}$ across a heated region of size $L$ at temperature $T_f$ be larger than the DM crossing-time:
 \begin{align}
   \tau_\text{diff} \sim \frac{L^2}{\alpha(T_f)} \gg
   \frac{L}{v_\text{esc}},
@@ -87,7 +87,7 @@ With this parameterization, a single DM-DM collision or DM decay has an ignition
 We are thus sensitive to DM masses $m_\chi \gtrsim 10^{16} ~\GeV$.
 
 \paragraph{Event Rate: DM Wind.}
-DM that is not captured traverses the WD in $R_\text{WD}/v_\text{esc}$, and the rate of DM-DM collisions within the WD parameterized by cross-section $\sigma_{\chi \chi}$ is:
+DM that is not captured traverses the WD in a time $R_\text{WD}/v_\text{esc}$, and the rate of DM-DM collisions within the WD parameterized by cross-section $\sigma_{\chi \chi}$ is:
 \begin{align}
   \Gamma_\text{ann}
   \sim \l \frac{\rho_\chi}{m_\chi} \r^2 \sigma_{\chi \chi} \l \frac{v_\text{esc}}{v_\text{halo}}\r^3 v_\text{halo} R_\text{WD}^3. 
@@ -107,40 +107,39 @@ M_\text{WD} \sim 1.25 ~M_{\astrosun}, ~~~~ R_\text{WD} \sim 4000 ~\text{km}, ~~~
 \end{equation}
 We also assume a typical WD temperature $T \sim \text{keV}$.
 
-For the DM to be captured in a WD, it must lose energy $\sim m_\chi v^2$, where $v$ is the relative DM velocity (in the rest frame of the WD) asymptotically far away.
-Properly, this DM velocity is described by a (boosted) Maxwell distribution peaked at the galactic virial velocity $v_\text{halo}$. 
+For the DM to ultimately be captured in a WD it must lose energy $\sim m_\chi v^2$, where $v$ is the DM velocity (in the rest frame of the WD) asymptotically far away.
+Properly, this DM velocity is described by a boosted Maxwell distribution peaked at $v_\text{halo}$. 
 The physics of DM capture can be made more precise for a specific interaction.
 Consider a spin-independent, elastic scattering off ions with cross section $\sigma_{\chi A}$. 
-For $m_\text{ion} \ll m_\chi$, the typical momentum transfer in an elastic scatter is $q \sim m_\text{ion} v_\text{esc} \sim 200 ~\MeV$. 
-This corresponds to an energy transfer $q^2/m_\text{ion} \sim 10 ~\MeV$. 
-The average number of DM scatters during a full transit of the WD is simply a ratio of the mean free path to the size of the WD
+The average number of DM scatters during a transit of the WD is approximately:
 \begin{equation}
 \bar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD}.
 \end{equation}
-If $\bar{N}_\text{scat} < 1$, then $\bar{N}_\text{scat}$ is the probability for a \emph{single} scatter to occur during the transit. 
-
-We now compute the capture rate of DM in a WD through elastic scatters. 
-Of course, the capture of DM in gravitating bodies is very well-studied \cite{Press:1985ug, Gould:1987ir}. 
-However, the rate becomes slightly modified when the DM requires multiple scatters to lose the necessary energy for capture.
-Parametrically the capture rate is of the form:
-\begin{equation}
-\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\left \{1, \bar{N}_\text{scat} \text{min}\{B^2,1\}\right\}, ~~~~ B^2 \equiv \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2}. 
-\end{equation}
-See \cite{Bramante:2017xlb} for a more detailed numerical calculation of this rate.  
-Since the momentum transfer $q \sim 200 ~\text{MeV}$ is of order the inverse nuclear size, it is reasonable to expect the DM coherently scatters off all nucleons in a nucleus. 
+If $\bar{N}_\text{scat} < 1$, then $\bar{N}_\text{scat}$ represents the probability for a \emph{single} scatter to occur during the transit. 
+When the DM is at escape velocity the typical momentum transfer is $q \sim \mu_{\chi A} v_\text{esc} \sim 200 ~\MeV$, which corresponds to an energy transfer $q^2/m_\text{ion} \sim 10 ~\MeV$. 
+For momentum transfers less than or of order the inverse nuclear size, DM scattering off nuclei will be coherently enhanced. 
 The average per-nucleon cross section (spin-independent) is given by
 \begin{equation}
-\sigma_{\chi A} = A^2 \l \frac{\mu_{A}}{\mu_{n}}\r^2 F^2(q) \sigma_{\chi n} \sim A^4 F^2(q) \sigma_{\chi n},
+\sigma_{\chi A} = A^2 \l \frac{\mu_{\chi A}}{\mu_{\chi n}}\r^2 F^2(q) \sigma_{\chi n} \sim A^4 F^2(q) \sigma_{\chi n},
 \end{equation}
 where $F^2(q)$ is the Helm form factor \cite{Helm:1956zz}.
-For a DM velocity $v_\text{esc}$, we find that $F^2(q) \sim 0.1$. 
+We find $F^2(q) \approx 0.1$ when the momentum transfer is of order $q \sim 200 ~\MeV$.  
 Currently, the most stringent bound on DM spin-independent nuclear cross sections is from XENON 1T \cite{Aprile:2017iyp}:
 \begin{equation}
 \label{eq:xenon}
 \sigma_{\chi n} < 5 \times 10^{-46} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
 \end{equation}
-Note that any DM candidate whose scattering cross section satisfies the direct detection constraint is necessarily capturing fewer than $1 \%$ of those DM which transit the star.
-In this regime, the capture rate scales as $\Gamma_\text{cap} \propto \sigma_{\chi A}/m_\chi^2$. 
+
+We now compute the capture rate of DM in a WD through elastic scatters. 
+The capture of DM in gravitating bodies is of course very well-studied \cite{Press:1985ug, Gould:1987ir}. 
+However, the rate must be modified when the DM requires multiple scatters to lose the necessary energy for capture.
+In the scenario of interest, the capture rate is parametrically of the form:
+\begin{equation}
+\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\left \{1, \bar{N}_\text{scat} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2}  \right \}. 
+\end{equation}
+See \cite{Bramante:2017xlb} for a more detailed numerical calculation of this rate.  
+Note that any DM candidate whose scattering cross section satisfies the direct detection constraint \eqref{eq:xenon} is necessarily capturing less than $1 \%$ of those DM which transit the star.
+Therefore, the capture rate in this regime scales as $\Gamma_\text{cap} \propto \frac{\sigma_{\chi A}}{m_\chi^2}$. 
 
 First we review the evolution of captured DM in the WD ignoring annihilations or decays. 
 Once DM is captured, it eventually thermalizes to an average velocity
@@ -162,7 +161,7 @@ This stage is relevant only if the energy loss after a single transit does not e
 \begin{equation}
 \l \frac{m_\text{ion}}{m_\chi} \r \text{max}\{\bar{N}_\text{scat},1\} < 1,
 \end{equation}
-which is the case for any cross sections which satisfy the XENON bound \eqref{eq:xenon}. 
+which is the case for any cross sections which satisfy \eqref{eq:xenon}. 
 Subsequently, the DM completes many orbits within the star until dissipation reduces the orbital size to the thermal radius.
 This occurs after a time
 \begin{equation}
@@ -179,29 +178,43 @@ However, if the collected mass of DM at the thermal radius ever exceeds the WD m
 The time to collect a critical number of DM particles needed for self-gravitation is given by
 \begin{align}
 \label{eq:Ncore}
-    t_\text{sg} \sim \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \sim 10^{4} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} \l \frac{\sigma_{\chi A}}{10^{-30} ~\cm^2} \r^{-1}. .
+    t_\text{sg} \sim \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \sim 10^{4} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} \l \frac{\sigma_{\chi A}}{10^{-30} ~\cm^2} \r^{-1}. 
 \end{align}
 
-We now turn towards the rate of DM-DM collisions during the various stages of the above evolution. 
-Of course, the settling DM constitutes a number density throughout the WD volume. 
-The total rate of annihilations of this DM population is given by:
-\begin{equation}
-\Gamma_\text{ann} \sim \Gamma_\text{cap}^2 \l \frac{R_\text{WD}}{R_\text{th}}\r^2 \sigma_{\chi \chi} \frac{m_\chi}{\sigma_{\chi A}} \frac{G}{R_\text{th}^2 v_\text{esc} v_\text{ion}^2}.
-\end{equation}
-If a collision does not occur during a time $t_2$, then a constraint can be derived from DM-DM collisions at the thermal radius. 
+We now turn towards the rate of DM-DM collisions at various stages of the above evolution. 
+Of course, the settling DM constitutes a number density throughout the WD volume.
+The total rate of annihilations for the infalling DM is given by:
+A  constraint can also be derived from DM-DM collisions at the thermal radius. 
 As this population of DM only lasts for a time $t_\text{sg}$, the condition that a single collision does not occur before self-gravitation is:
 \begin{equation}
 \frac{(\Gamma_\text{cap} t_\text{sg})^2}{R_\text{th}^3} \sigma_{\chi \chi} v_\text{th} t_\text{sg} < 1. 
 \end{equation}
-The ability for a self-gravitating DM sphere to ignite the WD via annihilations is especially interesting. 
-In fact, such a process yields novel bounds that also extend to lower DM masses, and will be discussed in detail in forthcoming work \cite{us}. 
+Ultimately, the strongest constraint comes in considering the collapse of the self-gravitating DM sphere. 
+The ability for collapsing DM to ignite a WD via annihilations into SM particles (or formation of a black hole) is especially interesting. 
+Such a process may also release sufficient energy to trigger SN at lower DM masses, and is the focus of future work \cite{us}.
+During the collapse, the rate of collisions depends on the radius of the sphere and the typical time spent at that radius.
+The latter is determined by the time it takes DM to cool and shed gravitational potential energy.
+For elastic nuclear scatters, this is given by:
+\begin{equation}
+t_\text{cool} \sim \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A} \text{max}\{v_\chi, v_\text{ion}\}}, ~~~~ v_\chi \sim \sqrt{\frac{G N_\text{sg} m_\chi}{r}}. 
+\end{equation}
+Of course, there may be some stabilizing pressure which prevents the DM from ever collapsing or annihilating below a certain radius.
+This is to be expected for heavy, composite DM, although such a stable radius would depend on unknown physics. 
+For simplicity, we will assume the DM does stabilize at such a radius $R_\text{sta}$.
+Demanding that a single DM-DM collision does not occur when the DM core is of order $R_\text{sta}$ gives a condition:
+\begin{equation}
+\frac{N_\text{sg}^2}{R_\text{sta}^3}\sigma_{\chi \chi} v_\chi t_\text{cool} < 1, 
+\end{equation}
+where we have assumed the number of collapsing DM particles is fixed at $N_\text{sg} \sim \Gamma_\text{cap} t_\text{sg}$.
+This is in fact a conservative estimate since for such heavy DM, the initial evolution of the collapse is dominated by further collection at the thermal radius rather than collapse (by cooling).
+Again, we examine in detail the bounds on DM ignition of a WD from gravitational collapse in forthcoming work \cite{us}.  
 
-Finally, we compute the decay rate of captured DM.  
-Of course, this rate is proportional to the number of DM particles within the WD at any given instance.  
-In the wind scenario \eqref{eq:decayDM}, this number is given by $\sim (\Gamma_\text{trans} \times t_\text{ff})$.  
-In the capture scenario, the number of DM particles available for decay is instead determined by the settling time inside the WD?
+Lastly, we compute the rate of decays for captured DM.  
+Of course, this rate is proportional to the number of DM particles in the WD available for decay at any given instance.  
+In the wind scenario \eqref{eq:decayDM}, this number is simply $\sim (\Gamma_\text{trans} \times t_\text{ff})$.  
+In the capture scenario, this number is instead determined by the settling time inside the WD:
 \begin{equation}
 \Gamma_\text{decay} \sim  \frac{1}{\tau_\chi} \Gamma_\text{cap} t_2
 \label{eq:decayDMcap}
 \end{equation}
-Since, \eqref{eq:decayDMcap} is independent of $\sigma_{\chi A}$ and scales inversely with $m_\chi$, the rate of captured DM decays in the WD is simply enhanced by a factor $\sim \l\frac{v_\text{esc}^3}{v_\text{halo}^2 v_\text{ion}} \r \sim 10^5$ compared to the rate of transiting ``wind" decays \eqref{eq:decayDM}.  
+Comparing the two, we find the rate of captured DM decays in the WD is simply enhanced by a numerical factor $\sim \l\frac{v_\text{esc}^3}{v_\text{halo}^2 v_\text{ion}} \r \approx 10^5$.   
