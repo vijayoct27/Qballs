@@ -1,0 +1,49 @@
+Here we give a more detailed derivation of the capture rate of DM in a WD. 
+For the DM to ultimately be captured, it must lose energy $\sim m_\chi v^2$, where $v$ is the DM velocity (in the rest frame of the WD) asymptotically far away.
+Since typically $v \ll v_\text{esc}$, the DM has initial velocity $v_\text{esc}$ in the star and must lose a fraction $(v/v_\text{esc})^2$ of its energy to become captured. 
+Properly, this DM velocity $v$ is described by a boosted Maxwell distribution peaked at the galactic virial velocity $v_\text{halo} \sim 10^{-3}$.
+However, it can be shown \cite{Gould:1987ir} that such a boost does not affect the velocity distribution by more than $\OO(1)$ factors compared to the ordinary Maxwell distribution.
+Thus the distribution can be approximated by (ignoring DM velocities in the exponential Boltzmann tail):
+\begin{equation}
+\frac{dn_\chi}{dv} \approx
+\begin{cases}
+  \frac{\rho_\chi}{m_\chi} \l \frac{v^2}{v_\text{halo}^3} \r  & v \leq v_\text{halo} \\
+  0 & v > v_\text{halo}
+  \end{cases}.
+\end{equation} 
+The DM capture rate is given by an integral of the DM transit rate weighted by a probability for capture $P_\text{cap}$
+\begin{equation}
+\Gamma_\text{cap} \sim \int dv \frac{d \Gamma_\text{trans}}{dv} P_\text{cap}(v),
+\end{equation}
+where the (differential) rate of DM transit through the WD is parametrically
+\begin{equation}
+\frac{d \Gamma_\text{trans}}{dv} \approx \frac{d n_\chi}{dv} R_\text{WD}^2 \l \frac{v_\text{esc}}{v}\r^2 v.
+\end{equation}
+$P_\text{cap}$ depends on the \emph{average} number of scatters in a WD
+\begin{equation}
+\bar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD},
+\end{equation}
+and the number of scatters \emph{needed} for capture based on kinematics
+\begin{equation}
+N_\text{cap} \sim \text{max}\left \{1, \frac{m_\chi v^2}{m_\text{ion} v_\text{esc}^2}\right \},
+\end{equation}
+and is most generally expressed as a Poisson sum
+\begin{equation}
+P_\text{cap} = 1 - \sum^{N_\text{cap}-1}_{n=0} \exp(-\bar{N}_\text{scat})\frac{(\bar{N}_\text{scat})^n}{n!}.
+\end{equation}
+For our purposes we will approximate the sum as follows:
+\begin{equation}
+P_\text{cap} \approx 
+\begin{cases}
+ 1 & \bar{N}_\text{scat} > N_\text{cap} \\
+ \bar{N}_\text{scat} & \bar{N}_\text{scat} < N_\text{cap} ~\text{and}~ N_\text{cap} = 1 \\
+ 0 & \text{else}
+\end{cases}.
+\end{equation}
+More properly, the DM capture rate should be computed numerically, e.g. see \cite{Bramante:2017xlb} for a more detailed calculation. 
+However with the above simplifications, we find that it is parametrically of order
+\begin{equation}
+\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\left\{1, \bar{N}_\text{scat} \text{min}\{K,1\}\right\}, ~~~~ K \equiv \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2}. 
+\end{equation}
+Note that for ultra-heavy DM $m_\chi > 10^{15} ~\GeV$, it is necessarily the case that $K \ll 1$, i.e. multiple scatters are needed to capture most of the DM which transits the WD. 
+
