@@ -8,7 +8,7 @@ DM can generically produce SM particles in the WD through three basic processes:
 Note that we do not consider elastic scattering as a possible heating mechanism, which is unable to deliver enough energy for ignition.  
 For ultra-heavy DM, these processes can be complicated events involving many (possibly dark) final states, analogous to the interactions of heavy nuclei.
 We classify DM candidates into three types according to the interaction that provides the dominant source of heating, and refer to these as collision, decay, and scattering candidates.
-We additionally make the simplifying assumption that the above interactions are ``point-like", producing SM products in a localized region (smaller than $\Lambda_T$) near the interaction vertex.
+We additionally make the simplifying assumption that the above interactions are ``point-like", producing SM products in a localized region (smaller than $\lambda_T$) near the interaction vertex.
 
 The induced-SN rate may be greatly enhanced if DM is captured in the star, and so we will also consider separately ``transiting DM" and ``captured DM". 
 In general there is some loss of DM kinetic energy due to DM-SM scatters (which may be negligible for ignition heating). 
@@ -101,9 +101,8 @@ Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_
 \end{align}
 
 \subsection{DM Capture.}
-The physics of DM capture can be made more precise for a specific DM-SM interaction.
 Consider a spin-independent, elastic scattering off ions with cross section $\sigma_{\chi A}$. 
-The rate of DM capture in gravitating bodies via elastic scatters is of course very well-studied \cite{Press:1985ug, Gould:1987ir}. 
+The rate of DM capture in gravitating bodies is of course very well-studied \cite{Press:1985ug, Gould:1987ir}. 
 However, this rate must be modified when the DM requires multiple scatters to lose the necessary energy for capture. 
 See Appendix \ref{sec:capture} for details. 
 Ultimately in the scenario of interest, the capture rate is parametrically of the form
@@ -114,7 +113,7 @@ where $\bar{N}_\text{scat}$ is the average number of DM scatters during a transi
 \begin{equation}
 \bar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD}.
 \end{equation}
-Note that when the DM is at escape velocity the typical momentum transfer is $q \sim \mu_{\chi A} v_\text{esc} \sim 200 ~\MeV$, which corresponds to an energy transfer $q^2/m_\text{ion} \sim 10 ~\MeV$. 
+Note that when the DM is at escape velocity the typical momentum transfer is $q \sim \mu_{\chi A} v_\text{esc} \sim 200 ~\MeV$, which corresponds to an energy transfer $q^2/m_\text{ion} \sim \MeV$. 
 For momentum transfers less than or of order the inverse nuclear size, DM scattering off nuclei will be coherently enhanced. 
 The average per-nucleon cross section (spin-independent) is given by
 \begin{equation}
@@ -122,7 +121,7 @@ The average per-nucleon cross section (spin-independent) is given by
 \end{equation}
 where $F^2(q)$ is the Helm form factor \cite{Helm:1956zz}.
 We find $F^2(q) \approx 0.1$ when the momentum transfer is of order $q \sim 200 ~\MeV$.  
-Currently, the most stringent bound on DM spin-independent nuclear cross sections is from XENON 1T \cite{Aprile:2017iyp}:
+Currently, the most stringent bound on DM spin-independent nuclear cross sections \cite{Aprile:2017iyp} is:
 \begin{equation}
 \label{eq:xenon}
 \sigma_{\chi n} < 5 \times 10^{-46} ~\text{cm}^2 \l \frac{m_\chi}{10^3 ~\GeV} \r.
@@ -145,17 +144,12 @@ and settles at the thermal radius
 R_\text{th} \sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \sim 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2},
 \end{align}
 where its kinetic energy balances against the gravitational potential energy of the (enclosed) WD mass. 
-This thermalization time can be explicitly calculated if the DM predominantly loses energy via elastic nuclear scatters, as in \cite{Kouvaris:2010jy}. 
+This thermalization time can be explicitly calculated in the case of elastic nuclear scatters \cite{Kouvaris:2010jy}. 
 First, the DM passes through the WD many times until the size of its orbit becomes fully contained within the star.
 This occurs after a time
 \begin{equation}
 t_1 \sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{\bar{N}_\text{scat}} \frac{1}{\text{max}\{\bar{N}_\text{scat}, 1\}^{1/2}} \sim 2 \times 10^{15}~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}. 
 \end{equation}
-This stage is relevant only if the energy loss after a single transit does not exceed $\sim m_\chi v_\text{esc}^2$
-\begin{equation}
-\l \frac{m_\text{ion}}{m_\chi} \r \text{max}\{\bar{N}_\text{scat},1\} < 1,
-\end{equation}
-which is the case for any cross sections which satisfy \eqref{eq:xenon}. 
 Subsequently, the DM completes many orbits within the star until dissipation reduces the orbital size to the thermal radius.
 This occurs after a time
 \begin{equation}
@@ -183,39 +177,29 @@ For $m_\chi > 10^{15} ~\GeV$ and any cross-sections satisfying \eqref{eq:xenon} 
 
 We now turn towards the rate of DM-DM collisions at various stages of the above evolution. 
 Of course, the settling DM constitutes a number density throughout the WD volume.
-Assuming \eqref{eq:settle} holds true, the total rate of annihilations for the in-falling DM is dominated near the thermal radius:
+Assuming \eqref{eq:settle} holds true, the total rate of annihilations for the in-falling DM is dominated near the thermal radius
 \begin{equation}
 \label{eq:infall}
-\Gamma_\text{ann} \sim \frac{\Gamma_\text{cap}^2 m_\chi^2 G^2}{\sigma_{\chi A}^2 v_\text{ion}^2 R_\text{th}^2} t_\text{ff}^3. 
+\Gamma_\text{infall} \sim \frac{(\Gamma_\text{cap} t_2)^2}{R_\text{th}^3} \sigma_{\chi \chi} v_\text{th}. 
 \end{equation}
-A constraint can also be derived from DM-DM collisions at the thermal radius. 
-As this population of DM only lasts for a time $t_\text{sg}$, the condition that a single collision does not occur before self-gravitation is:
-\begin{equation}
-\frac{(\Gamma_\text{cap} t_\text{sg})^2}{R_\text{th}^3} \sigma_{\chi \chi} v_\text{th} t_\text{sg} < 1.
-\end{equation}
-This is ultimately a weaker constraint than that derived from considering the annihilations of in-falling DM \eqref{eq:infall}.
-However, by far the strongest constraint comes in considering the collapse of the self-gravitating DM sphere. 
+If the annihilation cross section $\sigma_{\chi \chi}$ is sufficiently small that $(\Gamma_\text{infall} \times t_2) < 1$, then the DM will accumulate at the thermal radius and rapidly collect the critical number $N_\text{sg} \sim \Gamma_\text{cap} t_\text{sg}$ needed for collapse. 
 The ability for collapsing DM to ignite a WD via annihilations into SM particles (or formation of a black hole) is especially interesting. 
 Such a process can also release sufficient energy to trigger SN at lower DM masses, and is the focus of future work \cite{us}.
-For our purposes, it is practically impossible for a collapse to proceed without a single collision occurring.
-During the collapse, the rate of collisions depends on the radius of the sphere and the typical time spent at that radius.
-The latter is determined by the time it takes DM to cool and shed gravitational potential energy.
-For elastic nuclear scatters, this is given by:
+During the collapse, the rate of collisions depends on the radius of the sphere
 \begin{equation}
-t_\text{cool} \sim \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A} \text{max}\{v_\chi, v_\text{ion}\}}, ~~~~ v_\chi \sim \sqrt{\frac{G N_\text{sg} m_\chi}{r}}. 
+\Gamma_\text{collapse} \sim \frac{N_\text{sg}^2}{r^3} \sigma_{\chi \chi} v_\chi, ~~~~ v_\chi \sim \sqrt{\frac{G N_\text{sg} m_\chi}{r}},
 \end{equation}
-Of course, there may be some stabilizing pressure which prevents the DM from ever collapsing or annihilating below a certain radius.
-This is to be expected for heavy, composite DM, although such a stable radius would depend on unknown physics. 
-For simplicity, we will assume the DM does stabilize at such a radius $R_\text{sta}$.
-Demanding that a single DM-DM collision does not occur while the DM core is of order $R_\text{sta}$ gives a condition:
+taking the number of collapsing DM particles to be fixed at $N_\text{sg}$.
+Of course, there may be some stabilizing pressure which prevents the DM from ever collapsing or annihilating below a certain radius (similar to a black hole), although this depends on unknown physics. 
+Typically, the timescale for collapse at a given radius is set by the need to cool and shed gravitational potential energy:
 \begin{equation}
-\frac{N_\text{sg}^2}{R_\text{sta}^3} \sigma_{\chi \chi} v_\chi t_\text{cool} < 1, 
+t_\text{col} \sim \frac{m_\chi}{\rho_\text{WD} \sigma_{\chi A} \text{max}\{v_\chi, v_\text{ion}\}}
 \end{equation}
-taking the number of collapsing DM particles to be fixed at $N_\text{sg} \sim \Gamma_\text{cap} t_\text{sg}$.
-Note that for such heavy DM, the initial evolution of the collapse is actually dominated by further collection at the thermal radius rather than collapse (by cooling).
-Depending on the radius, this may reduce the relevant timescale for collapse. 
-However, we have also ignored the parametric increase in the number of collapsing DM particles due to this over-collection. 
-As such, we examine in detail the bounds on DM ignition of a WD from gravitational collapse in forthcoming work \cite{us}.
+However, for such heavy DM the initial evolution of the collapse is actually dominated by further collection at the thermal radius rather than cooling.
+This will affect the dynamics of the collapse and may reduce the relevant timescale for collapse depending on the radius. 
+On the other hand, there will also be a dramatic increase in the number of collapsing DM particles due to this over-collection. 
+These subtleties will be examined in detail in forthcoming work \cite{us}.
+Note that if a single collision has not occurred during collapse, then one may additionally examine the in-falling DM annihilation rate, dominated at the radius of stabilization---we will not consider this scenario. 
 
 Lastly, we compute the rate of decays for captured DM.  
 Of course, this rate is proportional to the number of DM particles in the WD available for decay at any given instance.  
