@@ -1,9 +1,10 @@
-Here we give a more detailed derivation of the capture rate of DM in a WD. 
+Here we give a more detailed discussion of DM capture and thermalization. 
+
+\subsection{Capture Rate} 
 For the DM to ultimately be captured, it must lose energy $\sim m_\chi v^2$, where $v$ is the DM velocity (in the rest frame of the WD) asymptotically far away.
-Since typically $v \ll v_\text{esc}$, the DM has initial velocity $v_\text{esc}$ in the star and must lose a fraction $(v/v_\text{esc})^2$ of its energy to become captured. 
-Properly, this DM velocity $v$ is described by a boosted Maxwell distribution peaked at the galactic virial velocity $v_\text{halo} \sim 10^{-3}$.
-However, it can be shown \cite{Gould:1987ir} that such a boost does not affect the velocity distribution by more than $\OO(1)$ factors compared to the ordinary Maxwell distribution.
-Thus the distribution can be approximated by (ignoring DM velocities in the exponential Boltzmann tail):
+Since typically $v \ll v_\text{esc}$, the DM has velocity $v_\text{esc}$ while in the star and must lose a fraction $(v/v_\text{esc})^2$ of its kinetic energy to become captured. 
+Properly, the DM velocity is described by a boosted Maxwell distribution peaked at the galactic virial velocity $v_\text{halo} \sim 10^{-3}$.
+However, this differs from the ordinary Maxwell distribution by only $\OO(1)$ factors \cite{Gould:1987ir}, and we can approximate it by (ignoring the exponential Boltzmann tail):
 \begin{equation}
 \frac{dn_\chi}{dv} \approx
 \begin{cases}
@@ -15,35 +16,109 @@ The DM capture rate is given by an integral of the DM transit rate weighted by a
 \begin{equation}
 \Gamma_\text{cap} \sim \int dv \frac{d \Gamma_\text{trans}}{dv} P_\text{cap}(v),
 \end{equation}
-where the (differential) rate of DM transit through the WD is parametrically
+where the (differential) transit rate is
 \begin{equation}
 \frac{d \Gamma_\text{trans}}{dv} \sim \frac{d n_\chi}{dv} R_\text{WD}^2 \l \frac{v_\text{esc}}{v}\r^2 v.
 \end{equation}
-$P_\text{cap}$ depends on the \emph{average} number of scatters in a WD
+$P_\text{cap}$ depends on both the \emph{average} number of scatters in a WD
 \begin{equation}
-\bar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD},
+\overbar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD},
 \end{equation}
-and the number of scatters \emph{needed} for capture based on kinematics
+and the number of scatters \emph{needed} for capture
 \begin{equation}
 N_\text{cap} \sim \text{max}\left \{1, \frac{m_\chi v^2}{m_\text{ion} v_\text{esc}^2}\right \},
 \end{equation}
 and is most generally expressed as a Poisson sum
 \begin{equation}
-P_\text{cap} = 1 - \sum^{N_\text{cap}-1}_{n=0} \exp(-\bar{N}_\text{scat})\frac{(\bar{N}_\text{scat})^n}{n!}.
+P_\text{cap} = 1 - \sum^{N_\text{cap}-1}_{n=0} \exp(-\overbar{N}_\text{scat})\frac{(\overbar{N}_\text{scat})^n}{n!}.
 \end{equation}
 For our purposes we will approximate the sum as follows:
 \begin{equation}
 P_\text{cap} \approx 
 \begin{cases}
- 1 & \bar{N}_\text{scat} > N_\text{cap} \\
- \bar{N}_\text{scat} & \bar{N}_\text{scat} < N_\text{cap} ~\text{and}~ N_\text{cap} = 1 \\
+ 1 & \overbar{N}_\text{scat} > N_\text{cap} \\
+ \overbar{N}_\text{scat} & \overbar{N}_\text{scat} < N_\text{cap} ~\text{and}~ N_\text{cap} = 1 \\
  0 & \text{else}
 \end{cases}.
 \end{equation}
-More properly, the DM capture rate should be computed numerically, e.g. see \cite{Bramante:2017xlb} for a detailed calculation. 
-However with the above simplifications, we find that the capture rate is of order
-\begin{equation}
-\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\left\{1, \bar{N}_\text{scat} \text{min}\{B,1\}\right\}, ~~~~ B \equiv \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2}. 
-\end{equation}
-Note that for ultra-heavy DM $m_\chi > 10^{15} ~\GeV$, it is necessarily the case that $B \ll 1$, i.e. multiple scatters are needed to capture most of the DM which transits the WD. 
+Here we ignore the possibly of capture if $\overbar{N}_\text{scat} < N_\text{cap}$ except in the special case that only one scatter is needed for capture. 
+If $\overbar{N}_\text{scat} > N_\text{cap}$, we assume all DM is captured.
+Most accurately, this capture rate should be computed numerically, e.g. see \cite{Bramante:2017xlb} for a detailed calculation. 
+However with the above simplifications we find that the capture rate is of order
+\begin{align}
+  \Gamma_\text{cap} &\sim \Gamma_\text{trans} \cdot 
+  \text{min}\left\{1, \overbar{N}_\text{scat} \text{min}\{B,1\}\right\}, \\
+  B &\equiv \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2}. 
+  \nonumber
+\end{align}
+$B$ here encodes the necessity of multiple scattering for capture. 
+For ultra-heavy DM $m_\chi > 10^{15} ~\GeV$, $B \ll 1$ and multiple scatters are always needed. 
 
+\subsection{Thermalization and Collapse} 
+
+We consider energy loss via spin-independent, elastic scattering of DM off ions with cross section $\sigma_{\chi A}$. 
+For the remainder of this section all numerical quantities are evaluated at a WD density $n_\text{ion} \sim 10^{31} ~\cm^{-3}$, for which the relevant WD parameters are \cite{cococubed}: 
+\begin{align}
+M_\text{WD} &\sim 1.25 ~M_{\astrosun} \nonumber \\
+R_\text{WD} &\sim 4000 ~\text{km} \nonumber \\
+v_\text{esc} &\sim 2 \times 10^{-2}. 
+\end{align}
+We also assume a typical WD temperature $T \sim \text{keV}$.
+
+To compare with existing constraints, we relate $\sigma_{\chi A}$ to the per-nucleon cross section. 
+\begin{equation}
+\sigma_{\chi A} = A^2 \l \frac{\mu_{\chi A}}{\mu_{\chi n}}\r^2 F^2(q) \sigma_{\chi n} \sim A^4 F^2(q) \sigma_{\chi n},
+\end{equation}
+where $F^2(q)$ is the Helm form factor \cite{Helm:1956zz}.
+For DM at the WD escape velocity, the typical momentum transfer to ions is $q \sim \mu_{\chi A} v_\text{esc} \sim 200 ~\MeV$ and the energy transfer is $\omega \sim q^2/m_\x{ion} \sim ~\MeV$. 
+As this $q$ is less than or of order the inverse nuclear size, DM scattering off nuclei will be coherently enhanced. 
+We find $F^2(q) \approx 0.1$ for $q \sim 200 ~\MeV$.  
+It follows that for any DM candidate satisfying the direct detection constraint \eqref{eq:xenon}, only a small fraction of transiting DM is captured by the star.
+
+Once DM is captured, it thermalizes to an average velocity
+\begin{equation}
+v_\text{th} \sim \sqrt{\frac{T}{m_\chi}} \sim 10^{-12} \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}
+\end{equation}
+and settles to the thermal radius
+\begin{align}
+R_\text{th} \sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \sim 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2},
+\end{align}
+where its kinetic energy balances against the gravitational potential energy of the (enclosed) WD mass. 
+This thermalization time can be explicitly calculated for elastic nuclear scatters \cite{Kouvaris:2010jy}. 
+First, the DM passes through the WD many times until the size of its orbit becomes fully contained within the star.
+This occurs after a time
+\begin{equation}
+t_1 \sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{\overbar{N}_\text{scat}} \frac{1}{\text{max}\{\overbar{N}_\text{scat}, 1\}^{1/2}} \sim 10^{15}~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}. 
+\end{equation}
+Subsequently, the DM completes many orbits within the star until dissipation reduces the orbital size to the thermal radius.
+This occurs after a time
+\begin{equation}
+t_2  \approx \l \frac{m_\chi}{m_\text{ion}} \r \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \sim 10^{13}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1},
+\end{equation}
+where $v_\text{ion} \sim \sqrt{\frac{T}{m_\text{ion}}}$.
+Note that the time to complete a single orbit is simply the gravitational free-fall timescale:
+\begin{equation}
+\label{eq:freefalltime}
+t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \sim 0.1 ~\text{s}.
+\end{equation}
+The DM will begin steadily accumulating at $R_\text{th}$ after a time $t_1 + t_2$.
+This thermalization time is dominated by $t_1$ at low scattering cross-sections and is less than the age of the WD for:
+\begin{equation}
+\label{eq:settle}
+\sigma_{\chi A} \gtrsim 10^{-36} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r.
+\end{equation}
+However, if the collected mass of DM at the thermal radius exceeds the WD mass within this volume, then there is the possibility of self-gravitational collapse.
+The time to collect a critical number of DM particles is given by
+\begin{align}
+\label{eq:Ncore}
+    t_\text{sg} \sim \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \sim 10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} \l \frac{\sigma_{\chi A}}{10^{35} ~\cm^2} \r^{-1}. 
+\end{align}
+Note that for DM masses $m_\chi > 10^{15} ~\GeV$, self-gravitation happens instantly relative to thermalization.
+Typically, the timescale for collapse is set by the DM sphere's ability to cool and shed gravitational potential energy.
+This is initially just $t_2$, while the time to collapse at any given radius $r$ is of order
+\begin{equation}
+t_\text{cool} \sim t_2 \text{min}\{v_\text{ion}/v_\chi,1\}, ~~~~ v_\chi \sim \sqrt{\frac{G N m_\chi}{r}},
+\end{equation}
+where $N$ is the number of collapsing DM particles. 
+However, since the DM collection time is shorter than the cooling time $t_\text{sg} < t_2$, the dynamics of the collapse is initially set by further collection. 
+This over-collection will necessarily increase the number of collapsing DM particles and hasten the collapse until the collection time matches the cooling time. 
