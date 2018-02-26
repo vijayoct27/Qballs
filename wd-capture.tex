@@ -77,48 +77,63 @@ It follows that for any DM candidate satisfying the direct detection constraint 
 
 Once DM is captured, it thermalizes to an average velocity
 \begin{equation}
-v_\text{th} \sim \sqrt{\frac{T}{m_\chi}} \sim 10^{-12} \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}
+  v_\text{th} \sim \sqrt{\frac{T}{m_\chi}} 
+  \sim 10^{-12} \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}
 \end{equation}
 and settles to the thermal radius
 \begin{align}
-R_\text{th} \sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \sim 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2},
+  R_\text{th} &\sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \\
+ &\sim 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}, \nonumber
 \end{align}
 where its kinetic energy balances against the gravitational potential energy of the (enclosed) WD mass. 
 This thermalization time can be explicitly calculated for elastic nuclear scatters \cite{Kouvaris:2010jy}. 
-First, the DM passes through the WD many times until the size of its orbit becomes fully contained within the star.
+The stopping power due to such scatters is
+\begin{align}
+    \frac{dE}{dx} \sim \rho_\ion \sigma_{\chi A} \; v \; \text{max}\{v, v_\ion\} 
+\end{align}
+where $v_\ion \sim 10^{-4}$ is the thermal ion velocity. 
+The maximum function indicates the transition between viscous and inertial drag. 
+The DM first passes through the WD many times on a wide orbit until the size of its orbit decays to become contained in the star.
+This takes a time
+\begin{align}
+  t_1 &\sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} 
+  \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{\overbar{N}_\text{scat}} 
+  \frac{1}{\text{max}\{\overbar{N}_\text{scat}, 1\}^{1/2}} \\
+  &\sim 10^{15}~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} 
+  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}. \nonumber
+\end{align}
+Subsequently, the DM completes many orbits within the star until dissipation further reduces the orbital size to the thermal radius.
 This occurs after a time
-\begin{equation}
-t_1 \sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{\overbar{N}_\text{scat}} \frac{1}{\text{max}\{\overbar{N}_\text{scat}, 1\}^{1/2}} \sim 10^{15}~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}. 
-\end{equation}
-Subsequently, the DM completes many orbits within the star until dissipation reduces the orbital size to the thermal radius.
-This occurs after a time
-\begin{equation}
-t_2  \approx \l \frac{m_\chi}{m_\text{ion}} \r \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \sim 10^{13}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1},
-\end{equation}
-where $v_\text{ion} \sim \sqrt{\frac{T}{m_\text{ion}}}$.
-Note that the time to complete a single orbit is simply the gravitational free-fall timescale:
+\begin{align}
+  t_2  &\approx \l \frac{m_\chi}{m_\text{ion}} \r 
+  \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \\
+  &\sim 10^{13}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r 
+  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}. \nonumber
+\end{align}
+This dissipation is dominated by a period of viscous drag after the DM velocity has slowed below $v_\ion$
+Note that $t_2$ is much larger than the time to complete a single orbit, which is simply the gravitational free-fall timescale:
 \begin{equation}
 \label{eq:freefalltime}
 t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \sim 0.1 ~\text{s}.
 \end{equation}
+
 The DM will begin steadily accumulating at $R_\text{th}$ after a time $t_1 + t_2$.
-This thermalization time is dominated by $t_1$ at low scattering cross-sections and is less than the age of the WD for:
-\begin{equation}
-\label{eq:settle}
-\sigma_{\chi A} \gtrsim 10^{-36} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r.
-\end{equation}
-However, if the collected mass of DM at the thermal radius exceeds the WD mass within this volume, then there is the possibility of self-gravitational collapse.
-The time to collect a critical number of DM particles is given by
+Once the collected mass of DM at the thermal radius exceeds the WD mass within this volume, there is the possibility of self-gravitational collapse.
+The time to collect a critical number of DM particles is 
 \begin{align}
 \label{eq:Ncore}
-    t_\text{sg} \sim \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \sim 10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} \l \frac{\sigma_{\chi A}}{10^{35} ~\cm^2} \r^{-1}. 
+    t_\text{sg} &\sim 
+    \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \\
+    &\sim 10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} 
+    \l \frac{\sigma_{\chi A}}{10^{35} ~\cm^2} \r^{-1} \nonumber 
 \end{align}
-Note that for DM masses $m_\chi > 10^{15} ~\GeV$, self-gravitation happens instantly relative to thermalization.
+which is much smaller than the decay and thermalization scales $t_1$ and $t_2$.
 Typically, the timescale for collapse is set by the DM sphere's ability to cool and shed gravitational potential energy.
-This is initially just $t_2$, while the time to collapse at any given radius $r$ is of order
-\begin{equation}
-t_\text{cool} \sim t_2 \text{min}\{v_\text{ion}/v_\chi,1\}, ~~~~ v_\chi \sim \sqrt{\frac{G N m_\chi}{r}},
-\end{equation}
+This is initially just $t_2$, while the time to collapse at any given radius $r$ may quicken as the DM velocity rises again above $v_\ion$
+\begin{align}
+  t_\text{cool} &\sim t_2 \text{min}\{v_\text{ion}/v_\chi,1\} \\
+  v_\chi &\sim \sqrt{\frac{G N m_\chi}{r}}, \nonumber
+\end{align}
 where $N$ is the number of collapsing DM particles. 
-However, since the DM collection time is shorter than the cooling time $t_\text{sg} < t_2$, the dynamics of the collapse is initially set by further collection. 
+However, since the DM collection timescale is shorter than the cooling time $t_\text{sg} < t_2$, the dynamics of the collapse is initially set by further collection and adiabatic collapse. 
 This over-collection will necessarily increase the number of collapsing DM particles and hasten the collapse until the collection time matches the cooling time. 
