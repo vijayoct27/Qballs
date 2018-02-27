@@ -230,54 +230,6 @@ and a stopping power
 \end{align}
 where $v = (E/m)^{1/2}$ is the incident particle velocity. 
 
-
-
-\begin{align}
-  \frac{dE}{dt} &\approx dn \int d{\hat{q}_{out}}
-    \frac{d\sigma}{d\hat{q}_{out}} \omega \cdot
-    \Theta\left(\omega - q_f + q\right)
-\end{align}
-where $dn$ indicates the number density of electrons with momentum $\vec{q}$ and the Heaviside function enforces the Pauli energy threshold.
-Here $q_f \sim E_F$ is the Fermi momentum.
-Now, summing over all target electrons with the Fermi distribution
-\begin{align}
-  \frac{dn}{d^3q} = n_e \frac{3}{4\pi q_f^3} \, \Theta(q_f - q)
-\end{align}
-and noting that the stopping power is given by $v_\text{incident}^{-1} (dE/dt)$, we have the full stopping power
-\begin{align}
-  \label{eq:StoppingPowerIntegral}
-  \frac{dE}{dx} \approx \; &n_e \frac{3 \alpha^2 Z^2}{32 \pi^2 q_f^3}
-   \nonumber\\
-  &  \times \Bigg[ \int d\hat{q}_{in} \, d\hat{q}_{out}
-   \frac{\cos^2\left(\frac{\theta}{2}\right)}
-        {\sin^4\left(\frac{\theta}{2}\right)}
-   \, \hat{p} \cdot \left(\hat{q}_{out} - \hat{q}_{in}\right) \nonumber \\
-  &\phantom{ \times \Bigg[ }\int_0^{q_f} dq \, q \, \Theta\left(\omega - q_f + q\right)
-     \Bigg] .
-\end{align}
-The integral over target electron momenta selects only those near the top of the Fermi sea,
-% \begin{align}
-%   \int &dq \, q \, \Theta\left(\omega - q_f + q\right) \Theta(q_f - q) \\
-%   &\approx \int_0^{q_f} dq \, q \; \Theta\left[\frac{q p}{2m} \hat{p} \cdot
-%   \left(\hat{q}_{out}-\hat{q}_{in}\right)-E_F+q\right] \\
-%   &= \frac{1}{2} q_f^2 \left[ 1 - \frac{1}
-%   {\left(1 + \frac{p}{2m}
-%   \hat{p}\cdot\left(\hat{q}_{out}-\hat{q}_{in}\right)\right)^2} \right]   \\
-%   &\approx \frac{1}{2} q_f^2 \frac{p}{m}
-%   \hat{p}\cdot\left(\hat{q}_{out}-\hat{q}_{in} \right)
-% \end{align}
-simplifying this to
-\begin{align}
-  \frac{dE}{dx} &\approx \, n_e \frac{\alpha^2 Z^2}{E_F} \frac{p}{m} \, I_a
-\end{align}
-where $I_a \approx 10$ is a dimensionless angular integral that is independent of target or incident properties:
-\begin{align}
-   I_a &= \frac{3}{64\pi^2} \int d\hat{q}_{in} \, d\hat{q}_{out}
-   \frac{\cos^2\left(\frac{\theta}{2}\right)}
-        {\sin^4\left(\frac{\theta}{2}\right)}
-   \, \left[\hat{p} \cdot \left(\hat{q}_{out} - \hat{q}_{in}\right)\right]^2
-\end{align}
-
 \paragraph{Compton Scattering}
 \label{sec:compton}
 Compton scattering off degenerate electrons is the dominant interaction for photons of incident energy $k \leq E_F$.  
