@@ -101,6 +101,8 @@ Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_
 \end{align}
 
 \subsection{DM Capture}
+
+\paragraph{Review of DM Capture.}
 We first summarize the capture and subsequent evolution of DM in the WD, ignoring annihilations or decays. 
 See Appendix \ref{sec:capture} for details. 
 Consider a spin-independent, elastic scattering off ions with cross section $\sigma_{\chi A}$. 
@@ -122,62 +124,29 @@ This proceeds in two stages.
 Captured DM will initially be found on a large, bound orbit that decays after many transits of the WD until the orbital size is fully contained within the star. 
 Orbit decay then continues at a faster pace, though still involving many orbits before reaching the thermal radius. 
 The DM will begin steadily accumulating at $R_\text{th}$, with the  possibility of self-gravitational collapse if the collected mass of DM exceeds the WD mass within this volume.
-For DM masses $m_\chi > 10^{15} ~\GeV$, the thermalization timescale is dominated by the first stage and the onset of self-gravitation happens instantly relative to thermalization.
 Of course, not all of these stages may be reached within the age of the WD. 
-The decay time is (see Appendix \ref{sec:capture}) 
+The timescales of the two capture stages are (see Appendix \ref{sec:capture}) 
 \begin{align}
 \label{eq:thermalization}
- t_1 \sim 10^{15}~\text{s} 
+t_1 &\sim 10^{15}~\text{s} 
   \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} 
-  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}
+  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2} \\
+t_2  &\sim 10^{13}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r 
+  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}. 
 \end{align}
-<<<<<<< HEAD
-where its kinetic energy balances against the gravitational potential energy of the (enclosed) WD mass. 
-This thermalization time can be explicitly calculated in the case of elastic nuclear scatters \cite{Kouvaris:2010jy}. 
-First, the DM passes through the WD many times until the size of its orbit becomes fully contained within the star.
-This occurs after a time
-\begin{equation}
-t_1 \sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2} \frac{R_\text{WD}}{v_\text{esc}} \frac{1}{\bar{N}_\text{scat}} \frac{1}{\text{max}\{\bar{N}_\text{scat}, 1\}^{1/2}} \sim 10^{15}~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}. 
-\end{equation}
-Subsequently, the DM completes many orbits within the star until dissipation reduces the orbital size to the thermal radius.
-This occurs after a time
-\begin{equation}
-t_2  \sim \l \frac{m_\chi}{m_\text{ion}} \r \frac{1}{n_\text{ion} \sigma_{\chi A}} \frac{1}{v_\text{ion}} \sim 10^{13}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1},
-\end{equation}
-where $v_\text{ion} \sim \sqrt{\frac{T}{m_\text{ion}}}$.
-There is an additional $\OO(10)$ logarithmic correction in accounting for the thermalization below $v_\text{ion}$.
-Note that the time to complete a single orbit is simply the gravitational free-fall timescale:
-\begin{equation}
-\label{eq:freefalltime}
-t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \sim 0.1 ~\text{s}.
-\end{equation}
-The DM will begin steadily accumulating at $R_\text{th}$ after a time $t_1 + t_2$.
-This thermalization time is dominated by $t_1$ at low scattering cross-sections and is less than the age of the WD for:
-=======
-and collection progresses to collapse only if 
->>>>>>> origin/master
+and the onset of self-gravitation takes 
+\begin{align}
+\label{eq:tsg}
+t_\text{sg} &\sim 
+  10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} 
+  \l \frac{\sigma_{\chi A}}{10^{35} ~\cm^2} \r^{-1}.
+\end{align}
+For DM masses $m_\chi > 10^{15} ~\GeV$, the thermalization timescale is typically dominated by the first stage and the onset of self-gravitation happens instantly relative to thermalization.
+Note that the collection progresses to a collapse only if $t_1 + t_2 < \tau_\x{WD}$, which requires
 \begin{equation}
 \label{eq:settle}
 \sigma_{\chi A} \gtrsim 10^{-36} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r.
 \end{equation}
-<<<<<<< HEAD
-However, if the collected mass of DM at the thermal radius exceeds the WD mass within this volume, then there is the possibility of self-gravitational collapse.
-The time to collect a critical number of DM particles is given by
-\begin{align}
-\label{eq:Ncore}
-    t_\text{sg} \sim \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \sim 10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} \l \frac{\sigma_{\chi A}}{10^{35} ~\cm^2} \r^{-1}. 
-\end{align}
-Note that for DM masses $m_\chi > 10^{15} ~\GeV$, self-gravitation happens instantly relative to thermalization.
-Typically, the timescale for collapse is set by the DM sphere's ability to cool and shed gravitational potential energy.
-This is initially just $t_2$, while the time to collapse at any given radius $r$ is of order
-\begin{equation}
-t_\text{cool} \sim t_2 \text{min}\{v_\text{ion}/v_\chi,1\}, ~~~~ v_\chi \sim \sqrt{\frac{G N m_\chi}{r}},
-\end{equation}
-where $N$ is the number of collapsing DM particles. 
-However, since the DM collection time is shorter than the cooling time $t_\text{sg} < t_2$, the dynamics of the collapse is initially set by further collection. 
-This will necessarily increase the number of collapsing DM particles beyond $N \sim \Gamma_\text{cap} t_\text{sg}$ and hasten the collapse until the collection time matches the cooling time. 
-=======
->>>>>>> origin/master
 
 At any point in this process, captured DM has the potential to ignite a SN. 
 Of particular interest is the ability of DM to ignite the star during self-gravitational collapse, either via annihilations or the formation of a black hole. 
@@ -185,6 +154,7 @@ Such a process can release sufficient energy to trigger SN with DM masses less t
 However, collapsing DM involves additional subtitles that are beyond the scope of this paper, and are the focus of future work \cite{us}.
 In the following we assume $m_\chi > 10^{15} ~\GeV$ and give only a quick assessment of collapse. 
 
+\paragraph{Captured DM Collisions.}
 We now turn to the rate of DM-DM collisions at various stages in the above evolution.
 The settling DM constitutes a number density throughout the WD volume and is the dominant source of annihilations for large cross-sections. 
 The total rate of annihilations for the in-falling DM is peaked near the thermal radius
@@ -199,34 +169,18 @@ When the DM sphere is at a radius $r$, the rate of annihilations is
 \begin{equation}
 \Gamma_\text{collapse} \sim \frac{(\rho_\x{ion} R_\x{th}^3/ m_\chi)^2}{r^3} \sigma_{\chi \chi} v_\chi. 
 \end{equation}
-<<<<<<< HEAD
-Here we have conservatively taken the number of collapsing particles to be the critical number---as mentioned above, this is an underestimate for such ultra-heavy DM.
-Of course, there may be some stabilizing pressure which prevents the DM from ever collapsing below a certain radius, similar to a black hole. 
-To illustrate the nature of the collapse constraint, we will assume such a stable radius at which point no further annihilations take place in the ``inert" DM sphere. 
-Note that if a single collision has not occurred during collapse, one may additionally examine annihilations of the subsequent in-falling DM---for simplicity, we will not consider this scenario. 
-
-Lastly, we compute the rate of decays for captured DM.  
-Of course, this rate is proportional to the number of DM particles in the WD available for decay at any given instance.  
-In the wind scenario \eqref{eq:decayDM}, this number is of order $\sim (\Gamma_\text{trans} \times t_\text{ff})$.  
-In the capture scenario, this number is instead determined by the thermalization time inside the WD:
-=======
 Here we have conservatively taken the number of collapsing particles to be the self-gravitational threshold---as mentioned in Appendix \ref{sec:capture}, this is an underestimate for ultra-heavy DM.
 Of course, there may be some stabilizing physics which prevents the DM from collapsing and annihilating below a certain radius, such as formation of a black hole or bound states. 
 To illustrate the stringent nature of collapse constraint, we will assume a fiducial stable radius $R_\x{sta}$ for \textcolor{blue}{PLOT}.  
 Note that if a single collision has not occurred during collapse, one may additionally examine annihilations of the subsequent in-falling DM---for simplicity, we do not consider this scenario. 
 
+\paragraph{Captured DM Decays.}
 Lastly, we compute the rate of decays for captured DM, which is simply proportional to the number of DM particles in the WD available for decay at any given instance.  
 In the transit scenario \eqref{eq:decayDM}, this number is of order $\sim (\Gamma_\text{trans} \times t_\text{ff})$.  
 In the capture scenario, this number is instead determined by the second thermalization time
->>>>>>> origin/master
 \begin{equation}
 \Gamma_\text{decay} \sim  \frac{1}{\tau_\chi} \Gamma_\text{cap} t_2
 \label{eq:decayDMcap}
 \end{equation}
-<<<<<<< HEAD
-Here we have conservatively assumed that after a thermalization time, the DM quickly collapses and stabilizes to an inert state incapable of further decay.
-If not, the maximum possible decay rate is given by replacing $t_2 \to \tau_\text{WD}$ in \eqref{eq:decayDMcap}.
-=======
 conservatively assuming that after a thermalization time, the DM quickly collapses and stabilizes to an inert state incapable of further decay.
 If this is not the case, then the maximum possible decay rate is given by replacing $t_2 \to \tau_\text{WD}$ in the captured decay rate \eqref{eq:decayDMcap}.
->>>>>>> origin/master
