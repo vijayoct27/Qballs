@@ -60,7 +60,8 @@ Electrons can similarly lose energy to nuclei by radiating a virtual photon that
 The cross-section for this process is roughly given by the photonuclear cross-section, scaled by a factor representing the probability to radiate such a photon.
 This can be estimated with the Weizsacker-Williams approximation, which gives a stopping power that is suppressed from the photonuclear result by $\alpha$ but enhanced by an $\OO(10)$ logarithmic phase space factor~ \cite{Gerhardt:2010bj}: 
 \begin{align}
-    \frac{dE}{dx} \sim \alpha n_\ion \sigma_{\gamma A} E \log\l\frac{E}{m_e}\r.
+    \frac{dE}{dx} \sim \alpha \; n_\ion \sigma_{\gamma A} E 
+    \log\l\frac{E}{m_e}\r.
 \end{align}
 Unlike the photonuclear interaction, the electronuclear event is a radiative process that preserves the original electron while leaving hadronic showers in its wake. 
 
@@ -128,15 +129,15 @@ Using the Born approximation, we have a cross-section for energy transfer $\omeg
 \begin{align}
 \label{eq:CoulombOffIonsCrossSection}
   \frac{d \sigma}{d \omega} = 
-  \frac{2 \pi Z^2 \alpha^2}{m_\ion v^2} 
+  \frac{2 \pi Z^2 \alpha^2}{m_\ion v_\x{in}^2} 
   \frac{1}{(\omega + \omega_\xmin)^2}
 \end{align}
-and a stopping power 
+where $v_\x{in}$ is the incident velocity. The stopping power is 
 \begin{align}
-  \frac{dE}{d x} = \int_{0}^{\omega_\xmax} d \omega \, n_\ion 
-  \frac{d \sigma}{d \omega} \omega
+  \frac{dE}{d x} &= \int_{0}^{\omega_\xmax} d \omega \, n_\ion 
+  \frac{d \sigma}{d \omega} \omega \nonumber \\
   \label{eq:StoppingPowerOffIons}
-   \approx \frac{2 \pi\, n_\ion Z^2 \alpha^2 }{m_\ion v^2} 
+   &\approx \frac{2 \pi\, n_\ion Z^2 \alpha^2 }{m_\ion v_\x{in}^2} 
    \log\left( \frac{\omega_\xmax}{\omega_\xmin} \right)
 \end{align}
 where the second line is valid if $\omega_\xmax \gg \omega_\xmin$.
@@ -204,31 +205,42 @@ We again take the incident momentum $p \gtrsim p_F$, which is valid for all inci
 \label{eq:NonRelEnergyTransfer}
   \omega = \left|\frac{p^2}{2 m} -
     \frac{\left(\vec{p} - \delta \vec{q}\right)^2}{2 m}\right|
-    \sim \frac{q p}{2m}
+    \sim \frac{q p}{m} = v_\x{in} E_F
 \end{align}
-For non-relativistic particles this is less than Fermi energy, so Pauli-blocking will be important. 
+where $v_\x{in}$ is the incident particle velocity. 
+For $v_\x{in} \ll 1$ the energy transfer is less than Fermi energy, so Pauli-blocking will be important. 
 The incident particle will only be able to scatter from an effective electron density
 \begin{align}
+  \label{eq:neff}
     n_\x{eff} = \int_{E_F - \omega}^{E_F} g(E) \; dE 
     \approx 3 n_e \frac{\omega}{E_f}
 \end{align}
 where $g(E)$ is the Fermi density of states. 
-At leading order the electron is not aware of the small ion velocity, so scattering occurs with the recoilless, relativistic cross-sections-section 
+At leading order the electron is not aware of the small incident velocity, so the cross section is given by relativistic Coulomb scattering off a stationary target,
 \begin{align}
-  \frac{d \sigma}{d \omega} = \frac{2 \pi Z^2 \alpha^2}{m} \frac{1}{\omega^2}
+    \sigma \sim \frac{\alpha^2 Z^2}{q^2} \sim \frac{\alpha^2 Z^2}{E_F^2}
 \end{align}
-where $m$ is the incident mass. 
-This yields a differential scattering rate,
+where $Z$ is the incident charge. 
+The incident particle thus lose energy to Fermi electrons at a rate:
+\begin{align} 
+  \frac{dE}{dt} \sim n_\x{eff} \; \sigma \; \omega 
+  \sim n_e \frac{\alpha^2 Z^2}{E_F} v_\x{in}^2
+\end{align}
+Note that the relative velocity in this limit is always $\OO(1)$. 
+The stopping power is 
 \begin{align}
-  \frac{d \Gamma}{d\omega} \sim n_e \frac{Z^2 \alpha^2}{m} \frac{1}{\omega}
+  \frac{dE}{dx} =  \frac{1}{v_\x{in}} \frac{dE}{dt} \sim
+  n_e \frac{\alpha^2 Z^2}{E_F} v_\x{in}
 \end{align}
-and a stopping power
-\begin{align}
-  \frac{dE}{dx} =  \frac{1}{v} \int_0^E \; d\omega \; 
-  n_\x{eff} \frac{d \sigma}{d \omega} \omega
-  \sim n_e Z^2 \alpha^2 v
-\end{align}
-where $v = (E/m)^{1/2}$ is the incident particle velocity. 
+As above, this heuristic result has been verified with a full integration of the relativistic cross section. 
+
+Compare this stopping power to scattering off roughly stationary, non-degenerate electrons, which is the familiar setting of stopping charged particles in a solid due to ionization. 
+This is given by Equation~\eqref{eq:StoppingPowerOffIons} with $n_\ion \rightarrow n_e$, $m_\ion \rightarrow m_e$. 
+The degenerate result is suppressed by $v_\x{in}^3 m_e/E_F$. 
+One factor of $v_\x{in}$ is due to Pauli blocking, while the other factors are kinematic, accounting for the relativistic motion of the targets. 
+
+
+
 
 \paragraph{Compton Scattering}
 \label{sec:compton}
@@ -240,12 +252,7 @@ For $k>E_F$, the effect of Pauli-blocking is negligible and the stopping power i
 \end{equation}
 boosting the usual result for stationary electrons. 
 We now turn to the regime of interest, $k < E_F$.
-Only those electrons near the top of the Fermi sea are available to scatter, so the photon interacts with an effective electron density of 
-\begin{align}
-    n_\x{eff} = \int_{E_F - k}^{E_F} g(E) \; dE 
-    \approx 3 n_e \frac{k}{E_f}
-\end{align}
-where $g(E)$ is the Fermi density of states. 
+Only those electrons near the top of the Fermi sea are available to scatter, so the photon interacts with only the effective electron density~\eqref{eq:neff}. 
 In addition, Compton scatters will only occur off electrons moving roughly collinear with the photon momentum - a head-on collision would result in an energy loss for the electron, which is forbidden by Pauli exclusion. 
 In the electron rest frame these collinear scatters are Thompson-like, and the photon energy loss is dominated by backward scatters. 
 For relativistic electrons near the Fermi surface, these scatters transfer an energy
