@@ -82,12 +82,12 @@ For non-relativistic DM, the DM mass is the dominant source of energy and theref
 A single DM-DM collision or DM decay has an ignition condition:
 \begin{equation}
 \label{eq:coldecay}
-  m_\chi f_\text{SM}  \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3.
+  m_\chi f_\text{SM} \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3.
 \end{equation}
-We are thus sensitive to DM masses $m_\chi > 10^{15} ~\GeV$.
+Thus the WD is sensitive to annihilations/decays of DM masses $m_\chi > 10^{15} ~\GeV$.
 
 \paragraph{Transit Scenario Event Rate.}
-DM that is not captured traverses the WD in a time $t_{ff} \sim R_\text{WD}/v_\text{esc}$, and the rate of DM-DM collisions within the WD parameterized by cross-section $\sigma_{\chi \chi}$ is:
+DM that is not captured traverses the WD in a time $t_\text{ff} \sim R_\text{WD}/v_\text{esc}$, and the rate of DM-DM collisions within the WD parameterized by cross-section $\sigma_{\chi \chi}$ is:
 \begin{align}
   \Gamma_\text{ann}
   \sim \l \frac{\rho_\chi}{m_\chi} \r^2 \sigma_{\chi \chi} \l \frac{v_\text{esc}}{v_\text{halo}}\r^3 v_\text{halo} R_\text{WD}^3. 
@@ -103,75 +103,73 @@ Similarly the net DM decay rate inside the WD parameterized by a lifetime $\tau_
 \subsection{DM Capture}
 
 \paragraph{Review of DM Capture.}
-We first summarize the capture and subsequent evolution of DM in the WD, ignoring annihilations or decays. 
-See Appendix \ref{sec:capture} for details. 
+We first summarize the capture and subsequent evolution of DM in the WD, ignoring annihilations or decays---see Appendix \ref{sec:capture} for details. 
 Consider a spin-independent, elastic scattering off ions with cross section $\sigma_{\chi A}$. 
 The rate of DM capture in gravitating bodies is of course very well-studied \cite{Press:1985ug, Gould:1987ir}. 
 However, this rate must be modified when the DM requires multiple scatters to lose the necessary energy for capture. 
 Ultimately in our scenario of interest, the capture rate is of the form
 \begin{equation}
-\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \text{min}\left \{1, \overbar{N}_\text{scat} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2}  \right \}, 
+\Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \l n_\text{ion} \sigma_{\chi A} R_\text{WD} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2} \r.
 \end{equation}
-where $\Gamma_\text{trans}$ is the DM transit rate of Equation~\eqref{eq:TransitRate} and $\overbar{N}_\text{scat}$ is the average number of scatters during a transit:
+Once DM is captured, it eventually thermalizes with the stellar medium to a velocity 
 \begin{equation}
-\overbar{N}_\text{scat} \sim n_\text{ion} \sigma_{\chi A} R_\text{WD}.
+  v_\text{th} \approx 10^{-12} \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2},
 \end{equation}
-The capture rate is limited by existing constraints on the DM spin-independent nucleon cross section, the most stringent of which are direction detection experiments~\cite{Aprile:2017iyp}. 
-For DM satisfying these bound, less than $1 \%$ of transiting DM is captured by the star and the capture rate in regime scales as $\Gamma_\text{cap} \propto \frac{\sigma_{\chi A}}{m_\chi^2}$. 
-
-Once DM is captured, it eventually thermalizes with the stellar medium and settles at to a thermal radius $R_\text{th}$. 
+and settles at the thermal radius
+\begin{align}
+  R_\text{th} \approx 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}.
+\end{align}
 This proceeds in two stages. 
-Captured DM will initially be found on a large, bound orbit that decays after many transits of the WD until the orbital size is fully contained within the star. 
-Orbit decay then continues at a faster pace, though still involving many orbits before reaching the thermal radius. 
-The DM will begin steadily accumulating at $R_\text{th}$, with the  possibility of self-gravitational collapse if the collected mass of DM exceeds the WD mass within this volume.
-Of course, not all of these stages may be reached within the age of the WD. 
-The timescales of the two capture stages are (see Appendix \ref{sec:capture}) 
+Captured DM will initially be found on a large, bound orbit that decays after many transits of the WD until the orbital size is fully contained within the star.
+The DM then completes many orbits within the star until its orbital size decays to the thermal radius.
+Subsequently the DM will begin steadily accumulating at $R_\text{th}$, with the possibility of self-gravitational collapse if the collected mass of DM exceeds the WD mass within this volume.
+Of course, not all of these stages may be reached within the age of the WD $\tau_\text{WD} \sim 5 ~\text{Gyr}$.  
+The timescales of the two thermalization stages (see Appendix \ref{sec:capture}) are 
 \begin{align}
 \label{eq:thermalization}
 t_1 &\sim 10^{15}~\text{s} 
   \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2} 
-  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2} \\
+  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}, \\
 t_2  &\sim 10^{13}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r 
-  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}. 
+  \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1},
 \end{align}
-and the onset of self-gravitation takes 
+while the timescale for the onset of self-gravitation is 
 \begin{align}
 \label{eq:tsg}
 t_\text{sg} &\sim 
   10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} 
   \l \frac{\sigma_{\chi A}}{10^{35} ~\cm^2} \r^{-1}.
 \end{align}
-For DM masses $m_\chi > 10^{15} ~\GeV$, the thermalization timescale is typically dominated by the first stage and the onset of self-gravitation happens instantly relative to thermalization.
-Note that the collection progresses to a collapse only if $t_1 + t_2 < \tau_\x{WD}$, which requires
+Note that capture progresses to a collapse only if $t_1 + t_2 < \tau_\x{WD}$, which requires
 \begin{equation}
 \label{eq:settle}
-\sigma_{\chi A} \gtrsim 10^{-36} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r.
+\sigma_{\chi A} \gtrsim 10^{-35} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r.
 \end{equation}
+Importantly, for DM masses $m_\chi > 10^{15} ~\GeV$ self-gravitation sets in instantly relative to thermalization.
 
-At any point in this process, captured DM has the potential to ignite a SN. 
-Of particular interest is the ability of DM to ignite the star during self-gravitational collapse, either via annihilations or the formation of a black hole. 
-Such a process can release sufficient energy to trigger SN with DM masses less than $10^{15} ~\GeV$. 
-However, collapsing DM involves additional subtitles that are beyond the scope of this paper, and are the focus of future work \cite{us}.
-In the following we assume $m_\chi > 10^{15} ~\GeV$ and give only a quick assessment of collapse. 
+At any point during the above evolution, captured DM has the potential to trigger a SN. 
+Of particular interest is the ability of DM to ignite a WD during self-gravitational collapse, either via annihilations or the formation of a black hole. 
+A collapse can release sufficient energy to trigger SN even with DM masses less than $10^{15} ~\GeV$. 
+However, such a process involves additional subtleties beyond the scope of this paper and is the focus of forthcoming work \cite{us}.
+In the following, we assume a single collision or decay is sufficient to ignite the star and give only a quick assessment of collapse. 
 
 \paragraph{Captured DM Collisions.}
-We now turn to the rate of DM-DM collisions at various stages in the above evolution.
-The settling DM constitutes a number density throughout the WD volume and is the dominant source of annihilations for large cross-sections. 
-The total rate of annihilations for the in-falling DM is peaked near the thermal radius
+We now turn to the rate of DM-DM collisions for captured DM. 
+Of course, the thermalizing DM constitutes a number density of DM throughout the WD volume.
+The total rate of annihilations for this ``in-falling" DM is peaked near the thermal radius and is of order:
 \begin{equation}
 \label{eq:infall}
 \Gamma_\text{infall} \sim \frac{(\Gamma_\text{cap} t_2)^2}{R_\text{th}^3} \sigma_{\chi \chi} v_\text{th}. 
 \end{equation}
-Where $t_2$ is the timescale of the second, internal thermalization stage.
-Only if the annihilation cross section $\sigma_{\chi \chi}$ is sufficiently small will the DM accumulate at $R_\text{th}$ and collapse - otherwise, an in-fall annihilation ignites a SN. 
-However, if collapse does occur, then for $m_\chi > 10^{15} ~\GeV$ ignition is almost guaranteed if DM-DM annihilations are allowed. 
+If the annihilation cross section $\sigma_{\chi \chi}$ is sufficiently large that $\Gamma_\text{cap} t_2 > 1$, then a SN will be triggered by the in-falling DM population. 
+Otherwise a collapse will occur, during which ignition of the star is almost guaranteed unless $\sigma_{\chi \chi}$ is incredibly small. 
 When the DM sphere is at a radius $r$, the rate of annihilations is 
 \begin{equation}
-\Gamma_\text{collapse} \sim \frac{(\rho_\x{ion} R_\x{th}^3/ m_\chi)^2}{r^3} \sigma_{\chi \chi} v_\chi. 
+\Gamma_\text{collapse} \sim \frac{(\rho_\text{WD} R_\x{th}^3/ m_\chi)^2}{r^3} \sigma_{\chi \chi} v_\chi, ~~~~ v_\chi \sim \sqrt{\frac{G \rho_\text{WD} R_\text{th}^3}{r}}.
 \end{equation}
-Here we have conservatively taken the number of collapsing particles to be the self-gravitational threshold---as mentioned in Appendix \ref{sec:capture}, this is an underestimate for ultra-heavy DM.
+Here we have conservatively taken the number of collapsing particles to be the self-gravitational threshold---as mentioned in Appendix \ref{sec:capture}, this is an underestimate for such ultra-heavy DM.
 Of course, there may be some stabilizing physics which prevents the DM from collapsing and annihilating below a certain radius, such as formation of a black hole or bound states. 
-To illustrate the stringent nature of collapse constraint, we will assume a fiducial stable radius $R_\x{sta}$ for \textcolor{blue}{PLOT}.  
+To illustrate the stringent nature of collapse constraint, we will assume a fiducial stable radius.  
 Note that if a single collision has not occurred during collapse, one may additionally examine annihilations of the subsequent in-falling DM---for simplicity, we do not consider this scenario. 
 
 \paragraph{Captured DM Decays.}
@@ -183,4 +181,4 @@ In the capture scenario, this number is instead determined by the second thermal
 \label{eq:decayDMcap}
 \end{equation}
 conservatively assuming that after a thermalization time, the DM quickly collapses and stabilizes to an inert state incapable of further decay.
-If this is not the case, then the maximum possible decay rate is given by replacing $t_2 \to \tau_\text{WD}$ in the captured decay rate \eqref{eq:decayDMcap}.
+If this is not the case, then the decay rate is given by replacing $t_2 \to \tau_\text{WD}$ in~\eqref{eq:decayDMcap}.
