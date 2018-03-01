@@ -34,7 +34,7 @@ This results in a roughly collinear shower of hadrons of size
 where the inelastic nuclear cross section is $\sigma_\text{inel} \approx 100 ~\text{mb}$ and we have taken the logarithm to be $\sim 10$.
 The shower terminates into pions and nucleons of energy $\sim 10~\MeV$, whose cooling is discussed below. 
 Note that neutral pions of energy $10 - 100 ~\text{MeV}$ have a decay length to photons of $\delta_{\pi^0} \sim 10^{-6} ~\text{cm}$.
-Hadronic showers will therefore generate an electromagnetic component carrying an $\OO(1)$ fraction of the energy, however this turns out to be negligible.
+Hadronic showers will therefore generate an electromagnetic component carrying an $\OO(1)$ fraction of the energy.
 
 \paragraph{Photonuclear and Electronuclear Showers.}
 A photon or electron can directly induce hadronic showers via production of a quark-antiquark pair, depicted in Figure~\ref{fig:electrophotonuclear-diagram}.
@@ -47,6 +47,7 @@ Roughly, the photonuclear cross section is suppressed relative to the hadronic i
   \lambda_{\gamma A} \approx 10^{-5} ~\text{cm} \l\frac{10^{32}~\text{cm}^{-3}}{n_\text{ion}}\r.
 \end{align}
 Here $\lambda_{\gamma A}$ is the distance to initiate a hadronic shower, whereas the shower itself extends a distance $X_\text{had}$.
+Note that $\lambda_{\gamma A}$ is of order the trigger size. 
 
 The electronuclear showers are qualitatively different, as the electron survives the interaction. 
 This process is best described as a continuous energy loss of the electron, due to radiation of virtual photons into hadronic showers.  
@@ -117,7 +118,7 @@ and is always less than the trigger size.
 Charged hadrons are also subject to Coulomb interactions, which would provide the dominant stopping in terrestrial detectors. 
 In this case, however, Coulomb scattering of WD electrons is strongly suppressed by degeneracy and they predominantly undergo elastic nuclear scatters like their neutral brethren.
 This suppression is due both to the motion of the electrons, which fixes the relative velocity to be $\OO(1)$ and removes the enhancement usually seen at low velocity, and to Pauli blocking which forces the incident particle to scatter only electrons near the top of the Fermi sea. 
-The first effect suppresses the stopping power by a factor of $v_\x{in}^2$ relative to that of stationary, non-degenerate targets and the second by an additional $v_\x{in}$---together, this yields for light hadrons stopping powers that are $\sim 10^{-6}$ smaller than their typical terrestrial values. 
+For a incident particle with velocity $v_\x{in} \ll 1$, the first effect suppresses the stopping power by a factor of $v_\x{in}^2$ relative to that of stationary, non-degenerate targets and the second by an additional $v_\x{in}$.
 
 Note that there is a small range of energies in which Coulomb scatters off ions dominate the stopping of charged hadrons---either way, both length scales are well below the trigger size.  
 
@@ -125,9 +126,15 @@ Note that there is a small range of energies in which Coulomb scatters off ions 
 For electrons and photons below $\sim 100 ~\MeV$ the dominant interactions are Coulomb scatters off WD electrons and Compton scatters, respectively.
 The length scale of these processes is smaller than any interaction with ions, and so these electrons and photons will thermalize into a compact electromagnetic cloud with a size set by the radiative length scale $X_\text{EM}$. 
 The scale $X_\x{EM}$ is relevant as bremsstrahlung is also required for this thermalization.
-The EM gas will cools and diffuse to larger length scales, eventually allowing the subdominant processes of electrons Coulomb scattering off ions to thermalize the carbon. 
+The EM gas will cools and diffuse to larger length scales, eventually allowing the subdominant process of Coulomb scattering off ions to thermalize the carbon.
+The photons in EM gas will not undergo photonuclear showers here, as the gas will cool below $\sim 10~\MeV$ by the time it diffuses out to a size $\lambda_{\gamma A}$.
+The hottest the gas may start is $\sim 100~\MeV$. 
+At these temperatures the heat capacity is dominated by photons, so as the gas diffuses to a size $\lambda_{\gamma A}$ it cools by a factor $(X_\text{EM}/\lambda_{\gamma A})^{3/4} \sim 10^{-2} - 10^{-1}$.
+Note that for temperatures $T$ less than the Fermi energy $E_F$, the electrons are partially degenerate and heating proceeds via the thermal tail with kinetic energies $\epsilon \sim E_F + T$.
+The relevant thermalizaion process is therefore Coulomb scattering of electrons off ions.
 This has a stopping length
 \begin{equation}
 \lambda_\text{coul} \approx 10^{-5}~\cm \l \frac{\epsilon}{10 ~\MeV} \r \l \frac{10^{32} ~\cm^{-3}}{n_\text{ion}}\r
 \end{equation}
-which is of order the trigger size.
+which is of order the trigger size. 
+

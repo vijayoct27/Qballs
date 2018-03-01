@@ -151,16 +151,11 @@ with $p$, $E$ the incoming momentum and energy.
 The Fermi upper bound is simply $\omega_F = E - E_F$ so for incident electrons we take $\omega_\xmax = \min\l\omega_\kin, \omega_F\r$.
 
 For scatters that transfer energy less than the plasma frequency $\Omega_p$, one may be concerned about phonon excitations.
-We estimate this by treating each ion as an independent oscillator with frequency $\Omega_p$ (an Einstein solid) and compute the stopping power due to scatters which excite a single oscillator quanta. 
+This occurs for incident electrons with energy below $\sim 10~\MeV$.
+We estimate this stopping power treating each ion as an independent oscillator with frequency $\Omega_p$ (an Einstein solid) and compute the stopping power due to scatters which excite a single oscillator quanta. 
 There are two key differences between this and the free ion case: incident particles must transfer an energy $\Omega_p$ and the cross-section to transfer momentum $q$ is suppressed by a factor $q^2 / 2 m_\ion\Omega_p = \omega_\x{free}/\Omega_p$. 
 $\omega_\x{free}$ is the energy transfer that would accompany a free ion scatter with momentum transfer $q$. 
-The resulting stopping power is unchanged from the free case~\eqref{eq:StoppingPowerOffIons}, as the increased energy transfer compensates for the suppressed cross-section:
-\begin{align}
-  d\sigma \cdot \omega \sim 
-  d\sigma_\x{free} \frac{\omega_\x{free}}{\Omega_p} 
-  \cdot \Omega_p \sim 
-  d\sigma_\x{free} \cdot \omega_\x{free}.
-\end{align}
+The resulting stopping power is unchanged from the free case~\eqref{eq:StoppingPowerOffIons}, as the increased energy transfer compensates for the suppressed cross-section.
 
 Finally, we note that for highly energetic incident particles the cross-section~\eqref{eq:CoulombOffIonsCrossSection} should be modified to account for the recoil of the ion. 
 However, at such energies the dominant stopping power will be from hadronic or electromagnetic showers anyway.  
@@ -197,15 +192,15 @@ Equation~\eqref{eq:StoppingPowerOffElectrons} is indeed a good approximation to 
 \paragraph{Non-Relativistic Coulomb Scattering off Electrons}
 For non-relativistic incident particles, the Coulomb stopping off electrons becomes strongly suppressed due to degeneracy. 
 Stopping in this limit appears qualitatively different than in the typical case---the slow incident particle is now bombarded by relativistic electrons from all directions. 
-Note that only those scatters which slow the incident particle are allowed by Pauli-blocking, so energy is always transfered from the incident to the Fermi electrons. 
+Note that only those scatters which slow the incident particle are allowed by Pauli-blocking.
 
-As the electron speeds are much faster than the incident, a WD electron with momentum $\vec{q}$ will scatter to leading order with only a change in direction, $|\delta \vec{q}| \sim q$.
-We again take the incident momentum $p \gtrsim p_F$, which is valid for all incident particles we consider. This results in an energy transfer $\omega$,
+As the electron speeds are much faster than the incident, a WD electron with momentum $p_F$ will scatter to leading order with only a change in direction, so the momentum transfer is $|\vec{q}| \sim p_F$.
+We again take the incident momentum $p \gtrsim p_F$, which is valid for all incident particles we consider. This results in an energy transfer,
 \begin{align}
 \label{eq:NonRelEnergyTransfer}
   \omega = \left|\frac{p^2}{2 m} -
-    \frac{\left(\vec{p} - \delta \vec{q}\right)^2}{2 m}\right|
-    \sim \frac{q p}{m} = v_\x{in} E_F
+    \frac{\left(\vec{p} - \vec{q}\right)^2}{2 m}\right|
+    \sim \frac{p \; p_F}{m} = v_\x{in} E_F
 \end{align}
 where $v_\x{in}$ is the incident particle velocity. 
 For $v_\x{in} \ll 1$ the energy transfer is less than Fermi energy, so Pauli-blocking will be important. 
@@ -239,9 +234,6 @@ This is given by Equation~\eqref{eq:StoppingPowerOffIons} with $n_\ion \rightarr
 The degenerate result is suppressed by $v_\x{in}^3 m_e/E_F$. 
 One factor of $v_\x{in}$ is due to Pauli blocking, while the other factors are kinematic, accounting for the relativistic motion of the targets. 
 
-
-
-
 \paragraph{Compton Scattering}
 \label{sec:compton}
 Compton scattering off degenerate electrons is the dominant interaction for photons of incident energy $k \leq E_F$.  
@@ -250,7 +242,9 @@ For $k>E_F$, the effect of Pauli-blocking is negligible and the stopping power i
 \begin{equation}
 \frac{dk}{dx} \sim \frac{\pi \alpha^2 n_e}{E_F} \log\l \frac{k}{E_F}\r,
 \end{equation}
-boosting the usual result for stationary electrons. 
+where we again apply the heuristic $m_e \rightarrow E_F$ replacement to boost the usual result for stationary electrons. 
+
+
 We now turn to the regime of interest, $k < E_F$.
 Only those electrons near the top of the Fermi sea are available to scatter, so the photon interacts with only the effective electron density~\eqref{eq:neff}. 
 In addition, Compton scatters will only occur off electrons moving roughly collinear with the photon momentum - a head-on collision would result in an energy loss for the electron, which is forbidden by Pauli exclusion. 

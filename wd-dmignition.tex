@@ -7,7 +7,8 @@ We collect below the basic formulas relating DM model parameters to ignition cri
 DM can generically produce SM particles in the WD through three basic processes: DM-DM collisions, DM decays, and DM-SM inelastic scattering.
 For ultra-heavy DM, these processes can be complicated events involving many (possibly dark) final states, analogous to the interactions of heavy nuclei.
 We classify DM candidates into three types according to the interaction that provides the dominant source of heating, and refer to these as collision, decay, and scattering candidates.
-We also make the simplifying assumption that the above events are ``point-like", producing SM products in a localized region (smaller than $\lambda_T$) near the interaction vertex.
+We also make the simplifying assumption that the above events are ``point-like", producing SM products in a localized region (smaller than the stopping length $\lambda$) near the interaction vertex.
+If this is not the case, then the same formalism applies with $\lambda$ replaced by the displacement size.  
 
 The SN rate may be greatly enhanced if DM is captured in the star, so we also consider separately ``transiting DM" and ``captured DM". 
 In general, there is some loss of DM kinetic energy in the WD. 
@@ -32,7 +33,6 @@ Here $R_\text{env} \sim 50 ~\text{km}$ is the width of a WD envelope---the densi
 DM-SM scattering will result in a continuous energy deposit along the DM trajectory (if the interaction is rare enough for this not to be true, then the encounter is analogous to the case of DM decay).
 This is best described by a linear energy transfer $(dE/dx)_\text{LET}$, the kinetic energy of SM particles produced per distance traveled by the DM.
 If these products have a heating length $L_0$ then the energy deposit must at minimum be taken as the energy transferred along a distance $L_0$ of the DM trajectory.
-Of course, we can always choose to consider a longer segment of the trajectory.
 Importantly, as per the ignition condition \eqref{eq:energy_boom_condition}, such a deposition is \emph{less} explosive unless $L_0$ is smaller than the trigger size $\lambda_T$.
 We thus consider the energy deposited over the larger of these two length scales.
 Assuming the energy of the DM is roughly constant during this heating event, the ignition condition is:
@@ -69,8 +69,8 @@ where $\rho_\chi$ is the DM density in the region of the WD, and $R_\text{WD}$ i
 Here $v_\text{halo} \sim 10^{-3}$ is the virial velocity of our galactic halo. 
 Note the $(v_\text{esc}/v_\text{halo})^2 \sim 100$ enhancement due to gravitational focusing.
 
-We will not consider here captured DM heating via scattering events, as such heating will typically cause ignition before capture occurs.  
-However, it is possible to cause ignition after capture if the capture and thermalization of DM leads to an enhanced scattering process. 
+We will not consider here captured DM that heats the star via scattering events, as such heating will typically cause ignition before capture occurs.  
+However, it is possible to cause ignition after capture if the collection of DM leads to an enhanced scattering process. 
 
 \paragraph{DM-DM Collisions and DM Decays.}
 
@@ -105,7 +105,7 @@ We first summarize the capture and subsequent evolution of DM in the WD, ignorin
 Consider a spin-independent, elastic scattering off ions with cross section $\sigma_{\chi A}$. 
 The rate of DM capture in gravitating bodies is of course very well-studied \cite{Press:1985ug, Gould:1987ir}. 
 However, this rate must be modified when the DM requires multiple scatters to lose the necessary energy for capture. 
-Ultimately in our scenario of interest, the capture rate is of the form
+Ultimately, for DM massive enough to ignite and not ruled out by direct detection experiments,the capture rate is of the form
 \begin{equation}
 \Gamma_\text{cap} \sim \Gamma_\text{trans} \cdot \l n_\text{ion} \sigma_{\chi A} R_\text{WD} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2} \r.
 \end{equation}
@@ -131,14 +131,15 @@ t_1 &\sim 10^{15}~\text{s}
 t_2  &\sim 10^{13}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r 
   \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1},
 \end{align}
-while the timescale for the onset of self-gravitation is 
+while the timescale for the onset of self-gravitation once DM has sunk to $R_\x{th}$ is 
 \begin{align}
 \label{eq:tsg}
 t_\text{sg} &\sim 
   10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2} 
   \l \frac{\sigma_{\chi A}}{10^{35} ~\cm^2} \r^{-1}.
 \end{align}
-However, capture progresses to a collapse only if $t_1 + t_2 < \tau_\x{WD}$, which requires
+The full time to collect and begin self-gravitating is $t_1 + t_2 + t_\x{sg}$. 
+This is less than the age of WD if 
 \begin{equation}
 \label{eq:settle}
 \sigma_{\chi A} \gtrsim 10^{-35} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r.
@@ -167,15 +168,16 @@ Assuming the scattering cross section satisfies \eqref{eq:settle} and \eqref{eq:
 If $\Gamma_\text{infall} t_2 > 1$, then a SN will be triggered by the in-falling DM population---otherwise, a collapse will proceed.
 As we will see, ignition of a WD during collapse is almost guaranteed unless $\sigma_{\chi \chi}$ is sufficiently small. 
 When the DM sphere is at a radius $r$, the rate of annihilations is 
-\begin{equation}
+\begin{align}
 \label{eq:collapse}
-\Gamma_\text{collapse} \sim \frac{(\rho_\text{WD} R_\x{th}^3/ m_\chi)^2}{r^3} \sigma_{\chi \chi} v_\chi, ~~~~ v_\chi \sim \sqrt{\frac{G \rho_\text{WD} R_\text{th}^3}{r}}.
-\end{equation}
+\Gamma_\text{collapse} &\sim \frac{(\rho_\text{WD} R_\x{th}^3/ m_\chi)^2}{r^3} \sigma_{\chi \chi} v_\chi, \\
+ v_\chi &\sim \sqrt{\frac{G \rho_\text{WD} R_\text{th}^3}{r}}.
+\end{align}
 Here we have conservatively taken the number of collapsing particles to be the self-gravitational threshold---as mentioned in Appendix \ref{sec:capture}, this is an underestimate for such ultra-heavy DM.
 We also assume the timescale for collapse is set by the DM cooling rate and is thus related to $t_2$---see Appendix \ref{sec:capture} for details. 
 Of course, there may be some stabilizing physics which prevents the DM from collapsing and annihilating below a certain radius, such as formation of a black hole or bound states. 
-To illustrate the stringent nature of the collapse constraint, we will assume such a fiducial stable radius.  
-Note that if a single collision has not occurred during collapse, one may additionally examine annihilations of the subsequent in-falling DM---for simplicity, we do not consider this scenario. 
+To illustrate the stringent nature of the collapse constraint, we will simply assume some benchmark stable radius, as in Figures~\ref{fig:capture-collision} and~\ref{fig:capture-decay}.   
+Note that if a single collision has not occurred during collapse, one may additionally examine annihilations of the subsequent in-falling DM down to the stable radius---for simplicity, we do not consider this scenario. 
 
 \paragraph{Captured DM Decays.}
 Lastly, we compute the rate of decays for captured DM, which is simply proportional to the number of DM particles in the WD available for decay at any given instance.  
