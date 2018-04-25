@@ -114,7 +114,7 @@ In this scenario we may treat the ions as stationary and ignore their recoil dur
 The nuclear charge will be screened by the mobile electrons of the medium, so incident particles scatter via a potential
 \begin{align}
   \label{eq:ScreenedPotential}
-V(\textbf{r}) = \frac{Z \alpha}{r} e^{-\lambda_\TF r}.
+V(\textbf{r}) = \frac{Z \alpha}{r} e^{-r/\lambda_\TF}.
 \end{align}
 The screening length $\lambda_\TF$ is given in the Thomas-Fermi approximation by~\cite{Teukolsky}:
 \begin{align}
@@ -131,7 +131,7 @@ From the Born approximation, the cross-section for energy transfer $\omega$ is
   \frac{2 \pi Z^2 \alpha^2}{m_\ion v_\x{in}^2}
   \frac{1}{(\omega + \omega_\xmin)^2},
 \end{align}
-where $v_\x{in}$ is the incident velocity. 
+where $v_\x{in}$ is the incident velocity.
 Thus the stopping power is
 \begin{align}
   \frac{dE}{d x} &= \int_{0}^{\omega_\xmax} d \omega \, n_\ion
@@ -157,8 +157,15 @@ There are two key differences between this and the free ion case: incident parti
 $\omega_\x{free}$ is the energy transfer that would accompany a free ion scatter with momentum transfer $q$.
 The resulting stopping power is unchanged from the free case~\eqref{eq:StoppingPowerOffIons}, as the increased energy transfer compensates for the suppressed cross-section.
 
+As electrons transfer their energy at the rate \eqref{eq:StoppingPowerOffIons}, they occasionally experience a hard scatter with mean free path
+\begin{align}
+\lambda_\text{hard} &\approx \frac{p^2 v_\text{in}^2}{\pi n_\text{ion}Z^2 \alpha^2}.
+\end{align}
+For sufficiently small incident energies, the electron experiences several hard scatters before it has deposited its energy by elastic scatters, and the stopping length is reduced by the resulting random walk.
+This effect is not significant for incident pions due to their larger mass.
+
 Finally, we note that for highly energetic incident particles the cross-section~\eqref{eq:CoulombOffIonsCrossSection} should be modified to account for the recoil of the ion.
-However, at such energies the dominant stopping power will be from hadronic or electromagnetic showers anyway.
+However, at such energies the dominant stopping power will be from hadronic or electromagnetic showers anyway, so we do not include these recoil effects.
 
 \paragraph{Relativistic Coulomb Scattering off Electrons.}
 \label{sec:coulomb_elec}

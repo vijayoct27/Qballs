@@ -22,11 +22,19 @@ The quoted energies are for a $\sim 1.37 ~M_{\astrosun}$ WD, although the cartoo
 
 
 The remainder of this section will discuss the above heating process in more detail.
-We summarize the dominant source of energy loss and the resulting stopping lengths $\lambda$ for SM particles of incident kinetic energy $\epsilon$, approximated by
+We summarize the dominant source of energy loss and the resulting stopping lengths $\lambda$ for SM particles of incident kinetic energy $\epsilon$.
+The total path length traveled by a particle before depositing $\OO(1)$ of its energy is approximately
 \begin{equation}
-\lambda \sim \frac{\epsilon}{dE/dx},
+R_\text{SP} \sim \frac{\epsilon}{dE/dx},
 \end{equation}
 where $dE/dx$ is the stopping power in the WD medium.
+If the mean free path to hard scatter $\lambda_\text{hard}$ is smaller than this path length $R_\text{SP}$, then the particle undergoes a random walk with $N_\text{hard}$ scatters, and the net displacement is reduced by $\sqrt{N_\text{hard}}$.
+We therefore approximate the stopping length as
+\begin{align}
+\lambda \sim \text{min}\left\{ R_\text{SP}, \sqrt{R_\text{SP}\lambda_\text{hard}} \right\}
+\end{align}
+This random walk behavior is relevant for low-energy elastic scatters.
+
 Stopping lengths are plotted in Figures~\ref{fig:SPhighHad} and~\ref{fig:SPhighEM}, and a detailed treatment of the stopping powers is given in Appendix~\ref{sec:wdpdg}.
 We will consider incident light hadrons, photons, electrons, and neutrinos---as we are concerned with triggering runaway fusion, we restrict our attention to energies $\epsilon \gg T_f \sim \text{MeV}$.
 
@@ -143,7 +151,7 @@ At these energies, elastic nuclear, Coulomb, and Compton scatters dominate and e
 
 \paragraph{Hadrons.}
 Neutral hadrons are the simplest species we consider, interacting at low-energies only through elastic nuclear scatters with cross section $\sigma_\text{el} \approx \text{b}$.
-Note that the large ion mass requires $\sim 10 - 100$ scatters to transfer the hadron's energy in the form of a random-walk.
+Note that the large ion mass requires $\sim 10 - 100$ hard scatters to transfer the hadron's energy in the form of a random-walk.
 This elastic heating range is
 \begin{align}
  \lambda_\text{el} &\approx
@@ -160,12 +168,15 @@ Note that there is a small range of energies in which Coulomb scatters off ions 
 \paragraph{Electrons and Photons.}
 For electrons and photons below $\sim 100 ~\MeV$ the dominant interactions are Coulomb scatters off WD electrons and Compton scatters, respectively.
 The length scale of these processes is smaller than any interaction with ions, and so these electrons and photons will thermalize into a compact electromagnetic ``gas" with a size set by the radiative length scale $X_\text{EM}$.
-The EM gas will cool and diffuse to larger length scales, eventually allowing thermalization with nuclei via the subdominant Coulomb scatters of electrons off ions. 
+The EM gas will cool and diffuse to larger length scales, eventually allowing thermalization with nuclei via the subdominant Coulomb scatters of electrons off ions.
 The photons of the EM gas will not undergo photonuclear showers here, as the gas will cool below $\sim 10~\MeV$ by the time it diffuses out to a size $\lambda_{\gamma A}$.
 This gas temperature is initially at most $\sim 100~\MeV$.
 At these temperatures the heat capacity is dominated by photons, so as the gas diffuses to a size $\lambda_{\gamma A}$ it cools by a factor $(X_\text{EM}/\lambda_{\gamma A})^{3/4} \sim 10^{-2} - 10^{-1}$.
 Note that for temperatures $T$ less than $E_F$, the electrons are partially degenerate and heating proceeds via the thermal tail with kinetic energies $\epsilon \sim E_F + T$.
 Therefore, the relevant thermalization process is Coulomb scattering of electrons off ions.
+
+Like the hadronic elastic scatters, an electron scattering off ions will undergo a random walk, with a number of steps given by the number of hard scatters it experiences before depositing $\OO(1)$ of its energy.
+
 This has a stopping length
 \begin{equation}
 \lambda_\text{coul} \approx 10^{-5}~\cm \l \frac{\epsilon}{10 ~\MeV} \r \l \frac{10^{32} ~\cm^{-3}}{n_\text{ion}}\r
