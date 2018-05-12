@@ -30,7 +30,7 @@ This is given in terms of an LET, which parameterizes the ability for DM to rele
 Here we consider a DM elastic scattering off carbon ions with cross section $\sigma_{\chi A}$, which has an LET:
 \begin{align}
 \label{eq:schematicLET}
-  \left( \frac{d E}{d x} \right)_\text{LET} = n_\text{ion} \sigma_{\chi A} m_\text{ion} v_\text{esc}^2.
+  \left( \frac{d E}{d x} \right)_\text{LET} \sim n_\text{ion} \sigma_{\chi A} m_\text{ion} v_\text{esc}^2.
 \end{align}
 Each elastic scatter transfers an energy of order $m_\text{ion} v_\text{esc}^2 \approx 1-10~\text{MeV}$ to the target nuclei, thus enabling fusion reactions.
 Note that the stopping power of the DM in the non-degenerate envelope is of the same form, but with the density replaced by its diminished value in this region.
@@ -52,8 +52,7 @@ Note that the assumption of a ``point-like" interaction requires that the physic
 In Figure~\ref{fig:transit-elastic} we constrain the elastic scattering cross section $\sigma_{\chi A}$ as a function of DM mass $m_\chi$ using the different classes of observables described above.
 Note that the scattering cross sections constrained here are incredibly large $> 10^{-10} ~\cm^2$---however, these constraints reach to very large masses for which direct detection constraints are absent.
 These cross-sections also require that the DM involved be macroscopically large, of order or larger than the trigger size, and so the interaction is decidedly not ``point-like.''
-This fact does not weaken our constraints, however, since the energy $1-10~\text{MeV}$ transferred to each ion in the DM's path is larger than the $ \sim \text{MeV}$ needed per ion for fusion.
-%For example, colliding galaxy clusters \cite{Randall:2007ph} require that $\sigma/m_\chi \lesssim \cm^2/\text{g}$, which for $m_\chi \gtrsim 10^{30}~\GeV$ corresponds to $\sigma \lesssim 10^6~\cm^2$.
+This fact does not weaken our constraints, however, since the energy transferred to each ion in the DM's path is greater than $\sim \text{MeV}$. 
 
 \begin{figure}
 \includegraphics[scale=.35]{transitobservation.pdf}
@@ -67,21 +66,52 @@ We also demand that the DM penetrates the non-degenerate stellar envelope (at th
 \label{sec:CollisionConstraints}
 
 In order to constrain a DM model through its annihilations or decays within a WD, we require that it satisfy the ignition condition~\eqref{eq:coldecay}.
-Consider a simplified interaction wherein a single annihilation or decay releases $N$ particles of SM species $i$ and energy $\epsilon$.
-Assuming a fractional parameter $f_\text{SM} = 1$, this corresponds to SM products with individual energy $\epsilon \sim m_\chi/N$.
-As shown in Section~\ref{sec:smheating}, as long as $\epsilon \gg \MeV$ the constraint has minimal dependence on species $i$.
+Consider a single annihilation or decay with $f_\text{SM} = 1$ that releases a spectrum of SM particles.
+As shown in Section~\ref{sec:smheating}, the constraint has minimal dependence on the released species if the typical energy $\epsilon$ of secondary products is greater than an MeV.
 In the case of neutrinos, we may simply demand that $\epsilon$ is sufficiently large that a single neutrino can ignite the star.
-
 With this schematic for the DM interaction, we can constrain the cross section for collision $\sigma_{\chi \chi}$ and lifetime $\tau_\chi$.
 This is done in Figures~\ref{fig:transit-collision} and~\ref{fig:transit-decay} in the case of transiting DM using the different classes of observables for DM-DM collisions and DM decays, respectively.
 In the case of captured DM, we also specify a benchmark value for the elastic scattering cross section $\sigma_{\chi A}$ and, with regards to DM-DM collisions, a stabilizing radius for the collapsing DM sphere.
 This is done in Figures~\ref{fig:capture-collision} and~\ref{fig:capture-decay}---for simplicity, here we only show the constraints from the existence of nearby, heavy WDs.
 
+Of course, there are additional limits on DM annihilations and decays complementary to the limits placed from WDs.
+We first consider the constraints from cosmology. 
+Demanding that the galactic halo has not substantially depleted during its lifetime yields $\frac{\sigma_{\chi \chi}}{m_\chi} < \frac{\text{b}}{\GeV}$.
+There is also a bound on DM lifetime $\tau_\chi > 100 ~\text{Gyr}$, independent of the nature of the decay products~\cite{Poulin:2016nat}.
+In practice, these are far less stringent than the CMB constraints. 
+DM annihilations/decays inject energy and affect the ionization history of our universe, which can be probed b measurements of the CMB temperature and power spectrum.
+These constraints are of order
+\begin{equation}
+\label{eq:CMB}
+\sigma_{\chi \chi} v \lesssim 10^{-27} ~\cm^3/\text{s} \l \frac{m_\chi}{10 ~\GeV} \r, ~~~~ \tau_\chi \gtrsim 10^{7} ~\text{Gyr}. 
+\end{equation}
+
+There are also constraints on DM annihilation/decays in our halo from the cosmic ray (CR) flux seen in large terrestrial detectors.
+Here we provide a crude estimate of the expected constraints from CRs in the case of DM annihilation (decays are qualitatively similar)---a more detailed analysis is beyond the scope of this work. 
+The Pierre Auger Observatory has detected the flux of $E_\text{th} \sim 10^{11} ~\GeV$ cosmic rays with an exposure of order $A_\text{PA} \sim 40000 ~\text{km}^2 ~\text{sr} ~\text{yr}$
+Ultra-heavy DM annihilations $m_\chi > 10^{16} ~\GeV$ will generally produce secondary particles of energy $\epsilon \gtrsim E_\text{th}$ via final-state radiation.
+For a simple 2-2 process (e.g. $\chi \chi \to q q$), the expected number of final-state particles radiated at $E_\text{th}$ due to QCD showers is approximated by the Sudakov double logarithm
+\begin{equation}
+N_\text{rad} \sim \frac{4 \alpha_s}{\pi} \log\l\frac{m_\chi}{\Lambda_\text{QCD}}\r \log\l\frac{m_\chi}{E_\text{th}}\r \approx 100,
+\end{equation}
+where $\alpha_s$ is the QCD coupling constant. 
+Similarly, the estimated number of final-state particles at $E_\text{th}$ due to EW showers is $\approx 50$. 
+We expect that CRs at this energy originating in our galaxy will be able to strike the earth unattenuated.
+Thus, such events would affect the measured CR flux of Pierre Auger unless
+\begin{equation}
+\l \frac{\rho_\chi}{m_\chi}\r^2 \sigma_{\chi \chi} v \frac{R_\text{halo}}{4 \pi} N_\text{rad} \times A_\text{PA} \lesssim 1.
+\end{equation} 
+Here we assume an average value for DM density $\rho_\chi \approx 0.4 \GeV/\cm^3$ as a reasonable approximation to the integral over our galactic halo volume. 
+Surprisingly, the above CR constraints are (within a few orders of magnitude) comparable to the constraints due to the observation of long-lived WDs. 
+This is actually due to a coincidence in the effective ``space-time volumes" of the two systems.
+A terrestrial CR detector such as Pierre Auger sees events within a space-time volume $(R_\text{det}^2 R_\text{halo} \times t_\text{det})$, where $R_\text{det} \sim 50 ~\text{km}$, $R_\text{halo} \sim 10 ~\text{kpc}$, and $t_\text{det} \sim 10 ~\text{yr}$.
+This is similar in magnitude to the WD space-time volume $(R_\text{WD}^3 \times \tau_\text{WD})$. 
+
 \begin{figure}
 \includegraphics[scale=.35]{collisionobservation.pdf}
 \caption{Constraints on DM-DM collision cross-section to SM products of energy $\epsilon \gg \MeV$.
 Bounds come from demanding that the DM transit interaction triggers runaway fusion~\eqref{eq:coldecay} (purple) and occurs at a rate~\eqref{eq:collisionDM} large enough to either ignite an observed $1.25~M_{\astrosun}$ WD in its lifetime or exceed the measured SN rate in our galaxy (blue shaded).
-Also shown is the cosmological bound on DM self-interaction (red).}
+Also shown are the CMB (red) and CR flux (black) constraints on DM annihilations.}
 \label{fig:transit-collision}
 \end{figure}
 
@@ -89,7 +119,7 @@ Also shown is the cosmological bound on DM self-interaction (red).}
 \includegraphics[scale=.35]{decayobservation.pdf}
 \caption{Constraints on DM decay to SM products of energy $\epsilon \gg \MeV$.
 Bounds come from demanding that the DM transit interaction triggers runaway fusion~\eqref{eq:coldecay} (purple) and occurs at a rate~\eqref{eq:decayDM} large enough to either ignite an observed $1.25~M_{\astrosun}$ WD in its lifetime or exceed the measured SN rate in our galaxy (blue shaded).
-Also shown is the cosmological bound on DM lifetime (red).}
+Also shown are the CMB (red) and CR flux (black) constraints on DM lifetime.}
 \label{fig:transit-decay}
 \end{figure}
 
@@ -97,7 +127,7 @@ Also shown is the cosmological bound on DM lifetime (red).}
 \includegraphics[scale=.35]{capturecollision.pdf}
 \caption{Constraints on DM-DM collision cross-section to SM products of energy $\epsilon \gg \MeV$, assuming DM is captured with an elastic scattering $\sigma_{\chi A} = 10^{-30} ~\cm^2$.
 Bounds come from the observation of $1.25~M_{\astrosun}$ WDs in local DM density.
-We consider the annihilation rate during the in-falling thermalization stage~\eqref{eq:infall} (blue shaded) and during self-gravitational collapse~\eqref{eq:collapse} to a stable radius $r = 10^{-15} ~\cm$ (orange shaded). See text for details.
+We consider the annihilation rate during the in-falling thermalization stage~\eqref{eq:infall} (blue shaded) and during self-gravitational collapse~\eqref{eq:collapse} to a stable radius $r = 10^{-15} ~\cm$ (green shaded). See text for details.
 }
 \label{fig:capture-collision}
 \end{figure}
@@ -106,19 +136,8 @@ We consider the annihilation rate during the in-falling thermalization stage~\eq
 \includegraphics[scale=.35]{capturedecay.pdf}
 \caption{Constraints on DM decay to SM products of energy $\epsilon \gg \MeV$, assuming DM is captured with an elastic scattering $\sigma_{\chi A} = 10^{-30} ~\cm^2$.
 Bounds come from the observation of $1.25~M_{\astrosun}$ WDs in local DM density.
-We consider the decay rate during the in-falling thermalization stage~\eqref{eq:decayDMcap} for gravitational collapse to a non-decaying DM core (blue shaded) or decaying DM core (orange shaded). See text for details.
+We consider the rate of decays during the in-falling thermalization stage (blue shaded) and for a decaying DM core (green shaded). See text for details.
 }
 \label{fig:capture-decay}
 \end{figure}
 
-Of course, there are additional limits on DM interactions of this kind complementary to the limits placed from WDs.
-For one, demanding that the galactic halo has not substantially depleted during its lifetime yields a cosmological bound on DM self-interactions $\frac{\sigma_{\chi \chi}}{m_\chi} < \frac{\text{b}}{\GeV}$.
-This is similar in magnitude to the bounds from colliding galaxy clusters~\cite{Randall:2007ph}.
-There is also a cosmological bound on DM lifetime $\tau_\chi > 100 ~\text{Gyr}$, independent of the nature of the decay products~\cite{Poulin:2016nat}.
-In addition, DM annihilations/decays in the galactic halo would contribute to the cosmic ray (CR) flux seen in terrestrial detectors.
-If the DM produces ultra high-energy SM products, the indirect detection constraint from air shower detectors~\cite{ThePierreAuger:2015rha,AbuZayyad:2012ru} can be estimated by simply demanding that a single particle (e.g. hadron, photons, etc.) does not register an event in the detector over its exposure.
-For a detector of size $\sim (50~\text{km})^2$ and lifetime $\sim 10~\text{yr}$ ~\cite{ThePierreAuger:2015rha}, we find that the CR bounds are generally weaker than but within a few orders of magnitude of the WD bounds in the transit scenario.
-This is actually due to a coincidence in the effective ``space-time volumes" of the two systems.
-A CR detector sees events within a space-time volume $(R_\text{det}^2 R_\text{halo} \times 10 ~\text{yr})$ which is comparable to the WD space-time volume $(R_\text{WD}^3 \times 10^9 ~\text{yr})$, including the additional gravitational enhancement factors.
-Note that a constraint can also be placed on lower-energy SM products from DM annihilations or decays which would provide an additional source for the measured CR flux, although such an analysis is beyond the scope of this work.
-We do not explicitly depict the complementary CR constraints on DM parameters in Figures~\ref{fig:transit-collision} and~\ref{fig:transit-decay}.
