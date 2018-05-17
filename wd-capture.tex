@@ -1,7 +1,16 @@
-Here we give a more detailed discussion of DM capture and its subsequent evolution in a WD.
+Here we give a more detailed discussion of DM capture. 
 
 \subsection{Capture Rate}
-Consider a spin-independent, elastic scattering off ions with cross section $\sigma_{\chi A}$.
+Consider spin-independent DM elastic scattering off ions with cross section $\sigma_{\chi A}$.
+This is related to the per-nucleon cross section
+\begin{equation}
+\sigma_{\chi A} = A^2 \l \frac{\mu_{\chi A}}{\mu_{\chi n}}\r^2 F^2(q) \sigma_{\chi n} = A^4 F^2(q) \sigma_{\chi n},
+\end{equation}
+where $F^2(q)$ is the Helm form factor~\cite{Helm:1956zz}.
+If the DM is at the WD escape velocity, the typical momentum transfer to ions is $q \sim \mu_{\chi A} v_\text{esc} \sim 200 ~\MeV$. 
+As this $q$ is less than or of order the inverse nuclear size, DM scattering off nuclei will be coherently enhanced. 
+We find $F^2(q) \approx 0.1$ for $q \sim 200 ~\MeV$.
+
 For the DM to ultimately be captured, it must lose energy $\sim m_\chi v^2$, where $v$ is the DM velocity (in the rest frame of the WD) asymptotically far away.
 Since typically $v \ll v_\text{esc}$, the DM has velocity $v_\text{esc}$ while in the star and must lose a fraction $(v/v_\text{esc})^2$ of its kinetic energy to become captured.
 Properly, the DM velocity is described by a boosted Maxwell distribution peaked at the galactic virial velocity $v_\text{halo} \sim 10^{-3}$.
@@ -64,7 +73,6 @@ v_\text{esc} &\approx 2 \times 10^{-2}.
 \end{align}
 Depending on the context, the relevant density may be the average value which is of order $n_\text{ion} \approx 10^{30} ~\cm^{-3}$.
 We also assume a typical WD temperature $T \sim \text{keV}$.
-In addition, for simplicity we take a fixed value of $\sigma_{\chi A}$ valid for the entire range of momentum transfers considered.
 
 Once DM is captured, it thermalizes to an average velocity
 \begin{equation}
@@ -84,7 +92,7 @@ The stopping power due to such scatters is
 \end{align}
 where $v_\ion \sim \sqrt{\frac{T}{m_\text{ion}}}$ is the thermal ion velocity.
 The max function indicates the transition between ``viscous" and ``inertial" drag.
-The DM first passes through the WD many times on a wide orbit until the size of its orbit decays to become contained in the star.
+DM first passes through the WD many times on a wide orbit until the size of its orbit decays to become contained in the star.
 The timescale for this process is
 \begin{align}
   t_1 &\sim \l \frac{m_\chi}{m_\text{ion}} \r^{3/2}
@@ -102,10 +110,15 @@ The timescale for this process is
   \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}. \nonumber
 \end{align}
 There is an additional $\OO(10)$ logarithmic enhancement of the timescale once the DM velocity has slowed below $v_\ion$.
-Note that the two thermalization timescales are much larger than the gravitational free-fall timescale, which is the time to complete a single orbit:
+Note that time to complete a single orbit is set by the gravitational free-fall timescale:
 \begin{equation}
 \label{eq:freefalltime}
 t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \approx 0.5 ~\text{s}.
+\end{equation}
+Of course, the thermalization is qualitatively different than described above if the DM loses sufficient energy within a single transit.
+This occurs for large scattering cross sections:
+\begin{equation}
+\sigma_{\chi A} > \frac{m_\chi}{\rho_\text{WD} R_\text{WD}}.
 \end{equation}
 
 The DM will begin steadily accumulating at $R_\text{th}$ after a time $t_1 + t_2$.
@@ -118,6 +131,9 @@ The time to collect a critical number $N_\text{sg}$ of DM particles is
     &\approx 10^{10} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2}
     \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}, \nonumber
 \end{align}
+Note that when $m_\chi > 10^{21} ~\GeV$, the number of particles necessary for self-gravitation $N_\text{sg}$ as defined in \eqref{eq:Ncore} is less than 2.
+In this case we should properly take $N_\text{sg} = 2$. 
+We do not consider such a DM ``core" collapse. 
 Typically, the timescale for collapse is then set by the DM sphere's ability to cool and shed gravitational potential energy.
 This is initially just $t_2$, while the time to collapse at any given radius $r$ decreases once the DM velocity rises again above $v_\ion$
 \begin{align}
@@ -127,33 +143,12 @@ This is initially just $t_2$, while the time to collapse at any given radius $r$
 where $N$ is the number of collapsing DM particles.
 
 There is a subtlety that arises in this DM core collapse for the large masses $m_\chi$ of interest to us.
-The time to collect a self-gravitating number of particles $t_\text{sg} \propto m_\chi^{-1/2}$ decreases for larger DM masses.
+The time to collect a self-gravitating number of particles $t_\text{sg}$ decreases for larger DM masses.
 However, the dynamics of the collapse is set by the cooling time, which is initially $t_\text{cool} \propto m_\chi$.
-We find that for $m_\chi > 10^{14} ~\GeV$, the collection time is shorter than the cooling time $t_\text{sg} < t_\text{cool}$.
-In fact, the collection time may even be shorter than the dynamical time $t_\text{ff}$.
-This is the case for $m_\chi > 10^{19} ~\GeV$.
-We consider the following scenarios:
-If $t_\text{ff} < t_\text{sg} <t_\text{cool}$, the DM core will be driven to shrink because of the gravitational potential of the overcollecting DM.
+For $m_\chi > 10^{15} ~\GeV$, the collection time may be shorter than the cooling time $t_\text{sg} < t_\text{cool}$ (depending on the cross section). 
+In fact, the collection time may even be shorter than the dynamical time $t_\text{ff}$. 
+If $t_\text{ff} < t_\text{sg} <t_\text{cool}$, the DM core will be driven to shrink because of the gravitational potential of the over-collecting DM.
 The timescale for the shrinking is set by the capture rate of DM.
-Ultimately, the collapsing DM core will consist of $N_\text{sg}$ enveloped in a ``halo" of $N \gg N_\text{sg}$ particles, which will also proceed to collapse.
-If $t_\text{sg} < t_\text{ff} <t_\text{cool}$, the DM core will rapidly accumulate particles before dynamically adjusting.
-Thus the number of collapsing particles is much larger than $N_\text{sg}$.
-(Note that when $m_\chi > 10^{21} ~\GeV$, the number of particles necessary for self-gravitation $N_\text{sg}$ as defined in \eqref{eq:Ncore} is less than 2.
-In this case we should properly take $N_\text{sg} = 2$.)
-For DM candidates capable of igniting the WD with a single annihilation or collision, it is always the case that $t_{sg} < t_\text{cool}$.
-For our constraints (see Figures~\ref{fig:capture-collision} and~\ref{fig:capture-decay}), \textcolor{blue}{we conservatively choose to take the number of collapsing DM particles to be $N \sim N_\text{sg}$.}
-
-For a spin-independent interaction, $\sigma_{\chi A}$ is related to the per-nucleon cross section
-\begin{equation}
-\sigma_{\chi A} = A^2 \l \frac{\mu_{\chi A}}{\mu_{\chi n}}\r^2 F^2(q) \sigma_{\chi n} \sim A^4 F^2(q) \sigma_{\chi n},
-\end{equation}
-where $F^2(q)$ is the Helm form factor~\cite{Helm:1956zz}.
-For DM at the WD escape velocity, the typical momentum transfer to ions is $q \sim \mu_{\chi A} v_\text{esc} \sim 200 ~\MeV$. 
-As this $q$ is less than or of order the inverse nuclear size, DM scattering off nuclei will be coherently enhanced. 
-We find $F^2(q) \approx 0.1$ for $q \sim 200 ~\MeV$.
-There are a variety of underground and space-based detectors that constrain DM elastic scattering below $\sim 10^{17} ~\GeV$. 
-These constraints are summarized in \cite{Mack:2007xj}. 
- this is not the focus of the current work, but the
-list of model-independent constraints may be found in Mack
-et al. (2007). 
-Extending to even larger masses, there are cosmological constraints on DM-elastic scattering from CMB and Lyman-$\alpha$ spectrum analysis \cite{Dvorkin:2013cea}.
+Ultimately, the collapsing DM core will consist of $N_\text{sg}$ enveloped in a ``halo" of $\Gamma_\text{cap} t_\text{cool} \gg N_\text{sg}$ particles, which will also proceed to collapse.
+If instead $t_\text{sg} < t_\text{ff} <t_\text{cool}$, the DM core will rapidly accumulate to this large number before dynamically adjusting. 
+For the purpose of the collapse constraints on DM annihilation, if $t_\x{sg} < t_\text{cool}$ we will simply assume a number of collapsing particles $N = \Gamma_\text{cap} t_\text{cool}$. 
