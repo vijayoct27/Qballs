@@ -105,16 +105,12 @@ We first summarize the capture and subsequent evolution of DM in the WD, ignorin
 Consider a spin-independent, elastic scattering off carbon ions with cross section $\sigma_{\chi A}$.
 The rate of DM capture in gravitating bodies is of course very well-studied~\cite{Press:1985ug, Gould:1987ir}.
 However, this rate must be modified when the DM requires multiple scatters to lose the necessary energy for capture.
-Ultimately, for DM massive enough to ignite the capture rate is of the form
+Ultimately, for ultra-heavy DM the capture rate is of the form
 \begin{align}
   \Gamma_\text{cap} &\sim \Gamma_\text{trans} \cdot
   \text{min}\left\{1, \overbar{N}_\text{scat} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2} \right\}, \\
 \end{align}
-Once DM is captured, it eventually thermalizes with the stellar medium to a velocity
-\begin{equation}
-  v_\text{th} \approx 10^{-11} \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2},
-\end{equation}
-and settles at the thermal radius
+Once DM is captured, it eventually thermalizes with the stellar medium at velocity $v_\text{th}$ and settles at a radius
 \begin{align}
   R_\text{th} \approx 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}.
 \end{align}
@@ -137,6 +133,7 @@ t_2  \approx 10^{14}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r
 \end{equation}
 Note that the difference in scalings between $t_1$ and $t_2$ is due to the fact that, while the two times are ultimately determined by scattering in the star, the dynamics of the settling DM are quite distinct in each case.
 For instance, $t_1$ is dominated by the time spent on the largest orbit outside the WD (which additionally depends on $\sigma_{\chi A}$) while $t_2$ is dominated by the time spent near the thermal radius.
+In that case that 
 Subsequently the DM will begin steadily accumulating at $R_\text{th}$, with the possibility of self-gravitational collapse if the collected mass of DM exceeds the WD mass within this volume.
 This occurs after a time
 \begin{align}
@@ -147,43 +144,34 @@ t_\text{sg} &\approx
 \end{align}
 Of course, not all of these stages may be reached within the age of the WD $\tau_\text{WD} \sim 5 ~\text{Gyr}$.
 The full time to collect and begin self-gravitating is $t_1 + t_2 + t_\x{sg}$.
-Importantly, for DM masses $m_\chi > 10^{16} ~\GeV$ self-gravitation sets in instantly relative to thermalization.
-This time is less than $\tau_\text{WD}$ if
-\begin{equation}
-\label{eq:settle}
-\sigma_{\chi A} \gtrsim 10^{-35} ~\cm^2 \l \frac{m_\chi}{10^{16} ~\GeV} \r.
-\end{equation}
-Of course, direct detection~\cite{Aprile:2017iyp} constrain the DM-nuclei scattering cross section.
-However, crucially these bounds 
 
-At any point during the above evolution, captured DM has the potential to trigger a SN.
+At any point during the above evolution, captured DM has the potential to trigger a SN. 
 Of particular interest is the ability of DM to ignite a WD during self-gravitational collapse, either via annihilations or the formation of a black hole.
 A collapse can release sufficient energy to trigger SN even with DM masses less than $10^{16} ~\GeV$.
-However, such a process involves additional subtleties beyond the scope of this paper and is the focus of forthcoming work~\cite{us}.
-In the following, we require that a single collision or decay is sufficient to ignite the star, and give only a quick assessment of collapse.
+This is the focus of forthcoming work~\cite{us}.
+In the following, we require that a single collision or decay is sufficient to ignite the star, and give only a quick assessment of core collapse.
 
 \paragraph{Captured DM-DM Collisions.}
 We now turn to the rate of DM-DM collisions for captured DM.
 Of course, the thermalizing DM constitutes a number density of DM throughout the WD volume.
-Assuming the scattering cross section satisfies~\eqref{eq:settle} and~\eqref{eq:directdet}, the total rate of annihilations for this ``in-falling" DM is peaked near the thermal radius and is of order:
+Assuming that $t_1 + t_2 < \tau_\text{WD}$, the total rate of annihilations for this ``in-falling" DM is peaked near the thermal radius and is of order:
 \begin{equation}
 \label{eq:infall}
 \Gamma_\text{infall} \sim \frac{(\Gamma_\text{cap} t_2)^2}{R_\text{th}^3} \sigma_{\chi \chi} v_\text{th}.
 \end{equation}
 If $\Gamma_\text{infall} t_2 > 1$, then a SN will be triggered by the in-falling DM population.
-Otherwise if $\Gamma_\text{infall} t_2 < 1$, the DM will start accumulating at the thermal radius---since $t_\text{sg} \ll t_2$ for such heavy DM masses, there will be no collisions during this time and thus a collapse will proceed.
-As we will see, ignition of a WD during collapse is almost guaranteed unless $\sigma_{\chi \chi}$ is sufficiently small.
-When the DM sphere is at a radius $r$, the rate of annihilations is
+Otherwise if $\Gamma_\text{infall} t_2 < 1$, the DM will start accumulating at the thermal radius.
+If $t_\text{sg} \ll t_2$ (as expected for such heavy DM masses) there will be no collisions during this time and thus a collapse will proceed.
+For a DM sphere consisting of $N$ particles at a radius $r$, the rate of annihilations is
 \begin{align}
 \label{eq:collapse}
-\Gamma_\text{collapse} &\sim \frac{(\rho_\text{WD} R_\x{th}^3/ m_\chi)^2}{r^3} \sigma_{\chi \chi} v_\chi, \\
- v_\chi &\sim \sqrt{\frac{G \rho_\text{WD} R_\text{th}^3}{r}}.
+\Gamma_\text{collapse} &\sim \frac{N^2}{r^3} \sigma_{\chi \chi} v_\chi, \\
+ v_\chi &\sim \sqrt{\frac{G N m_\chi}{r}}.
 \end{align}
-Here we have conservatively taken the number of collapsing particles to be the self-gravitational threshold---as mentioned in Appendix~\ref{sec:capture}, this is an underestimate for such ultra-heavy DM.
-\textcolor{blue}{\emph{If we change to $N_\text{halo}$, adjust this comment.}}
-We also assume the timescale for collapse is set by the DM cooling rate and is thus related to $t_2$---see Appendix~\ref{sec:capture} for details.
+In the regime of interest, it will generally be the case that the number of collapsing particles is greater than the self-gravitational threshold (this is discussed in Appendix \ref{sec:capture}). 
 Of course, there may be some stabilizing physics which prevents the DM from collapsing and annihilating below a certain radius, such as formation of a black hole or bound states.
 To illustrate the stringent nature of the collapse constraint we will simply assume some benchmark stable radius, as in Figure~\ref{fig:capture-collision}.
+We assume that the timescale for collapse at this radius is set by DM cooling $t_\x{cool}$, which is related to $t_2$. 
 Note that if a single collision has not occurred during collapse, one may additionally examine annihilations of the subsequent in-falling DM down to the stable radius---for simplicity, we do not consider this scenario.
 
 \paragraph{Captured DM Decays.}
