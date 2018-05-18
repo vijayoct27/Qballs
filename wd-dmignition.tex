@@ -108,15 +108,26 @@ However, this rate must be modified when the DM requires multiple scatters to lo
 Ultimately, for ultra-heavy DM the capture rate is of the form
 \begin{align}
   \Gamma_\text{cap} &\sim \Gamma_\text{trans} \cdot
-  \text{min}\left\{1, \overbar{N}_\text{scat} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2} \right\}, \\
+  \text{min}\left\{1, \overbar{N}_\text{scat} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2} \right\},
 \end{align}
-Once DM is captured, it eventually thermalizes with the stellar medium at velocity $v_\text{th}$ and settles at a radius
+where $\overbar{N}_\text{scat} \sim n_\x{ion} \sigma_{\chi A} R_\x{wd}$ is the average number of DM-carbon scatters during one DM transit. 
+Once DM is captured, it eventually thermalizes with the stellar medium at velocity $v_\text{th} \sim \l T_\x{WD}/m_\chi \r^{1/2}$. 
+The dynamics of this processes depends on the strength of the DM-carbon interaction, namely on whether energy loss to carbon ions provides a small perturbation to the DM's gravitational orbit within the star or whether DM primarily undergoes Brownian motion in the star due to collisions with carbon. 
+For simplicity, we will focus here only on the former case, corresponding roughly to interactions
+\begin{align}
+\label{eq:slowcapture}
+    \sigma_{\chi A} \lesssim \frac{m_\chi}{\rho_\x{WD} R_\x{WD}}
+    \sim 10^{-26}~\x{cm}^2 \; \l \frac{10^{16} \GeV}{m_\chi} \r.
+\end{align}
+Note that the opposite regime indeed also provides constraints on captured DM and is unconstrained by other observations, see Figure~\ref{fig:elastic-capture}, however the resulting limits are similar to those presented here.
+Note that all numerical quantities in this section are evaluated at a WD central density $n_\text{ion} \sim 10^{31}~\cm^{-3}$.
+
+In the limit~\eqref{eq:slowcapture}, captured DM will thermalize by settling to a radius $R_\x{th}$ given by the balance of gravity and the thermal energy $T_\x{WD}$, 
 \begin{align}
   R_\text{th} \approx 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}.
 \end{align}
-Note that all numerical quantities in this section are evaluated at a WD central density $n_\text{ion} \sim 10^{31}~\cm^{-3}$.
-DM thermalization proceeds in two stages.
-Captured DM will initially be found on a large, bound orbit that decays after many transits of the WD until the orbital size is fully contained within the star.
+This settling proceeds in two stages.
+Captured DM will initially be found on a large, bound orbit that exceeds the size of the WD, decaying after many transits of the star until the orbital size is fully contained within the WD.
 This occurs after a time
 \begin{equation}
 \label{eq:thermalization1}
@@ -124,15 +135,14 @@ t_1 \approx 7\times 10^{16}~\text{s}
   \l \frac{m_\chi}{10^{16} ~\GeV} \r^{3/2}
   \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-3/2}.
 \end{equation}
-The DM then completes many orbits within the star until its orbital size decays to the thermal radius.
-This occurs after a time
+The DM then completes many orbits within the star until its orbital size decays to the thermal radius, occurring after a further time 
 \begin{equation}
 \label{eq:thermalization2}
 t_2  \approx 10^{14}~\text{s}\l \frac{m_\chi}{10^{16} ~\GeV} \r
   \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}.
 \end{equation}
 Note that the difference in scalings between $t_1$ and $t_2$ is due to the fact that, while the two times are ultimately determined by scattering in the star, the dynamics of the settling DM are quite distinct in each case.
-For instance, $t_1$ is dominated by the time spent on the largest orbit outside the WD (which additionally depends on $\sigma_{\chi A}$) while $t_2$ is dominated by the time spent near the thermal radius.
+$t_1$ is dominated by the time spent on the largest orbit outside the WD (which additionally depends on $\sigma_{\chi A}$) while $t_2$ is dominated by the time spent near the thermal radius.
 Subsequently the DM will begin steadily accumulating at $R_\text{th}$, with the possibility of self-gravitational collapse if the collected mass of DM exceeds the WD mass within this volume.
 This occurs after a time
 \begin{align}
@@ -145,10 +155,10 @@ Of course, not all of these stages may be reached within the age of the WD $\tau
 The full time to collect and begin self-gravitating is $t_1 + t_2 + t_\x{sg}$.
 
 At any point during the above evolution, captured DM has the potential to trigger a SN. 
-Of particular interest is the ability of DM to ignite a WD during self-gravitational collapse, either via annihilations or the formation of a black hole.
-A collapse can release sufficient energy to trigger SN even with DM masses less than $10^{16} ~\GeV$.
+We will consider ignition via either the decay or annihilation of captured DM.  
+Of particular interest are events occurring within a collapsing DM core, as such cores have the additional ability to ignite a WD for DM masses less than $\Eboom \sim 10^{16} ~\GeV$, either via multiple DM annihilations or by the formation of a black hole.
 This is the focus of forthcoming work~\cite{us}.
-In the following, we require that a single collision or decay is sufficient to ignite the star, and give only a quick assessment of core collapse.
+In the following, we restrict attention to the limit~\eqref{eq:slowcapture} and require DM masses sufficiently large so that a single collision or decay is will ignite the star, and give only a quick assessment of DM core collapse.
 
 \paragraph{Captured DM-DM Collisions.}
 We now turn to the rate of DM-DM collisions for captured DM.
