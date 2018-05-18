@@ -68,6 +68,22 @@ $B$ here encodes the necessity of multiple scattering for capture.
 For ultra-heavy DM $m_\chi > 10^{15} ~\GeV$, $B \ll 1$ and essentially multiple scatters are always needed.
 
 \subsection{Thermalization and Collapse}
+
+We focus here on the thermalization and self-gravitational collapse of DM, assuming that the DM loses a negligible amount of energy during a single transit:
+\begin{equation}
+\frac{\sigma_{\chi A}}{m_\chi} \ll \frac{1}{\rho_\text{WD} R_\text{WD}}.
+\end{equation}
+This also ensures that the dynamics of DM within the star is that of Newtonian gravity along with a small drag force. 
+In the opposite regime, the qualitative evolution of captured DM differs from the picture presented in detail below. 
+In this case there is no stage of external orbital motion corresponding to $t_1$---DM will instead rapidly thermalize to a speed $v_\x{th}$ after entering the star. 
+The internal motion now proceeds as a gravitationally-biased random walk, with a net drift of DM towards the center of the star. 
+For sufficiently large $\sigma_{\chi A}$, DM will collect at a radius $r_\x{c}$ which is larger than $r_\x{th}$ given above, due to a balance of gravity with outward Brownian diffusion. 
+This may delay the onset of self-gravitation, possibly beyond $\tau_\x{WD}$, as we now require the collection of a larger mass $\rho_\x{WD} r^3_\x{c}$.  
+It is important to note that the differences between the Brownian and orbital regimes are immaterial for constraints on the decay of captured DM (Figure~\ref{fig:capture-decay}), which cares only about the quantity of DM present in the star.
+For annihilation constraints, however, the internal evolution of DM is quite important. 
+For the largest allowed $\sigma_{\chi A}$, one can check that captured DM is distributed across a large fraction of the star due to Brownian motion and does not collapse. 
+This DM population yields a strong constraint on $\sigma_{\chi A}$, however we chose to focus on the yet stronger constraint  (Figure~\ref{fig:capture-collision}) which can be placed on DM that undergoes self-gravitational collapse after capture.
+
 Once DM is captured, it thermalizes to an average velocity
 \begin{equation}
   v_\text{th} \sim \sqrt{\frac{T}{m_\chi}}
@@ -75,8 +91,8 @@ Once DM is captured, it thermalizes to an average velocity
 \end{equation}
 and settles to the thermal radius
 \begin{align}
-  R_\text{th} &\sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} \\
- &\approx 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}, \nonumber
+  R_\text{th} \sim \l \frac{T}{G m_\chi \rho_\text{WD}}\r^{1/2} 
+ \approx 0.1 ~\cm \l \frac{m_\chi}{10^{16} ~\GeV}\r^{-1/2}, \nonumber
 \end{align}
 where its kinetic energy balances against the gravitational potential energy of the (enclosed) WD mass.
 This thermalization time can be explicitly calculated for elastic nuclear scatters~\cite{Kouvaris:2010jy}.
@@ -109,11 +125,6 @@ Note that time to complete a single orbit is set by the gravitational free-fall 
 \label{eq:freefalltime}
 t_\text{ff} \sim \sqrt{\frac{1}{G \rho_\text{WD}}} \approx 0.5 ~\text{s}.
 \end{equation}
-Of course, the thermalization is qualitatively different than described above if the DM loses sufficient energy within a single transit.
-This occurs for large scattering cross sections:
-\begin{equation}
-\frac{\sigma_{\chi A}}{m_\chi} > \frac{1}{\rho_\text{WD} R_\text{WD}}.
-\end{equation}
 
 The DM will begin steadily accumulating at $R_\text{th}$ after a time $t_1 + t_2$.
 Once the collected mass of DM at the thermal radius exceeds the WD mass within this volume, there is the possibility of self-gravitational collapse.
@@ -124,10 +135,7 @@ The time to collect a critical number $N_\text{sg}$ of DM particles is
     \frac{\rho_\text{WD} R^3_\text{th}}{m_\chi \Gamma_\text{cap}} \\
     &\approx 10^{10} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2}
     \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}, \nonumber
-\end{align}
-Note that when $m_\chi > 10^{21} ~\GeV$, the number of particles necessary for self-gravitation $N_\text{sg}$ as defined in \eqref{eq:Ncore} is less than 2.
-In this case we should properly take $N_\text{sg} = 2$.
-We do not consider such a DM ``core" collapse in this paper, although in principle one can derive constraints (e.g. on DM annihilation cross section) here as well.
+\end{align} 
 Typically, the timescale for collapse is then set by the DM sphere's ability to cool and shed gravitational potential energy.
 This is initially just $t_2$, while the time to collapse at any given radius $r$ decreases once the DM velocity rises again above $v_\ion$
 \begin{align}
@@ -135,9 +143,12 @@ This is initially just $t_2$, while the time to collapse at any given radius $r$
   v_\chi &\sim \sqrt{\frac{G N m_\chi}{r}}, \nonumber
 \end{align}
 where $N$ is the number of collapsing DM particles.
+Note that when $m_\chi > 10^{21} ~\GeV$, the number of particles necessary for self-gravitation $N_\text{sg}$ as defined in \eqref{eq:Ncore} is less than $2$.
+In this case we should formally take $N_\text{sg} = 2$, and our DM ``core" is more properly described as a $2$-body gravitational bound state within the star. 
+We do not explicitly consider such $2$-body ``cores" in this paper, although they are subject to the same decay constraints as $N$-body cores and will collapse via orbital decay (in the absence of a stabilizing DM-DM force) on the timescale $t_\x{cool}$, yielding an analogous annihilation constraint. 
 
-There is a subtlety that arises in this DM core collapse for the large masses $m_\chi$ of interest to us.
-The time $t_\text{sg}$ to collect a self-gravitating number of particles decreases for larger DM masses.
+Finally, there is a further subtlety that arises in the growing of DM cores for the large DM masses $m_\chi$ of interest to us.
+The time to collect a self-gravitating number of particles $t_\text{sg}$ decreases for larger DM masses.
 However, the dynamics of the collapse is set by the cooling time, which is initially $t_\text{cool} \propto m_\chi$.
 For $m_\chi > 10^{15} ~\GeV$, the collection time may be shorter than the cooling time $t_\text{sg} < t_\text{cool}$ (depending on the cross section).
 In fact, the collection time may even be shorter than the dynamical time $t_\text{ff}$.
