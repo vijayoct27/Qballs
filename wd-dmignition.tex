@@ -29,8 +29,9 @@ We parameterize this by a DM stopping power $(dE/dx)_\text{SP}$, the kinetic ene
 \begin{align}
 \label{eq:CrustCondition}
   \left( \frac{d E}{d x} \right)_\text{SP} \ll
-  \frac{m_\chi v^2_\text{esc}}{R_\text{env}}.
+  \frac{m_\chi v^2_\text{esc}}{R_\text{env}},
 \end{align}
+where $R_\text{env}$ is the nominal size of the non-degenerate WD envelope and $v_\text{esc} \sim 10^{-2}$ is the escape velocity of the WD, at which the DM typically transits the star. 
 
 DM-SM scattering will result in a continuous energy deposit along the DM trajectory (if the interaction is rare enough for this not to be true, then the encounter is analogous to the case of DM decay).
 This is best described by a linear energy transfer $(dE/dx)_\text{LET}$, the kinetic energy of SM particles produced per distance traveled by the DM.
@@ -49,13 +50,13 @@ In addition, a transit event satisfying condition~\eqref{eq:CrustCondition} will
 
 The above condition sums the individual energy deposits along the DM trajectory as though they are all deposited simultaneously.
 This is valid if the DM moves sufficiently quickly so that this energy does not diffuse out of the region of interest before the DM has traversed the region.
-We therefore require that the diffusion time $\tau_\text{diff} \sim 10^{-12}~\text{s}$ across a heated region of size $L$ at temperature $T_f$ be larger than the DM crossing-time:
+We therefore require that the diffusion time $\tau_\text{diff}$ across a heated region of size $L$ at temperature $T_f$ be larger than the DM crossing-time:
 \begin{align}
   \tau_\text{diff} \sim \frac{L^2}{\alpha(T_f)} \gg
   \frac{L}{v_\text{esc}},
 \label{eq:SlowDiffusion}
 \end{align}
-where $\alpha(T)$ is the temperature-dependent diffusivity, and the DM transits at the stellar escape velocity $v_\text{esc} \sim 10^{-2}$.
+where $\alpha(T)$ is the temperature-dependent diffusivity. 
 This condition is more stringent for smaller regions, so we focus on the smallest region of interest, $L = \lambda_T$.
 Then~\eqref{eq:SlowDiffusion} is equivalent to demanding that the escape speed is greater than the conductive speed of the fusion wave front, $v_\text{cond} \sim \alpha(T_f) / \lambda_T$.
 Numerical calculations of $v_\text{cond}$ are tabulated in~\cite{Woosley}, and indeed condition~\eqref{eq:SlowDiffusion} is satisfied for all WD densities.
@@ -84,9 +85,9 @@ A single DM-DM collision or DM decay has an ignition condition:
 \label{eq:coldecay}
   m_\chi f_\text{SM} \gtrsim \Eboom \cdot \text{max} \left \{\frac{L_0}{\lambda_T}, 1 \right \}^3.
 \end{equation}
-Thus the WD is sensitive to annihilations/decays of DM masses $m_\chi > 10^{16} ~\GeV$.
+Thus the WD is sensitive to annihilations/decays of DM masses $m_\chi \gtrsim 10^{16} ~\GeV$.
 
-DM that is not captured traverses the WD in a time $t_\text{ff} \sim R_\text{WD}/v_\text{esc}$, and the rate of DM-DM collisions within the WD parameterized by cross section $\sigma_{\chi \chi}$ is:
+DM that is not captured traverses the WD in a free-fall time $t_\text{ff} \sim R_\text{WD}/v_\text{esc}$, and the rate of DM-DM collisions within the WD parameterized by cross section $\sigma_{\chi \chi}$ is:
 \begin{align}
   \Gamma^\text{ann}_\text{SN}
   \sim \l \frac{\rho_\chi}{m_\chi} \r^2 \sigma_{\chi \chi} \l \frac{v_\text{esc}}{v_\text{halo}}\r^3 v_\text{halo} R_\text{WD}^3.
@@ -112,8 +113,11 @@ Ultimately, for ultra-heavy DM the capture rate is of the form
   \Gamma_\text{cap} &\sim \Gamma_\text{trans} \cdot
   \text{min}\left\{1, \overbar{N}_\text{scat} \frac{m_\text{ion} v_\text{esc}^2}{m_\chi v_\text{halo}^2} \right\},
 \end{align}
-where $\overbar{N}_\text{scat} \sim n_\x{ion} \sigma_{\chi A} R_\x{wd}$ is the average number of DM-carbon scatters during one DM transit.
-Once DM is captured, it eventually thermalizes with the stellar medium at velocity $v_\text{th} \sim \l T_\x{WD}/m_\chi \r^{1/2}$.
+where $\overbar{N}_\text{scat} \sim n_\x{ion} \sigma_{\chi A} R_\x{WD}$ is the average number of DM-carbon scatters during one DM transit.
+For the remainder of this Section, all results are given numerically assuming a WD central density $n_\text{ion} \sim 10^{31}~\cm^{-3}$.
+The relevant parametric expressions are presented in further detail in Appendix~\ref{sec:capture}. 
+
+Once DM is captured, it eventually thermalizes with the stellar medium at velocity $v_\text{th} \sim \l T_\x{WD}/m_\chi \r^{1/2}$, where $T_\text{WD}$ is the WD temperature. 
 The dynamics of this process depend on the strength of the DM-carbon interaction, namely on whether energy loss to carbon ions provides a small perturbation to the DM's gravitational orbit within the star or whether DM primarily undergoes Brownian motion in the star due to collisions with carbon.
 For simplicity, we will focus here only on the former case, corresponding roughly to interactions
 \begin{align}
@@ -123,7 +127,6 @@ For simplicity, we will focus here only on the former case, corresponding roughl
 \end{align}
 where the DM is able to make more than a single transit through the star before thermalizing.
 Note that the opposite regime indeed also provides constraints on captured DM and is unconstrained by other observations, see Figure~\ref{fig:elastic-capture}, however the resulting limits are similar to those presented here.
-Note that all numerical quantities in this section are evaluated at a WD central density $n_\text{ion} \sim 10^{31}~\cm^{-3}$.
 
 In the limit~\eqref{eq:slowcapture}, captured DM will thermalize by settling to a radius $R_\x{th}$ given by the balance of gravity and the thermal energy $T_\x{WD}$,
 \begin{align}
@@ -154,12 +157,12 @@ t_\text{sg} &\approx
   10^{9} ~\text{s} \l \frac{m_\chi}{10^{16} ~\GeV} \r^{-1/2}
   \l \frac{\sigma_{\chi A}}{10^{-35} ~\cm^2} \r^{-1}.
 \end{align}
-Of course, not all of these stages may be reached within the age of the WD $\tau_\text{WD} \sim 5 ~\text{Gyr}$.
+Of course, not all of these stages may be reached within the age of the WD $\tau_\text{WD}$. 
 The full time to collect and begin self-gravitating is $t_1 + t_2 + t_\x{sg}$.
 
 At any point during the above evolution, captured DM has the potential to trigger a SN.
 We will consider ignition via either the decay or annihilation of captured DM.
-Of particular interest are events occurring within a collapsing DM core, as such cores have the additional ability to ignite a WD for DM masses less than $\Eboom \sim 10^{16} ~\GeV$, either via multiple DM annihilations or by the formation of a black hole.
+Of particular interest are events occurring within a collapsing DM core, as such cores have the additional ability to ignite a WD for DM masses less than $\Eboom$, either via multiple DM annihilations or by the formation of a black hole.
 This is the focus of forthcoming work~\cite{us}.
 In the following, we restrict attention to the limit~\eqref{eq:slowcapture} and require DM masses sufficiently large so that a single collision or decay will ignite the star, and give only a quick assessment of DM core collapse.
 
@@ -180,7 +183,6 @@ For a DM sphere consisting of $N$ particles at a radius $r$, the rate of annihil
 \Gamma_\text{collapse} &\sim \frac{N^2}{r^3} \sigma_{\chi \chi} v_\chi, \\
  v_\chi &\sim \sqrt{\frac{G N m_\chi}{r}}.
 \end{align}
-In the regime of interest, it will generally be the case that the number of collapsing particles is greater than the self-gravitational threshold (this is discussed in Appendix \ref{sec:capture}).
 Of course, there may be some stabilizing physics which prevents the DM from collapsing and annihilating below a certain radius, such as formation of a black hole or bound states.
 To illustrate the stringent nature of the collapse constraint we will simply assume some benchmark stable radius, as in Figure~\ref{fig:capture-collision}.
 We assume that the timescale for collapse at this radius is set by DM cooling $t_\x{cool}$, which is related to $t_2$.
